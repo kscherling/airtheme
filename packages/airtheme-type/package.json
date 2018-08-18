@@ -1,5 +1,18 @@
 {
   "name": "airtheme-type",
   "version": "0.0.0",
-  "author": "Kyle Scherling"
+  "author": "Kyle Scherling",
+  "scripts": {
+    "test": "jest --watchAll"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.4.2",
+    "jest": "^23.5.0",
+    "regenerator-runtime": "^0.12.1"
+  },
+  "dependencies": {
+    "babel-preset-env": "^1.7.0",
+    "chai": "^4.1.2"
+  }
 }
