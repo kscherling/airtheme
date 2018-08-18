@@ -22,7 +22,7 @@ const createUnit = ({ type } = unit) =>  Object.assign({}, unit, { type })
 // createFactory
 // Accepts a unit object and returns a function that is used to create the unit
 
-export const createUnitFactoryFor = unit => ({ value }) => Object.assign({}, unit, { value })
+export const createUnitFactoryFor = unit => ({ value } = {}) => Object.assign({}, unit, { value })
 
 
 export default createUnit
