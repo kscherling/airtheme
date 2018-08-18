@@ -1,4 +1,4 @@
-import createUnit from './base'
+import createUnit, { createUnitFactoryFor } from './base'
 
 // hexa
 // hex, alpha : A made up unit that can express any hex, rgb, or rgba value.
