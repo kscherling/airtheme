@@ -1,43 +1,29 @@
-import createUnit, { createFactoryForUnit } from './factoryFor'
-
-describe('#createUnit', () => {
-  it('returns base unit', () => {
-    const unit = createUnit()
-
-    expect(unit).toEqual({
-      type: 'unit',
-      value: null
-    })
-  })
-
-  it('returns new unit type', () => {
-    const unit = createUnit({ type: 'px' })
-
-    expect(unit).toEqual({
-      type: 'px',
-      value: null
-    })
-  })
-
-  it('does not set value', () => {
-    const unit = createUnit({ type: 'px', value: 'theme' })
-
-    expect(unit).toEqual({
-      type: 'px',
-      value: null
-    })
-  })
-})
+import factoryFor from './factoryFor'
 
 describe('#createFactoryForUnit', () => {
-  it('returns base unit', () => {
-    const unit = createUnit({ type: 'px' })
-    const unitFactory = createFactoryForUnit(unit)
-    const unitOfType = unitFactory({ value: 16 })
+  it('returns factory', () => {
+    const schema = { type: null, value: null }
+    const type = { type: 'type' }
 
-    expect(unitOfType).toEqual({
-      type: 'px',
-      value: 16
+    const factory = factoryFor(type, schema)
+    const instance = factory({ value: 'value' })
+
+    expect(instance).toEqual({
+      type: 'type',
+      value: 'value'
+    })
+  })
+
+  it('sanitizes input', () => {
+    const schema = { type: null, value: null }
+    const type = { type: 'type' }
+
+    const factory = factoryFor(type, schema)
+    const instance = factory({ value: 'value', nope: true })
+
+    expect(instance).toEqual({
+      type: 'type',
+      value: 'value'
     })
   })
 })

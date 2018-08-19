@@ -1,4 +1,4 @@
-import { _ROOT_ } from './types'
+import { _ROOT_ } from '../../constants/attributeTypes'
 
 // unit
 // A typed unit for communicating css units

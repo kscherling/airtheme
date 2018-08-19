@@ -1,15 +1,11 @@
-import { assign } from 'fp'
-import schema from './schema'
+// createFactoryFor
+// Accepts a unit object and root schema
+// returns a function used to create new unit instances
 
-// createUnit
-// Accepts a type and returns a unit
+//prettier-ignore
+const factoryFor =
+  ({ type }, schema) =>
+    ({ value }) =>
+      Object.assign({}, schema, { type }, { value })
 
-const createUnit = ({ type = schema.type } = {}) => assign(schema, { type })
-
-// createFactory
-// Accepts a unit object and returns a function used to create the unit instances
-
-export const createFactoryForUnit = unit => ({ value } = {}) =>
-  assign(unit, { value })
-
-export default createUnit
+export default factoryFor

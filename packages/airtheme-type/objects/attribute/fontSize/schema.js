@@ -1,4 +1,4 @@
-import { FACTOR, PX, REM } from '../../unit/types'
+import { FACTOR, PX, REM } from '../../../constants/unitTypes'
 import { BASE_FONT_SIZE_KEY } from '../../../constants/themeKeys'
 
 // Attribute
