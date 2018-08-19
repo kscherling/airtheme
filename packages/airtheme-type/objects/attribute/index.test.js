@@ -13,6 +13,19 @@ it('creates `color`', () => {
   })
 })
 
+it('creates `fontFamily`', () => {
+  const result = attributes.fontFamily()
+
+  expect(result).toEqual({
+    content: {},
+    display: 'reference',
+    displays: ['reference'],
+    reference: null,
+    type: 'fontFamily',
+    unit: 'reference'
+  })
+})
+
 it('creates `fontSize`', () => {
   const result = attributes.fontSize()
 
@@ -23,5 +36,18 @@ it('creates `fontSize`', () => {
     reference: 'baseFontSize',
     type: 'fontSize',
     unit: 'factor'
+  })
+})
+
+it('creates `fontWeight`', () => {
+  const result = attributes.fontWeight()
+
+  expect(result).toEqual({
+    content: {},
+    display: 'string',
+    displays: ['string'],
+    reference: null,
+    type: 'fontWeight',
+    unit: 'string'
   })
 })
