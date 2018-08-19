@@ -1,2 +1,8 @@
 export const _ROOT_ = 'attribute'
+export const COLOR = 'color'
 export const FONT_SIZE = 'fontSize'
+export const FONT_WEIGHT = 'fontWeight'
+export const LINE_HEIGHT = 'lineHeight'
+export const FONT_FAMILY = 'fontFamily'
+export const SPACING = 'spacing'
+export const SWATCH = 'swatch'
