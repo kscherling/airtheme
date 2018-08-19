@@ -7,7 +7,7 @@ describe('#createType', () => {
     expect(type).toEqual({
       content: {},
       display: null,
-      type: 'air-base',
+      type: 'base',
       options: [],
       reference: null,
       unit: null
@@ -33,25 +33,16 @@ describe('#createType', () => {
     })
   })
 
-  // it('does not set value', () => {
-  //   const type = createType({ type: 'px', value: 'theme' })
-  //
-  //   expect(type).toEqual({
-  //     type: 'px',
-  //     value: null
-  //   })
-  // })
+  it('does not set content', () => {
+    const type = createType({ content: { nope: true } })
+
+    expect(type).toEqual({
+      content: {},
+      display: null,
+      type: 'base',
+      options: [],
+      reference: null,
+      unit: null
+    })
+  })
 })
-//
-// describe('#createTypeFactoryFor', () => {
-//   it('returns base type', () => {
-//     const type = createType({ type: 'px' })
-//     const typeFactory = createTypeFactoryFor(type)
-//     const typeOfType = typeFactory({ value: 16 })
-//
-//     expect(typeOfType).toEqual({
-//       type: 'px',
-//       value: 16
-//     })
-//   })
-// })

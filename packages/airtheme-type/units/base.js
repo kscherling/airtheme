@@ -5,7 +5,7 @@ export const schema = {
   // type
   // string : The name of the unit.
 
-  type: 'air-base-unit',
+  type: 'baseUnit',
 
   // value
   // Any : The value of the unit
@@ -16,10 +16,11 @@ export const schema = {
 // createUnit
 // Accepts a type and returns a unit
 
-const createUnit = ({ type } = schema) => Object.assign({}, schema, { type })
+const createUnit = ({ type = schema.type } = {}) =>
+  Object.assign({}, schema, { type })
 
 // createFactory
-// Accepts a unit object and returns a function that is used to create the unit
+// Accepts a unit object and returns a function used to create the unit instances
 
 export const createUnitFactoryFor = unit => ({ value } = {}) =>
   Object.assign({}, unit, { value })

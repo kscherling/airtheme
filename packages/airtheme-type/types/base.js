@@ -15,7 +15,7 @@ const schema = {
   // type
   // The name of the type. The same as the 'class'
 
-  type: 'air-base',
+  type: 'base',
 
   // options
   // Array : Units this type can serialize to.
@@ -33,9 +33,13 @@ const schema = {
   unit: null
 }
 
-const createType = ({ type, display, unit, options, reference } = schema) =>
+const createType = ({
+  type = schema.type,
+  display = schema.display,
+  unit = schema.unit,
+  options = schema.options,
+  reference = schema.reference
+} = {}) =>
   Object.assign({}, schema, { type, display, unit, options, reference })
-
-export const createTypeFactoryFor = () => {}
 
 export default createType

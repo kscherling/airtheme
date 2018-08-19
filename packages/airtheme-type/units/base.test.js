@@ -5,7 +5,7 @@ describe('#createUnit', () => {
     const unit = createUnit()
 
     expect(unit).toEqual({
-      type: 'air-base-unit',
+      type: 'baseUnit',
       value: null
     })
   })
