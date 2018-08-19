@@ -1,8 +1,19 @@
 import attributes from './index'
 
-describe('#px', () => {})
+it('creates `color`', () => {
+  const result = attributes.color()
 
-it('creates `factor`', () => {
+  expect(result).toEqual({
+    content: {},
+    display: 'reference',
+    displays: ['reference', 'hex', 'hexa', 'rgb', 'rgba'],
+    reference: 'swatch',
+    type: 'color',
+    unit: 'reference'
+  })
+})
+
+it('creates `fontSize`', () => {
   const result = attributes.fontSize()
 
   expect(result).toEqual({
