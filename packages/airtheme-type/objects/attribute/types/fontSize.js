@@ -9,7 +9,7 @@ export default {
   // display
   // The unit the content items are displayed. User selected.
 
-  display: 'factor',
+  display: FACTOR,
 
   // diplays
   // Array : Units this type can serialize to.
