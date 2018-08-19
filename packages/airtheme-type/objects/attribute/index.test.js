@@ -51,3 +51,16 @@ it('creates `fontWeight`', () => {
     unit: 'string'
   })
 })
+
+it('creates `lineHeight`', () => {
+  const result = attributes.lineHeight()
+
+  expect(result).toEqual({
+    content: {},
+    display: 'factor',
+    displays: ['factor', 'px'],
+    reference: 'baseFontSize',
+    type: 'lineHeight',
+    unit: 'factor'
+  })
+})
