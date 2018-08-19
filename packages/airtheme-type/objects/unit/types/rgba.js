@@ -1,4 +1,4 @@
-import { RGBA } from '../../../constants/unitTypes'
+import { RGBA } from '../../../constants/themeUnits'
 
 // rgba (string)
 // a rgba color value '0,0,0,0'

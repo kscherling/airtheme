@@ -1,4 +1,4 @@
-import { FACTOR } from '../../../constants/unitTypes'
+import { FACTOR } from '../../../constants/themeUnits'
 
 // factor (string)
 // a relative unit multiplied by a reference

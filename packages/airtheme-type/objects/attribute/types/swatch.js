@@ -1,5 +1,5 @@
-import { SWATCH } from '../../../constants/attributeTypes'
-import { HEX, HEXA, RGB, RGBA } from '../../../constants/unitTypes'
+import { SWATCH } from '../../../constants/themeAttributes'
+import { HEX, HEXA, RGB, RGBA } from '../../../constants/themeUnits'
 
 export default {
   display: HEXA,

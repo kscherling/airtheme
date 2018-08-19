@@ -1,4 +1,4 @@
-import { HEXA } from '../../../constants/unitTypes'
+import { HEXA } from '../../../constants/themeUnits'
 
 // hexa (string)
 // A hex value follow by an alpha valu '#000000,0.5'

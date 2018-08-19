@@ -1,4 +1,4 @@
-import { HEX } from '../../../constants/unitTypes'
+import { HEX } from '../../../constants/themeUnits'
 
 // hex (string)
 // a hexidecimal color value

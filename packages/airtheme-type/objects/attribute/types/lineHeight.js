@@ -1,5 +1,5 @@
-import { LINE_HEIGHT } from '../../../constants/attributeTypes'
-import { FACTOR, PX } from '../../../constants/unitTypes'
+import { LINE_HEIGHT } from '../../../constants/themeAttributes'
+import { FACTOR, PX } from '../../../constants/themeUnits'
 import { BASE_FONT_SIZE_KEY } from '../../../constants/themeKeys'
 
 export default {

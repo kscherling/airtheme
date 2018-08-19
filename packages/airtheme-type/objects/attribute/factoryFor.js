@@ -1,10 +1,21 @@
 // createAttribute
 // Attributes are generated only once and must be unique
 
+// prettier-ignore
 export const factoryFor = (
-  { type, display, unit, displays, reference, content } = {},
+  {
+    type,
+    display,
+    unit,
+    displays,
+    reference,
+    content
+  } = {},
   schema = {}
-) => ({ display: factoryDisplay, content: factoryContent } = {}) =>
+) => ({
+  display: factoryDisplay,
+  content: factoryContent
+} = {}) =>
   Object.assign(
     {},
     schema,

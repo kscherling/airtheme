@@ -1,4 +1,4 @@
-import { REM } from '../../../constants/unitTypes'
+import { REM } from '../../../constants/themeUnits'
 
 // rem (int)
 // a css rem unit
