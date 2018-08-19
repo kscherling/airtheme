@@ -7,28 +7,28 @@ describe('#createType', () => {
     expect(type).toEqual({
       content: {},
       display: null,
-      type: 'base',
       options: [],
       reference: null,
+      type: 'attribute',
       unit: null
     })
   })
 
   it('returns new type type', () => {
     const type = createType({
-      type: 'fontSize',
       display: 'factor',
-      reference: 'baseFontSize',
       options: ['factor', 'px', 'rem'],
+      reference: 'baseFontSize',
+      type: 'fontSize',
       unit: 'factor'
     })
 
     expect(type).toEqual({
       content: {},
-      type: 'fontSize',
       display: 'factor',
-      reference: 'baseFontSize',
       options: ['factor', 'px', 'rem'],
+      reference: 'baseFontSize',
+      type: 'fontSize',
       unit: 'factor'
     })
   })
@@ -39,9 +39,9 @@ describe('#createType', () => {
     expect(type).toEqual({
       content: {},
       display: null,
-      type: 'base',
       options: [],
       reference: null,
+      type: 'attribute',
       unit: null
     })
   })

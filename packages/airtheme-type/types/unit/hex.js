@@ -6,6 +6,9 @@ import createUnit, { createUnitFactoryFor } from './base'
 
 const hex = createUnit({ type: 'hex' })
 
-const createHexa = createFactory(hex)
+// createHex
+// create an instance of type hex
+
+const createHex = createFactory(hex)
 
 export default createHex

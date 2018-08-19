@@ -1,7 +1,7 @@
-// air-base
-// type for a theme setting base group of units
+// Attribute
+// type for a theme attribute, has many units
 
-const schema = {
+export default {
   // content
   // Object : key/val store for settings. User selected.
 
@@ -15,7 +15,7 @@ const schema = {
   // type
   // The name of the type. The same as the 'class'
 
-  type: 'base',
+  type: 'attribute',
 
   // options
   // Array : Units this type can serialize to.
@@ -32,14 +32,3 @@ const schema = {
 
   unit: null
 }
-
-const createType = ({
-  type = schema.type,
-  display = schema.display,
-  unit = schema.unit,
-  options = schema.options,
-  reference = schema.reference
-} = {}) =>
-  Object.assign({}, schema, { type, display, unit, options, reference })
-
-export default createType
