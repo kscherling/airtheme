@@ -4,6 +4,16 @@ import { _ROOT_ } from '../../constants/attributeTypes'
 // A typed unit for communicating css units
 
 export default {
+  // key
+  // string : the key of the unit
+
+  key: null,
+
+  // ordinal
+  // int : the stack order index
+
+  ordinal: null,
+
   // type
   // string : The name of the unit.
 
@@ -13,9 +23,4 @@ export default {
   // Any : The value of the unit
 
   value: null
-
-  // ordinal
-  // int : the stack order index
-
-  // ordinal: null
 }

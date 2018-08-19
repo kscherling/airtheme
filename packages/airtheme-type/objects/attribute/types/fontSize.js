@@ -1,3 +1,4 @@
+import { FONT_SIZE } from '../../../constants/attributeTypes'
 import { FACTOR, PX, REM } from '../../../constants/unitTypes'
 import { BASE_FONT_SIZE_KEY } from '../../../constants/themeKeys'
 
@@ -23,7 +24,7 @@ export default {
   // type
   // The name of the type. The same as the 'class'
 
-  type: 'fontSize',
+  type: FONT_SIZE,
 
   // unit
   // The unit the content items are stored. Static.

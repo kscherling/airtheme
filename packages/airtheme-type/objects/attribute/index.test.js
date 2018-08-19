@@ -1,9 +1,16 @@
-import types from './index'
+import attributes from './index'
 
 describe('#px', () => {})
 
 it('creates `factor`', () => {
-  const result = attributes.fontSize({ value: 1 })
+  const result = attributes.fontSize()
 
-  expect(result).toEqual({})
+  expect(result).toEqual({
+    content: {},
+    display: 'factor',
+    displays: ['factor', 'px', 'rem'],
+    reference: 'baseFontSize',
+    type: 'fontSize',
+    unit: 'factor'
+  })
 })
