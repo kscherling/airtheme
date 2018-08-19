@@ -64,3 +64,29 @@ it('creates `lineHeight`', () => {
     unit: 'factor'
   })
 })
+
+it('creates `spacing`', () => {
+  const result = attributes.spacing()
+
+  expect(result).toEqual({
+    content: {},
+    display: 'factor',
+    displays: ['factor', 'px'],
+    reference: null,
+    type: 'spacing',
+    unit: 'factor'
+  })
+})
+
+it('creates `swatch`', () => {
+  const result = attributes.swatch()
+
+  expect(result).toEqual({
+    content: {},
+    display: 'hexa',
+    displays: ['hex', 'hexa', 'rgb', 'rgba'],
+    reference: null,
+    type: 'swatch',
+    unit: 'hexa'
+  })
+})
