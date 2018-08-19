@@ -4,8 +4,8 @@
 
 //prettier-ignore
 const factoryFor =
-  ({ type }, schema) =>
-    ({ value }) =>
+  ({ type } = {}, schema) =>
+    ({ value } = {}) =>
       Object.assign({}, schema, { type }, { value })
 
 export default factoryFor

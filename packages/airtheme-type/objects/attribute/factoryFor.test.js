@@ -1,68 +1,48 @@
 import schema from './schema'
-import createAttribute, { createAttributeFactory } from './factoryFor'
+import factoryFor from './factoryFor'
 
-describe('#createAttribute', () => {
-  it('returns base type', () => {
-    const type = createAttribute()
+const type = {
+  content: {},
+  display: 'factor',
+  displays: ['factor', 'px', 'rem'],
+  reference: 'baseFontSize',
+  type: 'fontSize',
+  unit: 'factor'
+}
 
-    expect(type).toEqual(schema)
+it('handles empty values', () => {
+  const factory = factoryFor({}, schema)
+  const instance = factory()
+
+  expect(instance).toEqual(schema)
+})
+
+it('returns factory', () => {
+  const factory = factoryFor(type, schema)
+  const instance = factory()
+
+  expect(instance).toEqual({
+    content: {},
+    display: 'factor',
+    displays: ['factor', 'px', 'rem'],
+    reference: 'baseFontSize',
+    type: 'fontSize',
+    unit: 'factor'
+  })
+})
+
+it('initializes with content', () => {
+  const factory = factoryFor(type, schema)
+  const instance = factory({
+    content: [{ some: 'stuff' }]
   })
 
-  it('is idempotent', () => {
-    const type = createAttribute()
-
-    expect(type).toEqual(schema)
-    expect(type).not.toBe(schema)
-  })
-
-  it('assigns allowed fields', () => {
-    const type = createAttribute({
-      display: 'factor',
-      displays: ['factor', 'px', 'rem'],
-      reference: 'baseFontSize',
-      type: 'fontSize',
-      unit: 'factor'
-    })
-
-    expect(type).toEqual({
-      content: {},
-      display: 'factor',
-      displays: ['factor', 'px', 'rem'],
-      reference: 'baseFontSize',
-      type: 'fontSize',
-      unit: 'factor'
-    })
-  })
-
-  it('uses defaults for missing args', () => {
-    const type = createAttribute({
-      display: 'factor',
-      displays: ['factor', 'px', 'rem'],
-      reference: 'baseFontSize',
-      type: 'fontSize',
-      unit: 'factor'
-    })
-
-    expect(type).toEqual({
-      content: {},
-      display: 'factor',
-      displays: ['factor', 'px', 'rem'],
-      reference: 'baseFontSize',
-      type: 'fontSize',
-      unit: 'factor'
-    })
-  })
-
-  it('sanitizes disallowed fields', () => {
-    const type = createAttribute({ content: { nope: true }, foo: 'also no' })
-
-    expect(type).toEqual({
-      content: {},
-      display: null,
-      displays: [],
-      reference: null,
-      type: 'attribute',
-      unit: null
-    })
+  expect(instance).toEqual({
+    content: [{ some: 'stuff' }],
+    display: 'factor',
+    displays: ['factor', 'px', 'rem'],
+    reference: 'baseFontSize',
+    type: 'fontSize',
+    unit: 'factor'
   })
 })

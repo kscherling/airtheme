@@ -13,4 +13,9 @@ export default {
   // Any : The value of the unit
 
   value: null
+
+  // ordinal
+  // int : the stack order index
+
+  // ordinal: null
 }
