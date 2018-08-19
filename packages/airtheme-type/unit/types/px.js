@@ -1,4 +1,4 @@
-import { PX } from '../../../constants/themeUnits'
+import { PX } from '../../constants/themeUnits'
 
 // px (int)
 // a px unit

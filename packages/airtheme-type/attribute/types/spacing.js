@@ -1,6 +1,6 @@
-import { SPACING } from '../../../constants/themeAttributes'
-import { FACTOR, PX } from '../../../constants/themeUnits'
-import { BASE_SPACING } from '../../../constants/themeKeys'
+import { SPACING } from '../../constants/themeAttributes'
+import { FACTOR, PX } from '../../constants/themeUnits'
+import { BASE_SPACING } from '../../constants/themeKeys'
 
 export default {
   display: FACTOR,

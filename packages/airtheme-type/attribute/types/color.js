@@ -1,5 +1,5 @@
-import { COLOR, SWATCH } from '../../../constants/themeAttributes'
-import { REFERENCE, HEX, HEXA, RGB, RGBA } from '../../../constants/themeUnits'
+import { COLOR, SWATCH } from '../../constants/themeAttributes'
+import { REFERENCE, HEX, HEXA, RGB, RGBA } from '../../constants/themeUnits'
 
 export default {
   display: REFERENCE,

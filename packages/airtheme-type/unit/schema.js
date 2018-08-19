@@ -1,4 +1,4 @@
-import { _ROOT_ } from '../../constants/themeAttributes'
+import { _ROOT_ } from '../constants/themeAttributes'
 
 // unit
 // A typed unit for communicating css units

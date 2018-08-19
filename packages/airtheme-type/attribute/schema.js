@@ -1,4 +1,4 @@
-import { _ROOT_ } from '../../constants/themeAttributes'
+import { _ROOT_ } from '../constants/themeAttributes'
 
 // Attribute
 // type for a theme attribute, has many units

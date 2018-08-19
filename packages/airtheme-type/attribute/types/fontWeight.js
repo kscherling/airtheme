@@ -1,5 +1,5 @@
-import { FONT_WEIGHT } from '../../../constants/themeAttributes'
-import { STRING } from '../../../constants/themeUnits'
+import { FONT_WEIGHT } from '../../constants/themeAttributes'
+import { STRING } from '../../constants/themeUnits'
 
 export default {
   display: STRING,

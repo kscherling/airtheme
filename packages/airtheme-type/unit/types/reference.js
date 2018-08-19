@@ -1,4 +1,4 @@
-import { REFERENCE } from '../../../constants/themeUnits'
+import { REFERENCE } from '../../constants/themeUnits'
 
 // reference (string)
 // a string path of a theme global
