@@ -5,13 +5,13 @@ describe('#createUnit', () => {
     const unit = createUnit()
 
     expect(unit).toEqual({
-      type: 'unit',
+      type: 'air-base-unit',
       value: null
     })
   })
 
   it('returns new unit type', () => {
-    const unit = createUnit({type: 'px'})
+    const unit = createUnit({ type: 'px' })
 
     expect(unit).toEqual({
       type: 'px',
@@ -20,7 +20,7 @@ describe('#createUnit', () => {
   })
 
   it('does not set value', () => {
-    const unit = createUnit(({type: 'px', value: 'theme'}))
+    const unit = createUnit({ type: 'px', value: 'theme' })
 
     expect(unit).toEqual({
       type: 'px',
@@ -31,7 +31,7 @@ describe('#createUnit', () => {
 
 describe('#createUnitFactoryFor', () => {
   it('returns base unit', () => {
-    const unit = createUnit({type: 'px'})
+    const unit = createUnit({ type: 'px' })
     const unitFactory = createUnitFactoryFor(unit)
     const unitOfType = unitFactory({ value: 16 })
 
@@ -40,6 +40,4 @@ describe('#createUnitFactoryFor', () => {
       value: 16
     })
   })
-
-
 })

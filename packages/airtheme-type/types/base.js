@@ -1,32 +1,41 @@
-const type = {
+// air-base
+// type for a theme setting base group of units
 
-    // type
-    // The name of the type. The same as the 'class'
+const schema = {
+  // content
+  // Object : key/val store for settings. User selected.
 
-    type: 'type',
+  content: {},
 
-    // display
-    // The unit the content items are displayed. User selected.
+  // display
+  // The unit the content items are displayed. User selected.
 
-    display: '',
+  display: null,
 
-    // unit
-    // The unit the content items are stored. Static.
+  // type
+  // The name of the type. The same as the 'class'
 
-    unit: '',
+  type: 'air-base',
 
-    // options
-    // Array : Units this type can serialize to.
+  // options
+  // Array : Units this type can serialize to.
 
-    options: [],
+  options: [],
 
-    // content
-    // Object : key/val store for settings. User selected.
+  // reference
+  // A string namespace global reference
 
-    content: {}
-  }
+  reference: null,
 
+  // unit
+  // The unit the content items are stored. Static.
 
-// hexa
-// A made up unit (hex, alpha) can express any hex, rgb, or rgba value.
-// Units are serialized to the smallest css var that expresses
+  unit: null
+}
+
+const createType = ({ type, display, unit, options, reference } = schema) =>
+  Object.assign({}, schema, { type, display, unit, options, reference })
+
+export const createTypeFactoryFor = () => {}
+
+export default createType
