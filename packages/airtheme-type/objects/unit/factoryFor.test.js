@@ -1,11 +1,11 @@
-import createUnit, { createUnitFactoryFor } from './base'
+import createUnit, { createFactoryForUnit } from './factoryFor'
 
 describe('#createUnit', () => {
   it('returns base unit', () => {
     const unit = createUnit()
 
     expect(unit).toEqual({
-      type: 'baseUnit',
+      type: 'unit',
       value: null
     })
   })
@@ -29,10 +29,10 @@ describe('#createUnit', () => {
   })
 })
 
-describe('#createUnitFactoryFor', () => {
+describe('#createFactoryForUnit', () => {
   it('returns base unit', () => {
     const unit = createUnit({ type: 'px' })
-    const unitFactory = createUnitFactoryFor(unit)
+    const unitFactory = createFactoryForUnit(unit)
     const unitOfType = unitFactory({ value: 16 })
 
     expect(unitOfType).toEqual({

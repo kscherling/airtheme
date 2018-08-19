@@ -1,3 +1,6 @@
+export const _ROOT_ = 'unit'
 export const FACTOR = 'factor'
 export const PX = 'px'
 export const REM = 'rem'
+export const HEX = 'hex'
+export const HEXA = 'hexa'
