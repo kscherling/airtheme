@@ -8,8 +8,11 @@ const createAttribute = ({
   type = schema.type,
   display = schema.display,
   unit = schema.unit,
-  options = schema.options,
+  displays = schema.displays,
   reference = schema.reference
-} = {}) => assign(schema, { type, display, unit, options, reference })
+} = {}) => assign(schema, { type, display, unit, displays, reference })
 
-export default createType
+export const createFactoryForAttribute = schema => () =>
+  Object.assign({}, schema)
+
+export default createAttribute

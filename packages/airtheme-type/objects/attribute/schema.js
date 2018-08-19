@@ -1,3 +1,5 @@
+import { _ROOT_ } from './types'
+
 // Attribute
 // type for a theme attribute, has many units
 
@@ -12,20 +14,20 @@ export default {
 
   display: null,
 
-  // type
-  // The name of the type. The same as the 'class'
-
-  type: 'attribute',
-
-  // options
+  // displays
   // Array : Units this type can serialize to.
 
-  options: [],
+  displays: [],
 
   // reference
   // A string namespace global reference
 
   reference: null,
+
+  // type
+  // The name of the type. The same as the 'class'
+
+  type: _ROOT_,
 
   // unit
   // The unit the content items are stored. Static.
