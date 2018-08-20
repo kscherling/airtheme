@@ -1,5 +1,5 @@
-import { _ROOT_ } from '../constants/themeThemes'
-import { VERSION } from '../constants/versions'
+import { _ROOT_ } from '@airtheme/airtheme-core'
+import { VERSION } from '@airtheme/airtheme-core'
 import unit from '../unit/index'
 
 // theme

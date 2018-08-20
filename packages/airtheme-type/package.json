@@ -2,11 +2,8 @@
   "name": "@airtheme/airtheme-type",
   "version": "0.0.0",
   "author": "Kyle Scherling",
-  "scripts": {
-    "test": "jest --watchAll"
-  },
   "devDependencies": {
-    "@airtheme/airtheme-core": "local"
+    "@airtheme/airtheme-core": "^0.1.0"
   },
   "prettier": {
     "semi": false,

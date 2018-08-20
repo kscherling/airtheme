@@ -1,4 +1,4 @@
-import { PX } from '../../constants/themeUnits'
+import { PX } from '../@airtheme/airtheme-core'
 
 // px (int)
 // a px unit

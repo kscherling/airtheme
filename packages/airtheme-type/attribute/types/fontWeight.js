@@ -1,5 +1,5 @@
-import { FONT_WEIGHT } from '../../constants/themeAttributes'
-import { STRING } from '../../constants/themeUnits'
+import { FONT_WEIGHT } from '../@airtheme/airtheme-core'
+import { STRING } from '../@airtheme/airtheme-core'
 
 export default {
   display: STRING,

@@ -1,6 +1,6 @@
-import { FONT_SIZE } from '../../constants/themeAttributes'
-import { FACTOR, PX, REM } from '../../constants/themeUnits'
-import { BASE_FONT_SIZE_KEY } from '../../constants/themeKeys'
+import { FONT_SIZE } from '../@airtheme/airtheme-core'
+import { FACTOR, PX, REM } from '../@airtheme/airtheme-core'
+import { BASE_FONT_SIZE_KEY } from '../@airtheme/airtheme-core'
 
 export default {
   display: FACTOR,

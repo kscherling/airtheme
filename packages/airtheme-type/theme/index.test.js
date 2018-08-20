@@ -1,5 +1,5 @@
 import theme from './index'
-import { VERSION } from '../constants/versions'
+import { VERSION } from '@airtheme/airtheme-core'
 
 const baseTheme = {
   baseFontSize: 16,

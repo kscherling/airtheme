@@ -1,5 +1,5 @@
-import { SWATCH } from '../../constants/themeAttributes'
-import { HEX, HEXA, RGB, RGBA } from '../../constants/themeUnits'
+import { SWATCH } from '../@airtheme/airtheme-core'
+import { HEX, HEXA, RGB, RGBA } from '../@airtheme/airtheme-core'
 
 export default {
   display: HEXA,
