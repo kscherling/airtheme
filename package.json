@@ -1,5 +1,5 @@
 {
-  "name": "root",
+  "name": "airtheme",
   "private": true,
   "devDependencies": {
     "babel-core": "^6.26.3",
