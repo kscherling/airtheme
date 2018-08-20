@@ -1,4 +1,4 @@
-import { STRING } from '../@airtheme/airtheme-core'
+import { STRING } from '@airtheme//airtheme-core'
 
 // string (string)
 // a non transformable value

@@ -1,4 +1,4 @@
-export const _ROOT_ = 'unit'
+export const _ROOT_UNIT_ = 'unit'
 export const STRING = 'string'
 export const FACTOR = 'factor'
 export const HEX = 'hex'

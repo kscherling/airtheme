@@ -1,4 +1,4 @@
-import { HEX } from '../@airtheme/airtheme-core'
+import { HEX } from '@airtheme//airtheme-core'
 
 // hex (string)
 // a hexidecimal color value

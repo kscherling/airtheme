@@ -1,4 +1,4 @@
-import { FACTOR } from '../@airtheme/airtheme-core'
+import { FACTOR } from '@airtheme//airtheme-core'
 
 // factor (string)
 // a relative unit multiplied by a reference

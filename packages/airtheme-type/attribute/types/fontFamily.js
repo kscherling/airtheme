@@ -1,5 +1,5 @@
-import { FONT_FAMILY } from '../@airtheme/airtheme-core'
-import { REFERENCE } from '../@airtheme/airtheme-core'
+import { FONT_FAMILY } from '@airtheme//airtheme-core'
+import { REFERENCE } from '@airtheme//airtheme-core'
 
 export default {
   display: REFERENCE,

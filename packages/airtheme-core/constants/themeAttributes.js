@@ -1,4 +1,4 @@
-export const _ROOT_ = 'attribute'
+export const _ROOT_ATTRIBUTE_ = 'attribute'
 export const COLOR = 'color'
 export const FONT_SIZE = 'fontSize'
 export const FONT_WEIGHT = 'fontWeight'

@@ -1,5 +1,5 @@
-import { BASIC } from '../@airtheme/airtheme-core'
-import { VERSION } from '../@airtheme/airtheme-core'
+import { BASIC } from '@airtheme//airtheme-core'
+import { VERSION } from '@airtheme//airtheme-core'
 
 // theme
 // The container object

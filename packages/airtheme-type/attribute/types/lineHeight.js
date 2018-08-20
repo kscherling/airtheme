@@ -1,6 +1,6 @@
-import { LINE_HEIGHT } from '../@airtheme/airtheme-core'
-import { FACTOR, PX } from '../@airtheme/airtheme-core'
-import { BASE_FONT_SIZE_KEY } from '../@airtheme/airtheme-core'
+import { LINE_HEIGHT } from '@airtheme//airtheme-core'
+import { FACTOR, PX } from '@airtheme//airtheme-core'
+import { BASE_FONT_SIZE_KEY } from '@airtheme//airtheme-core'
 
 export default {
   display: FACTOR,

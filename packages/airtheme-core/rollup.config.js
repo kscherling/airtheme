@@ -12,7 +12,7 @@ export default {
     resolve(),
     babel({
       exclude: 'node_modules/**',
-      plugins: ['external-helpers', 'transform-class-properties']
+      plugins: ['external-helpers']
     }),
     commonjs()
   ]

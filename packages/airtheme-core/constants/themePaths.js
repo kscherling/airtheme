@@ -10,7 +10,7 @@ import {
   SPACING_KEY,
   SWATCH_KEY,
   UTILITY_KEY
-} from './keys'
+} from './themeKeys'
 
 export const BASE_FONT_SIZE_PATH = BASE_FONT_SIZE_KEY
 export const BASE_LINE_HEIGHT_PATH = BASE_LINE_HEIGHT_KEY
