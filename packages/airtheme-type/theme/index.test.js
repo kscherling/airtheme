@@ -1,5 +1,5 @@
 import theme from './index'
-import { VERSION } from '../constants/version'
+import { VERSION } from '../constants/versions'
 
 const baseTheme = {
   baseFontSize: 16,

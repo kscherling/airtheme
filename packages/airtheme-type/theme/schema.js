@@ -1,5 +1,5 @@
-import { THEME } from '../constants/themeTheme'
-import { VERSION } from '../constants/version'
+import { _ROOT_ } from '../constants/themeThemes'
+import { VERSION } from '../constants/versions'
 import unit from '../unit/index'
 
 // theme
@@ -28,7 +28,7 @@ export default {
   // type
   // string : The name of the unit.
 
-  type: THEME,
+  type: _ROOT_,
 
   // version
   // string : the version of the airthemek
