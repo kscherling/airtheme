@@ -1,4 +1,4 @@
-import { _ROOT_ } from '@airtheme/airtheme-core'
+import { _ROOT_THEME_ } from '@airtheme/airtheme-core'
 import { VERSION } from '@airtheme/airtheme-core'
 import unit from '../unit/index'
 
@@ -28,7 +28,7 @@ export default {
   // type
   // string : The name of the unit.
 
-  type: _ROOT_,
+  type: _ROOT_THEME_,
 
   // version
   // string : the version of the airthemek

@@ -1,4 +1,4 @@
-import { _ROOT_ } from '@airtheme/airtheme-core'
+import { _ROOT_ATTRIBUTE_ } from '@airtheme/airtheme-core'
 
 // Attribute
 // type for a theme attribute, has many units
@@ -27,7 +27,7 @@ export default {
   // type
   // The name of the type. The same as the 'class'
 
-  type: _ROOT_,
+  type: _ROOT_ATTRIBUTE_,
 
   // unit
   // The unit the content items are stored. Static.

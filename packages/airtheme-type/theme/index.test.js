@@ -1,6 +1,5 @@
 import theme from './index'
 import { VERSION } from '@airtheme/airtheme-core'
-
 const baseTheme = {
   baseFontSize: 16,
   baseLineHeight: 1.15,
@@ -9,7 +8,7 @@ const baseTheme = {
   name: 'Basic Airtheme',
   setting: {},
   swatch: [],
-  type: 'theme',
+  type: 'airtheme',
   version: '0.1.0'
 }
 
@@ -39,7 +38,7 @@ it('initializes with prop overrides', () => {
     name: 'My Theme',
     setting: { a: 1 },
     swatch: [1, 2, 3],
-    type: 'theme',
+    type: 'airtheme',
     version: '0.1.0'
   })
 })
