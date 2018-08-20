@@ -6,5 +6,6 @@ export default {
   displays: [HEX, HEXA, RGB, RGBA],
   reference: null,
   type: SWATCH,
-  unit: HEXA
+  unit: HEXA,
+  content: []
 }

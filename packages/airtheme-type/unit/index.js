@@ -10,7 +10,7 @@ import rgb from './types/rgb'
 import rgba from './types/rgba'
 import string from './types/string'
 
-const types = {
+const unit = {
   factor: factoryFor(factor, schema),
   hex: factoryFor(hex, schema),
   hexa: factoryFor(hexa, schema),
@@ -22,4 +22,4 @@ const types = {
   string: factoryFor(string, schema)
 }
 
-export default types
+export default unit

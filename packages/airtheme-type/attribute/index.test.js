@@ -82,7 +82,7 @@ it('creates `swatch`', () => {
   const result = attributes.swatch()
 
   expect(result).toEqual({
-    content: {},
+    content: [],
     display: 'hexa',
     displays: ['hex', 'hexa', 'rgb', 'rgba'],
     reference: null,

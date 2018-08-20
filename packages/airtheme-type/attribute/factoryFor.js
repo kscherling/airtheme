@@ -1,6 +1,3 @@
-// createAttribute
-// Attributes are generated only once and must be unique
-
 // prettier-ignore
 export const factoryFor = (
   {
