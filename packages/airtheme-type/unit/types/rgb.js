@@ -1,4 +1,4 @@
-import { RGB } from '@airtheme//airtheme-core'
+import { RGB } from '@airtheme/airtheme-core'
 
 // rgb (string)
 // a rgb color value: '0,0,0'

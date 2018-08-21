@@ -8,6 +8,11 @@
     "build": "rollup --config",
     "build:watch": "yarn run build --watch"
   },
+  "dependencies": {
+    "@airtheme/airtheme-core": "^0.1.0",
+    "@airtheme/airtheme-type": "^0.1.0",
+    "redux": "^4.0.0"
+  },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-plugin-external-helpers": "^6.22.0",
@@ -20,8 +25,5 @@
     "semi": false,
     "singleQuote": true,
     "bracketSpacing": true
-  },
-  "dependencies": {
-    "redux": "^4.0.0"
   }
 }
