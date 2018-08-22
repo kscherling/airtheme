@@ -1,7 +1,10 @@
-export const UPDATE_BASE_FONT_SIZE = 'global/updateBaseFontSize'
-export const UPDATE_BASE_LINE_HEIGHT = 'global/updateBaseLineHeight'
-export const UPDATE_BASE_SPACING = 'global/updateBaseSpacing'
+export const UPDATE_GLOBAL = 'UPDATE_GLOBAL'
 
-export const ADD_SWATCH = 'global/addSwatch'
-export const UPDATE_SWATCH = 'global/updateSwatch'
-export const REMOVE_SWATCH = 'global/removeSwatch'
+export const UPDATE_BASE_FONT_SIZE = 'UPDATE_BASE_FONT_SIZE'
+export const UPDATE_BASE_LINE_HEIGHT = 'UPDATE_BASE_LINE_HEIGHT'
+export const UPDATE_BASE_SPACING = 'UPDATE_BASE_SPACING'
+
+export const SET_SWATCH_DISPLAY = 'SET_SWATCH_DISPLAY'
+export const ADD_SWATCH = 'ADD_SWATCH'
+export const UPDATE_SWATCH = 'UPDATE_SWATCH'
+export const REMOVE_SWATCH = 'REMOVE_SWATCH'

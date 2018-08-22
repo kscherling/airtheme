@@ -1,12 +1,4 @@
-import { UPDATE_THEME } from '../constant/theme'
+import { combineReducers } from 'redux'
+import global from './theme/global'
 
-const initialState = {}
-
-export default (state = initialState, action) => {
-  switch (action.type) {
-    case UPDATE_THEME:
-      return { ...action.theme }
-    default:
-      return state
-  }
-}
+export default combineReducers({ global /* setting */ })

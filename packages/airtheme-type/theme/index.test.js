@@ -1,13 +1,15 @@
 import theme from './index'
 import { VERSION } from '@airtheme/airtheme-core'
 const baseTheme = {
-  baseFontSize: 16,
-  baseLineHeight: 1.15,
-  baseSpacing: 16,
+  global: {
+    baseFontSize: 16,
+    baseLineHeight: 1.15,
+    baseSpacing: 16,
+    swatch: []
+  },
   id: null,
   name: 'Basic Airtheme',
   setting: {},
-  swatch: [],
   type: 'airtheme',
   version: '0.1.0'
 }

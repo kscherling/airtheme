@@ -17,7 +17,5 @@ const composedEnhancers = compose(
   ...enhancers
 )
 
-export default (initialState = {}) => {
-  console.log(initialState)
-  return createStore(airthemeRootReducer, initialState, composedEnhancers)
-}
+export default (initialState = {}) =>
+  createStore(airthemeRootReducer, initialState, composedEnhancers)

@@ -1,3 +1,5 @@
+export const UPDATE_SETTING = 'UPDATE_SETTING'
+
 export const UPDATE_COLOR = 'setting/updateColor'
 export const ADD_COLOR = 'setting/addColor'
 export const REMOVE_COLOR = 'setting/removeColor'

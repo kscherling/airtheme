@@ -1,28 +1,80 @@
 import createStore from './index'
-import { updateTheme } from '../action/theme'
-import { theme } from '@airtheme/airtheme-type'
+import {
+  updateTheme,
+  updateBaseFontSize,
+  updateBaseLineHeight,
+  updateBaseSpacing
+} from '../action/theme'
+import { theme, attribute } from '@airtheme/airtheme-type'
 
-it('initializes store with initial state', () => {
+const defaultTheme = { theme: theme.basic() }
+const withDefaultTheme = ({ ...args }) => ({
+  theme: { ...defaultTheme.theme, ...args }
+})
+
+it('initial state', () => {
   const store = createStore()
+  const initialState = { theme: {} }
 
   const state = store.getState()
 
-  store.dispatch(updateTheme())
+  expect(state).toEqual(initialState)
+})
 
-  const nextState = store.getState()
+it('`updateTheme` updates theme', () => {
+  const store = createStore()
+  const updatedState = defaultTheme
 
-  expect(state).toEqual({ theme: {} })
-  expect(nextState).toEqual({
-    theme: {
-      baseFontSize: 16,
-      baseLineHeight: 1.15,
-      baseSpacing: 16,
-      id: null,
-      name: 'Basic Airtheme',
-      setting: {},
-      swatch: [],
-      type: 'airtheme',
-      version: '0.1.0'
-    }
+  store.dispatch(updateTheme(theme.basic()))
+  const state = store.getState()
+
+  expect(state).toEqual(updatedState)
+})
+
+it('`updateBaseFontSize` updates updates base font size', () => {
+  const store = createStore()
+  const updatedState = withDefaultTheme({ baseFontSize: 14 })
+
+  store.dispatch(updateTheme(theme.basic())) // Set initial to tested baseline
+  store.dispatch(updateBaseFontSize(14))
+  const state = store.getState()
+
+  expect(state).toEqual(updatedState)
+})
+
+it('`updateBaseLineHeight` updates base line height', () => {
+  const store = createStore()
+  const updatedState = withDefaultTheme({ baseLineHeight: 1.25 })
+
+  store.dispatch(updateTheme(theme.basic())) // Set initial to tested baseline
+  store.dispatch(updateBaseLineHeight(1.25))
+  const state = store.getState()
+
+  expect(state).toEqual(updatedState)
+})
+
+it('`updateBaseSpacing` updates base spacing', () => {
+  const store = createStore()
+  const updatedState = withDefaultTheme({ baseSpacing: 18 })
+
+  store.dispatch(updateTheme(theme.basic())) // Set initial to tested baseline
+  store.dispatch(updateBaseSpacing(18))
+  const state = store.getState()
+
+  expect(state).toEqual(updatedState)
+})
+
+it('`addSwatch` adds swatch', () => {
+  const store = createStore()
+  const updatedState = withDefaultTheme({
+    swatch: attribute.swatch({
+      content: [type.hexa('#000000, 1')]
+    })
   })
+
+  store.dispatch(updateTheme(theme.basic())) // Set initial to tested baseline
+  store.dispatch(addSwatch('#000000'))
+  const state = store.getState()
+
+  expect(state).toEqual(updatedState)
 })
