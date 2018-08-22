@@ -11,8 +11,8 @@ export default {
   plugins: [
     resolve(),
     babel({
-      exclude: 'node_modules/**',
-      plugins: ['external-helpers']
+      babelrc: false,
+      exclude: 'node_modules/**'
     }),
     commonjs()
   ]
