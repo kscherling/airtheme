@@ -1,7 +1,6 @@
 import { createStore, compose } from 'redux'
 import airthemeRootReducer from './reducers'
 
-const initialState = {}
 const enhancers = []
 const middleware = []
 
@@ -18,4 +17,5 @@ const composedEnhancers = compose(
   ...enhancers
 )
 
-export default createStore(airthemeRootReducer, initialState, composedEnhancers)
+export default (initialState = {}) =>
+  createStore(airthemeRootReducer, initialState, composedEnhancers)
