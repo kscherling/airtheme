@@ -72,7 +72,7 @@ it('creates `spacing`', () => {
     content: {},
     display: 'factor',
     displays: ['factor', 'px'],
-    reference: null,
+    reference: 'baseSpacing',
     type: 'spacing',
     unit: 'factor'
   })
