@@ -1,3 +1,4 @@
 import { createStore } from 'redux'
+import reducers from 'reducers'
 
-const App = (state = {}) => {}
+const store = state => createStore(reducers, state)
