@@ -1,3 +1,5 @@
+import { attribute, unit, theme } from '@airtheme/airtheme-type'
+
 const baseState = {
   theme: {
     baseFontSize: '',
@@ -5,7 +7,7 @@ const baseState = {
     baseSpacing: '',
     id: '',
     name: '',
-    swatch: {},
+    swatch: attribute.swatch(),
     type: '',
     version: ''
   }
