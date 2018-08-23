@@ -1,5 +1,4 @@
 import {
-  UPDATE_THEME,
   UPDATE_THEME_NAME,
   UPDATE_THEME_ID,
   UPDATE_BASE_FONT_SIZE,
@@ -9,11 +8,6 @@ import {
   REMOVE_SWATCH,
   UPDATE_SWATCH
 } from '../constant/theme'
-
-export const updateTheme = theme => ({
-  type: UPDATE_THEME,
-  theme
-})
 
 export const updateThemeName = name => ({
   type: UPDATE_THEME_NAME,
