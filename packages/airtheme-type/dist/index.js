@@ -279,10 +279,88 @@ const types = {
   swatch: factoryFor(swatch, schema)
 };
 
+// theme
+// The container object
+
+var schema$1 = {
+  name: null,
+
+  id: null,
+
+  // baseFontSize
+  // string : the key of the unit
+
+  baseFontSize: 16,
+
+  // baseLineHeight
+  // string : the key of the unit
+
+  baseLineHeight: 1.15,
+
+  // baseSpacing
+  // string : the key of the unit
+
+  baseSpacing: 16,
+
+  // type
+  // string : The name of the unit.
+
+  type: dist_31,
+
+  // version
+  // string : the version of the airthemek
+
+  version: dist_43,
+
+  // swatch
+  // Swatch : the user generated list of swatches
+
+  swatch: types.swatch(),
+
+  // setting
+  // Setting : keyed attributes
+
+  setting: {}
+};
+
+// theme
+// The container object
+
+var basic = {
+  name: 'Basic Airtheme',
+  type: dist_32,
+  baseFontSize: 16,
+  baseLineHeight: 1.15,
+  baseSpacing: 16,
+  version: dist_43
+};
+
+const factoryFor$1 = ({ name, id, baseFontSize, baseLineHeight, baseSpacing, swatch, setting } = {}, schema) => ({
+  name: instanceName,
+  id: instanceId,
+  baseFontSize: instanceBaseFontSize,
+  baseLineHeight: instanceBaseLineHeight,
+  baseSpacing: instanceBaseSpacing,
+  swatch: instanceSwatch,
+  setting: instanceSetting
+} = {}) => Object.assign({}, schema, {
+  name: instanceName || name || schema.name,
+  id: instanceId || id || schema.id,
+  baseFontSize: instanceBaseFontSize || baseFontSize || schema.baseFontSize,
+  baseLineHeight: instanceBaseLineHeight || baseLineHeight || schema.baseLineHeight,
+  baseSpacing: instanceBaseSpacing || baseSpacing || schema.baseSpacing,
+  swatch: instanceSwatch || swatch || schema.swatch,
+  setting: instanceSetting || setting || schema.setting
+});
+
+const theme = {
+  basic: factoryFor$1(basic, schema$1)
+};
+
 // unit
 // A typed unit for communicating css units
 
-var schema$1 = {
+var schema$2 = {
   // key
   // string : the key of the unit
 
@@ -309,7 +387,7 @@ var schema$1 = {
 // returns a function used to create new unit instances
 
 // prettier-ignore
-const factoryFor$1 = ({ type } = {}, schema) => ({ value, key, ordinal } = {}) => Object.assign({}, schema, { type }, {
+const factoryFor$2 = ({ type } = {}, schema) => ({ value, key, ordinal } = {}) => Object.assign({}, schema, { type }, {
   value: value || schema.value,
   key: key || schema.key,
   ordinal: ordinal || schema.ordinal
@@ -362,93 +440,15 @@ var rgba = { type: dist_42 };
 var string = { type: dist_34 };
 
 const unit = {
-  factor: factoryFor$1(factor, schema$1),
-  hex: factoryFor$1(hex, schema$1),
-  hexa: factoryFor$1(hexa, schema$1),
-  px: factoryFor$1(px, schema$1),
-  reference: factoryFor$1(reference, schema$1),
-  rem: factoryFor$1(rem, schema$1),
-  rgb: factoryFor$1(rgb, schema$1),
-  rgba: factoryFor$1(rgba, schema$1),
-  string: factoryFor$1(string, schema$1)
-};
-
-// theme
-// The container object
-
-var schema$2 = {
-  name: null,
-
-  id: null,
-
-  // baseFontSize
-  // string : the key of the unit
-
-  baseFontSize: 16,
-
-  // baseLineHeight
-  // string : the key of the unit
-
-  baseLineHeight: 1.15,
-
-  // baseSpacing
-  // string : the key of the unit
-
-  baseSpacing: 16,
-
-  // type
-  // string : The name of the unit.
-
-  type: dist_31,
-
-  // version
-  // string : the version of the airthemek
-
-  version: dist_43,
-
-  // swatch
-  // array : the user generated list of swatches
-
-  swatch: [],
-
-  // setting
-  // object : keyed attributes
-
-  setting: {}
-};
-
-// theme
-// The container object
-
-var basic = {
-  name: 'Basic Airtheme',
-  type: dist_32,
-  baseFontSize: 16,
-  baseLineHeight: 1.15,
-  baseSpacing: 16,
-  version: dist_43
-};
-
-const factoryFor$2 = ({ name, id, baseFontSize, baseLineHeight, baseSpacing, swatch, setting } = {}, schema) => ({
-  name: instanceName,
-  id: instanceId,
-  baseFontSize: instanceBaseFontSize,
-  baseLineHeight: instanceBaseLineHeight,
-  baseSpacing: instanceBaseSpacing,
-  swatch: instanceSwatch,
-  setting: instanceSetting
-} = {}) => Object.assign({}, schema, {
-  name: instanceName || name || schema.name,
-  id: instanceId || id || schema.id,
-  baseFontSize: instanceBaseFontSize || baseFontSize || schema.baseFontSize,
-  baseLineHeight: instanceBaseLineHeight || baseLineHeight || schema.baseLineHeight,
-  baseSpacing: instanceBaseSpacing || baseSpacing || schema.baseSpacing,
-  swatch: instanceSwatch || swatch || schema.swatch,
-  setting: instanceSetting || setting || schema.setting
-});
-
-const theme = {
-  basic: factoryFor$2(basic, schema$2)
+  factor: factoryFor$2(factor, schema$2),
+  hex: factoryFor$2(hex, schema$2),
+  hexa: factoryFor$2(hexa, schema$2),
+  px: factoryFor$2(px, schema$2),
+  reference: factoryFor$2(reference, schema$2),
+  rem: factoryFor$2(rem, schema$2),
+  rgb: factoryFor$2(rgb, schema$2),
+  rgba: factoryFor$2(rgba, schema$2),
+  string: factoryFor$2(string, schema$2)
 };
 
 exports.attribute = types;
