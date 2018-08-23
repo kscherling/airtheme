@@ -8,7 +8,7 @@ import lineHeight from './types/lineHeight'
 import spacing from './types/spacing'
 import swatch from './types/swatch'
 
-const types = {
+const attribute = {
   color: factoryFor(color, schema),
   fontFamily: factoryFor(fontFamily, schema),
   fontSize: factoryFor(fontSize, schema),
@@ -19,4 +19,4 @@ const types = {
   swatch: factoryFor(swatch, schema)
 }
 
-export default types
+export default attribute

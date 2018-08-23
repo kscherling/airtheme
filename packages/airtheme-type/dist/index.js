@@ -201,13 +201,10 @@ const factoryFor = ({
   content: factoryContent
 } = {}) => Object.assign({}, schema, {
   type: type || schema.type,
-  display: display || schema.display,
+  display: factoryDisplay || display || schema.display,
   unit: unit || schema.unit,
   displays: displays || schema.displays,
   reference: reference || schema.reference,
-  content: content || schema.content
-}, {
-  display: factoryDisplay || display || schema.display,
   content: factoryContent || content || schema.content
 });
 
@@ -268,7 +265,7 @@ var swatch = {
   content: []
 };
 
-const types = {
+const attribute = {
   color: factoryFor(color, schema),
   fontFamily: factoryFor(fontFamily, schema),
   fontSize: factoryFor(fontSize, schema),
@@ -315,7 +312,7 @@ var schema$1 = {
   // swatch
   // Swatch : the user generated list of swatches
 
-  swatch: types.swatch(),
+  swatch: attribute.swatch(),
 
   // setting
   // Setting : keyed attributes
@@ -451,6 +448,6 @@ const unit = {
   string: factoryFor$2(string, schema$2)
 };
 
-exports.attribute = types;
+exports.attribute = attribute;
 exports.theme = theme;
 exports.unit = unit;
