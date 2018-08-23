@@ -10,8 +10,8 @@ export const removeSwatch = swatchObj => ({
   swatchObj
 })
 
-export const updateSwatch = (original, swatch) => ({
+export const updateSwatch = (original, updatedVal) => ({
   type: UPDATE_SWATCH,
   original,
-  swatch
+  updatedVal
 })

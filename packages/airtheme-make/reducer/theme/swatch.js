@@ -1,6 +1,8 @@
 import { UPDATE_THEME } from '../../constant/root'
-import { ADD_SWATCH, REMOVE_SWATCH } from '../../constant/swatch'
+import { ADD_SWATCH, REMOVE_SWATCH, UPDATE_SWATCH } from '../../constant/swatch'
 import { unit } from '@airtheme/airtheme-type'
+
+const eq = (a, b) => a === b
 
 const swatch = (state = {}, action) => {
   switch (action.type) {
@@ -16,6 +18,16 @@ const swatch = (state = {}, action) => {
         ...state,
         content: state.content.filter(
           swatchObj => swatchObj !== action.swatchObj
+        )
+      }
+    case UPDATE_SWATCH:
+      return {
+        ...state,
+        content: state.content.map(
+          swatch =>
+            eq(swatch, action.original)
+              ? { ...swatch, value: action.updatedVal }
+              : swatch
         )
       }
     default:
