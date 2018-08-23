@@ -3,10 +3,12 @@ import { ADD_SWATCH, REMOVE_SWATCH, UPDATE_SWATCH } from '../../constant/swatch'
 import { unit } from '@airtheme/airtheme-type'
 
 const eq = (a, b) => a === b
+const not = a => b => a !== b
 
 const swatch = (state = {}, action) => {
   switch (action.type) {
     case UPDATE_THEME:
+      console.log(action.theme.swatch)
       return action.theme.swatch || {}
     case ADD_SWATCH:
       return {
@@ -16,9 +18,7 @@ const swatch = (state = {}, action) => {
     case REMOVE_SWATCH:
       return {
         ...state,
-        content: state.content.filter(
-          swatchObj => swatchObj !== action.swatchObj
-        )
+        content: state.content.filter(not(action.swatchObj))
       }
     case UPDATE_SWATCH:
       return {

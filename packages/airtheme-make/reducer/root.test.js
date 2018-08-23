@@ -7,7 +7,6 @@ import {
   updateThemeName
 } from '../action/theme'
 import { updateTheme } from '../action/root'
-import { theme, attribute } from '@airtheme/airtheme-type'
 import baseState from '../test/baseState'
 import updatedState from '../test/updatedState'
 

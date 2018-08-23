@@ -5,14 +5,7 @@ const baseState = {
     baseSpacing: '',
     id: '',
     name: '',
-    swatch: {
-      content: [],
-      display: 'hexa',
-      displays: ['hex', 'hexa', 'rgb', 'rgba'],
-      reference: null,
-      type: 'swatch',
-      unit: 'hexa'
-    },
+    swatch: {},
     type: '',
     version: ''
   }
