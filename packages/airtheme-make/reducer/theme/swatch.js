@@ -11,7 +11,7 @@ const swatch = (state = {}, action) => {
     case ADD_SWATCH:
       return {
         ...state,
-        content: [...state.content, unit.hexa({ value: action.swatch })]
+        content: [...state.content, unit[state.unit]({ value: action.swatch })]
       }
     case REMOVE_SWATCH:
       return {
