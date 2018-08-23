@@ -1,5 +1,7 @@
 import {
   UPDATE_THEME,
+  UPDATE_THEME_NAME,
+  UPDATE_THEME_ID,
   UPDATE_BASE_FONT_SIZE,
   UPDATE_BASE_LINE_HEIGHT,
   UPDATE_BASE_SPACING,
@@ -11,6 +13,16 @@ import {
 export const updateTheme = theme => ({
   type: UPDATE_THEME,
   theme
+})
+
+export const updateThemeName = name => ({
+  type: UPDATE_THEME_NAME,
+  name
+})
+
+export const updateThemeId = id => ({
+  type: UPDATE_THEME_ID,
+  id
 })
 
 export const updateBaseFontSize = baseFontSize => ({
