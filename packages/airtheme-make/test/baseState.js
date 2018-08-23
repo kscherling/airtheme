@@ -1,4 +1,4 @@
-export default {
+const baseState = {
   theme: {
     baseFontSize: '',
     baseLineHeight: '',
@@ -9,3 +9,9 @@ export default {
     version: ''
   }
 }
+
+export const withBaseState = ({ ...args }) => ({
+  theme: { ...baseState.theme, ...args }
+})
+
+export default baseState

@@ -1,4 +1,4 @@
-export default {
+const updatedState = {
   theme: {
     name: 'Test Theme',
     id: '123456',
@@ -9,3 +9,9 @@ export default {
     baseSpacing: 16
   }
 }
+
+export const withUpdatedState = ({ ...args }) => ({
+  theme: { ...updatedState.theme, ...args }
+})
+
+export default updatedState
