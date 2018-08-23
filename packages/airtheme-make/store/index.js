@@ -1,5 +1,5 @@
 import { applyMiddleware, createStore, compose } from 'redux'
-import airthemeRootReducer from '../reducer'
+import airthemeRootReducer from '../reducer/root'
 
 const enhancers = []
 const middleware = []

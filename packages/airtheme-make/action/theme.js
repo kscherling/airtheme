@@ -3,10 +3,7 @@ import {
   UPDATE_THEME_ID,
   UPDATE_BASE_FONT_SIZE,
   UPDATE_BASE_LINE_HEIGHT,
-  UPDATE_BASE_SPACING,
-  ADD_SWATCH,
-  REMOVE_SWATCH,
-  UPDATE_SWATCH
+  UPDATE_BASE_SPACING
 } from '../constant/theme'
 
 export const updateThemeName = name => ({
@@ -32,19 +29,4 @@ export const updateBaseLineHeight = baseLineHeight => ({
 export const updateBaseSpacing = baseSpacing => ({
   type: UPDATE_BASE_SPACING,
   baseSpacing
-})
-
-export const addSwatch = swatch => ({
-  type: ADD_SWATCH,
-  swatch
-})
-
-export const removeSwatch = swatch => ({
-  type: ADD_SWATCH,
-  swatch
-})
-
-export const updateSwatch = swatch => ({
-  type: ADD_SWATCH,
-  swatch
 })
