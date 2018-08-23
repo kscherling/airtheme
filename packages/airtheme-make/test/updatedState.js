@@ -1,12 +1,13 @@
 const updatedState = {
   theme: {
-    name: 'Test Theme',
-    id: '123456',
-    type: 'airtheme',
-    version: '1.0.0',
     baseFontSize: 16,
     baseLineHeight: 16,
-    baseSpacing: 16
+    baseSpacing: 16,
+    id: '123456',
+    name: 'Test Theme',
+    swatch: { type: 'swatch' },
+    type: 'airtheme',
+    version: '1.0.0'
   }
 }
 

@@ -1,0 +1,3 @@
+export const ADD_SWATCH = 'ADD_SWATCH'
+export const REMOVE_SWATCH = 'REMOVE_SWATCH'
+export const UPDATE_SWATCH = 'UPDATE_SWATCH'
