@@ -276,10 +276,38 @@ const attribute = {
   swatch: factoryFor(swatch, schema)
 };
 
+// setting
+// Settings hash
+
+var schema$1 = {
+  [dist_12]: attribute.color(),
+  [dist_13]: attribute.fontFamily(),
+  [dist_14]: attribute.fontSize(),
+  [dist_15]: attribute.fontWeight(),
+  [dist_17]: attribute.spacing()
+};
+
+// prettier-ignore
+const factoryFor$1 = (schema = {}) => ({
+  color = schema.color,
+  fontFamily = schema.fontFamily,
+  fontSize = schema.fontSize,
+  fontWeight = schema.fontWeight,
+  spacing = schema.spacing
+} = {}) => Object.assign({}, {
+  color,
+  fontFamily,
+  fontSize,
+  fontWeight,
+  spacing
+});
+
+const setting = factoryFor$1(schema$1);
+
 // theme
 // The container object
 
-var schema$1 = {
+var schema$2 = {
   name: null,
 
   id: null,
@@ -310,14 +338,13 @@ var schema$1 = {
   version: dist_43,
 
   // swatch
-  // Swatch : the user generated list of swatches
-
+  // Swatch : Swatch attribute type
   swatch: attribute.swatch(),
 
   // setting
-  // Setting : keyed attributes
+  // Setting : Keyed object of attribute types
 
-  setting: {}
+  setting: setting()
 };
 
 // theme
@@ -332,7 +359,7 @@ var basic = {
   version: dist_43
 };
 
-const factoryFor$1 = ({ name, id, baseFontSize, baseLineHeight, baseSpacing, swatch, setting } = {}, schema) => ({
+const factoryFor$2 = ({ name, id, baseFontSize, baseLineHeight, baseSpacing, swatch, setting } = {}, schema) => ({
   name: instanceName,
   id: instanceId,
   baseFontSize: instanceBaseFontSize,
@@ -351,13 +378,13 @@ const factoryFor$1 = ({ name, id, baseFontSize, baseLineHeight, baseSpacing, swa
 });
 
 const theme = {
-  basic: factoryFor$1(basic, schema$1)
+  basic: factoryFor$2(basic, schema$2)
 };
 
 // unit
 // A typed unit for communicating css units
 
-var schema$2 = {
+var schema$3 = {
   // key
   // string : the key of the unit
 
@@ -384,7 +411,7 @@ var schema$2 = {
 // returns a function used to create new unit instances
 
 // prettier-ignore
-const factoryFor$2 = ({ type } = {}, schema) => ({ value, key, ordinal } = {}) => Object.assign({}, schema, { type }, {
+const factoryFor$3 = ({ type } = {}, schema) => ({ value, key, ordinal } = {}) => Object.assign({}, schema, { type }, {
   value: value || schema.value,
   key: key || schema.key,
   ordinal: ordinal || schema.ordinal
@@ -437,15 +464,15 @@ var rgba = { type: dist_42 };
 var string = { type: dist_34 };
 
 const unit = {
-  factor: factoryFor$2(factor, schema$2),
-  hex: factoryFor$2(hex, schema$2),
-  hexa: factoryFor$2(hexa, schema$2),
-  px: factoryFor$2(px, schema$2),
-  reference: factoryFor$2(reference, schema$2),
-  rem: factoryFor$2(rem, schema$2),
-  rgb: factoryFor$2(rgb, schema$2),
-  rgba: factoryFor$2(rgba, schema$2),
-  string: factoryFor$2(string, schema$2)
+  factor: factoryFor$3(factor, schema$3),
+  hex: factoryFor$3(hex, schema$3),
+  hexa: factoryFor$3(hexa, schema$3),
+  px: factoryFor$3(px, schema$3),
+  reference: factoryFor$3(reference, schema$3),
+  rem: factoryFor$3(rem, schema$3),
+  rgb: factoryFor$3(rgb, schema$3),
+  rgba: factoryFor$3(rgba, schema$3),
+  string: factoryFor$3(string, schema$3)
 };
 
 exports.attribute = attribute;

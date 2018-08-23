@@ -1,6 +1,7 @@
 import { _ROOT_THEME_ } from '@airtheme/airtheme-core'
 import { VERSION } from '@airtheme/airtheme-core'
 import attribute from '../attribute'
+import setting from '../setting'
 
 // theme
 // The container object
@@ -36,12 +37,11 @@ export default {
   version: VERSION,
 
   // swatch
-  // Swatch : the user generated list of swatches
-
+  // Swatch : Swatch attribute type
   swatch: attribute.swatch(),
 
   // setting
-  // Setting : keyed attributes
+  // Setting : Keyed object of attribute types
 
-  setting: {}
+  setting: setting()
 }
