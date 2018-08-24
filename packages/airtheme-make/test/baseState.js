@@ -7,6 +7,13 @@ const baseState = {
     baseSpacing: '',
     id: '',
     name: '',
+    setting: {
+      color: {},
+      fontFamily: {},
+      fontSize: {},
+      fontWeight: {},
+      spacing: {}
+    },
     swatch: attribute.swatch(),
     type: '',
     version: ''

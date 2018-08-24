@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux'
 import swatch from './theme/swatch'
+import setting from './theme/setting'
 import {
   UPDATE_BASE_FONT_SIZE,
   UPDATE_BASE_LINE_HEIGHT,
@@ -91,6 +92,7 @@ export default combineReducers({
   baseSpacing,
   id,
   name,
+  setting,
   swatch,
   type,
   version
