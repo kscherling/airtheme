@@ -160,7 +160,7 @@ var schema = {
   // content
   // Object : key/val store for settings. User selected.
 
-  content: {},
+  content: [],
 
   // display
   // The unit the content items are displayed. User selected.

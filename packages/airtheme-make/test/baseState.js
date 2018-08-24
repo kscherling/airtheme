@@ -1,4 +1,5 @@
 import { attribute, unit, theme } from '@airtheme/airtheme-type'
+import baseSetting from './baseSetting'
 
 const baseState = {
   theme: {
@@ -7,13 +8,7 @@ const baseState = {
     baseSpacing: '',
     id: '',
     name: '',
-    setting: {
-      color: {},
-      fontFamily: {},
-      fontSize: {},
-      fontWeight: {},
-      spacing: {}
-    },
+    setting: baseSetting,
     swatch: attribute.swatch(),
     type: '',
     version: ''
