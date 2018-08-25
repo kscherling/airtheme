@@ -8,7 +8,7 @@ const baseTheme = {
   fontFace: {
     content: [],
     view: 'string',
-    displays: ['string'],
+    viewable: ['string'],
     reference: null,
     type: 'fontFace',
     unit: 'string'
@@ -19,7 +19,7 @@ const baseTheme = {
     color: {
       content: [],
       view: 'reference',
-      displays: ['reference', 'hex', 'hexa', 'rgb', 'rgba'],
+      viewable: ['reference', 'hex', 'hexa', 'rgb', 'rgba'],
       reference: 'swatch',
       type: 'color',
       unit: 'reference'
@@ -27,7 +27,7 @@ const baseTheme = {
     fontFamily: {
       content: [],
       view: 'reference',
-      displays: ['reference'],
+      viewable: ['reference'],
       reference: null,
       type: 'fontFamily',
       unit: 'reference'
@@ -35,7 +35,7 @@ const baseTheme = {
     fontSize: {
       content: [],
       view: 'factor',
-      displays: ['factor', 'px', 'rem'],
+      viewable: ['factor', 'px', 'rem'],
       reference: 'baseFontSize',
       type: 'fontSize',
       unit: 'factor'
@@ -43,7 +43,7 @@ const baseTheme = {
     fontWeight: {
       content: [],
       view: 'string',
-      displays: ['string'],
+      viewable: ['string'],
       reference: null,
       type: 'fontWeight',
       unit: 'string'
@@ -51,7 +51,7 @@ const baseTheme = {
     spacing: {
       content: [],
       view: 'factor',
-      displays: ['factor', 'px'],
+      viewable: ['factor', 'px'],
       reference: 'baseSpacing',
       type: 'spacing',
       unit: 'factor'
@@ -60,7 +60,7 @@ const baseTheme = {
   swatch: {
     content: [],
     view: 'hexa',
-    displays: ['hex', 'hexa', 'rgb', 'rgba'],
+    viewable: ['hex', 'hexa', 'rgb', 'rgba'],
     reference: null,
     type: 'swatch',
     unit: 'hexa'

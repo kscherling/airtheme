@@ -4,7 +4,7 @@ import { BASE_SPACING_KEY } from '@airtheme/core'
 
 export default {
   view: FACTOR,
-  displays: [FACTOR, PX],
+  viewable: [FACTOR, PX],
   reference: BASE_SPACING_KEY,
   type: SPACING,
   unit: FACTOR

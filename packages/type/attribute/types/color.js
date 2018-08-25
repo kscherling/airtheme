@@ -3,7 +3,7 @@ import { REFERENCE, HEX, HEXA, RGB, RGBA } from '@airtheme/core'
 
 export default {
   view: REFERENCE,
-  displays: [REFERENCE, HEX, HEXA, RGB, RGBA],
+  viewable: [REFERENCE, HEX, HEXA, RGB, RGBA],
   reference: SWATCH,
   type: COLOR,
   unit: REFERENCE

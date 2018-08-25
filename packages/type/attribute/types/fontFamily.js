@@ -3,7 +3,7 @@ import { REFERENCE } from '@airtheme/core'
 
 export default {
   view: REFERENCE,
-  displays: [REFERENCE],
+  viewable: [REFERENCE],
   reference: null,
   type: FONT_FAMILY,
   unit: REFERENCE

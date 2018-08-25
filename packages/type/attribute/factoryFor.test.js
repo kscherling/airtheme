@@ -4,7 +4,7 @@ import factoryFor from './factoryFor'
 const type = {
   content: [],
   view: 'factor',
-  displays: ['factor', 'px', 'rem'],
+  viewable: ['factor', 'px', 'rem'],
   reference: 'baseFontSize',
   type: 'fontSize',
   unit: 'factor'
@@ -24,7 +24,7 @@ it('returns factory', () => {
   expect(instance).toEqual({
     content: [],
     view: 'factor',
-    displays: ['factor', 'px', 'rem'],
+    viewable: ['factor', 'px', 'rem'],
     reference: 'baseFontSize',
     type: 'fontSize',
     unit: 'factor'
@@ -40,7 +40,7 @@ it('initializes with content', () => {
   expect(instance).toEqual({
     content: [{ some: 'stuff' }],
     view: 'factor',
-    displays: ['factor', 'px', 'rem'],
+    viewable: ['factor', 'px', 'rem'],
     reference: 'baseFontSize',
     type: 'fontSize',
     unit: 'factor'

@@ -9,7 +9,7 @@ it('creates `setting`', () => {
     color: {
       content: [],
       view: 'reference',
-      displays: ['reference', 'hex', 'hexa', 'rgb', 'rgba'],
+      viewable: ['reference', 'hex', 'hexa', 'rgb', 'rgba'],
       reference: 'swatch',
       type: 'color',
       unit: 'reference'
@@ -17,7 +17,7 @@ it('creates `setting`', () => {
     fontFamily: {
       content: [],
       view: 'reference',
-      displays: ['reference'],
+      viewable: ['reference'],
       reference: null,
       type: 'fontFamily',
       unit: 'reference'
@@ -25,7 +25,7 @@ it('creates `setting`', () => {
     fontSize: {
       content: [],
       view: 'factor',
-      displays: ['factor', 'px', 'rem'],
+      viewable: ['factor', 'px', 'rem'],
       reference: 'baseFontSize',
       type: 'fontSize',
       unit: 'factor'
@@ -33,7 +33,7 @@ it('creates `setting`', () => {
     fontWeight: {
       content: [],
       view: 'string',
-      displays: ['string'],
+      viewable: ['string'],
       reference: null,
       type: 'fontWeight',
       unit: 'string'
@@ -41,7 +41,7 @@ it('creates `setting`', () => {
     spacing: {
       content: [],
       view: 'factor',
-      displays: ['factor', 'px'],
+      viewable: ['factor', 'px'],
       reference: 'baseSpacing',
       type: 'spacing',
       unit: 'factor'
@@ -59,7 +59,7 @@ it('can initialize with custom `attribute`', () => {
   expect(result.color).toEqual({
     content: [{ key: null, ordinal: null, type: 'hexa', value: '#000000, 1' }],
     view: 'reference',
-    displays: ['reference', 'hex', 'hexa', 'rgb', 'rgba'],
+    viewable: ['reference', 'hex', 'hexa', 'rgb', 'rgba'],
     reference: 'swatch',
     type: 'color',
     unit: 'reference'

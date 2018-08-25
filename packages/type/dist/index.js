@@ -170,10 +170,10 @@ var schema = {
 
   view: null,
 
-  // displays
+  // viewable
   // Array : Units this type can serialize to.
 
-  displays: [],
+  viewable: [],
 
   // reference
   // A string namespace global reference
@@ -196,7 +196,7 @@ const factoryFor = ({
   type,
   view,
   unit,
-  displays,
+  viewable,
   reference,
   content
 } = {}, schema = {}) => ({
@@ -206,14 +206,14 @@ const factoryFor = ({
   type: type || schema.type,
   view: factoryDisplay || view || schema.view,
   unit: unit || schema.unit,
-  displays: displays || schema.displays,
+  viewable: viewable || schema.viewable,
   reference: reference || schema.reference,
   content: factoryContent || content || schema.content
 });
 
 var color = {
   view: dist_40,
-  displays: [dist_40, dist_37, dist_38, dist_42, dist_43],
+  viewable: [dist_40, dist_37, dist_38, dist_42, dist_43],
   reference: dist_9,
   type: dist_2,
   unit: dist_40
@@ -221,7 +221,7 @@ var color = {
 
 var fontFamily = {
   view: dist_40,
-  displays: [dist_40],
+  viewable: [dist_40],
   reference: null,
   type: dist_7,
   unit: dist_40
@@ -229,7 +229,7 @@ var fontFamily = {
 
 var fontSize = {
   view: dist_36,
-  displays: [dist_36, dist_39, dist_41],
+  viewable: [dist_36, dist_39, dist_41],
   reference: dist_10,
   type: dist_3,
   unit: dist_36
@@ -237,7 +237,7 @@ var fontSize = {
 
 var fontFace = {
   view: dist_35,
-  displays: [dist_35],
+  viewable: [dist_35],
   reference: null,
   type: dist_6,
   unit: dist_35
@@ -245,7 +245,7 @@ var fontFace = {
 
 var fontWeight = {
   view: dist_35,
-  displays: [dist_35],
+  viewable: [dist_35],
   reference: null,
   type: dist_4,
   unit: dist_35
@@ -253,7 +253,7 @@ var fontWeight = {
 
 var lineHeight = {
   view: dist_36,
-  displays: [dist_36, dist_39],
+  viewable: [dist_36, dist_39],
   reference: dist_10,
   type: dist_5,
   unit: dist_36
@@ -261,7 +261,7 @@ var lineHeight = {
 
 var spacing = {
   view: dist_36,
-  displays: [dist_36, dist_39],
+  viewable: [dist_36, dist_39],
   reference: dist_12,
   type: dist_8,
   unit: dist_36
@@ -269,7 +269,7 @@ var spacing = {
 
 var swatch = {
   view: dist_38,
-  displays: [dist_37, dist_38, dist_42, dist_43],
+  viewable: [dist_37, dist_38, dist_42, dist_43],
   reference: null,
   type: dist_9,
   unit: dist_38,

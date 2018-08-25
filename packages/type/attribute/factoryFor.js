@@ -4,7 +4,7 @@ export const factoryFor = (
     type,
     view,
     unit,
-    displays,
+    viewable,
     reference,
     content
   } = {},
@@ -20,7 +20,7 @@ export const factoryFor = (
       type: type || schema.type,
       view: factoryDisplay || view || schema.view,
       unit: unit || schema.unit,
-      displays: displays || schema.displays,
+      viewable: viewable || schema.viewable,
       reference: reference || schema.reference,
       content: factoryContent || content || schema.content
     }

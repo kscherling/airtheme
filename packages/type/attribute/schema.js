@@ -14,10 +14,10 @@ export default {
 
   view: null,
 
-  // displays
+  // viewable
   // Array : Units this type can serialize to.
 
-  displays: [],
+  viewable: [],
 
   // reference
   // A string namespace global reference
