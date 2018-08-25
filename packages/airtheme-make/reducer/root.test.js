@@ -10,10 +10,6 @@ import { updateTheme } from '../action/root'
 import baseState from '../test/baseState'
 import updatedState from '../test/updatedState'
 
-const withDefaultTheme = ({ ...args }) => ({
-  theme: { ...updatedState.theme, ...args }
-})
-
 it('initial state (baseState)', () => {
   const store = createStore()
 

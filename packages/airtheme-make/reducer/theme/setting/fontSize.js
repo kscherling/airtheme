@@ -4,9 +4,10 @@ import {
   REMOVE_FONT_SIZE,
   UPDATE_FONT_SIZE
 } from '../../../constant/fontSize'
+import { attribute } from '@airtheme/airtheme-type'
 import { addUnit, removeUnit, updateUnit } from '../../../lib/unitReducers'
 
-const fontSize = (state = {}, action) => {
+const fontSize = (state = attribute.fontSize(), action) => {
   switch (action.type) {
     case UPDATE_THEME:
       return action.theme.setting.fontSize

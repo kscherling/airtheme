@@ -1,3 +1,5 @@
+import { withBaseSetting } from './baseSetting'
+
 const updatedState = {
   theme: {
     baseFontSize: 16,
@@ -5,13 +7,13 @@ const updatedState = {
     baseSpacing: 16,
     id: '123456',
     name: 'Test Theme',
-    setting: {
+    setting: withBaseSetting({
       color: {},
       fontFamily: {},
       fontSize: {},
       fontWeight: {},
       spacing: {}
-    },
+    }),
     swatch: { type: 'swatch' },
     type: 'airtheme',
     version: '1.0.0'

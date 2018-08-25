@@ -2,10 +2,10 @@ import { attribute } from '@airtheme/airtheme-type'
 
 const baseSetting = {
   color: attribute.color(),
-  fontFamily: {},
+  fontFamily: attribute.fontFamily(),
   fontSize: attribute.fontSize(),
-  fontWeight: {},
-  spacing: {}
+  fontWeight: attribute.fontWeight(),
+  spacing: attribute.spacing()
 }
 
 export const withBaseSetting = ({ ...args }) => ({ ...baseSetting, ...args })
