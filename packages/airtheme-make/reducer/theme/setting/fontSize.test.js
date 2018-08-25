@@ -54,34 +54,38 @@ it('`removeFontSize` removes font size', () => {
 
   expect(state).toEqual(updatedState)
 })
-//
-// it('`updateColor` update color', () => {
-//   const initialReference = { key: 'swatch', value: 'primary', ordinal: 1 }
-//   const initialColorA = unit.fontSize(initialReference)
-//   const initialColorB = unit.fontSize(initialReference)
-//   const initialState = withBaseState({
-//     setting: withBaseSetting({
-//       color: attribute.color({ content: [initialColorA, initialColorB] })
-//     })
-//   })
-//   const updatedReference = { key: 'swatch', value: 'secondary', ordinal: 2 }
-//   const updatedColorA = unit.fontSize(updatedReference)
-//   const updatedState = withBaseState({
-//     setting: withBaseSetting({
-//       color: attribute.color({ content: [updatedColorA, initialColorB] })
-//     })
-//   })
-//
-//   store.dispatch(updateTheme(initialState.theme))
-//   store.dispatch(
-//     updateColor(
-//       initialColorA,
-//       updatedReference.value,
-//       updatedReference.key,
-//       updatedReference.ordinal
-//     )
-//   )
-//   const state = store.getState()
-//
-//   expect(state).toEqual(updatedState)
-// })
+
+it('`updateFontSize` update font size', () => {
+  const initialFactor = { key: 'baseFontSize', value: 1, ordinal: 1 }
+  const initialFontSizeA = unit.factor(initialFactor)
+  const initialFontSizeB = unit.factor(initialFactor)
+  const initialState = withBaseState({
+    setting: withBaseSetting({
+      fontSize: attribute.fontSize({
+        content: [initialFontSizeA, initialFontSizeB]
+      })
+    })
+  })
+  const updatedFactor = { key: 'baseFontSize', value: 1.25, ordinal: 2 }
+  const updatedFontSize = unit.factor(updatedFactor)
+  const updatedState = withBaseState({
+    setting: withBaseSetting({
+      fontSize: attribute.fontSize({
+        content: [updatedFontSize, initialFontSizeB]
+      })
+    })
+  })
+
+  store.dispatch(updateTheme(initialState.theme))
+  store.dispatch(
+    updateFontSize(
+      initialFontSizeA,
+      updatedFactor.value,
+      updatedFactor.key,
+      updatedFactor.ordinal
+    )
+  )
+  const state = store.getState()
+
+  expect(state).toEqual(updatedState)
+})
