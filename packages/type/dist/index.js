@@ -292,6 +292,17 @@ const attribute = {
 // Settings hash
 
 var schema$1 = {
+  [dist_13]: {},
+  [dist_14]: {},
+  [dist_15]: {},
+  [dist_16]: {},
+  [dist_18]: {}
+};
+
+// base
+// The base setting object
+
+var base = {
   [dist_13]: attribute.color(),
   [dist_14]: attribute.fontFamily(),
   [dist_15]: attribute.fontSize(),
@@ -300,21 +311,29 @@ var schema$1 = {
 };
 
 // prettier-ignore
-const factoryFor$1 = (schema = {}) => ({
-  color = schema.color,
-  fontFamily = schema.fontFamily,
-  fontSize = schema.fontSize,
-  fontWeight = schema.fontWeight,
-  spacing = schema.spacing
-} = {}) => Object.assign({}, {
+const factoryFor$1 = ({
   color,
   fontFamily,
   fontSize,
   fontWeight,
   spacing
+} = {}, schema) => ({
+  color: instanceColor,
+  fontFamily: instanceFontFamily,
+  fontSize: instanceFontSize,
+  fontWeight: instanceFontWeight,
+  spacing: instanceSpacing
+} = {}) => Object.assign({}, {
+  color: instanceColor || color || schema.color,
+  fontFamily: instanceFontFamily || fontFamily || schema.fontFamily,
+  fontSize: instanceFontSize || fontSize || schema.fontSize,
+  fontWeight: instanceFontWeight || fontWeight || schema.fontWeight,
+  spacing: instanceSpacing || spacing || schema.spacing
 });
 
-const setting = factoryFor$1(schema$1);
+const setting = {
+  base: factoryFor$1(base, schema$1)
+};
 
 // theme
 // The container object
@@ -366,13 +385,13 @@ var schema$2 = {
   // setting
   // Setting : Keyed object of attribute types
 
-  setting: setting()
+  setting: setting.base()
 };
 
-// theme
+// base
 // The container object
 
-var base = {
+var base$1 = {
   name: 'Basic Airtheme',
   type: dist_33,
   baseFontSize: 16,
@@ -411,7 +430,7 @@ const factoryFor$2 = ({
 });
 
 const theme = {
-  base: factoryFor$2(base, schema$2)
+  base: factoryFor$2(base$1, schema$2)
 };
 
 // unit

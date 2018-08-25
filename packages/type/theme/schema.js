@@ -53,5 +53,5 @@ export default {
   // setting
   // Setting : Keyed object of attribute types
 
-  setting: setting()
+  setting: setting.base()
 }

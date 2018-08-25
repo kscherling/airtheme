@@ -3,7 +3,7 @@ import attribute from '../attribute'
 import unit from '../unit'
 
 it('creates `setting`', () => {
-  const result = setting()
+  const result = setting.base()
 
   expect(result).toEqual({
     color: {
@@ -50,7 +50,7 @@ it('creates `setting`', () => {
 })
 
 it('can initialize with custom `attribute`', () => {
-  const result = setting({
+  const result = setting.base({
     color: attribute.color({
       content: [unit.hexa({ value: '#000000, 1' })]
     })

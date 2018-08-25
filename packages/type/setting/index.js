@@ -1,6 +1,9 @@
 import schema from './schema'
+import base from './types/base'
 import factoryFor from './factoryFor'
 
-const setting = factoryFor(schema)
+const setting = {
+  base: factoryFor(base, schema)
+}
 
 export default setting

@@ -1,6 +1,6 @@
 import { BASIC, VERSION } from '@airtheme/core'
 
-// theme
+// base
 // The container object
 
 export default {
