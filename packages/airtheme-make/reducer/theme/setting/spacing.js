@@ -4,7 +4,7 @@ import {
   REMOVE_SPACING,
   UPDATE_SPACING
 } from '../../../constant/spacing'
-import { attribute } from '@airtheme/airtheme-type'
+import { attribute } from '@airtheme/type'
 import { addUnit, removeUnit, updateUnit } from '../../../lib/unitReducers'
 
 const spacing = (state = attribute.spacing(), action) => {

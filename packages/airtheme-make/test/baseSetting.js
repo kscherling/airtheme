@@ -1,4 +1,4 @@
-import { attribute } from '@airtheme/airtheme-type'
+import { attribute } from '@airtheme/type'
 
 const baseSetting = {
   color: attribute.color(),

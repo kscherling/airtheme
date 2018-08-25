@@ -1,4 +1,4 @@
-import { attribute, unit, theme } from '@airtheme/airtheme-type'
+import { attribute, unit, theme } from '@airtheme/type'
 import baseSetting from './baseSetting'
 
 const baseState = {

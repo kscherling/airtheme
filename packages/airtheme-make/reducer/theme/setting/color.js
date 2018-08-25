@@ -1,6 +1,6 @@
 import { UPDATE_THEME } from '../../../constant/root'
 import { ADD_COLOR, UPDATE_COLOR, REMOVE_COLOR } from '../../../constant/color'
-import { attribute } from '@airtheme/airtheme-type'
+import { attribute } from '@airtheme/type'
 import { addUnit, removeUnit, updateUnit } from '../../../lib/unitReducers'
 
 const color = (state = attribute.color(), action) => {

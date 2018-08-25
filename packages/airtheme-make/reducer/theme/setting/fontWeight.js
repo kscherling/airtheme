@@ -4,7 +4,7 @@ import {
   REMOVE_FONT_WEIGHT,
   UPDATE_FONT_WEIGHT
 } from '../../../constant/fontWeight'
-import { attribute } from '@airtheme/airtheme-type'
+import { attribute } from '@airtheme/type'
 import { addUnit, removeUnit, updateUnit } from '../../../lib/unitReducers'
 
 const fontWeight = (state = attribute.fontWeight(), action) => {

@@ -1,4 +1,4 @@
-import { unit } from '@airtheme/airtheme-type'
+import { unit } from '@airtheme/type'
 import { eq, not } from './helpers'
 
 export const addUnit = (state, { key, value, ordinal }) => ({

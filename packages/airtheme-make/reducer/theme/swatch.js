@@ -1,6 +1,6 @@
 import { UPDATE_THEME } from '../../constant/root'
 import { ADD_SWATCH, REMOVE_SWATCH, UPDATE_SWATCH } from '../../constant/swatch'
-import { unit, attribute } from '@airtheme/airtheme-type'
+import { unit, attribute } from '@airtheme/type'
 import { eq, not } from '../../lib/helpers'
 
 const swatch = (state = attribute.swatch(), action) => {

@@ -6,7 +6,7 @@ import {
 } from '../../../action/theme/setting/color'
 import { updateTheme } from '../../../action/root'
 import baseState, { withBaseState } from '../../../test/baseState'
-import { attribute, unit } from '@airtheme/airtheme-type'
+import { attribute, unit } from '@airtheme/type'
 import { withBaseSetting } from '../../../test/baseSetting'
 
 let store

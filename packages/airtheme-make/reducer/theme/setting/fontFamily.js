@@ -4,7 +4,7 @@ import {
   REMOVE_FONT_FAMILY,
   UPDATE_FONT_FAMILY
 } from '../../../constant/fontFamily'
-import { attribute } from '@airtheme/airtheme-type'
+import { attribute } from '@airtheme/type'
 import { addUnit, removeUnit, updateUnit } from '../../../lib/unitReducers'
 
 const fontFamily = (state = attribute.fontFamily(), action) => {
