@@ -165,10 +165,10 @@ var schema = {
 
   content: [],
 
-  // display
+  // view
   // The unit the content items are displayed. User selected.
 
-  display: null,
+  view: null,
 
   // displays
   // Array : Units this type can serialize to.
@@ -194,17 +194,17 @@ var schema = {
 // prettier-ignore
 const factoryFor = ({
   type,
-  display,
+  view,
   unit,
   displays,
   reference,
   content
 } = {}, schema = {}) => ({
-  display: factoryDisplay,
+  view: factoryDisplay,
   content: factoryContent
 } = {}) => Object.assign({}, schema, {
   type: type || schema.type,
-  display: factoryDisplay || display || schema.display,
+  view: factoryDisplay || view || schema.view,
   unit: unit || schema.unit,
   displays: displays || schema.displays,
   reference: reference || schema.reference,
@@ -212,7 +212,7 @@ const factoryFor = ({
 });
 
 var color = {
-  display: dist_40,
+  view: dist_40,
   displays: [dist_40, dist_37, dist_38, dist_42, dist_43],
   reference: dist_9,
   type: dist_2,
@@ -220,7 +220,7 @@ var color = {
 };
 
 var fontFamily = {
-  display: dist_40,
+  view: dist_40,
   displays: [dist_40],
   reference: null,
   type: dist_7,
@@ -228,7 +228,7 @@ var fontFamily = {
 };
 
 var fontSize = {
-  display: dist_36,
+  view: dist_36,
   displays: [dist_36, dist_39, dist_41],
   reference: dist_10,
   type: dist_3,
@@ -236,7 +236,7 @@ var fontSize = {
 };
 
 var fontFace = {
-  display: dist_35,
+  view: dist_35,
   displays: [dist_35],
   reference: null,
   type: dist_6,
@@ -244,7 +244,7 @@ var fontFace = {
 };
 
 var fontWeight = {
-  display: dist_35,
+  view: dist_35,
   displays: [dist_35],
   reference: null,
   type: dist_4,
@@ -252,7 +252,7 @@ var fontWeight = {
 };
 
 var lineHeight = {
-  display: dist_36,
+  view: dist_36,
   displays: [dist_36, dist_39],
   reference: dist_10,
   type: dist_5,
@@ -260,7 +260,7 @@ var lineHeight = {
 };
 
 var spacing = {
-  display: dist_36,
+  view: dist_36,
   displays: [dist_36, dist_39],
   reference: dist_12,
   type: dist_8,
@@ -268,7 +268,7 @@ var spacing = {
 };
 
 var swatch = {
-  display: dist_38,
+  view: dist_38,
   displays: [dist_37, dist_38, dist_42, dist_43],
   reference: null,
   type: dist_9,

@@ -3,7 +3,7 @@ import { FACTOR, PX, REM } from '@airtheme/core'
 import { BASE_FONT_SIZE_KEY } from '@airtheme/core'
 
 export default {
-  display: FACTOR,
+  view: FACTOR,
   displays: [FACTOR, PX, REM],
   reference: BASE_FONT_SIZE_KEY,
   type: FONT_SIZE,

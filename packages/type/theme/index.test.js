@@ -7,7 +7,7 @@ const baseTheme = {
   baseSpacing: 16,
   fontFace: {
     content: [],
-    display: 'string',
+    view: 'string',
     displays: ['string'],
     reference: null,
     type: 'fontFace',
@@ -18,7 +18,7 @@ const baseTheme = {
   setting: {
     color: {
       content: [],
-      display: 'reference',
+      view: 'reference',
       displays: ['reference', 'hex', 'hexa', 'rgb', 'rgba'],
       reference: 'swatch',
       type: 'color',
@@ -26,7 +26,7 @@ const baseTheme = {
     },
     fontFamily: {
       content: [],
-      display: 'reference',
+      view: 'reference',
       displays: ['reference'],
       reference: null,
       type: 'fontFamily',
@@ -34,7 +34,7 @@ const baseTheme = {
     },
     fontSize: {
       content: [],
-      display: 'factor',
+      view: 'factor',
       displays: ['factor', 'px', 'rem'],
       reference: 'baseFontSize',
       type: 'fontSize',
@@ -42,7 +42,7 @@ const baseTheme = {
     },
     fontWeight: {
       content: [],
-      display: 'string',
+      view: 'string',
       displays: ['string'],
       reference: null,
       type: 'fontWeight',
@@ -50,7 +50,7 @@ const baseTheme = {
     },
     spacing: {
       content: [],
-      display: 'factor',
+      view: 'factor',
       displays: ['factor', 'px'],
       reference: 'baseSpacing',
       type: 'spacing',
@@ -59,7 +59,7 @@ const baseTheme = {
   },
   swatch: {
     content: [],
-    display: 'hexa',
+    view: 'hexa',
     displays: ['hex', 'hexa', 'rgb', 'rgba'],
     reference: null,
     type: 'swatch',

@@ -5,7 +5,7 @@ it('creates `color`', () => {
 
   expect(result).toEqual({
     content: [],
-    display: 'reference',
+    view: 'reference',
     displays: ['reference', 'hex', 'hexa', 'rgb', 'rgba'],
     reference: 'swatch',
     type: 'color',
@@ -18,7 +18,7 @@ it('creates `fontFamily`', () => {
 
   expect(result).toEqual({
     content: [],
-    display: 'reference',
+    view: 'reference',
     displays: ['reference'],
     reference: null,
     type: 'fontFamily',
@@ -31,7 +31,7 @@ it('creates `fontSize`', () => {
 
   expect(result).toEqual({
     content: [],
-    display: 'factor',
+    view: 'factor',
     displays: ['factor', 'px', 'rem'],
     reference: 'baseFontSize',
     type: 'fontSize',
@@ -44,7 +44,7 @@ it('creates `fontWeight`', () => {
 
   expect(result).toEqual({
     content: [],
-    display: 'string',
+    view: 'string',
     displays: ['string'],
     reference: null,
     type: 'fontWeight',
@@ -57,7 +57,7 @@ it('creates `lineHeight`', () => {
 
   expect(result).toEqual({
     content: [],
-    display: 'factor',
+    view: 'factor',
     displays: ['factor', 'px'],
     reference: 'baseFontSize',
     type: 'lineHeight',
@@ -70,7 +70,7 @@ it('creates `spacing`', () => {
 
   expect(result).toEqual({
     content: [],
-    display: 'factor',
+    view: 'factor',
     displays: ['factor', 'px'],
     reference: 'baseSpacing',
     type: 'spacing',
@@ -83,7 +83,7 @@ it('creates `swatch`', () => {
 
   expect(result).toEqual({
     content: [],
-    display: 'hexa',
+    view: 'hexa',
     displays: ['hex', 'hexa', 'rgb', 'rgba'],
     reference: null,
     type: 'swatch',

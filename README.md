@@ -59,7 +59,7 @@ Contains Airtheme types and constants shared across packages.
 ##### schema
 
 - `content`
-- `display` // view
+- `view` // view
 - `displays` // viewable
 - `reference` // path to attribute if reference
 - `type`

@@ -8,7 +8,7 @@ it('creates `setting`', () => {
   expect(result).toEqual({
     color: {
       content: [],
-      display: 'reference',
+      view: 'reference',
       displays: ['reference', 'hex', 'hexa', 'rgb', 'rgba'],
       reference: 'swatch',
       type: 'color',
@@ -16,7 +16,7 @@ it('creates `setting`', () => {
     },
     fontFamily: {
       content: [],
-      display: 'reference',
+      view: 'reference',
       displays: ['reference'],
       reference: null,
       type: 'fontFamily',
@@ -24,7 +24,7 @@ it('creates `setting`', () => {
     },
     fontSize: {
       content: [],
-      display: 'factor',
+      view: 'factor',
       displays: ['factor', 'px', 'rem'],
       reference: 'baseFontSize',
       type: 'fontSize',
@@ -32,7 +32,7 @@ it('creates `setting`', () => {
     },
     fontWeight: {
       content: [],
-      display: 'string',
+      view: 'string',
       displays: ['string'],
       reference: null,
       type: 'fontWeight',
@@ -40,7 +40,7 @@ it('creates `setting`', () => {
     },
     spacing: {
       content: [],
-      display: 'factor',
+      view: 'factor',
       displays: ['factor', 'px'],
       reference: 'baseSpacing',
       type: 'spacing',
@@ -58,7 +58,7 @@ it('can initialize with custom `attribute`', () => {
 
   expect(result.color).toEqual({
     content: [{ key: null, ordinal: null, type: 'hexa', value: '#000000, 1' }],
-    display: 'reference',
+    view: 'reference',
     displays: ['reference', 'hex', 'hexa', 'rgb', 'rgba'],
     reference: 'swatch',
     type: 'color',

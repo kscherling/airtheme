@@ -9,10 +9,10 @@ export default {
 
   content: [],
 
-  // display
+  // view
   // The unit the content items are displayed. User selected.
 
-  display: null,
+  view: null,
 
   // displays
   // Array : Units this type can serialize to.
