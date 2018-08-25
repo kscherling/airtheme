@@ -7,15 +7,15 @@ export const addColor = (value, key, ordinal) => ({
   ordinal
 })
 
+export const removeColor = original => ({
+  type: REMOVE_COLOR,
+  original
+})
+
 export const updateColor = (original, value, key, ordinal) => ({
   type: UPDATE_COLOR,
   original,
   value,
   key,
   ordinal
-})
-
-export const removeColor = original => ({
-  type: REMOVE_COLOR,
-  original
 })
