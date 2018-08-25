@@ -88,6 +88,10 @@ Contains common Airtheme utilities.
 
 Redux store and actions for working with an Airtheme object.
 
-## @airtheme/css-in-js
+## @airtheme/assembly
 
 Serializes Airtheme object in css-in-js consumable obj. Build script for generating dynamically, outputing to project.
+
+## @airtheme/transform
+
+Transform theme types between compatable
