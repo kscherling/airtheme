@@ -262,4 +262,16 @@ Serializes Airtheme object in css-in-js consumable obj. Build script for generat
 
 ## @airtheme/transform
 
-Transform theme types between compatable
+Transform theme types between compatible units.
+
+## @airtheme/spec
+
+Displays a theme configuration graphically.
+
+## @airtheme/mod
+
+Rich controls update a theme configuration.
+
+## @airtheme/io
+
+Main application.

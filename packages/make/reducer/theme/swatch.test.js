@@ -1,4 +1,4 @@
-import createStore from '../../store/index'
+import makeStore from '../../store/index'
 import {
   updateSwatch,
   addSwatch,
@@ -11,7 +11,7 @@ import { attribute, unit } from '@airtheme/type'
 let store
 
 beforeEach(() => {
-  store = createStore()
+  store = makeStore()
   store.dispatch(updateTheme(baseState.theme))
 })
 

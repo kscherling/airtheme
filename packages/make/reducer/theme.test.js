@@ -1,4 +1,4 @@
-import createStore from '../store/index'
+import makeStore from '../store/index'
 import {
   updateBaseFontSize,
   updateBaseLineHeight,
@@ -12,7 +12,7 @@ import baseState, { withBaseState } from '../test/baseState'
 let store
 
 beforeEach(() => {
-  store = createStore()
+  store = makeStore()
   store.dispatch(updateTheme(baseState.theme))
 })
 

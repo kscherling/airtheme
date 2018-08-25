@@ -1,4 +1,4 @@
-import createStore from '../../../store/index'
+import makeStore from '../../../store/index'
 import {
   addFontWeight,
   updateFontWeight,
@@ -12,7 +12,7 @@ import { withBaseSetting } from '../../../test/baseSetting'
 let store
 
 beforeEach(() => {
-  store = createStore()
+  store = makeStore()
   store.dispatch(updateTheme(baseState.theme))
 })
 

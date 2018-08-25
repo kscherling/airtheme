@@ -1,4 +1,4 @@
-import createStore from '../store/index'
+import makeStore from '../store/index'
 import {
   updateBaseFontSize,
   updateBaseLineHeight,
@@ -11,7 +11,7 @@ import baseState from '../test/baseState'
 import updatedState from '../test/updatedState'
 
 it('initial state (baseState)', () => {
-  const store = createStore()
+  const store = makeStore()
 
   const state = store.getState()
 
@@ -19,7 +19,7 @@ it('initial state (baseState)', () => {
 })
 
 it('`updateTheme` updates theme', () => {
-  const store = createStore()
+  const store = makeStore()
 
   store.dispatch(updateTheme(updatedState.theme))
   const state = store.getState()
