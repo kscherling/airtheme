@@ -40,6 +40,10 @@ export default {
   // Swatch : Swatch attribute type
   swatch: attribute.swatch(),
 
+  // fontFace
+  // FontFace : fontFace attribute type
+  fontFace: attribute.fontFace(),
+
   // setting
   // Setting : Keyed object of attribute types
 

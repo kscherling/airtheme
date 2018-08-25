@@ -5,6 +5,14 @@ const baseTheme = {
   baseFontSize: 16,
   baseLineHeight: 1.15,
   baseSpacing: 16,
+  fontFace: {
+    content: [],
+    display: 'string',
+    displays: ['string'],
+    reference: null,
+    type: 'fontFace',
+    unit: 'string'
+  },
   id: null,
   name: 'Basic Airtheme',
   setting: {
@@ -75,8 +83,9 @@ it('initializes with prop overrides', () => {
     id: 123,
     name: 'My Theme',
     ordinal: 1,
-    setting: { a: 1 },
-    swatch: [1, 2, 3]
+    setting: { a: 'a' },
+    swatch: { a: 'a' },
+    fontFace: { a: 'a' }
   })
 
   expect(result).toEqual({
@@ -85,8 +94,9 @@ it('initializes with prop overrides', () => {
     baseSpacing: 14,
     id: 123,
     name: 'My Theme',
-    setting: { a: 1 },
-    swatch: [1, 2, 3],
+    setting: { a: 'a' },
+    swatch: { a: 'a' },
+    fontFace: { a: 'a' },
     type: 'airtheme',
     version: '0.1.0'
   })

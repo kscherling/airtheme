@@ -1,5 +1,14 @@
 const factoryFor = (
-  { name, id, baseFontSize, baseLineHeight, baseSpacing, swatch, setting } = {},
+  {
+    name,
+    id,
+    baseFontSize,
+    baseLineHeight,
+    baseSpacing,
+    fontFace,
+    swatch,
+    setting
+  } = {},
   schema
 ) => ({
   name: instanceName,
@@ -7,6 +16,7 @@ const factoryFor = (
   baseFontSize: instanceBaseFontSize,
   baseLineHeight: instanceBaseLineHeight,
   baseSpacing: instanceBaseSpacing,
+  fontFace: instanceFontFace,
   swatch: instanceSwatch,
   setting: instanceSetting
 } = {}) =>
@@ -17,6 +27,7 @@ const factoryFor = (
     baseLineHeight:
       instanceBaseLineHeight || baseLineHeight || schema.baseLineHeight,
     baseSpacing: instanceBaseSpacing || baseSpacing || schema.baseSpacing,
+    fontFace: instanceFontFace || fontFace || schema.fontFace,
     swatch: instanceSwatch || swatch || schema.swatch,
     setting: instanceSetting || setting || schema.setting
   })
