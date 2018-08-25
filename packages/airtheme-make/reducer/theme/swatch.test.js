@@ -30,17 +30,17 @@ it('`addSwatch` adds a swatch', () => {
 
 it('`removeSwatch` removes a swatch', () => {
   const hexa = '#000000,1'
-  const initialSwatchA = unit.hexa({ value: hexa })
-  const initialSwatchB = unit.hexa({ value: hexa })
+  const swatchA = unit.hexa({ value: hexa })
+  const swatchB = unit.hexa({ value: hexa })
   const initialState = withBaseState({
-    swatch: attribute.swatch({ content: [initialSwatchA, initialSwatchB] })
+    swatch: attribute.swatch({ content: [swatchA, swatchB] })
   })
   const updatedState = withBaseState({
-    swatch: attribute.swatch({ content: [initialSwatchB] })
+    swatch: attribute.swatch({ content: [swatchB] })
   })
 
   store.dispatch(updateTheme(initialState.theme))
-  store.dispatch(removeSwatch(initialSwatchA))
+  store.dispatch(removeSwatch(swatchA))
   const state = store.getState()
 
   expect(state).toEqual(updatedState)

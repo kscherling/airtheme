@@ -23,7 +23,7 @@ const color = (state = attribute.color(), action) => {
     case REMOVE_COLOR:
       return {
         ...state,
-        content: [state.content.filter(not(action.colorObj))]
+        content: state.content.filter(not(action.original))
       }
     case UPDATE_COLOR:
       return {

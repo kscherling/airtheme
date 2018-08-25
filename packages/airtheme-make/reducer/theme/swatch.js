@@ -15,7 +15,7 @@ const swatch = (state = attribute.swatch(), action) => {
     case REMOVE_SWATCH:
       return {
         ...state,
-        content: state.content.filter(not(action.swatchObj))
+        content: state.content.filter(not(action.original))
       }
     case UPDATE_SWATCH:
       return {

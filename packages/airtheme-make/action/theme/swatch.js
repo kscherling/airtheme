@@ -5,9 +5,9 @@ export const addSwatch = swatch => ({
   swatch
 })
 
-export const removeSwatch = swatchObj => ({
+export const removeSwatch = original => ({
   type: REMOVE_SWATCH,
-  swatchObj
+  original
 })
 
 export const updateSwatch = (original, updatedVal) => ({

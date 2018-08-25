@@ -33,6 +33,28 @@ it('`addColor` adds a color', () => {
   expect(state).toEqual(updatedState)
 })
 
+it('`removeColor` removes color', () => {
+  const reference = { key: 'swatch', value: 'primary', ordinal: 1 }
+  const colorA = unit.reference(reference)
+  const colorB = unit.reference(reference)
+  const initialState = withBaseState({
+    setting: withBaseSetting({
+      color: attribute.color({ content: [colorA, colorB] })
+    })
+  })
+  const updatedState = withBaseState({
+    setting: withBaseSetting({
+      color: attribute.color({ content: [colorB] })
+    })
+  })
+
+  store.dispatch(updateTheme(initialState.theme))
+  store.dispatch(removeColor(colorA))
+  const state = store.getState()
+
+  expect(state).toEqual(updatedState)
+})
+
 it('`updateColor` update color', () => {
   const initialReference = { key: 'swatch', value: 'primary', ordinal: 1 }
   const initialColorA = unit.reference(initialReference)
