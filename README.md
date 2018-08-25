@@ -2,9 +2,9 @@
 
 ## @airtheme/type
 
-Contains Airtheme types and constants shared across packages.
+Types, Schemas and factories for theme configuration objects.
 
-#### Classes
+#### Types
 
 ---
 
@@ -108,7 +108,7 @@ Contains Airtheme types and constants shared across packages.
 
 ## @airtheme/core
 
-Constants and global utilities.
+Constants and globals for theme configuration object.
 
 ##### themeAttributes
 
@@ -174,7 +174,7 @@ Constants and global utilities.
 
 ## @airtheme/make
 
-Redux store and actions for working with an Airtheme object.
+Redux store and action creators for creating and updating a theme configuration object.
 
 ---
 
@@ -258,19 +258,19 @@ store.dispatch(updateTheme({ theme }))
 
 ## @airtheme/assembly
 
-Serializes Airtheme object in css-in-js consumable obj. Build script for generating dynamically, outputing to project.
+Assemble theme configuration objects into consumable formats.
 
 ## @airtheme/transform
 
-Transform theme types between compatible units.
+Transform theme units to transformable units.
 
 ## @airtheme/spec
 
-Displays a theme configuration graphically.
+Displays theme configuration object graphically.
 
 ## @airtheme/mod
 
-Rich controls update a theme configuration.
+Rich controls to update theme configuration object.
 
 ## @airtheme/io
 
