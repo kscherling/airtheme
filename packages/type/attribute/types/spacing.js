@@ -1,6 +1,6 @@
-import { SPACING } from '@airtheme/airtheme-core'
-import { FACTOR, PX } from '@airtheme/airtheme-core'
-import { BASE_SPACING_KEY } from '@airtheme/airtheme-core'
+import { SPACING } from '@airtheme/core'
+import { FACTOR, PX } from '@airtheme/core'
+import { BASE_SPACING_KEY } from '@airtheme/core'
 
 export default {
   display: FACTOR,

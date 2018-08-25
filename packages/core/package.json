@@ -1,5 +1,5 @@
 {
-  "name": "@airtheme/airtheme-core",
+  "name": "@airtheme/core",
   "version": "0.1.0",
   "author": "Kyle Scherling",
   "main": "dist/index.js",

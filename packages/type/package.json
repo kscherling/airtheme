@@ -9,7 +9,7 @@
     "build:watch": "yarn run build --watch"
   },
   "dependencies": {
-    "@airtheme/airtheme-core": "^0.1.0"
+    "@airtheme/core": "^0.1.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

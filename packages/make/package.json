@@ -9,7 +9,7 @@
     "build:watch": "yarn run build --watch"
   },
   "dependencies": {
-    "@airtheme/airtheme-core": "^0.1.0",
+    "@airtheme/core": "^0.1.0",
     "@airtheme/type": "^0.1.0",
     "redux": "^4.0.0"
   },

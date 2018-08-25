@@ -1,4 +1,4 @@
-import { FONT_FACE, STRING } from '@airtheme/airtheme-core'
+import { FONT_FACE, STRING } from '@airtheme/core'
 
 export default {
   display: STRING,

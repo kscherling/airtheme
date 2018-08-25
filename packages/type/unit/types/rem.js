@@ -1,4 +1,4 @@
-import { REM } from '@airtheme/airtheme-core'
+import { REM } from '@airtheme/core'
 
 // rem (int)
 // a css rem unit

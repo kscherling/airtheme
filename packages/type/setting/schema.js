@@ -11,7 +11,7 @@ import {
   SPACING_KEY,
   SWATCH_KEY,
   UTILITY_KEY
-} from '@airtheme/airtheme-core'
+} from '@airtheme/core'
 
 // setting
 // Settings hash

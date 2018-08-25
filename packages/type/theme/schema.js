@@ -1,5 +1,5 @@
-import { _ROOT_THEME_ } from '@airtheme/airtheme-core'
-import { VERSION } from '@airtheme/airtheme-core'
+import { _ROOT_THEME_ } from '@airtheme/core'
+import { VERSION } from '@airtheme/core'
 import attribute from '../attribute'
 import setting from '../setting'
 

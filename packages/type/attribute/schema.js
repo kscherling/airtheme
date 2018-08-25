@@ -1,4 +1,4 @@
-import { _ROOT_ATTRIBUTE_ } from '@airtheme/airtheme-core'
+import { _ROOT_ATTRIBUTE_ } from '@airtheme/core'
 
 // Attribute
 // type for a theme attribute, has many units

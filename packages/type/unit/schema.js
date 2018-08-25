@@ -1,4 +1,4 @@
-import { _ROOT_UNIT_ } from '@airtheme/airtheme-core'
+import { _ROOT_UNIT_ } from '@airtheme/core'
 
 // unit
 // A typed unit for communicating css units

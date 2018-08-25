@@ -1,5 +1,5 @@
-import { COLOR, SWATCH } from '@airtheme/airtheme-core'
-import { REFERENCE, HEX, HEXA, RGB, RGBA } from '@airtheme/airtheme-core'
+import { COLOR, SWATCH } from '@airtheme/core'
+import { REFERENCE, HEX, HEXA, RGB, RGBA } from '@airtheme/core'
 
 export default {
   display: REFERENCE,
