@@ -8,7 +8,7 @@ Contains Airtheme types and constants shared across packages.
 
 ##### types
 
-- basic // !!! base
+- base
 
 ##### schema
 

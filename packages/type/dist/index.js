@@ -320,7 +320,13 @@ const setting = factoryFor$1(schema$1);
 // The container object
 
 var schema$2 = {
+  // name
+  // Friendly name of the theme
+
   name: null,
+
+  // id
+  // you know, the id
 
   id: null,
 
@@ -366,7 +372,7 @@ var schema$2 = {
 // theme
 // The container object
 
-var basic = {
+var base = {
   name: 'Basic Airtheme',
   type: dist_33,
   baseFontSize: 16,
@@ -405,7 +411,7 @@ const factoryFor$2 = ({
 });
 
 const theme = {
-  basic: factoryFor$2(basic, schema$2)
+  base: factoryFor$2(base, schema$2)
 };
 
 // unit

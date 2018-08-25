@@ -1,9 +1,9 @@
 import schema from './schema'
-import basic from './types/basic'
+import base from './types/base'
 import factoryFor from './factoryFor'
 
 const theme = {
-  basic: factoryFor(basic, schema)
+  base: factoryFor(base, schema)
 }
 
 export default theme

@@ -7,7 +7,13 @@ import setting from '../setting'
 // The container object
 
 export default {
+  // name
+  // Friendly name of the theme
+
   name: null,
+
+  // id
+  // you know, the id
 
   id: null,
 
