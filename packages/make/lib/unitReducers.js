@@ -1,9 +1,9 @@
 import { unit } from '@airtheme/type'
 import { eq, not } from './helpers'
 
-export const addUnit = (state, { key, value, ordinal }) => ({
+export const addUnit = (state, { reference, value, ordinal }) => ({
   ...state,
-  content: [...state.content, unit[state.unit]({ key, ordinal, value })]
+  content: [...state.content, unit[state.unit]({ reference, ordinal, value })]
 })
 
 export const removeUnit = (state, { original }) => ({
@@ -11,9 +11,9 @@ export const removeUnit = (state, { original }) => ({
   content: state.content.filter(not(original))
 })
 
-export const updateUnit = (state, { original, key, value, ordinal }) => ({
+export const updateUnit = (state, { original, reference, value, ordinal }) => ({
   ...state,
   content: state.content.map(
-    unit => (eq(unit, original) ? { ...unit, value, key, ordinal } : unit)
+    unit => (eq(unit, original) ? { ...unit, value, reference, ordinal } : unit)
   )
 })

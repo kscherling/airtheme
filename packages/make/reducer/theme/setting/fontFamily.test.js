@@ -18,23 +18,23 @@ beforeEach(() => {
 
 it('`addFontFamily` adds a font family', () => {
   const value = 'Roboto'
-  const key = 'fontFace'
+  const reference = 'fontFace'
   const ordinal = 1
-  const initialFontFamily = unit.reference({ key, value, ordinal })
+  const initialFontFamily = unit.reference({ reference, value, ordinal })
   const updatedState = withBaseState({
     setting: withBaseSetting({
       fontFamily: attribute.fontFamily({ content: [initialFontFamily] })
     })
   })
 
-  store.dispatch(addFontFamily(value, key, ordinal))
+  store.dispatch(addFontFamily(value, reference, ordinal))
   const state = store.getState()
 
   expect(state).toEqual(updatedState)
 })
 
 it('`removeFontFamily` removes font family', () => {
-  const reference = { key: 'fontFace', value: 'Roboto', ordinal: 1 }
+  const reference = { reference: 'fontFace', value: 'Roboto', ordinal: 1 }
   const fontFamilyA = unit.reference(reference)
   const fontFamilyB = unit.reference(reference)
   const initialState = withBaseState({
@@ -56,7 +56,7 @@ it('`removeFontFamily` removes font family', () => {
 })
 
 it('`updateFontFamily` update font family', () => {
-  const initialFactor = { key: 'fontFace', value: 'Roboto', ordinal: 1 }
+  const initialFactor = { reference: 'fontFace', value: 'Roboto', ordinal: 1 }
   const initialFontFamilyA = unit.reference(initialFactor)
   const initialFontFamilyB = unit.reference(initialFactor)
   const initialState = withBaseState({
@@ -66,7 +66,7 @@ it('`updateFontFamily` update font family', () => {
       })
     })
   })
-  const updatedFactor = { key: 'fontFace', value: 'Open Sans', ordinal: 2 }
+  const updatedFactor = { reference: 'fontFace', value: 'Open Sans', ordinal: 2 }
   const updatedFontFamily = unit.reference(updatedFactor)
   const updatedState = withBaseState({
     setting: withBaseSetting({
@@ -81,7 +81,7 @@ it('`updateFontFamily` update font family', () => {
     updateFontFamily(
       initialFontFamilyA,
       updatedFactor.value,
-      updatedFactor.key,
+      updatedFactor.reference,
       updatedFactor.ordinal
     )
   )

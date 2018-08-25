@@ -5,7 +5,7 @@ import { _ROOT_ATTRIBUTE_ } from '@airtheme/core'
 
 export default {
   // content
-  // Object : key/val store for settings. User selected.
+  // Object : reference/val store for settings. User selected.
 
   content: [],
 

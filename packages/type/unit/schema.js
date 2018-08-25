@@ -4,10 +4,10 @@ import { _ROOT_UNIT_ } from '@airtheme/core'
 // A typed unit for communicating css units
 
 export default {
-  // key
-  // string : the key of the unit
+  // reference
+  // string : the reference of the unit
 
-  key: null,
+  reference: null,
 
   // ordinal
   // int : the stack order index

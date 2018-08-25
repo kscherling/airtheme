@@ -57,7 +57,7 @@ it('can initialize with custom `attribute`', () => {
   })
 
   expect(result.color).toEqual({
-    content: [{ key: null, ordinal: null, type: 'hexa', value: '#000000, 1' }],
+    content: [{ reference: null, ordinal: null, type: 'hexa', value: '#000000, 1' }],
     view: 'reference',
     viewable: ['reference', 'hex', 'hexa', 'rgb', 'rgba'],
     reference: 'swatch',

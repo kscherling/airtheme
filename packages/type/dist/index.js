@@ -161,7 +161,7 @@ var dist_44 = dist.VERSION;
 
 var schema = {
   // content
-  // Object : key/val store for settings. User selected.
+  // Object : reference/val store for settings. User selected.
 
   content: [],
 
@@ -350,17 +350,17 @@ var schema$2 = {
   id: null,
 
   // baseFontSize
-  // string : the key of the unit
+  // string : the reference of the unit
 
   baseFontSize: 16,
 
   // baseLineHeight
-  // string : the key of the unit
+  // string : the reference of the unit
 
   baseLineHeight: 1.15,
 
   // baseSpacing
-  // string : the key of the unit
+  // string : the reference of the unit
 
   baseSpacing: 16,
 
@@ -437,10 +437,10 @@ const theme = {
 // A typed unit for communicating css units
 
 var schema$3 = {
-  // key
-  // string : the key of the unit
+  // reference
+  // string : the reference of the unit
 
-  key: null,
+  reference: null,
 
   // ordinal
   // int : the stack order index
@@ -463,9 +463,9 @@ var schema$3 = {
 // returns a function used to create new unit instances
 
 // prettier-ignore
-const factoryFor$3 = ({ type } = {}, schema) => ({ value, key, ordinal } = {}) => Object.assign({}, schema, { type }, {
+const factoryFor$3 = ({ type } = {}, schema) => ({ value, reference, ordinal } = {}) => Object.assign({}, schema, { type }, {
   value: value || schema.value,
-  key: key || schema.key,
+  reference: reference || schema.reference,
   ordinal: ordinal || schema.ordinal
 });
 

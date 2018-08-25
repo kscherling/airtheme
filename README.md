@@ -59,11 +59,11 @@ Contains Airtheme types and constants shared across packages.
 ##### schema
 
 - `content`
-- `view` // view
-- `displays` // viewable
-- `reference` // path to attribute if reference
+- `view`
+- `viewable`
+- `reference`
 - `type`
-- `unit` // stored as unit
+- `unit`
 
 ### unit
 
@@ -83,7 +83,7 @@ Contains Airtheme types and constants shared across packages.
 
 ##### schema
 
-- `key` // !!! reference - reference matches attribute reference for convenience
+- `reference` // !!! reference - reference matches attribute reference for convenience
 - `ordinal` // for stack order
 - `type`
 - `value` // the payload - decorated by type

@@ -4,9 +4,9 @@ import {
   REMOVE_FONT_SIZE
 } from '../../../constant/fontSize'
 
-export const addFontSize = (value, key, ordinal) => ({
+export const addFontSize = (value, reference, ordinal) => ({
   type: ADD_FONT_SIZE,
-  key,
+  reference,
   ordinal,
   value
 })
@@ -16,9 +16,9 @@ export const removeFontSize = original => ({
   original
 })
 
-export const updateFontSize = (original, value, key, ordinal) => ({
+export const updateFontSize = (original, value, reference, ordinal) => ({
   type: UPDATE_FONT_SIZE,
-  key,
+  reference,
   ordinal,
   original,
   value

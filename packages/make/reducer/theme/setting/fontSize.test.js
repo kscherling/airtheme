@@ -18,23 +18,23 @@ beforeEach(() => {
 
 it('`addFontSize` adds a font size', () => {
   const value = 1
-  const key = 'basefontSize'
+  const reference = 'basefontSize'
   const ordinal = 1
-  const initialFontSize = unit.factor({ key, value, ordinal })
+  const initialFontSize = unit.factor({ reference, value, ordinal })
   const updatedState = withBaseState({
     setting: withBaseSetting({
       fontSize: attribute.fontSize({ content: [initialFontSize] })
     })
   })
 
-  store.dispatch(addFontSize(value, key, ordinal))
+  store.dispatch(addFontSize(value, reference, ordinal))
   const state = store.getState()
 
   expect(state).toEqual(updatedState)
 })
 
 it('`removeFontSize` removes font size', () => {
-  const factor = { key: 'baseFontSize', value: 1, ordinal: 1 }
+  const factor = { reference: 'baseFontSize', value: 1, ordinal: 1 }
   const fontSizeA = unit.factor(factor)
   const fontSizeB = unit.factor(factor)
   const initialState = withBaseState({
@@ -56,7 +56,7 @@ it('`removeFontSize` removes font size', () => {
 })
 
 it('`updateFontSize` update font size', () => {
-  const initialFactor = { key: 'baseFontSize', value: 1, ordinal: 1 }
+  const initialFactor = { reference: 'baseFontSize', value: 1, ordinal: 1 }
   const initialFontSizeA = unit.factor(initialFactor)
   const initialFontSizeB = unit.factor(initialFactor)
   const initialState = withBaseState({
@@ -66,7 +66,7 @@ it('`updateFontSize` update font size', () => {
       })
     })
   })
-  const updatedFactor = { key: 'baseFontSize', value: 1.25, ordinal: 2 }
+  const updatedFactor = { reference: 'baseFontSize', value: 1.25, ordinal: 2 }
   const updatedFontSize = unit.factor(updatedFactor)
   const updatedState = withBaseState({
     setting: withBaseSetting({
@@ -81,7 +81,7 @@ it('`updateFontSize` update font size', () => {
     updateFontSize(
       initialFontSizeA,
       updatedFactor.value,
-      updatedFactor.key,
+      updatedFactor.reference,
       updatedFactor.ordinal
     )
   )

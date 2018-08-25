@@ -18,17 +18,17 @@ export default {
   id: null,
 
   // baseFontSize
-  // string : the key of the unit
+  // string : the reference of the unit
 
   baseFontSize: 16,
 
   // baseLineHeight
-  // string : the key of the unit
+  // string : the reference of the unit
 
   baseLineHeight: 1.15,
 
   // baseSpacing
-  // string : the key of the unit
+  // string : the reference of the unit
 
   baseSpacing: 16,
 

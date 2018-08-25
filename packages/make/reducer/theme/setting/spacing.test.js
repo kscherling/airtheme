@@ -18,23 +18,23 @@ beforeEach(() => {
 
 it('`addSpacing` adds a font size', () => {
   const value = 1
-  const key = 'baseSpacing'
+  const reference = 'baseSpacing'
   const ordinal = 1
-  const initialSpacing = unit.factor({ key, value, ordinal })
+  const initialSpacing = unit.factor({ reference, value, ordinal })
   const updatedState = withBaseState({
     setting: withBaseSetting({
       spacing: attribute.spacing({ content: [initialSpacing] })
     })
   })
 
-  store.dispatch(addSpacing(value, key, ordinal))
+  store.dispatch(addSpacing(value, reference, ordinal))
   const state = store.getState()
 
   expect(state).toEqual(updatedState)
 })
 
 it('`removeSpacing` removes font size', () => {
-  const factor = { key: 'baseSpacing', value: 1, ordinal: 1 }
+  const factor = { reference: 'baseSpacing', value: 1, ordinal: 1 }
   const spacingA = unit.factor(factor)
   const spacingB = unit.factor(factor)
   const initialState = withBaseState({
@@ -56,7 +56,7 @@ it('`removeSpacing` removes font size', () => {
 })
 
 it('`updateSpacing` update font size', () => {
-  const initialFactor = { key: 'baseSpacing', value: 1, ordinal: 1 }
+  const initialFactor = { reference: 'baseSpacing', value: 1, ordinal: 1 }
   const initialSpacingA = unit.factor(initialFactor)
   const initialSpacingB = unit.factor(initialFactor)
   const initialState = withBaseState({
@@ -66,7 +66,7 @@ it('`updateSpacing` update font size', () => {
       })
     })
   })
-  const updatedFactor = { key: 'baseSpacing', value: 1.25, ordinal: 2 }
+  const updatedFactor = { reference: 'baseSpacing', value: 1.25, ordinal: 2 }
   const updatedSpacing = unit.factor(updatedFactor)
   const updatedState = withBaseState({
     setting: withBaseSetting({
@@ -81,7 +81,7 @@ it('`updateSpacing` update font size', () => {
     updateSpacing(
       initialSpacingA,
       updatedFactor.value,
-      updatedFactor.key,
+      updatedFactor.reference,
       updatedFactor.ordinal
     )
   )

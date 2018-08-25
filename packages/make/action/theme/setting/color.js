@@ -1,8 +1,8 @@
 import { ADD_COLOR, UPDATE_COLOR, REMOVE_COLOR } from '../../../constant/color'
 
-export const addColor = (value, key, ordinal) => ({
+export const addColor = (value, reference, ordinal) => ({
   type: ADD_COLOR,
-  key,
+  reference,
   ordinal,
   value
 })
@@ -12,9 +12,9 @@ export const removeColor = original => ({
   original
 })
 
-export const updateColor = (original, value, key, ordinal) => ({
+export const updateColor = (original, value, reference, ordinal) => ({
   type: UPDATE_COLOR,
-  key,
+  reference,
   ordinal,
   original,
   value
