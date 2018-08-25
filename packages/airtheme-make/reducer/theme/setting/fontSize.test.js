@@ -33,39 +33,39 @@ it('`addFontSize` adds a font size', () => {
   expect(state).toEqual(updatedState)
 })
 
-// it('`removeColor` removes color', () => {
-//   const reference = { key: 'swatch', value: 'primary', ordinal: 1 }
-//   const colorA = unit.reference(reference)
-//   const colorB = unit.reference(reference)
-//   const initialState = withBaseState({
-//     setting: withBaseSetting({
-//       color: attribute.color({ content: [colorA, colorB] })
-//     })
-//   })
-//   const updatedState = withBaseState({
-//     setting: withBaseSetting({
-//       color: attribute.color({ content: [colorB] })
-//     })
-//   })
-//
-//   store.dispatch(updateTheme(initialState.theme))
-//   store.dispatch(removeColor(colorA))
-//   const state = store.getState()
-//
-//   expect(state).toEqual(updatedState)
-// })
+it('`removeFontSize` removes font size', () => {
+  const factor = { key: 'baseFontSize', value: 1, ordinal: 1 }
+  const fontSizeA = unit.factor(factor)
+  const fontSizeB = unit.factor(factor)
+  const initialState = withBaseState({
+    setting: withBaseSetting({
+      fontSize: attribute.fontSize({ content: [fontSizeA, fontSizeB] })
+    })
+  })
+  const updatedState = withBaseState({
+    setting: withBaseSetting({
+      fontSize: attribute.fontSize({ content: [fontSizeB] })
+    })
+  })
+
+  store.dispatch(updateTheme(initialState.theme))
+  store.dispatch(removeFontSize(fontSizeA))
+  const state = store.getState()
+
+  expect(state).toEqual(updatedState)
+})
 //
 // it('`updateColor` update color', () => {
 //   const initialReference = { key: 'swatch', value: 'primary', ordinal: 1 }
-//   const initialColorA = unit.reference(initialReference)
-//   const initialColorB = unit.reference(initialReference)
+//   const initialColorA = unit.fontSize(initialReference)
+//   const initialColorB = unit.fontSize(initialReference)
 //   const initialState = withBaseState({
 //     setting: withBaseSetting({
 //       color: attribute.color({ content: [initialColorA, initialColorB] })
 //     })
 //   })
 //   const updatedReference = { key: 'swatch', value: 'secondary', ordinal: 2 }
-//   const updatedColorA = unit.reference(updatedReference)
+//   const updatedColorA = unit.fontSize(updatedReference)
 //   const updatedState = withBaseState({
 //     setting: withBaseSetting({
 //       color: attribute.color({ content: [updatedColorA, initialColorB] })

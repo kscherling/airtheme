@@ -3,7 +3,7 @@ import { attribute } from '@airtheme/airtheme-type'
 const baseSetting = {
   color: attribute.color(),
   fontFamily: {},
-  fontSize: {},
+  fontSize: attribute.fontSize(),
   fontWeight: {},
   spacing: {}
 }
