@@ -2,7 +2,7 @@ import schema from './schema'
 import factoryFor from './factoryFor'
 
 const type = {
-  content: {},
+  content: [],
   display: 'factor',
   displays: ['factor', 'px', 'rem'],
   reference: 'baseFontSize',
@@ -22,7 +22,7 @@ it('returns factory', () => {
   const instance = factory()
 
   expect(instance).toEqual({
-    content: {},
+    content: [],
     display: 'factor',
     displays: ['factor', 'px', 'rem'],
     reference: 'baseFontSize',

@@ -7,9 +7,12 @@ export const addColor = (value, key, ordinal) => ({
   ordinal
 })
 
-export const updateColor = reference => ({
-  type: ADD_COLOR,
-  reference
+export const updateColor = (original, value, key, ordinal) => ({
+  type: UPDATE_COLOR,
+  original,
+  value,
+  key,
+  ordinal
 })
 
 export const removeColor = reference => ({

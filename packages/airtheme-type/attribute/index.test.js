@@ -4,7 +4,7 @@ it('creates `color`', () => {
   const result = attributes.color()
 
   expect(result).toEqual({
-    content: {},
+    content: [],
     display: 'reference',
     displays: ['reference', 'hex', 'hexa', 'rgb', 'rgba'],
     reference: 'swatch',
@@ -17,7 +17,7 @@ it('creates `fontFamily`', () => {
   const result = attributes.fontFamily()
 
   expect(result).toEqual({
-    content: {},
+    content: [],
     display: 'reference',
     displays: ['reference'],
     reference: null,
@@ -30,7 +30,7 @@ it('creates `fontSize`', () => {
   const result = attributes.fontSize()
 
   expect(result).toEqual({
-    content: {},
+    content: [],
     display: 'factor',
     displays: ['factor', 'px', 'rem'],
     reference: 'baseFontSize',
@@ -43,7 +43,7 @@ it('creates `fontWeight`', () => {
   const result = attributes.fontWeight()
 
   expect(result).toEqual({
-    content: {},
+    content: [],
     display: 'string',
     displays: ['string'],
     reference: null,
@@ -56,7 +56,7 @@ it('creates `lineHeight`', () => {
   const result = attributes.lineHeight()
 
   expect(result).toEqual({
-    content: {},
+    content: [],
     display: 'factor',
     displays: ['factor', 'px'],
     reference: 'baseFontSize',
@@ -69,7 +69,7 @@ it('creates `spacing`', () => {
   const result = attributes.spacing()
 
   expect(result).toEqual({
-    content: {},
+    content: [],
     display: 'factor',
     displays: ['factor', 'px'],
     reference: 'baseSpacing',

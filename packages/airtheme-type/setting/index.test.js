@@ -7,7 +7,7 @@ it('creates `setting`', () => {
 
   expect(result).toEqual({
     color: {
-      content: {},
+      content: [],
       display: 'reference',
       displays: ['reference', 'hex', 'hexa', 'rgb', 'rgba'],
       reference: 'swatch',
@@ -15,7 +15,7 @@ it('creates `setting`', () => {
       unit: 'reference'
     },
     fontFamily: {
-      content: {},
+      content: [],
       display: 'reference',
       displays: ['reference'],
       reference: null,
@@ -23,7 +23,7 @@ it('creates `setting`', () => {
       unit: 'reference'
     },
     fontSize: {
-      content: {},
+      content: [],
       display: 'factor',
       displays: ['factor', 'px', 'rem'],
       reference: 'baseFontSize',
@@ -31,7 +31,7 @@ it('creates `setting`', () => {
       unit: 'factor'
     },
     fontWeight: {
-      content: {},
+      content: [],
       display: 'string',
       displays: ['string'],
       reference: null,
@@ -39,7 +39,7 @@ it('creates `setting`', () => {
       unit: 'string'
     },
     spacing: {
-      content: {},
+      content: [],
       display: 'factor',
       displays: ['factor', 'px'],
       reference: 'baseSpacing',

@@ -9,7 +9,7 @@ const baseTheme = {
   name: 'Basic Airtheme',
   setting: {
     color: {
-      content: {},
+      content: [],
       display: 'reference',
       displays: ['reference', 'hex', 'hexa', 'rgb', 'rgba'],
       reference: 'swatch',
@@ -17,7 +17,7 @@ const baseTheme = {
       unit: 'reference'
     },
     fontFamily: {
-      content: {},
+      content: [],
       display: 'reference',
       displays: ['reference'],
       reference: null,
@@ -25,7 +25,7 @@ const baseTheme = {
       unit: 'reference'
     },
     fontSize: {
-      content: {},
+      content: [],
       display: 'factor',
       displays: ['factor', 'px', 'rem'],
       reference: 'baseFontSize',
@@ -33,7 +33,7 @@ const baseTheme = {
       unit: 'factor'
     },
     fontWeight: {
-      content: {},
+      content: [],
       display: 'string',
       displays: ['string'],
       reference: null,
@@ -41,7 +41,7 @@ const baseTheme = {
       unit: 'string'
     },
     spacing: {
-      content: {},
+      content: [],
       display: 'factor',
       displays: ['factor', 'px'],
       reference: 'baseSpacing',
