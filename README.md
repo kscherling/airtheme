@@ -4,11 +4,13 @@
 
 Contains Airtheme types and constants shared across packages.
 
-### theme
+### Classes
+
+#### theme
 
 ---
 
-##### types
+##### sub-classes
 
 - `base`
 
@@ -25,11 +27,11 @@ Contains Airtheme types and constants shared across packages.
 - `fontFace`
 - `setting`
 
-### setting
+#### setting
 
 ---
 
-##### types
+##### sub-classes
 
 - `base`
 
@@ -41,11 +43,11 @@ Contains Airtheme types and constants shared across packages.
 - `fontWeight`
 - `spacing`
 
-### attribute
+#### attribute
 
 ---
 
-##### types
+##### sub-classes
 
 - `color`
 - `fontFace`
@@ -65,11 +67,11 @@ Contains Airtheme types and constants shared across packages.
 - `type`
 - `unit`
 
-### unit
+#### unit
 
 ---
 
-##### types
+##### sub-classes
 
 - `factor`
 - `hex`
@@ -83,10 +85,10 @@ Contains Airtheme types and constants shared across packages.
 
 ##### schema
 
-- `reference` // !!! reference - reference matches attribute reference for convenience
-- `ordinal` // for stack order
+- `reference`
+- `ordinal`
 - `type`
-- `value` // the payload - decorated by type
+- `value`
 
 ## @airtheme/core
 

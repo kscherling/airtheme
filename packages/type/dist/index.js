@@ -527,6 +527,7 @@ const unit = {
   string: factoryFor$3(string, schema$3)
 };
 
-exports.attribute = attribute;
 exports.theme = theme;
+exports.setting = setting;
+exports.attribute = attribute;
 exports.unit = unit;
