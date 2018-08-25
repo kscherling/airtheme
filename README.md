@@ -4,11 +4,15 @@
 
 Contains Airtheme types and constants shared across packages.
 
-### Classes
-
-#### theme
+#### Classes
 
 ---
+
+#### `theme`
+
+- `theme`
+- `themeSchema`
+- `factoryForTheme`
 
 ##### sub-classes
 
@@ -27,9 +31,13 @@ Contains Airtheme types and constants shared across packages.
 - `fontFace`
 - `setting`
 
-#### setting
-
 ---
+
+#### `setting`
+
+- `setting`
+- `settingSchema`
+- `factoryForSetting`
 
 ##### sub-classes
 
@@ -43,9 +51,13 @@ Contains Airtheme types and constants shared across packages.
 - `fontWeight`
 - `spacing`
 
-#### attribute
-
 ---
+
+#### `attribute`
+
+- `attribute`
+- `attributeSchema`
+- `factoryForAttribute`
 
 ##### sub-classes
 
@@ -67,9 +79,13 @@ Contains Airtheme types and constants shared across packages.
 - `type`
 - `unit`
 
-#### unit
-
 ---
+
+#### `unit`
+
+- `unit`
+- `unitSchema`
+- `factoryForUnit`
 
 ##### sub-classes
 

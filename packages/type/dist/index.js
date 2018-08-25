@@ -528,6 +528,14 @@ const unit = {
 };
 
 exports.theme = theme;
+exports.themeSchema = schema$2;
+exports.factoryForTheme = factoryFor$2;
 exports.setting = setting;
+exports.settingSchema = schema$1;
+exports.factoryForSetting = factoryFor$1;
 exports.attribute = attribute;
+exports.attributeSchema = schema;
+exports.factoryForAttribute = factoryFor;
 exports.unit = unit;
+exports.unitSchema = schema$3;
+exports.factoryForUnit = factoryFor$3;
