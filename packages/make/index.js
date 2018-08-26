@@ -1,1 +1,2 @@
-export { default as makeStore } from './store'
+import makeStore from './store'
+export default makeStore
