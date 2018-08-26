@@ -1,5 +1,5 @@
 import React from 'react'
 
-const Mod = () => <h1>Mod</h1>
+const Mod = () => 'Mod'
 
 export default Mod

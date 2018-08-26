@@ -1,2 +1,2 @@
-import Specsheet from './src/Specsheet'
-export default Specsheet
+import Spec from './src/Spec'
+export default Spec

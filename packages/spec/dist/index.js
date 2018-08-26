@@ -1,15 +1,9 @@
 'use strict';
 
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+require('react');
 
-var React = _interopDefault(require('react'));
-
-var Specsheet = function Specsheet() {
-  return React.createElement(
-    'h1',
-    null,
-    'Specsheet'
-  );
+var Spec = function Spec() {
+  return 'Spec';
 };
 
-module.exports = Specsheet;
+module.exports = Spec;
