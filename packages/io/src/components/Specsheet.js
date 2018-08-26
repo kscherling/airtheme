@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import MakeProvider from '../store/MakeProvider'
+import { MakeProvider } from '@airtheme/make'
 import Spec from './Spec'
 import Mod from './Mod'
 

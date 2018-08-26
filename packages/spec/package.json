@@ -3,9 +3,7 @@
   "version": "0.1.0",
   "author": "Kyle Scherling",
   "main": "dist/index.js",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
     "build": "rollup --config",
     "build:watch": "yarn run build --watch"
@@ -24,7 +22,8 @@
   "dependencies": {
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "react-redux": "^5.0.7"
+    "react-redux": "^5.0.7",
+    "@airtheme/make": "^0.1.0"
   },
   "peerDependencies": {
     "styled-components": "^3.4.5"

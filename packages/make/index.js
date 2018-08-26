@@ -1,47 +1,15 @@
 // makeStore
-import makeStore from './store'
-export default makeStore
+
+export { default as makeStore } from './store'
 
 // Action Creators
 
-export { updateTheme } from './action/root'
+export * from './action'
 
-export {
-  updateThemeName,
-  updateThemeId,
-  updateBaseFontSize,
-  updateBaseLineHeight,
-  updateBaseSpacing
-} from './action/theme'
+// Map State to Props
 
-export { addSwatch, removeSwatch, updateSwatch } from './action/theme/swatch'
+export * from './react-utils/mapStateToProps'
 
-export {
-  addColor,
-  removeColor,
-  updateColor
-} from './action/theme/setting/color'
+// MakeProvider
 
-export {
-  addFontFamily,
-  removeFontFamily,
-  updateFontFamily
-} from './action/theme/setting/fontFamily'
-
-export {
-  addFontSize,
-  removeFontSize,
-  updateFontSize
-} from './action/theme/setting/fontSize'
-
-export {
-  addFontWeight,
-  removeFontWeight,
-  updateFontWeight
-} from './action/theme/setting/fontWeight'
-
-export {
-  addSpacing,
-  removeSpacing,
-  updateSpacing
-} from './action/theme/setting/spacing'
+export { default as MakeProvider } from './react-utils/MakeProvider'

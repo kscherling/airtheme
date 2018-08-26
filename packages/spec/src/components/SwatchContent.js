@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { mapSwatchContent } from '../mapStateToProps'
+import { mapSwatchContent } from '@airtheme/make'
 import { printAttributeContent } from '../lib/print'
 
 const SwatchContent = ({ content }) =>

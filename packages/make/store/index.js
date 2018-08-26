@@ -1,21 +1,8 @@
-import { applyMiddleware, createStore, compose } from 'redux'
-import airthemeRootReducer from '../reducer/root'
+import { createStore } from 'redux'
+import composedMiddleware from './middleware'
+import airthemeReducer from '../reducer'
 
-const enhancers = []
-const middleware = []
+const makeStore = (initialState = {}) =>
+  createStore(airthemeReducer, initialState, composedMiddleware)
 
-if (process.env.NODE_ENV === 'development') {
-  const reduxDevTools = window.__REDUX_DEVTOOLS_EXTENSION__
-
-  if (reduxDevTools) {
-    enhancers.push(reduxDevTools())
-  }
-}
-
-const composedEnhancers = compose(
-  applyMiddleware(...middleware),
-  ...enhancers
-)
-
-export default (initialState = {}) =>
-  createStore(airthemeRootReducer, initialState, composedEnhancers)
+export default makeStore

@@ -15,5 +15,11 @@ export default {
     }),
     commonjs()
   ],
-  external: ['react', 'react-dom', 'react-redux', 'styled-components']
+  external: [
+    'react',
+    'react-dom',
+    'react-redux',
+    'styled-components',
+    '@airtheme/make'
+  ]
 }

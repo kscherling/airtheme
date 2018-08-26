@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { mapFontFaceContent } from '../mapStateToProps'
+import { mapFontFaceContent } from '@airtheme/make'
 import { printAttributeContent } from '../lib/print'
 
 const FontFaceContent = ({ content }) =>

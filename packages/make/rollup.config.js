@@ -15,5 +15,5 @@ export default {
     }),
     commonjs()
   ],
-  external: ['@airtheme/type', '@airtheme/core']
+  external: ['@airtheme/type', '@airtheme/core', 'react-redux']
 }

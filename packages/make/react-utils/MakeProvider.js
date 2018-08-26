@@ -1,11 +1,11 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import { theme } from '@airtheme/type'
-import makeStore from '@airtheme/make'
+import makeStore from '../store'
 
-const store = makeStore({ theme: theme.base() })
+const defaultStore = makeStore({ theme: theme.base() })
 
-const MakeProvider = ({ children }) => (
+const MakeProvider = ({ store = defaultStore, children }) => (
   <Provider store={store}>{children}</Provider>
 )
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { mapBaseLineHeight } from '../mapStateToProps'
+import { mapBaseLineHeight } from '@airtheme/make'
 import { printNode } from '../lib/print'
 
 const BaseLineHeight = ({ baseLineHeight }) =>

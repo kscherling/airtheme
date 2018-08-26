@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { mapFontSizeContent } from '../mapStateToProps'
+import { mapFontSizeContent } from '@airtheme/make'
 import { printAttributeContent } from '../lib/print'
 
 const FontSizeContent = ({ content }) =>

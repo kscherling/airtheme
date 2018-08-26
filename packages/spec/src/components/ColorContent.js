@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { mapColorContent } from '../mapStateToProps'
+import { mapColorContent } from '@airtheme/make'
 import { printAttributeContent } from '../lib/print'
 
 const ColorContent = ({ content }) =>
