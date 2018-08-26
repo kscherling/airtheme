@@ -1,1 +1,2 @@
-export default () => console.log('Spec success')
+import Specsheet from './src/Specsheet'
+export default Specsheet

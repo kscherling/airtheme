@@ -1,5 +1,15 @@
 'use strict';
 
-var index = (() => console.log('Spec success'));
+function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-module.exports = index;
+var React = _interopDefault(require('react'));
+
+var Specsheet = function Specsheet() {
+  return React.createElement(
+    'h1',
+    null,
+    'Specsheet'
+  );
+};
+
+module.exports = Specsheet;
