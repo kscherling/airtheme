@@ -1,16 +1,13 @@
-import React, { Fragment, Component } from 'react'
-import Mod from '@airtheme/mod'
-import Specsheet from '@airtheme/spec'
+import React from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import IndexRoute from './routes'
 
-class App extends Component {
-  render() {
-    return (
-      <Fragment>
-        <Mod />
-        <Specsheet />
-      </Fragment>
-    )
-  }
-}
+const App = () => (
+  <Router>
+    <Switch>
+      <Route path="/" exact component={IndexRoute} />
+    </Switch>
+  </Router>
+)
 
 export default App
