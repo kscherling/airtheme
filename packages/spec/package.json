@@ -3,9 +3,7 @@
   "version": "0.1.0",
   "author": "Kyle Scherling",
   "main": "dist/index.js",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
     "build": "rollup --config",
     "build:watch": "yarn run build --watch"
@@ -22,7 +20,6 @@
     "rollup-plugin-node-resolve": "^3.3.0"
   },
   "peerDependencies": {
-    "@airtheme/core": "^0.1.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2"
   },

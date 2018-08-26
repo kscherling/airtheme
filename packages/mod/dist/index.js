@@ -1,5 +1,7 @@
 'use strict';
 
-var index = (() => console.log('Mod success'));
+require('react');
 
-module.exports = index;
+const Mod = () => 'Mod';
+
+module.exports = Mod;

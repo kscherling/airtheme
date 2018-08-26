@@ -1,9 +1,15 @@
-import React, { Component } from 'react'
+import React, { Fragment, Component } from 'react'
+import Mod from '@airtheme/mod'
 import Specsheet from '@airtheme/spec'
 
 class App extends Component {
   render() {
-    return <Specsheet />
+    return (
+      <Fragment>
+        <Mod />
+        <Specsheet />
+      </Fragment>
+    )
   }
 }
 

@@ -1,1 +1,2 @@
-export default () => console.log('Mod success')
+import Mod from './src/Mod'
+export default Mod
