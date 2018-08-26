@@ -6,7 +6,7 @@ import Mod from './Mod'
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: 70% 1fr;
+  grid-template-columns: 1fr 1fr;
   min-height: 100vh;
 `
 

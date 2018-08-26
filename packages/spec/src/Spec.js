@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import Name from './components/Name'
 import Version from './components/Version'
 import Type from './components/Type'
@@ -13,7 +13,7 @@ import FontWeight from './components/FontWeight'
 import Spacing from './components/Spacing'
 
 const Spec = () => (
-  <Fragment>
+  <div>
     <Name />
     <Version />
     <Type />
@@ -26,7 +26,7 @@ const Spec = () => (
     <FontSize />
     <FontWeight />
     <Spacing />
-  </Fragment>
+  </div>
 )
 
 export default Spec

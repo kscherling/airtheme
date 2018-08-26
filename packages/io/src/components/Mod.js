@@ -4,6 +4,10 @@ import AirthemeMod from '@airtheme/mod'
 
 const Container = styled.div`
   background: #f2f2f2;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
 
 const Mod = () => (

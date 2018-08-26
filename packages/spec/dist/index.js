@@ -62,7 +62,7 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _templateObject = _taggedTemplateLiteral(['\n  display: grid;\n  grid-template-columns: 120px auto;\n  grid-auto-flow: row;\n'], ['\n  display: grid;\n  grid-template-columns: 120px auto;\n  grid-auto-flow: row;\n']),
+var _templateObject = _taggedTemplateLiteral(['\n  display: grid;\n  grid-template-columns: 160px auto;\n  grid-auto-flow: row;\n'], ['\n  display: grid;\n  grid-template-columns: 160px auto;\n  grid-auto-flow: row;\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n  grid-column: span 2;\n'], ['\n  grid-column: span 2;\n']);
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
@@ -230,7 +230,7 @@ var Spacing$1 = reactRedux.connect(mapSpacing)(Spacing);
 
 var Spec = function Spec() {
   return React__default.createElement(
-    React.Fragment,
+    'div',
     null,
     React__default.createElement(Name$2, null),
     React__default.createElement(Version$1, null),

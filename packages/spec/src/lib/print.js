@@ -23,7 +23,7 @@ const printUnrenderable = val => {
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: 120px auto;
+  grid-template-columns: 160px auto;
   grid-auto-flow: row;
 `
 
