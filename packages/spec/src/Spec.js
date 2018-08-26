@@ -7,23 +7,25 @@ import BaseLineHeight from './components/BaseLineHeight'
 import BaseSpacing from './components/BaseSpacing'
 import Swatch from './components/Swatch'
 import FontFace from './components/FontFace'
+import Color from './components/Color'
+import FontSize from './components/FontSize'
+import FontWeight from './components/FontWeight'
+import Spacing from './components/Spacing'
 
 const Spec = () => (
   <Fragment>
     <Name />
-    <br />
     <Version />
-    <br />
     <Type />
-    <br />
     <BaseFontSize />
-    <br />
     <BaseLineHeight />
-    <br />
     <BaseSpacing />
-    <br />
     <Swatch />
     <FontFace />
+    <Color />
+    <FontSize />
+    <FontWeight />
+    <Spacing />
   </Fragment>
 )
 

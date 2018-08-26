@@ -13,4 +13,4 @@ export const mapColor = ({ theme: { setting: { color } } }) => ({ color }) // pr
 export const mapFontFamily = ({ theme: { setting: { fontFamily } } }) => ({ fontFamily }) // prettier-ignore
 export const mapFontSize = ({ theme: { setting: { fontSize } } }) => ({ fontSize }) // prettier-ignore
 export const mapFontWeight = ({ theme: { setting: { fontWeight } } }) => ({ fontWeight }) // prettier-ignore
-export const Spacing = ({ theme: { setting: { spacing } } }) => ({ spacing }) // prettier-ignore
+export const mapSpacing = ({ theme: { setting: { spacing } } }) => ({ spacing }) // prettier-ignore

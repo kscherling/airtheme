@@ -1,19 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapSwatch } from '../mapStateToProps'
+import { printObject } from '../lib/print'
 
-const Swatch = ({ swatch: { view, viewable, type, unit } }) => (
-  <div>
-    <strong>Swatch</strong>
-    <br />
-    {view}
-    <br />
-    {viewable}
-    <br />
-    {type}
-    <br />
-    {unit}
-  </div>
-)
+const Swatch = ({ swatch }) => printObject('Swatch', swatch)
 
 export default connect(mapSwatch)(Swatch)

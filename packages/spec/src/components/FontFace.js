@@ -1,19 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapFontFace } from '../mapStateToProps'
+import { printObject } from '../lib/print'
 
-const FontFace = ({ fontFace: { view, viewable, type, unit } }) => (
-  <div>
-    <strong>Font Face</strong>
-    <br />
-    {view}
-    <br />
-    {viewable}
-    <br />
-    {type}
-    <br />
-    {unit}
-  </div>
-)
+const FontFace = ({ fontFace }) => printObject('Font Face', fontFace)
 
 export default connect(mapFontFace)(FontFace)
