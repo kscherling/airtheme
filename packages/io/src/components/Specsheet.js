@@ -4,7 +4,9 @@ import Spec from './Spec'
 import Mod from './Mod'
 
 const Container = styled.div`
-  background: grey;
+  display: grid;
+  grid-template-columns: 70% 1fr;
+  min-height: 100vh;
 `
 
 const Specsheet = () => (
