@@ -891,10 +891,16 @@ var type$1 = function type$$1() {
   }
 };
 
+var fontFace = function fontFace() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  return state;
+};
+
 var theme = combineReducers({
   baseFontSize: baseFontSize,
   baseLineHeight: baseLineHeight,
   baseSpacing: baseSpacing,
+  fontFace: fontFace,
   id: id,
   name: name,
   setting: setting,
@@ -923,9 +929,224 @@ var makeStore = (function () {
   return createStore(airthemeRootReducer, initialState, composedEnhancers);
 });
 
-var hello = function hello() {
-  return null;
+var updateTheme = function updateTheme(theme) {
+  return {
+    type: UPDATE_THEME,
+    theme: theme
+  };
 };
 
+var updateThemeName = function updateThemeName(name) {
+  return {
+    type: UPDATE_THEME_NAME,
+    name: name
+  };
+};
+
+var updateThemeId = function updateThemeId(id) {
+  return {
+    type: UPDATE_THEME_ID,
+    id: id
+  };
+};
+
+var updateBaseFontSize = function updateBaseFontSize(baseFontSize) {
+  return {
+    type: UPDATE_BASE_FONT_SIZE,
+    baseFontSize: baseFontSize
+  };
+};
+
+var updateBaseLineHeight = function updateBaseLineHeight(baseLineHeight) {
+  return {
+    type: UPDATE_BASE_LINE_HEIGHT,
+    baseLineHeight: baseLineHeight
+  };
+};
+
+var updateBaseSpacing = function updateBaseSpacing(baseSpacing) {
+  return {
+    type: UPDATE_BASE_SPACING,
+    baseSpacing: baseSpacing
+  };
+};
+
+var addSwatch = function addSwatch(swatch) {
+  return {
+    type: ADD_SWATCH,
+    swatch: swatch
+  };
+};
+
+var removeSwatch = function removeSwatch(original) {
+  return {
+    type: REMOVE_SWATCH,
+    original: original
+  };
+};
+
+var updateSwatch = function updateSwatch(original, updatedVal) {
+  return {
+    type: UPDATE_SWATCH,
+    original: original,
+    updatedVal: updatedVal
+  };
+};
+
+var addColor = function addColor(value, reference, ordinal) {
+  return {
+    type: ADD_COLOR,
+    reference: reference,
+    ordinal: ordinal,
+    value: value
+  };
+};
+
+var removeColor = function removeColor(original) {
+  return {
+    type: REMOVE_COLOR,
+    original: original
+  };
+};
+
+var updateColor = function updateColor(original, value, reference, ordinal) {
+  return {
+    type: UPDATE_COLOR,
+    reference: reference,
+    ordinal: ordinal,
+    original: original,
+    value: value
+  };
+};
+
+var addFontFamily = function addFontFamily(value, reference, ordinal) {
+  return {
+    type: ADD_FONT_FAMILY,
+    reference: reference,
+    ordinal: ordinal,
+    value: value
+  };
+};
+
+var removeFontFamily = function removeFontFamily(original) {
+  return {
+    type: REMOVE_FONT_FAMILY,
+    original: original
+  };
+};
+
+var updateFontFamily = function updateFontFamily(original, value, reference, ordinal) {
+  return {
+    type: UPDATE_FONT_FAMILY,
+    reference: reference,
+    ordinal: ordinal,
+    original: original,
+    value: value
+  };
+};
+
+var addFontSize = function addFontSize(value, reference, ordinal) {
+  return {
+    type: ADD_FONT_SIZE,
+    reference: reference,
+    ordinal: ordinal,
+    value: value
+  };
+};
+
+var removeFontSize = function removeFontSize(original) {
+  return {
+    type: REMOVE_FONT_SIZE,
+    original: original
+  };
+};
+
+var updateFontSize = function updateFontSize(original, value, reference, ordinal) {
+  return {
+    type: UPDATE_FONT_SIZE,
+    reference: reference,
+    ordinal: ordinal,
+    original: original,
+    value: value
+  };
+};
+
+var addFontWeight = function addFontWeight(value, reference, ordinal) {
+  return {
+    type: ADD_FONT_WEIGHT,
+    reference: reference,
+    ordinal: ordinal,
+    value: value
+  };
+};
+
+var removeFontWeight = function removeFontWeight(original) {
+  return {
+    type: REMOVE_FONT_WEIGHT,
+    original: original
+  };
+};
+
+var updateFontWeight = function updateFontWeight(original, value, reference, ordinal) {
+  return {
+    type: UPDATE_FONT_WEIGHT,
+    reference: reference,
+    ordinal: ordinal,
+    original: original,
+    value: value
+  };
+};
+
+var addSpacing = function addSpacing(value, reference, ordinal) {
+  return {
+    type: ADD_SPACING,
+    reference: reference,
+    ordinal: ordinal,
+    value: value
+  };
+};
+
+var removeSpacing = function removeSpacing(original) {
+  return {
+    type: REMOVE_SPACING,
+    original: original
+  };
+};
+
+var updateSpacing = function updateSpacing(original, value, reference, ordinal) {
+  return {
+    type: UPDATE_SPACING,
+    reference: reference,
+    ordinal: ordinal,
+    original: original,
+    value: value
+  };
+};
+
+// makeStore
+
 exports.default = makeStore;
-exports.hello = hello;
+exports.updateTheme = updateTheme;
+exports.updateThemeName = updateThemeName;
+exports.updateThemeId = updateThemeId;
+exports.updateBaseFontSize = updateBaseFontSize;
+exports.updateBaseLineHeight = updateBaseLineHeight;
+exports.updateBaseSpacing = updateBaseSpacing;
+exports.addSwatch = addSwatch;
+exports.removeSwatch = removeSwatch;
+exports.updateSwatch = updateSwatch;
+exports.addColor = addColor;
+exports.removeColor = removeColor;
+exports.updateColor = updateColor;
+exports.addFontFamily = addFontFamily;
+exports.removeFontFamily = removeFontFamily;
+exports.updateFontFamily = updateFontFamily;
+exports.addFontSize = addFontSize;
+exports.removeFontSize = removeFontSize;
+exports.updateFontSize = updateFontSize;
+exports.addFontWeight = addFontWeight;
+exports.removeFontWeight = removeFontWeight;
+exports.updateFontWeight = updateFontWeight;
+exports.addSpacing = addSpacing;
+exports.removeSpacing = removeSpacing;
+exports.updateSpacing = updateSpacing;

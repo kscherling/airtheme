@@ -86,10 +86,13 @@ const type = (state = '', action) => {
   }
 }
 
+const fontFace = (state = {}, action) => state
+
 export default combineReducers({
   baseFontSize,
   baseLineHeight,
   baseSpacing,
+  fontFace,
   id,
   name,
   setting,
