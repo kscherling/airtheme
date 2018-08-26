@@ -15,5 +15,5 @@ export default {
     }),
     commonjs()
   ],
-  external: ['react', 'react-dom']
+  external: ['react', 'react-dom', 'react-redux']
 }
