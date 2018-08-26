@@ -1,7 +1,15 @@
 'use strict';
 
-require('react');
+function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-const Mod = () => 'Mod';
+var React = _interopDefault(require('react'));
+
+var Mod = function Mod() {
+  return React.createElement(
+    'h1',
+    null,
+    'Mod'
+  );
+};
 
 module.exports = Mod;
