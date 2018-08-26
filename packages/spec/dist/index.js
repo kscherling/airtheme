@@ -13,20 +13,31 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _templateObject = _taggedTemplateLiteral(['\n  display: grid;\n  grid-template-columns: 160px auto;\n  grid-auto-flow: row;\n  grid-gap: 0.75rem;\n\n  ', ';\n\n  margin-bottom: 1rem;\n'], ['\n  display: grid;\n  grid-template-columns: 160px auto;\n  grid-auto-flow: row;\n  grid-gap: 0.75rem;\n\n  ', ';\n\n  margin-bottom: 1rem;\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n      background: #f2f2f2;\n    '], ['\n      background: #f2f2f2;\n    ']),
-    _templateObject3 = _taggedTemplateLiteral(['\n  grid-column: span 2;\n'], ['\n  grid-column: span 2;\n']),
-    _templateObject4 = _taggedTemplateLiteral(['\n  grid-column: span 2;\n  padding: 1rem;\n'], ['\n  grid-column: span 2;\n  padding: 1rem;\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  text-decoration: line-through;\n  color: #999;\n'], ['\n  text-decoration: line-through;\n  color: #999;\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n  display: grid;\n  grid-template-columns: 160px auto;\n  grid-auto-flow: row;\n  grid-gap: 0.75rem;\n\n  ', ';\n\n  margin-bottom: 1rem;\n'], ['\n  display: grid;\n  grid-template-columns: 160px auto;\n  grid-auto-flow: row;\n  grid-gap: 0.75rem;\n\n  ', ';\n\n  margin-bottom: 1rem;\n']),
+    _templateObject3 = _taggedTemplateLiteral(['\n      background: #f2f2f2;\n    '], ['\n      background: #f2f2f2;\n    ']),
+    _templateObject4 = _taggedTemplateLiteral(['\n  grid-column: span 2;\n'], ['\n  grid-column: span 2;\n']),
+    _templateObject5 = _taggedTemplateLiteral(['\n  grid-column: span 2;\n  padding: 1rem;\n'], ['\n  grid-column: span 2;\n  padding: 1rem;\n']);
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
+var Strike = styled__default.span(_templateObject);
+
 var printUnrenderable = function printUnrenderable(val) {
   if (val === null) {
-    return 'null';
+    return React__default.createElement(
+      Strike,
+      null,
+      'null'
+    );
   }
 
   if (typeof val === 'undefined') {
-    return 'undefined';
+    return React__default.createElement(
+      Strike,
+      null,
+      'undefined'
+    );
   }
 
   if (Array.isArray(val)) {
@@ -40,14 +51,14 @@ var printUnrenderable = function printUnrenderable(val) {
   return val;
 };
 
-var Container = styled__default.div(_templateObject, function (_ref) {
+var Container = styled__default.div(_templateObject2, function (_ref) {
   var shade = _ref.shade;
-  return shade && styled.css(_templateObject2);
+  return shade && styled.css(_templateObject3);
 });
 
-var Name = styled__default.strong(_templateObject3);
+var Name = styled__default.strong(_templateObject4);
 
-var Empty = styled__default.div(_templateObject4);
+var Empty = styled__default.div(_templateObject5);
 
 var printObject = function printObject(name, obj) {
   return React__default.createElement(

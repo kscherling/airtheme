@@ -1,13 +1,18 @@
 import React, { Fragment } from 'react'
 import styled, { css } from 'styled-components'
 
+const Strike = styled.span`
+  text-decoration: line-through;
+  color: #999;
+`
+
 const printUnrenderable = val => {
   if (val === null) {
-    return 'null'
+    return <Strike>null</Strike>
   }
 
   if (typeof val === 'undefined') {
-    return 'undefined'
+    return <Strike>undefined</Strike>
   }
 
   if (Array.isArray(val)) {

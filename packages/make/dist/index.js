@@ -1124,99 +1124,6 @@ var updateSpacing = function updateSpacing(original, value, reference, ordinal) 
   };
 };
 
-var mapName = function mapName(_ref) {
-  var name = _ref.theme.name;
-  return { name: name };
-};
-var mapVersion = function mapVersion(_ref2) {
-  var version = _ref2.theme.version;
-  return { version: version };
-};
-var mapType = function mapType(_ref3) {
-  var type$$1 = _ref3.theme.type;
-  return { type: type$$1 };
-};
-var mapId = function mapId(_ref4) {
-  var id = _ref4.theme.id;
-  return { id: id };
-};
-
-var mapBaseFontSize = function mapBaseFontSize(_ref5) {
-  var baseFontSize = _ref5.theme.baseFontSize;
-  return { baseFontSize: baseFontSize };
-}; // prettier-ignore
-var mapBaseSpacing = function mapBaseSpacing(_ref6) {
-  var baseSpacing = _ref6.theme.baseSpacing;
-  return { baseSpacing: baseSpacing };
-};
-var mapBaseLineHeight = function mapBaseLineHeight(_ref7) {
-  var baseLineHeight = _ref7.theme.baseLineHeight;
-  return { baseLineHeight: baseLineHeight };
-}; // prettier-ignore
-
-var mapFontFace = function mapFontFace(_ref8) {
-  var fontFace = _ref8.theme.fontFace;
-  return { fontFace: fontFace };
-};
-var mapFontFaceContent = function mapFontFaceContent(_ref9) {
-  var content = _ref9.theme.fontFace.content;
-  return { content: content };
-}; //prettier-ignore
-
-var mapSwatch = function mapSwatch(_ref10) {
-  var swatch = _ref10.theme.swatch;
-  return { swatch: swatch };
-};
-var mapSwatchContent = function mapSwatchContent(_ref11) {
-  var content = _ref11.theme.swatch.content;
-  return { content: content };
-}; // prettier-ignore
-
-var mapColor = function mapColor(_ref12) {
-  var color = _ref12.theme.setting.color;
-  return { color: color };
-}; // prettier-ignore
-var mapColorContent = function mapColorContent(_ref13) {
-  var content = _ref13.theme.setting.color.content;
-  return { content: content };
-}; // prettier-ignore
-
-var mapFontFamily = function mapFontFamily(_ref14) {
-  var fontFamily = _ref14.theme.setting.fontFamily;
-  return { fontFamily: fontFamily };
-}; // prettier-ignore
-var mapFontFamilyContent = function mapFontFamilyContent(_ref15) {
-  var content = _ref15.theme.setting.fontFamily.content;
-  return { content: content };
-}; // prettier-ignore
-
-var mapFontSize = function mapFontSize(_ref16) {
-  var fontSize = _ref16.theme.setting.fontSize;
-  return { fontSize: fontSize };
-}; // prettier-ignore
-var mapFontSizeContent = function mapFontSizeContent(_ref17) {
-  var content = _ref17.theme.setting.fontSize.content;
-  return { content: content };
-}; // prettier-ignore
-
-var mapFontWeight = function mapFontWeight(_ref18) {
-  var fontWeight = _ref18.theme.setting.fontWeight;
-  return { fontWeight: fontWeight };
-}; // prettier-ignore
-var mapFontWeightContent = function mapFontWeightContent(_ref19) {
-  var content = _ref19.theme.setting.fontWeight.content;
-  return { content: content };
-}; // prettier-ignore
-
-var mapSpacing = function mapSpacing(_ref20) {
-  var spacing = _ref20.theme.setting.spacing;
-  return { spacing: spacing };
-}; // prettier-ignore
-var mapSpacingContent = function mapSpacingContent(_ref21) {
-  var content = _ref21.theme.setting.spacing.content;
-  return { content: content };
-}; // prettier-ignore
-
 function createCommonjsModule(fn, module) {
 	return module = { exports: {} }, fn(module, module.exports), module.exports;
 }
@@ -3055,6 +2962,99 @@ var MakeProvider = function MakeProvider(_ref) {
     children
   );
 };
+
+var mapName = function mapName(_ref) {
+  var name = _ref.theme.name;
+  return { name: name };
+};
+var mapVersion = function mapVersion(_ref2) {
+  var version = _ref2.theme.version;
+  return { version: version };
+};
+var mapType = function mapType(_ref3) {
+  var type$$1 = _ref3.theme.type;
+  return { type: type$$1 };
+};
+var mapId = function mapId(_ref4) {
+  var id = _ref4.theme.id;
+  return { id: id };
+};
+
+var mapBaseFontSize = function mapBaseFontSize(_ref5) {
+  var baseFontSize = _ref5.theme.baseFontSize;
+  return { baseFontSize: baseFontSize };
+}; // prettier-ignore
+var mapBaseSpacing = function mapBaseSpacing(_ref6) {
+  var baseSpacing = _ref6.theme.baseSpacing;
+  return { baseSpacing: baseSpacing };
+};
+var mapBaseLineHeight = function mapBaseLineHeight(_ref7) {
+  var baseLineHeight = _ref7.theme.baseLineHeight;
+  return { baseLineHeight: baseLineHeight };
+}; // prettier-ignore
+
+var mapFontFace = function mapFontFace(_ref8) {
+  var fontFace = _ref8.theme.fontFace;
+  return { fontFace: fontFace };
+};
+var mapFontFaceContent = function mapFontFaceContent(_ref9) {
+  var content = _ref9.theme.fontFace.content;
+  return { content: content };
+}; //prettier-ignore
+
+var mapSwatch = function mapSwatch(_ref10) {
+  var swatch = _ref10.theme.swatch;
+  return { swatch: swatch };
+};
+var mapSwatchContent = function mapSwatchContent(_ref11) {
+  var content = _ref11.theme.swatch.content;
+  return { content: content };
+}; // prettier-ignore
+
+var mapColor = function mapColor(_ref12) {
+  var color = _ref12.theme.setting.color;
+  return { color: color };
+}; // prettier-ignore
+var mapColorContent = function mapColorContent(_ref13) {
+  var content = _ref13.theme.setting.color.content;
+  return { content: content };
+}; // prettier-ignore
+
+var mapFontFamily = function mapFontFamily(_ref14) {
+  var fontFamily = _ref14.theme.setting.fontFamily;
+  return { fontFamily: fontFamily };
+}; // prettier-ignore
+var mapFontFamilyContent = function mapFontFamilyContent(_ref15) {
+  var content = _ref15.theme.setting.fontFamily.content;
+  return { content: content };
+}; // prettier-ignore
+
+var mapFontSize = function mapFontSize(_ref16) {
+  var fontSize = _ref16.theme.setting.fontSize;
+  return { fontSize: fontSize };
+}; // prettier-ignore
+var mapFontSizeContent = function mapFontSizeContent(_ref17) {
+  var content = _ref17.theme.setting.fontSize.content;
+  return { content: content };
+}; // prettier-ignore
+
+var mapFontWeight = function mapFontWeight(_ref18) {
+  var fontWeight = _ref18.theme.setting.fontWeight;
+  return { fontWeight: fontWeight };
+}; // prettier-ignore
+var mapFontWeightContent = function mapFontWeightContent(_ref19) {
+  var content = _ref19.theme.setting.fontWeight.content;
+  return { content: content };
+}; // prettier-ignore
+
+var mapSpacing = function mapSpacing(_ref20) {
+  var spacing = _ref20.theme.setting.spacing;
+  return { spacing: spacing };
+}; // prettier-ignore
+var mapSpacingContent = function mapSpacingContent(_ref21) {
+  var content = _ref21.theme.setting.spacing.content;
+  return { content: content };
+}; // prettier-ignore
 
 // makeStore
 
