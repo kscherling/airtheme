@@ -87,9 +87,10 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _templateObject = _taggedTemplateLiteral(['\n  display: grid;\n  grid-template-columns: 160px auto;\n  grid-auto-flow: row;\n\n  ', ';\n'], ['\n  display: grid;\n  grid-template-columns: 160px auto;\n  grid-auto-flow: row;\n\n  ', ';\n']),
+var _templateObject = _taggedTemplateLiteral(['\n  display: grid;\n  grid-template-columns: 160px auto;\n  grid-auto-flow: row;\n  grid-gap: 0.75rem;\n\n  ', ';\n\n  margin-bottom: 1rem;\n'], ['\n  display: grid;\n  grid-template-columns: 160px auto;\n  grid-auto-flow: row;\n  grid-gap: 0.75rem;\n\n  ', ';\n\n  margin-bottom: 1rem;\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n      background: #f2f2f2;\n    '], ['\n      background: #f2f2f2;\n    ']),
-    _templateObject3 = _taggedTemplateLiteral(['\n  grid-column: span 2;\n'], ['\n  grid-column: span 2;\n']);
+    _templateObject3 = _taggedTemplateLiteral(['\n  grid-column: span 2;\n'], ['\n  grid-column: span 2;\n']),
+    _templateObject4 = _taggedTemplateLiteral(['\n  grid-column: span 2;\n  padding: 1rem;\n'], ['\n  grid-column: span 2;\n  padding: 1rem;\n']);
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
@@ -119,6 +120,8 @@ var Container = styled__default.div(_templateObject, function (_ref) {
 });
 
 var Name = styled__default.strong(_templateObject3);
+
+var Empty = styled__default.div(_templateObject4);
 
 var printObject = function printObject(name, obj) {
   return React__default.createElement(
@@ -221,8 +224,11 @@ var printAttributeContent = function printAttributeContent(name) {
   ) : React__default.createElement(
     Container,
     { shade: true },
-    'No ',
-    name
+    React__default.createElement(
+      Empty,
+      null,
+      name
+    )
   );
 };
 

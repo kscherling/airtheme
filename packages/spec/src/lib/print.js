@@ -25,16 +25,24 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: 160px auto;
   grid-auto-flow: row;
+  grid-gap: 0.75rem;
 
   ${({ shade }) =>
     shade &&
     css`
       background: #f2f2f2;
     `};
+
+  margin-bottom: 1rem;
 `
 
 const Name = styled.strong`
   grid-column: span 2;
+`
+
+const Empty = styled.div`
+  grid-column: span 2;
+  padding: 1rem;
 `
 
 export const printObject = (name, obj) => (
@@ -77,5 +85,7 @@ export const printAttributeContent = (name, content = []) =>
       {content.map((unit, idx) => printUnit(unit))}
     </Container>
   ) : (
-    <Container shade>No {name}</Container>
+    <Container shade>
+      <Empty>{name}</Empty>
+    </Container>
   )
