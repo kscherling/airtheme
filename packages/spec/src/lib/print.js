@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 const printUnrenderable = val => {
   if (val === null) {
@@ -25,6 +25,12 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: 160px auto;
   grid-auto-flow: row;
+
+  ${({ shade }) =>
+    shade &&
+    css`
+      background: #f2f2f2;
+    `};
 `
 
 const Name = styled.strong`
@@ -51,3 +57,25 @@ export const printNode = (key, val) => (
     </Fragment>
   </Container>
 )
+
+export const printUnit = unit => (
+  <Container>
+    <Name>{unit.name}</Name>
+    {Object.entries(obj).map(([key, val], idx) => (
+      <Fragment key={idx}>
+        <label>{key}</label>
+        <span>{printUnrenderable(val)}</span>
+      </Fragment>
+    ))}
+  </Container>
+)
+
+export const printAttributeContent = (name, content = []) =>
+  content.length ? (
+    <Container shade>
+      <Name>{name}</Name>
+      {content.map((unit, idx) => printUnit(unit))}
+    </Container>
+  ) : (
+    <Container shade>No {name}</Container>
+  )
