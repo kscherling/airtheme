@@ -1,5 +1,5 @@
 'use strict';
 
-var index = (() => console.log('Mod success'));
+var index = (() => console.log('Spec success'));
 
 module.exports = index;
