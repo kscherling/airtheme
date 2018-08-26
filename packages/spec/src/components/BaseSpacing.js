@@ -1,8 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { mapBaseSpacing } from '../mapStateToProps'
 
 const BaseSpacing = ({ baseSpacing }) => baseSpacing
 
-export default connect(({ theme: { baseSpacing } }) => ({
-  baseSpacing
-}))(BaseSpacing)
+export default connect(mapBaseSpacing)(BaseSpacing)

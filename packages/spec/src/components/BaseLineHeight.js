@@ -1,8 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { mapBaseLineHeight } from '../mapStateToProps'
 
 const BaseLineHeight = ({ baseLineHeight }) => baseLineHeight
 
-export default connect(({ theme: { baseLineHeight } }) => ({
-  baseLineHeight
-}))(BaseLineHeight)
+export default connect(mapBaseLineHeight)(BaseLineHeight)
