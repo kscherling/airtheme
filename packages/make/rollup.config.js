@@ -15,5 +15,5 @@ export default {
     }),
     commonjs()
   ],
-  external: ['@airtheme/type']
+  external: ['@airtheme/type', '@airtheme/core']
 }

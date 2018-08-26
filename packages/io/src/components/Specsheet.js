@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import MakeProvider from '../store/MakeProvider'
 import Spec from './Spec'
 import Mod from './Mod'
 
@@ -10,10 +11,12 @@ const Container = styled.div`
 `
 
 const Specsheet = () => (
-  <Container>
-    <Spec />
-    <Mod />
-  </Container>
+  <MakeProvider>
+    <Container>
+      <Spec />
+      <Mod />
+    </Container>
+  </MakeProvider>
 )
 
 export default Specsheet

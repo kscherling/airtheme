@@ -1,15 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
 import AirthemeSpec from '@airtheme/spec'
+import { connect } from 'react-redux'
 
 const Container = styled.div`
   background: #ccc;
 `
 
-const Spec = () => (
-  <Container>
-    <AirthemeSpec />
-  </Container>
-)
+const Spec = (...args) => {
+  console.log(args)
 
-export default Spec
+  return (
+    <Container>
+      <AirthemeSpec />
+    </Container>
+  )
+}
+
+export default connect()(Spec)

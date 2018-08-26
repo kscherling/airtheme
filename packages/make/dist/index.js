@@ -1,5 +1,7 @@
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 var type = require('@airtheme/type');
 
 function symbolObservablePonyfill(root) {
@@ -909,7 +911,7 @@ var middleware = [];
 if (process.env.NODE_ENV === 'development') {
   var reduxDevTools = window.__REDUX_DEVTOOLS_EXTENSION__;
 
-  if (devTools) {
+  if (reduxDevTools) {
     enhancers.push(reduxDevTools());
   }
 }
@@ -921,4 +923,9 @@ var makeStore = (function () {
   return createStore(airthemeRootReducer, initialState, composedEnhancers);
 });
 
-module.exports = makeStore;
+var hello = function hello() {
+  return null;
+};
+
+exports.default = makeStore;
+exports.hello = hello;
