@@ -5,6 +5,8 @@ import Type from './components/Type'
 import BaseFontSize from './components/BaseFontSize'
 import BaseLineHeight from './components/BaseLineHeight'
 import BaseSpacing from './components/BaseSpacing'
+import Swatch from './components/Swatch'
+import FontFace from './components/FontFace'
 
 const Spec = () => (
   <Fragment>
@@ -20,6 +22,8 @@ const Spec = () => (
     <br />
     <BaseSpacing />
     <br />
+    <Swatch />
+    <FontFace />
   </Fragment>
 )
 

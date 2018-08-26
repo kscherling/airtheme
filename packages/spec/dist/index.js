@@ -31,6 +31,14 @@ var mapBaseLineHeight = function mapBaseLineHeight(_ref7) {
   var baseLineHeight = _ref7.theme.baseLineHeight;
   return { baseLineHeight: baseLineHeight };
 }; // prettier-ignore
+var mapFontFace = function mapFontFace(_ref8) {
+  var fontFace = _ref8.theme.fontFace;
+  return { fontFace: fontFace };
+};
+var mapSwatch = function mapSwatch(_ref9) {
+  var swatch = _ref9.theme.swatch;
+  return { swatch: swatch };
+};
  // prettier-ignore
 
 var Name = function Name(_ref) {
@@ -75,6 +83,60 @@ var BaseSpacing = function BaseSpacing(_ref) {
 
 var BaseSpacing$1 = reactRedux.connect(mapBaseSpacing)(BaseSpacing);
 
+var Swatch = function Swatch(_ref) {
+  var _ref$swatch = _ref.swatch,
+      view = _ref$swatch.view,
+      viewable = _ref$swatch.viewable,
+      type = _ref$swatch.type,
+      unit = _ref$swatch.unit;
+  return React__default.createElement(
+    'div',
+    null,
+    React__default.createElement(
+      'strong',
+      null,
+      'Swatch'
+    ),
+    React__default.createElement('br', null),
+    view,
+    React__default.createElement('br', null),
+    viewable,
+    React__default.createElement('br', null),
+    type,
+    React__default.createElement('br', null),
+    unit
+  );
+};
+
+var Swatch$1 = reactRedux.connect(mapSwatch)(Swatch);
+
+var FontFace = function FontFace(_ref) {
+  var _ref$fontFace = _ref.fontFace,
+      view = _ref$fontFace.view,
+      viewable = _ref$fontFace.viewable,
+      type = _ref$fontFace.type,
+      unit = _ref$fontFace.unit;
+  return React__default.createElement(
+    'div',
+    null,
+    React__default.createElement(
+      'strong',
+      null,
+      'Font Face'
+    ),
+    React__default.createElement('br', null),
+    view,
+    React__default.createElement('br', null),
+    viewable,
+    React__default.createElement('br', null),
+    type,
+    React__default.createElement('br', null),
+    unit
+  );
+};
+
+var FontFace$1 = reactRedux.connect(mapFontFace)(FontFace);
+
 var Spec = function Spec() {
   return React__default.createElement(
     React.Fragment,
@@ -90,7 +152,9 @@ var Spec = function Spec() {
     React__default.createElement(BaseLineHeight$1, null),
     React__default.createElement('br', null),
     React__default.createElement(BaseSpacing$1, null),
-    React__default.createElement('br', null)
+    React__default.createElement('br', null),
+    React__default.createElement(Swatch$1, null),
+    React__default.createElement(FontFace$1, null)
   );
 };
 
