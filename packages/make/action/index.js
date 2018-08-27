@@ -1,11 +1,13 @@
 export { updateTheme } from './root'
 
 export {
-  updateThemeName,
-  updateThemeId,
   updateBaseFontSize,
   updateBaseLineHeight,
-  updateBaseSpacing
+  updateBaseSpacing,
+  updateThemeId,
+  updateThemeName,
+  updateThemeType,
+  updateThemeVersion
 } from './theme'
 
 export { addSwatch, removeSwatch, updateSwatch } from './theme/swatch'

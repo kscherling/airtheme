@@ -5,6 +5,7 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 var React = require('react');
 var React__default = _interopDefault(React);
 var redux = require('redux');
+var styled = _interopDefault(require('styled-components'));
 var make = require('@airtheme/make');
 
 function createCommonjsModule(fn, module) {
@@ -1999,26 +2000,100 @@ function createConnect() {
 
 var connect = createConnect();
 
-var Name = function Name(_ref) {
-  var name = _ref.name,
-      updateThemeName = _ref.updateThemeName;
+var _templateObject = _taggedTemplateLiteral(['\n  display: grid;\n  grid-template-columns: 160px auto;\n  grid-auto-flow: row;\n  grid-gap: 0.75rem;\n\n  ', ';\n\n  margin-bottom: 1rem;\n'], ['\n  display: grid;\n  grid-template-columns: 160px auto;\n  grid-auto-flow: row;\n  grid-gap: 0.75rem;\n\n  ', ';\n\n  margin-bottom: 1rem;\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n      background: #f2f2f2;\n    '], ['\n      background: #f2f2f2;\n    ']);
 
-  return React__default.createElement('input', {
-    type: 'text',
-    value: name,
-    onChange: function onChange(e) {
-      return updateThemeName(e.target.value);
-    }
-  });
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var Container = styled.div(_templateObject, function (_ref) {
+  var shade = _ref.shade;
+  return shade && css(_templateObject2);
+});
+
+var Input = function Input(_ref2) {
+  var label = _ref2.label,
+      value = _ref2.value,
+      _onChange = _ref2.onChange;
+  return React__default.createElement(
+    Container,
+    null,
+    React__default.createElement(
+      'label',
+      null,
+      label
+    ),
+    React__default.createElement(
+      'span',
+      null,
+      React__default.createElement('input', {
+        type: 'text',
+        value: value,
+        onChange: function onChange(e) {
+          return _onChange(e.target.value);
+        }
+      })
+    )
+  );
 };
 
-var Name$1 = connect(make.mapName, { updateThemeName: make.updateThemeName })(Name);
+var Name = connect(make.mapName, { updateThemeName: make.updateThemeName })(function (_ref) {
+  var name = _ref.name,
+      updateThemeName = _ref.updateThemeName;
+  return React__default.createElement(Input, { label: 'name', value: name, onChange: updateThemeName });
+});
+
+var Id = connect(make.mapId, { updateThemeId: make.updateThemeId })(function (_ref2) {
+  var id = _ref2.id,
+      updateThemeId = _ref2.updateThemeId;
+  return React__default.createElement(Input, { disabled: true, label: 'id', value: id, onChange: updateThemeId });
+});
+
+var Version = connect(make.mapVersion, { updateThemeVersion: make.updateThemeVersion })(function (_ref3) {
+  var version = _ref3.version,
+      updateThemeVersion = _ref3.updateThemeVersion;
+  return React__default.createElement(Input, { label: 'version', value: version, onChange: updateThemeVersion });
+});
+
+var BaseFontSize = connect(make.mapBaseFontSize, { updateBaseFontSize: make.updateBaseFontSize })(function (_ref4) {
+  var baseFontSize = _ref4.baseFontSize,
+      updateBaseFontSize = _ref4.updateBaseFontSize;
+  return React__default.createElement(Input, {
+    label: 'baseFontSize',
+    value: baseFontSize,
+    onChange: updateBaseFontSize
+  });
+});
+
+var BaseLineHeight = connect(make.mapBaseLineHeight, { updateBaseLineHeight: make.updateBaseLineHeight })(function (_ref5) {
+  var baseLineHeight = _ref5.baseLineHeight,
+      updateBaseLineHeight = _ref5.updateBaseLineHeight;
+  return React__default.createElement(Input, {
+    label: 'baseLineHeight',
+    value: baseLineHeight,
+    onChange: updateBaseLineHeight
+  });
+});
+
+var BaseSpacing = connect(make.mapBaseSpacing, { updateBaseSpacing: make.updateBaseSpacing })(function (_ref6) {
+  var baseSpacing = _ref6.baseSpacing,
+      updateBaseSpacing = _ref6.updateBaseSpacing;
+  return React__default.createElement(Input, {
+    label: 'baseLineHeight',
+    value: baseSpacing,
+    onChange: updateBaseSpacing
+  });
+});
 
 var Mod = function Mod() {
   return React__default.createElement(
     'div',
     null,
-    React__default.createElement(Name$1, null)
+    React__default.createElement(Name, null),
+    React__default.createElement(Version, null),
+    React__default.createElement(Id, null),
+    React__default.createElement(BaseFontSize, null),
+    React__default.createElement(BaseLineHeight, null),
+    React__default.createElement(BaseSpacing, null)
   );
 };
 

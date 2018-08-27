@@ -347,7 +347,7 @@ var schema$2 = {
   // id
   // you know, the id
 
-  id: null,
+  id: '',
 
   // baseFontSize
   // string : the reference of the unit

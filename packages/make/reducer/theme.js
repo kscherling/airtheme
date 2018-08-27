@@ -6,7 +6,9 @@ import {
   UPDATE_BASE_LINE_HEIGHT,
   UPDATE_BASE_SPACING,
   UPDATE_THEME_ID,
-  UPDATE_THEME_NAME
+  UPDATE_THEME_NAME,
+  UPDATE_THEME_VERSION,
+  UPDATE_THEME_TYPE
 } from '../constant/theme'
 import { UPDATE_THEME } from '../constant/root'
 
@@ -65,22 +67,25 @@ const baseSpacing = (state = '', action) => {
   }
 }
 
-// Read Only
-// Present only for hydration
-
 const version = (state = '', action) => {
   switch (action.type) {
     case UPDATE_THEME:
       return action.theme.version || ''
+    case UPDATE_THEME_VERSION:
+      return action.version
     default:
       return state
   }
 }
 
+// TODO: Remove
 const type = (state = '', action) => {
+  console.log(action)
   switch (action.type) {
     case UPDATE_THEME:
-      return action.theme.type || ''
+      return action.theme.themeType || ''
+    case UPDATE_THEME_TYPE:
+      return action.type
     default:
       return state
   }

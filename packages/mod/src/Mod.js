@@ -1,9 +1,21 @@
 import React from 'react'
-import Name from './components/Name'
+import {
+  Name,
+  Version,
+  BaseFontSize,
+  BaseLineHeight,
+  BaseSpacing,
+  Id
+} from './components/Globals'
 
 const Mod = () => (
   <div>
     <Name />
+    <Version />
+    <Id />
+    <BaseFontSize />
+    <BaseLineHeight />
+    <BaseSpacing />
   </div>
 )
 

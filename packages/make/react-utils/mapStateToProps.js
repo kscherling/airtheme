@@ -1,11 +1,10 @@
-export const mapName = ({ theme: { name } }) => ({ name })
-export const mapVersion = ({ theme: { version } }) => ({ version })
-export const mapType = ({ theme: { type } }) => ({ type })
-export const mapId = ({ theme: { id } }) => ({ id })
-
 export const mapBaseFontSize = ({ theme: { baseFontSize } }) => ({ baseFontSize }) // prettier-ignore
-export const mapBaseSpacing = ({ theme: { baseSpacing } }) => ({ baseSpacing })
 export const mapBaseLineHeight = ({ theme: { baseLineHeight } }) => ({ baseLineHeight }) // prettier-ignore
+export const mapBaseSpacing = ({ theme: { baseSpacing } }) => ({ baseSpacing })
+export const mapId = ({ theme: { id } }) => ({ id })
+export const mapName = ({ theme: { name } }) => ({ name })
+export const mapType = ({ theme: { type } }) => ({ type })
+export const mapVersion = ({ theme: { version } }) => ({ version })
 
 export const mapFontFace = ({ theme: { fontFace } }) => ({ fontFace })
 export const mapFontFaceContent = ({ theme: { fontFace: { content } } }) => ({ content }) //prettier-ignore

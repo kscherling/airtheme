@@ -183,12 +183,12 @@ var Version = function Version(_ref) {
 
 var Version$1 = reactRedux.connect(make.mapVersion)(Version);
 
-var Type = function Type(_ref) {
-  var type = _ref.type;
-  return printNode('type', type);
+var Id = function Id(_ref) {
+  var id = _ref.id;
+  return printNode('id', id);
 };
 
-var Type$1 = reactRedux.connect(make.mapType)(Type);
+var Id$1 = reactRedux.connect(make.mapId)(Id);
 
 var BaseFontSize = function BaseFontSize(_ref) {
   var baseFontSize = _ref.baseFontSize;
@@ -299,9 +299,9 @@ var Spec = function Spec() {
   return React__default.createElement(
     'div',
     null,
+    React__default.createElement(Id$1, null),
     React__default.createElement(Name$2, null),
     React__default.createElement(Version$1, null),
-    React__default.createElement(Type$1, null),
     React__default.createElement(BaseFontSize$1, null),
     React__default.createElement(BaseLineHeight$1, null),
     React__default.createElement(BaseSpacing$1, null),

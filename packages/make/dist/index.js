@@ -606,6 +606,21 @@ var not = function not(a) {
   };
 };
 
+var defineProperty = function (obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+};
+
 var _extends$1 = Object.assign || function (target) {
   for (var i = 1; i < arguments.length; i++) {
     var source = arguments[i];
@@ -806,6 +821,8 @@ var UPDATE_BASE_FONT_SIZE = 'UPDATE_BASE_FONT_SIZE';
 var UPDATE_BASE_LINE_HEIGHT = 'UPDATE_BASE_LINE_HEIGHT';
 var UPDATE_BASE_SPACING = 'UPDATE_BASE_SPACING';
 var UPDATE_THEME_ID = 'UPDATE_THEME_ID';
+var UPDATE_THEME_TYPE = 'UPDATE_THEME_TYPE';
+var UPDATE_THEME_VERSION = 'UPDATE_THEME_VERSION';
 var UPDATE_THEME_NAME = 'UPDATE_THEME_NAME';
 
 var name = function name() {
@@ -878,9 +895,6 @@ var baseSpacing = function baseSpacing() {
   }
 };
 
-// Read Only
-// Present only for hydration
-
 var version = function version() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
   var action = arguments[1];
@@ -888,18 +902,24 @@ var version = function version() {
   switch (action.type) {
     case UPDATE_THEME:
       return action.theme.version || '';
+    case UPDATE_THEME_VERSION:
+      return action.version;
     default:
       return state;
   }
 };
 
+// TODO: Remove
 var type$1 = function type$$1() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
   var action = arguments[1];
 
+  console.log(action);
   switch (action.type) {
     case UPDATE_THEME:
-      return action.theme.type || '';
+      return action.theme.themeType || '';
+    case UPDATE_THEME_TYPE:
+      return action.type;
     default:
       return state;
   }
@@ -948,6 +968,19 @@ var updateThemeId = function updateThemeId(id) {
   return {
     type: UPDATE_THEME_ID,
     id: id
+  };
+};
+
+var updateThemeType = function updateThemeType(type$$1) {
+  return defineProperty({
+    type: UPDATE_THEME_TYPE
+  }, 'type', type$$1);
+};
+
+var updateThemeVersion = function updateThemeVersion(version) {
+  return {
+    type: UPDATE_THEME_VERSION,
+    version: version
   };
 };
 
@@ -2963,35 +2996,34 @@ var MakeProvider = function MakeProvider(_ref) {
   );
 };
 
-var mapName = function mapName(_ref) {
-  var name = _ref.theme.name;
-  return { name: name };
-};
-var mapVersion = function mapVersion(_ref2) {
-  var version = _ref2.theme.version;
-  return { version: version };
-};
-var mapType = function mapType(_ref3) {
-  var type$$1 = _ref3.theme.type;
-  return { type: type$$1 };
+var mapBaseFontSize = function mapBaseFontSize(_ref) {
+  var baseFontSize = _ref.theme.baseFontSize;
+  return { baseFontSize: baseFontSize };
+}; // prettier-ignore
+var mapBaseLineHeight = function mapBaseLineHeight(_ref2) {
+  var baseLineHeight = _ref2.theme.baseLineHeight;
+  return { baseLineHeight: baseLineHeight };
+}; // prettier-ignore
+var mapBaseSpacing = function mapBaseSpacing(_ref3) {
+  var baseSpacing = _ref3.theme.baseSpacing;
+  return { baseSpacing: baseSpacing };
 };
 var mapId = function mapId(_ref4) {
   var id = _ref4.theme.id;
   return { id: id };
 };
-
-var mapBaseFontSize = function mapBaseFontSize(_ref5) {
-  var baseFontSize = _ref5.theme.baseFontSize;
-  return { baseFontSize: baseFontSize };
-}; // prettier-ignore
-var mapBaseSpacing = function mapBaseSpacing(_ref6) {
-  var baseSpacing = _ref6.theme.baseSpacing;
-  return { baseSpacing: baseSpacing };
+var mapName = function mapName(_ref5) {
+  var name = _ref5.theme.name;
+  return { name: name };
 };
-var mapBaseLineHeight = function mapBaseLineHeight(_ref7) {
-  var baseLineHeight = _ref7.theme.baseLineHeight;
-  return { baseLineHeight: baseLineHeight };
-}; // prettier-ignore
+var mapType = function mapType(_ref6) {
+  var type$$1 = _ref6.theme.type;
+  return { type: type$$1 };
+};
+var mapVersion = function mapVersion(_ref7) {
+  var version = _ref7.theme.version;
+  return { version: version };
+};
 
 var mapFontFace = function mapFontFace(_ref8) {
   var fontFace = _ref8.theme.fontFace;
@@ -3061,11 +3093,13 @@ var mapSpacingContent = function mapSpacingContent(_ref21) {
 exports.makeStore = makeStore;
 exports.MakeProvider = MakeProvider;
 exports.updateTheme = updateTheme;
-exports.updateThemeName = updateThemeName;
-exports.updateThemeId = updateThemeId;
 exports.updateBaseFontSize = updateBaseFontSize;
 exports.updateBaseLineHeight = updateBaseLineHeight;
 exports.updateBaseSpacing = updateBaseSpacing;
+exports.updateThemeId = updateThemeId;
+exports.updateThemeName = updateThemeName;
+exports.updateThemeType = updateThemeType;
+exports.updateThemeVersion = updateThemeVersion;
 exports.addSwatch = addSwatch;
 exports.removeSwatch = removeSwatch;
 exports.updateSwatch = updateSwatch;
@@ -3084,13 +3118,13 @@ exports.updateFontWeight = updateFontWeight;
 exports.addSpacing = addSpacing;
 exports.removeSpacing = removeSpacing;
 exports.updateSpacing = updateSpacing;
-exports.mapName = mapName;
-exports.mapVersion = mapVersion;
-exports.mapType = mapType;
-exports.mapId = mapId;
 exports.mapBaseFontSize = mapBaseFontSize;
-exports.mapBaseSpacing = mapBaseSpacing;
 exports.mapBaseLineHeight = mapBaseLineHeight;
+exports.mapBaseSpacing = mapBaseSpacing;
+exports.mapId = mapId;
+exports.mapName = mapName;
+exports.mapType = mapType;
+exports.mapVersion = mapVersion;
 exports.mapFontFace = mapFontFace;
 exports.mapFontFaceContent = mapFontFaceContent;
 exports.mapSwatch = mapSwatch;

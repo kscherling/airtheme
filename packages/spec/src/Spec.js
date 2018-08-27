@@ -1,7 +1,7 @@
 import React from 'react'
 import Name from './components/Name'
 import Version from './components/Version'
-import Type from './components/Type'
+import Id from './components/Id'
 import BaseFontSize from './components/BaseFontSize'
 import BaseLineHeight from './components/BaseLineHeight'
 import BaseSpacing from './components/BaseSpacing'
@@ -20,9 +20,9 @@ import SpacingContent from './components/SpacingContent'
 
 const Spec = () => (
   <div>
+    <Id />
     <Name />
     <Version />
-    <Type />
     <BaseFontSize />
     <BaseLineHeight />
     <BaseSpacing />
