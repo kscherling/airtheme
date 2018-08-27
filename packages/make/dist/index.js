@@ -593,6 +593,7 @@ var composedMiddleware = compose.apply(undefined, [applyMiddleware.apply(undefin
 
 var UPDATE_THEME = 'UPDATE_THEME';
 
+var UPDATE_SWATCH_VIEW = 'UPDATE_SWATCH_VIEW';
 var ADD_SWATCH = 'ADD_SWATCH';
 var REMOVE_SWATCH = 'REMOVE_SWATCH';
 var UPDATE_SWATCH = 'UPDATE_SWATCH';
@@ -666,6 +667,8 @@ var swatch = function swatch() {
           return eq(swatch, action.original) ? _extends$1({}, swatch, { value: action.updatedVal }) : swatch;
         })
       });
+    case UPDATE_SWATCH_VIEW:
+      return _extends$1({}, state, { view: action.view });
     default:
       return state;
   }
@@ -914,7 +917,6 @@ var type$1 = function type$$1() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
   var action = arguments[1];
 
-  console.log(action);
   switch (action.type) {
     case UPDATE_THEME:
       return action.theme.themeType || '';
@@ -1002,6 +1004,13 @@ var updateBaseSpacing = function updateBaseSpacing(baseSpacing) {
   return {
     type: UPDATE_BASE_SPACING,
     baseSpacing: baseSpacing
+  };
+};
+
+var updateSwatchView = function updateSwatchView(view) {
+  return {
+    type: UPDATE_SWATCH_VIEW,
+    view: view
   };
 };
 
@@ -3100,6 +3109,7 @@ exports.updateThemeId = updateThemeId;
 exports.updateThemeName = updateThemeName;
 exports.updateThemeType = updateThemeType;
 exports.updateThemeVersion = updateThemeVersion;
+exports.updateSwatchView = updateSwatchView;
 exports.addSwatch = addSwatch;
 exports.removeSwatch = removeSwatch;
 exports.updateSwatch = updateSwatch;

@@ -10,7 +10,12 @@ export {
   updateThemeVersion
 } from './theme'
 
-export { addSwatch, removeSwatch, updateSwatch } from './theme/swatch'
+export {
+  updateSwatchView,
+  addSwatch,
+  removeSwatch,
+  updateSwatch
+} from './theme/swatch'
 
 export { addColor, removeColor, updateColor } from './theme/setting/color'
 

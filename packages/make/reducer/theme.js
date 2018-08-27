@@ -80,7 +80,6 @@ const version = (state = '', action) => {
 
 // TODO: Remove
 const type = (state = '', action) => {
-  console.log(action)
   switch (action.type) {
     case UPDATE_THEME:
       return action.theme.themeType || ''

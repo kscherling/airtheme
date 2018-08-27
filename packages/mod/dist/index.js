@@ -5,7 +5,8 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 var React = require('react');
 var React__default = _interopDefault(React);
 var redux = require('redux');
-var styled = _interopDefault(require('styled-components'));
+var styled = require('styled-components');
+var styled__default = _interopDefault(styled);
 var make = require('@airtheme/make');
 
 function createCommonjsModule(fn, module) {
@@ -2005,7 +2006,7 @@ var _templateObject = _taggedTemplateLiteral(['\n  display: grid;\n  grid-templa
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var Container = styled.div(_templateObject, function (_ref) {
+var Container = styled__default.div(_templateObject, function (_ref) {
   var shade = _ref.shade;
   return shade && css(_templateObject2);
 });
@@ -2084,6 +2085,43 @@ var BaseSpacing = connect(make.mapBaseSpacing, { updateBaseSpacing: make.updateB
   });
 });
 
+var _templateObject$1 = _taggedTemplateLiteral$1(['\n  display: flex;\n  flex-direction: row;\n'], ['\n  display: flex;\n  flex-direction: row;\n']),
+    _templateObject2$1 = _taggedTemplateLiteral$1(['\n  padding: 0.5rem;\n  text-decoration: line-through;\n  color: #999;\n\n  ', ';\n\n  &:hover {\n    cursor: pointer;\n    color: inherit;\n  }\n'], ['\n  padding: 0.5rem;\n  text-decoration: line-through;\n  color: #999;\n\n  ', ';\n\n  &:hover {\n    cursor: pointer;\n    color: inherit;\n  }\n']),
+    _templateObject3 = _taggedTemplateLiteral$1(['\n      text-decoration: none;\n      color: inherit;\n    '], ['\n      text-decoration: none;\n      color: inherit;\n    ']);
+
+function _taggedTemplateLiteral$1(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var ViewTabs = styled__default.div(_templateObject$1);
+
+var Tab = styled__default.a(_templateObject2$1, function (_ref) {
+  var active = _ref.active;
+  return active && styled.css(_templateObject3);
+});
+
+var Swatch = connect(make.mapSwatch, { updateSwatchView: make.updateSwatchView })(function (_ref2) {
+  var _ref2$swatch = _ref2.swatch,
+      view = _ref2$swatch.view,
+      viewable = _ref2$swatch.viewable,
+      updateSwatchView = _ref2.updateSwatchView;
+  return React__default.createElement(
+    ViewTabs,
+    null,
+    viewable.map(function (unit, idx) {
+      return React__default.createElement(
+        Tab,
+        {
+          key: idx,
+          active: view === unit,
+          onClick: function onClick() {
+            return updateSwatchView(unit);
+          }
+        },
+        unit
+      );
+    })
+  );
+});
+
 var Mod = function Mod() {
   return React__default.createElement(
     'div',
@@ -2093,7 +2131,8 @@ var Mod = function Mod() {
     React__default.createElement(Id, null),
     React__default.createElement(BaseFontSize, null),
     React__default.createElement(BaseLineHeight, null),
-    React__default.createElement(BaseSpacing, null)
+    React__default.createElement(BaseSpacing, null),
+    React__default.createElement(Swatch, null)
   );
 };
 

@@ -28,3 +28,21 @@ export const Input = ({ label, value, onChange }) => (
     </span>
   </Container>
 )
+
+export const Attribute = ({ name, attribute }) => {
+  const filter = ['content', 'viewable', 'view']
+  const filtered = Object.entries(attribute).filter(([key]) =>
+    filter.includes(key)
+  )
+
+  return (
+    <Container>
+      {filtered.map(([key, val], idx) => (
+        <Fragment key={idx}>
+          <label>{key}</label>
+          <span>{printUnrenderable(val)}</span>
+        </Fragment>
+      ))}
+    </Container>
+  )
+}

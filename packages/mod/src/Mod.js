@@ -7,6 +7,7 @@ import {
   BaseSpacing,
   Id
 } from './components/Globals'
+import { Swatch } from './components/Swatch'
 
 const Mod = () => (
   <div>
@@ -16,6 +17,7 @@ const Mod = () => (
     <BaseFontSize />
     <BaseLineHeight />
     <BaseSpacing />
+    <Swatch />
   </div>
 )
 
