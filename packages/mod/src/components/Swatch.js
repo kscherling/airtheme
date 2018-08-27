@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { mapSwatch, updateSwatchView } from '@airtheme/make'
 import { Input } from '../lib/basicControls'
-import { ViewTabs } from '../lib/ViewTabs'
+import ViewTabs from '../lib/ViewTabs'
 
 export const Swatch = connect(
   mapSwatch,
@@ -10,13 +10,13 @@ export const Swatch = connect(
 )(({ swatch: { view, viewable }, updateSwatchView }) => (
   <ViewTabs>
     {viewable.map((unit, idx) => (
-      <Tab
+      <ViewTabs.Tab
         key={idx}
         active={view === unit}
         onClick={() => updateSwatchView(unit)}
       >
         {unit}
-      </Tab>
+      </ViewTabs.Tab>
     ))}
   </ViewTabs>
 ))

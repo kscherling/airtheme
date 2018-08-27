@@ -2085,30 +2085,32 @@ var BaseSpacing = connect(make.mapBaseSpacing, { updateBaseSpacing: make.updateB
   });
 });
 
-var _templateObject$1 = _taggedTemplateLiteral$1(['\n  display: flex;\n  flex-direction: row;\n'], ['\n  display: flex;\n  flex-direction: row;\n']),
-    _templateObject2$1 = _taggedTemplateLiteral$1(['\n  padding: 0.5rem;\n  text-decoration: line-through;\n  color: #999;\n\n  ', ';\n\n  &:hover {\n    cursor: pointer;\n    color: inherit;\n  }\n'], ['\n  padding: 0.5rem;\n  text-decoration: line-through;\n  color: #999;\n\n  ', ';\n\n  &:hover {\n    cursor: pointer;\n    color: inherit;\n  }\n']),
-    _templateObject3 = _taggedTemplateLiteral$1(['\n      text-decoration: none;\n      color: inherit;\n    '], ['\n      text-decoration: none;\n      color: inherit;\n    ']);
+var _templateObject$1 = _taggedTemplateLiteral$1(['\n  text-decoration: line-through;\n  color: #999;\n\n  ', ';\n\n  &:hover {\n    cursor: pointer;\n    color: inherit;\n  }\n'], ['\n  text-decoration: line-through;\n  color: #999;\n\n  ', ';\n\n  &:hover {\n    cursor: pointer;\n    color: inherit;\n  }\n']),
+    _templateObject2$1 = _taggedTemplateLiteral$1(['\n      text-decoration: none;\n      color: inherit;\n    '], ['\n      text-decoration: none;\n      color: inherit;\n    ']),
+    _templateObject3 = _taggedTemplateLiteral$1(['\n  display: flex;\n  flex-direction: row;\n\n  ', ' + ', ' {\n    margin-left: 1rem;\n  }\n  \n'], ['\n  display: flex;\n  flex-direction: row;\n\n  ', ' + ', ' {\n    margin-left: 1rem;\n  }\n  \n']);
 
 function _taggedTemplateLiteral$1(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var ViewTabs = styled__default.div(_templateObject$1);
-
-var Tab = styled__default.a(_templateObject2$1, function (_ref) {
+var Tab = styled__default.a(_templateObject$1, function (_ref) {
   var active = _ref.active;
-  return active && styled.css(_templateObject3);
+  return active && styled.css(_templateObject2$1);
 });
 
-var Swatch = connect(make.mapSwatch, { updateSwatchView: make.updateSwatchView })(function (_ref2) {
-  var _ref2$swatch = _ref2.swatch,
-      view = _ref2$swatch.view,
-      viewable = _ref2$swatch.viewable,
-      updateSwatchView = _ref2.updateSwatchView;
+var ViewTabs = styled__default.div(_templateObject3, Tab, Tab);
+
+ViewTabs.Tab = Tab;
+
+var Swatch = connect(make.mapSwatch, { updateSwatchView: make.updateSwatchView })(function (_ref) {
+  var _ref$swatch = _ref.swatch,
+      view = _ref$swatch.view,
+      viewable = _ref$swatch.viewable,
+      updateSwatchView = _ref.updateSwatchView;
   return React__default.createElement(
     ViewTabs,
     null,
     viewable.map(function (unit, idx) {
       return React__default.createElement(
-        Tab,
+        ViewTabs.Tab,
         {
           key: idx,
           active: view === unit,
