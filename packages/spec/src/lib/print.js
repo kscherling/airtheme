@@ -74,12 +74,12 @@ export const printNode = (key, val) => (
 export const printUnit = unit => (
   <Container>
     <Name>{unit.name}</Name>
-    {Object.entries(obj).map(([key, val], idx) => (
+    {/* {Object.entries(obj).map(([key, val], idx) => (
       <Fragment key={idx}>
         <label>{key}</label>
         <span>{printUnrenderable(val)}</span>
       </Fragment>
-    ))}
+    ))} */}
   </Container>
 )
 

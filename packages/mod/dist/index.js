@@ -2100,27 +2100,150 @@ var ViewTabs = styled__default.div(_templateObject3, Tab, Tab);
 
 ViewTabs.Tab = Tab;
 
-var Swatch = connect(make.mapSwatch, { updateSwatchView: make.updateSwatchView })(function (_ref) {
-  var _ref$swatch = _ref.swatch,
-      view = _ref$swatch.view,
-      viewable = _ref$swatch.viewable,
-      updateSwatchView = _ref.updateSwatchView;
-  return React__default.createElement(
-    ViewTabs,
-    null,
-    viewable.map(function (unit, idx) {
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _templateObject$2 = _taggedTemplateLiteral$2(['\n  display: grid;\n  grid-template-columns: auto auto auto;\n  grid-auto-flow: row;\n  grid-gap: 0.75rem;\n\n  ', ';\n\n  margin-bottom: 1rem;\n'], ['\n  display: grid;\n  grid-template-columns: auto auto auto;\n  grid-auto-flow: row;\n  grid-gap: 0.75rem;\n\n  ', ';\n\n  margin-bottom: 1rem;\n']),
+    _templateObject2$2 = _taggedTemplateLiteral$2(['\n      background: #f2f2f2;\n    '], ['\n      background: #f2f2f2;\n    ']);
+
+function _classCallCheck$3(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn$2(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits$2(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function _taggedTemplateLiteral$2(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var Container$1 = styled__default.div(_templateObject$2, function (_ref) {
+  var shade = _ref.shade;
+  return shade && css(_templateObject2$2);
+});
+
+var AddForm = function (_Component) {
+  _inherits$2(AddForm, _Component);
+
+  function AddForm() {
+    var _ref2;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck$3(this, AddForm);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn$2(this, (_ref2 = AddForm.__proto__ || Object.getPrototypeOf(AddForm)).call.apply(_ref2, [this].concat(args))), _this), _this.state = {
+      name: '',
+      value: ''
+    }, _this.handleNameChange = function (_ref3) {
+      var value = _ref3.target.value;
+
+      _this.setState({ name: value });
+    }, _this.handleValueChange = function (_ref4) {
+      var value = _ref4.target.value;
+
+      _this.setState({ value: value });
+    }, _this.handleSubmit = function () {
+      console.log(_this.state);
+      _this.props.add(_this.state);
+    }, _temp), _possibleConstructorReturn$2(_this, _ret);
+  }
+
+  _createClass(AddForm, [{
+    key: 'render',
+    value: function render() {
+      var _state = this.state,
+          name = _state.name,
+          value = _state.value;
+
+
       return React__default.createElement(
-        ViewTabs.Tab,
-        {
-          key: idx,
-          active: view === unit,
-          onClick: function onClick() {
-            return updateSwatchView(unit);
-          }
-        },
-        unit
+        Container$1,
+        null,
+        React__default.createElement('input', { type: 'text', value: name, onChange: this.handleNameChange }),
+        React__default.createElement('input', { type: 'text', value: value, onChange: this.handleValueChange }),
+        React__default.createElement(
+          'button',
+          { type: 'button', onClick: this.handleSubmit },
+          'add'
+        )
       );
-    })
+    }
+  }]);
+
+  return AddForm;
+}(React.Component);
+
+var _templateObject$3 = _taggedTemplateLiteral$3(['\n  display: grid;\n  grid-template-columns: 160px auto;\n  grid-auto-flow: row;\n  grid-gap: 0.75rem;\n\n  ', ';\n\n  margin-bottom: 1rem;\n'], ['\n  display: grid;\n  grid-template-columns: 160px auto;\n  grid-auto-flow: row;\n  grid-gap: 0.75rem;\n\n  ', ';\n\n  margin-bottom: 1rem;\n']),
+    _templateObject2$3 = _taggedTemplateLiteral$3(['\n      background: #f2f2f2;\n    '], ['\n      background: #f2f2f2;\n    ']);
+
+function _taggedTemplateLiteral$3(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var Unit = function Unit(_ref) {
+  var unit = _ref.unit,
+      remove = _ref.remove,
+      update = _ref.update;
+  return 'hello';
+};
+
+var Container$2 = styled__default.div(_templateObject$3, function (_ref2) {
+  var shade = _ref2.shade;
+  return shade && styled.css(_templateObject2$3);
+});
+
+var SwatchContent = connect(make.mapSwatchContent, { addSwatch: make.addSwatch, removeSwatch: make.removeSwatch, updateSwatch: make.updateSwatch })(function (_ref3) {
+  var content = _ref3.content,
+      addSwatch = _ref3.addSwatch,
+      removeSwatch = _ref3.removeSwatch,
+      updateSwatch = _ref3.updateSwatch;
+  return React__default.createElement(
+    React.Fragment,
+    null,
+    content.map(function (unit, idx) {
+      return React__default.createElement(Unit, { unit: unit, remove: removeSwatch, update: updateSwatch });
+    }),
+    React__default.createElement(AddForm, { add: addSwatch })
+  );
+});
+
+// (name, content = []) =>
+//   content.length ? (
+//     <Container shade>
+//       <Name>{name}</Name>
+//       {content.map((unit, idx) => printUnit(unit))}
+//     </Container>
+//   ) : (
+//     <Container shade>
+//       <Empty>{name}</Empty>
+//     </Container>
+//   )
+
+var Swatch = connect(make.mapSwatch, { updateSwatchView: make.updateSwatchView })(function (_ref4) {
+  var _ref4$swatch = _ref4.swatch,
+      view = _ref4$swatch.view,
+      viewable = _ref4$swatch.viewable,
+      updateSwatchView = _ref4.updateSwatchView;
+  return React__default.createElement(
+    React.Fragment,
+    null,
+    React__default.createElement(
+      ViewTabs,
+      null,
+      viewable.map(function (unit, idx) {
+        return React__default.createElement(
+          ViewTabs.Tab,
+          {
+            key: idx,
+            active: view === unit,
+            onClick: function onClick() {
+              return updateSwatchView(unit);
+            }
+          },
+          unit
+        );
+      })
+    ),
+    React__default.createElement(SwatchContent, null)
   );
 });
 

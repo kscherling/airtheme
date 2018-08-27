@@ -121,27 +121,7 @@ var printUnit = function printUnit(unit) {
       Name,
       null,
       unit.name
-    ),
-    Object.entries(obj).map(function (_ref4, idx) {
-      var _ref5 = _slicedToArray(_ref4, 2),
-          key = _ref5[0],
-          val = _ref5[1];
-
-      return React__default.createElement(
-        React.Fragment,
-        { key: idx },
-        React__default.createElement(
-          'label',
-          null,
-          key
-        ),
-        React__default.createElement(
-          'span',
-          null,
-          printUnrenderable(val)
-        )
-      );
-    })
+    )
   );
 };
 
