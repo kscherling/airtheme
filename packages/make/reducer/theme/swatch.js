@@ -13,9 +13,17 @@ const swatch = (state = attribute.swatch(), action) => {
     case UPDATE_THEME:
       return action.theme.swatch || {}
     case ADD_SWATCH:
+      console.log(action)
       return {
         ...state,
-        content: [...state.content, unit[state.unit]({ value: action.swatch })]
+        content: [
+          ...state.content,
+          unit[state.unit]({
+            value: action.value,
+            name: action.name,
+            ordinal: action.ordinal
+          })
+        ]
       }
     case REMOVE_SWATCH:
       return {
@@ -26,10 +34,7 @@ const swatch = (state = attribute.swatch(), action) => {
       return {
         ...state,
         content: state.content.map(
-          swatch =>
-            eq(swatch, action.original)
-              ? { ...swatch, value: action.updatedVal }
-              : swatch
+          swatch => (eq(swatch, action.original) ? action.updated : swatch)
         )
       }
     case UPDATE_SWATCH_VIEW:

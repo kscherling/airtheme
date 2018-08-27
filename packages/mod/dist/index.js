@@ -2144,8 +2144,12 @@ var AddForm = function (_Component) {
 
       _this.setState({ value: value });
     }, _this.handleSubmit = function () {
-      console.log(_this.state);
-      _this.props.add(_this.state);
+      var _this$state = _this.state,
+          name = _this$state.name,
+          value = _this$state.value;
+
+
+      _this.props.add(name, _this.props.nextOrdinal, value);
     }, _temp), _possibleConstructorReturn$2(_this, _ret);
   }
 
@@ -2174,55 +2178,123 @@ var AddForm = function (_Component) {
   return AddForm;
 }(React.Component);
 
-var _templateObject$3 = _taggedTemplateLiteral$3(['\n  display: grid;\n  grid-template-columns: 160px auto;\n  grid-auto-flow: row;\n  grid-gap: 0.75rem;\n\n  ', ';\n\n  margin-bottom: 1rem;\n'], ['\n  display: grid;\n  grid-template-columns: 160px auto;\n  grid-auto-flow: row;\n  grid-gap: 0.75rem;\n\n  ', ';\n\n  margin-bottom: 1rem;\n']),
+var _extends$3 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass$1 = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _templateObject$3 = _taggedTemplateLiteral$3(['\n  display: grid;\n  grid-template-columns: auto auto auto;\n  grid-auto-flow: row;\n  grid-gap: 0.75rem;\n\n  ', ';\n\n  margin-bottom: 1rem;\n'], ['\n  display: grid;\n  grid-template-columns: auto auto auto;\n  grid-auto-flow: row;\n  grid-gap: 0.75rem;\n\n  ', ';\n\n  margin-bottom: 1rem;\n']),
     _templateObject2$3 = _taggedTemplateLiteral$3(['\n      background: #f2f2f2;\n    '], ['\n      background: #f2f2f2;\n    ']);
+
+function _classCallCheck$4(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn$3(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits$3(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 function _taggedTemplateLiteral$3(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var Unit = function Unit(_ref) {
-  var unit = _ref.unit,
-      remove = _ref.remove,
-      update = _ref.update;
-  return 'hello';
-};
-
-var Container$2 = styled__default.div(_templateObject$3, function (_ref2) {
-  var shade = _ref2.shade;
-  return shade && styled.css(_templateObject2$3);
+var Container$2 = styled__default.div(_templateObject$3, function (_ref) {
+  var shade = _ref.shade;
+  return shade && css(_templateObject2$3);
 });
 
-var SwatchContent = connect(make.mapSwatchContent, { addSwatch: make.addSwatch, removeSwatch: make.removeSwatch, updateSwatch: make.updateSwatch })(function (_ref3) {
-  var content = _ref3.content,
-      addSwatch = _ref3.addSwatch,
-      removeSwatch = _ref3.removeSwatch,
-      updateSwatch = _ref3.updateSwatch;
+var AddFormUnit = function (_Component) {
+  _inherits$3(AddFormUnit, _Component);
+
+  function AddFormUnit() {
+    var _ref2;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck$4(this, AddFormUnit);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn$3(this, (_ref2 = AddFormUnit.__proto__ || Object.getPrototypeOf(AddFormUnit)).call.apply(_ref2, [this].concat(args))), _this), _this.state = {
+      name: '',
+      value: ''
+    }, _this.handleNameChange = function (_ref3) {
+      var value = _ref3.target.value;
+
+      _this.props.update(_this.props.unit, _extends$3({}, _this.props.unit, { name: value }));
+    }, _this.handleValueChange = function (_ref4) {
+      var value = _ref4.target.value;
+
+      _this.props.update(_this.props.unit, _extends$3({}, _this.props.unit, { value: value }));
+    }, _this.handleOrdinalChange = function (_ref5) {
+      var value = _ref5.target.value;
+
+      _this.props.update(_this.props.unit, _extends$3({}, _this.props.unit, { ordinal: value }));
+    }, _this.handleRemove = function () {
+      _this.props.remove(_this.props.unit);
+    }, _temp), _possibleConstructorReturn$3(_this, _ret);
+  }
+
+  _createClass$1(AddFormUnit, [{
+    key: 'render',
+    value: function render() {
+      var unit = this.props.unit;
+
+
+      console.log(unit);
+      return React__default.createElement(
+        Container$2,
+        null,
+        React__default.createElement('input', { type: 'text', value: unit.name, onChange: this.handleNameChange }),
+        React__default.createElement('input', {
+          type: 'text',
+          value: unit.value,
+          onChange: this.handleValueChange
+        }),
+        React__default.createElement(
+          'button',
+          { type: 'button', onClick: this.handleRemove },
+          'remove'
+        )
+      );
+    }
+  }]);
+
+  return AddFormUnit;
+}(React.Component);
+
+var _templateObject$4 = _taggedTemplateLiteral$4(['\n  display: grid;\n  grid-template-columns: 160px auto;\n  grid-auto-flow: row;\n  grid-gap: 0.75rem;\n\n  ', ';\n\n  margin-bottom: 1rem;\n'], ['\n  display: grid;\n  grid-template-columns: 160px auto;\n  grid-auto-flow: row;\n  grid-gap: 0.75rem;\n\n  ', ';\n\n  margin-bottom: 1rem;\n']),
+    _templateObject2$4 = _taggedTemplateLiteral$4(['\n      background: #f2f2f2;\n    '], ['\n      background: #f2f2f2;\n    ']);
+
+function _taggedTemplateLiteral$4(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var Container$3 = styled__default.div(_templateObject$4, function (_ref) {
+  var shade = _ref.shade;
+  return shade && styled.css(_templateObject2$4);
+});
+
+var SwatchContent = connect(make.mapSwatchContent, { addSwatch: make.addSwatch, removeSwatch: make.removeSwatch, updateSwatch: make.updateSwatch })(function (_ref2) {
+  var content = _ref2.content,
+      addSwatch = _ref2.addSwatch,
+      removeSwatch = _ref2.removeSwatch,
+      updateSwatch = _ref2.updateSwatch;
   return React__default.createElement(
     React.Fragment,
     null,
     content.map(function (unit, idx) {
-      return React__default.createElement(Unit, { unit: unit, remove: removeSwatch, update: updateSwatch });
+      return React__default.createElement(AddFormUnit, {
+        key: idx,
+        unit: unit,
+        remove: removeSwatch,
+        update: updateSwatch
+      });
     }),
-    React__default.createElement(AddForm, { add: addSwatch })
+    React__default.createElement(AddForm, { nextOrdinal: content.length + 1, add: addSwatch })
   );
 });
 
-// (name, content = []) =>
-//   content.length ? (
-//     <Container shade>
-//       <Name>{name}</Name>
-//       {content.map((unit, idx) => printUnit(unit))}
-//     </Container>
-//   ) : (
-//     <Container shade>
-//       <Empty>{name}</Empty>
-//     </Container>
-//   )
-
-var Swatch = connect(make.mapSwatch, { updateSwatchView: make.updateSwatchView })(function (_ref4) {
-  var _ref4$swatch = _ref4.swatch,
-      view = _ref4$swatch.view,
-      viewable = _ref4$swatch.viewable,
-      updateSwatchView = _ref4.updateSwatchView;
+var Swatch = connect(make.mapSwatch, { updateSwatchView: make.updateSwatchView })(function (_ref3) {
+  var _ref3$swatch = _ref3.swatch,
+      view = _ref3$swatch.view,
+      viewable = _ref3$swatch.viewable,
+      updateSwatchView = _ref3.updateSwatchView;
   return React__default.createElement(
     React.Fragment,
     null,

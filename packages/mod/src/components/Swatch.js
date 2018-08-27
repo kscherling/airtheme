@@ -11,9 +11,8 @@ import {
 import { Input } from '../lib/basicControls'
 import ViewTabs from '../lib/ViewTabs'
 import AddForm from '../lib/AddForm'
+import AddFormUnit from '../lib/AddFormUnit'
 import styled, { css } from 'styled-components'
-
-const Unit = ({ unit, remove, update }) => 'hello'
 
 const Container = styled.div`
   display: grid;
@@ -36,23 +35,16 @@ const SwatchContent = connect(
 )(({ content, addSwatch, removeSwatch, updateSwatch }) => (
   <Fragment>
     {content.map((unit, idx) => (
-      <Unit unit={unit} remove={removeSwatch} update={updateSwatch} />
+      <AddFormUnit
+        key={idx}
+        unit={unit}
+        remove={removeSwatch}
+        update={updateSwatch}
+      />
     ))}
-    <AddForm add={addSwatch} />
+    <AddForm nextOrdinal={content.length + 1} add={addSwatch} />
   </Fragment>
 ))
-
-// (name, content = []) =>
-//   content.length ? (
-//     <Container shade>
-//       <Name>{name}</Name>
-//       {content.map((unit, idx) => printUnit(unit))}
-//     </Container>
-//   ) : (
-//     <Container shade>
-//       <Empty>{name}</Empty>
-//     </Container>
-//   )
 
 export const Swatch = connect(
   mapSwatch,

@@ -113,10 +113,10 @@ var printNode = function printNode(key, val) {
   );
 };
 
-var printUnit = function printUnit(unit) {
+var printUnit = function printUnit(unit, idx) {
   return React__default.createElement(
     Container,
-    null,
+    { key: idx },
     React__default.createElement(
       Name,
       null,
@@ -136,7 +136,7 @@ var printAttributeContent = function printAttributeContent(name) {
       name
     ),
     content.map(function (unit, idx) {
-      return printUnit(unit);
+      return printUnit(unit, idx);
     })
   ) : React__default.createElement(
     Container,

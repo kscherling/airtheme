@@ -71,8 +71,8 @@ export const printNode = (key, val) => (
   </Container>
 )
 
-export const printUnit = unit => (
-  <Container>
+export const printUnit = (unit, idx) => (
+  <Container key={idx}>
     <Name>{unit.name}</Name>
     {/* {Object.entries(obj).map(([key, val], idx) => (
       <Fragment key={idx}>
@@ -87,7 +87,7 @@ export const printAttributeContent = (name, content = []) =>
   content.length ? (
     <Container shade>
       <Name>{name}</Name>
-      {content.map((unit, idx) => printUnit(unit))}
+      {content.map((unit, idx) => printUnit(unit, idx))}
     </Container>
   ) : (
     <Container shade>

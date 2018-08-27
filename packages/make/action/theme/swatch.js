@@ -10,9 +10,11 @@ export const updateSwatchView = view => ({
   view
 })
 
-export const addSwatch = swatch => ({
+export const addSwatch = (name, ordinal, value) => ({
   type: ADD_SWATCH,
-  swatch
+  name,
+  ordinal,
+  value
 })
 
 export const removeSwatch = original => ({
@@ -20,8 +22,8 @@ export const removeSwatch = original => ({
   original
 })
 
-export const updateSwatch = (original, updatedVal) => ({
+export const updateSwatch = (original, updated) => ({
   type: UPDATE_SWATCH,
   original,
-  updatedVal
+  updated
 })

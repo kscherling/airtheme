@@ -7,63 +7,63 @@ const baseTheme = {
   baseSpacing: 16,
   fontFace: {
     content: [],
-    view: 'string',
-    viewable: ['string'],
     reference: null,
     type: 'fontFace',
-    unit: 'string'
+    unit: 'string',
+    view: 'string',
+    viewable: ['string']
   },
-  id: null,
+  id: '',
   name: 'Basic Airtheme',
   setting: {
     color: {
       content: [],
-      view: 'reference',
-      viewable: ['reference', 'hex', 'hexa', 'rgb', 'rgba'],
       reference: 'swatch',
       type: 'color',
-      unit: 'reference'
+      unit: 'reference',
+      view: 'reference',
+      viewable: ['reference', 'hex', 'hexa', 'rgb', 'rgba']
     },
     fontFamily: {
       content: [],
-      view: 'reference',
-      viewable: ['reference'],
       reference: null,
       type: 'fontFamily',
-      unit: 'reference'
+      unit: 'reference',
+      view: 'reference',
+      viewable: ['reference']
     },
     fontSize: {
       content: [],
-      view: 'factor',
-      viewable: ['factor', 'px', 'rem'],
       reference: 'baseFontSize',
       type: 'fontSize',
-      unit: 'factor'
+      unit: 'factor',
+      view: 'factor',
+      viewable: ['factor', 'px', 'rem']
     },
     fontWeight: {
       content: [],
-      view: 'string',
-      viewable: ['string'],
       reference: null,
       type: 'fontWeight',
-      unit: 'string'
+      unit: 'string',
+      view: 'string',
+      viewable: ['string']
     },
     spacing: {
       content: [],
-      view: 'factor',
-      viewable: ['factor', 'px'],
       reference: 'baseSpacing',
       type: 'spacing',
-      unit: 'factor'
+      unit: 'factor',
+      view: 'factor',
+      viewable: ['factor', 'px']
     }
   },
   swatch: {
     content: [],
-    view: 'hexa',
-    viewable: ['hex', 'hexa', 'rgb', 'rgba'],
     reference: null,
     type: 'swatch',
-    unit: 'hexa'
+    unit: 'hexa',
+    view: 'hexa',
+    viewable: ['hex', 'hexa', 'rgb', 'rgba']
   },
   type: 'airtheme',
   version: '0.1.0'

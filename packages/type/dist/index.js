@@ -437,10 +437,10 @@ const theme = {
 // A typed unit for communicating css units
 
 var schema$3 = {
-  // reference
-  // string : the reference of the unit
+  // name
+  // string : the friendly name
 
-  reference: null,
+  name: null,
 
   // ordinal
   // int : the stack order index
@@ -463,9 +463,9 @@ var schema$3 = {
 // returns a function used to create new unit instances
 
 // prettier-ignore
-const factoryFor$3 = ({ type } = {}, schema) => ({ value, reference, ordinal } = {}) => Object.assign({}, schema, { type }, {
+const factoryFor$3 = ({ type } = {}, schema) => ({ value, name, ordinal } = {}) => Object.assign({}, schema, { type }, {
   value: value || schema.value,
-  reference: reference || schema.reference,
+  name: name || schema.name,
   ordinal: ordinal || schema.ordinal
 });
 
