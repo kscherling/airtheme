@@ -32,8 +32,13 @@ class AddForm extends Component {
 
   handleSubmit = () => {
     const { name, value } = this.state
+    const { add, nextOrdinal } = this.props
 
-    this.props.add(name, this.props.nextOrdinal, value)
+    add(name, nextOrdinal, value)
+    this.setState({
+      name: '',
+      value: ''
+    })
   }
 
   render() {

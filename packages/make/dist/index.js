@@ -655,7 +655,11 @@ var swatch = function swatch() {
       return action.theme.swatch || {};
     case ADD_SWATCH:
       return _extends$1({}, state, {
-        content: [].concat(toConsumableArray(state.content), [type.unit[state.unit]({ value: action.swatch })])
+        content: [].concat(toConsumableArray(state.content), [type.unit[state.unit]({
+          value: action.value,
+          name: action.name,
+          ordinal: action.ordinal
+        })])
       });
     case REMOVE_SWATCH:
       return _extends$1({}, state, {
@@ -664,11 +668,13 @@ var swatch = function swatch() {
     case UPDATE_SWATCH:
       return _extends$1({}, state, {
         content: state.content.map(function (swatch) {
-          return eq(swatch, action.original) ? _extends$1({}, swatch, { value: action.updatedVal }) : swatch;
+          return eq(swatch, action.original) ? action.updated : swatch;
         })
       });
     case UPDATE_SWATCH_VIEW:
-      return _extends$1({}, state, { view: action.view });
+      var view = action.view;
+
+      return _extends$1({}, state, { view: view });
     default:
       return state;
   }
@@ -1014,10 +1020,12 @@ var updateSwatchView = function updateSwatchView(view) {
   };
 };
 
-var addSwatch = function addSwatch(swatch) {
+var addSwatch = function addSwatch(name, ordinal, value) {
   return {
     type: ADD_SWATCH,
-    swatch: swatch
+    name: name,
+    ordinal: ordinal,
+    value: value
   };
 };
 
@@ -1028,11 +1036,11 @@ var removeSwatch = function removeSwatch(original) {
   };
 };
 
-var updateSwatch = function updateSwatch(original, updatedVal) {
+var updateSwatch = function updateSwatch(original, updated) {
   return {
     type: UPDATE_SWATCH,
     original: original,
-    updatedVal: updatedVal
+    updated: updated
   };
 };
 

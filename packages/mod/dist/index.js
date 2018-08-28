@@ -2147,9 +2147,16 @@ var AddForm = function (_Component) {
       var _this$state = _this.state,
           name = _this$state.name,
           value = _this$state.value;
+      var _this$props = _this.props,
+          add = _this$props.add,
+          nextOrdinal = _this$props.nextOrdinal;
 
 
-      _this.props.add(name, _this.props.nextOrdinal, value);
+      add(name, nextOrdinal, value);
+      _this.setState({
+        name: '',
+        value: ''
+      });
     }, _temp), _possibleConstructorReturn$2(_this, _ret);
   }
 
@@ -2238,7 +2245,6 @@ var AddFormUnit = function (_Component) {
       var unit = this.props.unit;
 
 
-      console.log(unit);
       return React__default.createElement(
         Container$2,
         null,

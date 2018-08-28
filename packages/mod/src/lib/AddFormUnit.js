@@ -41,7 +41,6 @@ class AddFormUnit extends Component {
   render() {
     const { unit } = this.props
 
-    console.log(unit)
     return (
       <Container>
         <input type="text" value={unit.name} onChange={this.handleNameChange} />

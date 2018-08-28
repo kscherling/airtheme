@@ -13,7 +13,6 @@ const swatch = (state = attribute.swatch(), action) => {
     case UPDATE_THEME:
       return action.theme.swatch || {}
     case ADD_SWATCH:
-      console.log(action)
       return {
         ...state,
         content: [
@@ -38,7 +37,8 @@ const swatch = (state = attribute.swatch(), action) => {
         )
       }
     case UPDATE_SWATCH_VIEW:
-      return { ...state, view: action.view }
+      const { view } = action
+      return { ...state, view }
     default:
       return state
   }
