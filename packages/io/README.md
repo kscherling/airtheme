@@ -1,3 +1,0 @@
-## @airtheme/io
-
-Main application.
