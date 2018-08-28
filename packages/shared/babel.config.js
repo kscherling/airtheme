@@ -1,9 +1,3 @@
-{
-  "presets": [
-    [
-      "env", { "modules": false }
-    ],
-    "react",
-    "stage-2"
-  ]
+module.exports = {
+  presets: [['env', { modules: false }], 'react', 'stage-2']
 }
