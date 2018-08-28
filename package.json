@@ -3,22 +3,9 @@
   "private": true,
   "workspaces": ["packages/*"],
   "scripts": {
-    "test": "jest --watchAll"
-  },
-  "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-jest": "^23.4.2",
-    "babel-preset-env": "^1.7.0",
-    "babel-plugin-external-helpers": "^6.22.0",
-    "fp": "^0.1.0",
-    "jest": "^23.5.0",
-    "lerna": "^3.0.6",
-    "prettier": "^1.14.2",
-    "regenerator-runtime": "^0.12.1"
-  },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true,
-    "bracketSpacing": true
+    "build": "lerna run build",
+    "clean": "lerna run clean",
+    "test": "lerna run test",
+    "check-packages": "yarn clean && yarn build && yarn test"
   }
 }
