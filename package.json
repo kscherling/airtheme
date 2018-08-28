@@ -4,8 +4,6 @@
   "workspaces": ["packages/*"],
   "scripts": {
     "build": "lerna run build",
-    "clean": "lerna run clean",
     "test": "lerna run test",
-    "check-packages": "yarn clean && yarn build && yarn test"
   }
 }
