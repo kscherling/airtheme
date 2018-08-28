@@ -1,3 +1,18 @@
 module.exports = {
-  presets: [['env', { modules: false }], 'react', 'stage-2']
+  presets: [
+    ['@babel/preset-env', { modules: false }],
+    '@babel/preset-react'
+  ],
+  plugins: [
+    '@babel/plugin-proposal-object-rest-spread',
+    '@babel/plugin-proposal-class-properties'
+  ],
+  env: {
+    test: {
+      presets: [
+        ['@babel/preset-env'],
+        '@babel/preset-react'
+      ]
+    }
+  }
 }

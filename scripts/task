@@ -7,11 +7,11 @@ exe() { echo "$@" ; $@ ; }
 
 case $CMD in
   clean)
-    exe "rm -fr ./lib"
+    exe "rm -fr ./dist"
     ;;
 
   build)
-    exe "../../node_modules/.bin/babel --config-file $(pwd)/babel.config.js --verbose -d ./lib ./src"
+    exe "../../node_modules/.bin/babel --config-file $(pwd)/babel.config.js --verbose -d ./dist ./src"
     ;;
 
   test)
