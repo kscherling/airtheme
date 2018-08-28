@@ -1,6 +1,7 @@
 {
   "name": "airtheme",
   "private": true,
+  "workspaces": ["packages/*"],
   "scripts": {
     "test": "jest --watchAll"
   },
