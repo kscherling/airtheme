@@ -3,7 +3,7 @@ const commonjs = require('rollup-plugin-commonjs')
 const resolve =  require('rollup-plugin-node-resolve')
 
 module.exports = {
-  input: 'index.js',
+  input: 'src/index.js',
   output: {
     file: 'dist/index.js',
     format: 'cjs'
