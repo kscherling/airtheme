@@ -1,9 +1,13 @@
 {
-  "name": "airtheme",
   "private": true,
-  "workspaces": ["packages/*"],
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "build": "lerna run build",
-    "test": "lerna run test",
+    "test": "lerna run test"
+  },
+  "devDependencies": {
+    "lerna": "^2.11.0"
   }
 }

@@ -1,9 +1,12 @@
 {
-  "packages": ["packages/*"],
+  "packages": [
+    "packages/*"
+  ],
   "version": "0.1.0",
   "command": {
     "run": {
       "npmClient": "yarn"
     }
-  }
+  },
+  "lerna": "2.11.0"
 }
