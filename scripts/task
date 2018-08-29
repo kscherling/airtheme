@@ -11,24 +11,20 @@ case $CMD in
     ;;
 
   build)
-    exe "../../node_modules/.bin/babel --config-file $(pwd)/babel.config.js --verbose -d ./dist ./src"
+    exe "../../node_modules/.bin/rollup -c"
+    ;;
+
+  build:watch)
+    exe "../../node_modules/.bin/rollup --config --watch"
     ;;
 
   test)
-    if [ -d "./test" ]; then
-      exe "../../node_modules/.bin/jest -c $(pwd)/jest.config.js --rootDir ."
-    else
-      echo "No tests to run"
-    fi
-    ;;
-
-  lint)
-    exe "../../node_modules/.bin/eslint ./src ./test -c $(pwd)/eslint.config.js --report-unused-disable-directives"
+    exe "../../node_modules/.bin/jest -c $(pwd)/jest.config.js --rootDir ."
     ;;
 
   *)
     if [[ -z "$CMD" ]]; then
-      echo "USAGE: ./task (clean|build|test|lint|<node_modules_bin_command>) command_args"
+      echo "USAGE: ./task (clean|build|test|<node_modules_bin_command>) command_args"
       exit 0
     fi
     exe "../../node_modules/.bin/$CMD $@"

@@ -1,2 +1,2 @@
-import Mod from './src/Mod'
+import Mod from './Mod'
 export default Mod

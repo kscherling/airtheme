@@ -2,520 +2,374 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-function unwrapExports (x) {
-	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
+var core = require('@airtheme/core');
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
 }
 
-function createCommonjsModule(fn, module) {
-	return module = { exports: {} }, fn(module, module.exports), module.exports;
-}
-
-var dist = createCommonjsModule(function (module, exports) {
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-const _ROOT_ATTRIBUTE_ = 'attribute';
-const COLOR = 'color';
-const FONT_SIZE = 'fontSize';
-const FONT_WEIGHT = 'fontWeight';
-const LINE_HEIGHT = 'lineHeight';
-const FONT_FACE = 'fontFace';
-const FONT_FAMILY = 'fontFamily';
-const SPACING = 'spacing';
-const SWATCH = 'swatch';
-
-const BASE_FONT_SIZE_KEY = 'baseFontSize';
-const BASE_LINE_HEIGHT_KEY = 'baseLineHeight';
-const BASE_SPACING_KEY = 'baseSpacing';
-const COLOR_KEY = 'color';
-const FONT_FAMILY_KEY = 'fontFamily';
-const FONT_SIZE_KEY = 'fontSize';
-const FONT_WEIGHT_KEY = 'fontWeight';
-const SETTING_KEY = 'setting';
-const SPACING_KEY = 'spacing';
-const SWATCH_KEY = 'swatch';
-const UTILITY_KEY = 'utility';
-
-const BASE_FONT_SIZE_PATH = BASE_FONT_SIZE_KEY;
-const BASE_LINE_HEIGHT_PATH = BASE_LINE_HEIGHT_KEY;
-const BASE_SPACING_PATH = BASE_SPACING_KEY;
-const COLOR_PATH = `${SETTING_KEY}.${COLOR_KEY}`;
-const FONT_FAMILY_PATH = `${SETTING_KEY}.${FONT_FAMILY_KEY}`;
-const FONT_SIZE_PATH = `${SETTING_KEY}.${FONT_SIZE_KEY}`;
-const FONT_WEIGHT_PATH = `${SETTING_KEY}.${FONT_WEIGHT_KEY}`;
-const SETTING_PATH = SETTING_KEY;
-const SPACING_PATH = `${SETTING_KEY}.${SPACING_KEY}`;
-const SWATCH_PATH = SWATCH_KEY;
-const UTILITY_PATH = UTILITY_KEY;
-
-const _ROOT_THEME_ = 'airtheme';
-const BASIC = 'airthemeBasic';
-
-const _ROOT_UNIT_ = 'unit';
-const STRING = 'string';
-const FACTOR = 'factor';
-const HEX = 'hex';
-const HEXA = 'hexa';
-const PX = 'px';
-const REFERENCE = 'reference';
-const REM = 'rem';
-const RGB = 'rgb';
-const RGBA = 'rgba';
-
-const VERSION = '0.1.0';
-
-exports._ROOT_ATTRIBUTE_ = _ROOT_ATTRIBUTE_;
-exports.COLOR = COLOR;
-exports.FONT_SIZE = FONT_SIZE;
-exports.FONT_WEIGHT = FONT_WEIGHT;
-exports.LINE_HEIGHT = LINE_HEIGHT;
-exports.FONT_FACE = FONT_FACE;
-exports.FONT_FAMILY = FONT_FAMILY;
-exports.SPACING = SPACING;
-exports.SWATCH = SWATCH;
-exports.BASE_FONT_SIZE_KEY = BASE_FONT_SIZE_KEY;
-exports.BASE_LINE_HEIGHT_KEY = BASE_LINE_HEIGHT_KEY;
-exports.BASE_SPACING_KEY = BASE_SPACING_KEY;
-exports.COLOR_KEY = COLOR_KEY;
-exports.FONT_FAMILY_KEY = FONT_FAMILY_KEY;
-exports.FONT_SIZE_KEY = FONT_SIZE_KEY;
-exports.FONT_WEIGHT_KEY = FONT_WEIGHT_KEY;
-exports.SETTING_KEY = SETTING_KEY;
-exports.SPACING_KEY = SPACING_KEY;
-exports.SWATCH_KEY = SWATCH_KEY;
-exports.UTILITY_KEY = UTILITY_KEY;
-exports.BASE_FONT_SIZE_PATH = BASE_FONT_SIZE_PATH;
-exports.BASE_LINE_HEIGHT_PATH = BASE_LINE_HEIGHT_PATH;
-exports.BASE_SPACING_PATH = BASE_SPACING_PATH;
-exports.COLOR_PATH = COLOR_PATH;
-exports.FONT_FAMILY_PATH = FONT_FAMILY_PATH;
-exports.FONT_SIZE_PATH = FONT_SIZE_PATH;
-exports.FONT_WEIGHT_PATH = FONT_WEIGHT_PATH;
-exports.SETTING_PATH = SETTING_PATH;
-exports.SPACING_PATH = SPACING_PATH;
-exports.SWATCH_PATH = SWATCH_PATH;
-exports.UTILITY_PATH = UTILITY_PATH;
-exports._ROOT_THEME_ = _ROOT_THEME_;
-exports.BASIC = BASIC;
-exports._ROOT_UNIT_ = _ROOT_UNIT_;
-exports.STRING = STRING;
-exports.FACTOR = FACTOR;
-exports.HEX = HEX;
-exports.HEXA = HEXA;
-exports.PX = PX;
-exports.REFERENCE = REFERENCE;
-exports.REM = REM;
-exports.RGB = RGB;
-exports.RGBA = RGBA;
-exports.VERSION = VERSION;
-});
-
-unwrapExports(dist);
-var dist_1 = dist._ROOT_ATTRIBUTE_;
-var dist_2 = dist.COLOR;
-var dist_3 = dist.FONT_SIZE;
-var dist_4 = dist.FONT_WEIGHT;
-var dist_5 = dist.LINE_HEIGHT;
-var dist_6 = dist.FONT_FACE;
-var dist_7 = dist.FONT_FAMILY;
-var dist_8 = dist.SPACING;
-var dist_9 = dist.SWATCH;
-var dist_10 = dist.BASE_FONT_SIZE_KEY;
-var dist_11 = dist.BASE_LINE_HEIGHT_KEY;
-var dist_12 = dist.BASE_SPACING_KEY;
-var dist_13 = dist.COLOR_KEY;
-var dist_14 = dist.FONT_FAMILY_KEY;
-var dist_15 = dist.FONT_SIZE_KEY;
-var dist_16 = dist.FONT_WEIGHT_KEY;
-var dist_17 = dist.SETTING_KEY;
-var dist_18 = dist.SPACING_KEY;
-var dist_19 = dist.SWATCH_KEY;
-var dist_20 = dist.UTILITY_KEY;
-var dist_21 = dist.BASE_FONT_SIZE_PATH;
-var dist_22 = dist.BASE_LINE_HEIGHT_PATH;
-var dist_23 = dist.BASE_SPACING_PATH;
-var dist_24 = dist.COLOR_PATH;
-var dist_25 = dist.FONT_FAMILY_PATH;
-var dist_26 = dist.FONT_SIZE_PATH;
-var dist_27 = dist.FONT_WEIGHT_PATH;
-var dist_28 = dist.SETTING_PATH;
-var dist_29 = dist.SPACING_PATH;
-var dist_30 = dist.SWATCH_PATH;
-var dist_31 = dist.UTILITY_PATH;
-var dist_32 = dist._ROOT_THEME_;
-var dist_33 = dist.BASIC;
-var dist_34 = dist._ROOT_UNIT_;
-var dist_35 = dist.STRING;
-var dist_36 = dist.FACTOR;
-var dist_37 = dist.HEX;
-var dist_38 = dist.HEXA;
-var dist_39 = dist.PX;
-var dist_40 = dist.REFERENCE;
-var dist_41 = dist.REM;
-var dist_42 = dist.RGB;
-var dist_43 = dist.RGBA;
-var dist_44 = dist.VERSION;
-
-// Attribute
 // type for a theme attribute, has many units
 
 var schema = {
   // content
   // Object : reference/val store for settings. User selected.
-
   content: [],
-
   // view
   // The unit the content items are displayed. User selected.
-
   view: null,
-
   // viewable
   // Array : Units this type can serialize to.
-
   viewable: [],
-
   // reference
   // A string namespace global reference
-
   reference: null,
-
   // type
   // The name of the type. The same as the 'class'
-
-  type: dist_1,
-
+  type: core._ROOT_ATTRIBUTE_,
   // unit
   // The unit the content items are stored. Static.
-
   unit: null
 };
 
 // prettier-ignore
-const factoryFor = ({
-  type,
-  view,
-  unit,
-  viewable,
-  reference,
-  content
-} = {}, schema = {}) => ({
-  view: factoryDisplay,
-  content: factoryContent
-} = {}) => Object.assign({}, schema, {
-  type: type || schema.type,
-  view: factoryDisplay || view || schema.view,
-  unit: unit || schema.unit,
-  viewable: viewable || schema.viewable,
-  reference: reference || schema.reference,
-  content: factoryContent || content || schema.content
-});
+var factoryFor = function factoryFor() {
+  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      type = _ref.type,
+      view = _ref.view,
+      unit = _ref.unit,
+      viewable = _ref.viewable,
+      reference = _ref.reference,
+      content = _ref.content;
+
+  var schema = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  return function () {
+    var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+        factoryDisplay = _ref2.view,
+        factoryContent = _ref2.content;
+
+    return Object.assign({}, schema, {
+      type: type || schema.type,
+      view: factoryDisplay || view || schema.view,
+      unit: unit || schema.unit,
+      viewable: viewable || schema.viewable,
+      reference: reference || schema.reference,
+      content: factoryContent || content || schema.content
+    });
+  };
+};
 
 var color = {
-  view: dist_40,
-  viewable: [dist_40, dist_37, dist_38, dist_42, dist_43],
-  reference: dist_9,
-  type: dist_2,
-  unit: dist_40
+  view: core.REFERENCE,
+  viewable: [core.REFERENCE, core.HEX, core.HEXA, core.RGB, core.RGBA],
+  reference: core.SWATCH,
+  type: core.COLOR,
+  unit: core.REFERENCE
 };
 
 var fontFamily = {
-  view: dist_40,
-  viewable: [dist_40],
+  view: core.REFERENCE,
+  viewable: [core.REFERENCE],
   reference: null,
-  type: dist_7,
-  unit: dist_40
+  type: core.FONT_FAMILY,
+  unit: core.REFERENCE
 };
 
 var fontSize = {
-  view: dist_36,
-  viewable: [dist_36, dist_39, dist_41],
-  reference: dist_10,
-  type: dist_3,
-  unit: dist_36
+  view: core.FACTOR,
+  viewable: [core.FACTOR, core.PX, core.REM],
+  reference: core.BASE_FONT_SIZE_KEY,
+  type: core.FONT_SIZE,
+  unit: core.FACTOR
 };
 
 var fontFace = {
-  view: dist_35,
-  viewable: [dist_35],
+  view: core.STRING,
+  viewable: [core.STRING],
   reference: null,
-  type: dist_6,
-  unit: dist_35
+  type: core.FONT_FACE,
+  unit: core.STRING
 };
 
 var fontWeight = {
-  view: dist_35,
-  viewable: [dist_35],
+  view: core.STRING,
+  viewable: [core.STRING],
   reference: null,
-  type: dist_4,
-  unit: dist_35
+  type: core.FONT_WEIGHT,
+  unit: core.STRING
 };
 
 var lineHeight = {
-  view: dist_36,
-  viewable: [dist_36, dist_39],
-  reference: dist_10,
-  type: dist_5,
-  unit: dist_36
+  view: core.FACTOR,
+  viewable: [core.FACTOR, core.PX],
+  reference: core.BASE_FONT_SIZE_KEY,
+  type: core.LINE_HEIGHT,
+  unit: core.FACTOR
 };
 
 var spacing = {
-  view: dist_36,
-  viewable: [dist_36, dist_39],
-  reference: dist_12,
-  type: dist_8,
-  unit: dist_36
+  view: core.FACTOR,
+  viewable: [core.FACTOR, core.PX],
+  reference: core.BASE_SPACING_KEY,
+  type: core.SPACING,
+  unit: core.FACTOR
 };
 
 var swatch = {
-  view: dist_38,
-  viewable: [dist_37, dist_38, dist_42, dist_43],
+  view: core.HEXA,
+  viewable: [core.HEX, core.HEXA, core.RGB, core.RGBA],
   reference: null,
-  type: dist_9,
-  unit: dist_38,
+  type: core.SWATCH,
+  unit: core.HEXA,
   content: []
 };
 
-const attribute = {
+var _attribute;
+var attribute = (_attribute = {
   color: factoryFor(color, schema),
   fontFamily: factoryFor(fontFamily, schema),
   fontSize: factoryFor(fontSize, schema),
   fontWeight: factoryFor(fontWeight, schema),
   lineHeight: factoryFor(lineHeight, schema),
-  fontFace: factoryFor(fontFace, schema),
-  fontFamily: factoryFor(fontFamily, schema),
-  spacing: factoryFor(spacing, schema),
-  swatch: factoryFor(swatch, schema)
-};
+  fontFace: factoryFor(fontFace, schema)
+}, _defineProperty(_attribute, "fontFamily", factoryFor(fontFamily, schema)), _defineProperty(_attribute, "spacing", factoryFor(spacing, schema)), _defineProperty(_attribute, "swatch", factoryFor(swatch, schema)), _attribute);
 
-// setting
+var _COLOR_KEY$FONT_FAMIL;
 // Settings hash
 
-var schema$1 = {
-  [dist_13]: {},
-  [dist_14]: {},
-  [dist_15]: {},
-  [dist_16]: {},
-  [dist_18]: {}
-};
+var schema$1 = (_COLOR_KEY$FONT_FAMIL = {}, _defineProperty(_COLOR_KEY$FONT_FAMIL, core.COLOR_KEY, {}), _defineProperty(_COLOR_KEY$FONT_FAMIL, core.FONT_FAMILY_KEY, {}), _defineProperty(_COLOR_KEY$FONT_FAMIL, core.FONT_SIZE_KEY, {}), _defineProperty(_COLOR_KEY$FONT_FAMIL, core.FONT_WEIGHT_KEY, {}), _defineProperty(_COLOR_KEY$FONT_FAMIL, core.SPACING_KEY, {}), _COLOR_KEY$FONT_FAMIL);
 
-// base
+var _COLOR_KEY$FONT_FAMIL$1;
 // The base setting object
 
-var base = {
-  [dist_13]: attribute.color(),
-  [dist_14]: attribute.fontFamily(),
-  [dist_15]: attribute.fontSize(),
-  [dist_16]: attribute.fontWeight(),
-  [dist_18]: attribute.spacing()
-};
+var base = (_COLOR_KEY$FONT_FAMIL$1 = {}, _defineProperty(_COLOR_KEY$FONT_FAMIL$1, core.COLOR_KEY, attribute.color()), _defineProperty(_COLOR_KEY$FONT_FAMIL$1, core.FONT_FAMILY_KEY, attribute.fontFamily()), _defineProperty(_COLOR_KEY$FONT_FAMIL$1, core.FONT_SIZE_KEY, attribute.fontSize()), _defineProperty(_COLOR_KEY$FONT_FAMIL$1, core.FONT_WEIGHT_KEY, attribute.fontWeight()), _defineProperty(_COLOR_KEY$FONT_FAMIL$1, core.SPACING_KEY, attribute.spacing()), _COLOR_KEY$FONT_FAMIL$1);
 
 // prettier-ignore
-const factoryFor$1 = ({
-  color,
-  fontFamily,
-  fontSize,
-  fontWeight,
-  spacing
-} = {}, schema) => ({
-  color: instanceColor,
-  fontFamily: instanceFontFamily,
-  fontSize: instanceFontSize,
-  fontWeight: instanceFontWeight,
-  spacing: instanceSpacing
-} = {}) => Object.assign({}, {
-  color: instanceColor || color || schema.color,
-  fontFamily: instanceFontFamily || fontFamily || schema.fontFamily,
-  fontSize: instanceFontSize || fontSize || schema.fontSize,
-  fontWeight: instanceFontWeight || fontWeight || schema.fontWeight,
-  spacing: instanceSpacing || spacing || schema.spacing
-});
+var factoryFor$1 = function factoryFor() {
+  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      color = _ref.color,
+      fontFamily = _ref.fontFamily,
+      fontSize = _ref.fontSize,
+      fontWeight = _ref.fontWeight,
+      spacing = _ref.spacing;
 
-const setting = {
+  var schema = arguments.length > 1 ? arguments[1] : undefined;
+  return function () {
+    var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+        instanceColor = _ref2.color,
+        instanceFontFamily = _ref2.fontFamily,
+        instanceFontSize = _ref2.fontSize,
+        instanceFontWeight = _ref2.fontWeight,
+        instanceSpacing = _ref2.spacing;
+
+    return Object.assign({}, {
+      color: instanceColor || color || schema.color,
+      fontFamily: instanceFontFamily || fontFamily || schema.fontFamily,
+      fontSize: instanceFontSize || fontSize || schema.fontSize,
+      fontWeight: instanceFontWeight || fontWeight || schema.fontWeight,
+      spacing: instanceSpacing || spacing || schema.spacing
+    });
+  };
+};
+
+var setting = {
   base: factoryFor$1(base, schema$1)
 };
 
-// theme
 // The container object
 
 var schema$2 = {
   // name
   // Friendly name of the theme
-
   name: null,
-
   // id
   // you know, the id
-
   id: '',
-
   // baseFontSize
   // string : the reference of the unit
-
   baseFontSize: 16,
-
   // baseLineHeight
   // string : the reference of the unit
-
   baseLineHeight: 1.15,
-
   // baseSpacing
   // string : the reference of the unit
-
   baseSpacing: 16,
-
   // type
   // string : The name of the unit.
-
-  type: dist_32,
-
+  type: core._ROOT_THEME_,
   // version
   // string : the version of the airthemek
-
-  version: dist_44,
-
+  version: core.VERSION,
   // swatch
   // Swatch : Swatch attribute type
   swatch: attribute.swatch(),
-
   // fontFace
   // FontFace : fontFace attribute type
   fontFace: attribute.fontFace(),
-
   // setting
   // Setting : Keyed object of attribute types
-
   setting: setting.base()
 };
 
-// base
 // The container object
 
 var base$1 = {
   name: 'Basic Airtheme',
-  type: dist_33,
+  type: core.BASIC,
   baseFontSize: 16,
   baseLineHeight: 1.15,
   baseSpacing: 16,
-  version: dist_44
+  version: core.VERSION
 };
 
-const factoryFor$2 = ({
-  name,
-  id,
-  baseFontSize,
-  baseLineHeight,
-  baseSpacing,
-  fontFace,
-  swatch,
-  setting
-} = {}, schema) => ({
-  name: instanceName,
-  id: instanceId,
-  baseFontSize: instanceBaseFontSize,
-  baseLineHeight: instanceBaseLineHeight,
-  baseSpacing: instanceBaseSpacing,
-  fontFace: instanceFontFace,
-  swatch: instanceSwatch,
-  setting: instanceSetting
-} = {}) => Object.assign({}, schema, {
-  name: instanceName || name || schema.name,
-  id: instanceId || id || schema.id,
-  baseFontSize: instanceBaseFontSize || baseFontSize || schema.baseFontSize,
-  baseLineHeight: instanceBaseLineHeight || baseLineHeight || schema.baseLineHeight,
-  baseSpacing: instanceBaseSpacing || baseSpacing || schema.baseSpacing,
-  fontFace: instanceFontFace || fontFace || schema.fontFace,
-  swatch: instanceSwatch || swatch || schema.swatch,
-  setting: instanceSetting || setting || schema.setting
-});
+var factoryFor$2 = function factoryFor() {
+  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      name = _ref.name,
+      id = _ref.id,
+      baseFontSize = _ref.baseFontSize,
+      baseLineHeight = _ref.baseLineHeight,
+      baseSpacing = _ref.baseSpacing,
+      fontFace = _ref.fontFace,
+      swatch = _ref.swatch,
+      setting = _ref.setting;
 
-const theme = {
+  var schema = arguments.length > 1 ? arguments[1] : undefined;
+  return function () {
+    var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+        instanceName = _ref2.name,
+        instanceId = _ref2.id,
+        instanceBaseFontSize = _ref2.baseFontSize,
+        instanceBaseLineHeight = _ref2.baseLineHeight,
+        instanceBaseSpacing = _ref2.baseSpacing,
+        instanceFontFace = _ref2.fontFace,
+        instanceSwatch = _ref2.swatch,
+        instanceSetting = _ref2.setting;
+
+    return Object.assign({}, schema, {
+      name: instanceName || name || schema.name,
+      id: instanceId || id || schema.id,
+      baseFontSize: instanceBaseFontSize || baseFontSize || schema.baseFontSize,
+      baseLineHeight: instanceBaseLineHeight || baseLineHeight || schema.baseLineHeight,
+      baseSpacing: instanceBaseSpacing || baseSpacing || schema.baseSpacing,
+      fontFace: instanceFontFace || fontFace || schema.fontFace,
+      swatch: instanceSwatch || swatch || schema.swatch,
+      setting: instanceSetting || setting || schema.setting
+    });
+  };
+};
+
+var theme = {
   base: factoryFor$2(base$1, schema$2)
 };
 
-// unit
 // A typed unit for communicating css units
 
 var schema$3 = {
   // name
   // string : the friendly name
-
   name: null,
-
   // ordinal
   // int : the stack order index
-
   ordinal: null,
-
   // type
   // string : The name of the unit.
-
-  type: dist_34,
-
+  type: core._ROOT_UNIT_,
   // value
   // Any : The value of the unit
-
   value: null
 };
 
 // createFactoryFor
 // Accepts a unit object and root schema
 // returns a function used to create new unit instances
-
 // prettier-ignore
-const factoryFor$3 = ({ type } = {}, schema) => ({ value, name, ordinal } = {}) => Object.assign({}, schema, { type }, {
-  value: value || schema.value,
-  name: name || schema.name,
-  ordinal: ordinal || schema.ordinal
-});
+var factoryFor$3 = function factoryFor() {
+  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      type = _ref.type;
 
-// factor (string)
+  var schema = arguments.length > 1 ? arguments[1] : undefined;
+  return function () {
+    var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+        value = _ref2.value,
+        name = _ref2.name,
+        ordinal = _ref2.ordinal;
+
+    return Object.assign({}, schema, {
+      type: type
+    }, {
+      value: value || schema.value,
+      name: name || schema.name,
+      ordinal: ordinal || schema.ordinal
+    });
+  };
+};
+
 // a relative unit multiplied by a reference
 
-var factor = { type: dist_36 };
+var factor = {
+  type: core.FACTOR
+};
 
-// hex (string)
 // a hexidecimal color value
 
-var hex = { type: dist_37 };
+var hex = {
+  type: core.HEX
+};
 
-// hexa (string)
 // A hex value follow by an alpha valu '#000000,0.5'
 // NOTE: Units are serialized to the smallest css var that expresses
 
-var hexa = { type: dist_38 };
+var hexa = {
+  type: core.HEXA
+};
 
-// px (int)
 // a px unit
 
-var px = { type: dist_39 };
+var px = {
+  type: core.PX
+};
 
-// reference (string)
 // a string path of a theme global
 
-var reference = { type: dist_40 };
+var reference = {
+  type: core.REFERENCE
+};
 
-// rem (int)
 // a css rem unit
 
-var rem = { type: dist_41 };
+var rem = {
+  type: core.REM
+};
 
-// rgb (string)
 // a rgb color value: '0,0,0'
 
-var rgb = { type: dist_42 };
+var rgb = {
+  type: core.RGB
+};
 
-// rgba (string)
 // a rgba color value '0,0,0,0'
 
-var rgba = { type: dist_43 };
+var rgba = {
+  type: core.RGBA
+};
 
-// string (string)
 // a non transformable value
 
-var string = { type: dist_35 };
+var string = {
+  type: core.STRING
+};
 
-const unit = {
+var unit = {
   factor: factoryFor$3(factor, schema$3),
   hex: factoryFor$3(hex, schema$3),
   hexa: factoryFor$3(hexa, schema$3),

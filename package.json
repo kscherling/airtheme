@@ -4,6 +4,7 @@
     "packages/*"
   ],
   "scripts": {
+    "clean": "lerna run clean",
     "build": "lerna run build",
     "test": "lerna run test"
   },

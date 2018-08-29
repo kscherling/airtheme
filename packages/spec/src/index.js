@@ -1,2 +1,2 @@
-import Spec from './src/Spec'
+import Spec from './Spec'
 export default Spec

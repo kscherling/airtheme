@@ -4,7 +4,9 @@
   "main": "dist/index.js",
   "files": ["dist"],
   "scripts": {
+    "clean": "./task clean",
     "build": "./task build",
+    "build:watch": "./task build:watch",
     "test": "./task test"
   },
   "dependencies": {

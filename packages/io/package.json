@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "startApp": "react-scripts start",
+    "buildApp": "react-scripts build",
+    "build:watch": "./task build:watch",
     "test": "./task test"
   },
   "dependencies": {
