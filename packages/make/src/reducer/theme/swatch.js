@@ -7,38 +7,20 @@ import {
 } from '../../constant/swatch'
 import { unit, attribute } from '@airtheme/type'
 import { eq, not } from '../../lib/helpers'
+import { addUnit, removeUnit, updateUnit } from '../../lib/unitReducers'
 
 const swatch = (state = attribute.swatch(), action) => {
   switch (action.type) {
     case UPDATE_THEME:
       return action.theme.swatch || {}
     case ADD_SWATCH:
-      return {
-        ...state,
-        content: [
-          ...state.content,
-          unit[state.unit]({
-            value: action.value,
-            name: action.name,
-            ordinal: action.ordinal
-          })
-        ]
-      }
+      return addUnit(state, action)
     case REMOVE_SWATCH:
-      return {
-        ...state,
-        content: state.content.filter(not(action.original))
-      }
+      return removeUnit(state, action)
     case UPDATE_SWATCH:
-      return {
-        ...state,
-        content: state.content.map(
-          swatch => (eq(swatch, action.original) ? action.updated : swatch)
-        )
-      }
+      return updateUnit(state, action)
     case UPDATE_SWATCH_VIEW:
-      const { view } = action
-      return { ...state, view }
+      return { ...state, view: action.view }
     default:
       return state
   }

@@ -17,26 +17,26 @@ beforeEach(() => {
 })
 
 it('`addColor` adds a color', () => {
-  const value = 'primary'
-  const reference = 'swatch'
+  const value = 'red'
+  const name = 'primary'
   const ordinal = 1
-  const initialColor = unit.reference({ reference, value, ordinal })
+  const initialColor = unit.reference({ name, value, ordinal })
   const updatedState = withBaseState({
     setting: withBaseSetting({
       color: attribute.color({ content: [initialColor] })
     })
   })
 
-  store.dispatch(addColor(value, reference, ordinal))
+  store.dispatch(addColor(value, name, ordinal))
   const state = store.getState()
 
   expect(state).toEqual(updatedState)
 })
 
 it('`removeColor` removes color', () => {
-  const reference = { reference: 'swatch', value: 'primary', ordinal: 1 }
-  const colorA = unit.reference(reference)
-  const colorB = unit.reference(reference)
+  const reference = { name: 'primary', value: 'red', ordinal: 1 }
+  const colorA = unit.reference(name)
+  const colorB = unit.reference(name)
   const initialState = withBaseState({
     setting: withBaseSetting({
       color: attribute.color({ content: [colorA, colorB] })
@@ -76,9 +76,7 @@ it('`updateColor` update color', () => {
   store.dispatch(
     updateColor(
       initialColorA,
-      updatedReference.value,
-      updatedReference.reference,
-      updatedReference.ordinal
+      updatedReference
     )
   )
   const state = store.getState()

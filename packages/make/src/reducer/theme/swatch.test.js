@@ -16,22 +16,24 @@ beforeEach(() => {
 })
 
 it('`addSwatch` adds a swatch', () => {
-  const hexa = '#000000,1'
-  const initialSwatch = unit.hexa({ value: hexa })
+  const value = '#000000,1'
+  const name = 'ivory black'
+  const ordinal = 1
+  const initialSwatch = unit.hexa({ value, name, ordinal })
   const updatedState = withBaseState({
     swatch: attribute.swatch({ content: [initialSwatch] })
   })
 
-  store.dispatch(addSwatch(hexa))
+  store.dispatch(addSwatch(value, name, ordinal))
   const state = store.getState()
 
   expect(state).toEqual(updatedState)
 })
 
 it('`removeSwatch` removes a swatch', () => {
-  const hexa = '#000000,1'
-  const swatchA = unit.hexa({ value: hexa })
-  const swatchB = unit.hexa({ value: hexa })
+  const initialHexa = { value: '#000000,1', name: 'ivory black', ordinal: 1 }
+  const swatchA = unit.hexa(initialHexa)
+  const swatchB = unit.hexa(initialHexa)
   const initialState = withBaseState({
     swatch: attribute.swatch({ content: [swatchA, swatchB] })
   })
@@ -47,11 +49,11 @@ it('`removeSwatch` removes a swatch', () => {
 })
 
 it('`updateSwatch` updates a swatch', () => {
-  const initialHexa = '#000000,1'
-  const initialSwatchA = unit.hexa({ value: initialHexa })
-  const initialSwatchB = unit.hexa({ value: initialHexa })
-  const updatedHexa = '#FFFFFF,1'
-  const updatedSwatchA = unit.hexa({ value: updatedHexa })
+  const initialHexa = { value: '#000000,1', name: 'ivory black', ordinal: 1 }
+  const initialSwatchA = unit.hexa(initialHexa)
+  const initialSwatchB = unit.hexa(initialHexa)
+  const updatedHexa = { value: '#111111,1', name: 'black', ordinal: 2 }
+  const updatedSwatchA = unit.hexa(updatedHexa)
   const initialState = withBaseState({
     swatch: attribute.swatch({ content: [initialSwatchA, initialSwatchB] })
   })
