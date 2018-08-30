@@ -7,7 +7,7 @@ exe() { echo "$@" ; $@ ; }
 
 case $CMD in
   clean)
-    exe "rm -rf ./dist"
+    exe "rm -rf ./dist && rm -rf ./node_modules && yarn cache clean"
     ;;
 
   build)
@@ -19,11 +19,8 @@ case $CMD in
     ;;
 
   test)
-    exe "../../node_modules/.bin/jest -c $(pwd)/jest.config.js --rootDir ."
+    exe "../../node_modules/.bin/jest -c $(pwd)/jest.config.js"
     ;;
-
-  reset)
-    exe "rm -rf ./node_modules && yarn cache clean"
 
   *)
     if [[ -z "$CMD" ]]; then
