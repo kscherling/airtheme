@@ -4,9 +4,9 @@ import {
   REMOVE_FONT_FAMILY
 } from '../../../constant/fontFamily'
 
-export const addFontFamily = (value, reference, ordinal) => ({
+export const addFontFamily = (value, name, ordinal) => ({
   type: ADD_FONT_FAMILY,
-  reference,
+  name,
   ordinal,
   value
 })
@@ -16,10 +16,8 @@ export const removeFontFamily = original => ({
   original
 })
 
-export const updateFontFamily = (original, value, reference, ordinal) => ({
+export const updateFontFamily = (original, updated) => ({
   type: UPDATE_FONT_FAMILY,
-  reference,
-  ordinal,
   original,
-  value
+  updated
 })

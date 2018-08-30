@@ -4,22 +4,19 @@ import {
   UPDATE_FONT_WEIGHT
 } from '../../../constant/fontWeight'
 
-export const addFontWeight = (value, reference, ordinal) => ({
+export const addFontWeight = (value, name, ordinal) => ({
   type: ADD_FONT_WEIGHT,
-  reference,
+  name,
   ordinal,
   value
 })
-
 export const removeFontWeight = original => ({
   type: REMOVE_FONT_WEIGHT,
   original
 })
 
-export const updateFontWeight = (original, value, reference, ordinal) => ({
+export const updateFontWeight = (original, updated) => ({
   type: UPDATE_FONT_WEIGHT,
-  reference,
-  ordinal,
   original,
-  value
+  updated
 })

@@ -18,25 +18,25 @@ beforeEach(() => {
 
 it('`addFontFamily` adds a font family', () => {
   const value = 'Roboto'
-  const reference = 'fontFace'
+  const name = 'fontFace'
   const ordinal = 1
-  const initialFontFamily = unit.reference({ reference, value, ordinal })
+  const initialFontFamily = unit.reference({ name, value, ordinal })
   const updatedState = withBaseState({
     setting: withBaseSetting({
       fontFamily: attribute.fontFamily({ content: [initialFontFamily] })
     })
   })
 
-  store.dispatch(addFontFamily(value, reference, ordinal))
+  store.dispatch(addFontFamily(value, name, ordinal))
   const state = store.getState()
 
   expect(state).toEqual(updatedState)
 })
 
 it('`removeFontFamily` removes font family', () => {
-  const reference = { reference: 'fontFace', value: 'Roboto', ordinal: 1 }
-  const fontFamilyA = unit.reference(reference)
-  const fontFamilyB = unit.reference(reference)
+  const name = { name: 'fontFace', value: 'Roboto', ordinal: 1 }
+  const fontFamilyA = unit.reference(name)
+  const fontFamilyB = unit.reference(name)
   const initialState = withBaseState({
     setting: withBaseSetting({
       fontFamily: attribute.fontFamily({ content: [fontFamilyA, fontFamilyB] })
@@ -80,9 +80,7 @@ it('`updateFontFamily` update font family', () => {
   store.dispatch(
     updateFontFamily(
       initialFontFamilyA,
-      updatedFactor.value,
-      updatedFactor.reference,
-      updatedFactor.ordinal
+      updatedFactor
     )
   )
   const state = store.getState()

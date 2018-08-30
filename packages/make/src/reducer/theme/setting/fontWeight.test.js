@@ -18,23 +18,23 @@ beforeEach(() => {
 
 it('`addFontWeight` adds a font size', () => {
   const value = '300'
-  const reference = null
+  const name = 'lt'
   const ordinal = 1
-  const initialFontWeight = unit.string({ reference, value, ordinal })
+  const initialFontWeight = unit.string({ name, value, ordinal })
   const updatedState = withBaseState({
     setting: withBaseSetting({
       fontWeight: attribute.fontWeight({ content: [initialFontWeight] })
     })
   })
 
-  store.dispatch(addFontWeight(value, reference, ordinal))
+  store.dispatch(addFontWeight(value, name, ordinal))
   const state = store.getState()
 
   expect(state).toEqual(updatedState)
 })
 
 it('`removeFontWeight` removes font size', () => {
-  const string = { reference: null, value: '300', ordinal: 1 }
+  const string = { name: 'lt', value: '300', ordinal: 1 }
   const fontWeightA = unit.string(string)
   const fontWeightB = unit.string(string)
   const initialState = withBaseState({
@@ -56,7 +56,7 @@ it('`removeFontWeight` removes font size', () => {
 })
 
 it('`updateFontWeight` update font size', () => {
-  const initialFactor = { reference: null, value: '300', ordinal: 1 }
+  const initialFactor = { name: 'lt', value: '300', ordinal: 1 }
   const initialFontWeightA = unit.string(initialFactor)
   const initialFontWeightB = unit.string(initialFactor)
   const initialState = withBaseState({
@@ -66,7 +66,7 @@ it('`updateFontWeight` update font size', () => {
       })
     })
   })
-  const updatedFactor = { reference: null, value: '500', ordinal: 2 }
+  const updatedFactor = { name: 'lt', value: '500', ordinal: 2 }
   const updatedFontWeight = unit.string(updatedFactor)
   const updatedState = withBaseState({
     setting: withBaseSetting({
@@ -80,9 +80,7 @@ it('`updateFontWeight` update font size', () => {
   store.dispatch(
     updateFontWeight(
       initialFontWeightA,
-      updatedFactor.value,
-      updatedFactor.reference,
-      updatedFactor.ordinal
+      updatedFactor
     )
   )
   const state = store.getState()
