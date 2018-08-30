@@ -10,7 +10,7 @@ module.exports = {
   env: {
     test: {
       presets: [
-        ['@babel/preset-env'], { modules: 'commonjs' },
+        ['@babel/preset-env'],
         '@babel/preset-react'
       ]
     }

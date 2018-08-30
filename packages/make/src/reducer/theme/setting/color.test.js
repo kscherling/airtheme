@@ -56,7 +56,7 @@ it('`removeColor` removes color', () => {
 })
 
 it('`updateColor` update color', () => {
-  const initialReference = { reference: 'swatch', value: 'primary', ordinal: 1 }
+  const initialReference = { name: 'primary', value: 'red', ordinal: 1 }
   const initialColorA = unit.reference(initialReference)
   const initialColorB = unit.reference(initialReference)
   const initialState = withBaseState({
@@ -64,7 +64,7 @@ it('`updateColor` update color', () => {
       color: attribute.color({ content: [initialColorA, initialColorB] })
     })
   })
-  const updatedReference = { reference: 'swatch', value: 'secondary', ordinal: 2 }
+  const updatedReference = { name: 'primary', value: 'blue', ordinal: 2 }
   const updatedColorA = unit.reference(updatedReference)
   const updatedState = withBaseState({
     setting: withBaseSetting({
