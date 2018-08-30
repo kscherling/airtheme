@@ -16,6 +16,7 @@ const spacing = (state = attribute.spacing(), action) => {
     case REMOVE_SPACING:
       return removeUnit(state, action)
     case UPDATE_SPACING:
+      console.log(action);
       return updateUnit(state, action)
     default:
       return state

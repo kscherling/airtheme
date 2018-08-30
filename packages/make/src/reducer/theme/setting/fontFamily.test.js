@@ -56,7 +56,7 @@ it('`removeFontFamily` removes font family', () => {
 })
 
 it('`updateFontFamily` update font family', () => {
-  const initialFactor = { reference: 'fontFace', value: 'Roboto', ordinal: 1 }
+  const initialFactor = { name: 'body', value: 'Roboto', ordinal: 1 }
   const initialFontFamilyA = unit.reference(initialFactor)
   const initialFontFamilyB = unit.reference(initialFactor)
   const initialState = withBaseState({
@@ -66,7 +66,7 @@ it('`updateFontFamily` update font family', () => {
       })
     })
   })
-  const updatedFactor = { reference: 'fontFace', value: 'Open Sans', ordinal: 2 }
+  const updatedFactor = { name: 'body', value: 'Open Sans', ordinal: 2 }
   const updatedFontFamily = unit.reference(updatedFactor)
   const updatedState = withBaseState({
     setting: withBaseSetting({

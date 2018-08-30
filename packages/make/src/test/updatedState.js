@@ -5,6 +5,7 @@ const updatedState = {
     baseFontSize: 16,
     baseLineHeight: 16,
     baseSpacing: 16,
+    fontFace: {},
     id: '123456',
     name: 'Test Theme',
     setting: withBaseSetting({
@@ -15,7 +16,7 @@ const updatedState = {
       spacing: {}
     }),
     swatch: { type: 'swatch' },
-    type: 'airtheme',
+    type: '',
     version: '1.0.0'
   }
 }

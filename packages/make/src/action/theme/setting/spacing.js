@@ -4,9 +4,9 @@ import {
   REMOVE_SPACING
 } from '../../../constant/spacing'
 
-export const addSpacing = (value, reference, ordinal) => ({
+export const addSpacing = (value, name, ordinal) => ({
   type: ADD_SPACING,
-  reference,
+  name,
   ordinal,
   value
 })
@@ -16,10 +16,8 @@ export const removeSpacing = original => ({
   original
 })
 
-export const updateSpacing = (original, value, reference, ordinal) => ({
+export const updateSpacing = (original, updated) => ({
   type: UPDATE_SPACING,
-  reference,
-  ordinal,
   original,
-  value
+  updated
 })
