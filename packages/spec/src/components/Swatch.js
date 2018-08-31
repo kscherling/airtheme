@@ -1,12 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapSwatch, mapSwatchContent, SimpleList } from '@airtheme/make'
-import {
-  printObject,
-  printAttributeContent,
-  Attribute,
-  AttributeContent
-} from '../lib/PrintTypes'
+import { Attribute, AttributeContent } from '../lib/PrintTypes'
 
 const SwatchAttribute = connect(mapSwatch)(({ swatch }) => (
   <Attribute attribute={swatch} />

@@ -14,6 +14,13 @@ const Header = styled(Grid.OneColumn)`
   text-transform: uppercase;
 `
 
+const Subheader = styled(Grid.OneColumn)`
+
+  font-weight: bold;
+  font-size: 85%;
+  text-transform: uppercase;
+`
+
 const OneColumn = styled(Grid.OneColumn).attrs({
   gridGap: '1rem'
 })``
@@ -31,6 +38,7 @@ const FourColumns = styled(Grid.FourColumns).attrs({
 })``
 
 SimpleList.Header = Header
+SimpleList.Subheader = Subheader
 SimpleList.OneColumn = OneColumn
 SimpleList.TwoColumns = TwoColumns
 SimpleList.ThreeColumns = ThreeColumns

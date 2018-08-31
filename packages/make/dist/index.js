@@ -3255,7 +3255,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  background: ", ";\n\n  ", "\n\n  ", "\n\n  ", "\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  \n\n  ", "\n\n  ", "\n\n  ", "\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -3263,8 +3263,7 @@ function _templateObject() {
 
   return data;
 }
-var transparent = 'rgba(0,0,0,0.02)';
-var Grid = styled__default.div(_templateObject(), transparent, function (_ref) {
+var Grid = styled__default.div(_templateObject(), function (_ref) {
   var gridGap = _ref.gridGap;
   return gridGap && styled.css(_templateObject2(), gridGap);
 }, function (_ref2) {
@@ -3290,6 +3289,16 @@ Grid.OneColumn = OneColumn;
 Grid.TwoColumns = TwoColumns;
 Grid.ThreeColumns = ThreeColumns;
 Grid.FourColumns = FourColumns;
+
+function _templateObject7$1() {
+  var data = _taggedTemplateLiteral([""]);
+
+  _templateObject7$1 = function _templateObject7() {
+    return data;
+  };
+
+  return data;
+}
 
 function _templateObject6$1() {
   var data = _taggedTemplateLiteral([""]);
@@ -3322,7 +3331,7 @@ function _templateObject4$1() {
 }
 
 function _templateObject3$1() {
-  var data = _taggedTemplateLiteral([""]);
+  var data = _taggedTemplateLiteral(["\n\n  font-weight: bold;\n  font-size: 85%;\n  text-transform: uppercase;\n"]);
 
   _templateObject3$1 = function _templateObject3() {
     return data;
@@ -3354,19 +3363,21 @@ var SimpleList = styled__default(Grid.OneColumn).attrs({
   gridGap: '1rem'
 })(_templateObject$1());
 var Header = styled__default(Grid.OneColumn)(_templateObject2$1());
+var Subheader = styled__default(Grid.OneColumn)(_templateObject3$1());
 var OneColumn$1 = styled__default(Grid.OneColumn).attrs({
   gridGap: '1rem'
-})(_templateObject3$1());
+})(_templateObject4$1());
 var TwoColumns$1 = styled__default(Grid.TwoColumns).attrs({
   gridGap: '1rem'
-})(_templateObject4$1());
+})(_templateObject5$1());
 var ThreeColumns$1 = styled__default(Grid.ThreeColumns).attrs({
   gridGap: '1rem'
-})(_templateObject5$1());
+})(_templateObject6$1());
 var FourColumns$1 = styled__default(Grid.FourColumns).attrs({
   gridGap: '1rem'
-})(_templateObject6$1());
+})(_templateObject7$1());
 SimpleList.Header = Header;
+SimpleList.Subheader = Subheader;
 SimpleList.OneColumn = OneColumn$1;
 SimpleList.TwoColumns = TwoColumns$1;
 SimpleList.ThreeColumns = ThreeColumns$1;

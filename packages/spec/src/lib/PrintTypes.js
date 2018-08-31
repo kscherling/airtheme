@@ -17,7 +17,7 @@ const printUnrenderable = val => {
   }
 
   if (Array.isArray(val)) {
-    return '[array]'
+    return `[array/${val.length}]`
   }
 
   if (typeof val === 'object') {
@@ -77,13 +77,18 @@ export const Attribute = ({ attribute }) => (
 
 export const AttributeContent = ({ content = [] }) => (
   <SimpleList.OneColumn>
+    <SimpleList.Subheader>Content</SimpleList.Subheader>
     {content.length ? (
       content.map((unit, idx) => <Unit key={idx} unit={unit} />)
     ) : (
-      <SimpleList>Empty</SimpleList>
+      <SimpleList>
+        <Strike>empty</Strike>
+      </SimpleList>
     )}
   </SimpleList.OneColumn>
 )
+
+// ___________________ destroy
 
 export const printObject = (name, obj) => (
   <Container>

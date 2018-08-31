@@ -5,7 +5,7 @@ const transparent = 'rgba(0,0,0,0.02)'
 
 const Grid = styled.div`
   display: grid;
-  background: ${transparent};
+  
 
   ${({gridGap}) => gridGap && css`
     grid-gap: ${gridGap};

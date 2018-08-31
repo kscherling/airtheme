@@ -20,7 +20,6 @@ const Spec = () => (
     <Globals />
     <Swatch />
     <FontFace />
-    <FontFaceContent />
     <Color />
     <ColorContent />
     <FontSize />

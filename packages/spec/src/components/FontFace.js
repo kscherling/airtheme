@@ -1,8 +1,21 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { mapFontFace } from '@airtheme/make'
-import { printObject } from '../lib/PrintTypes'
+import { mapFontFace, mapFontFaceContent, SimpleList } from '@airtheme/make'
+import { Attribute, AttributeContent } from '../lib/PrintTypes'
 
-const FontFace = ({ fontFace }) => printObject('Font Face', fontFace)
+const FontFaceAttribute = connect(mapFontFace)(({ fontFace }) => (
+  <Attribute attribute={fontFace} />
+))
+const FontFaceContent = connect(mapFontFaceContent)(({ content }) => (
+  <AttributeContent content={content} />
+))
 
-export default connect(mapFontFace)(FontFace)
+const FontFace = () => (
+  <SimpleList.OneColumn>
+    <SimpleList.Header>FontFace</SimpleList.Header>
+    <FontFaceAttribute />
+    <FontFaceContent />
+  </SimpleList.OneColumn>
+)
+
+export default FontFace
