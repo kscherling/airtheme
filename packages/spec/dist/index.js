@@ -150,29 +150,43 @@ var Container = styled__default.div(_templateObject2(), function (_ref) {
 });
 var Name = styled__default.strong(_templateObject4());
 var Empty = styled__default.div(_templateObject5());
+var Node = function Node(_ref2) {
+  var name = _ref2.name,
+      val = _ref2.val;
+  return React__default.createElement(React.Fragment, null, React__default.createElement("strong", null, name), React__default.createElement("span", null, printUnrenderable(val)));
+};
 var printObject = function printObject(name, obj) {
-  return React__default.createElement(Container, null, React__default.createElement(Name, null, name), Object.entries(obj).map(function (_ref2, idx) {
-    var _ref3 = _slicedToArray(_ref2, 2),
-        key = _ref3[0],
-        val = _ref3[1];
+  return React__default.createElement(Container, null, React__default.createElement(Name, null, name), Object.entries(obj).map(function (_ref3, idx) {
+    var _ref4 = _slicedToArray(_ref3, 2),
+        key = _ref4[0],
+        val = _ref4[1];
 
     return React__default.createElement(Container, {
       key: idx
     }, React__default.createElement("label", null, key), React__default.createElement("span", null, printUnrenderable(val)));
   }));
 };
-var Node = function Node(_ref4) {
-  var name = _ref4.name,
-      val = _ref4.val;
-  return React__default.createElement(React.Fragment, null, React__default.createElement("strong", null, name), React__default.createElement("span", null, val));
+var Attribute = function Attribute(_ref5) {
+  var name = _ref5.name,
+      attribute = _ref5.attribute;
+  return React__default.createElement(React.Fragment, null, React__default.createElement(make.SimpleList.Header, null, name), React__default.createElement(make.SimpleList.TwoColumns, null, Object.entries(attribute).map(function (_ref6, idx) {
+    var _ref7 = _slicedToArray(_ref6, 2),
+        key = _ref7[0],
+        val = _ref7[1];
+
+    return React__default.createElement(Node, {
+      name: key,
+      val: val
+    });
+  })));
 };
 var printUnit = function printUnit(unit, idx) {
   return React__default.createElement(Container, {
     key: idx
-  }, Object.entries(unit).map(function (_ref5, idx) {
-    var _ref6 = _slicedToArray(_ref5, 2),
-        key = _ref6[0],
-        val = _ref6[1];
+  }, Object.entries(unit).map(function (_ref8, idx) {
+    var _ref9 = _slicedToArray(_ref8, 2),
+        key = _ref9[0],
+        val = _ref9[1];
 
     return React__default.createElement(Container, {
       key: idx
@@ -237,12 +251,17 @@ var Globals = function Globals() {
   return React__default.createElement(make.SimpleList, null, React__default.createElement(make.SimpleList.Header, null, "Global"), React__default.createElement(Id, null), React__default.createElement(Name$1, null), React__default.createElement(Version, null), React__default.createElement(BaseFontSize, null), React__default.createElement(BaseLineHeight, null), React__default.createElement(BaseSpacing, null));
 };
 
-var Swatch = function Swatch(_ref) {
+var Swatch = reactRedux.connect(make.mapSwatch)(function (_ref) {
   var swatch = _ref.swatch;
-  return printObject('Swatch', swatch);
-};
-
-var Swatch$1 = reactRedux.connect(make.mapSwatch)(Swatch);
+  return React__default.createElement(Attribute, {
+    name: "Swatch",
+    attribute: swatch
+  });
+});
+var SwatchContent = reactRedux.connect(make.mapSwatchContent)(function (_ref2) {
+  var content = _ref2.content;
+  return printAttributeContent('Swatch Content', content);
+});
 
 var FontFace = function FontFace(_ref) {
   var fontFace = _ref.fontFace;
@@ -286,12 +305,12 @@ var ColorContent = function ColorContent(_ref) {
 
 var ColorContent$1 = reactRedux.connect(make.mapColorContent)(ColorContent);
 
-var SwatchContent = function SwatchContent(_ref) {
+var SwatchContent$1 = function SwatchContent(_ref) {
   var content = _ref.content;
   return printAttributeContent('Swatch Content', content);
 };
 
-var SwatchContent$1 = reactRedux.connect(make.mapSwatchContent)(SwatchContent);
+var SwatchContent$2 = reactRedux.connect(make.mapSwatchContent)(SwatchContent$1);
 
 var FontFaceContent = function FontFaceContent(_ref) {
   var content = _ref.content;
@@ -322,7 +341,7 @@ var SpacingContent = function SpacingContent(_ref) {
 var SpacingContent$1 = reactRedux.connect(make.mapSpacingContent)(SpacingContent);
 
 var Spec = function Spec() {
-  return React__default.createElement(make.Grid.OneColumn, null, React__default.createElement(Globals, null), React__default.createElement(Swatch$1, null), React__default.createElement(SwatchContent$1, null), React__default.createElement(FontFace$1, null), React__default.createElement(FontFaceContent$1, null), React__default.createElement(Color$1, null), React__default.createElement(ColorContent$1, null), React__default.createElement(FontSize$1, null), React__default.createElement(FontSizeContent$1, null), React__default.createElement(FontWeight$1, null), React__default.createElement(FontWeightContent$1, null), React__default.createElement(Spacing$1, null), React__default.createElement(SpacingContent$1, null));
+  return React__default.createElement(make.Grid.OneColumn, null, React__default.createElement(Globals, null), React__default.createElement(Swatch, null), React__default.createElement(SwatchContent$2, null), React__default.createElement(FontFace$1, null), React__default.createElement(FontFaceContent$1, null), React__default.createElement(Color$1, null), React__default.createElement(ColorContent$1, null), React__default.createElement(FontSize$1, null), React__default.createElement(FontSizeContent$1, null), React__default.createElement(FontWeight$1, null), React__default.createElement(FontWeightContent$1, null), React__default.createElement(Spacing$1, null), React__default.createElement(SpacingContent$1, null));
 };
 
 module.exports = Spec;

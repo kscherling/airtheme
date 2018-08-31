@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import styled, { css } from 'styled-components'
-import { Grid } from '@airtheme/make'
+import { Grid, SimpleList } from '@airtheme/make'
 
 const Strike = styled.span`
   text-decoration: line-through;
@@ -51,6 +51,13 @@ const Empty = styled.div`
   padding: 1rem;
 `
 
+export const Node = ({ name, val }) => (
+  <Fragment>
+    <strong>{name}</strong>
+    <span>{printUnrenderable(val)}</span>
+  </Fragment>
+)
+
 export const printObject = (name, obj) => (
   <Container>
     <Name>{name}</Name>
@@ -63,10 +70,14 @@ export const printObject = (name, obj) => (
   </Container>
 )
 
-export const Node = ({ name, val }) => (
+export const Attribute = ({ name, attribute }) => (
   <Fragment>
-    <strong>{name}</strong>
-    <span>{val}</span>
+    <SimpleList.Header>{name}</SimpleList.Header>
+    <SimpleList.TwoColumns>
+      {Object.entries(attribute).map(([key, val], idx) => (
+        <Node name={key} val={val} />
+      ))}
+    </SimpleList.TwoColumns>
   </Fragment>
 )
 

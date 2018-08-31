@@ -29,13 +29,13 @@ const OneColumn = styled(Grid).attrs({
 const TwoColumns = styled(Grid).attrs({
   gridTemplateColumns: 'repeat(2, 1fr)'
 })`
-  grid-auto-flow: column;
+  grid-auto-flow: row;
 `
 
 const FourColumns = styled(Grid).attrs({
   gridTemplateColumns: 'repeat(4, 1fr)'
 })`
-  grid-auto-flow: column;
+  grid-auto-flow: row;
 `
 
 Grid.OneColumn = OneColumn

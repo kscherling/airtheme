@@ -3185,7 +3185,7 @@ var mapSpacingContent = function mapSpacingContent(_ref21) {
 }; // prettier-ignore
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n  grid-auto-flow: column;\n"]);
+  var data = _taggedTemplateLiteral(["\n  grid-auto-flow: row;\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -3195,7 +3195,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  grid-auto-flow: column;\n"]);
+  var data = _taggedTemplateLiteral(["\n  grid-auto-flow: row;\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -3298,7 +3298,7 @@ function _templateObject3$1() {
 }
 
 function _templateObject2$1() {
-  var data = _taggedTemplateLiteral(["\n  padding-top: 1rem;\n  padding-bottom: 1rem;\n  font-weight: bold;\n  font-size: 85%;\n  text-transform: uppercase;\n"]);
+  var data = _taggedTemplateLiteral(["\n  padding-top: 2rem;\n  padding-bottom: 2rem;\n  font-weight: bold;\n  font-size: 85%;\n  text-transform: uppercase;\n"]);
 
   _templateObject2$1 = function _templateObject2() {
     return data;

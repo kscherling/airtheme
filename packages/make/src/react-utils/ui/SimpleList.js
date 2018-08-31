@@ -7,8 +7,8 @@ const SimpleList = styled(Grid.OneColumn).attrs({
 })``
 
 const Header = styled(Grid.OneColumn)`
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   font-weight: bold;
   font-size: 85%;
   text-transform: uppercase;
