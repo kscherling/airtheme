@@ -1,8 +1,21 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { mapFontWeight } from '@airtheme/make'
-import { printObject } from '../lib/PrintTypes'
+import { mapFontWeight, mapFontWeightContent, SimpleList } from '@airtheme/make'
+import { Attribute, AttributeContent } from '../lib/PrintTypes'
 
-const FontWeight = ({ fontWeight }) => printObject('FontWeight', fontWeight)
+const FontWeightAttribute = connect(mapFontWeight)(({ fontWeight }) => (
+  <Attribute attribute={fontWeight} />
+))
+const FontWeightContent = connect(mapFontWeightContent)(({ content }) => (
+  <AttributeContent content={content} />
+))
 
-export default connect(mapFontWeight)(FontWeight)
+const FontWeight = () => (
+  <SimpleList.OneColumn>
+    <SimpleList.Header>Font Weight</SimpleList.Header>
+    <FontWeightAttribute />
+    <FontWeightContent />
+  </SimpleList.OneColumn>
+)
+
+export default FontWeight
