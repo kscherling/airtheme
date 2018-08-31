@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: repeat(4, 1fr);
   grid-auto-flow: row;
   grid-gap: 0.75rem;
 
@@ -19,19 +19,20 @@ const Container = styled.div`
 class AddFormUnit extends Component {
   state = {
     name: '',
-    value: ''
+    value: '',
+    ordinal: '',
   }
 
   handleNameChange = ({ target: { value } }) => {
-    this.props.update(this.props.unit, { ...this.props.unit, name: value })
+    this.props.update(this.props.unit, { name: value })
   }
 
   handleValueChange = ({ target: { value } }) => {
-    this.props.update(this.props.unit, { ...this.props.unit, value })
+    this.props.update(this.props.unit, { value })
   }
 
   handleOrdinalChange = ({ target: { value } }) => {
-    this.props.update(this.props.unit, { ...this.props.unit, ordinal: value })
+    this.props.update(this.props.unit, { ordinal: value })
   }
 
   handleRemove = () => {
@@ -39,15 +40,20 @@ class AddFormUnit extends Component {
   }
 
   render() {
-    const { unit } = this.props
+    const { unit: { name, value, ordinal }} = this.props
 
     return (
       <Container>
-        <input type="text" value={unit.name} onChange={this.handleNameChange} />
+        <input type="text" value={name} onChange={this.handleNameChange} />
         <input
           type="text"
-          value={unit.value}
+          value={value}
           onChange={this.handleValueChange}
+        />
+        <input
+          type="text"
+          value={ordinal}
+          onChange={this.handleOrdinalChange}
         />
         <button type="button" onClick={this.handleRemove}>
           remove

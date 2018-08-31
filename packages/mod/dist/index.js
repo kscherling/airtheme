@@ -46,25 +46,6 @@ function _defineProperty(obj, key, value) {
   return obj;
 }
 
-function _objectSpread(target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i] != null ? arguments[i] : {};
-    var ownKeys = Object.keys(source);
-
-    if (typeof Object.getOwnPropertySymbols === 'function') {
-      ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {
-        return Object.getOwnPropertyDescriptor(source, sym).enumerable;
-      }));
-    }
-
-    ownKeys.forEach(function (key) {
-      _defineProperty(target, key, source[key]);
-    });
-  }
-
-  return target;
-}
-
 function _inherits(subClass, superClass) {
   if (typeof superClass !== "function" && superClass !== null) {
     throw new TypeError("Super expression must either be null or a function");
@@ -275,7 +256,7 @@ function _templateObject2$2() {
 }
 
 function _templateObject$2() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: auto auto auto;\n  grid-auto-flow: row;\n  grid-gap: 0.75rem;\n\n  ", ";\n\n  margin-bottom: 1rem;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr 1fr;\n  grid-auto-flow: row;\n  grid-gap: 0.75rem;\n\n  ", ";\n\n  margin-bottom: 1rem;\n"]);
 
   _templateObject$2 = function _templateObject() {
     return data;
@@ -308,7 +289,8 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
       name: '',
-      value: ''
+      value: '',
+      ordinal: ''
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleNameChange", function (_ref2) {
@@ -327,18 +309,28 @@ function (_Component) {
       });
     });
 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleOrdinalChange", function (_ref4) {
+      var value = _ref4.target.value;
+
+      _this.setState({
+        ordinal: value
+      });
+    });
+
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleSubmit", function () {
       var _this$state = _this.state,
           name = _this$state.name,
-          value = _this$state.value;
+          value = _this$state.value,
+          ordinal = _this$state.ordinal;
       var _this$props = _this.props,
           add = _this$props.add,
           nextOrdinal = _this$props.nextOrdinal;
-      add(name, nextOrdinal, value);
+      add(value, name, nextOrdinal);
 
       _this.setState({
         name: '',
-        value: ''
+        value: '',
+        ordinal: ''
       });
     });
 
@@ -350,15 +342,23 @@ function (_Component) {
     value: function render() {
       var _this$state2 = this.state,
           name = _this$state2.name,
-          value = _this$state2.value;
+          value = _this$state2.value,
+          ordinal = _this$state2.ordinal;
       return React__default.createElement(Container$1, null, React__default.createElement("input", {
         type: "text",
+        placeholder: "name",
         value: name,
         onChange: this.handleNameChange
       }), React__default.createElement("input", {
         type: "text",
+        placeholder: "value",
         value: value,
         onChange: this.handleValueChange
+      }), React__default.createElement("input", {
+        type: "text",
+        placeholder: "ordinal",
+        value: ordinal,
+        onChange: this.handleOrdinalChange
       }), React__default.createElement("button", {
         type: "button",
         onClick: this.handleSubmit
@@ -380,7 +380,7 @@ function _templateObject2$3() {
 }
 
 function _templateObject$3() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: auto auto auto;\n  grid-auto-flow: row;\n  grid-gap: 0.75rem;\n\n  ", ";\n\n  margin-bottom: 1rem;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  grid-auto-flow: row;\n  grid-gap: 0.75rem;\n\n  ", ";\n\n  margin-bottom: 1rem;\n"]);
 
   _templateObject$3 = function _templateObject() {
     return data;
@@ -413,31 +413,32 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
       name: '',
-      value: ''
+      value: '',
+      ordinal: ''
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleNameChange", function (_ref2) {
       var value = _ref2.target.value;
 
-      _this.props.update(_this.props.unit, _objectSpread({}, _this.props.unit, {
+      _this.props.update(_this.props.unit, {
         name: value
-      }));
+      });
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleValueChange", function (_ref3) {
       var value = _ref3.target.value;
 
-      _this.props.update(_this.props.unit, _objectSpread({}, _this.props.unit, {
+      _this.props.update(_this.props.unit, {
         value: value
-      }));
+      });
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleOrdinalChange", function (_ref4) {
       var value = _ref4.target.value;
 
-      _this.props.update(_this.props.unit, _objectSpread({}, _this.props.unit, {
+      _this.props.update(_this.props.unit, {
         ordinal: value
-      }));
+      });
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleRemove", function () {
@@ -450,15 +451,22 @@ function (_Component) {
   _createClass(AddFormUnit, [{
     key: "render",
     value: function render() {
-      var unit = this.props.unit;
+      var _this$props$unit = this.props.unit,
+          name = _this$props$unit.name,
+          value = _this$props$unit.value,
+          ordinal = _this$props$unit.ordinal;
       return React__default.createElement(Container$2, null, React__default.createElement("input", {
         type: "text",
-        value: unit.name,
+        value: name,
         onChange: this.handleNameChange
       }), React__default.createElement("input", {
         type: "text",
-        value: unit.value,
+        value: value,
         onChange: this.handleValueChange
+      }), React__default.createElement("input", {
+        type: "text",
+        value: ordinal,
+        onChange: this.handleOrdinalChange
       }), React__default.createElement("button", {
         type: "button",
         onClick: this.handleRemove

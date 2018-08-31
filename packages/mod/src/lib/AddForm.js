@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-auto-flow: row;
   grid-gap: 0.75rem;
 
@@ -19,7 +19,8 @@ const Container = styled.div`
 class AddForm extends Component {
   state = {
     name: '',
-    value: ''
+    value: '',
+    ordinal: '',
   }
 
   handleNameChange = ({ target: { value } }) => {
@@ -30,24 +31,30 @@ class AddForm extends Component {
     this.setState({ value })
   }
 
+  handleOrdinalChange = ({ target: { value } }) => {
+    this.setState({ ordinal: value })
+  }
+
   handleSubmit = () => {
-    const { name, value } = this.state
+    const { name, value, ordinal } = this.state
     const { add, nextOrdinal } = this.props
 
-    add(name, nextOrdinal, value)
+    add(value, name, nextOrdinal)
     this.setState({
       name: '',
-      value: ''
+      value: '',
+      ordinal: ''
     })
   }
 
   render() {
-    const { name, value } = this.state
+    const { name, value, ordinal } = this.state
 
     return (
       <Container>
-        <input type="text" value={name} onChange={this.handleNameChange} />
-        <input type="text" value={value} onChange={this.handleValueChange} />
+        <input type="text" placeholder='name' value={name} onChange={this.handleNameChange} />
+        <input type="text" placeholder='value' value={value} onChange={this.handleValueChange} />
+        <input type="text" placeholder='ordinal' value={ordinal} onChange={this.handleOrdinalChange} />
         <button type="button" onClick={this.handleSubmit}>
           add
         </button>
