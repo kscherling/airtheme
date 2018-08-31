@@ -288,7 +288,7 @@ var Spacing = function Spacing() {
 };
 
 var Spec = function Spec() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(Globals, null), React__default.createElement(Swatch, null), React__default.createElement(FontFace, null), React__default.createElement(Color, null), React__default.createElement(FontSize, null), React__default.createElement(FontWeight, null), React__default.createElement(Spacing, null));
+  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Title, null, "Spec"), React__default.createElement(Globals, null), React__default.createElement(Swatch, null), React__default.createElement(FontFace, null), React__default.createElement(Color, null), React__default.createElement(FontSize, null), React__default.createElement(FontWeight, null), React__default.createElement(Spacing, null));
 };
 
 module.exports = Spec;

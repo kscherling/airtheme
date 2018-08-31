@@ -3255,7 +3255,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  \n\n  ", "\n\n  ", "\n\n  ", "\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  width: 100%;\n\n  ", "\n\n  ", "\n\n  ", "\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -3290,6 +3290,16 @@ Grid.TwoColumns = TwoColumns;
 Grid.ThreeColumns = ThreeColumns;
 Grid.FourColumns = FourColumns;
 
+function _templateObject8$1() {
+  var data = _taggedTemplateLiteral([""]);
+
+  _templateObject8$1 = function _templateObject8() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject7$1() {
   var data = _taggedTemplateLiteral([""]);
 
@@ -3321,7 +3331,7 @@ function _templateObject5$1() {
 }
 
 function _templateObject4$1() {
-  var data = _taggedTemplateLiteral([""]);
+  var data = _taggedTemplateLiteral(["\n  font-weight: bold;\n  font-size: 85%;\n  text-transform: uppercase;\n"]);
 
   _templateObject4$1 = function _templateObject4() {
     return data;
@@ -3331,7 +3341,7 @@ function _templateObject4$1() {
 }
 
 function _templateObject3$1() {
-  var data = _taggedTemplateLiteral(["\n\n  font-weight: bold;\n  font-size: 85%;\n  text-transform: uppercase;\n"]);
+  var data = _taggedTemplateLiteral(["\n  padding-top: 2rem;\n  padding-bottom: 2rem;\n  font-weight: bold;\n  font-size: 85%;\n  text-transform: uppercase;\n"]);
 
   _templateObject3$1 = function _templateObject3() {
     return data;
@@ -3341,7 +3351,7 @@ function _templateObject3$1() {
 }
 
 function _templateObject2$1() {
-  var data = _taggedTemplateLiteral(["\n  padding-top: 2rem;\n  padding-bottom: 2rem;\n  font-weight: bold;\n  font-size: 85%;\n  text-transform: uppercase;\n"]);
+  var data = _taggedTemplateLiteral(["\n  padding-top: 2rem;\n  padding-bottom: 2rem;\n  font-weight: bold;\n  text-transform: uppercase;\n"]);
 
   _templateObject2$1 = function _templateObject2() {
     return data;
@@ -3362,20 +3372,22 @@ function _templateObject$1() {
 var SimpleList = styled__default(Grid.OneColumn).attrs({
   gridGap: '1rem'
 })(_templateObject$1());
-var Header = styled__default(Grid.OneColumn)(_templateObject2$1());
-var Subheader = styled__default(Grid.OneColumn)(_templateObject3$1());
+var Title = styled__default(Grid.OneColumn)(_templateObject2$1());
+var Header = styled__default(Grid.OneColumn)(_templateObject3$1());
+var Subheader = styled__default(Grid.OneColumn)(_templateObject4$1());
 var OneColumn$1 = styled__default(Grid.OneColumn).attrs({
   gridGap: '1rem'
-})(_templateObject4$1());
+})(_templateObject5$1());
 var TwoColumns$1 = styled__default(Grid.TwoColumns).attrs({
   gridGap: '1rem'
-})(_templateObject5$1());
+})(_templateObject6$1());
 var ThreeColumns$1 = styled__default(Grid.ThreeColumns).attrs({
   gridGap: '1rem'
-})(_templateObject6$1());
+})(_templateObject7$1());
 var FourColumns$1 = styled__default(Grid.FourColumns).attrs({
   gridGap: '1rem'
-})(_templateObject7$1());
+})(_templateObject8$1());
+SimpleList.Title = Title;
 SimpleList.Header = Header;
 SimpleList.Subheader = Subheader;
 SimpleList.OneColumn = OneColumn$1;

@@ -11,6 +11,7 @@ import { SimpleList } from '@airtheme/make'
 
 const Spec = () => (
   <SimpleList.OneColumn>
+    <SimpleList.Title>Spec</SimpleList.Title>
     <Globals />
     <Swatch />
     <FontFace />

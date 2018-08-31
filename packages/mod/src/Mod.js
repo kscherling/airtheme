@@ -8,9 +8,11 @@ import {
   Id
 } from './components/Globals'
 import { Swatch } from './components/Swatch'
+import { SimpleList } from '@airtheme/make'
 
 const Mod = () => (
-  <div>
+  <SimpleList.OneColumn>
+    <SimpleList.Title>Mod</SimpleList.Title>
     <Name />
     <Version />
     <Id />
@@ -18,7 +20,7 @@ const Mod = () => (
     <BaseLineHeight />
     <BaseSpacing />
     <Swatch />
-  </div>
+  </SimpleList.OneColumn>
 )
 
 export default Mod

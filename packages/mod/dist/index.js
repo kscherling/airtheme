@@ -540,7 +540,7 @@ var Swatch = reactRedux.connect(make.mapSwatch, {
 });
 
 var Mod = function Mod() {
-  return React__default.createElement("div", null, React__default.createElement(Name, null), React__default.createElement(Version, null), React__default.createElement(Id, null), React__default.createElement(BaseFontSize, null), React__default.createElement(BaseLineHeight, null), React__default.createElement(BaseSpacing, null), React__default.createElement(Swatch, null));
+  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Title, null, "Mod"), React__default.createElement(Name, null), React__default.createElement(Version, null), React__default.createElement(Id, null), React__default.createElement(BaseFontSize, null), React__default.createElement(BaseLineHeight, null), React__default.createElement(BaseSpacing, null), React__default.createElement(Swatch, null));
 };
 
 module.exports = Mod;
