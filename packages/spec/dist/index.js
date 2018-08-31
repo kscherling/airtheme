@@ -294,12 +294,22 @@ var Color = function Color() {
   return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Color"), React__default.createElement(ColorAttribute, null), React__default.createElement(ColorContent, null));
 };
 
-var FontSize = function FontSize(_ref) {
+var FontSizeAttribute = reactRedux.connect(make.mapFontSize)(function (_ref) {
   var fontSize = _ref.fontSize;
-  return printObject('FontSize', fontSize);
-};
+  return React__default.createElement(Attribute, {
+    attribute: fontSize
+  });
+});
+var FontSizeContent = reactRedux.connect(make.mapFontSizeContent)(function (_ref2) {
+  var content = _ref2.content;
+  return React__default.createElement(AttributeContent, {
+    content: content
+  });
+});
 
-var FontSize$1 = reactRedux.connect(make.mapFontSize)(FontSize);
+var FontSize = function FontSize() {
+  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Font Size"), React__default.createElement(FontSizeAttribute, null), React__default.createElement(FontSizeContent, null));
+};
 
 var FontWeight = function FontWeight(_ref) {
   var fontWeight = _ref.fontWeight;
@@ -316,7 +326,7 @@ var Spacing = function Spacing(_ref) {
 var Spacing$1 = reactRedux.connect(make.mapSpacing)(Spacing);
 
 var Spec = function Spec() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(Globals, null), React__default.createElement(Swatch, null), React__default.createElement(FontFace, null), React__default.createElement(Color, null), React__default.createElement(FontSize$1, null), React__default.createElement(FontWeight$1, null), React__default.createElement(Spacing$1, null));
+  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(Globals, null), React__default.createElement(Swatch, null), React__default.createElement(FontFace, null), React__default.createElement(Color, null), React__default.createElement(FontSize, null), React__default.createElement(FontWeight$1, null), React__default.createElement(Spacing$1, null));
 };
 
 module.exports = Spec;

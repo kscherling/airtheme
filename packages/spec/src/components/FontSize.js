@@ -1,8 +1,21 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { mapFontSize } from '@airtheme/make'
-import { printObject } from '../lib/PrintTypes'
+import { mapFontSize, mapFontSizeContent, SimpleList } from '@airtheme/make'
+import { Attribute, AttributeContent } from '../lib/PrintTypes'
 
-const FontSize = ({ fontSize }) => printObject('FontSize', fontSize)
+const FontSizeAttribute = connect(mapFontSize)(({ fontSize }) => (
+  <Attribute attribute={fontSize} />
+))
+const FontSizeContent = connect(mapFontSizeContent)(({ content }) => (
+  <AttributeContent content={content} />
+))
 
-export default connect(mapFontSize)(FontSize)
+const FontSize = () => (
+  <SimpleList.OneColumn>
+    <SimpleList.Header>Font Size</SimpleList.Header>
+    <FontSizeAttribute />
+    <FontSizeContent />
+  </SimpleList.OneColumn>
+)
+
+export default FontSize
