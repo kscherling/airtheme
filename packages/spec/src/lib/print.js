@@ -63,11 +63,11 @@ export const printObject = (name, obj) => (
   </Container>
 )
 
-export const printNode = (key, val) => (
-  <Grid.TwoColumns>
-    <label>{key}</label>
+export const Node = ({ name, val }) => (
+  <Fragment>
+    <strong>{name}</strong>
     <span>{val}</span>
-  </Grid.TwoColumns>
+  </Fragment>
 )
 
 export const printUnit = (unit, idx) => (

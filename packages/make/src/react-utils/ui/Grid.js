@@ -27,12 +27,19 @@ const OneColumn = styled(Grid).attrs({
 `
 
 const TwoColumns = styled(Grid).attrs({
-  gridTemplateColumns: '1fr 1fr'
+  gridTemplateColumns: 'repeat(2, 1fr)'
 })`
-  grid-auto-flow: row;
+  grid-auto-flow: column;
+`
+
+const FourColumns = styled(Grid).attrs({
+  gridTemplateColumns: 'repeat(4, 1fr)'
+})`
+  grid-auto-flow: column;
 `
 
 Grid.OneColumn = OneColumn
 Grid.TwoColumns = TwoColumns
+Grid.FourColumns = FourColumns
 
 export default Grid

@@ -161,16 +161,18 @@ var printObject = function printObject(name, obj) {
     }, React__default.createElement("label", null, key), React__default.createElement("span", null, printUnrenderable(val)));
   }));
 };
-var printNode = function printNode(key, val) {
-  return React__default.createElement(make.Grid.TwoColumns, null, React__default.createElement("label", null, key), React__default.createElement("span", null, val));
+var Node = function Node(_ref4) {
+  var name = _ref4.name,
+      val = _ref4.val;
+  return React__default.createElement(React.Fragment, null, React__default.createElement("strong", null, name), React__default.createElement("span", null, val));
 };
 var printUnit = function printUnit(unit, idx) {
   return React__default.createElement(Container, {
     key: idx
-  }, Object.entries(unit).map(function (_ref4, idx) {
-    var _ref5 = _slicedToArray(_ref4, 2),
-        key = _ref5[0],
-        val = _ref5[1];
+  }, Object.entries(unit).map(function (_ref5, idx) {
+    var _ref6 = _slicedToArray(_ref5, 2),
+        key = _ref6[0],
+        val = _ref6[1];
 
     return React__default.createElement(Container, {
       key: idx
@@ -190,31 +192,49 @@ var printAttributeContent = function printAttributeContent(name) {
 
 var Id = reactRedux.connect(make.mapId)(function (_ref) {
   var id = _ref.id;
-  return printNode('id', id);
+  return React__default.createElement(make.SimpleList.TwoColumns, null, React__default.createElement(Node, {
+    name: "id",
+    val: id
+  }));
 });
 var Name$1 = reactRedux.connect(make.mapName)(function (_ref2) {
   var name = _ref2.name;
-  return printNode('name', name);
+  return React__default.createElement(make.SimpleList.TwoColumns, null, React__default.createElement(Node, {
+    name: "name",
+    val: name
+  }));
 });
 var Version = reactRedux.connect(make.mapVersion)(function (_ref3) {
   var version = _ref3.version;
-  return printNode('version', version);
+  return React__default.createElement(make.SimpleList.TwoColumns, null, React__default.createElement(Node, {
+    name: "version",
+    val: version
+  }));
 });
 var BaseFontSize = reactRedux.connect(make.mapBaseFontSize)(function (_ref4) {
   var baseFontSize = _ref4.baseFontSize;
-  return printNode('baseFontSize', baseFontSize);
+  return React__default.createElement(make.SimpleList.TwoColumns, null, React__default.createElement(Node, {
+    name: "baseFontSize",
+    val: baseFontSize
+  }));
 });
 var BaseLineHeight = reactRedux.connect(make.mapBaseLineHeight)(function (_ref5) {
   var baseLineHeight = _ref5.baseLineHeight;
-  return printNode('baseLineHeight', baseLineHeight);
+  return React__default.createElement(make.SimpleList.TwoColumns, null, React__default.createElement(Node, {
+    name: "baseLineHeight",
+    val: baseLineHeight
+  }));
 });
 var BaseSpacing = reactRedux.connect(make.mapBaseSpacing)(function (_ref6) {
   var baseSpacing = _ref6.baseSpacing;
-  return printNode('baseSpacing', baseSpacing);
+  return React__default.createElement(make.SimpleList.TwoColumns, null, React__default.createElement(Node, {
+    name: "baseSpacing",
+    val: baseSpacing
+  }));
 });
 
 var Globals = function Globals() {
-  return React__default.createElement(make.Grid.OneColumn, null, React__default.createElement(Id, null), React__default.createElement(Name$1, null), React__default.createElement(Version, null), React__default.createElement(BaseFontSize, null), React__default.createElement(BaseLineHeight, null), React__default.createElement(BaseSpacing, null));
+  return React__default.createElement(make.SimpleList, null, React__default.createElement(make.SimpleList.Header, null, "Global"), React__default.createElement(Id, null), React__default.createElement(Name$1, null), React__default.createElement(Version, null), React__default.createElement(BaseFontSize, null), React__default.createElement(BaseLineHeight, null), React__default.createElement(BaseSpacing, null));
 };
 
 var Swatch = function Swatch(_ref) {

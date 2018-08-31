@@ -3184,8 +3184,18 @@ var mapSpacingContent = function mapSpacingContent(_ref21) {
   };
 }; // prettier-ignore
 
+function _templateObject7() {
+  var data = _taggedTemplateLiteral(["\n  grid-auto-flow: column;\n"]);
+
+  _templateObject7 = function _templateObject7() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  grid-auto-flow: row;\n"]);
+  var data = _taggedTemplateLiteral(["\n  grid-auto-flow: column;\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -3258,10 +3268,66 @@ var OneColumn = styled__default(Grid).attrs({
   gridTemplateColumns: '1fr'
 })(_templateObject5());
 var TwoColumns = styled__default(Grid).attrs({
-  gridTemplateColumns: '1fr 1fr'
+  gridTemplateColumns: 'repeat(2, 1fr)'
 })(_templateObject6());
+var FourColumns = styled__default(Grid).attrs({
+  gridTemplateColumns: 'repeat(4, 1fr)'
+})(_templateObject7());
 Grid.OneColumn = OneColumn;
 Grid.TwoColumns = TwoColumns;
+Grid.FourColumns = FourColumns;
+
+function _templateObject4$1() {
+  var data = _taggedTemplateLiteral([""]);
+
+  _templateObject4$1 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3$1() {
+  var data = _taggedTemplateLiteral([""]);
+
+  _templateObject3$1 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2$1() {
+  var data = _taggedTemplateLiteral(["\n  padding-top: 1rem;\n  padding-bottom: 1rem;\n  font-weight: bold;\n  font-size: 85%;\n  text-transform: uppercase;\n"]);
+
+  _templateObject2$1 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject$1() {
+  var data = _taggedTemplateLiteral([""]);
+
+  _templateObject$1 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var SimpleList = styled__default(Grid.OneColumn).attrs({
+  gridGap: '1rem'
+})(_templateObject$1());
+var Header = styled__default(Grid.OneColumn)(_templateObject2$1());
+var TwoColumns$1 = styled__default(Grid.TwoColumns).attrs({
+  gridGap: '1rem'
+})(_templateObject3$1());
+var FourColumns$1 = styled__default(Grid.FourColumns).attrs({
+  gridGap: '1rem'
+})(_templateObject4$1());
+SimpleList.Header = Header;
+SimpleList.TwoColumns = TwoColumns$1;
 
 // makeStore
 
@@ -3316,3 +3382,4 @@ exports.mapFontWeightContent = mapFontWeightContent;
 exports.mapSpacing = mapSpacing;
 exports.mapSpacingContent = mapSpacingContent;
 exports.Grid = Grid;
+exports.SimpleList = SimpleList;
