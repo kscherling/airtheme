@@ -2,8 +2,12 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
+function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+
 var type = require('@airtheme/type');
 var reactRedux = require('react-redux');
+var styled = require('styled-components');
+var styled__default = _interopDefault(styled);
 
 function symbolObservablePonyfill(root) {
 	var result;
@@ -623,6 +627,18 @@ function _objectSpread(target) {
   }
 
   return target;
+}
+
+function _taggedTemplateLiteral(strings, raw) {
+  if (!raw) {
+    raw = strings.slice(0);
+  }
+
+  return Object.freeze(Object.defineProperties(strings, {
+    raw: {
+      value: Object.freeze(raw)
+    }
+  }));
 }
 
 function _toConsumableArray(arr) {
@@ -3168,6 +3184,85 @@ var mapSpacingContent = function mapSpacingContent(_ref21) {
   };
 }; // prettier-ignore
 
+function _templateObject6() {
+  var data = _taggedTemplateLiteral(["\n  grid-auto-flow: row;\n"]);
+
+  _templateObject6 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject5() {
+  var data = _taggedTemplateLiteral(["\n  grid-auto-flow: row;\n"]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  var data = _taggedTemplateLiteral(["\n    grid-template-rows: ", "\n  "]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n    grid-template-columns: ", "\n  "]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n    grid-gap: ", ";\n  "]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  background: ", ";\n\n  ", "\n\n  ", "\n\n  ", "\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var transparent = 'rgba(0,0,0,0.02)';
+var Grid = styled__default.div(_templateObject(), transparent, function (_ref) {
+  var gridGap = _ref.gridGap;
+  return gridGap && styled.css(_templateObject2(), gridGap);
+}, function (_ref2) {
+  var gridTemplateColumns = _ref2.gridTemplateColumns;
+  return gridTemplateColumns && styled.css(_templateObject3(), gridTemplateColumns);
+}, function (_ref3) {
+  var gridTemplateRows = _ref3.gridTemplateRows;
+  return gridTemplateRows && styled.css(_templateObject4(), gridTemplateRows);
+});
+var OneColumn = styled__default(Grid).attrs({
+  gridTemplateColumns: '1fr'
+})(_templateObject5());
+var TwoColumns = styled__default(Grid).attrs({
+  gridTemplateColumns: '1fr 1fr'
+})(_templateObject6());
+Grid.OneColumn = OneColumn;
+Grid.TwoColumns = TwoColumns;
+
 // makeStore
 
 exports.makeStore = makeStore;
@@ -3220,3 +3315,4 @@ exports.mapFontWeight = mapFontWeight;
 exports.mapFontWeightContent = mapFontWeightContent;
 exports.mapSpacing = mapSpacing;
 exports.mapSpacingContent = mapSpacingContent;
+exports.Grid = Grid;

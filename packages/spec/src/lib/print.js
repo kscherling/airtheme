@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import styled, { css } from 'styled-components'
+import { Grid } from '@airtheme/make'
 
 const Strike = styled.span`
   text-decoration: line-through;
@@ -25,10 +26,6 @@ const printUnrenderable = val => {
 
   return val
 }
-
-
-
-
 
 const Container = styled.div`
   display: grid;
@@ -67,12 +64,10 @@ export const printObject = (name, obj) => (
 )
 
 export const printNode = (key, val) => (
-  <Container>
-    <Fragment>
-      <label>{key}</label>
-      <span>{val}</span>
-    </Fragment>
-  </Container>
+  <Grid.TwoColumns>
+    <label>{key}</label>
+    <span>{val}</span>
+  </Grid.TwoColumns>
 )
 
 export const printUnit = (unit, idx) => (

@@ -6,8 +6,8 @@ var React = require('react');
 var React__default = _interopDefault(React);
 var styled = require('styled-components');
 var styled__default = _interopDefault(styled);
-var reactRedux = require('react-redux');
 var make = require('@airtheme/make');
+var reactRedux = require('react-redux');
 
 function _typeof(obj) {
   if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
@@ -162,7 +162,7 @@ var printObject = function printObject(name, obj) {
   }));
 };
 var printNode = function printNode(key, val) {
-  return React__default.createElement(Container, null, React__default.createElement(React.Fragment, null, React__default.createElement("label", null, key), React__default.createElement("span", null, val)));
+  return React__default.createElement(make.Grid.TwoColumns, null, React__default.createElement("label", null, key), React__default.createElement("span", null, val));
 };
 var printUnit = function printUnit(unit, idx) {
   return React__default.createElement(Container, {
@@ -188,47 +188,34 @@ var printAttributeContent = function printAttributeContent(name) {
   }, React__default.createElement(Empty, null, name));
 };
 
-var Name$1 = function Name(_ref) {
-  var name = _ref.name;
-  return printNode('name', name);
-};
-
-var Name$2 = reactRedux.connect(make.mapName)(Name$1);
-
-var Version = function Version(_ref) {
-  var version = _ref.version;
-  return printNode('version', version);
-};
-
-var Version$1 = reactRedux.connect(make.mapVersion)(Version);
-
-var Id = function Id(_ref) {
+var Id = reactRedux.connect(make.mapId)(function (_ref) {
   var id = _ref.id;
   return printNode('id', id);
-};
-
-var Id$1 = reactRedux.connect(make.mapId)(Id);
-
-var BaseFontSize = function BaseFontSize(_ref) {
-  var baseFontSize = _ref.baseFontSize;
+});
+var Name$1 = reactRedux.connect(make.mapName)(function (_ref2) {
+  var name = _ref2.name;
+  return printNode('name', name);
+});
+var Version = reactRedux.connect(make.mapVersion)(function (_ref3) {
+  var version = _ref3.version;
+  return printNode('version', version);
+});
+var BaseFontSize = reactRedux.connect(make.mapBaseFontSize)(function (_ref4) {
+  var baseFontSize = _ref4.baseFontSize;
   return printNode('baseFontSize', baseFontSize);
-};
-
-var BaseFontSize$1 = reactRedux.connect(make.mapBaseFontSize)(BaseFontSize);
-
-var BaseLineHeight = function BaseLineHeight(_ref) {
-  var baseLineHeight = _ref.baseLineHeight;
+});
+var BaseLineHeight = reactRedux.connect(make.mapBaseLineHeight)(function (_ref5) {
+  var baseLineHeight = _ref5.baseLineHeight;
   return printNode('baseLineHeight', baseLineHeight);
-};
-
-var BaseLineHeight$1 = reactRedux.connect(make.mapBaseLineHeight)(BaseLineHeight);
-
-var BaseSpacing = function BaseSpacing(_ref) {
-  var baseSpacing = _ref.baseSpacing;
+});
+var BaseSpacing = reactRedux.connect(make.mapBaseSpacing)(function (_ref6) {
+  var baseSpacing = _ref6.baseSpacing;
   return printNode('baseSpacing', baseSpacing);
-};
+});
 
-var BaseSpacing$1 = reactRedux.connect(make.mapBaseSpacing)(BaseSpacing);
+var Globals = function Globals() {
+  return React__default.createElement(make.Grid.OneColumn, null, React__default.createElement(Id, null), React__default.createElement(Name$1, null), React__default.createElement(Version, null), React__default.createElement(BaseFontSize, null), React__default.createElement(BaseLineHeight, null), React__default.createElement(BaseSpacing, null));
+};
 
 var Swatch = function Swatch(_ref) {
   var swatch = _ref.swatch;
@@ -315,7 +302,7 @@ var SpacingContent = function SpacingContent(_ref) {
 var SpacingContent$1 = reactRedux.connect(make.mapSpacingContent)(SpacingContent);
 
 var Spec = function Spec() {
-  return React__default.createElement("div", null, React__default.createElement(Id$1, null), React__default.createElement(Name$2, null), React__default.createElement(Version$1, null), React__default.createElement(BaseFontSize$1, null), React__default.createElement(BaseLineHeight$1, null), React__default.createElement(BaseSpacing$1, null), React__default.createElement(Swatch$1, null), React__default.createElement(SwatchContent$1, null), React__default.createElement(FontFace$1, null), React__default.createElement(FontFaceContent$1, null), React__default.createElement(Color$1, null), React__default.createElement(ColorContent$1, null), React__default.createElement(FontSize$1, null), React__default.createElement(FontSizeContent$1, null), React__default.createElement(FontWeight$1, null), React__default.createElement(FontWeightContent$1, null), React__default.createElement(Spacing$1, null), React__default.createElement(SpacingContent$1, null));
+  return React__default.createElement(make.Grid.OneColumn, null, React__default.createElement(Globals, null), React__default.createElement(Swatch$1, null), React__default.createElement(SwatchContent$1, null), React__default.createElement(FontFace$1, null), React__default.createElement(FontFaceContent$1, null), React__default.createElement(Color$1, null), React__default.createElement(ColorContent$1, null), React__default.createElement(FontSize$1, null), React__default.createElement(FontSizeContent$1, null), React__default.createElement(FontWeight$1, null), React__default.createElement(FontWeightContent$1, null), React__default.createElement(Spacing$1, null), React__default.createElement(SpacingContent$1, null));
 };
 
 module.exports = Spec;

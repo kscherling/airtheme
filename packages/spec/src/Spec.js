@@ -1,10 +1,6 @@
 import React from 'react'
-import Name from './components/Name'
-import Version from './components/Version'
-import Id from './components/Id'
-import BaseFontSize from './components/BaseFontSize'
-import BaseLineHeight from './components/BaseLineHeight'
-import BaseSpacing from './components/BaseSpacing'
+
+import Globals from './components/Globals'
 import Swatch from './components/Swatch'
 import FontFace from './components/FontFace'
 import Color from './components/Color'
@@ -17,15 +13,11 @@ import FontFaceContent from './components/FontFaceContent'
 import FontSizeContent from './components/FontSizeContent'
 import FontWeightContent from './components/FontWeightContent'
 import SpacingContent from './components/SpacingContent'
+import { Grid } from '@airtheme/make'
 
 const Spec = () => (
-  <div>
-    <Id />
-    <Name />
-    <Version />
-    <BaseFontSize />
-    <BaseLineHeight />
-    <BaseSpacing />
+  <Grid.OneColumn>
+    <Globals />
     <Swatch />
     <SwatchContent />
     <FontFace />
@@ -38,7 +30,7 @@ const Spec = () => (
     <FontWeightContent />
     <Spacing />
     <SpacingContent />
-  </div>
+  </Grid.OneColumn>
 )
 
 export default Spec

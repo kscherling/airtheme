@@ -2,7 +2,9 @@
   "name": "@airtheme/make",
   "version": "0.1.0",
   "main": "dist/index.js",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "clean": "./task clean",
     "build": "./task build",
@@ -10,11 +12,12 @@
     "test": "./task test"
   },
   "dependencies": {
-    "@airtheme/type": "^0.1.0",
     "@airtheme/core": "^0.1.0",
+    "@airtheme/type": "^0.1.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-redux": "^5.0.7",
-    "redux": "^4.0.0"
+    "redux": "^4.0.0",
+    "styled-components": "^3.4.5"
   }
 }

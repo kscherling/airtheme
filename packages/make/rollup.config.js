@@ -6,6 +6,7 @@ module.exports = {
     ...baseConfig.external,
     '@airtheme/type',
     '@airtheme/core',
-    'react-redux'
+    'react-redux',
+    'styled-components'
   ]
 }
