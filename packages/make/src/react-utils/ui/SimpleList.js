@@ -14,7 +14,15 @@ const Header = styled(Grid.OneColumn)`
   text-transform: uppercase;
 `
 
+const OneColumn = styled(Grid.OneColumn).attrs({
+  gridGap: '1rem'
+})``
+
 const TwoColumns = styled(Grid.TwoColumns).attrs({
+  gridGap: '1rem'
+})``
+
+const ThreeColumns = styled(Grid.ThreeColumns).attrs({
   gridGap: '1rem'
 })``
 
@@ -23,6 +31,9 @@ const FourColumns = styled(Grid.FourColumns).attrs({
 })``
 
 SimpleList.Header = Header
+SimpleList.OneColumn = OneColumn
 SimpleList.TwoColumns = TwoColumns
+SimpleList.ThreeColumns = ThreeColumns
+SimpleList.FourColumns = FourColumns
 
 export default SimpleList

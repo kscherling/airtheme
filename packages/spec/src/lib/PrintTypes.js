@@ -58,6 +58,33 @@ export const Node = ({ name, val }) => (
   </Fragment>
 )
 
+export const Unit = ({ unit }) => (
+  <SimpleList.FourColumns>
+    <span>{printUnrenderable(unit.name)}</span>
+    <span>{printUnrenderable(unit.value)}</span>
+    <span>{printUnrenderable(unit.ordinal)}</span>
+    <span>{printUnrenderable(unit.type)}</span>
+  </SimpleList.FourColumns>
+)
+
+export const Attribute = ({ attribute }) => (
+  <SimpleList.TwoColumns>
+    {Object.entries(attribute).map(([key, val], idx) => (
+      <Node key={idx} name={key} val={val} />
+    ))}
+  </SimpleList.TwoColumns>
+)
+
+export const AttributeContent = ({ content = [] }) => (
+  <SimpleList.OneColumn>
+    {content.length ? (
+      content.map((unit, idx) => <Unit key={idx} unit={unit} />)
+    ) : (
+      <SimpleList>Empty</SimpleList>
+    )}
+  </SimpleList.OneColumn>
+)
+
 export const printObject = (name, obj) => (
   <Container>
     <Name>{name}</Name>
@@ -68,17 +95,6 @@ export const printObject = (name, obj) => (
       </Container>
     ))}
   </Container>
-)
-
-export const Attribute = ({ name, attribute }) => (
-  <Fragment>
-    <SimpleList.Header>{name}</SimpleList.Header>
-    <SimpleList.TwoColumns>
-      {Object.entries(attribute).map(([key, val], idx) => (
-        <Node name={key} val={val} />
-      ))}
-    </SimpleList.TwoColumns>
-  </Fragment>
 )
 
 export const printUnit = (unit, idx) => (

@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Node } from '../lib/print'
+import { Node } from '../lib/PrintTypes'
 import { Grid, SimpleList } from '@airtheme/make'
 import {
   mapId,

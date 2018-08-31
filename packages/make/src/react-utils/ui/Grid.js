@@ -32,6 +32,12 @@ const TwoColumns = styled(Grid).attrs({
   grid-auto-flow: row;
 `
 
+const ThreeColumns = styled(Grid).attrs({
+  gridTemplateColumns: 'repeat(3, 1fr)'
+})`
+  grid-auto-flow: row;
+`
+
 const FourColumns = styled(Grid).attrs({
   gridTemplateColumns: 'repeat(4, 1fr)'
 })`
@@ -40,6 +46,7 @@ const FourColumns = styled(Grid).attrs({
 
 Grid.OneColumn = OneColumn
 Grid.TwoColumns = TwoColumns
+Grid.ThreeColumns = ThreeColumns
 Grid.FourColumns = FourColumns
 
 export default Grid

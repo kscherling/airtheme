@@ -13,13 +13,12 @@ import FontFaceContent from './components/FontFaceContent'
 import FontSizeContent from './components/FontSizeContent'
 import FontWeightContent from './components/FontWeightContent'
 import SpacingContent from './components/SpacingContent'
-import { Grid } from '@airtheme/make'
+import { SimpleList } from '@airtheme/make'
 
 const Spec = () => (
-  <Grid.OneColumn>
+  <SimpleList.OneColumn>
     <Globals />
     <Swatch />
-    <SwatchContent />
     <FontFace />
     <FontFaceContent />
     <Color />
@@ -30,7 +29,7 @@ const Spec = () => (
     <FontWeightContent />
     <Spacing />
     <SpacingContent />
-  </Grid.OneColumn>
+  </SimpleList.OneColumn>
 )
 
 export default Spec
