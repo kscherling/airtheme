@@ -1,8 +1,21 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { mapSpacing } from '@airtheme/make'
-import { printObject } from '../lib/PrintTypes'
+import { mapSpacing, mapSpacingContent, SimpleList } from '@airtheme/make'
+import { Attribute, AttributeContent } from '../lib/PrintTypes'
 
-const Spacing = ({ spacing }) => printObject('Spacing', spacing)
+const SpacingAttribute = connect(mapSpacing)(({ spacing }) => (
+  <Attribute attribute={spacing} />
+))
+const SpacingContent = connect(mapSpacingContent)(({ content }) => (
+  <AttributeContent content={content} />
+))
 
-export default connect(mapSpacing)(Spacing)
+const Spacing = () => (
+  <SimpleList.OneColumn>
+    <SimpleList.Header>Spacing</SimpleList.Header>
+    <SpacingAttribute />
+    <SpacingContent />
+  </SimpleList.OneColumn>
+)
+
+export default Spacing
