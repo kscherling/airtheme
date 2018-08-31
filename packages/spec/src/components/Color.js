@@ -1,8 +1,21 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { mapColor } from '@airtheme/make'
-import { printObject } from '../lib/PrintTypes'
+import { mapColor, mapColorContent, SimpleList } from '@airtheme/make'
+import { Attribute, AttributeContent } from '../lib/PrintTypes'
 
-const Color = ({ color }) => printObject('Color', color)
+const ColorAttribute = connect(mapColor)(({ color }) => (
+  <Attribute attribute={color} />
+))
+const ColorContent = connect(mapColorContent)(({ content }) => (
+  <AttributeContent content={content} />
+))
 
-export default connect(mapColor)(Color)
+const Color = () => (
+  <SimpleList.OneColumn>
+    <SimpleList.Header>Color</SimpleList.Header>
+    <ColorAttribute />
+    <ColorContent />
+  </SimpleList.OneColumn>
+)
+
+export default Color
