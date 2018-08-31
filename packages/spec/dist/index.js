@@ -104,7 +104,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 160px auto;\n  grid-auto-flow: row;\n  grid-gap: 0.75rem;\n\n  ", ";\n\n  margin-bottom: 1rem;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-auto-flow: row;\n  grid-gap: 0.75rem;\n\n  ", ";\n\n  margin-bottom: 1rem;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -156,7 +156,7 @@ var printObject = function printObject(name, obj) {
         key = _ref3[0],
         val = _ref3[1];
 
-    return React__default.createElement(React.Fragment, {
+    return React__default.createElement(Container, {
       key: idx
     }, React__default.createElement("label", null, key), React__default.createElement("span", null, printUnrenderable(val)));
   }));
@@ -167,7 +167,15 @@ var printNode = function printNode(key, val) {
 var printUnit = function printUnit(unit, idx) {
   return React__default.createElement(Container, {
     key: idx
-  }, React__default.createElement(Name, null, unit.name));
+  }, Object.entries(unit).map(function (_ref4, idx) {
+    var _ref5 = _slicedToArray(_ref4, 2),
+        key = _ref5[0],
+        val = _ref5[1];
+
+    return React__default.createElement(Container, {
+      key: idx
+    }, React__default.createElement("label", null, key), React__default.createElement("span", null, printUnrenderable(val)));
+  }));
 };
 var printAttributeContent = function printAttributeContent(name) {
   var content = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];

@@ -28,7 +28,7 @@ const printUnrenderable = val => {
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: 160px auto;
+  grid-template-columns: 1fr 1fr;
   grid-auto-flow: row;
   grid-gap: 0.75rem;
 
@@ -54,10 +54,10 @@ export const printObject = (name, obj) => (
   <Container>
     <Name>{name}</Name>
     {Object.entries(obj).map(([key, val], idx) => (
-      <Fragment key={idx}>
+      <Container key={idx}>
         <label>{key}</label>
         <span>{printUnrenderable(val)}</span>
-      </Fragment>
+      </Container>
     ))}
   </Container>
 )
@@ -73,13 +73,12 @@ export const printNode = (key, val) => (
 
 export const printUnit = (unit, idx) => (
   <Container key={idx}>
-    <Name>{unit.name}</Name>
-    {/* {Object.entries(obj).map(([key, val], idx) => (
-      <Fragment key={idx}>
+    {Object.entries(unit).map(([key, val], idx) => (
+      <Container key={idx}>
         <label>{key}</label>
         <span>{printUnrenderable(val)}</span>
-      </Fragment>
-    ))} */}
+      </Container>
+    ))}
   </Container>
 )
 

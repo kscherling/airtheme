@@ -19,7 +19,7 @@ case $CMD in
     ;;
 
   test)
-    exe "../../node_modules/.bin/jest -c $(pwd)/jest.config.js --rootDir ../"
+    exe "../../node_modules/.bin/jest -c $(pwd)/jest.config.js --rootDir ../ $@"
     ;;
 
   *)
