@@ -73,46 +73,6 @@ function _nonIterableRest() {
   throw new TypeError("Invalid attempt to destructure non-iterable instance");
 }
 
-function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n  grid-column: span 2;\n  padding: 1rem;\n"]);
-
-  _templateObject5 = function _templateObject5() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n  grid-column: span 2;\n"]);
-
-  _templateObject4 = function _templateObject4() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n      background: #f2f2f2;\n    "]);
-
-  _templateObject3 = function _templateObject3() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-auto-flow: row;\n  grid-gap: 0.75rem;\n\n  ", ";\n\n  margin-bottom: 1rem;\n"]);
-
-  _templateObject2 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
 function _templateObject() {
   var data = _taggedTemplateLiteral(["\n  text-decoration: line-through;\n  color: #999;\n"]);
 
@@ -144,27 +104,21 @@ var printUnrenderable = function printUnrenderable(val) {
   return val;
 };
 
-var Container = styled__default.div(_templateObject2(), function (_ref) {
-  var shade = _ref.shade;
-  return shade && styled.css(_templateObject3());
-});
-var Name = styled__default.strong(_templateObject4());
-var Empty = styled__default.div(_templateObject5());
-var Node = function Node(_ref2) {
-  var name = _ref2.name,
-      val = _ref2.val;
+var Node = function Node(_ref) {
+  var name = _ref.name,
+      val = _ref.val;
   return React__default.createElement(React.Fragment, null, React__default.createElement("strong", null, name), React__default.createElement("span", null, printUnrenderable(val)));
 };
-var Unit = function Unit(_ref3) {
-  var unit = _ref3.unit;
+var Unit = function Unit(_ref2) {
+  var unit = _ref2.unit;
   return React__default.createElement(make.SimpleList.FourColumns, null, React__default.createElement("span", null, printUnrenderable(unit.name)), React__default.createElement("span", null, printUnrenderable(unit.value)), React__default.createElement("span", null, printUnrenderable(unit.ordinal)), React__default.createElement("span", null, printUnrenderable(unit.type)));
 };
-var Attribute = function Attribute(_ref4) {
-  var attribute = _ref4.attribute;
-  return React__default.createElement(make.SimpleList.TwoColumns, null, Object.entries(attribute).map(function (_ref5, idx) {
-    var _ref6 = _slicedToArray(_ref5, 2),
-        key = _ref6[0],
-        val = _ref6[1];
+var Attribute = function Attribute(_ref3) {
+  var attribute = _ref3.attribute;
+  return React__default.createElement(make.SimpleList.TwoColumns, null, Object.entries(attribute).map(function (_ref4, idx) {
+    var _ref5 = _slicedToArray(_ref4, 2),
+        key = _ref5[0],
+        val = _ref5[1];
 
     return React__default.createElement(Node, {
       key: idx,
@@ -173,16 +127,16 @@ var Attribute = function Attribute(_ref4) {
     });
   }));
 };
-var AttributeContent = function AttributeContent(_ref7) {
-  var _ref7$content = _ref7.content,
-      content = _ref7$content === void 0 ? [] : _ref7$content;
+var AttributeContent = function AttributeContent(_ref6) {
+  var _ref6$content = _ref6.content,
+      content = _ref6$content === void 0 ? [] : _ref6$content;
   return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Subheader, null, "Content"), content.length ? content.map(function (unit, idx) {
     return React__default.createElement(Unit, {
       key: idx,
       unit: unit
     });
   }) : React__default.createElement(make.SimpleList, null, React__default.createElement(Strike, null, "empty")));
-}; // ___________________ destroy
+};
 
 var Id = reactRedux.connect(make.mapId)(function (_ref) {
   var id = _ref.id;
@@ -191,7 +145,7 @@ var Id = reactRedux.connect(make.mapId)(function (_ref) {
     val: id
   }));
 });
-var Name$1 = reactRedux.connect(make.mapName)(function (_ref2) {
+var Name = reactRedux.connect(make.mapName)(function (_ref2) {
   var name = _ref2.name;
   return React__default.createElement(make.SimpleList.TwoColumns, null, React__default.createElement(Node, {
     name: "name",
@@ -228,7 +182,7 @@ var BaseSpacing = reactRedux.connect(make.mapBaseSpacing)(function (_ref6) {
 });
 
 var Globals = function Globals() {
-  return React__default.createElement(make.SimpleList, null, React__default.createElement(make.SimpleList.Header, null, "Global"), React__default.createElement(Id, null), React__default.createElement(Name$1, null), React__default.createElement(Version, null), React__default.createElement(BaseFontSize, null), React__default.createElement(BaseLineHeight, null), React__default.createElement(BaseSpacing, null));
+  return React__default.createElement(make.SimpleList, null, React__default.createElement(make.SimpleList.Header, null, "Global"), React__default.createElement(Id, null), React__default.createElement(Name, null), React__default.createElement(Version, null), React__default.createElement(BaseFontSize, null), React__default.createElement(BaseLineHeight, null), React__default.createElement(BaseSpacing, null));
 };
 
 var SwatchAttribute = reactRedux.connect(make.mapSwatch)(function (_ref) {

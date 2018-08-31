@@ -27,30 +27,6 @@ const printUnrenderable = val => {
   return val
 }
 
-const Container = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-auto-flow: row;
-  grid-gap: 0.75rem;
-
-  ${({ shade }) =>
-    shade &&
-    css`
-      background: #f2f2f2;
-    `};
-
-  margin-bottom: 1rem;
-`
-
-const Name = styled.strong`
-  grid-column: span 2;
-`
-
-const Empty = styled.div`
-  grid-column: span 2;
-  padding: 1rem;
-`
-
 export const Node = ({ name, val }) => (
   <Fragment>
     <strong>{name}</strong>
@@ -87,40 +63,3 @@ export const AttributeContent = ({ content = [] }) => (
     )}
   </SimpleList.OneColumn>
 )
-
-// ___________________ destroy
-
-export const printObject = (name, obj) => (
-  <Container>
-    <Name>{name}</Name>
-    {Object.entries(obj).map(([key, val], idx) => (
-      <Container key={idx}>
-        <label>{key}</label>
-        <span>{printUnrenderable(val)}</span>
-      </Container>
-    ))}
-  </Container>
-)
-
-export const printUnit = (unit, idx) => (
-  <Container key={idx}>
-    {Object.entries(unit).map(([key, val], idx) => (
-      <Container key={idx}>
-        <label>{key}</label>
-        <span>{printUnrenderable(val)}</span>
-      </Container>
-    ))}
-  </Container>
-)
-
-export const printAttributeContent = (name, content = []) =>
-  content.length ? (
-    <Container shade>
-      <Name>{name}</Name>
-      {content.map((unit, idx) => printUnit(unit, idx))}
-    </Container>
-  ) : (
-    <Container shade>
-      <Empty>{name}</Empty>
-    </Container>
-  )
