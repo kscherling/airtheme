@@ -3184,6 +3184,16 @@ var mapSpacingContent = function mapSpacingContent(_ref21) {
   };
 }; // prettier-ignore
 
+function _templateObject9() {
+  var data = _taggedTemplateLiteral(["\n  grid-auto-flow: row;\n"]);
+
+  _templateObject9 = function _templateObject9() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject8() {
   var data = _taggedTemplateLiteral(["\n  grid-auto-flow: row;\n"]);
 
@@ -3215,7 +3225,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n  grid-auto-flow: row;\n"]);
+  var data = _taggedTemplateLiteral(["\n    padding-bottom: ", ";\n  "]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -3255,7 +3265,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  width: 100%;\n\n  ", "\n\n  ", "\n\n  ", "\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  width: 100%;\n\n  ", "\n\n  ", "\n\n  ", "\n\n  ", "\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -3272,19 +3282,22 @@ var Grid = styled__default.div(_templateObject(), function (_ref) {
 }, function (_ref3) {
   var gridTemplateRows = _ref3.gridTemplateRows;
   return gridTemplateRows && styled.css(_templateObject4(), gridTemplateRows);
+}, function (_ref4) {
+  var paddingBottom = _ref4.paddingBottom;
+  return paddingBottom && styled.css(_templateObject5(), paddingBottom);
 });
 var OneColumn = styled__default(Grid).attrs({
   gridTemplateColumns: '1fr'
-})(_templateObject5());
+})(_templateObject6());
 var TwoColumns = styled__default(Grid).attrs({
   gridTemplateColumns: 'repeat(2, 1fr)'
-})(_templateObject6());
+})(_templateObject7());
 var ThreeColumns = styled__default(Grid).attrs({
   gridTemplateColumns: 'repeat(3, 1fr)'
-})(_templateObject7());
+})(_templateObject8());
 var FourColumns = styled__default(Grid).attrs({
   gridTemplateColumns: 'repeat(4, 1fr)'
-})(_templateObject8());
+})(_templateObject9());
 Grid.OneColumn = OneColumn;
 Grid.TwoColumns = TwoColumns;
 Grid.ThreeColumns = ThreeColumns;

@@ -18,6 +18,10 @@ const Grid = styled.div`
   ${({gridTemplateRows}) => gridTemplateRows && css`
     grid-template-rows: ${gridTemplateRows}
   `}
+
+  ${({paddingBottom}) => paddingBottom && css`
+    padding-bottom: ${paddingBottom};
+  `}
 `
 
 const OneColumn = styled(Grid).attrs({

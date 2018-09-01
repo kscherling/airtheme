@@ -17,16 +17,16 @@ const Tab = styled.a`
   }
 `
 
-const ViewTabs = styled.div`
+const SimpleTabs = styled.div`
   display: flex;
   flex-direction: row;
 
   ${Tab} + ${Tab} {
     margin-left: 1rem;
   }
-  
+
 `
 
-ViewTabs.Tab = Tab
+SimpleTabs.Tab = Tab
 
-export default ViewTabs
+export default SimpleTabs

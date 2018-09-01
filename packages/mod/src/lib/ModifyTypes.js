@@ -1,6 +1,7 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, Component } from 'react'
 import styled from 'styled-components'
 import { SimpleList } from '@airtheme/make'
+import SimpleTabs from './SimpleTabs'
 
 const Strike = styled.span`
   text-decoration: line-through;
@@ -40,7 +41,74 @@ export const Unit = ({ unit, remove, update }) => (
   </SimpleList.FourColumns>
 )
 
-const Attribute = () => {}
+export class AddUnit extends Component {
+  state = {
+    name: '',
+    value: '',
+    ordinal: ''
+  }
+
+  handleSubmit = () => {
+    const { name, value, ordinal } = this.state
+    const { add, nextOrdinal } = this.props
+
+    add(value, name, nextOrdinal)
+    this.setState({
+      name: '',
+      value: '',
+      ordinal: ''
+    })
+  }
+
+  render() {
+    const { name, value, ordinal } = this.state
+
+    return (
+      <SimpleList.FourColumns>
+        <input
+          type="text"
+          placeholder="name"
+          value={name}
+          onChange={e => this.setState({ name: e.target.value })}
+        />
+        <input
+          type="text"
+          placeholder="value"
+          value={value}
+          onChange={e => this.setState({ value: e.target.value })}
+        />
+        <input
+          disabled
+          type="text"
+          placeholder="ordinal"
+          value={ordinal}
+          onChange={e => this.setState({ ordinal: e.target.value })}
+        />
+        <button type="button" onClick={this.handleSubmit}>
+          add
+        </button>
+      </SimpleList.FourColumns>
+    )
+  }
+}
+
+export const Attribute = ({ view, viewable, updateView }) => (
+  <SimpleList.OneColumn padding="1rem 0">
+    <SimpleList.Subheader>View</SimpleList.Subheader>
+    <SimpleTabs>
+      {viewable.map((unit, idx) => (
+        <SimpleTabs.Tab
+          key={idx}
+          active={view === unit}
+          onClick={() => updateView(unit)}
+        >
+          {unit}
+        </SimpleTabs.Tab>
+      ))}
+    </SimpleTabs>
+  </SimpleList.OneColumn>
+)
+
 export const AttributeContent = ({ content = [], update, remove }) => (
   <SimpleList.OneColumn>
     <SimpleList.Subheader>Content</SimpleList.Subheader>

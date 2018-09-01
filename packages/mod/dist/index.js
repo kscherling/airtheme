@@ -2,10 +2,10 @@
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var React = require('react');
-var React__default = _interopDefault(React);
 var styled = require('styled-components');
 var styled__default = _interopDefault(styled);
+var React = require('react');
+var React__default = _interopDefault(React);
 var make = require('@airtheme/make');
 var reactRedux = require('react-redux');
 
@@ -105,8 +105,28 @@ function _taggedTemplateLiteral(strings, raw) {
   }));
 }
 
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: row;\n\n  ", " + ", " {\n    margin-left: 1rem;\n  }\n\n"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n      text-decoration: none;\n      color: inherit;\n    "]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  text-decoration: line-through;\n  color: #999;\n"]);
+  var data = _taggedTemplateLiteral(["\n  text-decoration: line-through;\n  color: #999;\n\n  ", ";\n\n  &:hover {\n    cursor: pointer;\n    color: inherit;\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -114,7 +134,23 @@ function _templateObject() {
 
   return data;
 }
-var Strike = styled__default.span(_templateObject());
+var Tab = styled__default.a(_templateObject(), function (_ref) {
+  var active = _ref.active;
+  return active && styled.css(_templateObject2());
+});
+var SimpleTabs = styled__default.div(_templateObject3(), Tab, Tab);
+SimpleTabs.Tab = Tab;
+
+function _templateObject$1() {
+  var data = _taggedTemplateLiteral(["\n  text-decoration: line-through;\n  color: #999;\n"]);
+
+  _templateObject$1 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var Strike = styled__default.span(_templateObject$1());
 var Node = function Node(_ref) {
   var label = _ref.label,
       value = _ref.value,
@@ -165,12 +201,117 @@ var Unit = function Unit(_ref2) {
     }
   }, "remove"));
 };
+var AddUnit =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(AddUnit, _Component);
 
-var AttributeContent = function AttributeContent(_ref3) {
-  var _ref3$content = _ref3.content,
-      content = _ref3$content === void 0 ? [] : _ref3$content,
-      update = _ref3.update,
-      remove = _ref3.remove;
+  function AddUnit() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    _classCallCheck(this, AddUnit);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(AddUnit)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
+      name: '',
+      value: '',
+      ordinal: ''
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleSubmit", function () {
+      var _this$state = _this.state,
+          name = _this$state.name,
+          value = _this$state.value,
+          ordinal = _this$state.ordinal;
+      var _this$props = _this.props,
+          add = _this$props.add,
+          nextOrdinal = _this$props.nextOrdinal;
+      add(value, name, nextOrdinal);
+
+      _this.setState({
+        name: '',
+        value: '',
+        ordinal: ''
+      });
+    });
+
+    return _this;
+  }
+
+  _createClass(AddUnit, [{
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var _this$state2 = this.state,
+          name = _this$state2.name,
+          value = _this$state2.value,
+          ordinal = _this$state2.ordinal;
+      return React__default.createElement(make.SimpleList.FourColumns, null, React__default.createElement("input", {
+        type: "text",
+        placeholder: "name",
+        value: name,
+        onChange: function onChange(e) {
+          return _this2.setState({
+            name: e.target.value
+          });
+        }
+      }), React__default.createElement("input", {
+        type: "text",
+        placeholder: "value",
+        value: value,
+        onChange: function onChange(e) {
+          return _this2.setState({
+            value: e.target.value
+          });
+        }
+      }), React__default.createElement("input", {
+        disabled: true,
+        type: "text",
+        placeholder: "ordinal",
+        value: ordinal,
+        onChange: function onChange(e) {
+          return _this2.setState({
+            ordinal: e.target.value
+          });
+        }
+      }), React__default.createElement("button", {
+        type: "button",
+        onClick: this.handleSubmit
+      }, "add"));
+    }
+  }]);
+
+  return AddUnit;
+}(React.Component);
+var Attribute = function Attribute(_ref3) {
+  var view = _ref3.view,
+      viewable = _ref3.viewable,
+      updateView = _ref3.updateView;
+  return React__default.createElement(make.SimpleList.OneColumn, {
+    padding: "1rem 0"
+  }, React__default.createElement(make.SimpleList.Subheader, null, "View"), React__default.createElement(SimpleTabs, null, viewable.map(function (unit, idx) {
+    return React__default.createElement(SimpleTabs.Tab, {
+      key: idx,
+      active: view === unit,
+      onClick: function onClick() {
+        return updateView(unit);
+      }
+    }, unit);
+  })));
+};
+var AttributeContent = function AttributeContent(_ref4) {
+  var _ref4$content = _ref4.content,
+      content = _ref4$content === void 0 ? [] : _ref4$content,
+      update = _ref4.update,
+      remove = _ref4.remove;
   return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Subheader, null, "Content"), content.length ? content.map(function (unit, idx) {
     return React__default.createElement(Unit, {
       key: idx,
@@ -253,309 +394,40 @@ var Globals = function Globals() {
   return React__default.createElement(make.SimpleList, null, React__default.createElement(make.SimpleList.Header, null, "Global"), React__default.createElement(Id, null), React__default.createElement(Name, null), React__default.createElement(Version, null), React__default.createElement(BaseFontSize, null), React__default.createElement(BaseLineHeight, null), React__default.createElement(BaseSpacing, null));
 };
 
-function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: row;\n\n  ", " + ", " {\n    margin-left: 1rem;\n  }\n  \n"]);
-
-  _templateObject3 = function _templateObject3() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n      text-decoration: none;\n      color: inherit;\n    "]);
-
-  _templateObject2 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject$1() {
-  var data = _taggedTemplateLiteral(["\n  text-decoration: line-through;\n  color: #999;\n\n  ", ";\n\n  &:hover {\n    cursor: pointer;\n    color: inherit;\n  }\n"]);
-
-  _templateObject$1 = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-var Tab = styled__default.a(_templateObject$1(), function (_ref) {
-  var active = _ref.active;
-  return active && styled.css(_templateObject2());
+var SwatchAttribute = reactRedux.connect(make.mapSwatch, {
+  updateSwatchView: make.updateSwatchView
+})(function (_ref) {
+  var _ref$swatch = _ref.swatch,
+      view = _ref$swatch.view,
+      viewable = _ref$swatch.viewable,
+      updateSwatchView = _ref.updateSwatchView;
+  return React__default.createElement(Attribute, {
+    view: view,
+    viewable: viewable,
+    updateView: updateSwatchView
+  });
 });
-var ViewTabs = styled__default.div(_templateObject3(), Tab, Tab);
-ViewTabs.Tab = Tab;
-
-function _templateObject2$1() {
-  var data = _taggedTemplateLiteral(["\n      background: #f2f2f2;\n    "]);
-
-  _templateObject2$1 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject$2() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr 1fr;\n  grid-auto-flow: row;\n  grid-gap: 0.75rem;\n\n  ", ";\n\n  margin-bottom: 1rem;\n"]);
-
-  _templateObject$2 = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-var Container = styled__default.div(_templateObject$2(), function (_ref) {
-  var shade = _ref.shade;
-  return shade && css(_templateObject2$1());
-});
-
-var AddForm =
-/*#__PURE__*/
-function (_Component) {
-  _inherits(AddForm, _Component);
-
-  function AddForm() {
-    var _getPrototypeOf2;
-
-    var _this;
-
-    _classCallCheck(this, AddForm);
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(AddForm)).call.apply(_getPrototypeOf2, [this].concat(args)));
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
-      name: '',
-      value: '',
-      ordinal: ''
-    });
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleNameChange", function (_ref2) {
-      var value = _ref2.target.value;
-
-      _this.setState({
-        name: value
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleValueChange", function (_ref3) {
-      var value = _ref3.target.value;
-
-      _this.setState({
-        value: value
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleOrdinalChange", function (_ref4) {
-      var value = _ref4.target.value;
-
-      _this.setState({
-        ordinal: value
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleSubmit", function () {
-      var _this$state = _this.state,
-          name = _this$state.name,
-          value = _this$state.value,
-          ordinal = _this$state.ordinal;
-      var _this$props = _this.props,
-          add = _this$props.add,
-          nextOrdinal = _this$props.nextOrdinal;
-      add(value, name, nextOrdinal);
-
-      _this.setState({
-        name: '',
-        value: '',
-        ordinal: ''
-      });
-    });
-
-    return _this;
-  }
-
-  _createClass(AddForm, [{
-    key: "render",
-    value: function render() {
-      var _this$state2 = this.state,
-          name = _this$state2.name,
-          value = _this$state2.value,
-          ordinal = _this$state2.ordinal;
-      return React__default.createElement(Container, null, React__default.createElement("input", {
-        type: "text",
-        placeholder: "name",
-        value: name,
-        onChange: this.handleNameChange
-      }), React__default.createElement("input", {
-        type: "text",
-        placeholder: "value",
-        value: value,
-        onChange: this.handleValueChange
-      }), React__default.createElement("input", {
-        type: "text",
-        placeholder: "ordinal",
-        value: ordinal,
-        onChange: this.handleOrdinalChange
-      }), React__default.createElement("button", {
-        type: "button",
-        onClick: this.handleSubmit
-      }, "add"));
-    }
-  }]);
-
-  return AddForm;
-}(React.Component);
-
-function _templateObject2$2() {
-  var data = _taggedTemplateLiteral(["\n      background: #f2f2f2;\n    "]);
-
-  _templateObject2$2 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject$3() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  grid-auto-flow: row;\n  grid-gap: 0.75rem;\n\n  ", ";\n\n  margin-bottom: 1rem;\n"]);
-
-  _templateObject$3 = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-var Container$1 = styled__default.div(_templateObject$3(), function (_ref) {
-  var shade = _ref.shade;
-  return shade && css(_templateObject2$2());
-});
-
-var AddFormUnit =
-/*#__PURE__*/
-function (_Component) {
-  _inherits(AddFormUnit, _Component);
-
-  function AddFormUnit() {
-    var _getPrototypeOf2;
-
-    var _this;
-
-    _classCallCheck(this, AddFormUnit);
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(AddFormUnit)).call.apply(_getPrototypeOf2, [this].concat(args)));
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
-      name: '',
-      value: '',
-      ordinal: ''
-    });
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleNameChange", function (_ref2) {
-      var value = _ref2.target.value;
-
-      _this.props.update(_this.props.unit, {
-        name: value
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleValueChange", function (_ref3) {
-      var value = _ref3.target.value;
-
-      _this.props.update(_this.props.unit, {
-        value: value
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleOrdinalChange", function (_ref4) {
-      var value = _ref4.target.value;
-
-      _this.props.update(_this.props.unit, {
-        ordinal: value
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleRemove", function () {
-      _this.props.remove(_this.props.unit);
-    });
-
-    return _this;
-  }
-
-  _createClass(AddFormUnit, [{
-    key: "render",
-    value: function render() {
-      var _this$props$unit = this.props.unit,
-          name = _this$props$unit.name,
-          value = _this$props$unit.value,
-          ordinal = _this$props$unit.ordinal;
-      return React__default.createElement(Container$1, null, React__default.createElement("input", {
-        type: "text",
-        value: name,
-        onChange: this.handleNameChange
-      }), React__default.createElement("input", {
-        type: "text",
-        value: value,
-        onChange: this.handleValueChange
-      }), React__default.createElement("input", {
-        type: "text",
-        value: ordinal,
-        onChange: this.handleOrdinalChange
-      }), React__default.createElement("button", {
-        type: "button",
-        onClick: this.handleRemove
-      }, "remove"));
-    }
-  }]);
-
-  return AddFormUnit;
-}(React.Component);
-
 var SwatchContent = reactRedux.connect(make.mapSwatchContent, {
   addSwatch: make.addSwatch,
   removeSwatch: make.removeSwatch,
   updateSwatch: make.updateSwatch
-})(function (_ref) {
-  var content = _ref.content,
-      addSwatch = _ref.addSwatch,
-      removeSwatch = _ref.removeSwatch,
-      updateSwatch = _ref.updateSwatch;
+})(function (_ref2) {
+  var content = _ref2.content,
+      addSwatch = _ref2.addSwatch,
+      removeSwatch = _ref2.removeSwatch,
+      updateSwatch = _ref2.updateSwatch;
   return React__default.createElement(React.Fragment, null, React__default.createElement(AttributeContent, {
     content: content,
     remove: removeSwatch,
     update: updateSwatch
-  }), React__default.createElement(AddForm, {
+  }), React__default.createElement(AddUnit, {
     nextOrdinal: content.length + 1,
     add: addSwatch
   }));
 });
-var Swatch = reactRedux.connect(make.mapSwatch, {
-  updateSwatchView: make.updateSwatchView
-})(function (_ref2) {
-  var _ref2$swatch = _ref2.swatch,
-      view = _ref2$swatch.view,
-      viewable = _ref2$swatch.viewable,
-      updateSwatchView = _ref2.updateSwatchView;
-  return React__default.createElement(React.Fragment, null, React__default.createElement(ViewTabs, null, viewable.map(function (unit, idx) {
-    return React__default.createElement(ViewTabs.Tab, {
-      key: idx,
-      active: view === unit,
-      onClick: function onClick() {
-        return updateSwatchView(unit);
-      }
-    }, unit);
-  })), React__default.createElement(SwatchContent, null));
-});
+var Swatch = function Swatch() {
+  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Swatch"), React__default.createElement(SwatchAttribute, null), React__default.createElement(SwatchContent, null));
+};
 
 var Mod = function Mod() {
   return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Title, null, "Mod"), React__default.createElement(Globals, null), React__default.createElement(Swatch, null));
