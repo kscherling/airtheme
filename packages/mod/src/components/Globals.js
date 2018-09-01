@@ -16,30 +16,34 @@ import {
   updateThemeType,
   updateThemeVersion
 } from '@airtheme/make'
-import { Input } from '../lib/basicControls'
+import { Input } from '../lib/ModifyTypes'
 
-export const Name = connect(
+
+const Name = connect(
   mapName,
   { updateThemeName }
 )(({ name, updateThemeName }) => (
-  <Input label="name" value={name} onChange={updateThemeName} />
+
+  <SimpleList.TwoColumns>
+    <Node label="name" value={name} onChange={updateThemeName} />
+  </SimpleList.TwoColumns>
 ))
 
-export const Id = connect(
+const Id = connect(
   mapId,
   { updateThemeId }
 )(({ id, updateThemeId }) => (
   <Input disabled label="id" value={id} onChange={updateThemeId} />
 ))
 
-export const Version = connect(
+const Version = connect(
   mapVersion,
   { updateThemeVersion }
 )(({ version, updateThemeVersion }) => (
   <Input label="version" value={version} onChange={updateThemeVersion} />
 ))
 
-export const BaseFontSize = connect(
+const BaseFontSize = connect(
   mapBaseFontSize,
   { updateBaseFontSize }
 )(({ baseFontSize, updateBaseFontSize }) => (
@@ -50,7 +54,7 @@ export const BaseFontSize = connect(
   />
 ))
 
-export const BaseLineHeight = connect(
+const BaseLineHeight = connect(
   mapBaseLineHeight,
   { updateBaseLineHeight }
 )(({ baseLineHeight, updateBaseLineHeight }) => (
@@ -61,7 +65,7 @@ export const BaseLineHeight = connect(
   />
 ))
 
-export const BaseSpacing = connect(
+const BaseSpacing = connect(
   mapBaseSpacing,
   { updateBaseSpacing }
 )(({ baseSpacing, updateBaseSpacing }) => (
@@ -71,3 +75,10 @@ export const BaseSpacing = connect(
     onChange={updateBaseSpacing}
   />
 ))
+
+const Globals = () => {
+  <Name />
+}
+
+
+export default Globals

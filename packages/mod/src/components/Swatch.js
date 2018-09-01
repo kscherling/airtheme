@@ -8,7 +8,7 @@ import {
   removeSwatch,
   updateSwatch
 } from '@airtheme/make'
-import { Input } from '../lib/basicControls'
+import { Input } from '../lib/ModifyTypes'
 import ViewTabs from '../lib/ViewTabs'
 import AddForm from '../lib/AddForm'
 import AddFormUnit from '../lib/AddFormUnit'

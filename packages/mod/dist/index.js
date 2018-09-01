@@ -9,6 +9,91 @@ var styled__default = _interopDefault(styled);
 var reactRedux = require('react-redux');
 var make = require('@airtheme/make');
 
+var Input = function Input(_ref2) {
+  var label = _ref2.label,
+      value = _ref2.value,
+      _onChange2 = _ref2.onChange;
+  return React__default.createElement(Container, null, React__default.createElement("label", null, label), React__default.createElement("span", null, React__default.createElement("input", {
+    type: "text",
+    value: value,
+    onChange: function onChange(e) {
+      return _onChange2(e.target.value);
+    }
+  })));
+};
+
+var Name = reactRedux.connect(make.mapName, {
+  updateThemeName: make.updateThemeName
+})(function (_ref) {
+  var name = _ref.name,
+      updateThemeName = _ref.updateThemeName;
+  return React__default.createElement(SimpleList.TwoColumns, null, React__default.createElement(Node, {
+    label: "name",
+    value: name,
+    onChange: updateThemeName
+  }));
+});
+var Id = reactRedux.connect(make.mapId, {
+  updateThemeId: make.updateThemeId
+})(function (_ref2) {
+  var id = _ref2.id,
+      updateThemeId = _ref2.updateThemeId;
+  return React__default.createElement(Input, {
+    disabled: true,
+    label: "id",
+    value: id,
+    onChange: updateThemeId
+  });
+});
+var Version = reactRedux.connect(make.mapVersion, {
+  updateThemeVersion: make.updateThemeVersion
+})(function (_ref3) {
+  var version = _ref3.version,
+      updateThemeVersion = _ref3.updateThemeVersion;
+  return React__default.createElement(Input, {
+    label: "version",
+    value: version,
+    onChange: updateThemeVersion
+  });
+});
+var BaseFontSize = reactRedux.connect(make.mapBaseFontSize, {
+  updateBaseFontSize: make.updateBaseFontSize
+})(function (_ref4) {
+  var baseFontSize = _ref4.baseFontSize,
+      updateBaseFontSize = _ref4.updateBaseFontSize;
+  return React__default.createElement(Input, {
+    label: "baseFontSize",
+    value: baseFontSize,
+    onChange: updateBaseFontSize
+  });
+});
+var BaseLineHeight = reactRedux.connect(make.mapBaseLineHeight, {
+  updateBaseLineHeight: make.updateBaseLineHeight
+})(function (_ref5) {
+  var baseLineHeight = _ref5.baseLineHeight,
+      updateBaseLineHeight = _ref5.updateBaseLineHeight;
+  return React__default.createElement(Input, {
+    label: "baseLineHeight",
+    value: baseLineHeight,
+    onChange: updateBaseLineHeight
+  });
+});
+var BaseSpacing = reactRedux.connect(make.mapBaseSpacing, {
+  updateBaseSpacing: make.updateBaseSpacing
+})(function (_ref6) {
+  var baseSpacing = _ref6.baseSpacing,
+      updateBaseSpacing = _ref6.updateBaseSpacing;
+  return React__default.createElement(Input, {
+    label: "baseLineHeight",
+    value: baseSpacing,
+    onChange: updateBaseSpacing
+  });
+});
+
+var Globals = function Globals() {
+  React__default.createElement(Name, null);
+};
+
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
@@ -105,110 +190,6 @@ function _taggedTemplateLiteral(strings, raw) {
   }));
 }
 
-function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n      background: #f2f2f2;\n    "]);
-
-  _templateObject2 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 160px auto;\n  grid-auto-flow: row;\n  grid-gap: 0.75rem;\n\n  ", ";\n\n  margin-bottom: 1rem;\n"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-var Container = styled__default.div(_templateObject(), function (_ref) {
-  var shade = _ref.shade;
-  return shade && css(_templateObject2());
-});
-var Input = function Input(_ref2) {
-  var label = _ref2.label,
-      value = _ref2.value,
-      _onChange = _ref2.onChange;
-  return React__default.createElement(Container, null, React__default.createElement("label", null, label), React__default.createElement("span", null, React__default.createElement("input", {
-    type: "text",
-    value: value,
-    onChange: function onChange(e) {
-      return _onChange(e.target.value);
-    }
-  })));
-};
-
-var Name = reactRedux.connect(make.mapName, {
-  updateThemeName: make.updateThemeName
-})(function (_ref) {
-  var name = _ref.name,
-      updateThemeName = _ref.updateThemeName;
-  return React__default.createElement(Input, {
-    label: "name",
-    value: name,
-    onChange: updateThemeName
-  });
-});
-var Id = reactRedux.connect(make.mapId, {
-  updateThemeId: make.updateThemeId
-})(function (_ref2) {
-  var id = _ref2.id,
-      updateThemeId = _ref2.updateThemeId;
-  return React__default.createElement(Input, {
-    disabled: true,
-    label: "id",
-    value: id,
-    onChange: updateThemeId
-  });
-});
-var Version = reactRedux.connect(make.mapVersion, {
-  updateThemeVersion: make.updateThemeVersion
-})(function (_ref3) {
-  var version = _ref3.version,
-      updateThemeVersion = _ref3.updateThemeVersion;
-  return React__default.createElement(Input, {
-    label: "version",
-    value: version,
-    onChange: updateThemeVersion
-  });
-});
-var BaseFontSize = reactRedux.connect(make.mapBaseFontSize, {
-  updateBaseFontSize: make.updateBaseFontSize
-})(function (_ref4) {
-  var baseFontSize = _ref4.baseFontSize,
-      updateBaseFontSize = _ref4.updateBaseFontSize;
-  return React__default.createElement(Input, {
-    label: "baseFontSize",
-    value: baseFontSize,
-    onChange: updateBaseFontSize
-  });
-});
-var BaseLineHeight = reactRedux.connect(make.mapBaseLineHeight, {
-  updateBaseLineHeight: make.updateBaseLineHeight
-})(function (_ref5) {
-  var baseLineHeight = _ref5.baseLineHeight,
-      updateBaseLineHeight = _ref5.updateBaseLineHeight;
-  return React__default.createElement(Input, {
-    label: "baseLineHeight",
-    value: baseLineHeight,
-    onChange: updateBaseLineHeight
-  });
-});
-var BaseSpacing = reactRedux.connect(make.mapBaseSpacing, {
-  updateBaseSpacing: make.updateBaseSpacing
-})(function (_ref6) {
-  var baseSpacing = _ref6.baseSpacing,
-      updateBaseSpacing = _ref6.updateBaseSpacing;
-  return React__default.createElement(Input, {
-    label: "baseLineHeight",
-    value: baseSpacing,
-    onChange: updateBaseSpacing
-  });
-});
-
 function _templateObject3() {
   var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: row;\n\n  ", " + ", " {\n    margin-left: 1rem;\n  }\n  \n"]);
 
@@ -219,8 +200,34 @@ function _templateObject3() {
   return data;
 }
 
-function _templateObject2$1() {
+function _templateObject2() {
   var data = _taggedTemplateLiteral(["\n      text-decoration: none;\n      color: inherit;\n    "]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n  text-decoration: line-through;\n  color: #999;\n\n  ", ";\n\n  &:hover {\n    cursor: pointer;\n    color: inherit;\n  }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var Tab = styled__default.a(_templateObject(), function (_ref) {
+  var active = _ref.active;
+  return active && styled.css(_templateObject2());
+});
+var ViewTabs = styled__default.div(_templateObject3(), Tab, Tab);
+ViewTabs.Tab = Tab;
+
+function _templateObject2$1() {
+  var data = _taggedTemplateLiteral(["\n      background: #f2f2f2;\n    "]);
 
   _templateObject2$1 = function _templateObject2() {
     return data;
@@ -230,7 +237,7 @@ function _templateObject2$1() {
 }
 
 function _templateObject$1() {
-  var data = _taggedTemplateLiteral(["\n  text-decoration: line-through;\n  color: #999;\n\n  ", ";\n\n  &:hover {\n    cursor: pointer;\n    color: inherit;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr 1fr;\n  grid-auto-flow: row;\n  grid-gap: 0.75rem;\n\n  ", ";\n\n  margin-bottom: 1rem;\n"]);
 
   _templateObject$1 = function _templateObject() {
     return data;
@@ -238,35 +245,9 @@ function _templateObject$1() {
 
   return data;
 }
-var Tab = styled__default.a(_templateObject$1(), function (_ref) {
-  var active = _ref.active;
-  return active && styled.css(_templateObject2$1());
-});
-var ViewTabs = styled__default.div(_templateObject3(), Tab, Tab);
-ViewTabs.Tab = Tab;
-
-function _templateObject2$2() {
-  var data = _taggedTemplateLiteral(["\n      background: #f2f2f2;\n    "]);
-
-  _templateObject2$2 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject$2() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr 1fr;\n  grid-auto-flow: row;\n  grid-gap: 0.75rem;\n\n  ", ";\n\n  margin-bottom: 1rem;\n"]);
-
-  _templateObject$2 = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-var Container$1 = styled__default.div(_templateObject$2(), function (_ref) {
+var Container$1 = styled__default.div(_templateObject$1(), function (_ref) {
   var shade = _ref.shade;
-  return shade && css(_templateObject2$2());
+  return shade && css(_templateObject2$1());
 });
 
 var AddForm =
@@ -369,28 +350,28 @@ function (_Component) {
   return AddForm;
 }(React.Component);
 
-function _templateObject2$3() {
+function _templateObject2$2() {
   var data = _taggedTemplateLiteral(["\n      background: #f2f2f2;\n    "]);
 
-  _templateObject2$3 = function _templateObject2() {
+  _templateObject2$2 = function _templateObject2() {
     return data;
   };
 
   return data;
 }
 
-function _templateObject$3() {
+function _templateObject$2() {
   var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  grid-auto-flow: row;\n  grid-gap: 0.75rem;\n\n  ", ";\n\n  margin-bottom: 1rem;\n"]);
 
-  _templateObject$3 = function _templateObject() {
+  _templateObject$2 = function _templateObject() {
     return data;
   };
 
   return data;
 }
-var Container$2 = styled__default.div(_templateObject$3(), function (_ref) {
+var Container$2 = styled__default.div(_templateObject$2(), function (_ref) {
   var shade = _ref.shade;
-  return shade && css(_templateObject2$3());
+  return shade && css(_templateObject2$2());
 });
 
 var AddFormUnit =
@@ -477,28 +458,28 @@ function (_Component) {
   return AddFormUnit;
 }(React.Component);
 
-function _templateObject2$4() {
+function _templateObject2$3() {
   var data = _taggedTemplateLiteral(["\n      background: #f2f2f2;\n    "]);
 
-  _templateObject2$4 = function _templateObject2() {
+  _templateObject2$3 = function _templateObject2() {
     return data;
   };
 
   return data;
 }
 
-function _templateObject$4() {
+function _templateObject$3() {
   var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 160px auto;\n  grid-auto-flow: row;\n  grid-gap: 0.75rem;\n\n  ", ";\n\n  margin-bottom: 1rem;\n"]);
 
-  _templateObject$4 = function _templateObject() {
+  _templateObject$3 = function _templateObject() {
     return data;
   };
 
   return data;
 }
-var Container$3 = styled__default.div(_templateObject$4(), function (_ref) {
+var Container$3 = styled__default.div(_templateObject$3(), function (_ref) {
   var shade = _ref.shade;
-  return shade && styled.css(_templateObject2$4());
+  return shade && styled.css(_templateObject2$3());
 });
 var SwatchContent = reactRedux.connect(make.mapSwatchContent, {
   addSwatch: make.addSwatch,
@@ -540,7 +521,7 @@ var Swatch = reactRedux.connect(make.mapSwatch, {
 });
 
 var Mod = function Mod() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Title, null, "Mod"), React__default.createElement(Name, null), React__default.createElement(Version, null), React__default.createElement(Id, null), React__default.createElement(BaseFontSize, null), React__default.createElement(BaseLineHeight, null), React__default.createElement(BaseSpacing, null), React__default.createElement(Swatch, null));
+  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Title, null, "Mod"), React__default.createElement(Globals, null), React__default.createElement(Swatch, null));
 };
 
 module.exports = Mod;
