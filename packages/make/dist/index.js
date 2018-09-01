@@ -663,10 +663,10 @@ function _nonIterableSpread() {
 
 var UPDATE_THEME = 'UPDATE_THEME';
 
-var UPDATE_SWATCH_VIEW = 'UPDATE_SWATCH_VIEW';
 var ADD_SWATCH = 'ADD_SWATCH';
 var REMOVE_SWATCH = 'REMOVE_SWATCH';
 var UPDATE_SWATCH = 'UPDATE_SWATCH';
+var UPDATE_SWATCH_VIEW = 'UPDATE_SWATCH_VIEW';
 
 var eq = function eq(a, b) {
   return a === b;
