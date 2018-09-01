@@ -735,6 +735,7 @@ var swatch = function swatch() {
 var ADD_FONT_SIZE = 'ADD_FONT_SIZE';
 var REMOVE_FONT_SIZE = 'REMOVE_FONT_SIZE';
 var UPDATE_FONT_SIZE = 'UPDATE_FONT_SIZE';
+var UPDATE_FONT_SIZE_VIEW = 'UPDATE_FONT_SIZE_VIEW';
 
 var fontSize = function fontSize() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : type.attribute.fontSize();
@@ -743,6 +744,11 @@ var fontSize = function fontSize() {
   switch (action.type) {
     case UPDATE_THEME:
       return action.theme.setting.fontSize;
+
+    case UPDATE_FONT_SIZE_VIEW:
+      return _objectSpread({}, state, {
+        view: action.view
+      });
 
     case ADD_FONT_SIZE:
       return addUnit(state, action);
@@ -845,6 +851,7 @@ var color = function color() {
 var ADD_SPACING = 'ADD_SPACING';
 var REMOVE_SPACING = 'REMOVE_SPACING';
 var UPDATE_SPACING = 'UPDATE_SPACING';
+var UPDATE_SPACING_VIEW = 'UPDATE_SPACING_VIEW';
 
 var spacing = function spacing() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : type.attribute.spacing();
@@ -853,6 +860,11 @@ var spacing = function spacing() {
   switch (action.type) {
     case UPDATE_THEME:
       return action.theme.setting.spacing;
+
+    case UPDATE_SPACING_VIEW:
+      return _objectSpread({}, state, {
+        view: action.view
+      });
 
     case ADD_SPACING:
       return addUnit(state, action);
