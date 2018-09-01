@@ -1163,6 +1163,12 @@ var updateFontFamily = function updateFontFamily(original, updated) {
   };
 };
 
+var updateFontSizeView = function updateFontSizeView(view) {
+  return {
+    type: UPDATE_FONT_SIZE_VIEW,
+    view: view
+  };
+};
 var addFontSize = function addFontSize(value, name, ordinal) {
   return {
     type: ADD_FONT_SIZE,
@@ -1207,6 +1213,12 @@ var updateFontWeight = function updateFontWeight(original, updated) {
   };
 };
 
+var updateSpacingView = function updateSpacingView(view) {
+  return {
+    type: UPDATE_SPACING_VIEW,
+    view: view
+  };
+};
 var addSpacing = function addSpacing(value, name, ordinal) {
   return {
     type: ADD_SPACING,
@@ -3455,12 +3467,14 @@ exports.updateColor = updateColor;
 exports.addFontFamily = addFontFamily;
 exports.removeFontFamily = removeFontFamily;
 exports.updateFontFamily = updateFontFamily;
+exports.updateFontSizeView = updateFontSizeView;
 exports.addFontSize = addFontSize;
 exports.removeFontSize = removeFontSize;
 exports.updateFontSize = updateFontSize;
 exports.addFontWeight = addFontWeight;
 exports.removeFontWeight = removeFontWeight;
 exports.updateFontWeight = updateFontWeight;
+exports.updateSpacingView = updateSpacingView;
 exports.addSpacing = addSpacing;
 exports.removeSpacing = removeSpacing;
 exports.updateSpacing = updateSpacing;

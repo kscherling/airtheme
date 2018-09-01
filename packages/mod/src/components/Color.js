@@ -11,7 +11,7 @@ import {
 } from '@airtheme/make'
 import { AttributeContent, Attribute, AddUnit } from '../lib/ModifyTypes'
 
-export const ColorAttribute = connect(
+const ColorAttribute = connect(
   mapColor,
   { updateColorView }
 )(({ color: { view, viewable }, updateColorView }) => (
@@ -32,10 +32,12 @@ const ColorContent = connect(
   </Fragment>
 ))
 
-export const Color = () => (
+const Color = () => (
   <SimpleList.OneColumn>
     <SimpleList.Header>Color</SimpleList.Header>
     <ColorAttribute />
     <ColorContent />
   </SimpleList.OneColumn>
 )
+
+export default Color

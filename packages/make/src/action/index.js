@@ -31,6 +31,7 @@ export {
 } from './theme/setting/fontFamily'
 
 export {
+  updateFontSizeView,
   addFontSize,
   removeFontSize,
   updateFontSize
@@ -43,6 +44,7 @@ export {
 } from './theme/setting/fontWeight'
 
 export {
+  updateSpacingView,
   addSpacing,
   removeSpacing,
   updateSpacing

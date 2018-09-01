@@ -11,7 +11,7 @@ import {
 } from '@airtheme/make'
 import { AttributeContent, Attribute, AddUnit } from '../lib/ModifyTypes'
 
-export const SwatchAttribute = connect(
+const SwatchAttribute = connect(
   mapSwatch,
   { updateSwatchView }
 )(({ swatch: { view, viewable }, updateSwatchView }) => (
@@ -32,10 +32,12 @@ const SwatchContent = connect(
   </Fragment>
 ))
 
-export const Swatch = () => (
+const Swatch = () => (
   <SimpleList.OneColumn>
     <SimpleList.Header>Swatch</SimpleList.Header>
     <SwatchAttribute />
     <SwatchContent />
   </SimpleList.OneColumn>
 )
+
+export default Swatch

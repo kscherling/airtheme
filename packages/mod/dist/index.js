@@ -425,6 +425,7 @@ var SwatchContent = reactRedux.connect(make.mapSwatchContent, {
     add: addSwatch
   }));
 });
+
 var Swatch = function Swatch() {
   return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Swatch"), React__default.createElement(SwatchAttribute, null), React__default.createElement(SwatchContent, null));
 };
@@ -460,12 +461,49 @@ var ColorContent = reactRedux.connect(make.mapColorContent, {
     add: addColor
   }));
 });
+
 var Color = function Color() {
   return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Color"), React__default.createElement(ColorAttribute, null), React__default.createElement(ColorContent, null));
 };
 
+var FontSizeAttribute = reactRedux.connect(make.mapFontSize, {
+  updateFontSizeView: make.updateFontSizeView
+})(function (_ref) {
+  var _ref$fontSize = _ref.fontSize,
+      view = _ref$fontSize.view,
+      viewable = _ref$fontSize.viewable,
+      updateFontSizeView = _ref.updateFontSizeView;
+  return React__default.createElement(Attribute, {
+    view: view,
+    viewable: viewable,
+    updateView: updateFontSizeView
+  });
+});
+var FontSizeContent = reactRedux.connect(make.mapFontSizeContent, {
+  addFontSize: make.addFontSize,
+  removeFontSize: make.removeFontSize,
+  updateFontSize: make.updateFontSize
+})(function (_ref2) {
+  var content = _ref2.content,
+      addFontSize = _ref2.addFontSize,
+      removeFontSize = _ref2.removeFontSize,
+      updateFontSize = _ref2.updateFontSize;
+  return React__default.createElement(React.Fragment, null, React__default.createElement(AttributeContent, {
+    content: content,
+    remove: removeFontSize,
+    update: updateFontSize
+  }), React__default.createElement(AddUnit, {
+    nextOrdinal: content.length + 1,
+    add: addFontSize
+  }));
+});
+
+var FontSize = function FontSize() {
+  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "FontSize"), React__default.createElement(FontSizeAttribute, null), React__default.createElement(FontSizeContent, null));
+};
+
 var Mod = function Mod() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Title, null, "Mod"), React__default.createElement(Globals, null), React__default.createElement(Swatch, null), React__default.createElement(Color, null));
+  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Title, null, "Mod"), React__default.createElement(Globals, null), React__default.createElement(Swatch, null), React__default.createElement(Color, null), React__default.createElement(FontSize, null));
 };
 
 module.exports = Mod;
