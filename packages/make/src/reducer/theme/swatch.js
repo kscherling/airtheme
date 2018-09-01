@@ -5,8 +5,7 @@ import {
   UPDATE_SWATCH,
   UPDATE_SWATCH_VIEW
 } from '../../constant/swatch'
-import { unit, attribute } from '@airtheme/type'
-import { eq, not } from '../../lib/helpers'
+import { attribute } from '@airtheme/type'
 import { addUnit, removeUnit, updateUnit } from '../../lib/unitReducers'
 
 const swatch = (state = attribute.swatch(), action) => {

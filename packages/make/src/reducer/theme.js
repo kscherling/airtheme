@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux'
 import swatch from './theme/swatch'
+import fontFace from './theme/fontFace'
 import setting from './theme/setting'
 import {
   UPDATE_BASE_FONT_SIZE,
@@ -89,8 +90,6 @@ const type = (state = '', action) => {
       return state
   }
 }
-
-const fontFace = (state = {}, action) => state
 
 export default combineReducers({
   baseFontSize,

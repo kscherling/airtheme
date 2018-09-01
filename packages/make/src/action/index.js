@@ -17,6 +17,8 @@ export {
   updateSwatch
 } from './theme/swatch'
 
+export { addFontFace, removeFontFace, updateFontFace } from './theme/fontFace'
+
 export {
   updateColorView,
   addColor,

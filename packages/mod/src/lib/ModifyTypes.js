@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { SimpleList } from '@airtheme/make'
 import SimpleTabs from './SimpleTabs'
 
+const noop = () => {}
 const Strike = styled.span`
   text-decoration: line-through;
   color: #999;
@@ -92,7 +93,7 @@ export class AddUnit extends Component {
   }
 }
 
-export const Attribute = ({ view, viewable, updateView }) => (
+export const Attribute = ({ view, viewable, updateView = noop }) => (
   <SimpleList.OneColumn padding="1rem 0">
     <SimpleList.Subheader>View</SimpleList.Subheader>
     <SimpleTabs>

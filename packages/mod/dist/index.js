@@ -150,6 +150,9 @@ function _templateObject$1() {
 
   return data;
 }
+
+var noop = function noop() {};
+
 var Strike = styled__default.span(_templateObject$1());
 var Node = function Node(_ref) {
   var label = _ref.label,
@@ -294,7 +297,8 @@ function (_Component) {
 var Attribute = function Attribute(_ref3) {
   var view = _ref3.view,
       viewable = _ref3.viewable,
-      updateView = _ref3.updateView;
+      _ref3$updateView = _ref3.updateView,
+      updateView = _ref3$updateView === void 0 ? noop : _ref3$updateView;
   return React__default.createElement(make.SimpleList.OneColumn, {
     padding: "1rem 0"
   }, React__default.createElement(make.SimpleList.Subheader, null, "View"), React__default.createElement(SimpleTabs, null, viewable.map(function (unit, idx) {
@@ -466,6 +470,38 @@ var Color = function Color() {
   return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Color"), React__default.createElement(ColorAttribute, null), React__default.createElement(ColorContent, null));
 };
 
+var FontFaceAttribute = reactRedux.connect(make.mapFontFace)(function (_ref) {
+  var _ref$fontFace = _ref.fontFace,
+      view = _ref$fontFace.view,
+      viewable = _ref$fontFace.viewable;
+  return React__default.createElement(Attribute, {
+    view: view,
+    viewable: viewable
+  });
+});
+var FontFaceContent = reactRedux.connect(make.mapFontFaceContent, {
+  addFontFace: make.addFontFace,
+  removeFontFace: make.removeFontFace,
+  updateFontFace: make.updateFontFace
+})(function (_ref2) {
+  var content = _ref2.content,
+      addFontFace = _ref2.addFontFace,
+      removeFontFace = _ref2.removeFontFace,
+      updateFontFace = _ref2.updateFontFace;
+  return React__default.createElement(React.Fragment, null, React__default.createElement(AttributeContent, {
+    content: content,
+    remove: removeFontFace,
+    update: updateFontFace
+  }), React__default.createElement(AddUnit, {
+    nextOrdinal: content.length + 1,
+    add: addFontFace
+  }));
+});
+
+var FontFace = function FontFace() {
+  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Font Face"), React__default.createElement(FontFaceAttribute, null), React__default.createElement(FontFaceContent, null));
+};
+
 var FontSizeAttribute = reactRedux.connect(make.mapFontSize, {
   updateFontSizeView: make.updateFontSizeView
 })(function (_ref) {
@@ -499,7 +535,39 @@ var FontSizeContent = reactRedux.connect(make.mapFontSizeContent, {
 });
 
 var FontSize = function FontSize() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "FontSize"), React__default.createElement(FontSizeAttribute, null), React__default.createElement(FontSizeContent, null));
+  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Font Size"), React__default.createElement(FontSizeAttribute, null), React__default.createElement(FontSizeContent, null));
+};
+
+var FontWeightAttribute = reactRedux.connect(make.mapFontWeight)(function (_ref) {
+  var _ref$fontWeight = _ref.fontWeight,
+      view = _ref$fontWeight.view,
+      viewable = _ref$fontWeight.viewable;
+  return React__default.createElement(Attribute, {
+    view: view,
+    viewable: viewable
+  });
+});
+var FontWeightContent = reactRedux.connect(make.mapFontWeightContent, {
+  addFontWeight: make.addFontWeight,
+  removeFontWeight: make.removeFontWeight,
+  updateFontWeight: make.updateFontWeight
+})(function (_ref2) {
+  var content = _ref2.content,
+      addFontWeight = _ref2.addFontWeight,
+      removeFontWeight = _ref2.removeFontWeight,
+      updateFontWeight = _ref2.updateFontWeight;
+  return React__default.createElement(React.Fragment, null, React__default.createElement(AttributeContent, {
+    content: content,
+    remove: removeFontWeight,
+    update: updateFontWeight
+  }), React__default.createElement(AddUnit, {
+    nextOrdinal: content.length + 1,
+    add: addFontWeight
+  }));
+});
+
+var FontWeight = function FontWeight() {
+  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Font Weight"), React__default.createElement(FontWeightAttribute, null), React__default.createElement(FontWeightContent, null));
 };
 
 var SpacingAttribute = reactRedux.connect(make.mapSpacing, {
@@ -539,7 +607,7 @@ var Spacing = function Spacing() {
 };
 
 var Mod = function Mod() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Title, null, "Mod"), React__default.createElement(Globals, null), React__default.createElement(Swatch, null), React__default.createElement(Color, null), React__default.createElement(FontSize, null), React__default.createElement(Spacing, null));
+  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Title, null, "Mod"), React__default.createElement(Globals, null), React__default.createElement(Swatch, null), React__default.createElement(FontFace, null), React__default.createElement(Color, null), React__default.createElement(FontSize, null), React__default.createElement(FontWeight, null), React__default.createElement(Spacing, null));
 };
 
 module.exports = Mod;

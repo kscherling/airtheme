@@ -732,6 +732,32 @@ var swatch = function swatch() {
   }
 };
 
+var ADD_FONT_FACE = 'ADD_FONT_FACE';
+var REMOVE_FONT_FACE = 'REMOVE_FONT_FACE';
+var UPDATE_FONT_FACE = 'UPDATE_FONT_FACE';
+
+var fontFace = function fontFace() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : type.attribute.fontFace();
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case UPDATE_THEME:
+      return action.theme.fontFace || {};
+
+    case ADD_FONT_FACE:
+      return addUnit(state, action);
+
+    case REMOVE_FONT_FACE:
+      return removeUnit(state, action);
+
+    case UPDATE_FONT_FACE:
+      return updateUnit(state, action);
+
+    default:
+      return state;
+  }
+};
+
 var ADD_FONT_SIZE = 'ADD_FONT_SIZE';
 var REMOVE_FONT_SIZE = 'REMOVE_FONT_SIZE';
 var UPDATE_FONT_SIZE = 'UPDATE_FONT_SIZE';
@@ -1009,11 +1035,6 @@ var type$1 = function type$$1() {
   }
 };
 
-var fontFace = function fontFace() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  return state;
-};
-
 var theme = combineReducers({
   baseFontSize: baseFontSize,
   baseLineHeight: baseLineHeight,
@@ -1108,6 +1129,28 @@ var removeSwatch = function removeSwatch(original) {
 var updateSwatch = function updateSwatch(original, updated) {
   return {
     type: UPDATE_SWATCH,
+    original: original,
+    updated: updated
+  };
+};
+
+var addFontFace = function addFontFace(value, name, ordinal) {
+  return {
+    type: ADD_FONT_FACE,
+    name: name,
+    ordinal: ordinal,
+    value: value
+  };
+};
+var removeFontFace = function removeFontFace(original) {
+  return {
+    type: REMOVE_FONT_FACE,
+    original: original
+  };
+};
+var updateFontFace = function updateFontFace(original, updated) {
+  return {
+    type: UPDATE_FONT_FACE,
     original: original,
     updated: updated
   };
@@ -3460,6 +3503,9 @@ exports.updateSwatchView = updateSwatchView;
 exports.addSwatch = addSwatch;
 exports.removeSwatch = removeSwatch;
 exports.updateSwatch = updateSwatch;
+exports.addFontFace = addFontFace;
+exports.removeFontFace = removeFontFace;
+exports.updateFontFace = updateFontFace;
 exports.updateColorView = updateColorView;
 exports.addColor = addColor;
 exports.removeColor = removeColor;
