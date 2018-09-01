@@ -3487,6 +3487,42 @@ SimpleList.TwoColumns = TwoColumns$1;
 SimpleList.ThreeColumns = ThreeColumns$1;
 SimpleList.FourColumns = FourColumns$1;
 
+function _templateObject3$2() {
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: row;\n\n  ", " + ", " {\n    margin-left: 1rem;\n  }\n\n"]);
+
+  _templateObject3$2 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2$2() {
+  var data = _taggedTemplateLiteral(["\n      text-decoration: none;\n      color: inherit;\n    "]);
+
+  _templateObject2$2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject$2() {
+  var data = _taggedTemplateLiteral(["\n  text-decoration: line-through;\n  color: #999;\n\n  ", ";\n\n  &:hover {\n    cursor: pointer;\n    color: inherit;\n  }\n"]);
+
+  _templateObject$2 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var Tab = styled__default.a(_templateObject$2(), function (_ref) {
+  var active = _ref.active;
+  return active && styled.css(_templateObject2$2());
+});
+var SimpleTabs = styled__default.div(_templateObject3$2(), Tab, Tab);
+SimpleTabs.Tab = Tab;
+
 // makeStore
 
 exports.makeStore = makeStore;
@@ -3547,4 +3583,5 @@ exports.mapSpacing = mapSpacing;
 exports.mapSpacingContent = mapSpacingContent;
 exports.Grid = Grid;
 exports.SimpleList = SimpleList;
+exports.SimpleTabs = SimpleTabs;
 //# sourceMappingURL=index.js.map

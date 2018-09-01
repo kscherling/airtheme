@@ -78,7 +78,7 @@ const BaseSpacing = connect(
 )(({ baseSpacing, updateBaseSpacing }) => (
   <SimpleList.TwoColumns>
     <Node
-      label="baseLineHeight"
+      label="baseSpacing"
       value={baseSpacing}
       onChange={updateBaseSpacing}
     />

@@ -1,9 +1,9 @@
 import React from 'react'
-
 import Globals from './components/Globals'
 import Swatch from './components/Swatch'
 import FontFace from './components/FontFace'
 import Color from './components/Color'
+import FontFamily from './components/FontFamily'
 import FontSize from './components/FontSize'
 import FontWeight from './components/FontWeight'
 import Spacing from './components/Spacing'
@@ -13,11 +13,12 @@ const Spec = () => (
   <SimpleList.OneColumn>
     <SimpleList.Title>Spec</SimpleList.Title>
     <Globals />
-    <Swatch />
     <FontFace />
-    <Color />
+    <Swatch />
+    <FontFamily />
     <FontSize />
     <FontWeight />
+    <Color />
     <Spacing />
   </SimpleList.OneColumn>
 )

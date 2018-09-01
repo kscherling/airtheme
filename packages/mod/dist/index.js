@@ -2,10 +2,9 @@
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var styled = require('styled-components');
-var styled__default = _interopDefault(styled);
 var React = require('react');
 var React__default = _interopDefault(React);
+var styled = _interopDefault(require('styled-components'));
 var make = require('@airtheme/make');
 var reactRedux = require('react-redux');
 
@@ -105,46 +104,10 @@ function _taggedTemplateLiteral(strings, raw) {
   }));
 }
 
-function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: row;\n\n  ", " + ", " {\n    margin-left: 1rem;\n  }\n\n"]);
-
-  _templateObject3 = function _templateObject3() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n      text-decoration: none;\n      color: inherit;\n    "]);
-
-  _templateObject2 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  text-decoration: line-through;\n  color: #999;\n\n  ", ";\n\n  &:hover {\n    cursor: pointer;\n    color: inherit;\n  }\n"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-var Tab = styled__default.a(_templateObject(), function (_ref) {
-  var active = _ref.active;
-  return active && styled.css(_templateObject2());
-});
-var SimpleTabs = styled__default.div(_templateObject3(), Tab, Tab);
-SimpleTabs.Tab = Tab;
-
-function _templateObject$1() {
   var data = _taggedTemplateLiteral(["\n  text-decoration: line-through;\n  color: #999;\n"]);
 
-  _templateObject$1 = function _templateObject() {
+  _templateObject = function _templateObject() {
     return data;
   };
 
@@ -153,7 +116,7 @@ function _templateObject$1() {
 
 var noop = function noop() {};
 
-var Strike = styled__default.span(_templateObject$1());
+var Strike = styled.span(_templateObject());
 var Node = function Node(_ref) {
   var label = _ref.label,
       value = _ref.value,
@@ -301,8 +264,8 @@ var Attribute = function Attribute(_ref3) {
       updateView = _ref3$updateView === void 0 ? noop : _ref3$updateView;
   return React__default.createElement(make.SimpleList.OneColumn, {
     padding: "1rem 0"
-  }, React__default.createElement(make.SimpleList.Subheader, null, "View"), React__default.createElement(SimpleTabs, null, viewable.map(function (unit, idx) {
-    return React__default.createElement(SimpleTabs.Tab, {
+  }, React__default.createElement(make.SimpleList.Subheader, null, "View"), React__default.createElement(make.SimpleTabs, null, viewable.map(function (unit, idx) {
+    return React__default.createElement(make.SimpleTabs.Tab, {
       key: idx,
       active: view === unit,
       onClick: function onClick() {
@@ -388,7 +351,7 @@ var BaseSpacing = reactRedux.connect(make.mapBaseSpacing, {
   var baseSpacing = _ref6.baseSpacing,
       updateBaseSpacing = _ref6.updateBaseSpacing;
   return React__default.createElement(make.SimpleList.TwoColumns, null, React__default.createElement(Node, {
-    label: "baseLineHeight",
+    label: "baseSpacing",
     value: baseSpacing,
     onChange: updateBaseSpacing
   }));
@@ -434,42 +397,6 @@ var Swatch = function Swatch() {
   return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Swatch"), React__default.createElement(SwatchAttribute, null), React__default.createElement(SwatchContent, null));
 };
 
-var ColorAttribute = reactRedux.connect(make.mapColor, {
-  updateColorView: make.updateColorView
-})(function (_ref) {
-  var _ref$color = _ref.color,
-      view = _ref$color.view,
-      viewable = _ref$color.viewable,
-      updateColorView = _ref.updateColorView;
-  return React__default.createElement(Attribute, {
-    view: view,
-    viewable: viewable,
-    updateView: updateColorView
-  });
-});
-var ColorContent = reactRedux.connect(make.mapColorContent, {
-  addColor: make.addColor,
-  removeColor: make.removeColor,
-  updateColor: make.updateColor
-})(function (_ref2) {
-  var content = _ref2.content,
-      addColor = _ref2.addColor,
-      removeColor = _ref2.removeColor,
-      updateColor = _ref2.updateColor;
-  return React__default.createElement(React.Fragment, null, React__default.createElement(AttributeContent, {
-    content: content,
-    remove: removeColor,
-    update: updateColor
-  }), React__default.createElement(AddUnit, {
-    nextOrdinal: content.length + 1,
-    add: addColor
-  }));
-});
-
-var Color = function Color() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Color"), React__default.createElement(ColorAttribute, null), React__default.createElement(ColorContent, null));
-};
-
 var FontFaceAttribute = reactRedux.connect(make.mapFontFace)(function (_ref) {
   var _ref$fontFace = _ref.fontFace,
       view = _ref$fontFace.view,
@@ -500,6 +427,38 @@ var FontFaceContent = reactRedux.connect(make.mapFontFaceContent, {
 
 var FontFace = function FontFace() {
   return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Font Face"), React__default.createElement(FontFaceAttribute, null), React__default.createElement(FontFaceContent, null));
+};
+
+var FontFamilyAttribute = reactRedux.connect(make.mapFontFamily)(function (_ref) {
+  var _ref$fontFamily = _ref.fontFamily,
+      view = _ref$fontFamily.view,
+      viewable = _ref$fontFamily.viewable;
+  return React__default.createElement(Attribute, {
+    view: view,
+    viewable: viewable
+  });
+});
+var FontFamilyContent = reactRedux.connect(make.mapFontFamilyContent, {
+  addFontFamily: make.addFontFamily,
+  removeFontFamily: make.removeFontFamily,
+  updateFontFamily: make.updateFontFamily
+})(function (_ref2) {
+  var content = _ref2.content,
+      addFontFamily = _ref2.addFontFamily,
+      removeFontFamily = _ref2.removeFontFamily,
+      updateFontFamily = _ref2.updateFontFamily;
+  return React__default.createElement(React.Fragment, null, React__default.createElement(AttributeContent, {
+    content: content,
+    remove: removeFontFamily,
+    update: updateFontFamily
+  }), React__default.createElement(AddUnit, {
+    nextOrdinal: content.length + 1,
+    add: addFontFamily
+  }));
+});
+
+var FontFamily = function FontFamily() {
+  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Font Family"), React__default.createElement(FontFamilyAttribute, null), React__default.createElement(FontFamilyContent, null));
 };
 
 var FontSizeAttribute = reactRedux.connect(make.mapFontSize, {
@@ -570,6 +529,42 @@ var FontWeight = function FontWeight() {
   return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Font Weight"), React__default.createElement(FontWeightAttribute, null), React__default.createElement(FontWeightContent, null));
 };
 
+var ColorAttribute = reactRedux.connect(make.mapColor, {
+  updateColorView: make.updateColorView
+})(function (_ref) {
+  var _ref$color = _ref.color,
+      view = _ref$color.view,
+      viewable = _ref$color.viewable,
+      updateColorView = _ref.updateColorView;
+  return React__default.createElement(Attribute, {
+    view: view,
+    viewable: viewable,
+    updateView: updateColorView
+  });
+});
+var ColorContent = reactRedux.connect(make.mapColorContent, {
+  addColor: make.addColor,
+  removeColor: make.removeColor,
+  updateColor: make.updateColor
+})(function (_ref2) {
+  var content = _ref2.content,
+      addColor = _ref2.addColor,
+      removeColor = _ref2.removeColor,
+      updateColor = _ref2.updateColor;
+  return React__default.createElement(React.Fragment, null, React__default.createElement(AttributeContent, {
+    content: content,
+    remove: removeColor,
+    update: updateColor
+  }), React__default.createElement(AddUnit, {
+    nextOrdinal: content.length + 1,
+    add: addColor
+  }));
+});
+
+var Color = function Color() {
+  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Color"), React__default.createElement(ColorAttribute, null), React__default.createElement(ColorContent, null));
+};
+
 var SpacingAttribute = reactRedux.connect(make.mapSpacing, {
   updateSpacingView: make.updateSpacingView
 })(function (_ref) {
@@ -607,7 +602,7 @@ var Spacing = function Spacing() {
 };
 
 var Mod = function Mod() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Title, null, "Mod"), React__default.createElement(Globals, null), React__default.createElement(Swatch, null), React__default.createElement(FontFace, null), React__default.createElement(Color, null), React__default.createElement(FontSize, null), React__default.createElement(FontWeight, null), React__default.createElement(Spacing, null));
+  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Title, null, "Mod"), React__default.createElement(Globals, null), React__default.createElement(FontFace, null), React__default.createElement(Swatch, null), React__default.createElement(FontFamily, null), React__default.createElement(FontSize, null), React__default.createElement(FontWeight, null), React__default.createElement(Color, null), React__default.createElement(Spacing, null));
 };
 
 module.exports = Mod;
