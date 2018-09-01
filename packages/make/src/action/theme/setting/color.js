@@ -1,4 +1,9 @@
-import { ADD_COLOR, UPDATE_COLOR, REMOVE_COLOR } from '../../../constant/color'
+import { ADD_COLOR, UPDATE_COLOR, REMOVE_COLOR, UPDATE_COLOR_VIEW } from '../../../constant/color'
+
+export const updateColorView = view => ({
+  type: UPDATE_COLOR_VIEW,
+  view
+})
 
 export const addColor = (value, name, ordinal) => ({
   type: ADD_COLOR,

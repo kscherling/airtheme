@@ -292,3 +292,4 @@ var Spec = function Spec() {
 };
 
 module.exports = Spec;
+//# sourceMappingURL=index.js.map

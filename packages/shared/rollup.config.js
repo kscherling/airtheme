@@ -1,12 +1,13 @@
 const babel = require('rollup-plugin-babel')
 const commonjs = require('rollup-plugin-commonjs')
-const resolve =  require('rollup-plugin-node-resolve')
+const resolve = require('rollup-plugin-node-resolve')
 
 module.exports = {
   input: 'src/index.js',
   output: {
     file: 'dist/index.js',
-    format: 'cjs'
+    format: 'cjs',
+    sourcemap: true
   },
   plugins: [
     resolve(),

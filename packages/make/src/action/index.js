@@ -17,7 +17,12 @@ export {
   updateSwatch
 } from './theme/swatch'
 
-export { addColor, removeColor, updateColor } from './theme/setting/color'
+export {
+  updateColorView,
+  addColor,
+  removeColor,
+  updateColor
+} from './theme/setting/color'
 
 export {
   addFontFamily,

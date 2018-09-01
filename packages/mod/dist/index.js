@@ -429,8 +429,44 @@ var Swatch = function Swatch() {
   return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Swatch"), React__default.createElement(SwatchAttribute, null), React__default.createElement(SwatchContent, null));
 };
 
+var ColorAttribute = reactRedux.connect(make.mapColor, {
+  updateColorView: make.updateColorView
+})(function (_ref) {
+  var _ref$color = _ref.color,
+      view = _ref$color.view,
+      viewable = _ref$color.viewable,
+      updateColorView = _ref.updateColorView;
+  return React__default.createElement(Attribute, {
+    view: view,
+    viewable: viewable,
+    updateView: updateColorView
+  });
+});
+var ColorContent = reactRedux.connect(make.mapColorContent, {
+  addColor: make.addColor,
+  removeColor: make.removeColor,
+  updateColor: make.updateColor
+})(function (_ref2) {
+  var content = _ref2.content,
+      addColor = _ref2.addColor,
+      removeColor = _ref2.removeColor,
+      updateColor = _ref2.updateColor;
+  return React__default.createElement(React.Fragment, null, React__default.createElement(AttributeContent, {
+    content: content,
+    remove: removeColor,
+    update: updateColor
+  }), React__default.createElement(AddUnit, {
+    nextOrdinal: content.length + 1,
+    add: addColor
+  }));
+});
+var Color = function Color() {
+  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Color"), React__default.createElement(ColorAttribute, null), React__default.createElement(ColorContent, null));
+};
+
 var Mod = function Mod() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Title, null, "Mod"), React__default.createElement(Globals, null), React__default.createElement(Swatch, null));
+  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Title, null, "Mod"), React__default.createElement(Globals, null), React__default.createElement(Swatch, null), React__default.createElement(Color, null));
 };
 
 module.exports = Mod;
+//# sourceMappingURL=index.js.map

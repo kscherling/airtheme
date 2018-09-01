@@ -713,6 +713,11 @@ var swatch = function swatch() {
     case UPDATE_THEME:
       return action.theme.swatch || {};
 
+    case UPDATE_SWATCH_VIEW:
+      return _objectSpread({}, state, {
+        view: action.view
+      });
+
     case ADD_SWATCH:
       return addUnit(state, action);
 
@@ -721,11 +726,6 @@ var swatch = function swatch() {
 
     case UPDATE_SWATCH:
       return updateUnit(state, action);
-
-    case UPDATE_SWATCH_VIEW:
-      return _objectSpread({}, state, {
-        view: action.view
-      });
 
     default:
       return state;
@@ -813,6 +813,7 @@ var fontWeight = function fontWeight() {
 var ADD_COLOR = 'ADD_COLOR';
 var REMOVE_COLOR = 'REMOVE_COLOR';
 var UPDATE_COLOR = 'UPDATE_COLOR';
+var UPDATE_COLOR_VIEW = 'UPDATE_COLOR_VIEW';
 
 var color = function color() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : type.attribute.color();
@@ -821,6 +822,11 @@ var color = function color() {
   switch (action.type) {
     case UPDATE_THEME:
       return action.theme.setting.color || {};
+
+    case UPDATE_COLOR_VIEW:
+      return _objectSpread({}, state, {
+        view: action.view
+      });
 
     case ADD_COLOR:
       return addUnit(state, action);
@@ -1095,6 +1101,12 @@ var updateSwatch = function updateSwatch(original, updated) {
   };
 };
 
+var updateColorView = function updateColorView(view) {
+  return {
+    type: UPDATE_COLOR_VIEW,
+    view: view
+  };
+};
 var addColor = function addColor(value, name, ordinal) {
   return {
     type: ADD_COLOR,
@@ -3424,6 +3436,7 @@ exports.updateSwatchView = updateSwatchView;
 exports.addSwatch = addSwatch;
 exports.removeSwatch = removeSwatch;
 exports.updateSwatch = updateSwatch;
+exports.updateColorView = updateColorView;
 exports.addColor = addColor;
 exports.removeColor = removeColor;
 exports.updateColor = updateColor;
@@ -3462,3 +3475,4 @@ exports.mapSpacing = mapSpacing;
 exports.mapSpacingContent = mapSpacingContent;
 exports.Grid = Grid;
 exports.SimpleList = SimpleList;
+//# sourceMappingURL=index.js.map
