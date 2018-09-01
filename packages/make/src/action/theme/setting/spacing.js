@@ -1,8 +1,14 @@
 import {
   ADD_SPACING,
   UPDATE_SPACING,
-  REMOVE_SPACING
+  REMOVE_SPACING,
+  UPDATE_SPACING_VIEW
 } from '../../../constant/spacing'
+
+export const updateSpacingView = view => ({
+  type: UPDATE_SPACING_VIEW,
+  view
+})
 
 export const addSpacing = (value, name, ordinal) => ({
   type: ADD_SPACING,
