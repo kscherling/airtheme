@@ -3,6 +3,7 @@ import Globals from './components/Globals'
 import Swatch from './components/Swatch'
 import Color from './components/Color'
 import FontSize from './components/FontSize'
+import Spacing from './components/Spacing'
 import { SimpleList } from '@airtheme/make'
 
 const Mod = () => (
@@ -12,6 +13,7 @@ const Mod = () => (
     <Swatch />
     <Color />
     <FontSize />
+    <Spacing />
   </SimpleList.OneColumn>
 )
 

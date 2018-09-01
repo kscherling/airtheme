@@ -502,8 +502,44 @@ var FontSize = function FontSize() {
   return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "FontSize"), React__default.createElement(FontSizeAttribute, null), React__default.createElement(FontSizeContent, null));
 };
 
+var SpacingAttribute = reactRedux.connect(make.mapSpacing, {
+  updateSpacingView: make.updateSpacingView
+})(function (_ref) {
+  var _ref$spacing = _ref.spacing,
+      view = _ref$spacing.view,
+      viewable = _ref$spacing.viewable,
+      updateSpacingView = _ref.updateSpacingView;
+  return React__default.createElement(Attribute, {
+    view: view,
+    viewable: viewable,
+    updateView: updateSpacingView
+  });
+});
+var SpacingContent = reactRedux.connect(make.mapSpacingContent, {
+  addSpacing: make.addSpacing,
+  removeSpacing: make.removeSpacing,
+  updateSpacing: make.updateSpacing
+})(function (_ref2) {
+  var content = _ref2.content,
+      addSpacing = _ref2.addSpacing,
+      removeSpacing = _ref2.removeSpacing,
+      updateSpacing = _ref2.updateSpacing;
+  return React__default.createElement(React.Fragment, null, React__default.createElement(AttributeContent, {
+    content: content,
+    remove: removeSpacing,
+    update: updateSpacing
+  }), React__default.createElement(AddUnit, {
+    nextOrdinal: content.length + 1,
+    add: addSpacing
+  }));
+});
+
+var Spacing = function Spacing() {
+  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Spacing"), React__default.createElement(SpacingAttribute, null), React__default.createElement(SpacingContent, null));
+};
+
 var Mod = function Mod() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Title, null, "Mod"), React__default.createElement(Globals, null), React__default.createElement(Swatch, null), React__default.createElement(Color, null), React__default.createElement(FontSize, null));
+  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Title, null, "Mod"), React__default.createElement(Globals, null), React__default.createElement(Swatch, null), React__default.createElement(Color, null), React__default.createElement(FontSize, null), React__default.createElement(Spacing, null));
 };
 
 module.exports = Mod;
