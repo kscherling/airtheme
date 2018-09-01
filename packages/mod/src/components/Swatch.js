@@ -8,40 +8,21 @@ import {
   removeSwatch,
   updateSwatch
 } from '@airtheme/make'
-import { Input } from '../lib/ModifyTypes'
 import ViewTabs from '../lib/ViewTabs'
 import AddForm from '../lib/AddForm'
 import AddFormUnit from '../lib/AddFormUnit'
-import styled, { css } from 'styled-components'
-
-const Container = styled.div`
-  display: grid;
-  grid-template-columns: 160px auto;
-  grid-auto-flow: row;
-  grid-gap: 0.75rem;
-
-  ${({ shade }) =>
-    shade &&
-    css`
-      background: #f2f2f2;
-    `};
-
-  margin-bottom: 1rem;
-`
+import { AttributeContent } from '../lib/ModifyTypes'
 
 const SwatchContent = connect(
   mapSwatchContent,
   { addSwatch, removeSwatch, updateSwatch }
 )(({ content, addSwatch, removeSwatch, updateSwatch }) => (
   <Fragment>
-    {content.map((unit, idx) => (
-      <AddFormUnit
-        key={idx}
-        unit={unit}
-        remove={removeSwatch}
-        update={updateSwatch}
-      />
-    ))}
+    <AttributeContent
+      content={content}
+      remove={removeSwatch}
+      update={updateSwatch}
+    />
     <AddForm nextOrdinal={content.length + 1} add={addSwatch} />
   </Fragment>
 ))

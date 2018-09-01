@@ -16,7 +16,7 @@ import {
   updateThemeType,
   updateThemeVersion
 } from '@airtheme/make'
-import { Input, Node } from '../lib/ModifyTypes'
+import { Node } from '../lib/ModifyTypes'
 import { Grid, SimpleList } from '@airtheme/make'
 
 const Name = connect(
