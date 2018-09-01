@@ -16,14 +16,13 @@ import {
   updateThemeType,
   updateThemeVersion
 } from '@airtheme/make'
-import { Input } from '../lib/ModifyTypes'
-
+import { Input, Node } from '../lib/ModifyTypes'
+import { Grid, SimpleList } from '@airtheme/make'
 
 const Name = connect(
   mapName,
   { updateThemeName }
 )(({ name, updateThemeName }) => (
-
   <SimpleList.TwoColumns>
     <Node label="name" value={name} onChange={updateThemeName} />
   </SimpleList.TwoColumns>
@@ -33,52 +32,69 @@ const Id = connect(
   mapId,
   { updateThemeId }
 )(({ id, updateThemeId }) => (
-  <Input disabled label="id" value={id} onChange={updateThemeId} />
+  <SimpleList.TwoColumns>
+    <Node disabled label="id" value={id} onChange={updateThemeId} />
+  </SimpleList.TwoColumns>
 ))
 
 const Version = connect(
   mapVersion,
   { updateThemeVersion }
 )(({ version, updateThemeVersion }) => (
-  <Input label="version" value={version} onChange={updateThemeVersion} />
+  <SimpleList.TwoColumns>
+    <Node label="version" value={version} onChange={updateThemeVersion} />
+  </SimpleList.TwoColumns>
 ))
 
 const BaseFontSize = connect(
   mapBaseFontSize,
   { updateBaseFontSize }
 )(({ baseFontSize, updateBaseFontSize }) => (
-  <Input
-    label="baseFontSize"
-    value={baseFontSize}
-    onChange={updateBaseFontSize}
-  />
+  <SimpleList.TwoColumns>
+    <Node
+      label="baseFontSize"
+      value={baseFontSize}
+      onChange={updateBaseFontSize}
+    />
+  </SimpleList.TwoColumns>
 ))
 
 const BaseLineHeight = connect(
   mapBaseLineHeight,
   { updateBaseLineHeight }
 )(({ baseLineHeight, updateBaseLineHeight }) => (
-  <Input
-    label="baseLineHeight"
-    value={baseLineHeight}
-    onChange={updateBaseLineHeight}
-  />
+  <SimpleList.TwoColumns>
+    <Node
+      label="baseLineHeight"
+      value={baseLineHeight}
+      onChange={updateBaseLineHeight}
+    />
+  </SimpleList.TwoColumns>
 ))
 
 const BaseSpacing = connect(
   mapBaseSpacing,
   { updateBaseSpacing }
 )(({ baseSpacing, updateBaseSpacing }) => (
-  <Input
-    label="baseLineHeight"
-    value={baseSpacing}
-    onChange={updateBaseSpacing}
-  />
+  <SimpleList.TwoColumns>
+    <Node
+      label="baseLineHeight"
+      value={baseSpacing}
+      onChange={updateBaseSpacing}
+    />
+  </SimpleList.TwoColumns>
 ))
 
-const Globals = () => {
-  <Name />
-}
-
+const Globals = () => (
+  <SimpleList>
+    <SimpleList.Header>Global</SimpleList.Header>
+    <Id />
+    <Name />
+    <Version />
+    <BaseFontSize />
+    <BaseLineHeight />
+    <BaseSpacing />
+  </SimpleList>
+)
 
 export default Globals

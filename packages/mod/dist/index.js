@@ -9,17 +9,17 @@ var styled__default = _interopDefault(styled);
 var reactRedux = require('react-redux');
 var make = require('@airtheme/make');
 
-var Input = function Input(_ref2) {
-  var label = _ref2.label,
-      value = _ref2.value,
-      _onChange2 = _ref2.onChange;
-  return React__default.createElement(Container, null, React__default.createElement("label", null, label), React__default.createElement("span", null, React__default.createElement("input", {
+var Node = function Node(_ref) {
+  var label = _ref.label,
+      value = _ref.value,
+      _onChange = _ref.onChange;
+  return React__default.createElement(React.Fragment, null, React__default.createElement("strong", null, label), React__default.createElement("input", {
     type: "text",
     value: value,
     onChange: function onChange(e) {
-      return _onChange2(e.target.value);
+      return _onChange(e.target.value);
     }
-  })));
+  }));
 };
 
 var Name = reactRedux.connect(make.mapName, {
@@ -27,7 +27,7 @@ var Name = reactRedux.connect(make.mapName, {
 })(function (_ref) {
   var name = _ref.name,
       updateThemeName = _ref.updateThemeName;
-  return React__default.createElement(SimpleList.TwoColumns, null, React__default.createElement(Node, {
+  return React__default.createElement(make.SimpleList.TwoColumns, null, React__default.createElement(Node, {
     label: "name",
     value: name,
     onChange: updateThemeName
@@ -38,60 +38,60 @@ var Id = reactRedux.connect(make.mapId, {
 })(function (_ref2) {
   var id = _ref2.id,
       updateThemeId = _ref2.updateThemeId;
-  return React__default.createElement(Input, {
+  return React__default.createElement(make.SimpleList.TwoColumns, null, React__default.createElement(Node, {
     disabled: true,
     label: "id",
     value: id,
     onChange: updateThemeId
-  });
+  }));
 });
 var Version = reactRedux.connect(make.mapVersion, {
   updateThemeVersion: make.updateThemeVersion
 })(function (_ref3) {
   var version = _ref3.version,
       updateThemeVersion = _ref3.updateThemeVersion;
-  return React__default.createElement(Input, {
+  return React__default.createElement(make.SimpleList.TwoColumns, null, React__default.createElement(Node, {
     label: "version",
     value: version,
     onChange: updateThemeVersion
-  });
+  }));
 });
 var BaseFontSize = reactRedux.connect(make.mapBaseFontSize, {
   updateBaseFontSize: make.updateBaseFontSize
 })(function (_ref4) {
   var baseFontSize = _ref4.baseFontSize,
       updateBaseFontSize = _ref4.updateBaseFontSize;
-  return React__default.createElement(Input, {
+  return React__default.createElement(make.SimpleList.TwoColumns, null, React__default.createElement(Node, {
     label: "baseFontSize",
     value: baseFontSize,
     onChange: updateBaseFontSize
-  });
+  }));
 });
 var BaseLineHeight = reactRedux.connect(make.mapBaseLineHeight, {
   updateBaseLineHeight: make.updateBaseLineHeight
 })(function (_ref5) {
   var baseLineHeight = _ref5.baseLineHeight,
       updateBaseLineHeight = _ref5.updateBaseLineHeight;
-  return React__default.createElement(Input, {
+  return React__default.createElement(make.SimpleList.TwoColumns, null, React__default.createElement(Node, {
     label: "baseLineHeight",
     value: baseLineHeight,
     onChange: updateBaseLineHeight
-  });
+  }));
 });
 var BaseSpacing = reactRedux.connect(make.mapBaseSpacing, {
   updateBaseSpacing: make.updateBaseSpacing
 })(function (_ref6) {
   var baseSpacing = _ref6.baseSpacing,
       updateBaseSpacing = _ref6.updateBaseSpacing;
-  return React__default.createElement(Input, {
+  return React__default.createElement(make.SimpleList.TwoColumns, null, React__default.createElement(Node, {
     label: "baseLineHeight",
     value: baseSpacing,
     onChange: updateBaseSpacing
-  });
+  }));
 });
 
 var Globals = function Globals() {
-  React__default.createElement(Name, null);
+  return React__default.createElement(make.SimpleList, null, React__default.createElement(make.SimpleList.Header, null, "Global"), React__default.createElement(Id, null), React__default.createElement(Name, null), React__default.createElement(Version, null), React__default.createElement(BaseFontSize, null), React__default.createElement(BaseLineHeight, null), React__default.createElement(BaseSpacing, null));
 };
 
 function _classCallCheck(instance, Constructor) {
