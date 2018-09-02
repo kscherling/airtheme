@@ -127,15 +127,26 @@ var Attribute = function Attribute(_ref3) {
     });
   }));
 };
+
+var renderContent = function renderContent(content) {
+  if (Array.isArray(content)) {
+    return content.length ? content.map(function (unit, idx) {
+      return React__default.createElement(Unit, {
+        key: idx,
+        unit: unit
+      });
+    }) : React__default.createElement(make.SimpleList, null, React__default.createElement(Strike, null, "empty"));
+  }
+
+  return React__default.createElement(Unit, {
+    unit: content
+  });
+};
+
 var AttributeContent = function AttributeContent(_ref6) {
   var _ref6$content = _ref6.content,
       content = _ref6$content === void 0 ? [] : _ref6$content;
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Subheader, null, "Content"), content.length ? content.map(function (unit, idx) {
-    return React__default.createElement(Unit, {
-      key: idx,
-      unit: unit
-    });
-  }) : React__default.createElement(make.SimpleList, null, React__default.createElement(Strike, null, "empty")));
+  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Subheader, null, "Content"), renderContent(content));
 };
 
 var Id = reactRedux.connect(make.mapId)(function (_ref) {
@@ -283,8 +294,25 @@ var Spacing = function Spacing() {
   return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Spacing"), React__default.createElement(SpacingAttribute, null), React__default.createElement(SpacingContent, null));
 };
 
+var BaseFontSizeAttribute = reactRedux.connect(make.mapBaseFontSize)(function (_ref) {
+  var baseFontSize = _ref.baseFontSize;
+  return React__default.createElement(Attribute, {
+    attribute: baseFontSize
+  });
+});
+var BaseFontSizeContent = reactRedux.connect(make.mapBaseFontSizeContent)(function (_ref2) {
+  var content = _ref2.content;
+  return React__default.createElement(AttributeContent, {
+    content: content
+  });
+});
+
+var BaseFontSize = function BaseFontSize() {
+  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Base Font Size"), React__default.createElement(BaseFontSizeAttribute, null), React__default.createElement(BaseFontSizeContent, null));
+};
+
 var Spec = function Spec() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Title, null, "Spec"), React__default.createElement(Globals, null), React__default.createElement(FontFace, null), React__default.createElement(Swatch, null), React__default.createElement(FontFamily, null), React__default.createElement(FontSize, null), React__default.createElement(FontWeight, null), React__default.createElement(Color, null), React__default.createElement(Spacing, null));
+  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Title, null, "Spec"), React__default.createElement(Globals, null), React__default.createElement(BaseFontSize, null), React__default.createElement(FontFace, null), React__default.createElement(Swatch, null), React__default.createElement(FontFamily, null), React__default.createElement(FontSize, null), React__default.createElement(FontWeight, null), React__default.createElement(Color, null), React__default.createElement(Spacing, null));
 };
 
 module.exports = Spec;

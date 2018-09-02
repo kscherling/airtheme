@@ -51,15 +51,23 @@ export const Attribute = ({ attribute }) => (
   </SimpleList.TwoColumns>
 )
 
-export const AttributeContent = ({ content = [] }) => (
-  <SimpleList.OneColumn>
-    <SimpleList.Subheader>Content</SimpleList.Subheader>
-    {content.length ? (
+const renderContent = content => {
+  if (Array.isArray(content)) {
+    return content.length ? (
       content.map((unit, idx) => <Unit key={idx} unit={unit} />)
     ) : (
       <SimpleList>
         <Strike>empty</Strike>
       </SimpleList>
-    )}
+    )
+  }
+
+  return <Unit unit={content} />
+}
+
+export const AttributeContent = ({ content = [] }) => (
+  <SimpleList.OneColumn>
+    <SimpleList.Subheader>Content</SimpleList.Subheader>
+    {renderContent(content)}
   </SimpleList.OneColumn>
 )
