@@ -994,7 +994,6 @@ var baseFontSize = function baseFontSize() {
       return action.theme.base.baseFontSize;
 
     case UPDATE_BASE_FONT_SIZE:
-      console.log(action);
       return updateBaseUnit(state, action);
 
     default:
@@ -1058,9 +1057,6 @@ var setting$1 = combineReducers({
   object: object$1
 });
 
-var UPDATE_BASE_FONT_SIZE$1 = 'UPDATE_BASE_FONT_SIZE';
-var UPDATE_BASE_LINE_HEIGHT$1 = 'UPDATE_BASE_LINE_HEIGHT';
-var UPDATE_BASE_SPACING$1 = 'UPDATE_BASE_SPACING';
 var UPDATE_THEME_ID = 'UPDATE_THEME_ID';
 var UPDATE_THEME_TYPE = 'UPDATE_THEME_TYPE';
 var UPDATE_THEME_VERSION = 'UPDATE_THEME_VERSION';
@@ -1098,54 +1094,6 @@ var id$1 = function id() {
   }
 };
 
-var baseFontSize$3 = function baseFontSize() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
-  var action = arguments.length > 1 ? arguments[1] : undefined;
-
-  switch (action.type) {
-    case UPDATE_THEME:
-      return action.theme.baseFontSize || '';
-
-    case UPDATE_BASE_FONT_SIZE$1:
-      return action.baseFontSize || '';
-
-    default:
-      return state;
-  }
-};
-
-var baseLineHeight = function baseLineHeight() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
-  var action = arguments.length > 1 ? arguments[1] : undefined;
-
-  switch (action.type) {
-    case UPDATE_THEME:
-      return action.theme.baseLineHeight || '';
-
-    case UPDATE_BASE_LINE_HEIGHT$1:
-      return action.baseLineHeight || '';
-
-    default:
-      return state;
-  }
-};
-
-var baseSpacing = function baseSpacing() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
-  var action = arguments.length > 1 ? arguments[1] : undefined;
-
-  switch (action.type) {
-    case UPDATE_THEME:
-      return action.theme.baseSpacing || '';
-
-    case UPDATE_BASE_SPACING$1:
-      return action.baseSpacing || '';
-
-    default:
-      return state;
-  }
-};
-
 var version = function version() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : type.themeSchema.version;
   var action = arguments.length > 1 ? arguments[1] : undefined;
@@ -1176,9 +1124,6 @@ var object$2 = function object() {
 };
 
 var theme = combineReducers({
-  baseFontSize: baseFontSize$3,
-  baseLineHeight: baseLineHeight,
-  baseSpacing: baseSpacing,
   fontFace: fontFace,
   id: id$1,
   name: name,

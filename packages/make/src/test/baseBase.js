@@ -8,6 +8,6 @@ const baseBase = {
   baseSpacing: attribute.baseSpacing()
 }
 
-export const withBaseBase = ({ ...args }) => ({ ...baseSetting, ...args })
+export const withBaseBase = ({ ...args }) => ({ ...baseBase, ...args })
 
 export default baseBase

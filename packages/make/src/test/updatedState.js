@@ -1,14 +1,17 @@
 import { withBaseSetting } from './baseSetting'
+import { withBaseBase } from './baseBase'
 
 const updatedState = {
   theme: {
     object: 'theme',
-    baseFontSize: 16,
-    baseLineHeight: 16,
-    baseSpacing: 16,
     fontFace: {},
     id: '123456',
     name: 'Test Theme',
+    base: withBaseBase({
+      baseFontSize: {},
+      baseLineHeight: {},
+      baseSpacing: {}
+    }),
     setting: withBaseSetting({
       color: {},
       fontFamily: {},

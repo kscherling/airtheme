@@ -5,17 +5,14 @@ import { themeSchema } from '@airtheme/type'
 
 const baseState = {
   theme: {
-    baseFontSize: '',
-    baseLineHeight: '',
-    baseSpacing: '',
-    fontFace: attribute.fontFace(),
     id: '',
     name: '',
-    base: baseBase,
-    setting: baseSetting,
-    swatch: attribute.swatch(),
     object: themeSchema.object,
-    version: themeSchema.version
+    version: themeSchema.version,
+    base: baseBase,
+    fontFace: attribute.fontFace(),
+    swatch: attribute.swatch(),
+    setting: baseSetting
   }
 }
 

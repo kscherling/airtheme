@@ -10,7 +10,6 @@ const baseFontSize = (state = attribute.baseFontSize(), action) => {
     case UPDATE_THEME:
       return action.theme.base.baseFontSize
     case UPDATE_BASE_FONT_SIZE:
-      console.log(action)
       return updateBaseUnit(state, action)
     default:
       return state
