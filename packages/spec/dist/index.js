@@ -159,30 +159,9 @@ var Version = reactRedux.connect(make.mapVersion)(function (_ref3) {
     val: version
   }));
 });
-var BaseFontSize = reactRedux.connect(make.mapBaseFontSize)(function (_ref4) {
-  var baseFontSize = _ref4.baseFontSize;
-  return React__default.createElement(make.SimpleList.TwoColumns, null, React__default.createElement(Node, {
-    name: "baseFontSize",
-    val: baseFontSize
-  }));
-});
-var BaseLineHeight = reactRedux.connect(make.mapBaseLineHeight)(function (_ref5) {
-  var baseLineHeight = _ref5.baseLineHeight;
-  return React__default.createElement(make.SimpleList.TwoColumns, null, React__default.createElement(Node, {
-    name: "baseLineHeight",
-    val: baseLineHeight
-  }));
-});
-var BaseSpacing = reactRedux.connect(make.mapBaseSpacing)(function (_ref6) {
-  var baseSpacing = _ref6.baseSpacing;
-  return React__default.createElement(make.SimpleList.TwoColumns, null, React__default.createElement(Node, {
-    name: "baseSpacing",
-    val: baseSpacing
-  }));
-});
 
 var Globals = function Globals() {
-  return React__default.createElement(make.SimpleList, null, React__default.createElement(make.SimpleList.Header, null, "Global"), React__default.createElement(Id, null), React__default.createElement(Name, null), React__default.createElement(Version, null), React__default.createElement(BaseFontSize, null), React__default.createElement(BaseLineHeight, null), React__default.createElement(BaseSpacing, null));
+  return React__default.createElement(make.SimpleList, null, React__default.createElement(make.SimpleList.Header, null, "Global"), React__default.createElement(Id, null), React__default.createElement(Name, null), React__default.createElement(Version, null));
 };
 
 var SwatchAttribute = reactRedux.connect(make.mapSwatch)(function (_ref) {

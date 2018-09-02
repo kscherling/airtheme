@@ -9,7 +9,7 @@ import Color from './components/Color'
 import Spacing from './components/Spacing'
 import { SimpleList } from '@airtheme/make'
 
-const Mod = () => (
+const ModBackup = () => (
   <SimpleList.OneColumn>
     <SimpleList.Title>Mod</SimpleList.Title>
     <Globals />
@@ -22,5 +22,5 @@ const Mod = () => (
     <Spacing />
   </SimpleList.OneColumn>
 )
-
+const Mod = () => 'Mod Temp'
 export default Mod

@@ -357,10 +357,6 @@ var BaseSpacing = reactRedux.connect(make.mapBaseSpacing, {
   }));
 });
 
-var Globals = function Globals() {
-  return React__default.createElement(make.SimpleList, null, React__default.createElement(make.SimpleList.Header, null, "Global"), React__default.createElement(Id, null), React__default.createElement(Name, null), React__default.createElement(Version, null), React__default.createElement(BaseFontSize, null), React__default.createElement(BaseLineHeight, null), React__default.createElement(BaseSpacing, null));
-};
-
 var SwatchAttribute = reactRedux.connect(make.mapSwatch, {
   updateSwatchView: make.updateSwatchView
 })(function (_ref) {
@@ -393,10 +389,6 @@ var SwatchContent = reactRedux.connect(make.mapSwatchContent, {
   }));
 });
 
-var Swatch = function Swatch() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Swatch"), React__default.createElement(SwatchAttribute, null), React__default.createElement(SwatchContent, null));
-};
-
 var FontFaceAttribute = reactRedux.connect(make.mapFontFace)(function (_ref) {
   var _ref$fontFace = _ref.fontFace,
       view = _ref$fontFace.view,
@@ -424,10 +416,6 @@ var FontFaceContent = reactRedux.connect(make.mapFontFaceContent, {
     add: addFontFace
   }));
 });
-
-var FontFace = function FontFace() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Font Face"), React__default.createElement(FontFaceAttribute, null), React__default.createElement(FontFaceContent, null));
-};
 
 var FontFamilyAttribute = reactRedux.connect(make.mapFontFamily, {
   updateFontFamilyView: make.updateFontFamilyView
@@ -461,10 +449,6 @@ var FontFamilyContent = reactRedux.connect(make.mapFontFamilyContent, {
   }));
 });
 
-var FontFamily = function FontFamily() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Font Family"), React__default.createElement(FontFamilyAttribute, null), React__default.createElement(FontFamilyContent, null));
-};
-
 var FontSizeAttribute = reactRedux.connect(make.mapFontSize, {
   updateFontSizeView: make.updateFontSizeView
 })(function (_ref) {
@@ -497,10 +481,6 @@ var FontSizeContent = reactRedux.connect(make.mapFontSizeContent, {
   }));
 });
 
-var FontSize = function FontSize() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Font Size"), React__default.createElement(FontSizeAttribute, null), React__default.createElement(FontSizeContent, null));
-};
-
 var FontWeightAttribute = reactRedux.connect(make.mapFontWeight)(function (_ref) {
   var _ref$fontWeight = _ref.fontWeight,
       view = _ref$fontWeight.view,
@@ -528,10 +508,6 @@ var FontWeightContent = reactRedux.connect(make.mapFontWeightContent, {
     add: addFontWeight
   }));
 });
-
-var FontWeight = function FontWeight() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Font Weight"), React__default.createElement(FontWeightAttribute, null), React__default.createElement(FontWeightContent, null));
-};
 
 var ColorAttribute = reactRedux.connect(make.mapColor, {
   updateColorView: make.updateColorView
@@ -565,10 +541,6 @@ var ColorContent = reactRedux.connect(make.mapColorContent, {
   }));
 });
 
-var Color = function Color() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Color"), React__default.createElement(ColorAttribute, null), React__default.createElement(ColorContent, null));
-};
-
 var SpacingAttribute = reactRedux.connect(make.mapSpacing, {
   updateSpacingView: make.updateSpacingView
 })(function (_ref) {
@@ -601,12 +573,8 @@ var SpacingContent = reactRedux.connect(make.mapSpacingContent, {
   }));
 });
 
-var Spacing = function Spacing() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Spacing"), React__default.createElement(SpacingAttribute, null), React__default.createElement(SpacingContent, null));
-};
-
 var Mod = function Mod() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Title, null, "Mod"), React__default.createElement(Globals, null), React__default.createElement(FontFace, null), React__default.createElement(Swatch, null), React__default.createElement(FontFamily, null), React__default.createElement(FontSize, null), React__default.createElement(FontWeight, null), React__default.createElement(Color, null), React__default.createElement(Spacing, null));
+  return 'Mod Temp';
 };
 
 module.exports = Mod;

@@ -8,7 +8,7 @@ import { baseSchema } from '@airtheme/type'
 const object = (state = baseSchema.object, action) => {
   switch (action.type) {
     case UPDATE_THEME:
-      return action.theme.base.object
+      return action.theme.base.object || baseSchema.object
     default:
       return state
   }

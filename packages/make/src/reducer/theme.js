@@ -47,7 +47,7 @@ const version = (state = themeSchema.version, action) => {
 const object = (state = themeSchema.object, action) => {
   switch (action.type) {
     case UPDATE_THEME:
-      return action.theme.object
+      return action.theme.object || themeSchema.object
     default:
       return state
   }

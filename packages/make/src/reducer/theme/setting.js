@@ -10,7 +10,7 @@ import { settingSchema } from '@airtheme/type'
 const object = (state = settingSchema.object, action) => {
   switch (action.type) {
     case UPDATE_THEME:
-      return action.theme.setting.object
+      return action.theme.setting.object || settingSchema.object
     default:
       return state
   }

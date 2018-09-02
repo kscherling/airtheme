@@ -2,14 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Node } from '../lib/PrintTypes'
 import { Grid, SimpleList } from '@airtheme/make'
-import {
-  mapId,
-  mapName,
-  mapBaseFontSize,
-  mapBaseSpacing,
-  mapBaseLineHeight,
-  mapVersion
-} from '@airtheme/make'
+import { mapId, mapName, mapVersion } from '@airtheme/make'
 
 const Id = connect(mapId)(({ id }) => (
   <SimpleList.TwoColumns>
@@ -26,23 +19,6 @@ const Version = connect(mapVersion)(({ version }) => (
     <Node name="version" val={version} />
   </SimpleList.TwoColumns>
 ))
-const BaseFontSize = connect(mapBaseFontSize)(({ baseFontSize }) => (
-  <SimpleList.TwoColumns>
-    <Node name="baseFontSize" val={baseFontSize} />
-  </SimpleList.TwoColumns>
-))
-
-const BaseLineHeight = connect(mapBaseLineHeight)(({ baseLineHeight }) => (
-  <SimpleList.TwoColumns>
-    <Node name="baseLineHeight" val={baseLineHeight} />
-  </SimpleList.TwoColumns>
-))
-
-const BaseSpacing = connect(mapBaseSpacing)(({ baseSpacing }) => (
-  <SimpleList.TwoColumns>
-    <Node name="baseSpacing" val={baseSpacing} />
-  </SimpleList.TwoColumns>
-))
 
 const Globals = () => (
   <SimpleList>
@@ -50,9 +26,6 @@ const Globals = () => (
     <Id />
     <Name />
     <Version />
-    <BaseFontSize />
-    <BaseLineHeight />
-    <BaseSpacing />
   </SimpleList>
 )
 
