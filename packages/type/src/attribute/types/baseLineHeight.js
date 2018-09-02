@@ -11,6 +11,6 @@ export default {
   viewable: [FACTOR, PX],
   reference: BASE_FONT_SIZE_PATH,
   object: BASE_LINE_HEIGHT,
-  unit: PX,
+  unit: FACTOR,
   content: unit.factor({ name: 'baseLineHeight', value: 1.15 })
 }

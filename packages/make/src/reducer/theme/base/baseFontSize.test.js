@@ -6,7 +6,6 @@ let store
 
 beforeEach(() => {
   store = makeStore()
-  store.dispatch(updateTheme(baseState.theme))
 })
 
 it('`updateBaseFontSize` update base font size', () => {
