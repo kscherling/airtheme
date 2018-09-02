@@ -1,1 +1,2 @@
-export default () => 'print'
+import Print from './Print'
+export default Print

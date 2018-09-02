@@ -14,10 +14,11 @@ import {
   updateThemeId,
   updateThemeName,
   updateThemeType,
-  updateThemeVersion
+  updateThemeVersion,
+  Grid,
+  SimpleList
 } from '@airtheme/make'
 import { Node } from '../lib/ModifyTypes'
-import { Grid, SimpleList } from '@airtheme/make'
 
 const Name = connect(
   mapName,
