@@ -12,7 +12,6 @@ import updatedState from '../test/updatedState'
 
 it('initial state (baseState)', () => {
   const store = makeStore()
-
   const state = store.getState()
 
   expect(state).toEqual(baseState)

@@ -73,12 +73,7 @@ it('`updateColor` update color', () => {
   })
 
   store.dispatch(updateTheme(initialState.theme))
-  store.dispatch(
-    updateColor(
-      initialColorA,
-      updatedReference
-    )
-  )
+  store.dispatch(updateColor(initialColorA, updatedReference))
   const state = store.getState()
 
   expect(state).toEqual(updatedState)

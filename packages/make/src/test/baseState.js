@@ -1,5 +1,6 @@
 import { attribute, unit, theme } from '@airtheme/type'
 import baseSetting from './baseSetting'
+import { themeSchema } from '@airtheme/type'
 
 const baseState = {
   theme: {
@@ -11,8 +12,8 @@ const baseState = {
     name: '',
     setting: baseSetting,
     swatch: attribute.swatch(),
-    type: '',
-    version: ''
+    object: themeSchema.object,
+    version: themeSchema.version
   }
 }
 

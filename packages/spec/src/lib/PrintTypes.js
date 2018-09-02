@@ -39,7 +39,7 @@ export const Unit = ({ unit }) => (
     <span>{printUnrenderable(unit.name)}</span>
     <span>{printUnrenderable(unit.value)}</span>
     <span>{printUnrenderable(unit.ordinal)}</span>
-    <span>{printUnrenderable(unit.type)}</span>
+    <span>{printUnrenderable(unit.object)}</span>
   </SimpleList.FourColumns>
 )
 

@@ -77,12 +77,7 @@ it('`updateSpacing` update font size', () => {
   })
 
   store.dispatch(updateTheme(initialState.theme))
-  store.dispatch(
-    updateSpacing(
-      initialSpacingA,
-      updatedFactor
-    )
-  )
+  store.dispatch(updateSpacing(initialSpacingA, updatedFactor))
   const state = store.getState()
 
   expect(state).toEqual(updatedState)

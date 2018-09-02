@@ -111,7 +111,7 @@ var Node = function Node(_ref) {
 };
 var Unit = function Unit(_ref2) {
   var unit = _ref2.unit;
-  return React__default.createElement(make.SimpleList.FourColumns, null, React__default.createElement("span", null, printUnrenderable(unit.name)), React__default.createElement("span", null, printUnrenderable(unit.value)), React__default.createElement("span", null, printUnrenderable(unit.ordinal)), React__default.createElement("span", null, printUnrenderable(unit.type)));
+  return React__default.createElement(make.SimpleList.FourColumns, null, React__default.createElement("span", null, printUnrenderable(unit.name)), React__default.createElement("span", null, printUnrenderable(unit.value)), React__default.createElement("span", null, printUnrenderable(unit.ordinal)), React__default.createElement("span", null, printUnrenderable(unit.object)));
 };
 var Attribute = function Attribute(_ref3) {
   var attribute = _ref3.attribute;

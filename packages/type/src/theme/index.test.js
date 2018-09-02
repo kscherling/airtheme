@@ -18,6 +18,7 @@ const baseTheme = {
   id: '',
   name: 'Basic Airtheme',
   setting: {
+    object: 'setting',
     color: {
       content: [],
       reference: 'swatch',
@@ -67,7 +68,7 @@ const baseTheme = {
     view: 'hexa',
     viewable: ['hex', 'hexa', 'rgb', 'rgba']
   },
-  object: 'airtheme',
+  object: 'theme',
   version: '0.1.0'
 }
 
@@ -99,7 +100,7 @@ it('initializes with prop overrides', () => {
     setting: { a: 'a' },
     swatch: { a: 'a' },
     fontFace: { a: 'a' },
-    object: 'airtheme',
+    object: 'theme',
     version: '0.1.0'
   })
 })

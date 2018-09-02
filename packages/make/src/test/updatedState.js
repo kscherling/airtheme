@@ -2,6 +2,7 @@ import { withBaseSetting } from './baseSetting'
 
 const updatedState = {
   theme: {
+    object: 'theme',
     baseFontSize: 16,
     baseLineHeight: 16,
     baseSpacing: 16,
@@ -16,7 +17,6 @@ const updatedState = {
       spacing: {}
     }),
     swatch: { type: 'swatch' },
-    type: '',
     version: '1.0.0'
   }
 }

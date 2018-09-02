@@ -39,7 +39,7 @@ var SPACING_PATH = "".concat(SETTING_KEY, ".").concat(SPACING_KEY);
 var SWATCH_PATH = SWATCH_KEY;
 var UTILITY_PATH = UTILITY_KEY;
 
-var _ROOT_THEME_ = 'airtheme';
+var _ROOT_THEME_ = 'theme';
 var BASIC = 'airthemeBasic';
 
 var _THEME_SETTING_ = 'setting';
