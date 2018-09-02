@@ -17,8 +17,8 @@ it('creates `setting`', () => {
     fontFamily: {
       content: [],
       view: 'reference',
-      viewable: ['reference'],
-      reference: null,
+      viewable: ['reference', 'string'],
+      reference: 'fontFace',
       type: 'fontFamily',
       unit: 'reference'
     },

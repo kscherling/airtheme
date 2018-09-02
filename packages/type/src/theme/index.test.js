@@ -1,9 +1,11 @@
 import theme from './index'
 import { VERSION } from '@airtheme/core'
 
+const withId = (mock, base) => ({ ...base, id: mock.id })
+
 const baseTheme = {
   baseFontSize: 16,
-  baseLineHeight: 1.15,
+  baseLineHeight: 16,
   baseSpacing: 16,
   fontFace: {
     content: [],
@@ -26,11 +28,11 @@ const baseTheme = {
     },
     fontFamily: {
       content: [],
-      reference: null,
+      reference: 'fontFace',
       type: 'fontFamily',
       unit: 'reference',
       view: 'reference',
-      viewable: ['reference']
+      viewable: ['reference', 'string']
     },
     fontSize: {
       content: [],
@@ -72,7 +74,7 @@ const baseTheme = {
 it('creates a `theme`', () => {
   const result = theme.base()
 
-  expect(result).toEqual(baseTheme)
+  expect(result).toEqual(withId(result, baseTheme))
 })
 
 it('initializes with prop overrides', () => {
@@ -109,5 +111,5 @@ it('sanitizes params', () => {
     nope: true
   })
 
-  expect(result).toEqual(baseTheme)
+  expect(result).toEqual(withId(result, baseTheme))
 })

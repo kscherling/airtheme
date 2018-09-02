@@ -6,7 +6,7 @@ const baseState = {
     baseFontSize: '',
     baseLineHeight: '',
     baseSpacing: '',
-    fontFace: {},
+    fontFace: attribute.fontFace(),
     id: '',
     name: '',
     setting: baseSetting,
