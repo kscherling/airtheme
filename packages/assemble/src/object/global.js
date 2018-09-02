@@ -8,7 +8,7 @@ import { mapBaseSpacing } from '@airtheme/make'
 
 // const deserialize = (path, theme) => deserializeType(dig(path, theme), theme)
 
-const globals = (next, input, theme) =>
+const global = (next, input, theme) =>
   next(
     {
       ...input,
@@ -17,7 +17,7 @@ const globals = (next, input, theme) =>
     theme
   )
 
-export default globals
+export default global
 
 // [BASE_FONT_SIZE_PATH]: deserialize(BASE_FONT_SIZE_PATH, theme),
 // [BASE_LINE_HEIGHT_PATH]: deserialize(BASE_LINE_HEIGHT_PATH, theme)
