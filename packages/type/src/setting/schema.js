@@ -12,7 +12,7 @@ import {
 // Settings hash
 
 export default {
-  type: _THEME_SETTING_,
+  object: _THEME_SETTING_,
   [COLOR_KEY]: {},
   [FONT_FAMILY_KEY]: {},
   [FONT_SIZE_KEY]: {},

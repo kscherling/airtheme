@@ -4,6 +4,6 @@ export default {
   view: PX,
   viewable: [PX],
   reference: null,
-  type: BASE_FONT_SIZE,
+  object: BASE_FONT_SIZE,
   unit: PX
 }

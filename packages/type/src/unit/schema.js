@@ -14,10 +14,10 @@ export default {
 
   ordinal: null,
 
-  // type
+  // object
   // string : The name of the unit.
 
-  type: _ROOT_UNIT_,
+  object: _ROOT_UNIT_,
 
   // value
   // Any : The value of the unit

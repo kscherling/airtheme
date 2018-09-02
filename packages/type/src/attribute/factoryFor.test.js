@@ -1,12 +1,12 @@
 import schema from './schema'
 import factoryFor from './factoryFor'
 
-const type = {
+const object = {
   content: [],
   view: 'factor',
   viewable: ['factor', 'px', 'rem'],
   reference: 'baseFontSize',
-  type: 'fontSize',
+  object: 'fontSize',
   unit: 'factor'
 }
 
@@ -18,7 +18,7 @@ it('handles empty values', () => {
 })
 
 it('returns factory', () => {
-  const factory = factoryFor(type, schema)
+  const factory = factoryFor(object, schema)
   const instance = factory()
 
   expect(instance).toEqual({
@@ -26,13 +26,13 @@ it('returns factory', () => {
     view: 'factor',
     viewable: ['factor', 'px', 'rem'],
     reference: 'baseFontSize',
-    type: 'fontSize',
+    object: 'fontSize',
     unit: 'factor'
   })
 })
 
 it('initializes with content', () => {
-  const factory = factoryFor(type, schema)
+  const factory = factoryFor(object, schema)
   const instance = factory({
     content: [{ some: 'stuff' }]
   })
@@ -42,7 +42,7 @@ it('initializes with content', () => {
     view: 'factor',
     viewable: ['factor', 'px', 'rem'],
     reference: 'baseFontSize',
-    type: 'fontSize',
+    object: 'fontSize',
     unit: 'factor'
   })
 })

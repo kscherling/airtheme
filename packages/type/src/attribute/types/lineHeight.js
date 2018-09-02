@@ -6,6 +6,6 @@ export default {
   view: FACTOR,
   viewable: [FACTOR, PX],
   reference: BASE_FONT_SIZE_KEY,
-  type: LINE_HEIGHT,
+  object: LINE_HEIGHT,
   unit: FACTOR
 }

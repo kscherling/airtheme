@@ -4,12 +4,12 @@
 
 // prettier-ignore
 const factoryFor =
-  ({ type } = {}, schema) =>
+  ({ object } = {}, schema) =>
   ({ value, name, ordinal } = {}) =>
     Object.assign(
       {},
       schema,
-      { type },
+      { object },
       {
         value: value || schema.value,
         name: name || schema.name,

@@ -5,7 +5,7 @@ import { BASIC, VERSION } from '@airtheme/core'
 
 export default {
   name: 'Basic Airtheme',
-  type: BASIC,
+  object: BASIC,
   baseFontSize: 16,
   baseLineHeight: 16,
   baseSpacing: 16,

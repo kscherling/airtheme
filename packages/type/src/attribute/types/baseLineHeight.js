@@ -9,6 +9,6 @@ export default {
   view: PX,
   viewable: [FACTOR, PX],
   reference: BASE_FONT_SIZE_PATH,
-  type: BASE_LINE_HEIGHT,
+  object: BASE_LINE_HEIGHT,
   unit: PX
 }

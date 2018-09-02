@@ -6,6 +6,6 @@ export default {
   view: FACTOR,
   viewable: [FACTOR, PX],
   reference: BASE_SPACING_KEY,
-  type: SPACING,
+  object: SPACING,
   unit: FACTOR
 }

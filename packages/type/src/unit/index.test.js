@@ -6,7 +6,7 @@ it('creates `factor`', () => {
   const result = types.factor({ value: 1 })
 
   expect(result).toEqual({
-    type: 'factor',
+    object: 'factor',
     value: 1,
     ordinal: null,
     name: null
@@ -17,7 +17,7 @@ it('creates `hex`', () => {
   const result = types.hex({ value: '#000000' })
 
   expect(result).toEqual({
-    type: 'hex',
+    object: 'hex',
     value: '#000000',
     ordinal: null,
     name: null
@@ -28,7 +28,7 @@ it('creates `hexa`', () => {
   const result = types.hexa({ value: '#000000,0.5' })
 
   expect(result).toEqual({
-    type: 'hexa',
+    object: 'hexa',
     value: '#000000,0.5',
     ordinal: null,
     name: null
@@ -38,14 +38,14 @@ it('creates `hexa`', () => {
 it('creates `px`', () => {
   const result = types.px({ value: 1 })
 
-  expect(result).toEqual({ type: 'px', value: 1, ordinal: null, name: null })
+  expect(result).toEqual({ object: 'px', value: 1, ordinal: null, name: null })
 })
 
 it('creates `name`', () => {
   const result = types.reference({ value: 'swatches.black' })
 
   expect(result).toEqual({
-    type: 'reference',
+    object: 'reference',
     value: 'swatches.black',
     ordinal: null,
     name: null
@@ -55,14 +55,14 @@ it('creates `name`', () => {
 it('creates `rem`', () => {
   const result = types.rem({ value: 1 })
 
-  expect(result).toEqual({ type: 'rem', value: 1, ordinal: null, name: null })
+  expect(result).toEqual({ object: 'rem', value: 1, ordinal: null, name: null })
 })
 
 it('creates `rgb`', () => {
   const result = types.rgb({ value: '0,0,0' })
 
   expect(result).toEqual({
-    type: 'rgb',
+    object: 'rgb',
     value: '0,0,0',
     ordinal: null,
     name: null
@@ -73,7 +73,7 @@ it('creates `rgba`', () => {
   const result = types.rgba({ value: '0,0,0,0' })
 
   expect(result).toEqual({
-    type: 'rgba',
+    object: 'rgba',
     value: '0,0,0,0',
     ordinal: null,
     name: null

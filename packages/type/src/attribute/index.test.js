@@ -8,7 +8,7 @@ it('creates `color`', () => {
     view: 'reference',
     viewable: ['reference', 'hex', 'hexa', 'rgb', 'rgba'],
     reference: 'swatch',
-    type: 'color',
+    object: 'color',
     unit: 'reference'
   })
 })
@@ -21,7 +21,7 @@ it('creates `fontFamily`', () => {
     view: 'reference',
     viewable: ['reference', 'string'],
     reference: 'fontFace',
-    type: 'fontFamily',
+    object: 'fontFamily',
     unit: 'reference'
   })
 })
@@ -34,7 +34,7 @@ it('creates `fontSize`', () => {
     view: 'factor',
     viewable: ['factor', 'px', 'rem'],
     reference: 'baseFontSize',
-    type: 'fontSize',
+    object: 'fontSize',
     unit: 'factor'
   })
 })
@@ -47,7 +47,7 @@ it('creates `fontWeight`', () => {
     view: 'string',
     viewable: ['string'],
     reference: null,
-    type: 'fontWeight',
+    object: 'fontWeight',
     unit: 'string'
   })
 })
@@ -60,7 +60,7 @@ it('creates `lineHeight`', () => {
     view: 'factor',
     viewable: ['factor', 'px'],
     reference: 'baseFontSize',
-    type: 'lineHeight',
+    object: 'lineHeight',
     unit: 'factor'
   })
 })
@@ -73,7 +73,7 @@ it('creates `spacing`', () => {
     view: 'factor',
     viewable: ['factor', 'px'],
     reference: 'baseSpacing',
-    type: 'spacing',
+    object: 'spacing',
     unit: 'factor'
   })
 })
@@ -86,7 +86,7 @@ it('creates `swatch`', () => {
     view: 'hexa',
     viewable: ['hex', 'hexa', 'rgb', 'rgba'],
     reference: null,
-    type: 'swatch',
+    object: 'swatch',
     unit: 'hexa'
   })
 })

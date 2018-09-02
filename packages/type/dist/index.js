@@ -19,7 +19,7 @@ function _defineProperty(obj, key, value) {
   return obj;
 }
 
-// type for a theme attribute, has many units
+// object for a theme attribute, has many units
 
 var schema = {
   // content
@@ -29,14 +29,14 @@ var schema = {
   // The unit the content items are displayed. User selected.
   view: null,
   // viewable
-  // Array : Units this type can serialize to.
+  // Array : Units this object can serialize to.
   viewable: [],
   // reference
   // A string namespace global reference
   reference: null,
-  // type
-  // The name of the type. The same as the 'class'
-  type: core._ROOT_ATTRIBUTE_,
+  // object
+  // The name of the object. The same as the 'class'
+  object: core._ROOT_ATTRIBUTE_,
   // unit
   // The unit the content items are stored. Static.
   unit: null
@@ -45,7 +45,7 @@ var schema = {
 // prettier-ignore
 var factoryFor = function factoryFor() {
   var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-      type = _ref.type,
+      object = _ref.object,
       view = _ref.view,
       unit = _ref.unit,
       viewable = _ref.viewable,
@@ -59,7 +59,7 @@ var factoryFor = function factoryFor() {
         factoryContent = _ref2.content;
 
     return Object.assign({}, schema, {
-      type: type || schema.type,
+      object: object || schema.object,
       view: factoryDisplay || view || schema.view,
       unit: unit || schema.unit,
       viewable: viewable || schema.viewable,
@@ -73,7 +73,7 @@ var color = {
   view: core.REFERENCE,
   viewable: [core.REFERENCE, core.HEX, core.HEXA, core.RGB, core.RGBA],
   reference: core.SWATCH,
-  type: core.COLOR,
+  object: core.COLOR,
   unit: core.REFERENCE
 };
 
@@ -81,7 +81,7 @@ var fontFamily = {
   view: core.REFERENCE,
   viewable: [core.REFERENCE, core.STRING],
   reference: core.FONT_FACE,
-  type: core.FONT_FAMILY,
+  object: core.FONT_FAMILY,
   unit: core.REFERENCE
 };
 
@@ -89,7 +89,7 @@ var fontSize = {
   view: core.FACTOR,
   viewable: [core.FACTOR, core.PX, core.REM],
   reference: core.BASE_FONT_SIZE_KEY,
-  type: core.FONT_SIZE,
+  object: core.FONT_SIZE,
   unit: core.FACTOR
 };
 
@@ -97,7 +97,7 @@ var fontFace = {
   view: core.STRING,
   viewable: [core.STRING],
   reference: null,
-  type: core.FONT_FACE,
+  object: core.FONT_FACE,
   unit: core.STRING
 };
 
@@ -105,7 +105,7 @@ var fontWeight = {
   view: core.STRING,
   viewable: [core.STRING],
   reference: null,
-  type: core.FONT_WEIGHT,
+  object: core.FONT_WEIGHT,
   unit: core.STRING
 };
 
@@ -113,7 +113,7 @@ var lineHeight = {
   view: core.FACTOR,
   viewable: [core.FACTOR, core.PX],
   reference: core.BASE_FONT_SIZE_KEY,
-  type: core.LINE_HEIGHT,
+  object: core.LINE_HEIGHT,
   unit: core.FACTOR
 };
 
@@ -121,7 +121,7 @@ var spacing = {
   view: core.FACTOR,
   viewable: [core.FACTOR, core.PX],
   reference: core.BASE_SPACING_KEY,
-  type: core.SPACING,
+  object: core.SPACING,
   unit: core.FACTOR
 };
 
@@ -129,7 +129,7 @@ var swatch = {
   view: core.HEXA,
   viewable: [core.HEX, core.HEXA, core.RGB, core.RGBA],
   reference: null,
-  type: core.SWATCH,
+  object: core.SWATCH,
   unit: core.HEXA,
   content: []
 };
@@ -138,7 +138,7 @@ var baseSpacing = {
   view: core.PX,
   viewable: [core.PX],
   reference: null,
-  type: core.BASE_SPACING,
+  object: core.BASE_SPACING,
   unit: core.PX
 };
 
@@ -146,7 +146,7 @@ var baseLineHeight = {
   view: core.PX,
   viewable: [core.FACTOR, core.PX],
   reference: core.BASE_FONT_SIZE_PATH,
-  type: core.BASE_LINE_HEIGHT,
+  object: core.BASE_LINE_HEIGHT,
   unit: core.PX
 };
 
@@ -154,7 +154,7 @@ var baseFontSize = {
   view: core.PX,
   viewable: [core.PX],
   reference: null,
-  type: core.BASE_FONT_SIZE,
+  object: core.BASE_FONT_SIZE,
   unit: core.PX
 };
 
@@ -171,12 +171,12 @@ var attribute = (_attribute = {
   fontFace: factoryFor(fontFace, schema)
 }, _defineProperty(_attribute, "fontFamily", factoryFor(fontFamily, schema)), _defineProperty(_attribute, "spacing", factoryFor(spacing, schema)), _defineProperty(_attribute, "swatch", factoryFor(swatch, schema)), _attribute);
 
-var _type$COLOR_KEY$FONT_;
+var _object$COLOR_KEY$FON;
 // Settings hash
 
-var schema$1 = (_type$COLOR_KEY$FONT_ = {
-  type: core._THEME_SETTING_
-}, _defineProperty(_type$COLOR_KEY$FONT_, core.COLOR_KEY, {}), _defineProperty(_type$COLOR_KEY$FONT_, core.FONT_FAMILY_KEY, {}), _defineProperty(_type$COLOR_KEY$FONT_, core.FONT_SIZE_KEY, {}), _defineProperty(_type$COLOR_KEY$FONT_, core.FONT_WEIGHT_KEY, {}), _defineProperty(_type$COLOR_KEY$FONT_, core.SPACING_KEY, {}), _type$COLOR_KEY$FONT_);
+var schema$1 = (_object$COLOR_KEY$FON = {
+  object: core._THEME_SETTING_
+}, _defineProperty(_object$COLOR_KEY$FON, core.COLOR_KEY, {}), _defineProperty(_object$COLOR_KEY$FON, core.FONT_FAMILY_KEY, {}), _defineProperty(_object$COLOR_KEY$FON, core.FONT_SIZE_KEY, {}), _defineProperty(_object$COLOR_KEY$FON, core.FONT_WEIGHT_KEY, {}), _defineProperty(_object$COLOR_KEY$FON, core.SPACING_KEY, {}), _object$COLOR_KEY$FON);
 
 var _COLOR_KEY$FONT_FAMIL;
 // The base setting object
@@ -233,17 +233,17 @@ var schema$2 = {
   // baseSpacing
   // string : the reference of the unit
   baseSpacing: 16,
-  // type
+  // object
   // string : The name of the unit.
-  type: core._ROOT_THEME_,
+  object: core._ROOT_THEME_,
   // version
   // string : the version of the airthemek
   version: core.VERSION,
   // swatch
-  // Swatch : Swatch attribute type
+  // Swatch : Swatch attribute object
   swatch: attribute.swatch(),
   // fontFace
-  // FontFace : fontFace attribute type
+  // FontFace : fontFace attribute object
   fontFace: attribute.fontFace(),
   // setting
   // Setting : Keyed object of attribute types
@@ -254,7 +254,7 @@ var schema$2 = {
 
 var base$1 = {
   name: 'Basic Airtheme',
-  type: core.BASIC,
+  object: core.BASIC,
   baseFontSize: 16,
   baseLineHeight: 16,
   baseSpacing: 16,
@@ -310,9 +310,9 @@ var schema$3 = {
   // ordinal
   // int : the stack order index
   ordinal: null,
-  // type
+  // object
   // string : The name of the unit.
-  type: core._ROOT_UNIT_,
+  object: core._ROOT_UNIT_,
   // value
   // Any : The value of the unit
   value: null
@@ -324,7 +324,7 @@ var schema$3 = {
 // prettier-ignore
 var factoryFor$3 = function factoryFor() {
   var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-      type = _ref.type;
+      object = _ref.object;
 
   var schema = arguments.length > 1 ? arguments[1] : undefined;
   return function () {
@@ -334,7 +334,7 @@ var factoryFor$3 = function factoryFor() {
         ordinal = _ref2.ordinal;
 
     return Object.assign({}, schema, {
-      type: type
+      object: object
     }, {
       value: value || schema.value,
       name: name || schema.name,
@@ -346,56 +346,56 @@ var factoryFor$3 = function factoryFor() {
 // a relative unit multiplied by a reference
 
 var factor = {
-  type: core.FACTOR
+  object: core.FACTOR
 };
 
 // a hexidecimal color value
 
 var hex = {
-  type: core.HEX
+  object: core.HEX
 };
 
 // A hex value follow by an alpha valu '#000000,0.5'
 // NOTE: Units are serialized to the smallest css var that expresses
 
 var hexa = {
-  type: core.HEXA
+  object: core.HEXA
 };
 
 // a px unit
 
 var px = {
-  type: core.PX
+  object: core.PX
 };
 
 // a string path of a theme global
 
 var reference = {
-  type: core.REFERENCE
+  object: core.REFERENCE
 };
 
 // a css rem unit
 
 var rem = {
-  type: core.REM
+  object: core.REM
 };
 
 // a rgb color value: '0,0,0'
 
 var rgb = {
-  type: core.RGB
+  object: core.RGB
 };
 
 // a rgba color value '0,0,0,0'
 
 var rgba = {
-  type: core.RGBA
+  object: core.RGBA
 };
 
 // a non transformable value
 
 var string = {
-  type: core.STRING
+  object: core.STRING
 };
 
 var unit = {

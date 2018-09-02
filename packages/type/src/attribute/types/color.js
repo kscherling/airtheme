@@ -5,6 +5,6 @@ export default {
   view: REFERENCE,
   viewable: [REFERENCE, HEX, HEXA, RGB, RGBA],
   reference: SWATCH,
-  type: COLOR,
+  object: COLOR,
   unit: REFERENCE
 }

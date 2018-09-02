@@ -6,6 +6,6 @@ export default {
   view: FACTOR,
   viewable: [FACTOR, PX, REM],
   reference: BASE_FONT_SIZE_KEY,
-  type: FONT_SIZE,
+  object: FONT_SIZE,
   unit: FACTOR
 }

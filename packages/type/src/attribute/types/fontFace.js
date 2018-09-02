@@ -4,6 +4,6 @@ export default {
   view: STRING,
   viewable: [STRING],
   reference: null,
-  type: FONT_FACE,
+  object: FONT_FACE,
   unit: STRING
 }

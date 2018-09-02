@@ -5,6 +5,6 @@ export default {
   view: REFERENCE,
   viewable: [REFERENCE, STRING],
   reference: FONT_FACE,
-  type: FONT_FAMILY,
+  object: FONT_FAMILY,
   unit: REFERENCE
 }

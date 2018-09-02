@@ -10,7 +10,7 @@ const baseTheme = {
   fontFace: {
     content: [],
     reference: null,
-    type: 'fontFace',
+    object: 'fontFace',
     unit: 'string',
     view: 'string',
     viewable: ['string']
@@ -21,7 +21,7 @@ const baseTheme = {
     color: {
       content: [],
       reference: 'swatch',
-      type: 'color',
+      object: 'color',
       unit: 'reference',
       view: 'reference',
       viewable: ['reference', 'hex', 'hexa', 'rgb', 'rgba']
@@ -29,7 +29,7 @@ const baseTheme = {
     fontFamily: {
       content: [],
       reference: 'fontFace',
-      type: 'fontFamily',
+      object: 'fontFamily',
       unit: 'reference',
       view: 'reference',
       viewable: ['reference', 'string']
@@ -37,7 +37,7 @@ const baseTheme = {
     fontSize: {
       content: [],
       reference: 'baseFontSize',
-      type: 'fontSize',
+      object: 'fontSize',
       unit: 'factor',
       view: 'factor',
       viewable: ['factor', 'px', 'rem']
@@ -45,7 +45,7 @@ const baseTheme = {
     fontWeight: {
       content: [],
       reference: null,
-      type: 'fontWeight',
+      object: 'fontWeight',
       unit: 'string',
       view: 'string',
       viewable: ['string']
@@ -53,7 +53,7 @@ const baseTheme = {
     spacing: {
       content: [],
       reference: 'baseSpacing',
-      type: 'spacing',
+      object: 'spacing',
       unit: 'factor',
       view: 'factor',
       viewable: ['factor', 'px']
@@ -62,12 +62,12 @@ const baseTheme = {
   swatch: {
     content: [],
     reference: null,
-    type: 'swatch',
+    object: 'swatch',
     unit: 'hexa',
     view: 'hexa',
     viewable: ['hex', 'hexa', 'rgb', 'rgba']
   },
-  type: 'airtheme',
+  object: 'airtheme',
   version: '0.1.0'
 }
 
@@ -99,14 +99,14 @@ it('initializes with prop overrides', () => {
     setting: { a: 'a' },
     swatch: { a: 'a' },
     fontFace: { a: 'a' },
-    type: 'airtheme',
+    object: 'airtheme',
     version: '0.1.0'
   })
 })
 
 it('sanitizes params', () => {
   const result = theme.base({
-    type: 'oops',
+    object: 'oops',
     version: '100.1.1',
     nope: true
   })

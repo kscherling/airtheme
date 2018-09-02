@@ -32,10 +32,10 @@ export default {
 
   baseSpacing: 16,
 
-  // type
+  // object
   // string : The name of the unit.
 
-  type: _ROOT_THEME_,
+  object: _ROOT_THEME_,
 
   // version
   // string : the version of the airthemek
@@ -43,11 +43,11 @@ export default {
   version: VERSION,
 
   // swatch
-  // Swatch : Swatch attribute type
+  // Swatch : Swatch attribute object
   swatch: attribute.swatch(),
 
   // fontFace
-  // FontFace : fontFace attribute type
+  // FontFace : fontFace attribute object
   fontFace: attribute.fontFace(),
 
   // setting

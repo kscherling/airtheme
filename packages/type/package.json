@@ -2,7 +2,9 @@
   "name": "@airtheme/type",
   "version": "0.1.0",
   "main": "dist/index.js",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "clean": "./task clean",
     "build": "./task build",

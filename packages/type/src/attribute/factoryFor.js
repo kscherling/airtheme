@@ -1,7 +1,7 @@
 // prettier-ignore
 export const factoryFor = (
   {
-    type,
+    object,
     view,
     unit,
     viewable,
@@ -17,7 +17,7 @@ export const factoryFor = (
     {},
     schema,
     {
-      type: type || schema.type,
+      object: object || schema.object,
       view: factoryDisplay || view || schema.view,
       unit: unit || schema.unit,
       viewable: viewable || schema.viewable,

@@ -5,7 +5,7 @@ export default {
   view: HEXA,
   viewable: [HEX, HEXA, RGB, RGBA],
   reference: null,
-  type: SWATCH,
+  object: SWATCH,
   unit: HEXA,
   content: []
 }

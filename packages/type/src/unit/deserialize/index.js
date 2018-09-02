@@ -5,6 +5,6 @@ const deserializers = {
 }
 
 const deserialize = (unit, attribute, theme) =>
-  deserializers[unit.type](unit, attribute, theme)
+  deserializers[unit.object](unit, attribute, theme)
 
 export default deserialize

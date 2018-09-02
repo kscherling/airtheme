@@ -5,6 +5,6 @@ export default {
   view: STRING,
   viewable: [STRING],
   reference: null,
-  type: FONT_WEIGHT,
+  object: FONT_WEIGHT,
   unit: STRING
 }

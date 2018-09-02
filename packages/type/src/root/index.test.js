@@ -6,11 +6,11 @@ it('creates `setting`', () => {
   const result = root.base()
 
   expect(result).toEqual({
-    type: 'root',
+    object: 'root',
     baseFontSize: {
       content: [],
       reference: null,
-      type: 'baseFontSize',
+      object: 'baseFontSize',
       unit: 'px',
       view: 'px',
       viewable: ['px']
@@ -18,7 +18,7 @@ it('creates `setting`', () => {
     baseLineHeight: {
       content: [],
       reference: 'baseFontSize',
-      type: 'baseLineHeight',
+      object: 'baseLineHeight',
       unit: 'px',
       view: 'px',
       viewable: ['factor', 'px']
@@ -26,7 +26,7 @@ it('creates `setting`', () => {
     baseSpacing: {
       content: [],
       reference: null,
-      type: 'baseSpacing',
+      object: 'baseSpacing',
       unit: 'px',
       view: 'px',
       viewable: ['px']
@@ -42,11 +42,11 @@ it('can initialize with custom `attribute`', () => {
   })
 
   expect(result).toEqual({
-    type: 'root',
+    object: 'root',
     baseFontSize: {
       content: { some: 'data' },
       reference: null,
-      type: 'baseFontSize',
+      object: 'baseFontSize',
       unit: 'px',
       view: 'px',
       viewable: ['px']
@@ -54,7 +54,7 @@ it('can initialize with custom `attribute`', () => {
     baseLineHeight: {
       content: [],
       reference: 'baseFontSize',
-      type: 'baseLineHeight',
+      object: 'baseLineHeight',
       unit: 'px',
       view: 'px',
       viewable: ['factor', 'px']
@@ -62,7 +62,7 @@ it('can initialize with custom `attribute`', () => {
     baseSpacing: {
       content: [],
       reference: null,
-      type: 'baseSpacing',
+      object: 'baseSpacing',
       unit: 'px',
       view: 'px',
       viewable: ['px']

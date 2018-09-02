@@ -4,6 +4,6 @@ export default {
   view: PX,
   viewable: [PX],
   reference: null,
-  type: BASE_SPACING,
+  object: BASE_SPACING,
   unit: PX
 }

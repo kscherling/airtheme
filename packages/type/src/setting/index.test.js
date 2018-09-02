@@ -6,13 +6,13 @@ it('creates `setting`', () => {
   const result = setting.base()
 
   expect(result).toEqual({
-    type: 'setting',
+    object: 'setting',
     color: {
       content: [],
       view: 'reference',
       viewable: ['reference', 'hex', 'hexa', 'rgb', 'rgba'],
       reference: 'swatch',
-      type: 'color',
+      object: 'color',
       unit: 'reference'
     },
     fontFamily: {
@@ -20,7 +20,7 @@ it('creates `setting`', () => {
       view: 'reference',
       viewable: ['reference', 'string'],
       reference: 'fontFace',
-      type: 'fontFamily',
+      object: 'fontFamily',
       unit: 'reference'
     },
     fontSize: {
@@ -28,7 +28,7 @@ it('creates `setting`', () => {
       view: 'factor',
       viewable: ['factor', 'px', 'rem'],
       reference: 'baseFontSize',
-      type: 'fontSize',
+      object: 'fontSize',
       unit: 'factor'
     },
     fontWeight: {
@@ -36,7 +36,7 @@ it('creates `setting`', () => {
       view: 'string',
       viewable: ['string'],
       reference: null,
-      type: 'fontWeight',
+      object: 'fontWeight',
       unit: 'string'
     },
     spacing: {
@@ -44,7 +44,7 @@ it('creates `setting`', () => {
       view: 'factor',
       viewable: ['factor', 'px'],
       reference: 'baseSpacing',
-      type: 'spacing',
+      object: 'spacing',
       unit: 'factor'
     }
   })
@@ -58,11 +58,11 @@ it('can initialize with custom `attribute`', () => {
   })
 
   expect(result.color).toEqual({
-    content: [{ name: null, ordinal: null, type: 'hexa', value: '#000000, 1' }],
+    content: [{ name: null, ordinal: null, object: 'hexa', value: '#000000, 1' }],
     view: 'reference',
     viewable: ['reference', 'hex', 'hexa', 'rgb', 'rgba'],
     reference: 'swatch',
-    type: 'color',
+    object: 'color',
     unit: 'reference'
   })
 })

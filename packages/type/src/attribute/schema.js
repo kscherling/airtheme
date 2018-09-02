@@ -1,7 +1,7 @@
 import { _ROOT_ATTRIBUTE_ } from '@airtheme/core'
 
 // Attribute
-// type for a theme attribute, has many units
+// object for a theme attribute, has many units
 
 export default {
   // content
@@ -15,7 +15,7 @@ export default {
   view: null,
 
   // viewable
-  // Array : Units this type can serialize to.
+  // Array : Units this object can serialize to.
 
   viewable: [],
 
@@ -24,10 +24,10 @@ export default {
 
   reference: null,
 
-  // type
-  // The name of the type. The same as the 'class'
+  // object
+  // The name of the object. The same as the 'class'
 
-  type: _ROOT_ATTRIBUTE_,
+  object: _ROOT_ATTRIBUTE_,
 
   // unit
   // The unit the content items are stored. Static.
