@@ -11,11 +11,16 @@ import {
 } from '@airtheme/make'
 import { AttributeContent, Attribute, AddUnit } from '../lib/ModifyTypes'
 
-const FontFamilyAttribute = connect(mapFontFamily)(
-  ({ fontFamily: { view, viewable } }) => (
-    <Attribute view={view} viewable={viewable} />
-  )
-)
+const FontFamilyAttribute = connect(
+  mapFontFamily,
+  { updateFontFamilyView }
+)(({ fontFamily: { view, viewable }, updateFontFamilyView }) => (
+  <Attribute
+    view={view}
+    viewable={viewable}
+    updateView={updateFontFamilyView}
+  />
+))
 
 const FontFamilyContent = connect(
   mapFontFamilyContent,

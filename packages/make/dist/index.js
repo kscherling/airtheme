@@ -793,6 +793,7 @@ var fontSize = function fontSize() {
 var ADD_FONT_FAMILY = 'ADD_FONT_FAMILY';
 var REMOVE_FONT_FAMILY = 'REMOVE_FONT_FAMILY';
 var UPDATE_FONT_FAMILY = 'UPDATE_FONT_FAMILY';
+var UPDATE_FONT_FAMILY_VIEW = 'UPDATE_FONT_FAMILY_VIEW';
 
 var fontFamily = function fontFamily() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : type.attribute.fontFamily();
@@ -801,6 +802,11 @@ var fontFamily = function fontFamily() {
   switch (action.type) {
     case UPDATE_THEME:
       return action.theme.setting.fontFamily;
+
+    case UPDATE_FONT_FAMILY_VIEW:
+      return _objectSpread({}, state, {
+        view: action.view
+      });
 
     case ADD_FONT_FAMILY:
       return addUnit(state, action);
@@ -1184,6 +1190,12 @@ var updateColor = function updateColor(original, updated) {
   };
 };
 
+var updateFontFamilyView = function updateFontFamilyView(view) {
+  return {
+    type: UPDATE_FONT_FAMILY_VIEW,
+    view: view
+  };
+};
 var addFontFamily = function addFontFamily(value, name, ordinal) {
   return {
     type: ADD_FONT_FAMILY,
@@ -3123,141 +3135,147 @@ var MakeProvider = function MakeProvider(_ref) {
   }, children);
 };
 
-var mapBaseFontSize = function mapBaseFontSize(_ref) {
-  var baseFontSize = _ref.theme.baseFontSize;
+var mapTheme = function mapTheme(_ref) {
+  var theme = _ref.theme;
+  return {
+    theme: theme
+  };
+};
+var mapBaseFontSize = function mapBaseFontSize(_ref2) {
+  var baseFontSize = _ref2.theme.baseFontSize;
   return {
     baseFontSize: baseFontSize
   };
 }; // prettier-ignore
 
-var mapBaseLineHeight = function mapBaseLineHeight(_ref2) {
-  var baseLineHeight = _ref2.theme.baseLineHeight;
+var mapBaseLineHeight = function mapBaseLineHeight(_ref3) {
+  var baseLineHeight = _ref3.theme.baseLineHeight;
   return {
     baseLineHeight: baseLineHeight
   };
 }; // prettier-ignore
 
-var mapBaseSpacing = function mapBaseSpacing(_ref3) {
-  var baseSpacing = _ref3.theme.baseSpacing;
+var mapBaseSpacing = function mapBaseSpacing(_ref4) {
+  var baseSpacing = _ref4.theme.baseSpacing;
   return {
     baseSpacing: baseSpacing
   };
 };
-var mapId = function mapId(_ref4) {
-  var id = _ref4.theme.id;
+var mapId = function mapId(_ref5) {
+  var id = _ref5.theme.id;
   return {
     id: id
   };
 };
-var mapName = function mapName(_ref5) {
-  var name = _ref5.theme.name;
+var mapName = function mapName(_ref6) {
+  var name = _ref6.theme.name;
   return {
     name: name
   };
 };
-var mapType = function mapType(_ref6) {
-  var type$$1 = _ref6.theme.type;
+var mapType = function mapType(_ref7) {
+  var type$$1 = _ref7.theme.type;
   return {
     type: type$$1
   };
 };
-var mapVersion = function mapVersion(_ref7) {
-  var version = _ref7.theme.version;
+var mapVersion = function mapVersion(_ref8) {
+  var version = _ref8.theme.version;
   return {
     version: version
   };
 };
-var mapFontFace = function mapFontFace(_ref8) {
-  var fontFace = _ref8.theme.fontFace;
+var mapFontFace = function mapFontFace(_ref9) {
+  var fontFace = _ref9.theme.fontFace;
   return {
     fontFace: fontFace
   };
 };
-var mapFontFaceContent = function mapFontFaceContent(_ref9) {
-  var content = _ref9.theme.fontFace.content;
+var mapFontFaceContent = function mapFontFaceContent(_ref10) {
+  var content = _ref10.theme.fontFace.content;
   return {
     content: content
   };
 }; //prettier-ignore
 
-var mapSwatch = function mapSwatch(_ref10) {
-  var swatch = _ref10.theme.swatch;
+var mapSwatch = function mapSwatch(_ref11) {
+  var swatch = _ref11.theme.swatch;
   return {
     swatch: swatch
   };
 };
-var mapSwatchContent = function mapSwatchContent(_ref11) {
-  var content = _ref11.theme.swatch.content;
+var mapSwatchContent = function mapSwatchContent(_ref12) {
+  var content = _ref12.theme.swatch.content;
   return {
     content: content
   };
 }; // prettier-ignore
 
-var mapColor = function mapColor(_ref12) {
-  var color = _ref12.theme.setting.color;
+var mapColor = function mapColor(_ref13) {
+  var color = _ref13.theme.setting.color;
   return {
     color: color
   };
 }; // prettier-ignore
 
-var mapColorContent = function mapColorContent(_ref13) {
-  var content = _ref13.theme.setting.color.content;
+var mapColorContent = function mapColorContent(_ref14) {
+  var content = _ref14.theme.setting.color.content;
   return {
     content: content
   };
 }; // prettier-ignore
 
-var mapFontFamily = function mapFontFamily(_ref14) {
-  var fontFamily = _ref14.theme.setting.fontFamily;
+var mapFontFamily = function mapFontFamily(_ref15) {
+  var fontFamily = _ref15.theme.setting.fontFamily;
   return {
     fontFamily: fontFamily
   };
 }; // prettier-ignore
 
-var mapFontFamilyContent = function mapFontFamilyContent(_ref15) {
-  var content = _ref15.theme.setting.fontFamily.content;
+var mapFontFamilyContent = function mapFontFamilyContent(_ref16) {
+  var content = _ref16.theme.setting.fontFamily.content;
   return {
     content: content
   };
 }; // prettier-ignore
 
-var mapFontSize = function mapFontSize(_ref16) {
-  var fontSize = _ref16.theme.setting.fontSize;
+var mapFontSize = function mapFontSize(_ref17) {
+  var fontSize = _ref17.theme.setting.fontSize;
   return {
     fontSize: fontSize
   };
 }; // prettier-ignore
 
-var mapFontSizeContent = function mapFontSizeContent(_ref17) {
-  var content = _ref17.theme.setting.fontSize.content;
+var mapFontSizeContent = function mapFontSizeContent(_ref18) {
+  var content = _ref18.theme.setting.fontSize.content;
   return {
     content: content
   };
 }; // prettier-ignore
 
-var mapFontWeight = function mapFontWeight(_ref18) {
-  var fontWeight = _ref18.theme.setting.fontWeight;
+var mapFontWeight = function mapFontWeight(_ref19) {
+  var fontWeight = _ref19.theme.setting.fontWeight;
   return {
     fontWeight: fontWeight
   };
 }; // prettier-ignore
 
-var mapFontWeightContent = function mapFontWeightContent(_ref19) {
-  var content = _ref19.theme.setting.fontWeight.content;
+var mapFontWeightContent = function mapFontWeightContent(_ref20) {
+  var content = _ref20.theme.setting.fontWeight.content;
   return {
     content: content
   };
 }; // prettier-ignore
 
-var mapSpacing = function mapSpacing(_ref20) {
-  var spacing = _ref20.theme.setting.spacing;
+var mapSpacing = function mapSpacing(_ref21) {
+  var spacing = _ref21.theme.setting.spacing;
   return {
     spacing: spacing
   };
 }; // prettier-ignore
 
-var mapSpacingContent = function mapSpacingContent(_ref21) {
-  var content = _ref21.theme.setting.spacing.content;
+var mapSpacingContent = function mapSpacingContent(_ref22) {
+  var content = _ref22.theme.setting.spacing.content;
   return {
     content: content
   };
@@ -3546,6 +3564,7 @@ exports.updateColorView = updateColorView;
 exports.addColor = addColor;
 exports.removeColor = removeColor;
 exports.updateColor = updateColor;
+exports.updateFontFamilyView = updateFontFamilyView;
 exports.addFontFamily = addFontFamily;
 exports.removeFontFamily = removeFontFamily;
 exports.updateFontFamily = updateFontFamily;
@@ -3560,6 +3579,7 @@ exports.updateSpacingView = updateSpacingView;
 exports.addSpacing = addSpacing;
 exports.removeSpacing = removeSpacing;
 exports.updateSpacing = updateSpacing;
+exports.mapTheme = mapTheme;
 exports.mapBaseFontSize = mapBaseFontSize;
 exports.mapBaseLineHeight = mapBaseLineHeight;
 exports.mapBaseSpacing = mapBaseSpacing;

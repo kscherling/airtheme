@@ -11,5 +11,13 @@
   },
   "dependencies": {
     "@airtheme/core": "^0.1.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.14.2"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "bracketSpacing": true
   }
 }

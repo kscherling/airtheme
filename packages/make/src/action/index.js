@@ -27,6 +27,7 @@ export {
 } from './theme/setting/color'
 
 export {
+  updateFontFamilyView,
   addFontFamily,
   removeFontFamily,
   updateFontFamily

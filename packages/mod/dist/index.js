@@ -429,13 +429,17 @@ var FontFace = function FontFace() {
   return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Font Face"), React__default.createElement(FontFaceAttribute, null), React__default.createElement(FontFaceContent, null));
 };
 
-var FontFamilyAttribute = reactRedux.connect(make.mapFontFamily)(function (_ref) {
+var FontFamilyAttribute = reactRedux.connect(make.mapFontFamily, {
+  updateFontFamilyView: make.updateFontFamilyView
+})(function (_ref) {
   var _ref$fontFamily = _ref.fontFamily,
       view = _ref$fontFamily.view,
-      viewable = _ref$fontFamily.viewable;
+      viewable = _ref$fontFamily.viewable,
+      updateFontFamilyView = _ref.updateFontFamilyView;
   return React__default.createElement(Attribute, {
     view: view,
-    viewable: viewable
+    viewable: viewable,
+    updateView: updateFontFamilyView
   });
 });
 var FontFamilyContent = reactRedux.connect(make.mapFontFamilyContent, {

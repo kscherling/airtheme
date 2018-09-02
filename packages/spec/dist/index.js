@@ -219,23 +219,6 @@ var FontFace = function FontFace() {
   return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "FontFace"), React__default.createElement(FontFaceAttribute, null), React__default.createElement(FontFaceContent, null));
 };
 
-var ColorAttribute = reactRedux.connect(make.mapColor)(function (_ref) {
-  var color = _ref.color;
-  return React__default.createElement(Attribute, {
-    attribute: color
-  });
-});
-var ColorContent = reactRedux.connect(make.mapColorContent)(function (_ref2) {
-  var content = _ref2.content;
-  return React__default.createElement(AttributeContent, {
-    content: content
-  });
-});
-
-var Color = function Color() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Color"), React__default.createElement(ColorAttribute, null), React__default.createElement(ColorContent, null));
-};
-
 var FontFamilyAttribute = reactRedux.connect(make.mapFontFamily)(function (_ref) {
   var fontFamily = _ref.fontFamily;
   return React__default.createElement(Attribute, {
@@ -285,6 +268,23 @@ var FontWeightContent = reactRedux.connect(make.mapFontWeightContent)(function (
 
 var FontWeight = function FontWeight() {
   return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Font Weight"), React__default.createElement(FontWeightAttribute, null), React__default.createElement(FontWeightContent, null));
+};
+
+var ColorAttribute = reactRedux.connect(make.mapColor)(function (_ref) {
+  var color = _ref.color;
+  return React__default.createElement(Attribute, {
+    attribute: color
+  });
+});
+var ColorContent = reactRedux.connect(make.mapColorContent)(function (_ref2) {
+  var content = _ref2.content;
+  return React__default.createElement(AttributeContent, {
+    content: content
+  });
+});
+
+var Color = function Color() {
+  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Color"), React__default.createElement(ColorAttribute, null), React__default.createElement(ColorContent, null));
 };
 
 var SpacingAttribute = reactRedux.connect(make.mapSpacing)(function (_ref) {

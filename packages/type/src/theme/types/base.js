@@ -7,7 +7,7 @@ export default {
   name: 'Basic Airtheme',
   type: BASIC,
   baseFontSize: 16,
-  baseLineHeight: 1.15,
+  baseLineHeight: 16,
   baseSpacing: 16,
   version: VERSION
 }

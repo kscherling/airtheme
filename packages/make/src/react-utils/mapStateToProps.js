@@ -1,3 +1,5 @@
+export const mapTheme = ({ theme }) => ({ theme })
+
 export const mapBaseFontSize = ({ theme: { baseFontSize } }) => ({ baseFontSize }) // prettier-ignore
 export const mapBaseLineHeight = ({ theme: { baseLineHeight } }) => ({ baseLineHeight }) // prettier-ignore
 export const mapBaseSpacing = ({ theme: { baseSpacing } }) => ({ baseSpacing })

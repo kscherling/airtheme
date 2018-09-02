@@ -79,8 +79,8 @@ var color = {
 
 var fontFamily = {
   view: core.REFERENCE,
-  viewable: [core.REFERENCE],
-  reference: null,
+  viewable: [core.REFERENCE, core.STRING],
+  reference: core.FONT_FACE,
   type: core.FONT_FAMILY,
   unit: core.REFERENCE
 };
@@ -227,7 +227,7 @@ var base$1 = {
   name: 'Basic Airtheme',
   type: core.BASIC,
   baseFontSize: 16,
-  baseLineHeight: 1.15,
+  baseLineHeight: 16,
   baseSpacing: 16,
   version: core.VERSION
 };
@@ -393,3 +393,4 @@ exports.factoryForAttribute = factoryFor;
 exports.unit = unit;
 exports.unitSchema = schema$3;
 exports.factoryForUnit = factoryFor$3;
+//# sourceMappingURL=index.js.map
