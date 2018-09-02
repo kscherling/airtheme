@@ -34,7 +34,6 @@ const SpacingContent = connect(
 
 const Spacing = () => (
   <SimpleList.OneColumn>
-    <SimpleList.Header>Spacing</SimpleList.Header>
     <SpacingAttribute />
     <SpacingContent />
   </SimpleList.OneColumn>

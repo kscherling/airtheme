@@ -12,7 +12,6 @@ const SpacingContent = connect(mapSpacingContent)(({ content }) => (
 
 const Spacing = () => (
   <SimpleList.OneColumn>
-    <SimpleList.Header>Spacing</SimpleList.Header>
     <SpacingAttribute />
     <SpacingContent />
   </SimpleList.OneColumn>

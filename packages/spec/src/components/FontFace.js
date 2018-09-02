@@ -12,7 +12,6 @@ const FontFaceContent = connect(mapFontFaceContent)(({ content }) => (
 
 const FontFace = () => (
   <SimpleList.OneColumn>
-    <SimpleList.Header>FontFace</SimpleList.Header>
     <FontFaceAttribute />
     <FontFaceContent />
   </SimpleList.OneColumn>

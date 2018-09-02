@@ -12,7 +12,6 @@ const ColorContent = connect(mapColorContent)(({ content }) => (
 
 const Color = () => (
   <SimpleList.OneColumn>
-    <SimpleList.Header>Color</SimpleList.Header>
     <ColorAttribute />
     <ColorContent />
   </SimpleList.OneColumn>

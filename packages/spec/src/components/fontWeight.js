@@ -12,7 +12,6 @@ const FontWeightContent = connect(mapFontWeightContent)(({ content }) => (
 
 const FontWeight = () => (
   <SimpleList.OneColumn>
-    <SimpleList.Header>Font Weight</SimpleList.Header>
     <FontWeightAttribute />
     <FontWeightContent />
   </SimpleList.OneColumn>

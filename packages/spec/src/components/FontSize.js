@@ -12,7 +12,6 @@ const FontSizeContent = connect(mapFontSizeContent)(({ content }) => (
 
 const FontSize = () => (
   <SimpleList.OneColumn>
-    <SimpleList.Header>Font Size</SimpleList.Header>
     <FontSizeAttribute />
     <FontSizeContent />
   </SimpleList.OneColumn>

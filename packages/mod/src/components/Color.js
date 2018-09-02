@@ -34,7 +34,6 @@ const ColorContent = connect(
 
 const Color = () => (
   <SimpleList.OneColumn>
-    <SimpleList.Header>Color</SimpleList.Header>
     <ColorAttribute />
     <ColorContent />
   </SimpleList.OneColumn>

@@ -32,7 +32,6 @@ const FontFaceContent = connect(
 
 const FontFace = () => (
   <SimpleList.OneColumn>
-    <SimpleList.Header>Font Face</SimpleList.Header>
     <FontFaceAttribute />
     <FontFaceContent />
   </SimpleList.OneColumn>

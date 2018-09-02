@@ -12,7 +12,6 @@ const FontFamilyContent = connect(mapFontFamilyContent)(({ content }) => (
 
 const FontFamily = () => (
   <SimpleList.OneColumn>
-    <SimpleList.Header>Font Family</SimpleList.Header>
     <FontFamilyAttribute />
     <FontFamilyContent />
   </SimpleList.OneColumn>

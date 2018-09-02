@@ -437,7 +437,7 @@ var FontFaceContent = reactRedux.connect(make.mapFontFaceContent, {
 });
 
 var FontFace = function FontFace() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Font Face"), React__default.createElement(FontFaceAttribute, null), React__default.createElement(FontFaceContent, null));
+  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(FontFaceAttribute, null), React__default.createElement(FontFaceContent, null));
 };
 
 var FontFamilyAttribute = reactRedux.connect(make.mapFontFamily, {
@@ -473,7 +473,7 @@ var FontFamilyContent = reactRedux.connect(make.mapFontFamilyContent, {
 });
 
 var FontFamily = function FontFamily() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Font Family"), React__default.createElement(FontFamilyAttribute, null), React__default.createElement(FontFamilyContent, null));
+  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(FontFamilyAttribute, null), React__default.createElement(FontFamilyContent, null));
 };
 
 var FontSizeAttribute = reactRedux.connect(make.mapFontSize, {
@@ -509,7 +509,7 @@ var FontSizeContent = reactRedux.connect(make.mapFontSizeContent, {
 });
 
 var FontSize = function FontSize() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Font Size"), React__default.createElement(FontSizeAttribute, null), React__default.createElement(FontSizeContent, null));
+  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(FontSizeAttribute, null), React__default.createElement(FontSizeContent, null));
 };
 
 var FontWeightAttribute = reactRedux.connect(make.mapFontWeight)(function (_ref) {
@@ -541,7 +541,7 @@ var FontWeightContent = reactRedux.connect(make.mapFontWeightContent, {
 });
 
 var FontWeight = function FontWeight() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Font Weight"), React__default.createElement(FontWeightAttribute, null), React__default.createElement(FontWeightContent, null));
+  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(FontWeightAttribute, null), React__default.createElement(FontWeightContent, null));
 };
 
 var ColorAttribute = reactRedux.connect(make.mapColor, {
@@ -577,7 +577,7 @@ var ColorContent = reactRedux.connect(make.mapColorContent, {
 });
 
 var Color = function Color() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Color"), React__default.createElement(ColorAttribute, null), React__default.createElement(ColorContent, null));
+  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(ColorAttribute, null), React__default.createElement(ColorContent, null));
 };
 
 var SpacingAttribute = reactRedux.connect(make.mapSpacing, {
@@ -613,7 +613,7 @@ var SpacingContent = reactRedux.connect(make.mapSpacingContent, {
 });
 
 var Spacing = function Spacing() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Spacing"), React__default.createElement(SpacingAttribute, null), React__default.createElement(SpacingContent, null));
+  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(SpacingAttribute, null), React__default.createElement(SpacingContent, null));
 };
 
 var BaseFontSizeAttribute = reactRedux.connect(make.mapBaseFontSize)(function (_ref) {
