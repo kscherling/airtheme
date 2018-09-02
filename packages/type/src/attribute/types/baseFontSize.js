@@ -1,5 +1,4 @@
-import { BASE_FONT_SIZE } from '@airtheme/core'
-import { PX } from '@airtheme/core'
+import { BASE_FONT_SIZE, PX } from '@airtheme/core'
 
 export default {
   view: PX,

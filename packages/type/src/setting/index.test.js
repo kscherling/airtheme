@@ -6,6 +6,7 @@ it('creates `setting`', () => {
   const result = setting.base()
 
   expect(result).toEqual({
+    type: 'setting',
     color: {
       content: [],
       view: 'reference',

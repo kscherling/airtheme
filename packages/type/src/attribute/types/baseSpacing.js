@@ -1,10 +1,9 @@
-import { BASE_SPACING } from '@airtheme/core'
-import { PX } from '@airtheme/core'
+import { BASE_SPACING, PX } from '@airtheme/core'
 
 export default {
   view: PX,
   viewable: [PX],
   reference: null,
-  type: BASE_FONT_SIZE,
+  type: BASE_SPACING,
   unit: PX
 }

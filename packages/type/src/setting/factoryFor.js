@@ -11,7 +11,7 @@ export const factoryFor = ({
   fontSize: instanceFontSize,
   fontWeight: instanceFontWeight,
   spacing: instanceSpacing
-} = {}) => Object.assign({}, {
+} = {}) => Object.assign({}, schema, {
   color: instanceColor || color || schema.color,
   fontFamily: instanceFontFamily || fontFamily || schema.fontFamily,
   fontSize: instanceFontSize || fontSize || schema.fontSize,

@@ -134,8 +134,35 @@ var swatch = {
   content: []
 };
 
+var baseSpacing = {
+  view: core.PX,
+  viewable: [core.PX],
+  reference: null,
+  type: core.BASE_SPACING,
+  unit: core.PX
+};
+
+var baseLineHeight = {
+  view: core.PX,
+  viewable: [core.FACTOR, core.PX],
+  reference: core.BASE_FONT_SIZE_PATH,
+  type: core.BASE_LINE_HEIGHT,
+  unit: core.PX
+};
+
+var baseFontSize = {
+  view: core.PX,
+  viewable: [core.PX],
+  reference: null,
+  type: core.BASE_FONT_SIZE,
+  unit: core.PX
+};
+
 var _attribute;
 var attribute = (_attribute = {
+  baseFontSize: factoryFor(baseFontSize, schema),
+  baseSpacing: factoryFor(baseSpacing, schema),
+  baseLineHeight: factoryFor(baseLineHeight, schema),
   color: factoryFor(color, schema),
   fontFamily: factoryFor(fontFamily, schema),
   fontSize: factoryFor(fontSize, schema),
@@ -144,15 +171,17 @@ var attribute = (_attribute = {
   fontFace: factoryFor(fontFace, schema)
 }, _defineProperty(_attribute, "fontFamily", factoryFor(fontFamily, schema)), _defineProperty(_attribute, "spacing", factoryFor(spacing, schema)), _defineProperty(_attribute, "swatch", factoryFor(swatch, schema)), _attribute);
 
-var _COLOR_KEY$FONT_FAMIL;
+var _type$COLOR_KEY$FONT_;
 // Settings hash
 
-var schema$1 = (_COLOR_KEY$FONT_FAMIL = {}, _defineProperty(_COLOR_KEY$FONT_FAMIL, core.COLOR_KEY, {}), _defineProperty(_COLOR_KEY$FONT_FAMIL, core.FONT_FAMILY_KEY, {}), _defineProperty(_COLOR_KEY$FONT_FAMIL, core.FONT_SIZE_KEY, {}), _defineProperty(_COLOR_KEY$FONT_FAMIL, core.FONT_WEIGHT_KEY, {}), _defineProperty(_COLOR_KEY$FONT_FAMIL, core.SPACING_KEY, {}), _COLOR_KEY$FONT_FAMIL);
+var schema$1 = (_type$COLOR_KEY$FONT_ = {
+  type: core._THEME_SETTING_
+}, _defineProperty(_type$COLOR_KEY$FONT_, core.COLOR_KEY, {}), _defineProperty(_type$COLOR_KEY$FONT_, core.FONT_FAMILY_KEY, {}), _defineProperty(_type$COLOR_KEY$FONT_, core.FONT_SIZE_KEY, {}), _defineProperty(_type$COLOR_KEY$FONT_, core.FONT_WEIGHT_KEY, {}), _defineProperty(_type$COLOR_KEY$FONT_, core.SPACING_KEY, {}), _type$COLOR_KEY$FONT_);
 
-var _COLOR_KEY$FONT_FAMIL$1;
+var _COLOR_KEY$FONT_FAMIL;
 // The base setting object
 
-var base = (_COLOR_KEY$FONT_FAMIL$1 = {}, _defineProperty(_COLOR_KEY$FONT_FAMIL$1, core.COLOR_KEY, attribute.color()), _defineProperty(_COLOR_KEY$FONT_FAMIL$1, core.FONT_FAMILY_KEY, attribute.fontFamily()), _defineProperty(_COLOR_KEY$FONT_FAMIL$1, core.FONT_SIZE_KEY, attribute.fontSize()), _defineProperty(_COLOR_KEY$FONT_FAMIL$1, core.FONT_WEIGHT_KEY, attribute.fontWeight()), _defineProperty(_COLOR_KEY$FONT_FAMIL$1, core.SPACING_KEY, attribute.spacing()), _COLOR_KEY$FONT_FAMIL$1);
+var base = (_COLOR_KEY$FONT_FAMIL = {}, _defineProperty(_COLOR_KEY$FONT_FAMIL, core.COLOR_KEY, attribute.color()), _defineProperty(_COLOR_KEY$FONT_FAMIL, core.FONT_FAMILY_KEY, attribute.fontFamily()), _defineProperty(_COLOR_KEY$FONT_FAMIL, core.FONT_SIZE_KEY, attribute.fontSize()), _defineProperty(_COLOR_KEY$FONT_FAMIL, core.FONT_WEIGHT_KEY, attribute.fontWeight()), _defineProperty(_COLOR_KEY$FONT_FAMIL, core.SPACING_KEY, attribute.spacing()), _COLOR_KEY$FONT_FAMIL);
 
 // prettier-ignore
 var factoryFor$1 = function factoryFor() {
@@ -172,7 +201,7 @@ var factoryFor$1 = function factoryFor() {
         instanceFontWeight = _ref2.fontWeight,
         instanceSpacing = _ref2.spacing;
 
-    return Object.assign({}, {
+    return Object.assign({}, schema, {
       color: instanceColor || color || schema.color,
       fontFamily: instanceFontFamily || fontFamily || schema.fontFamily,
       fontSize: instanceFontSize || fontSize || schema.fontSize,

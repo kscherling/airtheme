@@ -1,5 +1,9 @@
-import { BASE_LINE_HEIGHT, BASE_FONT_SIZE_PATH } from '@airtheme/core'
-import { PX } from '@airtheme/core'
+import {
+  BASE_LINE_HEIGHT,
+  BASE_FONT_SIZE_PATH,
+  PX,
+  FACTOR
+} from '@airtheme/core'
 
 export default {
   view: PX,

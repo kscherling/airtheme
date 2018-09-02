@@ -42,6 +42,10 @@ var UTILITY_PATH = UTILITY_KEY;
 var _ROOT_THEME_ = 'airtheme';
 var BASIC = 'airthemeBasic';
 
+var _THEME_SETTING_ = 'setting';
+
+var _THEME_ROOT_ = 'root';
+
 var _ROOT_UNIT_ = 'unit';
 var STRING = 'string';
 var FACTOR = 'factor';
@@ -96,6 +100,8 @@ exports.SWATCH_PATH = SWATCH_PATH;
 exports.UTILITY_PATH = UTILITY_PATH;
 exports._ROOT_THEME_ = _ROOT_THEME_;
 exports.BASIC = BASIC;
+exports._THEME_SETTING_ = _THEME_SETTING_;
+exports._THEME_ROOT_ = _THEME_ROOT_;
 exports._ROOT_UNIT_ = _ROOT_UNIT_;
 exports.STRING = STRING;
 exports.FACTOR = FACTOR;

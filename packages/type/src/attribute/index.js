@@ -8,8 +8,14 @@ import fontWeight from './types/fontWeight'
 import lineHeight from './types/lineHeight'
 import spacing from './types/spacing'
 import swatch from './types/swatch'
+import baseSpacing from './types/baseSpacing'
+import baseLineHeight from './types/baseLineHeight'
+import baseFontSize from './types/baseFontSize'
 
 const attribute = {
+  baseFontSize: factoryFor(baseFontSize, schema),
+  baseSpacing: factoryFor(baseSpacing, schema),
+  baseLineHeight: factoryFor(baseLineHeight, schema),
   color: factoryFor(color, schema),
   fontFamily: factoryFor(fontFamily, schema),
   fontSize: factoryFor(fontSize, schema),
