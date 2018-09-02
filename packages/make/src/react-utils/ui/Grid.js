@@ -7,21 +7,33 @@ const Grid = styled.div`
   display: grid;
   width: 100%;
 
-  ${({gridGap}) => gridGap && css`
-    grid-gap: ${gridGap};
-  `}
+  ${({ gridGap }) =>
+    gridGap &&
+    css`
+      grid-gap: ${gridGap};
+    `}
 
-  ${({gridTemplateColumns}) => gridTemplateColumns && css`
-    grid-template-columns: ${gridTemplateColumns}
-  `}
+  ${({ gridTemplateColumns }) =>
+    gridTemplateColumns &&
+    css`
+      grid-template-columns: ${gridTemplateColumns};
+    `}
 
-  ${({gridTemplateRows}) => gridTemplateRows && css`
-    grid-template-rows: ${gridTemplateRows}
-  `}
+  ${({ gridTemplateRows }) =>
+    gridTemplateRows &&
+    css`
+      grid-template-rows: ${gridTemplateRows};
+    `}
 
-  ${({paddingBottom}) => paddingBottom && css`
-    padding-bottom: ${paddingBottom};
-  `}
+  ${({ paddingBottom }) =>
+    paddingBottom &&
+    css`
+      padding-bottom: ${paddingBottom};
+    `}
+
+  input, button {
+    width: inherit;
+  }
 `
 
 const OneColumn = styled(Grid).attrs({

@@ -119,7 +119,6 @@ export class AddUnit extends Component {
 
 export const Attribute = ({ view, viewable, updateView = noop }) => (
   <SimpleList.OneColumn padding="1rem 0">
-    <SimpleList.Subheader>View</SimpleList.Subheader>
     <SimpleTabs>
       {viewable.map((unit, idx) => (
         <SimpleTabs.Tab
@@ -136,7 +135,6 @@ export const Attribute = ({ view, viewable, updateView = noop }) => (
 
 export const AttributeContent = ({ content = [], update, remove }) => (
   <SimpleList.OneColumn>
-    <SimpleList.Subheader>Content</SimpleList.Subheader>
     {content.length ? (
       content.map((unit, idx) => (
         <Unit key={idx} unit={unit} update={update} remove={remove} />

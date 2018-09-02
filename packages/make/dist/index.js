@@ -3400,7 +3400,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n    padding-bottom: ", ";\n  "]);
+  var data = _taggedTemplateLiteral(["\n      padding-bottom: ", ";\n    "]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -3410,7 +3410,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n    grid-template-rows: ", "\n  "]);
+  var data = _taggedTemplateLiteral(["\n      grid-template-rows: ", ";\n    "]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -3420,7 +3420,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n    grid-template-columns: ", "\n  "]);
+  var data = _taggedTemplateLiteral(["\n      grid-template-columns: ", ";\n    "]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -3430,7 +3430,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n    grid-gap: ", ";\n  "]);
+  var data = _taggedTemplateLiteral(["\n      grid-gap: ", ";\n    "]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -3440,7 +3440,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  width: 100%;\n\n  ", "\n\n  ", "\n\n  ", "\n\n  ", "\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  width: 100%;\n\n  ", "\n\n  ", "\n\n  ", "\n\n  ", "\n\n  input, button {\n    width: inherit;\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;

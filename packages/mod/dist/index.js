@@ -299,7 +299,7 @@ var Attribute = function Attribute(_ref4) {
       updateView = _ref4$updateView === void 0 ? noop : _ref4$updateView;
   return React__default.createElement(make.SimpleList.OneColumn, {
     padding: "1rem 0"
-  }, React__default.createElement(make.SimpleList.Subheader, null, "View"), React__default.createElement(make.SimpleTabs, null, viewable.map(function (unit, idx) {
+  }, React__default.createElement(make.SimpleTabs, null, viewable.map(function (unit, idx) {
     return React__default.createElement(make.SimpleTabs.Tab, {
       key: idx,
       active: view === unit,
@@ -314,7 +314,7 @@ var AttributeContent = function AttributeContent(_ref5) {
       content = _ref5$content === void 0 ? [] : _ref5$content,
       update = _ref5.update,
       remove = _ref5.remove;
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Subheader, null, "Content"), content.length ? content.map(function (unit, idx) {
+  return React__default.createElement(make.SimpleList.OneColumn, null, content.length ? content.map(function (unit, idx) {
     return React__default.createElement(Unit, {
       key: idx,
       unit: unit,
