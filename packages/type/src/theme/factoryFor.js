@@ -7,7 +7,8 @@ const factoryFor = (
     baseSpacing,
     fontFace,
     swatch,
-    setting
+    setting,
+    base
   } = {},
   schema
 ) => ({
@@ -18,7 +19,8 @@ const factoryFor = (
   baseSpacing: instanceBaseSpacing,
   fontFace: instanceFontFace,
   swatch: instanceSwatch,
-  setting: instanceSetting
+  setting: instanceSetting,
+  base: instanceBase
 } = {}) =>
   Object.assign({}, schema, {
     name: instanceName || name || schema.name,
@@ -29,7 +31,8 @@ const factoryFor = (
     baseSpacing: instanceBaseSpacing || baseSpacing || schema.baseSpacing,
     fontFace: instanceFontFace || fontFace || schema.fontFace,
     swatch: instanceSwatch || swatch || schema.swatch,
-    setting: instanceSetting || setting || schema.setting
+    setting: instanceSetting || setting || schema.setting,
+    base: instanceBase || base || schema.base
   })
 
 export default factoryFor

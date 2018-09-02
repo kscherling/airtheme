@@ -44,7 +44,7 @@ var BASIC = 'airthemeBasic';
 
 var _THEME_SETTING_ = 'setting';
 
-var _THEME_ROOT_ = 'root';
+var _THEME_BASE_ = 'base';
 
 var _ROOT_UNIT_ = 'unit';
 var STRING = 'string';
@@ -101,7 +101,7 @@ exports.UTILITY_PATH = UTILITY_PATH;
 exports._ROOT_THEME_ = _ROOT_THEME_;
 exports.BASIC = BASIC;
 exports._THEME_SETTING_ = _THEME_SETTING_;
-exports._THEME_ROOT_ = _THEME_ROOT_;
+exports._THEME_BASE_ = _THEME_BASE_;
 exports._ROOT_UNIT_ = _ROOT_UNIT_;
 exports.STRING = STRING;
 exports.FACTOR = FACTOR;

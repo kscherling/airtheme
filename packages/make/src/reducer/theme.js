@@ -2,6 +2,7 @@ import { combineReducers } from 'redux'
 import swatch from './theme/swatch'
 import fontFace from './theme/fontFace'
 import setting from './theme/setting'
+import base from './theme/base'
 import { themeSchema } from '@airtheme/type'
 import {
   UPDATE_BASE_FONT_SIZE,
@@ -41,7 +42,7 @@ const baseFontSize = (state = '', action) => {
     case UPDATE_THEME:
       return action.theme.baseFontSize || ''
     case UPDATE_BASE_FONT_SIZE:
-      return action.baseFontSize
+      return action.baseFontSize || ''
     default:
       return state
   }
@@ -52,7 +53,7 @@ const baseLineHeight = (state = '', action) => {
     case UPDATE_THEME:
       return action.theme.baseLineHeight || ''
     case UPDATE_BASE_LINE_HEIGHT:
-      return action.baseLineHeight
+      return action.baseLineHeight || ''
     default:
       return state
   }
@@ -63,7 +64,7 @@ const baseSpacing = (state = '', action) => {
     case UPDATE_THEME:
       return action.theme.baseSpacing || ''
     case UPDATE_BASE_SPACING:
-      return action.baseSpacing
+      return action.baseSpacing || ''
     default:
       return state
   }
@@ -97,6 +98,7 @@ export default combineReducers({
   id,
   name,
   setting,
+  base,
   swatch,
   object,
   version

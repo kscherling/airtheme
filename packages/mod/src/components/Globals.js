@@ -13,7 +13,7 @@ import {
   updateBaseSpacing,
   updateThemeId,
   updateThemeName,
-  updateThemeType,
+  updateThemeObject,
   updateThemeVersion,
   Grid,
   SimpleList

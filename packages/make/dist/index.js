@@ -745,6 +745,12 @@ var updateUnit = function updateUnit(state, _ref3) {
     })
   });
 };
+var updateBaseUnit = function updateBaseUnit(state, _ref4) {
+  var updated = _ref4.updated;
+  return _objectSpread({}, state, {
+    content: _objectSpread({}, state.content, updated)
+  });
+};
 
 var swatch = function swatch() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : type.attribute.swatch();
@@ -976,8 +982,85 @@ var setting = combineReducers({
 });
 
 var UPDATE_BASE_FONT_SIZE = 'UPDATE_BASE_FONT_SIZE';
+
+type.attribute.baseFontSize();
+
+var baseFontSize = function baseFontSize() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : type.attribute.baseFontSize();
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case UPDATE_THEME:
+      return action.theme.base.baseFontSize;
+
+    case UPDATE_BASE_FONT_SIZE:
+      console.log(action);
+      return updateBaseUnit(state, action);
+
+    default:
+      return state;
+  }
+};
+
 var UPDATE_BASE_LINE_HEIGHT = 'UPDATE_BASE_LINE_HEIGHT';
+
+var baseFontSize$1 = function baseFontSize() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : type.attribute.baseLineHeight();
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case UPDATE_THEME:
+      return action.theme.base.baseLineHeight;
+
+    case UPDATE_BASE_LINE_HEIGHT:
+      return updateBaseUnit(state, action);
+
+    default:
+      return state;
+  }
+};
+
 var UPDATE_BASE_SPACING = 'UPDATE_BASE_SPACING';
+
+var baseFontSize$2 = function baseFontSize() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : type.attribute.baseSpacing();
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case UPDATE_THEME:
+      return action.theme.base.baseSpacing;
+
+    case UPDATE_BASE_SPACING:
+      return updateBaseUnit(state, action);
+
+    default:
+      return state;
+  }
+};
+
+var object$1 = function object() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : type.baseSchema.object;
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case UPDATE_THEME:
+      return action.theme.base.object;
+
+    default:
+      return state;
+  }
+};
+
+var setting$1 = combineReducers({
+  baseFontSize: baseFontSize,
+  baseLineHeight: baseFontSize$1,
+  baseSpacing: baseFontSize$2,
+  object: object$1
+});
+
+var UPDATE_BASE_FONT_SIZE$1 = 'UPDATE_BASE_FONT_SIZE';
+var UPDATE_BASE_LINE_HEIGHT$1 = 'UPDATE_BASE_LINE_HEIGHT';
+var UPDATE_BASE_SPACING$1 = 'UPDATE_BASE_SPACING';
 var UPDATE_THEME_ID = 'UPDATE_THEME_ID';
 var UPDATE_THEME_TYPE = 'UPDATE_THEME_TYPE';
 var UPDATE_THEME_VERSION = 'UPDATE_THEME_VERSION';
@@ -1015,7 +1098,7 @@ var id$1 = function id() {
   }
 };
 
-var baseFontSize = function baseFontSize() {
+var baseFontSize$3 = function baseFontSize() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
@@ -1023,8 +1106,8 @@ var baseFontSize = function baseFontSize() {
     case UPDATE_THEME:
       return action.theme.baseFontSize || '';
 
-    case UPDATE_BASE_FONT_SIZE:
-      return action.baseFontSize;
+    case UPDATE_BASE_FONT_SIZE$1:
+      return action.baseFontSize || '';
 
     default:
       return state;
@@ -1039,8 +1122,8 @@ var baseLineHeight = function baseLineHeight() {
     case UPDATE_THEME:
       return action.theme.baseLineHeight || '';
 
-    case UPDATE_BASE_LINE_HEIGHT:
-      return action.baseLineHeight;
+    case UPDATE_BASE_LINE_HEIGHT$1:
+      return action.baseLineHeight || '';
 
     default:
       return state;
@@ -1055,8 +1138,8 @@ var baseSpacing = function baseSpacing() {
     case UPDATE_THEME:
       return action.theme.baseSpacing || '';
 
-    case UPDATE_BASE_SPACING:
-      return action.baseSpacing;
+    case UPDATE_BASE_SPACING$1:
+      return action.baseSpacing || '';
 
     default:
       return state;
@@ -1079,7 +1162,7 @@ var version = function version() {
   }
 };
 
-var object$1 = function object() {
+var object$2 = function object() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : type.themeSchema.object;
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
@@ -1093,15 +1176,16 @@ var object$1 = function object() {
 };
 
 var theme = combineReducers({
-  baseFontSize: baseFontSize,
+  baseFontSize: baseFontSize$3,
   baseLineHeight: baseLineHeight,
   baseSpacing: baseSpacing,
   fontFace: fontFace,
   id: id$1,
   name: name,
   setting: setting,
+  base: setting$1,
   swatch: swatch,
-  object: object$1,
+  object: object$2,
   version: version
 });
 
@@ -1133,10 +1217,11 @@ var updateThemeId = function updateThemeId(id) {
     id: id
   };
 };
-var updateThemeType = function updateThemeType(type$$1) {
-  return _defineProperty({
-    type: UPDATE_THEME_TYPE
-  }, "type", type$$1);
+var updateThemeObject = function updateThemeObject(object) {
+  return {
+    type: UPDATE_THEME_TYPE,
+    object: object
+  };
 };
 var updateThemeVersion = function updateThemeVersion(version) {
   return {
@@ -1146,19 +1231,19 @@ var updateThemeVersion = function updateThemeVersion(version) {
 };
 var updateBaseFontSize = function updateBaseFontSize(baseFontSize) {
   return {
-    type: UPDATE_BASE_FONT_SIZE,
+    type: UPDATE_BASE_FONT_SIZE$1,
     baseFontSize: baseFontSize
   };
 };
 var updateBaseLineHeight = function updateBaseLineHeight(baseLineHeight) {
   return {
-    type: UPDATE_BASE_LINE_HEIGHT,
+    type: UPDATE_BASE_LINE_HEIGHT$1,
     baseLineHeight: baseLineHeight
   };
 };
 var updateBaseSpacing = function updateBaseSpacing(baseSpacing) {
   return {
-    type: UPDATE_BASE_SPACING,
+    type: UPDATE_BASE_SPACING$1,
     baseSpacing: baseSpacing
   };
 };
@@ -3648,7 +3733,7 @@ exports.updateBaseLineHeight = updateBaseLineHeight;
 exports.updateBaseSpacing = updateBaseSpacing;
 exports.updateThemeId = updateThemeId;
 exports.updateThemeName = updateThemeName;
-exports.updateThemeType = updateThemeType;
+exports.updateThemeObject = updateThemeObject;
 exports.updateThemeVersion = updateThemeVersion;
 exports.updateSwatchView = updateSwatchView;
 exports.addSwatch = addSwatch;

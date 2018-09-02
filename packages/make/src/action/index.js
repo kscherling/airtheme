@@ -6,7 +6,7 @@ export {
   updateBaseSpacing,
   updateThemeId,
   updateThemeName,
-  updateThemeType,
+  updateThemeObject,
   updateThemeVersion
 } from './theme'
 

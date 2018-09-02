@@ -1,71 +1,81 @@
-import root from './index'
+import base from './index'
 import attribute from '../attribute'
 import unit from '../unit'
 
-it('creates `setting`', () => {
-  const result = root.base()
+it('creates `base`', () => {
+  const result = base.base()
 
   expect(result).toEqual({
-    object: 'root',
     baseFontSize: {
-      content: [],
-      reference: null,
+      content: { name: 'baseFontSize', object: 'px', ordinal: null, value: 16 },
       object: 'baseFontSize',
+      reference: null,
       unit: 'px',
       view: 'px',
       viewable: ['px']
     },
     baseLineHeight: {
-      content: [],
-      reference: 'baseFontSize',
+      content: {
+        name: 'baseLineHeight',
+        object: 'factor',
+        ordinal: null,
+        value: 1.15
+      },
       object: 'baseLineHeight',
+      reference: 'baseFontSize',
       unit: 'px',
       view: 'px',
       viewable: ['factor', 'px']
     },
     baseSpacing: {
-      content: [],
-      reference: null,
+      content: { name: 'baseSpacing', object: 'px', ordinal: null, value: 16 },
       object: 'baseSpacing',
+      reference: null,
       unit: 'px',
       view: 'px',
       viewable: ['px']
-    }
+    },
+    object: 'base'
   })
 })
 
 it('can initialize with custom `attribute`', () => {
-  const result = root.base({
+  const result = base.base({
     baseFontSize: attribute.baseFontSize({
       content: { some: 'data' }
     })
   })
 
   expect(result).toEqual({
-    object: 'root',
     baseFontSize: {
       content: { some: 'data' },
-      reference: null,
       object: 'baseFontSize',
+      reference: null,
       unit: 'px',
       view: 'px',
       viewable: ['px']
     },
     baseLineHeight: {
-      content: [],
-      reference: 'baseFontSize',
+      content: {
+        name: 'baseLineHeight',
+        object: 'factor',
+        ordinal: null,
+        value: 1.15
+      },
       object: 'baseLineHeight',
+      reference: 'baseFontSize',
       unit: 'px',
       view: 'px',
       viewable: ['factor', 'px']
     },
     baseSpacing: {
-      content: [],
-      reference: null,
+      content: { name: 'baseSpacing', object: 'px', ordinal: null, value: 16 },
       object: 'baseSpacing',
+      reference: null,
       unit: 'px',
       view: 'px',
       viewable: ['px']
-    }
+    },
+    object: 'base'
   })
 })

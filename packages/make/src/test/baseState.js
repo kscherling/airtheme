@@ -1,5 +1,6 @@
 import { attribute, unit, theme } from '@airtheme/type'
 import baseSetting from './baseSetting'
+import baseBase from './baseBase'
 import { themeSchema } from '@airtheme/type'
 
 const baseState = {
@@ -10,6 +11,7 @@ const baseState = {
     fontFace: attribute.fontFace(),
     id: '',
     name: '',
+    base: baseBase,
     setting: baseSetting,
     swatch: attribute.swatch(),
     object: themeSchema.object,

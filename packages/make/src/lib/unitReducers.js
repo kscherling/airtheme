@@ -17,3 +17,8 @@ export const updateUnit = (state, { original, updated }) => ({
     unit => (eq(unit, original) ? { ...unit, ...updated } : unit)
   )
 })
+
+export const updateBaseUnit = (state, { updated }) => ({
+  ...state,
+  content: { ...state.content, ...updated }
+})

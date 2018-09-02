@@ -2,6 +2,7 @@ import { _ROOT_THEME_ } from '@airtheme/core'
 import { VERSION, uuid } from '@airtheme/core'
 import attribute from '../attribute'
 import setting from '../setting'
+import base from '../base'
 
 // theme
 // The container object
@@ -49,6 +50,11 @@ export default {
   // fontFace
   // FontFace : fontFace attribute object
   fontFace: attribute.fontFace(),
+
+  // root
+  // Root : Keyed object of root attribute types
+
+  base: base.base(),
 
   // setting
   // Setting : Keyed object of attribute types

@@ -134,176 +134,9 @@ var swatch = {
   content: []
 };
 
-var baseSpacing = {
-  view: core.PX,
-  viewable: [core.PX],
-  reference: null,
-  object: core.BASE_SPACING,
-  unit: core.PX
-};
-
-var baseLineHeight = {
-  view: core.PX,
-  viewable: [core.FACTOR, core.PX],
-  reference: core.BASE_FONT_SIZE_PATH,
-  object: core.BASE_LINE_HEIGHT,
-  unit: core.PX
-};
-
-var baseFontSize = {
-  view: core.PX,
-  viewable: [core.PX],
-  reference: null,
-  object: core.BASE_FONT_SIZE,
-  unit: core.PX
-};
-
-var _attribute;
-var attribute = (_attribute = {
-  baseFontSize: factoryFor(baseFontSize, schema),
-  baseSpacing: factoryFor(baseSpacing, schema),
-  baseLineHeight: factoryFor(baseLineHeight, schema),
-  color: factoryFor(color, schema),
-  fontFamily: factoryFor(fontFamily, schema),
-  fontSize: factoryFor(fontSize, schema),
-  fontWeight: factoryFor(fontWeight, schema),
-  lineHeight: factoryFor(lineHeight, schema),
-  fontFace: factoryFor(fontFace, schema)
-}, _defineProperty(_attribute, "fontFamily", factoryFor(fontFamily, schema)), _defineProperty(_attribute, "spacing", factoryFor(spacing, schema)), _defineProperty(_attribute, "swatch", factoryFor(swatch, schema)), _attribute);
-
-var _object$COLOR_KEY$FON;
-// Settings hash
-
-var schema$1 = (_object$COLOR_KEY$FON = {
-  object: core._THEME_SETTING_
-}, _defineProperty(_object$COLOR_KEY$FON, core.COLOR_KEY, {}), _defineProperty(_object$COLOR_KEY$FON, core.FONT_FAMILY_KEY, {}), _defineProperty(_object$COLOR_KEY$FON, core.FONT_SIZE_KEY, {}), _defineProperty(_object$COLOR_KEY$FON, core.FONT_WEIGHT_KEY, {}), _defineProperty(_object$COLOR_KEY$FON, core.SPACING_KEY, {}), _object$COLOR_KEY$FON);
-
-var _COLOR_KEY$FONT_FAMIL;
-// The base setting object
-
-var base = (_COLOR_KEY$FONT_FAMIL = {}, _defineProperty(_COLOR_KEY$FONT_FAMIL, core.COLOR_KEY, attribute.color()), _defineProperty(_COLOR_KEY$FONT_FAMIL, core.FONT_FAMILY_KEY, attribute.fontFamily()), _defineProperty(_COLOR_KEY$FONT_FAMIL, core.FONT_SIZE_KEY, attribute.fontSize()), _defineProperty(_COLOR_KEY$FONT_FAMIL, core.FONT_WEIGHT_KEY, attribute.fontWeight()), _defineProperty(_COLOR_KEY$FONT_FAMIL, core.SPACING_KEY, attribute.spacing()), _COLOR_KEY$FONT_FAMIL);
-
-// prettier-ignore
-var factoryFor$1 = function factoryFor() {
-  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-      color = _ref.color,
-      fontFamily = _ref.fontFamily,
-      fontSize = _ref.fontSize,
-      fontWeight = _ref.fontWeight,
-      spacing = _ref.spacing;
-
-  var schema = arguments.length > 1 ? arguments[1] : undefined;
-  return function () {
-    var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-        instanceColor = _ref2.color,
-        instanceFontFamily = _ref2.fontFamily,
-        instanceFontSize = _ref2.fontSize,
-        instanceFontWeight = _ref2.fontWeight,
-        instanceSpacing = _ref2.spacing;
-
-    return Object.assign({}, schema, {
-      color: instanceColor || color || schema.color,
-      fontFamily: instanceFontFamily || fontFamily || schema.fontFamily,
-      fontSize: instanceFontSize || fontSize || schema.fontSize,
-      fontWeight: instanceFontWeight || fontWeight || schema.fontWeight,
-      spacing: instanceSpacing || spacing || schema.spacing
-    });
-  };
-};
-
-var setting = {
-  base: factoryFor$1(base, schema$1)
-};
-
-// The container object
-
-var schema$2 = {
-  // name
-  // Friendly name of the theme
-  name: null,
-  // id
-  // you know, the id
-  id: core.uuid(),
-  // baseFontSize
-  // string : the reference of the unit
-  baseFontSize: 16,
-  // baseLineHeight
-  // string : the reference of the unit
-  baseLineHeight: 1.15,
-  // baseSpacing
-  // string : the reference of the unit
-  baseSpacing: 16,
-  // object
-  // string : The name of the unit.
-  object: core._ROOT_THEME_,
-  // version
-  // string : the version of the airthemek
-  version: core.VERSION,
-  // swatch
-  // Swatch : Swatch attribute object
-  swatch: attribute.swatch(),
-  // fontFace
-  // FontFace : fontFace attribute object
-  fontFace: attribute.fontFace(),
-  // setting
-  // Setting : Keyed object of attribute types
-  setting: setting.base()
-};
-
-// The container object
-
-var base$1 = {
-  name: 'Basic Airtheme',
-  object: core.BASIC,
-  baseFontSize: 16,
-  baseLineHeight: 16,
-  baseSpacing: 16,
-  version: core.VERSION
-};
-
-var factoryFor$2 = function factoryFor() {
-  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-      name = _ref.name,
-      id = _ref.id,
-      baseFontSize = _ref.baseFontSize,
-      baseLineHeight = _ref.baseLineHeight,
-      baseSpacing = _ref.baseSpacing,
-      fontFace = _ref.fontFace,
-      swatch = _ref.swatch,
-      setting = _ref.setting;
-
-  var schema = arguments.length > 1 ? arguments[1] : undefined;
-  return function () {
-    var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-        instanceName = _ref2.name,
-        instanceId = _ref2.id,
-        instanceBaseFontSize = _ref2.baseFontSize,
-        instanceBaseLineHeight = _ref2.baseLineHeight,
-        instanceBaseSpacing = _ref2.baseSpacing,
-        instanceFontFace = _ref2.fontFace,
-        instanceSwatch = _ref2.swatch,
-        instanceSetting = _ref2.setting;
-
-    return Object.assign({}, schema, {
-      name: instanceName || name || schema.name,
-      id: instanceId || id || schema.id,
-      baseFontSize: instanceBaseFontSize || baseFontSize || schema.baseFontSize,
-      baseLineHeight: instanceBaseLineHeight || baseLineHeight || schema.baseLineHeight,
-      baseSpacing: instanceBaseSpacing || baseSpacing || schema.baseSpacing,
-      fontFace: instanceFontFace || fontFace || schema.fontFace,
-      swatch: instanceSwatch || swatch || schema.swatch,
-      setting: instanceSetting || setting || schema.setting
-    });
-  };
-};
-
-var theme = {
-  base: factoryFor$2(base$1, schema$2)
-};
-
 // A typed unit for communicating css units
 
-var schema$3 = {
+var schema$1 = {
   // name
   // string : the friendly name
   name: null,
@@ -322,7 +155,7 @@ var schema$3 = {
 // Accepts a unit object and root schema
 // returns a function used to create new unit instances
 // prettier-ignore
-var factoryFor$3 = function factoryFor() {
+var factoryFor$1 = function factoryFor() {
   var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
       object = _ref.object;
 
@@ -399,27 +232,252 @@ var string = {
 };
 
 var unit = {
-  factor: factoryFor$3(factor, schema$3),
-  hex: factoryFor$3(hex, schema$3),
-  hexa: factoryFor$3(hexa, schema$3),
-  px: factoryFor$3(px, schema$3),
-  reference: factoryFor$3(reference, schema$3),
-  rem: factoryFor$3(rem, schema$3),
-  rgb: factoryFor$3(rgb, schema$3),
-  rgba: factoryFor$3(rgba, schema$3),
-  string: factoryFor$3(string, schema$3)
+  factor: factoryFor$1(factor, schema$1),
+  hex: factoryFor$1(hex, schema$1),
+  hexa: factoryFor$1(hexa, schema$1),
+  px: factoryFor$1(px, schema$1),
+  reference: factoryFor$1(reference, schema$1),
+  rem: factoryFor$1(rem, schema$1),
+  rgb: factoryFor$1(rgb, schema$1),
+  rgba: factoryFor$1(rgba, schema$1),
+  string: factoryFor$1(string, schema$1)
+};
+
+var baseSpacing = {
+  view: core.PX,
+  viewable: [core.PX],
+  reference: null,
+  object: core.BASE_SPACING,
+  unit: core.PX,
+  content: unit.px({
+    name: 'baseSpacing',
+    value: 16
+  })
+};
+
+var baseLineHeight = {
+  view: core.PX,
+  viewable: [core.FACTOR, core.PX],
+  reference: core.BASE_FONT_SIZE_PATH,
+  object: core.BASE_LINE_HEIGHT,
+  unit: core.PX,
+  content: unit.factor({
+    name: 'baseLineHeight',
+    value: 1.15
+  })
+};
+
+var baseFontSize = {
+  view: core.PX,
+  viewable: [core.PX],
+  reference: null,
+  object: core.BASE_FONT_SIZE,
+  unit: core.PX,
+  content: unit.px({
+    name: 'baseFontSize',
+    value: 16
+  })
+};
+
+var _attribute;
+var attribute = (_attribute = {
+  baseFontSize: factoryFor(baseFontSize, schema),
+  baseSpacing: factoryFor(baseSpacing, schema),
+  baseLineHeight: factoryFor(baseLineHeight, schema),
+  color: factoryFor(color, schema),
+  fontFamily: factoryFor(fontFamily, schema),
+  fontSize: factoryFor(fontSize, schema),
+  fontWeight: factoryFor(fontWeight, schema),
+  lineHeight: factoryFor(lineHeight, schema),
+  fontFace: factoryFor(fontFace, schema)
+}, _defineProperty(_attribute, "fontFamily", factoryFor(fontFamily, schema)), _defineProperty(_attribute, "spacing", factoryFor(spacing, schema)), _defineProperty(_attribute, "swatch", factoryFor(swatch, schema)), _attribute);
+
+var _object$COLOR_KEY$FON;
+// Settings hash
+
+var schema$2 = (_object$COLOR_KEY$FON = {
+  object: core._THEME_SETTING_
+}, _defineProperty(_object$COLOR_KEY$FON, core.COLOR_KEY, {}), _defineProperty(_object$COLOR_KEY$FON, core.FONT_FAMILY_KEY, {}), _defineProperty(_object$COLOR_KEY$FON, core.FONT_SIZE_KEY, {}), _defineProperty(_object$COLOR_KEY$FON, core.FONT_WEIGHT_KEY, {}), _defineProperty(_object$COLOR_KEY$FON, core.SPACING_KEY, {}), _object$COLOR_KEY$FON);
+
+var _COLOR_KEY$FONT_FAMIL;
+// The base setting object
+
+var base = (_COLOR_KEY$FONT_FAMIL = {}, _defineProperty(_COLOR_KEY$FONT_FAMIL, core.COLOR_KEY, attribute.color()), _defineProperty(_COLOR_KEY$FONT_FAMIL, core.FONT_FAMILY_KEY, attribute.fontFamily()), _defineProperty(_COLOR_KEY$FONT_FAMIL, core.FONT_SIZE_KEY, attribute.fontSize()), _defineProperty(_COLOR_KEY$FONT_FAMIL, core.FONT_WEIGHT_KEY, attribute.fontWeight()), _defineProperty(_COLOR_KEY$FONT_FAMIL, core.SPACING_KEY, attribute.spacing()), _COLOR_KEY$FONT_FAMIL);
+
+// prettier-ignore
+var factoryFor$2 = function factoryFor() {
+  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      color = _ref.color,
+      fontFamily = _ref.fontFamily,
+      fontSize = _ref.fontSize,
+      fontWeight = _ref.fontWeight,
+      spacing = _ref.spacing;
+
+  var schema = arguments.length > 1 ? arguments[1] : undefined;
+  return function () {
+    var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+        instanceColor = _ref2.color,
+        instanceFontFamily = _ref2.fontFamily,
+        instanceFontSize = _ref2.fontSize,
+        instanceFontWeight = _ref2.fontWeight,
+        instanceSpacing = _ref2.spacing;
+
+    return Object.assign({}, schema, {
+      color: instanceColor || color || schema.color,
+      fontFamily: instanceFontFamily || fontFamily || schema.fontFamily,
+      fontSize: instanceFontSize || fontSize || schema.fontSize,
+      fontWeight: instanceFontWeight || fontWeight || schema.fontWeight,
+      spacing: instanceSpacing || spacing || schema.spacing
+    });
+  };
+};
+
+var setting = {
+  base: factoryFor$2(base, schema$2)
+};
+
+var _object$BASE_FONT_SIZ;
+// Settings hash
+
+var schema$3 = (_object$BASE_FONT_SIZ = {
+  object: core._THEME_BASE_
+}, _defineProperty(_object$BASE_FONT_SIZ, core.BASE_FONT_SIZE_KEY, {}), _defineProperty(_object$BASE_FONT_SIZ, core.BASE_LINE_HEIGHT_KEY, {}), _defineProperty(_object$BASE_FONT_SIZ, core.BASE_SPACING_KEY, {}), _object$BASE_FONT_SIZ);
+
+var _BASE_FONT_SIZE_KEY$B;
+// Root hash
+
+var base$1 = (_BASE_FONT_SIZE_KEY$B = {}, _defineProperty(_BASE_FONT_SIZE_KEY$B, core.BASE_FONT_SIZE_KEY, attribute.baseFontSize()), _defineProperty(_BASE_FONT_SIZE_KEY$B, core.BASE_LINE_HEIGHT_KEY, attribute.baseLineHeight()), _defineProperty(_BASE_FONT_SIZE_KEY$B, core.BASE_SPACING_KEY, attribute.baseSpacing()), _BASE_FONT_SIZE_KEY$B);
+
+var factoryFor$3 = function factoryFor() {
+  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      baseFontSize = _ref.baseFontSize,
+      baseSpacing = _ref.baseSpacing,
+      baseLineHeight = _ref.baseLineHeight;
+
+  var schema = arguments.length > 1 ? arguments[1] : undefined;
+  return function () {
+    var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+        instanceBaseFontSize = _ref2.baseFontSize,
+        instanceBaseSpacing = _ref2.baseSpacing,
+        instanceBaseLineHeight = _ref2.baseLineHeight;
+
+    return Object.assign({}, schema, {
+      baseFontSize: instanceBaseFontSize || baseFontSize || schema.baseFontSize,
+      baseSpacing: instanceBaseSpacing || baseSpacing || schema.baseSpacing,
+      baseLineHeight: instanceBaseLineHeight || baseLineHeight || schema.baseLineHeight
+    });
+  };
+};
+
+var root = {
+  base: factoryFor$3(base$1, schema$3)
+};
+
+// The container object
+
+var schema$4 = {
+  // name
+  // Friendly name of the theme
+  name: null,
+  // id
+  // you know, the id
+  id: core.uuid(),
+  // baseFontSize
+  // string : the reference of the unit
+  baseFontSize: 16,
+  // baseLineHeight
+  // string : the reference of the unit
+  baseLineHeight: 1.15,
+  // baseSpacing
+  // string : the reference of the unit
+  baseSpacing: 16,
+  // object
+  // string : The name of the unit.
+  object: core._ROOT_THEME_,
+  // version
+  // string : the version of the airthemek
+  version: core.VERSION,
+  // swatch
+  // Swatch : Swatch attribute object
+  swatch: attribute.swatch(),
+  // fontFace
+  // FontFace : fontFace attribute object
+  fontFace: attribute.fontFace(),
+  // root
+  // Root : Keyed object of root attribute types
+  base: root.base(),
+  // setting
+  // Setting : Keyed object of attribute types
+  setting: setting.base()
+};
+
+// The container object
+
+var base$2 = {
+  name: 'Basic Airtheme',
+  object: core.BASIC,
+  baseFontSize: 16,
+  baseLineHeight: 16,
+  baseSpacing: 16,
+  version: core.VERSION
+};
+
+var factoryFor$4 = function factoryFor() {
+  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      name = _ref.name,
+      id = _ref.id,
+      baseFontSize = _ref.baseFontSize,
+      baseLineHeight = _ref.baseLineHeight,
+      baseSpacing = _ref.baseSpacing,
+      fontFace = _ref.fontFace,
+      swatch = _ref.swatch,
+      setting = _ref.setting,
+      base = _ref.base;
+
+  var schema = arguments.length > 1 ? arguments[1] : undefined;
+  return function () {
+    var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+        instanceName = _ref2.name,
+        instanceId = _ref2.id,
+        instanceBaseFontSize = _ref2.baseFontSize,
+        instanceBaseLineHeight = _ref2.baseLineHeight,
+        instanceBaseSpacing = _ref2.baseSpacing,
+        instanceFontFace = _ref2.fontFace,
+        instanceSwatch = _ref2.swatch,
+        instanceSetting = _ref2.setting,
+        instanceBase = _ref2.base;
+
+    return Object.assign({}, schema, {
+      name: instanceName || name || schema.name,
+      id: instanceId || id || schema.id,
+      baseFontSize: instanceBaseFontSize || baseFontSize || schema.baseFontSize,
+      baseLineHeight: instanceBaseLineHeight || baseLineHeight || schema.baseLineHeight,
+      baseSpacing: instanceBaseSpacing || baseSpacing || schema.baseSpacing,
+      fontFace: instanceFontFace || fontFace || schema.fontFace,
+      swatch: instanceSwatch || swatch || schema.swatch,
+      setting: instanceSetting || setting || schema.setting,
+      base: instanceBase || base || schema.base
+    });
+  };
+};
+
+var theme = {
+  base: factoryFor$4(base$2, schema$4)
 };
 
 exports.theme = theme;
-exports.themeSchema = schema$2;
-exports.factoryForTheme = factoryFor$2;
+exports.themeSchema = schema$4;
+exports.factoryForTheme = factoryFor$4;
+exports.base = root;
+exports.baseSchema = schema$3;
+exports.factoryForBase = factoryFor$3;
 exports.setting = setting;
-exports.settingSchema = schema$1;
-exports.factoryForSetting = factoryFor$1;
+exports.settingSchema = schema$2;
+exports.factoryForSetting = factoryFor$2;
 exports.attribute = attribute;
 exports.attributeSchema = schema;
 exports.factoryForAttribute = factoryFor;
 exports.unit = unit;
-exports.unitSchema = schema$3;
-exports.factoryForUnit = factoryFor$3;
+exports.unitSchema = schema$1;
+exports.factoryForUnit = factoryFor$1;
 //# sourceMappingURL=index.js.map

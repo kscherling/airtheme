@@ -1,4 +1,5 @@
 import attribute from '../../attribute'
+import unit from '../../unit'
 import {
   BASE_FONT_SIZE_KEY,
   BASE_LINE_HEIGHT_KEY,

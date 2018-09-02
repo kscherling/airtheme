@@ -18,9 +18,9 @@ export const updateThemeId = id => ({
   id
 })
 
-export const updateThemeType = type => ({
+export const updateThemeObject = object => ({
   type: UPDATE_THEME_TYPE,
-  type
+  object
 })
 
 export const updateThemeVersion = version => ({
