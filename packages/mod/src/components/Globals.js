@@ -1,16 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import {
-  mapBaseFontSize,
-  mapBaseLineHeight,
-  mapBaseSpacing,
   mapId,
   mapName,
   mapType,
   mapVersion,
-  updateBaseFontSize,
-  updateBaseLineHeight,
-  updateBaseSpacing,
   updateThemeId,
   updateThemeName,
   updateThemeObject,
@@ -47,54 +41,12 @@ const Version = connect(
   </SimpleList.TwoColumns>
 ))
 
-const BaseFontSize = connect(
-  mapBaseFontSize,
-  { updateBaseFontSize }
-)(({ baseFontSize, updateBaseFontSize }) => (
-  <SimpleList.TwoColumns>
-    <Node
-      label="baseFontSize"
-      value={baseFontSize}
-      onChange={updateBaseFontSize}
-    />
-  </SimpleList.TwoColumns>
-))
-
-const BaseLineHeight = connect(
-  mapBaseLineHeight,
-  { updateBaseLineHeight }
-)(({ baseLineHeight, updateBaseLineHeight }) => (
-  <SimpleList.TwoColumns>
-    <Node
-      label="baseLineHeight"
-      value={baseLineHeight}
-      onChange={updateBaseLineHeight}
-    />
-  </SimpleList.TwoColumns>
-))
-
-const BaseSpacing = connect(
-  mapBaseSpacing,
-  { updateBaseSpacing }
-)(({ baseSpacing, updateBaseSpacing }) => (
-  <SimpleList.TwoColumns>
-    <Node
-      label="baseSpacing"
-      value={baseSpacing}
-      onChange={updateBaseSpacing}
-    />
-  </SimpleList.TwoColumns>
-))
-
 const Globals = () => (
   <SimpleList>
     <SimpleList.Header>Global</SimpleList.Header>
     <Id />
     <Name />
     <Version />
-    <BaseFontSize />
-    <BaseLineHeight />
-    <BaseSpacing />
   </SimpleList>
 )
 

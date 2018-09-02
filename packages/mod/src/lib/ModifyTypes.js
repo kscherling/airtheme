@@ -41,6 +41,31 @@ export const Unit = ({ unit, remove, update }) => (
   </SimpleList.FourColumns>
 )
 
+export const BaseUnit = ({ unit, update }) => (
+  <SimpleList.FourColumns>
+    <input
+      disabled
+      placeholder="name"
+      type="text"
+      value={unit.name}
+      onChange={e => update({ name: e.target.value })}
+    />
+    <input
+      placeholder="value"
+      type="text"
+      value={unit.value}
+      onChange={e => update({ value: e.target.value })}
+    />
+    <input
+      placeholder="ordinal"
+      type="text"
+      value={unit.ordinal}
+      onChange={e => update({ ordinal: e.target.value })}
+    />
+    <span />
+  </SimpleList.FourColumns>
+)
+
 export class AddUnit extends Component {
   state = {
     name: '',
@@ -121,5 +146,12 @@ export const AttributeContent = ({ content = [], update, remove }) => (
         <Strike>empty</Strike>
       </SimpleList>
     )}
+  </SimpleList.OneColumn>
+)
+
+export const AttributeBaseContent = ({ content = {}, update }) => (
+  <SimpleList.OneColumn>
+    <SimpleList.Subheader>Content</SimpleList.Subheader>
+    <BaseUnit unit={content} update={update} />
   </SimpleList.OneColumn>
 )
