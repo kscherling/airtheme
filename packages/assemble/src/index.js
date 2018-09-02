@@ -1,1 +1,5 @@
-export default 'Assemble'
+import object from './object'
+
+const assemble = { object }
+
+export default assemble
