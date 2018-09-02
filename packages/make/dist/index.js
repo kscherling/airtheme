@@ -960,6 +960,7 @@ var baseFontSize = function baseFontSize() {
   }
 };
 
+var UPDATE_BASE_LINE_HEIGHT_VIEW = 'UPDATE_BASE_LINE_HEIGHT_VIEW';
 var UPDATE_BASE_LINE_HEIGHT = 'UPDATE_BASE_LINE_HEIGHT';
 
 var baseFontSize$1 = function baseFontSize() {
@@ -969,6 +970,11 @@ var baseFontSize$1 = function baseFontSize() {
   switch (action.type) {
     case UPDATE_THEME:
       return action.theme.base.baseLineHeight;
+
+    case UPDATE_BASE_LINE_HEIGHT_VIEW:
+      return _objectSpread({}, state, {
+        view: action.view
+      });
 
     case UPDATE_BASE_LINE_HEIGHT:
       return updateBaseUnit(state, action);
@@ -1148,6 +1154,12 @@ var updateBaseSpacing = function updateBaseSpacing(updated) {
   };
 };
 
+var updateBaseLineHeightView = function updateBaseLineHeightView(view) {
+  return {
+    type: UPDATE_BASE_LINE_HEIGHT_VIEW,
+    view: view
+  };
+};
 var updateBaseLineHeight = function updateBaseLineHeight(updated) {
   return {
     type: UPDATE_BASE_LINE_HEIGHT,
@@ -3173,7 +3185,6 @@ var MakeProvider = function MakeProvider(_ref) {
   var _ref$store = _ref.store,
       store = _ref$store === void 0 ? defaultStore : _ref$store,
       children = _ref.children;
-  console.log(defaultStore);
   return react.createElement(reactRedux.Provider, {
     store: store
   }, children);
@@ -3620,6 +3631,7 @@ exports.updateThemeVersion = updateThemeVersion;
 exports.updateBaseFontSize = updateBaseFontSize;
 exports.updateBaseSpacing = updateBaseSpacing;
 exports.updateBaseLineHeight = updateBaseLineHeight;
+exports.updateBaseLineHeightView = updateBaseLineHeightView;
 exports.updateSwatchView = updateSwatchView;
 exports.addSwatch = addSwatch;
 exports.removeSwatch = removeSwatch;

@@ -614,9 +614,7 @@ var Spacing = function Spacing() {
   return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Spacing"), React__default.createElement(SpacingAttribute, null), React__default.createElement(SpacingContent, null));
 };
 
-var BaseFontSizeAttribute = reactRedux.connect(make.mapBaseFontSize, {
-  updateBaseFontSizeView: make.updateBaseFontSizeView
-})(function (_ref) {
+var BaseFontSizeAttribute = reactRedux.connect(make.mapBaseFontSize)(function (_ref) {
   var _ref$baseFontSize = _ref.baseFontSize,
       view = _ref$baseFontSize.view,
       viewable = _ref$baseFontSize.viewable;
@@ -640,8 +638,61 @@ var BaseFontSize = function BaseFontSize() {
   return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Base Font Size"), React__default.createElement(BaseFontSizeAttribute, null), React__default.createElement(BaseFontSizeContent, null));
 };
 
+console.log(make.updateBaseLineHeightView);
+var BaseLineHeightAttribute = reactRedux.connect(make.mapBaseLineHeight, {
+  updateBaseLineHeightView: make.updateBaseLineHeightView
+})(function (_ref) {
+  var _ref$baseLineHeight = _ref.baseLineHeight,
+      view = _ref$baseLineHeight.view,
+      viewable = _ref$baseLineHeight.viewable,
+      updateBaseLineHeightView = _ref.updateBaseLineHeightView;
+  return React__default.createElement(Attribute, {
+    view: view,
+    viewable: viewable,
+    updateView: updateBaseLineHeightView
+  });
+});
+var BaseLineHeightContent = reactRedux.connect(make.mapBaseLineHeightContent, {
+  updateBaseLineHeight: make.updateBaseLineHeight
+})(function (_ref2) {
+  var content = _ref2.content,
+      updateBaseLineHeight = _ref2.updateBaseLineHeight;
+  return React__default.createElement(React.Fragment, null, React__default.createElement(AttributeBaseContent, {
+    content: content,
+    update: updateBaseLineHeight
+  }));
+});
+
+var BaseLineHeight = function BaseLineHeight() {
+  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Base Line Height"), React__default.createElement(BaseLineHeightAttribute, null), React__default.createElement(BaseLineHeightContent, null));
+};
+
+var BaseSpacingAttribute = reactRedux.connect(make.mapBaseSpacing)(function (_ref) {
+  var _ref$baseSpacing = _ref.baseSpacing,
+      view = _ref$baseSpacing.view,
+      viewable = _ref$baseSpacing.viewable;
+  return React__default.createElement(Attribute, {
+    view: view,
+    viewable: viewable
+  });
+});
+var BaseSpacingContent = reactRedux.connect(make.mapBaseSpacingContent, {
+  updateBaseSpacing: make.updateBaseSpacing
+})(function (_ref2) {
+  var content = _ref2.content,
+      updateBaseSpacing = _ref2.updateBaseSpacing;
+  return React__default.createElement(React.Fragment, null, React__default.createElement(AttributeBaseContent, {
+    content: content,
+    update: updateBaseSpacing
+  }));
+});
+
+var BaseSpacing = function BaseSpacing() {
+  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Base Spacing"), React__default.createElement(BaseSpacingAttribute, null), React__default.createElement(BaseSpacingContent, null));
+};
+
 var Mod = function Mod() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Title, null, "Mod"), React__default.createElement(Globals, null), React__default.createElement(BaseFontSize, null), React__default.createElement(FontFace, null), React__default.createElement(Swatch, null), React__default.createElement(FontFamily, null), React__default.createElement(FontSize, null), React__default.createElement(FontWeight, null), React__default.createElement(Color, null), React__default.createElement(Spacing, null));
+  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Title, null, "Mod"), React__default.createElement(Globals, null), React__default.createElement(BaseFontSize, null), React__default.createElement(BaseLineHeight, null), React__default.createElement(BaseSpacing, null), React__default.createElement(FontFace, null), React__default.createElement(Swatch, null), React__default.createElement(FontFamily, null), React__default.createElement(FontSize, null), React__default.createElement(FontWeight, null), React__default.createElement(Color, null), React__default.createElement(Spacing, null));
 };
 
 module.exports = Mod;

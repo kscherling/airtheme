@@ -7,7 +7,7 @@ import {
 import unit from '../../unit'
 
 export default {
-  view: PX,
+  view: FACTOR,
   viewable: [FACTOR, PX],
   reference: BASE_FONT_SIZE_PATH,
   object: BASE_LINE_HEIGHT,

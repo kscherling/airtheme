@@ -256,7 +256,7 @@ var baseSpacing = {
 };
 
 var baseLineHeight = {
-  view: core.PX,
+  view: core.FACTOR,
   viewable: [core.FACTOR, core.PX],
   reference: core.BASE_FONT_SIZE_PATH,
   object: core.BASE_LINE_HEIGHT,

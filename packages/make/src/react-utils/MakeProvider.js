@@ -6,7 +6,6 @@ import makeStore from '../store'
 const defaultStore = makeStore({ theme: theme.base() })
 
 const MakeProvider = ({ store = defaultStore, children }) => {
-  console.log(defaultStore)
   return <Provider store={store}>{children}</Provider>
 }
 

@@ -9,7 +9,10 @@ export {
 
 export { updateBaseFontSize } from './theme/base/baseFontSize'
 export { updateBaseSpacing } from './theme/base/baseSpacing'
-export { updateBaseLineHeight } from './theme/base/baseLineHeight'
+export {
+  updateBaseLineHeight,
+  updateBaseLineHeightView
+} from './theme/base/baseLineHeight'
 
 export {
   updateSwatchView,

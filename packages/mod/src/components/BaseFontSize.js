@@ -3,20 +3,16 @@ import { connect } from 'react-redux'
 import {
   mapBaseFontSize,
   mapBaseFontSizeContent,
-  updateBaseFontSizeView,
-  addBaseFontSize,
-  removeBaseFontSize,
   updateBaseFontSize,
   SimpleList
 } from '@airtheme/make'
 import { AttributeBaseContent, Attribute } from '../lib/ModifyTypes'
 
-const BaseFontSizeAttribute = connect(
-  mapBaseFontSize,
-  { updateBaseFontSizeView }
-)(({ baseFontSize: { view, viewable } }) => (
-  <Attribute view={view} viewable={viewable} />
-))
+const BaseFontSizeAttribute = connect(mapBaseFontSize)(
+  ({ baseFontSize: { view, viewable } }) => (
+    <Attribute view={view} viewable={viewable} />
+  )
+)
 
 const BaseFontSizeContent = connect(
   mapBaseFontSizeContent,

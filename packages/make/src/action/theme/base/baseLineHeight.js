@@ -1,4 +1,12 @@
-import { UPDATE_BASE_LINE_HEIGHT } from '../../../constant/baseLineHeight'
+import {
+  UPDATE_BASE_LINE_HEIGHT,
+  UPDATE_BASE_LINE_HEIGHT_VIEW
+} from '../../../constant/baseLineHeight'
+
+export const updateBaseLineHeightView = view => ({
+  type: UPDATE_BASE_LINE_HEIGHT_VIEW,
+  view
+})
 
 export const updateBaseLineHeight = updated => ({
   type: UPDATE_BASE_LINE_HEIGHT,
