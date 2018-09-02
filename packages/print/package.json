@@ -19,5 +19,8 @@
     "semi": false,
     "singleQuote": true,
     "bracketSpacing": true
+  },
+  "dependencies": {
+    "js-object-pretty-print": "^0.3.0"
   }
 }
