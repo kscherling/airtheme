@@ -13,7 +13,6 @@ const SwatchContent = connect(mapSwatchContent)(({ content }) => (
 
 const Swatch = () => (
   <SimpleList.OneColumn>
-    <SimpleList.Header>Swatch</SimpleList.Header>
     <SwatchAttribute />
     <SwatchContent />
   </SimpleList.OneColumn>

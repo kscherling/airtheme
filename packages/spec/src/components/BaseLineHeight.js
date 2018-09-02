@@ -16,7 +16,6 @@ const BaseLineHeightContent = connect(mapBaseLineHeightContent)(
 
 const BaseLineHeight = () => (
   <SimpleList.OneColumn>
-    <SimpleList.Header>Base Line Height</SimpleList.Header>
     <BaseLineHeightAttribute />
     <BaseLineHeightContent />
   </SimpleList.OneColumn>

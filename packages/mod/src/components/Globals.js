@@ -42,12 +42,11 @@ const Version = connect(
 ))
 
 const Globals = () => (
-  <SimpleList>
-    <SimpleList.Header>Global</SimpleList.Header>
+  <SimpleList.OneColumn>
     <Id />
     <Name />
     <Version />
-  </SimpleList>
+  </SimpleList.OneColumn>
 )
 
 export default Globals

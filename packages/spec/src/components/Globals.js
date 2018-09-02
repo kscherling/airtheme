@@ -22,7 +22,6 @@ const Version = connect(mapVersion)(({ version }) => (
 
 const Globals = () => (
   <SimpleList>
-    <SimpleList.Header>Global</SimpleList.Header>
     <Id />
     <Name />
     <Version />

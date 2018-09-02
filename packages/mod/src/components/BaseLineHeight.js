@@ -9,8 +9,6 @@ import {
 } from '@airtheme/make'
 import { AttributeBaseContent, Attribute } from '../lib/ModifyTypes'
 
-console.log(updateBaseLineHeightView)
-
 const BaseLineHeightAttribute = connect(
   mapBaseLineHeight,
   { updateBaseLineHeightView }
@@ -33,7 +31,6 @@ const BaseLineHeightContent = connect(
 
 const BaseLineHeight = () => (
   <SimpleList.OneColumn>
-    <SimpleList.Header>Base Line Height</SimpleList.Header>
     <BaseLineHeightAttribute />
     <BaseLineHeightContent />
   </SimpleList.OneColumn>

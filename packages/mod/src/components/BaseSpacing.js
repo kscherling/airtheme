@@ -25,7 +25,6 @@ const BaseSpacingContent = connect(
 
 const BaseSpacing = () => (
   <SimpleList.OneColumn>
-    <SimpleList.Header>Base Spacing</SimpleList.Header>
     <BaseSpacingAttribute />
     <BaseSpacingContent />
   </SimpleList.OneColumn>

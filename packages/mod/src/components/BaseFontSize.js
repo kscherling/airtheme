@@ -25,7 +25,6 @@ const BaseFontSizeContent = connect(
 
 const BaseFontSize = () => (
   <SimpleList.OneColumn>
-    <SimpleList.Header>Base Font Size</SimpleList.Header>
     <BaseFontSizeAttribute />
     <BaseFontSizeContent />
   </SimpleList.OneColumn>

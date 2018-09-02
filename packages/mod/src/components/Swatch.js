@@ -34,7 +34,6 @@ const SwatchContent = connect(
 
 const Swatch = () => (
   <SimpleList.OneColumn>
-    <SimpleList.Header>Swatch</SimpleList.Header>
     <SwatchAttribute />
     <SwatchContent />
   </SimpleList.OneColumn>

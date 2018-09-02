@@ -369,7 +369,7 @@ var Version = reactRedux.connect(make.mapVersion, {
 });
 
 var Globals = function Globals() {
-  return React__default.createElement(make.SimpleList, null, React__default.createElement(make.SimpleList.Header, null, "Global"), React__default.createElement(Id, null), React__default.createElement(Name, null), React__default.createElement(Version, null));
+  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(Id, null), React__default.createElement(Name, null), React__default.createElement(Version, null));
 };
 
 var SwatchAttribute = reactRedux.connect(make.mapSwatch, {
@@ -405,7 +405,7 @@ var SwatchContent = reactRedux.connect(make.mapSwatchContent, {
 });
 
 var Swatch = function Swatch() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Swatch"), React__default.createElement(SwatchAttribute, null), React__default.createElement(SwatchContent, null));
+  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(SwatchAttribute, null), React__default.createElement(SwatchContent, null));
 };
 
 var FontFaceAttribute = reactRedux.connect(make.mapFontFace)(function (_ref) {
@@ -637,10 +637,9 @@ var BaseFontSizeContent = reactRedux.connect(make.mapBaseFontSizeContent, {
 });
 
 var BaseFontSize = function BaseFontSize() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Base Font Size"), React__default.createElement(BaseFontSizeAttribute, null), React__default.createElement(BaseFontSizeContent, null));
+  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(BaseFontSizeAttribute, null), React__default.createElement(BaseFontSizeContent, null));
 };
 
-console.log(make.updateBaseLineHeightView);
 var BaseLineHeightAttribute = reactRedux.connect(make.mapBaseLineHeight, {
   updateBaseLineHeightView: make.updateBaseLineHeightView
 })(function (_ref) {
@@ -666,7 +665,7 @@ var BaseLineHeightContent = reactRedux.connect(make.mapBaseLineHeightContent, {
 });
 
 var BaseLineHeight = function BaseLineHeight() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Base Line Height"), React__default.createElement(BaseLineHeightAttribute, null), React__default.createElement(BaseLineHeightContent, null));
+  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(BaseLineHeightAttribute, null), React__default.createElement(BaseLineHeightContent, null));
 };
 
 var BaseSpacingAttribute = reactRedux.connect(make.mapBaseSpacing)(function (_ref) {
@@ -690,7 +689,7 @@ var BaseSpacingContent = reactRedux.connect(make.mapBaseSpacingContent, {
 });
 
 var BaseSpacing = function BaseSpacing() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Base Spacing"), React__default.createElement(BaseSpacingAttribute, null), React__default.createElement(BaseSpacingContent, null));
+  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(BaseSpacingAttribute, null), React__default.createElement(BaseSpacingContent, null));
 };
 
 exports.Globals = Globals;
