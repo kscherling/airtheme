@@ -311,8 +311,42 @@ var BaseFontSize = function BaseFontSize() {
   return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Base Font Size"), React__default.createElement(BaseFontSizeAttribute, null), React__default.createElement(BaseFontSizeContent, null));
 };
 
+var BaseLineHeightAttribute = reactRedux.connect(make.mapBaseLineHeight)(function (_ref) {
+  var baseLineHeight = _ref.baseLineHeight;
+  return React__default.createElement(Attribute, {
+    attribute: baseLineHeight
+  });
+});
+var BaseLineHeightContent = reactRedux.connect(make.mapBaseLineHeightContent)(function (_ref2) {
+  var content = _ref2.content;
+  return React__default.createElement(AttributeContent, {
+    content: content
+  });
+});
+
+var BaseLineHeight = function BaseLineHeight() {
+  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Base Line Height"), React__default.createElement(BaseLineHeightAttribute, null), React__default.createElement(BaseLineHeightContent, null));
+};
+
+var BaseSpacingAttribute = reactRedux.connect(make.mapBaseSpacing)(function (_ref) {
+  var baseSpacing = _ref.baseSpacing;
+  return React__default.createElement(Attribute, {
+    attribute: baseSpacing
+  });
+});
+var BaseSpacingContent = reactRedux.connect(make.mapBaseSpacingContent)(function (_ref2) {
+  var content = _ref2.content;
+  return React__default.createElement(AttributeContent, {
+    content: content
+  });
+});
+
+var BaseSpacing = function BaseSpacing() {
+  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Header, null, "Base Spacing"), React__default.createElement(BaseSpacingAttribute, null), React__default.createElement(BaseSpacingContent, null));
+};
+
 var Spec = function Spec() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Title, null, "Spec"), React__default.createElement(Globals, null), React__default.createElement(BaseFontSize, null), React__default.createElement(FontFace, null), React__default.createElement(Swatch, null), React__default.createElement(FontFamily, null), React__default.createElement(FontSize, null), React__default.createElement(FontWeight, null), React__default.createElement(Color, null), React__default.createElement(Spacing, null));
+  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Title, null, "Spec"), React__default.createElement(Globals, null), React__default.createElement(BaseFontSize, null), React__default.createElement(BaseLineHeight, null), React__default.createElement(BaseSpacing, null), React__default.createElement(FontFace, null), React__default.createElement(Swatch, null), React__default.createElement(FontFamily, null), React__default.createElement(FontSize, null), React__default.createElement(FontWeight, null), React__default.createElement(Color, null), React__default.createElement(Spacing, null));
 };
 
 module.exports = Spec;
