@@ -1,6 +1,8 @@
 'use strict';
 
-var index = 'print';
+var index = (function () {
+  return 'print';
+});
 
 module.exports = index;
 //# sourceMappingURL=index.js.map

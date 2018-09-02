@@ -1,1 +1,1 @@
-export default 'print'
+export default () => 'print'
