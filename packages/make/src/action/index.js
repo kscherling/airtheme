@@ -1,15 +1,15 @@
 export { updateTheme } from './root'
 
 export {
-  updateBaseLineHeight,
   updateThemeId,
   updateThemeName,
   updateThemeObject,
   updateThemeVersion
 } from './theme'
 
-export { updateBaseFontSize } from './base/baseFontSize'
-export { updateBaseSpacing } from './base/baseSpacing'
+export { updateBaseFontSize } from './theme/base/baseFontSize'
+export { updateBaseSpacing } from './theme/base/baseSpacing'
+export { updateBaseLineHeight } from './theme/base/baseLineHeight'
 
 export {
   updateSwatchView,

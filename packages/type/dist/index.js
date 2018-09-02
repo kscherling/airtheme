@@ -382,30 +382,21 @@ var schema$4 = {
   // id
   // you know, the id
   id: core.uuid(),
-  // baseFontSize
-  // string : the reference of the unit
-  baseFontSize: 16,
-  // baseLineHeight
-  // string : the reference of the unit
-  baseLineHeight: 1.15,
-  // baseSpacing
-  // string : the reference of the unit
-  baseSpacing: 16,
   // object
   // string : The name of the unit.
   object: core._ROOT_THEME_,
   // version
   // string : the version of the airthemek
   version: core.VERSION,
+  // base
+  // Base : Keyed object of base attribute types
+  base: root.base(),
   // swatch
   // Swatch : Swatch attribute object
   swatch: attribute.swatch(),
   // fontFace
   // FontFace : fontFace attribute object
   fontFace: attribute.fontFace(),
-  // root
-  // Root : Keyed object of root attribute types
-  base: root.base(),
   // setting
   // Setting : Keyed object of attribute types
   setting: setting.base()
@@ -416,9 +407,6 @@ var schema$4 = {
 var base$2 = {
   name: 'Basic Airtheme',
   object: core.BASIC,
-  baseFontSize: 16,
-  baseLineHeight: 16,
-  baseSpacing: 16,
   version: core.VERSION
 };
 
@@ -426,9 +414,6 @@ var factoryFor$4 = function factoryFor() {
   var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
       name = _ref.name,
       id = _ref.id,
-      baseFontSize = _ref.baseFontSize,
-      baseLineHeight = _ref.baseLineHeight,
-      baseSpacing = _ref.baseSpacing,
       fontFace = _ref.fontFace,
       swatch = _ref.swatch,
       setting = _ref.setting,
@@ -439,9 +424,6 @@ var factoryFor$4 = function factoryFor() {
     var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
         instanceName = _ref2.name,
         instanceId = _ref2.id,
-        instanceBaseFontSize = _ref2.baseFontSize,
-        instanceBaseLineHeight = _ref2.baseLineHeight,
-        instanceBaseSpacing = _ref2.baseSpacing,
         instanceFontFace = _ref2.fontFace,
         instanceSwatch = _ref2.swatch,
         instanceSetting = _ref2.setting,
@@ -450,9 +432,6 @@ var factoryFor$4 = function factoryFor() {
     return Object.assign({}, schema, {
       name: instanceName || name || schema.name,
       id: instanceId || id || schema.id,
-      baseFontSize: instanceBaseFontSize || baseFontSize || schema.baseFontSize,
-      baseLineHeight: instanceBaseLineHeight || baseLineHeight || schema.baseLineHeight,
-      baseSpacing: instanceBaseSpacing || baseSpacing || schema.baseSpacing,
       fontFace: instanceFontFace || fontFace || schema.fontFace,
       swatch: instanceSwatch || swatch || schema.swatch,
       setting: instanceSetting || setting || schema.setting,

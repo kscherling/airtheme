@@ -1229,22 +1229,25 @@ var updateThemeVersion = function updateThemeVersion(version) {
     version: version
   };
 };
-var updateBaseFontSize = function updateBaseFontSize(baseFontSize) {
+
+var updateBaseFontSize = function updateBaseFontSize(updated) {
   return {
-    type: UPDATE_BASE_FONT_SIZE$1,
-    baseFontSize: baseFontSize
+    type: UPDATE_BASE_FONT_SIZE,
+    updated: updated
   };
 };
-var updateBaseLineHeight = function updateBaseLineHeight(baseLineHeight) {
+
+var updateBaseSpacing = function updateBaseSpacing(updated) {
   return {
-    type: UPDATE_BASE_LINE_HEIGHT$1,
-    baseLineHeight: baseLineHeight
+    type: UPDATE_BASE_SPACING,
+    updated: updated
   };
 };
-var updateBaseSpacing = function updateBaseSpacing(baseSpacing) {
+
+var updateBaseLineHeight = function updateBaseLineHeight(updated) {
   return {
-    type: UPDATE_BASE_SPACING$1,
-    baseSpacing: baseSpacing
+    type: UPDATE_BASE_LINE_HEIGHT,
+    updated: updated
   };
 };
 
@@ -3728,13 +3731,13 @@ SimpleTabs.Tab = Tab;
 exports.makeStore = makeStore;
 exports.MakeProvider = MakeProvider;
 exports.updateTheme = updateTheme;
-exports.updateBaseFontSize = updateBaseFontSize;
-exports.updateBaseLineHeight = updateBaseLineHeight;
-exports.updateBaseSpacing = updateBaseSpacing;
 exports.updateThemeId = updateThemeId;
 exports.updateThemeName = updateThemeName;
 exports.updateThemeObject = updateThemeObject;
 exports.updateThemeVersion = updateThemeVersion;
+exports.updateBaseFontSize = updateBaseFontSize;
+exports.updateBaseSpacing = updateBaseSpacing;
+exports.updateBaseLineHeight = updateBaseLineHeight;
 exports.updateSwatchView = updateSwatchView;
 exports.addSwatch = addSwatch;
 exports.removeSwatch = removeSwatch;

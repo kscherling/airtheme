@@ -18,21 +18,6 @@ export default {
 
   id: uuid(),
 
-  // baseFontSize
-  // string : the reference of the unit
-
-  baseFontSize: 16,
-
-  // baseLineHeight
-  // string : the reference of the unit
-
-  baseLineHeight: 1.15,
-
-  // baseSpacing
-  // string : the reference of the unit
-
-  baseSpacing: 16,
-
   // object
   // string : The name of the unit.
 
@@ -43,18 +28,20 @@ export default {
 
   version: VERSION,
 
+  // base
+  // Base : Keyed object of base attribute types
+
+  base: base.base(),
+
   // swatch
   // Swatch : Swatch attribute object
+
   swatch: attribute.swatch(),
 
   // fontFace
   // FontFace : fontFace attribute object
+
   fontFace: attribute.fontFace(),
-
-  // root
-  // Root : Keyed object of root attribute types
-
-  base: base.base(),
 
   // setting
   // Setting : Keyed object of attribute types

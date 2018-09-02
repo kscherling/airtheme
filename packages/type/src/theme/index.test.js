@@ -4,57 +4,87 @@ import { VERSION } from '@airtheme/core'
 const withId = (mock, base) => ({ ...base, id: mock.id })
 
 const baseTheme = {
-  baseFontSize: 16,
-  baseLineHeight: 16,
-  baseSpacing: 16,
+  base: {
+    baseFontSize: {
+      content: { name: 'baseFontSize', object: 'px', ordinal: null, value: 16 },
+      object: 'baseFontSize',
+      reference: null,
+      unit: 'px',
+      view: 'px',
+      viewable: ['px']
+    },
+    baseLineHeight: {
+      content: {
+        name: 'baseLineHeight',
+        object: 'factor',
+        ordinal: null,
+        value: 1.15
+      },
+      object: 'baseLineHeight',
+      reference: 'baseFontSize',
+      unit: 'factor',
+      view: 'px',
+      viewable: ['factor', 'px']
+    },
+    baseSpacing: {
+      content: { name: 'baseSpacing', object: 'px', ordinal: null, value: 16 },
+      object: 'baseSpacing',
+      reference: null,
+      unit: 'px',
+      view: 'px',
+      viewable: ['px']
+    },
+    object: 'base'
+  },
   fontFace: {
     content: [],
-    reference: null,
     object: 'fontFace',
+    reference: null,
     unit: 'string',
     view: 'string',
     viewable: ['string']
   },
-  id: '',
+  id: 'icGOyk4F_',
   name: 'Basic Airtheme',
+  object: 'theme',
   setting: {
-    object: 'setting',
     color: {
       content: [],
-      reference: 'swatch',
       object: 'color',
+      reference: 'swatch',
       unit: 'reference',
       view: 'reference',
       viewable: ['reference', 'hex', 'hexa', 'rgb', 'rgba']
     },
     fontFamily: {
       content: [],
-      reference: 'fontFace',
       object: 'fontFamily',
+      reference: 'fontFace',
       unit: 'reference',
       view: 'reference',
       viewable: ['reference', 'string']
     },
     fontSize: {
       content: [],
-      reference: 'baseFontSize',
       object: 'fontSize',
+      reference: 'baseFontSize',
       unit: 'factor',
       view: 'factor',
       viewable: ['factor', 'px', 'rem']
     },
     fontWeight: {
       content: [],
-      reference: null,
       object: 'fontWeight',
+      reference: null,
       unit: 'string',
       view: 'string',
       viewable: ['string']
     },
+    object: 'setting',
     spacing: {
       content: [],
-      reference: 'baseSpacing',
       object: 'spacing',
+      reference: 'baseSpacing',
       unit: 'factor',
       view: 'factor',
       viewable: ['factor', 'px']
@@ -62,13 +92,12 @@ const baseTheme = {
   },
   swatch: {
     content: [],
-    reference: null,
     object: 'swatch',
+    reference: null,
     unit: 'hexa',
     view: 'hexa',
     viewable: ['hex', 'hexa', 'rgb', 'rgba']
   },
-  object: 'theme',
   version: '0.1.0'
 }
 
@@ -80,26 +109,22 @@ it('creates a `theme`', () => {
 
 it('initializes with prop overrides', () => {
   const result = theme.base({
-    baseFontSize: 14,
-    baseLineHeight: 1,
-    baseSpacing: 14,
     id: 123,
     name: 'My Theme',
     ordinal: 1,
-    setting: { a: 'a' },
-    swatch: { a: 'a' },
-    fontFace: { a: 'a' }
+    setting: { some: 'data' },
+    swatch: { some: 'data' },
+    fontFace: { some: 'data' },
+    base: { some: 'data' }
   })
 
   expect(result).toEqual({
-    baseFontSize: 14,
-    baseLineHeight: 1,
-    baseSpacing: 14,
     id: 123,
     name: 'My Theme',
-    setting: { a: 'a' },
-    swatch: { a: 'a' },
-    fontFace: { a: 'a' },
+    setting: { some: 'data' },
+    swatch: { some: 'data' },
+    fontFace: { some: 'data' },
+    base: { some: 'data' },
     object: 'theme',
     version: '0.1.0'
   })
