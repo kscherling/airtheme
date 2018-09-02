@@ -1,5 +1,5 @@
 import { _ROOT_THEME_ } from '@airtheme/core'
-import { VERSION } from '@airtheme/core'
+import { VERSION, uuid } from '@airtheme/core'
 import attribute from '../attribute'
 import setting from '../setting'
 
@@ -15,7 +15,7 @@ export default {
   // id
   // you know, the id
 
-  id: '',
+  id: uuid(),
 
   // baseFontSize
   // string : the reference of the unit

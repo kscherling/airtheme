@@ -194,7 +194,7 @@ var schema$2 = {
   name: null,
   // id
   // you know, the id
-  id: '',
+  id: core.uuid(),
   // baseFontSize
   // string : the reference of the unit
   baseFontSize: 16,

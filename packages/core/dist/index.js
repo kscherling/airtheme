@@ -52,6 +52,11 @@ var RGBA = 'rgba';
 
 var VERSION = '0.1.0';
 
+var shortid = require('shortid');
+
+var uuid = shortid.generate;
+
+exports.uuid = uuid;
 exports._ROOT_ATTRIBUTE_ = _ROOT_ATTRIBUTE_;
 exports.COLOR = COLOR;
 exports.FONT_SIZE = FONT_SIZE;
@@ -96,3 +101,4 @@ exports.REM = REM;
 exports.RGB = RGB;
 exports.RGBA = RGBA;
 exports.VERSION = VERSION;
+//# sourceMappingURL=index.js.map
