@@ -1,0 +1,25 @@
+{
+  "name": "@airtheme/assemble",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "./task clean",
+    "build": "./task build",
+    "build:watch": "./task build:watch",
+    "test": "./task test"
+  },
+  "dependencies": {
+    "@airtheme/core": "^0.1.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.14.2"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "bracketSpacing": true
+  }
+}
