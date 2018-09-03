@@ -1,15 +1,17 @@
-// import { dig } from 'fp'
+import { dig } from 'fp'
+import { getReferencedAttribute } from './getters'
 
-const attributeReference = ({ reference }, theme) => dig(reference, theme)
+const deserializeFactor = (
+  { value: unitVal, name: unitName } = {},
+  attribute,
+  theme
+) => {
+  const { content: { value: refValue, object } = {} } = getReferencedAttribute(
+    attribute,
+    theme
+  )
 
-const deserializeFactor = ({ value }, attribute, theme) => {
-  const {} = attributeReference(attribute, theme)
-
-  return `${referenceValue * value}${referenceType}`
+  return { [unitName]: `${refValue * unitVal}${object}` }
 }
 
-const deserialize = ({ value, name }, theme) => {
-  return `${baseValue * value}${baseType}`
-}
-
-export default deserialize
+export default deserializeFactor

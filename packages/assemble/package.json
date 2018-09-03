@@ -14,7 +14,8 @@
   "dependencies": {
     "@airtheme/core": "^0.1.0",
     "@airtheme/make": "^0.1.0",
-    "@airtheme/type": "^0.1.0"
+    "@airtheme/type": "^0.1.0",
+    "fp": "^0.1.0"
   },
   "devDependencies": {
     "prettier": "^1.14.2"

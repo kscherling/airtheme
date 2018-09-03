@@ -5,14 +5,15 @@ import {
 } from '@airtheme/core'
 import { mapBaseSpacing } from '@airtheme/make'
 // import deserializeType from 'kit/types/deserializeType'
-
 // const deserialize = (path, theme) => deserializeType(dig(path, theme), theme)
 
 const global = (next, input, theme) =>
   next(
     {
       ...input,
-      [BASE_SPACING_PATH]: theme[BASE_SPACING_PATH]
+      [BASE_SPACING_PATH]: 'spacing',
+      [BASE_FONT_SIZE_PATH]: 'font',
+      [BASE_LINE_HEIGHT_PATH]: 'line'
     },
     theme
   )

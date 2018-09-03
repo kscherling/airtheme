@@ -28,13 +28,32 @@ fontSize: {
 }
 */
 
-const deserialize = (attribute, theme) =>
-  attribute.content.reduce(
-    (acc, unit) => ({
-      ...acc,
-      ...deserializeUnit(unit, attribute, theme)
-    }),
-    {}
-  )
+const validTypes = ({ content, unit }) =>
+  Array.isArray(content)
+    ? content.length && unit === content[0].object
+    : content.length && unit === content.object
+
+const validTypesForArr = ({ content, unit }) =>
+  content.length && unit === content.object
+
+const deserialize = (attribute, theme) => {
+  if (!validTypes(attribute)) {
+    console.warn('Attempting to deserialize a type mismatch')
+    return
+  }
+
+  console.log(Array.isArray(attribute.content))
+  if (Array.isArray(attribute.content)) {
+    return attribute.content.reduce(
+      (acc, unit) => ({
+        ...acc,
+        ...deserializeUnit(unit, attribute, theme)
+      }),
+      {}
+    )
+  }
+
+  return deserializeUnit(unit, attribute, theme)
+}
 
 export default deserialize

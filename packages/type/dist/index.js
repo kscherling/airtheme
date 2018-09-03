@@ -88,7 +88,7 @@ var fontFamily = {
 var fontSize = {
   view: core.FACTOR,
   viewable: [core.FACTOR, core.PX, core.REM],
-  reference: core.BASE_FONT_SIZE_KEY,
+  reference: core.BASE_FONT_SIZE_PATH,
   object: core.FONT_SIZE,
   unit: core.FACTOR
 };

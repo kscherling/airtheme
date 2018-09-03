@@ -12,7 +12,8 @@
     "test": "./task test"
   },
   "dependencies": {
-    "@airtheme/core": "^0.1.0"
+    "@airtheme/core": "^0.1.0",
+    "fp": "^0.1.0"
   },
   "devDependencies": {
     "prettier": "^1.14.2"

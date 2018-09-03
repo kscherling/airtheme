@@ -2145,6 +2145,12 @@ form-data@~2.3.2:
     combined-stream "1.0.6"
     mime-types "^2.1.12"
 
+fp@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/fp/-/fp-0.1.0.tgz#04dec89e4bbe38ae98550f565c0ba799f99b5608"
+  dependencies:
+    lodash "~2.2.1"
+
 fragment-cache@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/fragment-cache/-/fragment-cache-0.2.1.tgz#4290fad27f13e89be7f33799c6bc5a0abfff0d19"
@@ -3422,6 +3428,10 @@ lodash.templatesettings@^4.0.0:
 lodash@^4.13.1, lodash@^4.17.10, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.1, lodash@^4.3.0:
   version "4.17.10"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
+
+lodash@~2.2.1:
+  version "2.2.1"
+  resolved "http://registry.npmjs.org/lodash/-/lodash-2.2.1.tgz#ca935fd14ab3c0c872abacf198b9cda501440867"
 
 longest@^1.0.1:
   version "1.0.1"
