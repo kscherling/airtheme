@@ -1,6 +1,7 @@
 import pipe from '../utils/pipe'
-import global from './global'
+import setting from './setting'
+import meta from './meta'
 
-const index = theme => pipe(theme)(global)
+const index = theme => pipe(theme)(meta, setting)
 
 export default index
