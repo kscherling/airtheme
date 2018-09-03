@@ -23,7 +23,7 @@ const baseTheme = {
       object: 'baseLineHeight',
       reference: 'baseFontSize',
       unit: 'factor',
-      view: 'px',
+      view: 'factor',
       viewable: ['factor', 'px']
     },
     baseSpacing: {

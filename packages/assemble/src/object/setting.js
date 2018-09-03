@@ -5,7 +5,7 @@ const setting = (next, input, theme) =>
     {
       ...input,
       setting: {
-        color: deserialize(theme.setting.color, theme)
+        // color: deserialize(theme.setting.color, theme)
       }
     },
     theme

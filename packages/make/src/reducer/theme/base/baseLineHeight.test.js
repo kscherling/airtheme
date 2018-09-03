@@ -21,7 +21,7 @@ it('`updateBaseLineHeight` update base font size', () => {
     object: 'baseLineHeight',
     reference: 'baseFontSize',
     unit: 'factor',
-    view: 'px',
+    view: 'factor',
     viewable: ['factor', 'px']
   })
 
@@ -38,7 +38,7 @@ it('`updateBaseLineHeight` update base font size', () => {
     object: 'baseLineHeight',
     reference: 'baseFontSize',
     unit: 'factor',
-    view: 'px',
+    view: 'factor',
     viewable: ['factor', 'px']
   })
 })
