@@ -14,17 +14,13 @@ const Title = styled(Grid.OneColumn)`
 `
 
 const Header = styled(Grid.OneColumn)`
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
   font-weight: bold;
-  font-size: 85%;
-  text-transform: uppercase;
+  font-size: 1.15rem;
 `
 
 const Subheader = styled(Grid.OneColumn)`
   font-weight: bold;
-  font-size: 85%;
-  text-transform: uppercase;
 `
 
 const OneColumn = styled(Grid.OneColumn).attrs({

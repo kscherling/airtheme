@@ -113,7 +113,7 @@ var Node = function Node(_ref) {
 };
 var Unit = function Unit(_ref2) {
   var unit = _ref2.unit;
-  return React__default.createElement(make.SimpleList.FourColumns, null, React__default.createElement("span", null, printUnrenderable(unit.name)), React__default.createElement("span", null, printUnrenderable(unit.value)), React__default.createElement("span", null, printUnrenderable(unit.ordinal)), React__default.createElement("span", null, printUnrenderable(unit.object)));
+  return React__default.createElement(React.Fragment, null, React__default.createElement("span", null, printUnrenderable(unit.name)), React__default.createElement("span", null, printUnrenderable(unit.value)), React__default.createElement("span", null, printUnrenderable(unit.ordinal)), React__default.createElement("span", null, printUnrenderable(unit.object)));
 };
 var Attribute = function Attribute(_ref3) {
   var attribute = _ref3.attribute;
@@ -129,26 +129,19 @@ var Attribute = function Attribute(_ref3) {
     });
   }));
 };
-
-var renderContent = function renderContent(content) {
-  if (Array.isArray(content)) {
-    return content.length ? content.map(function (unit, idx) {
-      return React__default.createElement(Unit, {
-        key: idx,
-        unit: unit
-      });
-    }) : React__default.createElement(make.SimpleList, null, React__default.createElement(Strike, null, "empty"));
-  }
-
-  return React__default.createElement(Unit, {
-    unit: content
-  });
-};
-
 var AttributeContent = function AttributeContent(_ref6) {
   var _ref6$content = _ref6.content,
       content = _ref6$content === void 0 ? [] : _ref6$content;
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Subheader, null, "Content"), renderContent(content));
+  return React__default.createElement(make.SimpleList.FourColumns, null, React__default.createElement(make.THead, {
+    colNames: ['name', 'value', 'ordinal', 'unit']
+  }), Array.isArray(content) ? content.length ? content.map(function (unit, idx) {
+    return React__default.createElement(Unit, {
+      key: idx,
+      unit: unit
+    });
+  }) : React__default.createElement(Strike, null, "empty") : React__default.createElement(Unit, {
+    unit: content
+  }));
 };
 
 var Id = reactRedux.connect(make.mapId)(function (_ref) {
@@ -177,6 +170,17 @@ var Globals = function Globals() {
   return React__default.createElement(make.SimpleList, null, React__default.createElement(Id, null), React__default.createElement(Name, null), React__default.createElement(Version, null));
 };
 
+function _templateObject$1() {
+  var data = _taggedTemplateLiteral(["\n  grid-row-gap: 2rem;\n"]);
+
+  _templateObject$1 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var AttributeGroup = styled__default(make.SimpleList.OneColumn)(_templateObject$1());
+
 var SwatchAttribute = reactRedux.connect(make.mapSwatch)(function (_ref) {
   var swatch = _ref.swatch;
   return React__default.createElement(Attribute, {
@@ -191,7 +195,7 @@ var SwatchContent = reactRedux.connect(make.mapSwatchContent)(function (_ref2) {
 });
 
 var Swatch = function Swatch() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(SwatchAttribute, null), React__default.createElement(SwatchContent, null));
+  return React__default.createElement(AttributeGroup, null, React__default.createElement(SwatchAttribute, null), React__default.createElement(SwatchContent, null));
 };
 
 var FontFaceAttribute = reactRedux.connect(make.mapFontFace)(function (_ref) {
@@ -208,7 +212,7 @@ var FontFaceContent = reactRedux.connect(make.mapFontFaceContent)(function (_ref
 });
 
 var FontFace = function FontFace() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(FontFaceAttribute, null), React__default.createElement(FontFaceContent, null));
+  return React__default.createElement(AttributeGroup, null, React__default.createElement(FontFaceAttribute, null), React__default.createElement(FontFaceContent, null));
 };
 
 var FontFamilyAttribute = reactRedux.connect(make.mapFontFamily)(function (_ref) {
@@ -225,7 +229,7 @@ var FontFamilyContent = reactRedux.connect(make.mapFontFamilyContent)(function (
 });
 
 var FontFamily = function FontFamily() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(FontFamilyAttribute, null), React__default.createElement(FontFamilyContent, null));
+  return React__default.createElement(AttributeGroup, null, React__default.createElement(FontFamilyAttribute, null), React__default.createElement(FontFamilyContent, null));
 };
 
 var FontSizeAttribute = reactRedux.connect(make.mapFontSize)(function (_ref) {
@@ -242,7 +246,7 @@ var FontSizeContent = reactRedux.connect(make.mapFontSizeContent)(function (_ref
 });
 
 var FontSize = function FontSize() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(FontSizeAttribute, null), React__default.createElement(FontSizeContent, null));
+  return React__default.createElement(AttributeGroup, null, React__default.createElement(FontSizeAttribute, null), React__default.createElement(FontSizeContent, null));
 };
 
 var FontWeightAttribute = reactRedux.connect(make.mapFontWeight)(function (_ref) {
@@ -259,7 +263,7 @@ var FontWeightContent = reactRedux.connect(make.mapFontWeightContent)(function (
 });
 
 var FontWeight = function FontWeight() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(FontWeightAttribute, null), React__default.createElement(FontWeightContent, null));
+  return React__default.createElement(AttributeGroup, null, React__default.createElement(FontWeightAttribute, null), React__default.createElement(FontWeightContent, null));
 };
 
 var ColorAttribute = reactRedux.connect(make.mapColor)(function (_ref) {
@@ -276,7 +280,7 @@ var ColorContent = reactRedux.connect(make.mapColorContent)(function (_ref2) {
 });
 
 var Color = function Color() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(ColorAttribute, null), React__default.createElement(ColorContent, null));
+  return React__default.createElement(AttributeGroup, null, React__default.createElement(ColorAttribute, null), React__default.createElement(ColorContent, null));
 };
 
 var SpacingAttribute = reactRedux.connect(make.mapSpacing)(function (_ref) {
@@ -293,7 +297,7 @@ var SpacingContent = reactRedux.connect(make.mapSpacingContent)(function (_ref2)
 });
 
 var Spacing = function Spacing() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(SpacingAttribute, null), React__default.createElement(SpacingContent, null));
+  return React__default.createElement(AttributeGroup, null, React__default.createElement(SpacingAttribute, null), React__default.createElement(SpacingContent, null));
 };
 
 var BaseFontSizeAttribute = reactRedux.connect(make.mapBaseFontSize)(function (_ref) {
@@ -310,7 +314,7 @@ var BaseFontSizeContent = reactRedux.connect(make.mapBaseFontSizeContent)(functi
 });
 
 var BaseFontSize = function BaseFontSize() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(BaseFontSizeAttribute, null), React__default.createElement(BaseFontSizeContent, null));
+  return React__default.createElement(AttributeGroup, null, React__default.createElement(BaseFontSizeAttribute, null), React__default.createElement(BaseFontSizeContent, null));
 };
 
 var BaseLineHeightAttribute = reactRedux.connect(make.mapBaseLineHeight)(function (_ref) {
@@ -327,7 +331,7 @@ var BaseLineHeightContent = reactRedux.connect(make.mapBaseLineHeightContent)(fu
 });
 
 var BaseLineHeight = function BaseLineHeight() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(BaseLineHeightAttribute, null), React__default.createElement(BaseLineHeightContent, null));
+  return React__default.createElement(AttributeGroup, null, React__default.createElement(BaseLineHeightAttribute, null), React__default.createElement(BaseLineHeightContent, null));
 };
 
 var BaseSpacingAttribute = reactRedux.connect(make.mapBaseSpacing)(function (_ref) {
@@ -344,7 +348,7 @@ var BaseSpacingContent = reactRedux.connect(make.mapBaseSpacingContent)(function
 });
 
 var BaseSpacing = function BaseSpacing() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(BaseSpacingAttribute, null), React__default.createElement(BaseSpacingContent, null));
+  return React__default.createElement(AttributeGroup, null, React__default.createElement(BaseSpacingAttribute, null), React__default.createElement(BaseSpacingContent, null));
 };
 
 exports.Globals = Globals;

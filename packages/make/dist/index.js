@@ -3430,7 +3430,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n      grid-gap: ", ";\n    "]);
+  var data = _taggedTemplateLiteral(["\n        grid-gap: ", ";\n      "]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -3450,6 +3450,7 @@ function _templateObject() {
 }
 var Grid = styled__default.div(_templateObject(), function (_ref) {
   var gridGap = _ref.gridGap;
+  console.log(gridGap);
   return gridGap && styled.css(_templateObject2(), gridGap);
 }, function (_ref2) {
   var gridTemplateColumns = _ref2.gridTemplateColumns;
@@ -3519,7 +3520,7 @@ function _templateObject5$1() {
 }
 
 function _templateObject4$1() {
-  var data = _taggedTemplateLiteral(["\n  font-weight: bold;\n  font-size: 85%;\n  text-transform: uppercase;\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-weight: bold;\n"]);
 
   _templateObject4$1 = function _templateObject4() {
     return data;
@@ -3529,7 +3530,7 @@ function _templateObject4$1() {
 }
 
 function _templateObject3$1() {
-  var data = _taggedTemplateLiteral(["\n  padding-top: 2rem;\n  padding-bottom: 2rem;\n  font-weight: bold;\n  font-size: 85%;\n  text-transform: uppercase;\n"]);
+  var data = _taggedTemplateLiteral(["\n  padding-bottom: 3rem;\n  font-weight: bold;\n  font-size: 1.15rem;\n"]);
 
   _templateObject3$1 = function _templateObject3() {
     return data;
@@ -3619,6 +3620,25 @@ var Tab = styled__default.a(_templateObject$2(), function (_ref) {
 var SimpleTabs = styled__default.div(_templateObject3$2(), Tab, Tab);
 SimpleTabs.Tab = Tab;
 
+function _templateObject$3() {
+  var data = _taggedTemplateLiteral(["\n  font-size: 80%;\n  font-weight: bold;\n"]);
+
+  _templateObject$3 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var Th = styled__default.span(_templateObject$3());
+
+var THead = function THead(_ref) {
+  var _ref$colNames = _ref.colNames,
+      colNames = _ref$colNames === void 0 ? [] : _ref$colNames;
+  return colNames.map(function (colName) {
+    return react.createElement(Th, null, colName);
+  });
+};
+
 // makeStore
 
 exports.makeStore = makeStore;
@@ -3686,4 +3706,5 @@ exports.mapSpacingContent = mapSpacingContent;
 exports.Grid = Grid;
 exports.SimpleList = SimpleList;
 exports.SimpleTabs = SimpleTabs;
+exports.THead = THead;
 //# sourceMappingURL=index.js.map

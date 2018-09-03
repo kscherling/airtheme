@@ -6,6 +6,7 @@ import {
   SimpleList
 } from '@airtheme/make'
 import { Attribute, AttributeContent } from '../lib/PrintTypes'
+import AttributeGroup from '../lib/AttributeGroup'
 
 const BaseSpacingAttribute = connect(mapBaseSpacing)(({ baseSpacing }) => (
   <Attribute attribute={baseSpacing} />
@@ -15,10 +16,10 @@ const BaseSpacingContent = connect(mapBaseSpacingContent)(({ content }) => (
 ))
 
 const BaseSpacing = () => (
-  <SimpleList.OneColumn>
+  <AttributeGroup>
     <BaseSpacingAttribute />
     <BaseSpacingContent />
-  </SimpleList.OneColumn>
+  </AttributeGroup>
 )
 
 export default BaseSpacing

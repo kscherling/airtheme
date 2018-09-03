@@ -1,6 +1,9 @@
 # build
 **/dist
 
+# maps
+*.map.js
+
 # dependencies
 **/node_modules
 

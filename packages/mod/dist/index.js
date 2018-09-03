@@ -172,7 +172,7 @@ var Unit = function Unit(_ref2) {
 var BaseUnit = function BaseUnit(_ref3) {
   var unit = _ref3.unit,
       update = _ref3.update;
-  return React__default.createElement(make.SimpleList.FourColumns, null, React__default.createElement("input", {
+  return React__default.createElement(make.SimpleList.ThreeColumns, null, React__default.createElement("input", {
     disabled: true,
     placeholder: "name",
     type: "text",
@@ -200,7 +200,7 @@ var BaseUnit = function BaseUnit(_ref3) {
         ordinal: e.target.value
       });
     }
-  }), React__default.createElement("span", null));
+  }));
 };
 var AddUnit =
 /*#__PURE__*/
@@ -327,7 +327,7 @@ var AttributeBaseContent = function AttributeBaseContent(_ref6) {
   var _ref6$content = _ref6.content,
       content = _ref6$content === void 0 ? {} : _ref6$content,
       update = _ref6.update;
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(make.SimpleList.Subheader, null, "Content"), React__default.createElement(BaseUnit, {
+  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(BaseUnit, {
     unit: content,
     update: update
   }));

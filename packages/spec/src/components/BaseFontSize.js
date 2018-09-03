@@ -6,6 +6,7 @@ import {
   SimpleList
 } from '@airtheme/make'
 import { Attribute, AttributeContent } from '../lib/PrintTypes'
+import AttributeGroup from '../lib/AttributeGroup'
 
 const BaseFontSizeAttribute = connect(mapBaseFontSize)(({ baseFontSize }) => (
   <Attribute attribute={baseFontSize} />
@@ -15,10 +16,10 @@ const BaseFontSizeContent = connect(mapBaseFontSizeContent)(({ content }) => (
 ))
 
 const BaseFontSize = () => (
-  <SimpleList.OneColumn>
+  <AttributeGroup>
     <BaseFontSizeAttribute />
     <BaseFontSizeContent />
-  </SimpleList.OneColumn>
+  </AttributeGroup>
 )
 
 export default BaseFontSize

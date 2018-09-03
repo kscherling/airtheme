@@ -6,6 +6,7 @@ import {
   SimpleList
 } from '@airtheme/make'
 import { Attribute, AttributeContent } from '../lib/PrintTypes'
+import AttributeGroup from '../lib/AttributeGroup'
 
 const BaseLineHeightAttribute = connect(mapBaseLineHeight)(
   ({ baseLineHeight }) => <Attribute attribute={baseLineHeight} />
@@ -15,10 +16,10 @@ const BaseLineHeightContent = connect(mapBaseLineHeightContent)(
 )
 
 const BaseLineHeight = () => (
-  <SimpleList.OneColumn>
+  <AttributeGroup>
     <BaseLineHeightAttribute />
     <BaseLineHeightContent />
-  </SimpleList.OneColumn>
+  </AttributeGroup>
 )
 
 export default BaseLineHeight

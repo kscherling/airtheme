@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { mapSwatch, mapSwatchContent, SimpleList } from '@airtheme/make'
 import { Attribute, AttributeContent } from '../lib/PrintTypes'
+import AttributeGroup from '../lib/AttributeGroup'
 
 const SwatchAttribute = connect(mapSwatch)(({ swatch }) => (
   <Attribute attribute={swatch} />
@@ -12,10 +13,10 @@ const SwatchContent = connect(mapSwatchContent)(({ content }) => (
 ))
 
 const Swatch = () => (
-  <SimpleList.OneColumn>
+  <AttributeGroup>
     <SwatchAttribute />
     <SwatchContent />
-  </SimpleList.OneColumn>
+  </AttributeGroup>
 )
 
 export default Swatch

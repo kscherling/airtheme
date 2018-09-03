@@ -7,11 +7,15 @@ const Grid = styled.div`
   display: grid;
   width: 100%;
 
-  ${({ gridGap }) =>
-    gridGap &&
-    css`
-      grid-gap: ${gridGap};
-    `}
+  ${({ gridGap }) => {
+    console.log(gridGap)
+    return (
+      gridGap &&
+      css`
+        grid-gap: ${gridGap};
+      `
+    )
+  }}
 
   ${({ gridTemplateColumns }) =>
     gridTemplateColumns &&

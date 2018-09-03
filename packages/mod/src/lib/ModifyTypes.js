@@ -42,7 +42,7 @@ export const Unit = ({ unit, remove, update }) => (
 )
 
 export const BaseUnit = ({ unit, update }) => (
-  <SimpleList.FourColumns>
+  <SimpleList.ThreeColumns>
     <input
       disabled
       placeholder="name"
@@ -62,8 +62,7 @@ export const BaseUnit = ({ unit, update }) => (
       value={unit.ordinal}
       onChange={e => update({ ordinal: e.target.value })}
     />
-    <span />
-  </SimpleList.FourColumns>
+  </SimpleList.ThreeColumns>
 )
 
 export class AddUnit extends Component {
@@ -149,7 +148,6 @@ export const AttributeContent = ({ content = [], update, remove }) => (
 
 export const AttributeBaseContent = ({ content = {}, update }) => (
   <SimpleList.OneColumn>
-    <SimpleList.Subheader>Content</SimpleList.Subheader>
     <BaseUnit unit={content} update={update} />
   </SimpleList.OneColumn>
 )

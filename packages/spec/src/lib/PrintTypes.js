@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import styled, { css } from 'styled-components'
-import { Grid, SimpleList } from '@airtheme/make'
+import { Grid, SimpleList, THead } from '@airtheme/make'
 
 const Strike = styled.span`
   text-decoration: line-through;
@@ -35,12 +35,12 @@ export const Node = ({ name, val }) => (
 )
 
 export const Unit = ({ unit }) => (
-  <SimpleList.FourColumns>
+  <Fragment>
     <span>{printUnrenderable(unit.name)}</span>
     <span>{printUnrenderable(unit.value)}</span>
     <span>{printUnrenderable(unit.ordinal)}</span>
     <span>{printUnrenderable(unit.object)}</span>
-  </SimpleList.FourColumns>
+  </Fragment>
 )
 
 export const Attribute = ({ attribute }) => (
@@ -51,23 +51,17 @@ export const Attribute = ({ attribute }) => (
   </SimpleList.TwoColumns>
 )
 
-const renderContent = content => {
-  if (Array.isArray(content)) {
-    return content.length ? (
-      content.map((unit, idx) => <Unit key={idx} unit={unit} />)
-    ) : (
-      <SimpleList>
-        <Strike>empty</Strike>
-      </SimpleList>
-    )
-  }
-
-  return <Unit unit={content} />
-}
-
 export const AttributeContent = ({ content = [] }) => (
-  <SimpleList.OneColumn>
-    <SimpleList.Subheader>Content</SimpleList.Subheader>
-    {renderContent(content)}
-  </SimpleList.OneColumn>
+  <SimpleList.FourColumns>
+    <THead colNames={['name', 'value', 'ordinal', 'unit']} />
+    {Array.isArray(content) ? (
+      content.length ? (
+        content.map((unit, idx) => <Unit key={idx} unit={unit} />)
+      ) : (
+        <Strike>empty</Strike>
+      )
+    ) : (
+      <Unit unit={content} />
+    )}
+  </SimpleList.FourColumns>
 )
