@@ -13,6 +13,7 @@ export { default as factoryForSetting } from './setting/factoryFor'
 export { default as attribute } from './attribute'
 export { default as attributeSchema } from './attribute/schema'
 export { default as factoryForAttribute } from './attribute/factoryFor'
+export { default as deserializeAttribute } from './attribute/deserialize'
 
 export { default as unit } from './unit'
 export { default as unitSchema } from './unit/schema'

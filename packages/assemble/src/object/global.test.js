@@ -8,7 +8,9 @@ test('builds global values', () => {
   const result = pipe(basicTheme)(global, output)
 
   expect(result).toEqual({
-    baseSpacing: 16
+    baseFontSize: { baseFontSize: '16px' },
+    baseLineHeight: { baseLineHeight: '18.4px' },
+    baseSpacing: { baseSpacing: '16px' }
   })
 
   expect(true).toEqual(true)

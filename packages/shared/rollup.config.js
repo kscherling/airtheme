@@ -14,7 +14,13 @@ module.exports = {
     babel({
       exclude: 'node_modules/**'
     }),
-    commonjs()
+    commonjs(
+      {
+        namedExports: {
+          'node_modules/fp/dist/index.js': [ 'fp' ]
+        }
+      }
+    )
   ],
   external: []
 }

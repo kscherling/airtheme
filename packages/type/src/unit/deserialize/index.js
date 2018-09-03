@@ -1,7 +1,9 @@
 import factor from './factor'
+import px from './px'
 
 const deserializers = {
-  factor
+  factor,
+  px
 }
 
 const deserialize = (unit, attribute, theme) =>

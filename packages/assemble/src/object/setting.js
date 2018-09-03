@@ -1,5 +1,3 @@
-import { mapBaseSpacing } from '@airtheme/make'
-
 const setting = (next, input, theme) =>
   next(
     {

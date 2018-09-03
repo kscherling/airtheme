@@ -3,6 +3,7 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 var core = require('@airtheme/core');
+var fp = require('fp');
 
 function _defineProperty(obj, key, value) {
   if (key in obj) {
@@ -17,6 +18,25 @@ function _defineProperty(obj, key, value) {
   }
 
   return obj;
+}
+
+function _objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+    var ownKeys = Object.keys(source);
+
+    if (typeof Object.getOwnPropertySymbols === 'function') {
+      ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {
+        return Object.getOwnPropertyDescriptor(source, sym).enumerable;
+      }));
+    }
+
+    ownKeys.forEach(function (key) {
+      _defineProperty(target, key, source[key]);
+    });
+  }
+
+  return target;
 }
 
 // object for a theme attribute, has many units
@@ -444,6 +464,98 @@ var theme = {
   base: factoryFor$4(base$2, schema$4)
 };
 
+var getReferencedAttribute = function getReferencedAttribute(_ref, theme) {
+  var reference = _ref.reference;
+  return fp.dig(reference, theme);
+};
+
+var deserializeFactor = function deserializeFactor() {
+  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      unitVal = _ref.value,
+      unitName = _ref.name;
+
+  var attribute = arguments.length > 1 ? arguments[1] : undefined;
+  var theme = arguments.length > 2 ? arguments[2] : undefined;
+
+  var _getReferencedAttribu = getReferencedAttribute(attribute, theme),
+      _getReferencedAttribu2 = _getReferencedAttribu.content;
+
+  _getReferencedAttribu2 = _getReferencedAttribu2 === void 0 ? {} : _getReferencedAttribu2;
+  var refValue = _getReferencedAttribu2.value,
+      object = _getReferencedAttribu2.object;
+  return _defineProperty({}, unitName, "".concat(refValue * unitVal).concat(object));
+};
+
+var deserializePx = function deserializePx() {
+  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      unitVal = _ref.value,
+      unitName = _ref.name,
+      unitObject = _ref.object;
+
+  return _defineProperty({}, unitName, "".concat(unitVal).concat(unitObject));
+};
+
+var deserializers = {
+  factor: deserializeFactor,
+  px: deserializePx
+};
+
+var deserialize = function deserialize(unit, attribute, theme) {
+  return deserializers[unit.object](unit, attribute, theme);
+};
+
+/*
+Accepts an attribute object and theme object
+Returns object of deserialzied values
+must pass attribute and theme object for reference
+
+fontSize: {
+  view: "factor",
+  viewable: [ "factor", "px", "rem" ],
+  reference: "baseFontSize",
+  object: "fontSize",
+  unit: "factor"
+  content: [
+    { name: "xs", ordinal: 1, object: "factor", value: "0.8" },
+    { name: "sm", ordinal: 2, object: "factor", value: "0.9" },
+    { name: "md", ordinal: 3, object: "factor", value: "1" },
+    { name: "lg", ordinal: 4, object: "factor", value: "1.1" },
+    { name: "xl", ordinal: 5, object: "factor", value: "1.2" },
+    { name: "xxl", ordinal: 6, object: "factor", value: "1.3" }
+  ],
+},
+
+{
+  xs: '0.8rem',
+  sm: '0.9rem',
+  md: '1rem',
+  ...
+}
+*/
+
+var validTypes = function validTypes() {
+  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      content = _ref.content,
+      unit = _ref.unit;
+
+  return Array.isArray(content) ? content && content.length && unit === content[0].object : content && unit === content.object;
+};
+
+var deserialize$1 = function deserialize$$1(attribute, theme) {
+  if (!validTypes(attribute)) {
+    console.warn('Attempting to deserialize a type mismatch');
+    return;
+  }
+
+  if (Array.isArray(attribute.content)) {
+    return attribute.content.reduce(function (acc, unit) {
+      return _objectSpread({}, acc, deserialize(unit, attribute, theme));
+    }, {});
+  }
+
+  return deserialize(attribute.content, attribute, theme);
+};
+
 exports.theme = theme;
 exports.themeSchema = schema$4;
 exports.factoryForTheme = factoryFor$4;
@@ -456,6 +568,7 @@ exports.factoryForSetting = factoryFor$2;
 exports.attribute = attribute;
 exports.attributeSchema = schema;
 exports.factoryForAttribute = factoryFor;
+exports.deserializeAttribute = deserialize$1;
 exports.unit = unit;
 exports.unitSchema = schema$1;
 exports.factoryForUnit = factoryFor$1;

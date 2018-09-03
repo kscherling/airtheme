@@ -28,13 +28,10 @@ fontSize: {
 }
 */
 
-const validTypes = ({ content, unit }) =>
+const validTypes = ({ content, unit } = {}) =>
   Array.isArray(content)
-    ? content.length && unit === content[0].object
-    : content.length && unit === content.object
-
-const validTypesForArr = ({ content, unit }) =>
-  content.length && unit === content.object
+    ? content && content.length && unit === content[0].object
+    : content && unit === content.object
 
 const deserialize = (attribute, theme) => {
   if (!validTypes(attribute)) {
@@ -42,7 +39,6 @@ const deserialize = (attribute, theme) => {
     return
   }
 
-  console.log(Array.isArray(attribute.content))
   if (Array.isArray(attribute.content)) {
     return attribute.content.reduce(
       (acc, unit) => ({
@@ -53,7 +49,7 @@ const deserialize = (attribute, theme) => {
     )
   }
 
-  return deserializeUnit(unit, attribute, theme)
+  return deserializeUnit(attribute.content, attribute, theme)
 }
 
 export default deserialize
