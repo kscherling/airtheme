@@ -29,8 +29,8 @@ var SWATCH_KEY = 'swatch';
 var UTILITY_KEY = 'utility';
 
 var BASE_FONT_SIZE_PATH = "".concat(BASE_KEY, ".").concat(BASE_FONT_SIZE_KEY);
-var BASE_LINE_HEIGHT_PATH = BASE_LINE_HEIGHT_KEY;
-var BASE_SPACING_PATH = BASE_SPACING_KEY;
+var BASE_LINE_HEIGHT_PATH = "".concat(BASE_KEY, ".").concat(BASE_LINE_HEIGHT_KEY);
+var BASE_SPACING_PATH = "".concat(BASE_KEY, ".").concat(BASE_SPACING_KEY);
 var COLOR_PATH = "".concat(SETTING_KEY, ".").concat(COLOR_KEY);
 var FONT_FAMILY_PATH = "".concat(SETTING_KEY, ".").concat(FONT_FAMILY_KEY);
 var FONT_SIZE_PATH = "".concat(SETTING_KEY, ".").concat(FONT_SIZE_KEY);

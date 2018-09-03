@@ -140,7 +140,7 @@ var lineHeight = {
 var spacing = {
   view: core.FACTOR,
   viewable: [core.FACTOR, core.PX],
-  reference: core.BASE_SPACING_KEY,
+  reference: core.BASE_SPACING_PATH,
   object: core.SPACING,
   unit: core.FACTOR
 };
@@ -477,6 +477,7 @@ var deserializeFactor = function deserializeFactor() {
   var attribute = arguments.length > 1 ? arguments[1] : undefined;
   var theme = arguments.length > 2 ? arguments[2] : undefined;
 
+  // TODO: Does not account for arrays of units (base only)
   var _getReferencedAttribu = getReferencedAttribute(attribute, theme),
       _getReferencedAttribu2 = _getReferencedAttribu.content;
 
@@ -495,9 +496,31 @@ var deserializePx = function deserializePx() {
   return _defineProperty({}, unitName, "".concat(unitVal).concat(unitObject));
 };
 
+var deserializeString = function deserializeString() {
+  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      unitVal = _ref.value,
+      unitName = _ref.name;
+
+  return _defineProperty({}, unitName, "".concat(unitVal));
+};
+
+var deserializeReference = function deserializeReference() {
+  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      unitVal = _ref.value,
+      unitName = _ref.name;
+
+  var attribute = arguments.length > 1 ? arguments[1] : undefined;
+  var theme = arguments.length > 2 ? arguments[2] : undefined;
+  var referencedAttribute = getReferencedAttribute(attribute, theme);
+  var refUnitVal = deserialize$1(referencedAttribute, theme)[unitVal];
+  return _defineProperty({}, unitName, "".concat(refUnitVal));
+};
+
 var deserializers = {
   factor: deserializeFactor,
-  px: deserializePx
+  px: deserializePx,
+  string: deserializeString,
+  reference: deserializeReference
 };
 
 var deserialize = function deserialize(unit, attribute, theme) {
@@ -533,15 +556,25 @@ fontSize: {
 }
 */
 
+var isEmpty = function isEmpty(_ref) {
+  var content = _ref.content;
+  return Array.isArray(content) ? !Boolean(content.length) : !Boolean(content);
+};
+
 var validTypes = function validTypes() {
-  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-      content = _ref.content,
-      unit = _ref.unit;
+  var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      content = _ref2.content,
+      unit = _ref2.unit;
 
   return Array.isArray(content) ? content && content.length && unit === content[0].object : content && unit === content.object;
 };
 
 var deserialize$1 = function deserialize$$1(attribute, theme) {
+  if (isEmpty(attribute)) {
+    console.warn('Content is empty');
+    return;
+  }
+
   if (!validTypes(attribute)) {
     console.warn('Attempting to deserialize a type mismatch');
     return;

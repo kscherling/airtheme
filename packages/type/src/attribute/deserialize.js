@@ -28,12 +28,20 @@ fontSize: {
 }
 */
 
+const isEmpty = ({ content }) =>
+  Array.isArray(content) ? !Boolean(content.length) : !Boolean(content)
+
 const validTypes = ({ content, unit } = {}) =>
   Array.isArray(content)
     ? content && content.length && unit === content[0].object
     : content && unit === content.object
 
 const deserialize = (attribute, theme) => {
+  if (isEmpty(attribute)) {
+    console.warn('Content is empty')
+    return
+  }
+
   if (!validTypes(attribute)) {
     console.warn('Attempting to deserialize a type mismatch')
     return

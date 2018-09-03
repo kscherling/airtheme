@@ -1,4 +1,3 @@
-import { dig } from 'fp'
 import { getReferencedAttribute } from './getters'
 
 const deserializeFactor = (
@@ -6,6 +5,7 @@ const deserializeFactor = (
   attribute,
   theme
 ) => {
+  // TODO: Does not account for arrays of units (base only)
   const { content: { value: refValue, object } = {} } = getReferencedAttribute(
     attribute,
     theme
