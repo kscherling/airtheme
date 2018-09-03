@@ -5,6 +5,7 @@ module.exports = {
   external: [
     ...baseConfig.external,
     '@airtheme/make',
+    '@airtheme/assemble',
     'react',
     'react-dom',
     'react-redux',

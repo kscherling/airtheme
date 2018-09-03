@@ -6,6 +6,7 @@ var React = require('react');
 var React__default = _interopDefault(React);
 var reactRedux = require('react-redux');
 var make = require('@airtheme/make');
+var assemble = _interopDefault(require('@airtheme/assemble'));
 
 function _defineProperty(obj, key, value) {
   if (key in obj) {
@@ -421,7 +422,6 @@ Prism.default = Prism;
 /* This content is auto-generated to include some prismjs language components: */
 
 /* "prismjs/components/prism-markup" */
-
 prismCore.languages.markup = {
   'comment': /<!--[\s\S]*?-->/,
   'prolog': /<\?[\s\S]+?\?>/,
@@ -2453,75 +2453,103 @@ prismCore.languages.yaml = {
 // Generated with Base16 Builder (https://github.com/base16-builder/base16-builder)
 
 /*:: import type { PrismTheme } from '../src/types' */
-var theme
-/*: PrismTheme */
-= {
+
+var theme /*: PrismTheme */ = {
   plain: {
     backgroundColor: "#2a2734",
     color: "#9a86fd"
   },
-  styles: [{
-    types: ["comment", "prolog", "doctype", "cdata", "punctuation"],
-    style: {
-      color: "#6c6783"
+  styles: [
+    {
+      types: ["comment", "prolog", "doctype", "cdata", "punctuation"],
+      style: {
+        color: "#6c6783"
+      }
+    },
+    {
+      types: ["namespace"],
+      style: {
+        opacity: 0.7
+      }
+    },
+    {
+      types: ["tag", "operator", "number"],
+      style: {
+        color: "#e09142"
+      }
+    },
+    {
+      types: ["property", "function"],
+      style: {
+        color: "#9a86fd"
+      }
+    },
+    {
+      types: ["tag-id", "selector", "atrule-id"],
+      style: {
+        color: "#eeebff"
+      }
+    },
+    {
+      types: ["attr-name"],
+      style: {
+        color: "#c4b9fe"
+      }
+    },
+    {
+      types: [
+        "boolean",
+        "string",
+        "entity",
+        "url",
+        "attr-value",
+        "keyword",
+        "control",
+        "directive",
+        "unit",
+        "statement",
+        "regex",
+        "at-rule",
+        "placeholder",
+        "variable"
+      ],
+      style: {
+        color: "#ffcc99"
+      }
+    },
+    {
+      types: ["deleted"],
+      style: {
+        textDecorationLine: "line-through"
+      }
+    },
+    {
+      types: ["inserted"],
+      style: {
+        textDecorationLine: "underline"
+      }
+    },
+    {
+      types: ["italic"],
+      style: {
+        fontStyle: "italic"
+      }
+    },
+    {
+      types: ["important", "bold"],
+      style: {
+        fontWeight: "bold"
+      }
+    },
+    {
+      types: ["important"],
+      style: {
+        color: "#c4b9fe"
+      }
     }
-  }, {
-    types: ["namespace"],
-    style: {
-      opacity: 0.7
-    }
-  }, {
-    types: ["tag", "operator", "number"],
-    style: {
-      color: "#e09142"
-    }
-  }, {
-    types: ["property", "function"],
-    style: {
-      color: "#9a86fd"
-    }
-  }, {
-    types: ["tag-id", "selector", "atrule-id"],
-    style: {
-      color: "#eeebff"
-    }
-  }, {
-    types: ["attr-name"],
-    style: {
-      color: "#c4b9fe"
-    }
-  }, {
-    types: ["boolean", "string", "entity", "url", "attr-value", "keyword", "control", "directive", "unit", "statement", "regex", "at-rule", "placeholder", "variable"],
-    style: {
-      color: "#ffcc99"
-    }
-  }, {
-    types: ["deleted"],
-    style: {
-      textDecorationLine: "line-through"
-    }
-  }, {
-    types: ["inserted"],
-    style: {
-      textDecorationLine: "underline"
-    }
-  }, {
-    types: ["italic"],
-    style: {
-      fontStyle: "italic"
-    }
-  }, {
-    types: ["important", "bold"],
-    style: {
-      fontWeight: "bold"
-    }
-  }, {
-    types: ["important"],
-    style: {
-      color: "#c4b9fe"
-    }
-  }]
+  ]
 };
+
 var duotoneDark = theme;
 
 var defaultProps = {
@@ -2615,23 +2643,7 @@ var normalizeTokens = function normalizeTokens(tokens) {
   return acc;
 };
 
-function _extends$1() {
-  _extends$1 = Object.assign || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-
-    return target;
-  };
-
-  return _extends$1.apply(this, arguments);
-}
+function _extends$1() { _extends$1 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1.apply(this, arguments); }
 
 var themeToDict = function themeToDict(theme, language) {
   var plain = theme.plain;
@@ -2661,44 +2673,11 @@ var themeToDict = function themeToDict(theme, language) {
   return themeDict;
 };
 
-function _extends$2() {
-  _extends$2 = Object.assign || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
+function _extends$2() { _extends$2 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$2.apply(this, arguments); }
 
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
+function _objectWithoutPropertiesLoose$1(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-    return target;
-  };
-
-  return _extends$2.apply(this, arguments);
-}
-
-function _objectWithoutPropertiesLoose$1(source, excluded) {
-  if (source == null) return {};
-  var target = {};
-  var sourceKeys = Object.keys(source);
-  var key, i;
-
-  for (i = 0; i < sourceKeys.length; i++) {
-    key = sourceKeys[i];
-    if (excluded.indexOf(key) >= 0) continue;
-    target[key] = source[key];
-  }
-
-  return target;
-}
-
-function _inheritsLoose$1(subClass, superClass) {
-  subClass.prototype = Object.create(superClass.prototype);
-  subClass.prototype.constructor = subClass;
-  subClass.__proto__ = superClass;
-}
+function _inheritsLoose$1(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 var Highlight =
 /*#__PURE__*/
@@ -2857,7 +2836,7 @@ var Pretty = function Pretty(_ref) {
 var Print = function Print(_ref) {
   var theme = _ref.theme;
   return React__default.createElement(Pretty, {
-    data: theme
+    data: assemble.object(theme)
   });
 };
 
