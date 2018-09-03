@@ -59,9 +59,9 @@ export default theme.base({
   },
   swatch: swatch({
     content: [
-      hexa({ name: 'prussian blue', value: '#0B3954, 1', ordinal: 1 }),
-      hexa({ name: 'pastel red', value: '#FF6663, 1', ordinal: 2 }),
-      hexa({ name: 'pale aqua', value: '#BFD7EA, 1', ordinal: 3 })
+      hexa({ name: 'prussian blue', value: '#0B3954ff', ordinal: 1 }),
+      hexa({ name: 'pastel red', value: '#FF6663ff', ordinal: 2 }),
+      hexa({ name: 'pale aqua', value: '#BFD7EAff', ordinal: 3 })
     ]
   })
 })

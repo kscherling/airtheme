@@ -7,6 +7,11 @@ test('builds setting values', () => {
 
   expect(result).toEqual({
     setting: {
+      color: {
+        ltGrey: '#bfd7ea',
+        primary: 'rgb(11, 57, 84)',
+        secondary: '#ff6663'
+      },
       fontFamily: {
         body: 'Helvetica',
         code: 'Andale Mono',

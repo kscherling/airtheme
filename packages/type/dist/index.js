@@ -528,12 +528,31 @@ var deserializeReference = function deserializeReference() {
   return _defineProperty({}, unitName, "".concat(refUnitVal));
 };
 
-var deserializers = {
+var tinycolor = require('tinycolor2');
+
+var toCssColorString = function toCssColorString(hexa) {
+  var opaque = /^#\S{6}ff$/i;
+  var isOpaque = opaque.test(hexa);
+  return isOpaque ? tinycolor(hexa).toHexString() : tinycolor(hexa).toRgbString();
+};
+
+var deserializeHexa = function deserializeHexa() {
+  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      unitValue = _ref.value,
+      unitName = _ref.name;
+
+  return _defineProperty({}, unitName, "".concat(toCssColorString(unitValue)));
+};
+
+
+
+var deserializers = /*#__PURE__*/Object.freeze({
   factor: deserializeFactor,
   px: deserializePx,
   string: deserializeString,
-  reference: deserializeReference
-};
+  reference: deserializeReference,
+  hexa: deserializeHexa
+});
 
 var deserialize = function deserialize(unit, attribute, theme) {
   if (!deserializers[unit.object]) {

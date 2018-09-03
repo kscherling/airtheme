@@ -1,4 +1,4 @@
-import getReferencedAttribute from '../utils/getReferenceAttribute'
+import getReferencedAttribute from '../../utils/getReferencedAttribute'
 import deserializeAttribute from '../../attribute/deserialize'
 import { dig } from 'fp'
 

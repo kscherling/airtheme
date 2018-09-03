@@ -1,4 +1,4 @@
-import deserializeUnit from '../unit/deserialize'
+import deserializeUnit from '../unit/deserializer'
 /*
 Accepts an attribute object and theme object
 Returns object of deserialzied values
