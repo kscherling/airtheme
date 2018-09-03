@@ -6,12 +6,11 @@ test('builds setting values', () => {
   const result = pipe(basicTheme)(setting, output)
 
   expect(result).toEqual({
+    baseFontSize: { baseFontSize: '16px' },
+    baseLineHeight: { baseLineHeight: '18.4px' },
+    baseSpacing: { baseSpacing: '16px' },
     setting: {
-      color: {
-        ltGrey: '#bfd7ea',
-        primary: 'rgb(11, 57, 84)',
-        secondary: '#ff6663'
-      },
+      color: { ltGrey: '#bfd7ea', primary: '#0b3954', secondary: '#ff6663' },
       fontFamily: {
         body: 'Helvetica',
         code: 'Andale Mono',
