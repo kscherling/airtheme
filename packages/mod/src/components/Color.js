@@ -27,8 +27,8 @@ const ColorContent = connect(
       content={content}
       remove={removeColor}
       update={updateColor}
+      add={addColor}
     />
-    <AddUnit nextOrdinal={content.length + 1} add={addColor} />
   </Fragment>
 ))
 

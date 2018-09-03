@@ -27,8 +27,8 @@ const SwatchContent = connect(
       content={content}
       remove={removeSwatch}
       update={updateSwatch}
+      add={addSwatch}
     />
-    <AddUnit nextOrdinal={content.length + 1} add={addSwatch} />
   </Fragment>
 ))
 

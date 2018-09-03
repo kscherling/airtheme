@@ -27,8 +27,8 @@ const FontSizeContent = connect(
       content={content}
       remove={removeFontSize}
       update={updateFontSize}
+      add={addFontSize}
     />
-    <AddUnit nextOrdinal={content.length + 1} add={addFontSize} />
   </Fragment>
 ))
 

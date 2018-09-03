@@ -25,8 +25,8 @@ const FontFaceContent = connect(
       content={content}
       remove={removeFontFace}
       update={updateFontFace}
+      add={addFontFace}
     />
-    <AddUnit nextOrdinal={content.length + 1} add={addFontFace} />
   </Fragment>
 ))
 

@@ -26,8 +26,8 @@ const FontWeightContent = connect(
       content={content}
       remove={removeFontWeight}
       update={updateFontWeight}
+      add={addFontWeight}
     />
-    <AddUnit nextOrdinal={content.length + 1} add={addFontWeight} />
   </Fragment>
 ))
 

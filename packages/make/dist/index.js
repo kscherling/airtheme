@@ -3430,7 +3430,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n        grid-gap: ", ";\n      "]);
+  var data = _taggedTemplateLiteral(["\n      grid-gap: ", ";\n    "]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -3450,7 +3450,6 @@ function _templateObject() {
 }
 var Grid = styled__default.div(_templateObject(), function (_ref) {
   var gridGap = _ref.gridGap;
-  console.log(gridGap);
   return gridGap && styled.css(_templateObject2(), gridGap);
 }, function (_ref2) {
   var gridTemplateColumns = _ref2.gridTemplateColumns;
@@ -3634,8 +3633,10 @@ var Th = styled__default.span(_templateObject$3());
 var THead = function THead(_ref) {
   var _ref$colNames = _ref.colNames,
       colNames = _ref$colNames === void 0 ? [] : _ref$colNames;
-  return colNames.map(function (colName) {
-    return react.createElement(Th, null, colName);
+  return colNames.map(function (colName, idx) {
+    return react.createElement(Th, {
+      key: idx
+    }, colName);
   });
 };
 

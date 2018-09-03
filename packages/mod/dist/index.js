@@ -135,10 +135,10 @@ var Unit = function Unit(_ref2) {
   var unit = _ref2.unit,
       remove = _ref2.remove,
       update = _ref2.update;
-  return React__default.createElement(make.SimpleList.FourColumns, null, React__default.createElement("input", {
+  return React__default.createElement(React.Fragment, null, React__default.createElement("input", {
     placeholder: "name",
     type: "text",
-    value: unit.name,
+    value: unit.name || '',
     onChange: function onChange(e) {
       return update(unit, {
         name: e.target.value
@@ -147,7 +147,7 @@ var Unit = function Unit(_ref2) {
   }), React__default.createElement("input", {
     placeholder: "value",
     type: "text",
-    value: unit.value,
+    value: unit.value || '',
     onChange: function onChange(e) {
       return update(unit, {
         value: e.target.value
@@ -156,7 +156,7 @@ var Unit = function Unit(_ref2) {
   }), React__default.createElement("input", {
     placeholder: "ordinal",
     type: "text",
-    value: unit.ordinal,
+    value: unit.ordinal || '',
     onChange: function onChange(e) {
       return update(unit, {
         ordinal: e.target.value
@@ -172,11 +172,11 @@ var Unit = function Unit(_ref2) {
 var BaseUnit = function BaseUnit(_ref3) {
   var unit = _ref3.unit,
       update = _ref3.update;
-  return React__default.createElement(make.SimpleList.ThreeColumns, null, React__default.createElement("input", {
+  return React__default.createElement(React.Fragment, null, React__default.createElement("input", {
     disabled: true,
     placeholder: "name",
     type: "text",
-    value: unit.name,
+    value: unit.name || '',
     onChange: function onChange(e) {
       return update({
         name: e.target.value
@@ -185,7 +185,7 @@ var BaseUnit = function BaseUnit(_ref3) {
   }), React__default.createElement("input", {
     placeholder: "value",
     type: "text",
-    value: unit.value,
+    value: unit.value || '',
     onChange: function onChange(e) {
       return update({
         value: e.target.value
@@ -194,7 +194,7 @@ var BaseUnit = function BaseUnit(_ref3) {
   }), React__default.createElement("input", {
     placeholder: "ordinal",
     type: "text",
-    value: unit.ordinal,
+    value: unit.ordinal || '',
     onChange: function onChange(e) {
       return update({
         ordinal: e.target.value
@@ -255,7 +255,7 @@ function (_Component) {
           name = _this$state2.name,
           value = _this$state2.value,
           ordinal = _this$state2.ordinal;
-      return React__default.createElement(make.SimpleList.FourColumns, null, React__default.createElement("input", {
+      return React__default.createElement(React.Fragment, null, React__default.createElement("input", {
         type: "text",
         placeholder: "name",
         value: name,
@@ -297,9 +297,7 @@ var Attribute = function Attribute(_ref4) {
       viewable = _ref4.viewable,
       _ref4$updateView = _ref4.updateView,
       updateView = _ref4$updateView === void 0 ? noop : _ref4$updateView;
-  return React__default.createElement(make.SimpleList.OneColumn, {
-    padding: "1rem 0"
-  }, React__default.createElement(make.SimpleTabs, null, viewable.map(function (unit, idx) {
+  return React__default.createElement(make.SimpleTabs, null, viewable.map(function (unit, idx) {
     return React__default.createElement(make.SimpleTabs.Tab, {
       key: idx,
       active: view === unit,
@@ -307,27 +305,42 @@ var Attribute = function Attribute(_ref4) {
         return updateView(unit);
       }
     }, unit);
-  })));
+  }));
 };
 var AttributeContent = function AttributeContent(_ref5) {
   var _ref5$content = _ref5.content,
       content = _ref5$content === void 0 ? [] : _ref5$content,
       update = _ref5.update,
-      remove = _ref5.remove;
-  return React__default.createElement(make.SimpleList.OneColumn, null, content.length ? content.map(function (unit, idx) {
+      remove = _ref5.remove,
+      add = _ref5.add;
+  return React__default.createElement(make.SimpleList.FourColumns, null, React__default.createElement(make.THead, {
+    colNames: ['name', 'value', 'ordinal', 'unit']
+  }), content.length ? content.map(function (unit, idx) {
     return React__default.createElement(Unit, {
       key: idx,
       unit: unit,
       update: update,
       remove: remove
     });
-  }) : React__default.createElement(make.SimpleList, null, React__default.createElement(Strike, null, "empty")));
+  }) : React__default.createElement(Strike, {
+    style: {
+      gridColumn: 'span 4'
+    }
+  }, "empty"), React__default.createElement(AddUnit, {
+    nextOrdinal: content.length + 1,
+    add: add
+  }));
 };
 var AttributeBaseContent = function AttributeBaseContent(_ref6) {
   var _ref6$content = _ref6.content,
-      content = _ref6$content === void 0 ? {} : _ref6$content,
+      content = _ref6$content === void 0 ? {
+    name: '',
+    ordinal: '',
+    value: '',
+    object: ''
+  } : _ref6$content,
       update = _ref6.update;
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(BaseUnit, {
+  return React__default.createElement(make.SimpleList.ThreeColumns, null, React__default.createElement(BaseUnit, {
     unit: content,
     update: update
   }));
@@ -397,9 +410,7 @@ var SwatchContent = reactRedux.connect(make.mapSwatchContent, {
   return React__default.createElement(React.Fragment, null, React__default.createElement(AttributeContent, {
     content: content,
     remove: removeSwatch,
-    update: updateSwatch
-  }), React__default.createElement(AddUnit, {
-    nextOrdinal: content.length + 1,
+    update: updateSwatch,
     add: addSwatch
   }));
 });
@@ -429,9 +440,7 @@ var FontFaceContent = reactRedux.connect(make.mapFontFaceContent, {
   return React__default.createElement(React.Fragment, null, React__default.createElement(AttributeContent, {
     content: content,
     remove: removeFontFace,
-    update: updateFontFace
-  }), React__default.createElement(AddUnit, {
-    nextOrdinal: content.length + 1,
+    update: updateFontFace,
     add: addFontFace
   }));
 });
@@ -465,9 +474,7 @@ var FontFamilyContent = reactRedux.connect(make.mapFontFamilyContent, {
   return React__default.createElement(React.Fragment, null, React__default.createElement(AttributeContent, {
     content: content,
     remove: removeFontFamily,
-    update: updateFontFamily
-  }), React__default.createElement(AddUnit, {
-    nextOrdinal: content.length + 1,
+    update: updateFontFamily,
     add: addFontFamily
   }));
 });
@@ -501,9 +508,7 @@ var FontSizeContent = reactRedux.connect(make.mapFontSizeContent, {
   return React__default.createElement(React.Fragment, null, React__default.createElement(AttributeContent, {
     content: content,
     remove: removeFontSize,
-    update: updateFontSize
-  }), React__default.createElement(AddUnit, {
-    nextOrdinal: content.length + 1,
+    update: updateFontSize,
     add: addFontSize
   }));
 });
@@ -533,9 +538,7 @@ var FontWeightContent = reactRedux.connect(make.mapFontWeightContent, {
   return React__default.createElement(React.Fragment, null, React__default.createElement(AttributeContent, {
     content: content,
     remove: removeFontWeight,
-    update: updateFontWeight
-  }), React__default.createElement(AddUnit, {
-    nextOrdinal: content.length + 1,
+    update: updateFontWeight,
     add: addFontWeight
   }));
 });
@@ -569,9 +572,7 @@ var ColorContent = reactRedux.connect(make.mapColorContent, {
   return React__default.createElement(React.Fragment, null, React__default.createElement(AttributeContent, {
     content: content,
     remove: removeColor,
-    update: updateColor
-  }), React__default.createElement(AddUnit, {
-    nextOrdinal: content.length + 1,
+    update: updateColor,
     add: addColor
   }));
 });
@@ -605,9 +606,7 @@ var SpacingContent = reactRedux.connect(make.mapSpacingContent, {
   return React__default.createElement(React.Fragment, null, React__default.createElement(AttributeContent, {
     content: content,
     remove: removeSpacing,
-    update: updateSpacing
-  }), React__default.createElement(AddUnit, {
-    nextOrdinal: content.length + 1,
+    update: updateSpacing,
     add: addSpacing
   }));
 });

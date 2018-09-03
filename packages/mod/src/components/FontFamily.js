@@ -31,8 +31,8 @@ const FontFamilyContent = connect(
       content={content}
       remove={removeFontFamily}
       update={updateFontFamily}
+      add={addFontFamily}
     />
-    <AddUnit nextOrdinal={content.length + 1} add={addFontFamily} />
   </Fragment>
 ))
 

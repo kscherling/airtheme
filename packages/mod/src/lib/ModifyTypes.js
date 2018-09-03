@@ -1,6 +1,6 @@
 import React, { Fragment, Component } from 'react'
 import styled from 'styled-components'
-import { SimpleList, SimpleTabs } from '@airtheme/make'
+import { SimpleList, SimpleTabs, THead } from '@airtheme/make'
 
 const noop = () => {}
 const Strike = styled.span`
@@ -16,53 +16,53 @@ export const Node = ({ label, value, onChange }) => (
 )
 
 export const Unit = ({ unit, remove, update }) => (
-  <SimpleList.FourColumns>
+  <Fragment>
     <input
       placeholder="name"
       type="text"
-      value={unit.name}
+      value={unit.name || ''}
       onChange={e => update(unit, { name: e.target.value })}
     />
     <input
       placeholder="value"
       type="text"
-      value={unit.value}
+      value={unit.value || ''}
       onChange={e => update(unit, { value: e.target.value })}
     />
     <input
       placeholder="ordinal"
       type="text"
-      value={unit.ordinal}
+      value={unit.ordinal || ''}
       onChange={e => update(unit, { ordinal: e.target.value })}
     />
     <button type="button" onClick={() => remove(unit)}>
       remove
     </button>
-  </SimpleList.FourColumns>
+  </Fragment>
 )
 
 export const BaseUnit = ({ unit, update }) => (
-  <SimpleList.ThreeColumns>
+  <Fragment>
     <input
       disabled
       placeholder="name"
       type="text"
-      value={unit.name}
+      value={unit.name || ''}
       onChange={e => update({ name: e.target.value })}
     />
     <input
       placeholder="value"
       type="text"
-      value={unit.value}
+      value={unit.value || ''}
       onChange={e => update({ value: e.target.value })}
     />
     <input
       placeholder="ordinal"
       type="text"
-      value={unit.ordinal}
+      value={unit.ordinal || ''}
       onChange={e => update({ ordinal: e.target.value })}
     />
-  </SimpleList.ThreeColumns>
+  </Fragment>
 )
 
 export class AddUnit extends Component {
@@ -88,7 +88,7 @@ export class AddUnit extends Component {
     const { name, value, ordinal } = this.state
 
     return (
-      <SimpleList.FourColumns>
+      <Fragment>
         <input
           type="text"
           placeholder="name"
@@ -111,43 +111,44 @@ export class AddUnit extends Component {
         <button type="button" onClick={this.handleSubmit}>
           add
         </button>
-      </SimpleList.FourColumns>
+      </Fragment>
     )
   }
 }
 
 export const Attribute = ({ view, viewable, updateView = noop }) => (
-  <SimpleList.OneColumn padding="1rem 0">
-    <SimpleTabs>
-      {viewable.map((unit, idx) => (
-        <SimpleTabs.Tab
-          key={idx}
-          active={view === unit}
-          onClick={() => updateView(unit)}
-        >
-          {unit}
-        </SimpleTabs.Tab>
-      ))}
-    </SimpleTabs>
-  </SimpleList.OneColumn>
+  <SimpleTabs>
+    {viewable.map((unit, idx) => (
+      <SimpleTabs.Tab
+        key={idx}
+        active={view === unit}
+        onClick={() => updateView(unit)}
+      >
+        {unit}
+      </SimpleTabs.Tab>
+    ))}
+  </SimpleTabs>
 )
 
-export const AttributeContent = ({ content = [], update, remove }) => (
-  <SimpleList.OneColumn>
+export const AttributeContent = ({ content = [], update, remove, add }) => (
+  <SimpleList.FourColumns>
+    <THead colNames={['name', 'value', 'ordinal', 'unit']} />
     {content.length ? (
       content.map((unit, idx) => (
         <Unit key={idx} unit={unit} update={update} remove={remove} />
       ))
     ) : (
-      <SimpleList>
-        <Strike>empty</Strike>
-      </SimpleList>
+      <Strike style={{ gridColumn: 'span 4' }}>empty</Strike>
     )}
-  </SimpleList.OneColumn>
+    <AddUnit nextOrdinal={content.length + 1} add={add} />
+  </SimpleList.FourColumns>
 )
 
-export const AttributeBaseContent = ({ content = {}, update }) => (
-  <SimpleList.OneColumn>
+export const AttributeBaseContent = ({
+  content = { name: '', ordinal: '', value: '', object: '' },
+  update
+}) => (
+  <SimpleList.ThreeColumns>
     <BaseUnit unit={content} update={update} />
-  </SimpleList.OneColumn>
+  </SimpleList.ThreeColumns>
 )

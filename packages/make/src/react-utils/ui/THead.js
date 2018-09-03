@@ -6,6 +6,7 @@ const Th = styled.span`
   font-weight: bold;
 `
 
-const THead = ({ colNames = [] }) => colNames.map(colName => <Th>{colName}</Th>)
+const THead = ({ colNames = [] }) =>
+  colNames.map((colName, idx) => <Th key={idx}>{colName}</Th>)
 
 export default THead

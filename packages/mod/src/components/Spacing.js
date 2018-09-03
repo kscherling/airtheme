@@ -27,8 +27,8 @@ const SpacingContent = connect(
       content={content}
       remove={removeSpacing}
       update={updateSpacing}
+      add={addSpacing}
     />
-    <AddUnit nextOrdinal={content.length + 1} add={addSpacing} />
   </Fragment>
 ))
 
