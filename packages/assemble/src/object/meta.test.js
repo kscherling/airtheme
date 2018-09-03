@@ -3,7 +3,7 @@ import pipe, { output } from '../utils/pipe'
 import basicTheme from '../test/theme'
 import { VERSION } from '@airtheme/core'
 
-test('builds setting values', () => {
+test('builds meta values', () => {
   const result = pipe(basicTheme)(meta, output)
 
   expect(typeof result.id).toBe('string')
