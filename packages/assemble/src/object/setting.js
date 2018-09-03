@@ -1,16 +1,29 @@
 import { deserializeAttribute } from '@airtheme/type'
+import {
+  COLOR_KEY,
+  FONT_FAMILY_KEY,
+  FONT_SIZE_KEY,
+  FONT_WEIGHT_KEY,
+  SETTING_KEY,
+  SPACING_KEY
+} from '@airtheme/core'
 
 const setting = (next, input, theme) => {
-  console.log(theme.setting.color)
   return next(
     {
       ...input,
-      setting: {
-        // color: deserializeAttribute(theme.setting.color, theme),
-        fontFamily: deserializeAttribute(theme.setting.fontFamily, theme),
-        fontSize: deserializeAttribute(theme.setting.fontSize, theme),
-        fontWeight: deserializeAttribute(theme.setting.fontWeight, theme),
-        spacing: deserializeAttribute(theme.setting.spacing, theme)
+      [SETTING_KEY]: {
+        [COLOR_KEY]: deserializeAttribute(theme.setting.color, theme),
+        [FONT_FAMILY_KEY]: deserializeAttribute(
+          theme.setting.fontFamily,
+          theme
+        ),
+        [FONT_SIZE_KEY]: deserializeAttribute(theme.setting.fontSize, theme),
+        [FONT_WEIGHT_KEY]: deserializeAttribute(
+          theme.setting.fontWeight,
+          theme
+        ),
+        [SPACING_KEY]: deserializeAttribute(theme.setting.spacing, theme)
       }
     },
     theme

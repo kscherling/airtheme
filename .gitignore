@@ -2,7 +2,8 @@
 **/dist
 
 # maps
-*.map.js
+*.js.map
+*.css.map
 
 # dependencies
 **/node_modules

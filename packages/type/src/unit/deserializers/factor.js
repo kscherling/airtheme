@@ -1,4 +1,4 @@
-import { getReferencedAttribute } from './getters'
+import getReferencedAttribute from '../utils/getReferenceAttribute'
 
 const deserializeFactor = (
   { value: unitVal, name: unitName } = {},

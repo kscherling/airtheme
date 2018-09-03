@@ -1,5 +1,4 @@
 import { deserializeAttribute } from '@airtheme/type'
-
 import {
   BASE_SPACING_KEY,
   BASE_FONT_SIZE_KEY,

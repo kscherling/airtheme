@@ -33,7 +33,7 @@ const isEmpty = ({ content }) =>
 
 const validTypes = ({ content, unit } = {}) =>
   Array.isArray(content)
-    ? content && content.length && unit === content[0].object
+    ? content.length && unit === content[0].object
     : content && unit === content.object
 
 const deserialize = (attribute, theme) => {

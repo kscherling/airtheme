@@ -512,7 +512,19 @@ var deserializeReference = function deserializeReference() {
   var attribute = arguments.length > 1 ? arguments[1] : undefined;
   var theme = arguments.length > 2 ? arguments[2] : undefined;
   var referencedAttribute = getReferencedAttribute(attribute, theme);
-  var refUnitVal = deserialize$1(referencedAttribute, theme)[unitVal];
+
+  if (!referencedAttribute) {
+    console.warn("Attempting to deserialize an unknown reference: ".concat(attribute.reference));
+    return;
+  }
+
+  if (referencedAttribute.unit === 'reference') {
+    console.warn('Attempting to deserialize a circular reference. \
+      An attribute reference cannot point to another reference');
+    return;
+  }
+
+  var refUnitVal = fp.dig(unitVal, deserialize$1(referencedAttribute, theme));
   return _defineProperty({}, unitName, "".concat(refUnitVal));
 };
 
@@ -524,6 +536,11 @@ var deserializers = {
 };
 
 var deserialize = function deserialize(unit, attribute, theme) {
+  if (!deserializers[unit.object]) {
+    console.warn("Attempting to deserialize an unknown unit type: ".concat(unit.object));
+    return;
+  }
+
   return deserializers[unit.object](unit, attribute, theme);
 };
 
@@ -566,7 +583,7 @@ var validTypes = function validTypes() {
       content = _ref2.content,
       unit = _ref2.unit;
 
-  return Array.isArray(content) ? content && content.length && unit === content[0].object : content && unit === content.object;
+  return Array.isArray(content) ? content.length && unit === content[0].object : content && unit === content.object;
 };
 
 var deserialize$1 = function deserialize$$1(attribute, theme) {
