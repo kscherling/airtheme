@@ -3583,8 +3583,58 @@ SimpleList.TwoColumns = TwoColumns$1;
 SimpleList.ThreeColumns = ThreeColumns$1;
 SimpleList.FourColumns = FourColumns$1;
 
+function _templateObject8$2() {
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: row;\n"]);
+
+  _templateObject8$2 = function _templateObject8() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject7$2() {
+  var data = _taggedTemplateLiteral(["\n  text-decoration: line-through;\n  display: grid;\n  padding: 0.5rem 1rem;\n  border-radius: 1rem;\n  font-size: 80%;\n  font-weight: bold;\n  background: transparent;\n\n  ", ";\n\n  ", ";\n  ", ";\n\n  &:hover {\n    cursor: pointer;\n  }\n"]);
+
+  _templateObject7$2 = function _templateObject7() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject6$2() {
+  var data = _taggedTemplateLiteral(["\n        color: rgba(255, 255, 255, 0.7);\n        background: rgba(0, 0, 0, 0.35);\n      "]);
+
+  _templateObject6$2 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject5$2() {
+  var data = _taggedTemplateLiteral(["\n    color: rgba(255, 255, 255, 0.35);\n\n    ", ";\n\n    &.active {\n      color: rgba(255, 255, 255, 0.7);\n      background: rgba(0, 0, 0, 0.35);\n    }\n\n    &:hover {\n      color: rgba(255, 255, 255, 0.7);\n    }\n  "]);
+
+  _templateObject5$2 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4$2() {
+  var data = _taggedTemplateLiteral(["\n      color: rgba(0, 0, 0, 1);\n      background: rgba(0, 0, 0, 0.05);\n    "]);
+
+  _templateObject4$2 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject3$2() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: row;\n\n  ", " + ", " {\n    margin-left: 1rem;\n  }\n\n"]);
+  var data = _taggedTemplateLiteral(["\n  color: rgba(0, 0, 0, 0.6);\n\n  ", ";\n\n  &.active {\n    color: rgba(0, 0, 0, 1);\n    background: rgba(0, 0, 0, 0.05);\n  }\n\n  &:hover {\n    color: rgba(0, 0, 0, 0.6);\n  }\n"]);
 
   _templateObject3$2 = function _templateObject3() {
     return data;
@@ -3594,7 +3644,7 @@ function _templateObject3$2() {
 }
 
 function _templateObject2$2() {
-  var data = _taggedTemplateLiteral(["\n      text-decoration: none;\n      color: inherit;\n    "]);
+  var data = _taggedTemplateLiteral(["\n      text-decoration: none;\n    "]);
 
   _templateObject2$2 = function _templateObject2() {
     return data;
@@ -3604,7 +3654,7 @@ function _templateObject2$2() {
 }
 
 function _templateObject$2() {
-  var data = _taggedTemplateLiteral(["\n  text-decoration: line-through;\n  color: #999;\n\n  ", ";\n\n  &:hover {\n    cursor: pointer;\n    color: inherit;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n\n  &.active {\n    text-decoration: none;\n  }\n"]);
 
   _templateObject$2 = function _templateObject() {
     return data;
@@ -3612,11 +3662,25 @@ function _templateObject$2() {
 
   return data;
 }
-var Tab = styled__default.a(_templateObject$2(), function (_ref) {
+
+var activeCss = function activeCss(_ref) {
   var active = _ref.active;
-  return active && styled.css(_templateObject2$2());
-});
-var SimpleTabs = styled__default.div(_templateObject3$2(), Tab, Tab);
+  return styled.css(_templateObject$2(), active && styled.css(_templateObject2$2()));
+};
+
+var lightCss = function lightCss(_ref2) {
+  var active = _ref2.active;
+  return styled.css(_templateObject3$2(), active && styled.css(_templateObject4$2()));
+};
+
+var darkCss = function darkCss(_ref3) {
+  var dark = _ref3.dark,
+      active = _ref3.active;
+  return dark && styled.css(_templateObject5$2(), active && styled.css(_templateObject6$2()));
+};
+
+var Tab = styled__default.span(_templateObject7$2(), activeCss, lightCss, darkCss);
+var SimpleTabs = styled__default.div(_templateObject8$2());
 SimpleTabs.Tab = Tab;
 
 function _templateObject$3() {

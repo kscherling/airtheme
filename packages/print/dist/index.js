@@ -4,9 +4,6 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 
 var React = require('react');
 var React__default = _interopDefault(React);
-var reactRedux = require('react-redux');
-var make = require('@airtheme/make');
-var assemble = _interopDefault(require('@airtheme/assemble'));
 
 function _defineProperty(obj, key, value) {
   if (key in obj) {
@@ -2833,14 +2830,7 @@ var Pretty = function Pretty(_ref) {
   });
 };
 
-var Print = function Print(_ref) {
-  var theme = _ref.theme;
-  return React__default.createElement(Pretty, {
-    data: assemble.object(theme)
-  });
-};
+var Print = Pretty;
 
-var Print$1 = reactRedux.connect(make.mapTheme)(Print);
-
-module.exports = Print$1;
+module.exports = Print;
 //# sourceMappingURL=index.js.map
