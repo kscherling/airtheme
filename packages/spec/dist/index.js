@@ -351,6 +351,10 @@ var BaseSpacing = function BaseSpacing() {
   return React__default.createElement(AttributeGroup, null, React__default.createElement(BaseSpacingAttribute, null), React__default.createElement(BaseSpacingContent, null));
 };
 
+var Swatch$1 = function Swatch() {
+  return 'Swatch';
+};
+
 exports.GlobalsInfo = Globals;
 exports.SwatchInfo = Swatch;
 exports.FontFaceInfo = FontFace;
@@ -362,4 +366,5 @@ exports.SpacingInfo = Spacing;
 exports.BaseFontSizeInfo = BaseFontSize;
 exports.BaseLineHeightInfo = BaseLineHeight;
 exports.BaseSpacingInfo = BaseSpacing;
+exports.SwatchSheet = Swatch$1;
 //# sourceMappingURL=index.js.map

@@ -691,15 +691,15 @@ var BaseSpacing = function BaseSpacing() {
   return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(BaseSpacingAttribute, null), React__default.createElement(BaseSpacingContent, null));
 };
 
-exports.Globals = Globals;
-exports.Swatch = Swatch;
-exports.FontFace = FontFace;
-exports.FontFamily = FontFamily;
-exports.FontSize = FontSize;
-exports.FontWeight = FontWeight;
-exports.Color = Color;
-exports.Spacing = Spacing;
-exports.BaseFontSize = BaseFontSize;
-exports.BaseLineHeight = BaseLineHeight;
-exports.BaseSpacing = BaseSpacing;
+exports.GlobalsMod = Globals;
+exports.SwatchMod = Swatch;
+exports.FontFaceMod = FontFace;
+exports.FontFamilyMod = FontFamily;
+exports.FontSizeMod = FontSize;
+exports.FontWeightMod = FontWeight;
+exports.ColorMod = Color;
+exports.SpacingMod = Spacing;
+exports.BaseFontSizeMod = BaseFontSize;
+exports.BaseLineHeightMod = BaseLineHeight;
+exports.BaseSpacingMod = BaseSpacing;
 //# sourceMappingURL=index.js.map
