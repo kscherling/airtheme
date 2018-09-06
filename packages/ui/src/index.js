@@ -1,1 +1,1 @@
-export default 'ui'
+export { default as Card } from './components/Card'

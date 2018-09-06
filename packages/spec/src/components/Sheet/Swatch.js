@@ -1,5 +1,6 @@
 import React from 'react'
+import { Card } from '@airtheme/ui'
 
-const Swatch = () => 'Swatch'
+const Swatch = () => <Card pad border />
 
 export default Swatch

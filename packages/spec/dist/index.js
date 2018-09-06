@@ -10,6 +10,7 @@ var styled = require('styled-components');
 var styled__default = _interopDefault(styled);
 var make = require('@airtheme/make');
 var reactRedux = require('react-redux');
+var ui = require('@airtheme/ui');
 
 function _typeof(obj) {
   if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
@@ -352,7 +353,10 @@ var BaseSpacing = function BaseSpacing() {
 };
 
 var Swatch$1 = function Swatch() {
-  return 'Swatch';
+  return React__default.createElement(ui.Card, {
+    pad: true,
+    border: true
+  });
 };
 
 exports.GlobalsInfo = Globals;
