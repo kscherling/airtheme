@@ -1,25 +1,11 @@
-import Globals from './components/Globals'
-import Swatch from './components/Swatch'
-import FontFace from './components/FontFace'
-import FontFamily from './components/FontFamily'
-import FontSize from './components/FontSize'
-import FontWeight from './components/FontWeight'
-import Color from './components/Color'
-import Spacing from './components/Spacing'
-import BaseFontSize from './components/BaseFontSize'
-import BaseLineHeight from './components/BaseLineHeight'
-import BaseSpacing from './components/BaseSpacing'
-
-export {
-  Globals,
-  Swatch,
-  FontFace,
-  FontFamily,
-  FontSize,
-  FontWeight,
-  Color,
-  Spacing,
-  BaseFontSize,
-  BaseLineHeight,
-  BaseSpacing
-}
+export { default as GlobalsInfo } from './components/Info/Globals'
+export { default as SwatchInfo } from './components/Info/Swatch'
+export { default as FontFaceInfo } from './components/Info/FontFace'
+export { default as FontFamilyInfo } from './components/Info/FontFamily'
+export { default as FontSizeInfo } from './components/Info/FontSize'
+export { default as FontWeightInfo } from './components/Info/FontWeight'
+export { default as ColorInfo } from './components/Info/Color'
+export { default as SpacingInfo } from './components/Info/Spacing'
+export { default as BaseFontSizeInfo } from './components/Info/BaseFontSize'
+export { default as BaseLineHeightInfo } from './components/Info/BaseLineHeight'
+export { default as BaseSpacingInfo } from './components/Info/BaseSpacing'

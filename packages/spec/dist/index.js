@@ -351,15 +351,15 @@ var BaseSpacing = function BaseSpacing() {
   return React__default.createElement(AttributeGroup, null, React__default.createElement(BaseSpacingAttribute, null), React__default.createElement(BaseSpacingContent, null));
 };
 
-exports.Globals = Globals;
-exports.Swatch = Swatch;
-exports.FontFace = FontFace;
-exports.FontFamily = FontFamily;
-exports.FontSize = FontSize;
-exports.FontWeight = FontWeight;
-exports.Color = Color;
-exports.Spacing = Spacing;
-exports.BaseFontSize = BaseFontSize;
-exports.BaseLineHeight = BaseLineHeight;
-exports.BaseSpacing = BaseSpacing;
+exports.GlobalsInfo = Globals;
+exports.SwatchInfo = Swatch;
+exports.FontFaceInfo = FontFace;
+exports.FontFamilyInfo = FontFamily;
+exports.FontSizeInfo = FontSize;
+exports.FontWeightInfo = FontWeight;
+exports.ColorInfo = Color;
+exports.SpacingInfo = Spacing;
+exports.BaseFontSizeInfo = BaseFontSize;
+exports.BaseLineHeightInfo = BaseLineHeight;
+exports.BaseSpacingInfo = BaseSpacing;
 //# sourceMappingURL=index.js.map
