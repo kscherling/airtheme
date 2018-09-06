@@ -26,6 +26,42 @@ function _typeof(obj) {
   return _typeof(obj);
 }
 
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+function _objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+
+  var target = _objectWithoutPropertiesLoose(source, excluded);
+
+  var key, i;
+
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+
+  return target;
+}
+
 function _taggedTemplateLiteral(strings, raw) {
   if (!raw) {
     raw = strings.slice(0);
@@ -352,12 +388,63 @@ var BaseSpacing = function BaseSpacing() {
   return React__default.createElement(AttributeGroup, null, React__default.createElement(BaseSpacingAttribute, null), React__default.createElement(BaseSpacingContent, null));
 };
 
-var Swatch$1 = function Swatch() {
+var mapSwatch = function mapSwatch(_ref) {
+  var swatch = _ref.swatch;
+  return {
+    swatch: swatch
+  };
+};
+
+var _require = require('recompose'),
+    compose = _require.compose;
+
+var connectTheme = function connectTheme(mapThemeToProps) {
+  return compose(styled.withTheme, function (Component) {
+    return function (_ref) {
+      var theme = _ref.theme,
+          props = _objectWithoutProperties(_ref, ["theme"]);
+
+      return React__default.createElement(Component, Object.assign({}, props, mapThemeToProps(theme)));
+    };
+  });
+};
+
+var AttributeEntries = function AttributeEntries(_ref) {
+  var attribute = _ref.attribute,
+      Component = _ref.component,
+      _ref$renderLoading = _ref.renderLoading,
+      renderLoading = _ref$renderLoading === void 0 ? function () {
+    return 'Loading';
+  } : _ref$renderLoading;
+  return attribute ? Object.entries(attribute).map(function (_ref2, idx) {
+    var _ref3 = _slicedToArray(_ref2, 2),
+        k = _ref3[0],
+        v = _ref3[1];
+
+    return React__default.createElement(Component, {
+      key: idx,
+      name: k,
+      value: v
+    });
+  }) : renderLoading();
+};
+
+var Swatch$1 = function Swatch(_ref) {
+  var swatch = _ref.swatch;
   return React__default.createElement(ui.Card, {
     pad: true,
     border: true
-  });
+  }, React__default.createElement(AttributeEntries, {
+    attribute: swatch,
+    component: function component(_ref2) {
+      var name = _ref2.name,
+          value = _ref2.value;
+      return "".concat(name, ": ").concat(value);
+    }
+  }));
 };
+
+var Swatch$2 = connectTheme(mapSwatch)(Swatch$1);
 
 exports.GlobalsInfo = Globals;
 exports.SwatchInfo = Swatch;
@@ -370,5 +457,5 @@ exports.SpacingInfo = Spacing;
 exports.BaseFontSizeInfo = BaseFontSize;
 exports.BaseLineHeightInfo = BaseLineHeight;
 exports.BaseSpacingInfo = BaseSpacing;
-exports.SwatchSheet = Swatch$1;
+exports.SwatchSheet = Swatch$2;
 //# sourceMappingURL=index.js.map
