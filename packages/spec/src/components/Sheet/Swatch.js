@@ -16,12 +16,10 @@ const Chip = withShade(styled.div`
   padding: 1rem;
   color: #ffffff90;
 
-  ${({ isLight }) =>
-    isLight &&
-    css`
-      color: #00000070;
-      border: 1px solid #00000015;
-    `};
+  ${isLight(css`
+    color: #00000070;
+    border: 1px solid #00000015;
+  `)};
 `)
 
 const Swatch = ({ swatch }) => {

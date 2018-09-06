@@ -430,7 +430,7 @@ var AttributeEntries = function AttributeEntries(_ref) {
 };
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n      color: #00000070;\n      border: 1px solid #00000015;\n    "]);
+  var data = _taggedTemplateLiteral(["\n    color: #00000070;\n    border: 1px solid #00000015;\n  "]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -451,21 +451,18 @@ function _templateObject$2() {
 var Chip = ui.withShade(styled__default.div(_templateObject$2(), function (_ref) {
   var color = _ref.color;
   return color;
-}, function (_ref2) {
-  var isLight = _ref2.isLight;
-  return isLight && styled.css(_templateObject2());
-}));
+}, ui.isLight(styled.css(_templateObject2()))));
 
-var Swatch$1 = function Swatch(_ref3) {
-  var swatch = _ref3.swatch;
+var Swatch$1 = function Swatch(_ref2) {
+  var swatch = _ref2.swatch;
   return React__default.createElement(ui.Card, {
     pad: true,
     border: true
   }, React__default.createElement(AttributeEntries, {
     attribute: swatch,
-    component: function component(_ref4) {
-      var name = _ref4.name,
-          value = _ref4.value;
+    component: function component(_ref3) {
+      var name = _ref3.name,
+          value = _ref3.value;
       return React__default.createElement(Chip, {
         color: value
       }, React__default.createElement("span", null, name), React__default.createElement("span", null, value));
