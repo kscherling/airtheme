@@ -10,9 +10,10 @@ const { compose } = require('recompose')
 
 const Chip = styled.div`
   width: 100%;
-  height: 5rem;
+  display: flex;
+  justify-content: center;
   padding: 1rem;
-  font-size: ${({ fontSize, unit }) => `${fontSize}${unit}`};
+  font-size: ${({ fontSize }) => fontSize};
   color: #000000;
 `
 
@@ -21,8 +22,8 @@ const BaseFontSize = ({ baseFontSize }) => {
     <Card pad border>
       <BaseAttributeEntry
         attribute={baseFontSize}
-        render={({ name, value, object }) => (
-          <Chip fontSize={value} unit={object}>
+        render={({ value }) => (
+          <Chip fontSize={value}>
             <span>{value}</span>
           </Chip>
         )}
@@ -31,7 +32,4 @@ const BaseFontSize = ({ baseFontSize }) => {
   )
 }
 
-export default compose(
-  connectTheme(mapThemeBaseFontSize),
-  connect(mapBaseFontSize)
-)(BaseFontSize)
+export default connect(mapBaseFontSize)(BaseFontSize)
