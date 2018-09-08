@@ -559,49 +559,6 @@ var BaseAttributeEntry = function BaseAttributeEntry(_ref) {
 
 var BaseAttributeEntry$1 = reactRedux.connect(make.mapTheme)(BaseAttributeEntry);
 
-function _templateObject$3() {
-  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  display: flex;\n  justify-content: center;\n  padding: 1rem;\n  font-size: ", ";\n  color: #000000;\n"]);
-
-  _templateObject$3 = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
-var _require$1 = require('recompose'),
-    compose$1 = _require$1.compose;
-
-var Chip$1 = styled__default.div(_templateObject$3(), function (_ref) {
-  var fontSize = _ref.fontSize;
-  return fontSize;
-});
-
-var BaseFontSize$1 = function BaseFontSize(_ref2) {
-  var baseFontSize = _ref2.baseFontSize;
-  return React__default.createElement(ui.Card, {
-    pad: true,
-    border: true
-  }, React__default.createElement(BaseAttributeEntry$1, {
-    attribute: baseFontSize,
-    render: function render() {
-      var _ref3 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-          _ref3$content = _ref3.content;
-
-      _ref3$content = _ref3$content === void 0 ? {} : _ref3$content;
-      var value = _ref3$content.value,
-          _ref3$deserialized = _ref3.deserialized;
-      _ref3$deserialized = _ref3$deserialized === void 0 ? {} : _ref3$deserialized;
-      var baseFontSize = _ref3$deserialized.baseFontSize;
-      return React__default.createElement(Chip$1, {
-        fontSize: baseFontSize
-      }, React__default.createElement("span", null, value));
-    }
-  }));
-};
-
-var BaseFontSize$2 = reactRedux.connect(make.mapBaseFontSize)(BaseFontSize$1);
-
 var alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
 var upCase = function upCase(string) {
@@ -615,8 +572,22 @@ var numerals = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'].join('');
 var puncuation = ['.', ':', ',', ';', '()', '{}', '[]', '!', '@', '#', '$', '%', '^', '&', '*'].join('');
 var typeset = allcase.concat(numerals, puncuation);
 
+function _templateObject$3() {
+  var data = _taggedTemplateLiteral(["\n  line-height: ", ";\n  font-size: ", ";\n"]);
+
+  _templateObject$3 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var baseTypography = function baseTypography(_ref) {
+  var theme = _ref.theme;
+  return styled.css(_templateObject$3(), theme.baseLineHeight, theme.baseFontSize);
+};
+
 function _templateObject$4() {
-  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  display: flex;\n  justify-content: center;\n  padding: 1rem;\n  line-height: ", ";\n  font-size: ", ";\n  color: #000000;\n  word-break: break-all;\n"]);
+  var data = _taggedTemplateLiteral(["\n  word-break: break-all;\n  ", ";\n"]);
 
   _templateObject$4 = function _templateObject() {
     return data;
@@ -624,41 +595,9 @@ function _templateObject$4() {
 
   return data;
 }
-
-var _require$2 = require('recompose'),
-    compose$2 = _require$2.compose;
-var Chip$2 = styled__default.div(_templateObject$4(), function (_ref) {
-  var lineHeight = _ref.lineHeight;
-  return lineHeight;
-}, function (_ref2) {
-  var theme = _ref2.theme;
-  return theme.baseFontSize;
-});
-
-var BaseLineHeight$1 = function BaseLineHeight(_ref3) {
-  var baseLineHeight = _ref3.baseLineHeight;
-  return React__default.createElement(ui.Card, {
-    pad: true,
-    border: true
-  }, React__default.createElement(BaseAttributeEntry$1, {
-    attribute: baseLineHeight,
-    render: function render() {
-      var _ref4 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-          _ref4$content = _ref4.content;
-
-      _ref4$content = _ref4$content === void 0 ? {} : _ref4$content;
-      var value = _ref4$content.value,
-          _ref4$deserialized = _ref4.deserialized;
-      _ref4$deserialized = _ref4$deserialized === void 0 ? {} : _ref4$deserialized;
-      var baseLineHeight = _ref4$deserialized.baseLineHeight;
-      return React__default.createElement(Chip$2, {
-        lineHeight: baseLineHeight
-      }, typeset);
-    }
-  }));
-};
-
-var BaseLineHeight$2 = reactRedux.connect(make.mapBaseLineHeight)(BaseLineHeight$1);
+var Typeset = styled__default.div.attrs({
+  children: typeset
+})(_templateObject$4(), baseTypography);
 
 function _templateObject$5() {
   var data = _taggedTemplateLiteral(["\n  width: 100%;\n  display: flex;\n  justify-content: center;\n  padding: 1rem;\n  color: #000000;\n"]);
@@ -670,10 +609,81 @@ function _templateObject$5() {
   return data;
 }
 
+var _require$1 = require('recompose'),
+    compose$1 = _require$1.compose;
+var Chip$1 = styled__default.div(_templateObject$5());
+
+var BaseFontSize$1 = function BaseFontSize(_ref) {
+  var baseFontSize = _ref.baseFontSize;
+  return React__default.createElement(ui.Card, {
+    pad: true,
+    border: true
+  }, React__default.createElement(BaseAttributeEntry$1, {
+    attribute: baseFontSize,
+    render: function render() {
+      var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+          unit = _ref2.unit,
+          value = _ref2.content.value;
+
+      return React__default.createElement(React.Fragment, null, React__default.createElement(Chip$1, null, value, "\xA0", React__default.createElement("small", null, unit)), React__default.createElement(Chip$1, null, React__default.createElement(Typeset, null)));
+    }
+  }));
+};
+
+var BaseFontSize$2 = reactRedux.connect(make.mapBaseFontSize)(BaseFontSize$1);
+
+function _templateObject$6() {
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  padding: 1rem;\n  display: flex;\n  justify-content: center;\n  align-items: baseline;\n"]);
+
+  _templateObject$6 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+var _require$2 = require('recompose'),
+    compose$2 = _require$2.compose;
+var Chip$2 = styled__default.div(_templateObject$6());
+
+var BaseLineHeight$1 = function BaseLineHeight(_ref) {
+  var baseLineHeight = _ref.baseLineHeight;
+  return React__default.createElement(ui.Card, {
+    pad: true,
+    border: true
+  }, React__default.createElement(BaseAttributeEntry$1, {
+    attribute: baseLineHeight,
+    render: function render() {
+      var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+          unit = _ref2.unit,
+          _ref2$content = _ref2.content;
+
+      _ref2$content = _ref2$content === void 0 ? {} : _ref2$content;
+      var value = _ref2$content.value,
+          _ref2$deserialized = _ref2.deserialized;
+      _ref2$deserialized = _ref2$deserialized === void 0 ? {} : _ref2$deserialized;
+      var baseLineHeight = _ref2$deserialized.baseLineHeight;
+      return React__default.createElement(React.Fragment, null, React__default.createElement(Chip$2, null, value, "\xA0", React__default.createElement("small", null, unit)), React__default.createElement(Chip$2, null, React__default.createElement(Typeset, null)));
+    }
+  }));
+};
+
+var BaseLineHeight$2 = reactRedux.connect(make.mapBaseLineHeight)(BaseLineHeight$1);
+
+function _templateObject$7() {
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  display: flex;\n  justify-content: center;\n  padding: 1rem;\n  color: #000000;\n"]);
+
+  _templateObject$7 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
 var _require$3 = require('recompose'),
     compose$3 = _require$3.compose;
 
-var Chip$3 = styled__default.div(_templateObject$5());
+var Chip$3 = styled__default.div(_templateObject$7());
 
 var BaseSpacing$1 = function BaseSpacing(_ref) {
   var baseSpacing = _ref.baseSpacing;
