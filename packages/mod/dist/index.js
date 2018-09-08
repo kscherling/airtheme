@@ -615,7 +615,12 @@ var Spacing = function Spacing() {
   return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(SpacingAttribute, null), React__default.createElement(SpacingContent, null));
 };
 
-var BaseFontSizeAttribute = reactRedux.connect(make.mapBaseFontSize)(function (_ref) {
+var withBaseFontSizeAttribute = reactRedux.connect(make.mapBaseFontSize);
+var withBaseFontSizeContent = reactRedux.connect(make.mapBaseFontSizeContent, {
+  updateBaseFontSize: make.updateBaseFontSize
+});
+
+var BaseFontSizeAttribute = withBaseFontSizeAttribute(function (_ref) {
   var _ref$baseFontSize = _ref.baseFontSize,
       view = _ref$baseFontSize.view,
       viewable = _ref$baseFontSize.viewable;
@@ -624,9 +629,7 @@ var BaseFontSizeAttribute = reactRedux.connect(make.mapBaseFontSize)(function (_
     viewable: viewable
   });
 });
-var BaseFontSizeContent = reactRedux.connect(make.mapBaseFontSizeContent, {
-  updateBaseFontSize: make.updateBaseFontSize
-})(function (_ref2) {
+var BaseFontSizeContent = withBaseFontSizeContent(function (_ref2) {
   var content = _ref2.content,
       updateBaseFontSize = _ref2.updateBaseFontSize;
   return React__default.createElement(React.Fragment, null, React__default.createElement(AttributeBaseContent, {
@@ -639,9 +642,14 @@ var BaseFontSize = function BaseFontSize() {
   return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(BaseFontSizeAttribute, null), React__default.createElement(BaseFontSizeContent, null));
 };
 
-var BaseLineHeightAttribute = reactRedux.connect(make.mapBaseLineHeight, {
+var withBaseLineHeightAttribute = reactRedux.connect(make.mapBaseLineHeight, {
   updateBaseLineHeightView: make.updateBaseLineHeightView
-})(function (_ref) {
+});
+var withBaseLineHeightContent = reactRedux.connect(make.mapBaseLineHeightContent, {
+  updateBaseLineHeight: make.updateBaseLineHeight
+});
+
+var BaseLineHeightAttribute = withBaseLineHeightAttribute(function (_ref) {
   var _ref$baseLineHeight = _ref.baseLineHeight,
       view = _ref$baseLineHeight.view,
       viewable = _ref$baseLineHeight.viewable,
@@ -652,9 +660,7 @@ var BaseLineHeightAttribute = reactRedux.connect(make.mapBaseLineHeight, {
     updateView: updateBaseLineHeightView
   });
 });
-var BaseLineHeightContent = reactRedux.connect(make.mapBaseLineHeightContent, {
-  updateBaseLineHeight: make.updateBaseLineHeight
-})(function (_ref2) {
+var BaseLineHeightContent = withBaseLineHeightContent(function (_ref2) {
   var content = _ref2.content,
       updateBaseLineHeight = _ref2.updateBaseLineHeight;
   return React__default.createElement(React.Fragment, null, React__default.createElement(AttributeBaseContent, {
@@ -667,7 +673,12 @@ var BaseLineHeight = function BaseLineHeight() {
   return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(BaseLineHeightAttribute, null), React__default.createElement(BaseLineHeightContent, null));
 };
 
-var BaseSpacingAttribute = reactRedux.connect(make.mapBaseSpacing)(function (_ref) {
+var withBaseSpacingAttribute = reactRedux.connect(make.mapBaseSpacing);
+var withBaseSpacingContent = reactRedux.connect(make.mapBaseSpacingContent, {
+  updateBaseSpacing: make.updateBaseSpacing
+});
+
+var BaseSpacingAttribute = withBaseSpacingAttribute(function (_ref) {
   var _ref$baseSpacing = _ref.baseSpacing,
       view = _ref$baseSpacing.view,
       viewable = _ref$baseSpacing.viewable;
@@ -676,9 +687,7 @@ var BaseSpacingAttribute = reactRedux.connect(make.mapBaseSpacing)(function (_re
     viewable: viewable
   });
 });
-var BaseSpacingContent = reactRedux.connect(make.mapBaseSpacingContent, {
-  updateBaseSpacing: make.updateBaseSpacing
-})(function (_ref2) {
+var BaseSpacingContent = withBaseSpacingContent(function (_ref2) {
   var content = _ref2.content,
       updateBaseSpacing = _ref2.updateBaseSpacing;
   return React__default.createElement(React.Fragment, null, React__default.createElement(AttributeBaseContent, {

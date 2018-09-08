@@ -1,33 +1,29 @@
 import React, { Fragment } from 'react'
 import { connect } from 'react-redux'
-import {
-  mapBaseLineHeight,
-  mapBaseLineHeightContent,
-  updateBaseLineHeightView,
-  updateBaseLineHeight,
-  SimpleList
-} from '@airtheme/make'
+import { SimpleList } from '@airtheme/make'
 import { AttributeBaseContent, Attribute } from '../lib/ModifyTypes'
+import {
+  withBaseLineHeightContent,
+  withBaseLineHeightAttribute
+} from '../connector/BaseLineHeight'
 
-const BaseLineHeightAttribute = connect(
-  mapBaseLineHeight,
-  { updateBaseLineHeightView }
-)(({ baseLineHeight: { view, viewable }, updateBaseLineHeightView }) => (
-  <Attribute
-    view={view}
-    viewable={viewable}
-    updateView={updateBaseLineHeightView}
-  />
-))
+const BaseLineHeightAttribute = withBaseLineHeightAttribute(
+  ({ baseLineHeight: { view, viewable }, updateBaseLineHeightView }) => (
+    <Attribute
+      view={view}
+      viewable={viewable}
+      updateView={updateBaseLineHeightView}
+    />
+  )
+)
 
-const BaseLineHeightContent = connect(
-  mapBaseLineHeightContent,
-  { updateBaseLineHeight }
-)(({ content, updateBaseLineHeight }) => (
-  <Fragment>
-    <AttributeBaseContent content={content} update={updateBaseLineHeight} />
-  </Fragment>
-))
+const BaseLineHeightContent = withBaseLineHeightContent(
+  ({ content, updateBaseLineHeight }) => (
+    <Fragment>
+      <AttributeBaseContent content={content} update={updateBaseLineHeight} />
+    </Fragment>
+  )
+)
 
 const BaseLineHeight = () => (
   <SimpleList.OneColumn>

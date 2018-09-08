@@ -1,27 +1,25 @@
 import React, { Fragment } from 'react'
 import { connect } from 'react-redux'
-import {
-  mapBaseFontSize,
-  mapBaseFontSizeContent,
-  updateBaseFontSize,
-  SimpleList
-} from '@airtheme/make'
+import { SimpleList } from '@airtheme/make'
 import { AttributeBaseContent, Attribute } from '../lib/ModifyTypes'
+import {
+  withBaseFontSizeAttribute,
+  withBaseFontSizeContent
+} from '../connector/BaseFontSize'
 
-const BaseFontSizeAttribute = connect(mapBaseFontSize)(
+const BaseFontSizeAttribute = withBaseFontSizeAttribute(
   ({ baseFontSize: { view, viewable } }) => (
     <Attribute view={view} viewable={viewable} />
   )
 )
 
-const BaseFontSizeContent = connect(
-  mapBaseFontSizeContent,
-  { updateBaseFontSize }
-)(({ content, updateBaseFontSize }) => (
-  <Fragment>
-    <AttributeBaseContent content={content} update={updateBaseFontSize} />
-  </Fragment>
-))
+const BaseFontSizeContent = withBaseFontSizeContent(
+  ({ content, updateBaseFontSize }) => (
+    <Fragment>
+      <AttributeBaseContent content={content} update={updateBaseFontSize} />
+    </Fragment>
+  )
+)
 
 const BaseFontSize = () => (
   <SimpleList.OneColumn>

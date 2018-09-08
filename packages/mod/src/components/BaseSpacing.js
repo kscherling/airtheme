@@ -1,27 +1,25 @@
 import React, { Fragment } from 'react'
 import { connect } from 'react-redux'
-import {
-  mapBaseSpacing,
-  mapBaseSpacingContent,
-  updateBaseSpacing,
-  SimpleList
-} from '@airtheme/make'
+import { SimpleList } from '@airtheme/make'
 import { AttributeBaseContent, Attribute } from '../lib/ModifyTypes'
+import {
+  withBaseSpacingAttribute,
+  withBaseSpacingContent
+} from '../connector/BaseSpacing'
 
-const BaseSpacingAttribute = connect(mapBaseSpacing)(
+const BaseSpacingAttribute = withBaseSpacingAttribute(
   ({ baseSpacing: { view, viewable } }) => (
     <Attribute view={view} viewable={viewable} />
   )
 )
 
-const BaseSpacingContent = connect(
-  mapBaseSpacingContent,
-  { updateBaseSpacing }
-)(({ content, updateBaseSpacing }) => (
-  <Fragment>
-    <AttributeBaseContent content={content} update={updateBaseSpacing} />
-  </Fragment>
-))
+const BaseSpacingContent = withBaseSpacingContent(
+  ({ content, updateBaseSpacing }) => (
+    <Fragment>
+      <AttributeBaseContent content={content} update={updateBaseSpacing} />
+    </Fragment>
+  )
+)
 
 const BaseSpacing = () => (
   <SimpleList.OneColumn>
