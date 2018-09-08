@@ -2,7 +2,7 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import { Card } from '@airtheme/ui'
 import { connect } from 'react-redux'
-import { mapBaseFontSize } from '@airtheme/make'
+import { mapBaseLineHeight } from '@airtheme/make'
 import connectTheme from '../../utils/connectTheme'
 import BaseAttributeEntry from '../../utils/BaseAttributeEntry'
 const { compose } = require('recompose')
@@ -12,19 +12,20 @@ const Chip = styled.div`
   display: flex;
   justify-content: center;
   padding: 1rem;
-  font-size: ${({ fontSize }) => fontSize};
+  line-height: ${({ lineHeight }) => lineHeight};
+  font-size: ${({ theme }) => theme.baseFontSize};
   color: #000000;
 `
 
-const BaseFontSize = ({ baseFontSize }) => (
+const BaseLineHeight = ({ baseLineHeight }) => (
   <Card pad border>
     <BaseAttributeEntry
-      attribute={baseFontSize}
+      attribute={baseLineHeight}
       render={({
         content: { value } = {},
-        deserialized: { baseFontSize } = {}
+        deserialized: { baseLineHeight } = {}
       } = {}) => (
-        <Chip fontSize={baseFontSize}>
+        <Chip lineHeight={baseLineHeight}>
           <span>{value}</span>
         </Chip>
       )}
@@ -32,4 +33,4 @@ const BaseFontSize = ({ baseFontSize }) => (
   </Card>
 )
 
-export default connect(mapBaseFontSize)(BaseFontSize)
+export default connect(mapBaseLineHeight)(BaseLineHeight)

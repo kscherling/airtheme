@@ -27,6 +27,40 @@ function _typeof(obj) {
   return _typeof(obj);
 }
 
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function _objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+    var ownKeys = Object.keys(source);
+
+    if (typeof Object.getOwnPropertySymbols === 'function') {
+      ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {
+        return Object.getOwnPropertyDescriptor(source, sym).enumerable;
+      }));
+    }
+
+    ownKeys.forEach(function (key) {
+      _defineProperty(target, key, source[key]);
+    });
+  }
+
+  return target;
+}
+
 function _objectWithoutPropertiesLoose(source, excluded) {
   if (source == null) return {};
   var target = {};
@@ -473,13 +507,21 @@ var Swatch$1 = function Swatch(_ref2) {
 
 var Swatch$2 = connectTheme(mapSwatch)(Swatch$1);
 
-var firstVal = function firstVal(obj) {
-  return Object.values(obj)[0];
+// deserialize
+// return
+// attribute - { unit, object, content, view}
+// deserialized - { baseLineHeight: 16px }
+
+
+var isEmpty = function isEmpty(obj) {
+  return Boolean(Object.keys(obj).length);
 };
 
 var BaseAttributeEntry = function BaseAttributeEntry(_ref) {
   var _ref$attribute = _ref.attribute,
       attribute = _ref$attribute === void 0 ? {} : _ref$attribute,
+      _ref$theme = _ref.theme,
+      theme = _ref$theme === void 0 ? {} : _ref$theme,
       _ref$render = _ref.render,
       render = _ref$render === void 0 ? function () {
     return null;
@@ -488,12 +530,14 @@ var BaseAttributeEntry = function BaseAttributeEntry(_ref) {
       renderLoading = _ref$renderLoading === void 0 ? function () {
     return null;
   } : _ref$renderLoading;
-  var deserialized = type.deserializeAttribute(attribute);
-  var value = deserialized && firstVal(deserialized);
-  return value ? render({
-    value: value
-  }) : renderLoading();
-};
+  var deserialized = type.deserializeAttribute(attribute, theme);
+  return isEmpty(attribute) ? render(_objectSpread({}, attribute, {
+    deserialized: deserialized
+  })) : renderLoading();
+}; // TODO: Hmmm, this may be perf issue...
+
+
+var BaseAttributeEntry$1 = reactRedux.connect(make.mapTheme)(BaseAttributeEntry);
 
 function _templateObject$3() {
   var data = _taggedTemplateLiteral(["\n  width: 100%;\n  display: flex;\n  justify-content: center;\n  padding: 1rem;\n  font-size: ", ";\n  color: #000000;\n"]);
@@ -518,18 +562,71 @@ var BaseFontSize$1 = function BaseFontSize(_ref2) {
   return React__default.createElement(ui.Card, {
     pad: true,
     border: true
-  }, React__default.createElement(BaseAttributeEntry, {
+  }, React__default.createElement(BaseAttributeEntry$1, {
     attribute: baseFontSize,
-    render: function render(_ref3) {
-      var value = _ref3.value;
+    render: function render() {
+      var _ref3 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+          _ref3$content = _ref3.content;
+
+      _ref3$content = _ref3$content === void 0 ? {} : _ref3$content;
+      var value = _ref3$content.value,
+          _ref3$deserialized = _ref3.deserialized;
+      _ref3$deserialized = _ref3$deserialized === void 0 ? {} : _ref3$deserialized;
+      var baseFontSize = _ref3$deserialized.baseFontSize;
       return React__default.createElement(Chip$1, {
-        fontSize: value
+        fontSize: baseFontSize
       }, React__default.createElement("span", null, value));
     }
   }));
 };
 
 var BaseFontSize$2 = reactRedux.connect(make.mapBaseFontSize)(BaseFontSize$1);
+
+function _templateObject$4() {
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  display: flex;\n  justify-content: center;\n  padding: 1rem;\n  line-height: ", ";\n  font-size: ", ";\n  color: #000000;\n"]);
+
+  _templateObject$4 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+var _require$2 = require('recompose'),
+    compose$2 = _require$2.compose;
+
+var Chip$2 = styled__default.div(_templateObject$4(), function (_ref) {
+  var lineHeight = _ref.lineHeight;
+  return lineHeight;
+}, function (_ref2) {
+  var theme = _ref2.theme;
+  return theme.baseFontSize;
+});
+
+var BaseLineHeight$1 = function BaseLineHeight(_ref3) {
+  var baseLineHeight = _ref3.baseLineHeight;
+  return React__default.createElement(ui.Card, {
+    pad: true,
+    border: true
+  }, React__default.createElement(BaseAttributeEntry$1, {
+    attribute: baseLineHeight,
+    render: function render() {
+      var _ref4 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+          _ref4$content = _ref4.content;
+
+      _ref4$content = _ref4$content === void 0 ? {} : _ref4$content;
+      var value = _ref4$content.value,
+          _ref4$deserialized = _ref4.deserialized;
+      _ref4$deserialized = _ref4$deserialized === void 0 ? {} : _ref4$deserialized;
+      var baseLineHeight = _ref4$deserialized.baseLineHeight;
+      return React__default.createElement(Chip$2, {
+        lineHeight: baseLineHeight
+      }, React__default.createElement("span", null, value));
+    }
+  }));
+};
+
+var BaseLineHeight$2 = reactRedux.connect(make.mapBaseLineHeight)(BaseLineHeight$1);
 
 exports.GlobalsInfo = Globals;
 exports.SwatchInfo = Swatch;
@@ -544,4 +641,5 @@ exports.BaseLineHeightInfo = BaseLineHeight;
 exports.BaseSpacingInfo = BaseSpacing;
 exports.SwatchSheet = Swatch$2;
 exports.BaseFontSizeSheet = BaseFontSize$2;
+exports.BaseLineHeightSheet = BaseLineHeight$2;
 //# sourceMappingURL=index.js.map
