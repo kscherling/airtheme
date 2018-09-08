@@ -628,6 +628,44 @@ var BaseLineHeight$1 = function BaseLineHeight(_ref3) {
 
 var BaseLineHeight$2 = reactRedux.connect(make.mapBaseLineHeight)(BaseLineHeight$1);
 
+function _templateObject$5() {
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  display: flex;\n  justify-content: center;\n  padding: 1rem;\n  color: #000000;\n"]);
+
+  _templateObject$5 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+var _require$3 = require('recompose'),
+    compose$3 = _require$3.compose;
+
+var Chip$3 = styled__default.div(_templateObject$5());
+
+var BaseSpacing$1 = function BaseSpacing(_ref) {
+  var baseSpacing = _ref.baseSpacing;
+  return React__default.createElement(ui.Card, {
+    pad: true,
+    border: true
+  }, React__default.createElement(BaseAttributeEntry$1, {
+    attribute: baseSpacing,
+    render: function render() {
+      var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+          _ref2$content = _ref2.content;
+
+      _ref2$content = _ref2$content === void 0 ? {} : _ref2$content;
+      var value = _ref2$content.value,
+          _ref2$deserialized = _ref2.deserialized;
+      _ref2$deserialized = _ref2$deserialized === void 0 ? {} : _ref2$deserialized;
+      var baseSpacing = _ref2$deserialized.baseSpacing;
+      return React__default.createElement(Chip$3, null, React__default.createElement("span", null, value));
+    }
+  }));
+};
+
+var BaseSpacing$2 = reactRedux.connect(make.mapBaseSpacing)(BaseSpacing$1);
+
 exports.GlobalsInfo = Globals;
 exports.SwatchInfo = Swatch;
 exports.FontFaceInfo = FontFace;
@@ -642,4 +680,5 @@ exports.BaseSpacingInfo = BaseSpacing;
 exports.SwatchSheet = Swatch$2;
 exports.BaseFontSizeSheet = BaseFontSize$2;
 exports.BaseLineHeightSheet = BaseLineHeight$2;
+exports.BaseSpacingSheet = BaseSpacing$2;
 //# sourceMappingURL=index.js.map
