@@ -617,28 +617,38 @@ var Increment = mod.withBaseFontSizeContent(function (_ref) {
   var _ref$content = _ref.content,
       content = _ref$content === void 0 ? {} : _ref$content,
       updateBaseFontSize = _ref.updateBaseFontSize;
-  return React__default.createElement(ui.IncrementNumber, {
+  return React__default.createElement(ui.IncrementUnit, {
     update: updateBaseFontSize,
-    value: content.value,
+    unit: content,
     options: {
       step: 1
     }
   });
 });
+var Input = mod.withBaseFontSizeContent(function (_ref2) {
+  var _ref2$content = _ref2.content,
+      content = _ref2$content === void 0 ? {} : _ref2$content,
+      updateBaseFontSize = _ref2.updateBaseFontSize;
+  return React__default.createElement(ui.InputUnit, {
+    update: updateBaseFontSize,
+    unit: content,
+    cast: Number
+  });
+});
 
-var BaseFontSize$1 = function BaseFontSize(_ref2) {
-  var baseFontSize = _ref2.baseFontSize;
+var BaseFontSize$1 = function BaseFontSize(_ref3) {
+  var baseFontSize = _ref3.baseFontSize;
   return React__default.createElement(ui.Card, {
     pad: true,
     border: true
   }, React__default.createElement(BaseAttributeEntry$1, {
     attribute: baseFontSize,
     render: function render() {
-      var _ref3 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-          unit = _ref3.unit,
-          value = _ref3.content.value;
+      var _ref4 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+          unit = _ref4.unit,
+          value = _ref4.content.value;
 
-      return React__default.createElement(React.Fragment, null, React__default.createElement(Increment, null), React__default.createElement(Chip$1, null, value, "\xA0", React__default.createElement("small", null, unit)), React__default.createElement(Chip$1, null, React__default.createElement(Typeset, null)));
+      return React__default.createElement(React.Fragment, null, React__default.createElement(Increment, null), React__default.createElement(Input, null), React__default.createElement(Chip$1, null, value, "\xA0", React__default.createElement("small", null, unit)), React__default.createElement(Chip$1, null, React__default.createElement(Typeset, null)));
     }
   }));
 };

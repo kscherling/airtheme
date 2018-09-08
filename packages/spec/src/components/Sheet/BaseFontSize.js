@@ -7,7 +7,7 @@ import connectTheme from '../../utils/connectTheme'
 import BaseAttributeEntry from '../../utils/BaseAttributeEntry'
 const { compose } = require('recompose')
 import Typeset from '../Typeset'
-import { IncrementNumber } from '@airtheme/ui'
+import { IncrementUnit, InputUnit } from '@airtheme/ui'
 import { withBaseFontSizeContent } from '@airtheme/mod'
 
 const Chip = styled.div`
@@ -20,11 +20,17 @@ const Chip = styled.div`
 
 const Increment = withBaseFontSizeContent(
   ({ content = {}, updateBaseFontSize }) => (
-    <IncrementNumber
+    <IncrementUnit
       update={updateBaseFontSize}
-      value={content.value}
+      unit={content}
       options={{ step: 1 }}
     />
+  )
+)
+
+const Input = withBaseFontSizeContent(
+  ({ content = {}, updateBaseFontSize }) => (
+    <InputUnit update={updateBaseFontSize} unit={content} cast={Number} />
   )
 )
 
@@ -35,6 +41,7 @@ const BaseFontSize = ({ baseFontSize }) => (
       render={({ unit, content: { value } } = {}) => (
         <Fragment>
           <Increment />
+          <Input />
           <Chip>
             {value}
             &nbsp;

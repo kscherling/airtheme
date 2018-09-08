@@ -1,12 +1,12 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { reset, unpad, center, round } from '../style/utils'
+import { resetButton, unpad, center, round } from '../style/utils'
 import { plus, ndash } from '../constants/symbols'
 
 const Btn = styled.button.attrs({
   type: 'button'
 })`
-  ${reset};
+  ${resetButton};
   font-weight: bold;
   font-size: 85%;
   line-height: 1.25;
@@ -35,8 +35,10 @@ const DecrementBtn = props => (
   </Btn>
 )
 
-const IncrementNumber = ({
-  value,
+// TODO: Validate - Don't allow negatives
+
+const IncrementUnit = ({
+  unit: { value } = {},
   update,
   options: { step = 1 } = {}
 } = {}) => (
@@ -46,4 +48,4 @@ const IncrementNumber = ({
   </IncrementContainer>
 )
 
-export default IncrementNumber
+export default IncrementUnit
