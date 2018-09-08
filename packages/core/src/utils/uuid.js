@@ -1,5 +1,3 @@
-const shortid = require('shortid')
-
-const uuid = shortid.generate
+const uuid = () => '12345'
 
 export default uuid

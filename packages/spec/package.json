@@ -14,6 +14,7 @@
   "dependencies": {
     "@airtheme/make": "^0.1.0",
     "@airtheme/ui": "^0.1.0",
+    "@airtheme/type": "^0.1.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-redux": "^5.0.7",

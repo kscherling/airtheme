@@ -12,7 +12,5 @@
     "build:watch": "./task build:watch",
     "test": "./task test"
   },
-  "dependencies": {
-    "shortid": "^2.2.13"
-  }
+  "dependencies": {}
 }

@@ -11,3 +11,4 @@ export { default as BaseLineHeightInfo } from './components/Info/BaseLineHeight'
 export { default as BaseSpacingInfo } from './components/Info/BaseSpacing'
 
 export { default as SwatchSheet } from './components/Sheet/Swatch'
+export { default as BaseFontSizeSheet } from './components/Sheet/BaseFontSize'

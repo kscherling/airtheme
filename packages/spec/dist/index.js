@@ -11,6 +11,7 @@ var styled__default = _interopDefault(styled);
 var make = require('@airtheme/make');
 var reactRedux = require('react-redux');
 var ui = require('@airtheme/ui');
+require('@airtheme/type');
 
 function _typeof(obj) {
   if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
@@ -394,6 +395,12 @@ var mapSwatch = function mapSwatch(_ref) {
     swatch: swatch
   };
 };
+var mapBaseFontSize = function mapBaseFontSize(_ref2) {
+  var baseFontSize = _ref2.baseFontSize;
+  return {
+    baseFontSize: baseFontSize
+  };
+};
 
 var _require = require('recompose'),
     compose = _require.compose;
@@ -472,6 +479,62 @@ var Swatch$1 = function Swatch(_ref2) {
 
 var Swatch$2 = connectTheme(mapSwatch)(Swatch$1);
 
+var BaseAttributeEntry = function BaseAttributeEntry(_ref) {
+  var _ref$attribute = _ref.attribute,
+      attribute = _ref$attribute === void 0 ? {} : _ref$attribute,
+      _ref$render = _ref.render,
+      render = _ref$render === void 0 ? function () {
+    return null;
+  } : _ref$render,
+      _ref$renderLoading = _ref.renderLoading,
+      renderLoading = _ref$renderLoading === void 0 ? function () {
+    return null;
+  } : _ref$renderLoading;
+  console.log(attribute);
+  var content = false;
+  return content ? render() : renderLoading();
+};
+
+function _templateObject$3() {
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  height: 5rem;\n  padding: 1rem;\n  font-size: ", ";\n  color: #000000;\n"]);
+
+  _templateObject$3 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+var _require$1 = require('recompose'),
+    compose$1 = _require$1.compose;
+
+var Chip$1 = styled__default.div(_templateObject$3(), function (_ref) {
+  var fontSize = _ref.fontSize,
+      unit = _ref.unit;
+  return "".concat(fontSize).concat(unit);
+});
+
+var BaseFontSize$1 = function BaseFontSize(_ref2) {
+  var baseFontSize = _ref2.baseFontSize;
+  return React__default.createElement(ui.Card, {
+    pad: true,
+    border: true
+  }, React__default.createElement(BaseAttributeEntry, {
+    attribute: baseFontSize,
+    render: function render(_ref3) {
+      var name = _ref3.name,
+          value = _ref3.value,
+          object = _ref3.object;
+      return React__default.createElement(Chip$1, {
+        fontSize: value,
+        unit: object
+      }, React__default.createElement("span", null, value));
+    }
+  }));
+};
+
+var BaseFontSize$2 = compose$1(connectTheme(mapBaseFontSize), reactRedux.connect(make.mapBaseFontSize))(BaseFontSize$1);
+
 exports.GlobalsInfo = Globals;
 exports.SwatchInfo = Swatch;
 exports.FontFaceInfo = FontFace;
@@ -484,4 +547,5 @@ exports.BaseFontSizeInfo = BaseFontSize;
 exports.BaseLineHeightInfo = BaseLineHeight;
 exports.BaseSpacingInfo = BaseSpacing;
 exports.SwatchSheet = Swatch$2;
+exports.BaseFontSizeSheet = BaseFontSize$2;
 //# sourceMappingURL=index.js.map

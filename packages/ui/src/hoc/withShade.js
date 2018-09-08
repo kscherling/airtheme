@@ -9,6 +9,7 @@ const withShade = Component => ({ color, ...rest }) => {
       color={color}
       isDark={tColor.isDark()}
       isLight={tColor.isLight()}
+      brightness={tColor.getBrightness()}
       {...rest}
     />
   )

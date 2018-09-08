@@ -64,9 +64,9 @@ var RGBA = 'rgba';
 
 var VERSION = '0.1.0';
 
-var shortid = require('shortid');
-
-var uuid = shortid.generate;
+var uuid = function uuid() {
+  return '12345';
+};
 
 exports.uuid = uuid;
 exports._ROOT_ATTRIBUTE_ = _ROOT_ATTRIBUTE_;
