@@ -12,6 +12,7 @@ var make = require('@airtheme/make');
 var reactRedux = require('react-redux');
 var ui = require('@airtheme/ui');
 var mod = require('@airtheme/mod');
+var core = require('@airtheme/core');
 var type = require('@airtheme/type');
 
 function _typeof(obj) {
@@ -450,6 +451,18 @@ var mapSwatch = function mapSwatch(_ref) {
     swatch: swatch
   };
 };
+var mapBaseFontSize = function mapBaseFontSize(_ref2) {
+  var baseFontSize = _ref2.baseFontSize;
+  return {
+    baseFontSize: baseFontSize
+  };
+};
+var mapBaseLineHeight = function mapBaseLineHeight(_ref3) {
+  var baseLineHeight = _ref3.baseLineHeight;
+  return {
+    baseLineHeight: baseLineHeight
+  };
+};
 
 var _require = require('recompose'),
     compose = _require.compose;
@@ -528,207 +541,6 @@ var Swatch$1 = function Swatch(_ref2) {
 
 var Swatch$2 = connectTheme(mapSwatch)(Swatch$1);
 
-function unwrapExports (x) {
-	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
-}
-
-function createCommonjsModule(fn, module) {
-	return module = { exports: {} }, fn(module, module.exports), module.exports;
-}
-
-var dist = createCommonjsModule(function (module, exports) {
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-var _ROOT_ATTRIBUTE_ = 'attribute';
-var COLOR = 'color';
-var FONT_SIZE = 'fontSize';
-var FONT_WEIGHT = 'fontWeight';
-var LINE_HEIGHT = 'lineHeight';
-var FONT_FACE = 'fontFace';
-var FONT_FAMILY = 'fontFamily';
-var SPACING = 'spacing';
-var SWATCH = 'swatch';
-var BASE_FONT_SIZE = 'baseFontSize';
-var BASE_SPACING = 'baseSpacing';
-var BASE_LINE_HEIGHT = 'baseLineHeight';
-var BASE_FONT_SIZE_KEY = 'baseFontSize';
-var BASE_LINE_HEIGHT_KEY = 'baseLineHeight';
-var BASE_SPACING_KEY = 'baseSpacing';
-var COLOR_KEY = 'color';
-var FONT_FACE_KEY = 'fontFace';
-var FONT_FAMILY_KEY = 'fontFamily';
-var FONT_SIZE_KEY = 'fontSize';
-var FONT_WEIGHT_KEY = 'fontWeight';
-var SETTING_KEY = 'setting';
-var BASE_KEY = 'base';
-var SPACING_KEY = 'spacing';
-var SWATCH_KEY = 'swatch';
-var UTILITY_KEY = 'utility';
-var ID_KEY = 'id';
-var NAME_KEY = 'name';
-var VERSION_KEY = 'version';
-var BASE_FONT_SIZE_PATH = "".concat(BASE_KEY, ".").concat(BASE_FONT_SIZE_KEY);
-var BASE_LINE_HEIGHT_PATH = "".concat(BASE_KEY, ".").concat(BASE_LINE_HEIGHT_KEY);
-var BASE_SPACING_PATH = "".concat(BASE_KEY, ".").concat(BASE_SPACING_KEY);
-var COLOR_PATH = "".concat(SETTING_KEY, ".").concat(COLOR_KEY);
-var FONT_FAMILY_PATH = "".concat(SETTING_KEY, ".").concat(FONT_FAMILY_KEY);
-var FONT_SIZE_PATH = "".concat(SETTING_KEY, ".").concat(FONT_SIZE_KEY);
-var FONT_WEIGHT_PATH = "".concat(SETTING_KEY, ".").concat(FONT_WEIGHT_KEY);
-var SETTING_PATH = SETTING_KEY;
-var SPACING_PATH = "".concat(SETTING_KEY, ".").concat(SPACING_KEY);
-var SWATCH_PATH = SWATCH_KEY;
-var UTILITY_PATH = UTILITY_KEY;
-var _ROOT_THEME_ = 'theme';
-var BASIC = 'airthemeBasic';
-var _THEME_SETTING_ = 'setting';
-var _THEME_BASE_ = 'base';
-var _ROOT_UNIT_ = 'unit';
-var STRING = 'string';
-var FACTOR = 'factor';
-var HEX = 'hex';
-var HEXA = 'hexa';
-var PX = 'px';
-var REFERENCE = 'reference';
-var REM = 'rem';
-var RGB = 'rgb';
-var RGBA = 'rgba';
-var VERSION = '0.1.0';
-
-var uuid = function uuid() {
-  return '12345';
-};
-
-var isFloat = function isFloat(n) {
-  return n % 1 !== 0;
-};
-
-var castFloat = function castFloat(number) {
-  return parseFloat(number.toFixed(2));
-};
-
-var castNumber = function castNumber(string) {
-  var n = Number(string);
-  return isFloat(n) ? castFloat(n) : n;
-};
-
-exports.uuid = uuid;
-exports.castNumber = castNumber;
-exports._ROOT_ATTRIBUTE_ = _ROOT_ATTRIBUTE_;
-exports.COLOR = COLOR;
-exports.FONT_SIZE = FONT_SIZE;
-exports.FONT_WEIGHT = FONT_WEIGHT;
-exports.LINE_HEIGHT = LINE_HEIGHT;
-exports.FONT_FACE = FONT_FACE;
-exports.FONT_FAMILY = FONT_FAMILY;
-exports.SPACING = SPACING;
-exports.SWATCH = SWATCH;
-exports.BASE_FONT_SIZE = BASE_FONT_SIZE;
-exports.BASE_SPACING = BASE_SPACING;
-exports.BASE_LINE_HEIGHT = BASE_LINE_HEIGHT;
-exports.BASE_FONT_SIZE_KEY = BASE_FONT_SIZE_KEY;
-exports.BASE_LINE_HEIGHT_KEY = BASE_LINE_HEIGHT_KEY;
-exports.BASE_SPACING_KEY = BASE_SPACING_KEY;
-exports.COLOR_KEY = COLOR_KEY;
-exports.FONT_FACE_KEY = FONT_FACE_KEY;
-exports.FONT_FAMILY_KEY = FONT_FAMILY_KEY;
-exports.FONT_SIZE_KEY = FONT_SIZE_KEY;
-exports.FONT_WEIGHT_KEY = FONT_WEIGHT_KEY;
-exports.SETTING_KEY = SETTING_KEY;
-exports.BASE_KEY = BASE_KEY;
-exports.SPACING_KEY = SPACING_KEY;
-exports.SWATCH_KEY = SWATCH_KEY;
-exports.UTILITY_KEY = UTILITY_KEY;
-exports.ID_KEY = ID_KEY;
-exports.NAME_KEY = NAME_KEY;
-exports.VERSION_KEY = VERSION_KEY;
-exports.BASE_FONT_SIZE_PATH = BASE_FONT_SIZE_PATH;
-exports.BASE_LINE_HEIGHT_PATH = BASE_LINE_HEIGHT_PATH;
-exports.BASE_SPACING_PATH = BASE_SPACING_PATH;
-exports.COLOR_PATH = COLOR_PATH;
-exports.FONT_FAMILY_PATH = FONT_FAMILY_PATH;
-exports.FONT_SIZE_PATH = FONT_SIZE_PATH;
-exports.FONT_WEIGHT_PATH = FONT_WEIGHT_PATH;
-exports.SETTING_PATH = SETTING_PATH;
-exports.SPACING_PATH = SPACING_PATH;
-exports.SWATCH_PATH = SWATCH_PATH;
-exports.UTILITY_PATH = UTILITY_PATH;
-exports._ROOT_THEME_ = _ROOT_THEME_;
-exports.BASIC = BASIC;
-exports._THEME_SETTING_ = _THEME_SETTING_;
-exports._THEME_BASE_ = _THEME_BASE_;
-exports._ROOT_UNIT_ = _ROOT_UNIT_;
-exports.STRING = STRING;
-exports.FACTOR = FACTOR;
-exports.HEX = HEX;
-exports.HEXA = HEXA;
-exports.PX = PX;
-exports.REFERENCE = REFERENCE;
-exports.REM = REM;
-exports.RGB = RGB;
-exports.RGBA = RGBA;
-exports.VERSION = VERSION;
-});
-
-unwrapExports(dist);
-var dist_1 = dist.uuid;
-var dist_2 = dist.castNumber;
-var dist_3 = dist._ROOT_ATTRIBUTE_;
-var dist_4 = dist.COLOR;
-var dist_5 = dist.FONT_SIZE;
-var dist_6 = dist.FONT_WEIGHT;
-var dist_7 = dist.LINE_HEIGHT;
-var dist_8 = dist.FONT_FACE;
-var dist_9 = dist.FONT_FAMILY;
-var dist_10 = dist.SPACING;
-var dist_11 = dist.SWATCH;
-var dist_12 = dist.BASE_FONT_SIZE;
-var dist_13 = dist.BASE_SPACING;
-var dist_14 = dist.BASE_LINE_HEIGHT;
-var dist_15 = dist.BASE_FONT_SIZE_KEY;
-var dist_16 = dist.BASE_LINE_HEIGHT_KEY;
-var dist_17 = dist.BASE_SPACING_KEY;
-var dist_18 = dist.COLOR_KEY;
-var dist_19 = dist.FONT_FACE_KEY;
-var dist_20 = dist.FONT_FAMILY_KEY;
-var dist_21 = dist.FONT_SIZE_KEY;
-var dist_22 = dist.FONT_WEIGHT_KEY;
-var dist_23 = dist.SETTING_KEY;
-var dist_24 = dist.BASE_KEY;
-var dist_25 = dist.SPACING_KEY;
-var dist_26 = dist.SWATCH_KEY;
-var dist_27 = dist.UTILITY_KEY;
-var dist_28 = dist.ID_KEY;
-var dist_29 = dist.NAME_KEY;
-var dist_30 = dist.VERSION_KEY;
-var dist_31 = dist.BASE_FONT_SIZE_PATH;
-var dist_32 = dist.BASE_LINE_HEIGHT_PATH;
-var dist_33 = dist.BASE_SPACING_PATH;
-var dist_34 = dist.COLOR_PATH;
-var dist_35 = dist.FONT_FAMILY_PATH;
-var dist_36 = dist.FONT_SIZE_PATH;
-var dist_37 = dist.FONT_WEIGHT_PATH;
-var dist_38 = dist.SETTING_PATH;
-var dist_39 = dist.SPACING_PATH;
-var dist_40 = dist.SWATCH_PATH;
-var dist_41 = dist.UTILITY_PATH;
-var dist_42 = dist._ROOT_THEME_;
-var dist_43 = dist.BASIC;
-var dist_44 = dist._THEME_SETTING_;
-var dist_45 = dist._THEME_BASE_;
-var dist_46 = dist._ROOT_UNIT_;
-var dist_47 = dist.STRING;
-var dist_48 = dist.FACTOR;
-var dist_49 = dist.HEX;
-var dist_50 = dist.HEXA;
-var dist_51 = dist.PX;
-var dist_52 = dist.REFERENCE;
-var dist_53 = dist.REM;
-var dist_54 = dist.RGB;
-var dist_55 = dist.RGBA;
-var dist_56 = dist.VERSION;
-
 var Increment = mod.withBaseFontSizeContent(function (_ref) {
   var _ref$content = _ref.content,
       content = _ref$content === void 0 ? {} : _ref$content,
@@ -739,7 +551,7 @@ var Increment = mod.withBaseFontSizeContent(function (_ref) {
     options: {
       step: 1
     },
-    castValueTo: dist_2
+    castValueTo: core.castNumber
   });
 });
 var Input = mod.withBaseFontSizeContent(function (_ref2) {
@@ -749,7 +561,7 @@ var Input = mod.withBaseFontSizeContent(function (_ref2) {
   return React__default.createElement(ui.InputUnit, {
     update: updateBaseFontSize,
     unit: content,
-    castValueTo: dist_2
+    castValueTo: core.castNumber
   });
 });
 
@@ -767,7 +579,7 @@ var Increment$1 = mod.withBaseLineHeightContent(function (_ref) {
     options: {
       step: 0.05
     },
-    castValueTo: dist_2
+    castValueTo: core.castNumber
   });
 });
 var Input$1 = mod.withBaseLineHeightContent(function (_ref2) {
@@ -777,7 +589,7 @@ var Input$1 = mod.withBaseLineHeightContent(function (_ref2) {
   return React__default.createElement(ui.InputUnit, {
     update: updateBaseLineHeight,
     unit: content,
-    castValueTo: dist_2
+    castValueTo: core.castNumber
   });
 });
 
@@ -895,8 +707,149 @@ var Typeset = styled__default.div.attrs({
   children: typeset
 })(_templateObject$5(), baseTypography);
 
+function symbolObservablePonyfill(root) {
+  var result;
+  var _Symbol = root.Symbol;
+
+  if (typeof _Symbol === 'function') {
+    if (_Symbol.observable) {
+      result = _Symbol.observable;
+    } else {
+      result = _Symbol('observable');
+      _Symbol.observable = result;
+    }
+  } else {
+    result = '@@observable';
+  }
+
+  return result;
+}
+
+/* global window */
+var root;
+
+if (typeof self !== 'undefined') {
+  root = self;
+} else if (typeof window !== 'undefined') {
+  root = window;
+} else if (typeof global !== 'undefined') {
+  root = global;
+} else if (typeof module !== 'undefined') {
+  root = module;
+} else {
+  root = Function('return this')();
+}
+
+var result = symbolObservablePonyfill(root);
+
+/**
+ * These are private action types reserved by Redux.
+ * For any unknown actions, you must return the current state.
+ * If the current state is undefined, you must return the initial state.
+ * Do not reference these action types directly in your code.
+ */
+
+var ActionTypes = {
+  INIT: '@@redux/INIT' + Math.random().toString(36).substring(7).split('').join('.'),
+  REPLACE: '@@redux/REPLACE' + Math.random().toString(36).substring(7).split('').join('.')
+};
+
+var _typeof$1 = typeof Symbol === "function" && _typeof(Symbol.iterator) === "symbol" ? function (obj) {
+  return _typeof(obj);
+} : function (obj) {
+  return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof(obj);
+};
+/**
+ * Prints a warning in the console if it exists.
+ *
+ * @param {String} message The warning message.
+ * @returns {void}
+ */
+
+
+function warning(message) {
+  /* eslint-disable no-console */
+  if (typeof console !== 'undefined' && typeof console.error === 'function') {
+    console.error(message);
+  }
+  /* eslint-enable no-console */
+
+
+  try {
+    // This error was thrown as a convenience so that if you enable
+    // "break on all exceptions" in your console,
+    // it would pause the execution at this line.
+    throw new Error(message);
+  } catch (e) {} // eslint-disable-line no-empty
+
+}
+/**
+ * Composes single-argument functions from right to left. The rightmost
+ * function can take multiple arguments as it provides the signature for
+ * the resulting composite function.
+ *
+ * @param {...Function} funcs The functions to compose.
+ * @returns {Function} A function obtained by composing the argument functions
+ * from right to left. For example, compose(f, g, h) is identical to doing
+ * (...args) => f(g(h(...args))).
+ */
+
+
+function compose$2() {
+  for (var _len = arguments.length, funcs = Array(_len), _key = 0; _key < _len; _key++) {
+    funcs[_key] = arguments[_key];
+  }
+
+  if (funcs.length === 0) {
+    return function (arg) {
+      return arg;
+    };
+  }
+
+  if (funcs.length === 1) {
+    return funcs[0];
+  }
+
+  return funcs.reduce(function (a, b) {
+    return function () {
+      return a(b.apply(undefined, arguments));
+    };
+  });
+}
+/*
+ * This is a dummy function to check if the function name has been altered by minification.
+ * If the function has been minified and NODE_ENV !== 'production', warn the user.
+ */
+
+
+function isCrushed() {}
+
+if (process.env.NODE_ENV !== 'production' && typeof isCrushed.name === 'string' && isCrushed.name !== 'isCrushed') {
+  warning("You are currently using minified code outside of NODE_ENV === 'production'. " + 'This means that you are running a slower development build of Redux. ' + 'You can use loose-envify (https://github.com/zertosh/loose-envify) for browserify ' + 'or DefinePlugin for webpack (http://stackoverflow.com/questions/30030031) ' + 'to ensure you have the correct code for your production build.');
+}
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteral([""]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2$1() {
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-auto-flow: column;\n  grid-gap: 0.25rem;\n  color: #666666;\n  font-size: 85%;\n"]);
+
+  _templateObject2$1 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject$6() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: space-around;\n  padding: 1rem;\n"]);
+  var data = _taggedTemplateLiteral(["\n  padding: 1rem;\n"]);
 
   _templateObject$6 = function _templateObject() {
     return data;
@@ -905,12 +858,19 @@ function _templateObject$6() {
   return data;
 }
 var Chip$2 = styled__default.div(_templateObject$6());
+var DetailGroup = styled__default.div(_templateObject2$1());
+var DetailItem = styled__default.div(_templateObject3());
+var Detail = compose$2(connectTheme(mapBaseFontSize), connectTheme(mapBaseLineHeight))(function (_ref) {
+  var baseFontSize = _ref.baseFontSize,
+      baseLineHeight = _ref.baseLineHeight;
+  return React__default.createElement(DetailGroup, null, React__default.createElement(DetailItem, null, core.castTitle(core.BASE_FONT_SIZE_KEY)), React__default.createElement(DetailItem, null, baseFontSize), React__default.createElement(DetailItem, null, core.castTitle(core.BASE_LINE_HEIGHT_KEY)), React__default.createElement(DetailItem, null, baseLineHeight));
+});
 
 var BaseFont = function BaseFont() {
   return React__default.createElement(ui.Card, {
     pad: true,
     border: true
-  }, React__default.createElement(Chip$2, null, React__default.createElement(BaseFontSize$1, null), React__default.createElement(BaseLineHeight$1, null)), React__default.createElement(Chip$2, null, React__default.createElement(Typeset, null)));
+  }, React__default.createElement(Chip$2, null, React__default.createElement(BaseFontSize$1, null), React__default.createElement(BaseLineHeight$1, null)), React__default.createElement(Typeset, null), React__default.createElement(Detail, null));
 };
 
 exports.GlobalsInfo = Globals;

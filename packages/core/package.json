@@ -12,5 +12,16 @@
     "build:watch": "./task build:watch",
     "test": "./task test"
   },
-  "dependencies": {}
+  "dependencies": {
+    "humps": "^2.0.1",
+    "fp": "^0.1.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.14.2"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "bracketSpacing": true
+  }
 }

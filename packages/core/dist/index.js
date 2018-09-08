@@ -2,6 +2,8 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
+var fp = require('fp');
+
 var _ROOT_ATTRIBUTE_ = 'attribute';
 var COLOR = 'color';
 var FONT_SIZE = 'fontSize';
@@ -81,8 +83,185 @@ var castNumber = function castNumber(string) {
   return isFloat(n) ? castFloat(n) : n;
 };
 
+function _toConsumableArray(arr) {
+  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
+}
+
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) {
+    for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) arr2[i] = arr[i];
+
+    return arr2;
+  }
+}
+
+function _iterableToArray(iter) {
+  if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
+}
+
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance");
+}
+
+var commonjsGlobal = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+
+function createCommonjsModule(fn, module) {
+	return module = { exports: {} }, fn(module, module.exports), module.exports;
+}
+
+var humps = createCommonjsModule(function (module) {
+
+(function (global) {
+  var _processKeys = function _processKeys(convert, obj, options) {
+    if (!_isObject(obj) || _isDate(obj) || _isRegExp(obj) || _isBoolean(obj) || _isFunction(obj)) {
+      return obj;
+    }
+
+    var output,
+        i = 0,
+        l = 0;
+
+    if (_isArray(obj)) {
+      output = [];
+
+      for (l = obj.length; i < l; i++) {
+        output.push(_processKeys(convert, obj[i], options));
+      }
+    } else {
+      output = {};
+
+      for (var key in obj) {
+        if (Object.prototype.hasOwnProperty.call(obj, key)) {
+          output[convert(key, options)] = _processKeys(convert, obj[key], options);
+        }
+      }
+    }
+
+    return output;
+  }; // String conversion methods
+
+
+  var separateWords = function separateWords(string, options) {
+    options = options || {};
+    var separator = options.separator || '_';
+    var split = options.split || /(?=[A-Z])/;
+    return string.split(split).join(separator);
+  };
+
+  var camelize = function camelize(string) {
+    if (_isNumerical(string)) {
+      return string;
+    }
+
+    string = string.replace(/[\-_\s]+(.)?/g, function (match, chr) {
+      return chr ? chr.toUpperCase() : '';
+    }); // Ensure 1st char is always lowercase
+
+    return string.substr(0, 1).toLowerCase() + string.substr(1);
+  };
+
+  var pascalize = function pascalize(string) {
+    var camelized = camelize(string); // Ensure 1st char is always uppercase
+
+    return camelized.substr(0, 1).toUpperCase() + camelized.substr(1);
+  };
+
+  var decamelize = function decamelize(string, options) {
+    return separateWords(string, options).toLowerCase();
+  }; // Utilities
+  // Taken from Underscore.js
+
+
+  var toString = Object.prototype.toString;
+
+  var _isFunction = function _isFunction(obj) {
+    return typeof obj === 'function';
+  };
+
+  var _isObject = function _isObject(obj) {
+    return obj === Object(obj);
+  };
+
+  var _isArray = function _isArray(obj) {
+    return toString.call(obj) == '[object Array]';
+  };
+
+  var _isDate = function _isDate(obj) {
+    return toString.call(obj) == '[object Date]';
+  };
+
+  var _isRegExp = function _isRegExp(obj) {
+    return toString.call(obj) == '[object RegExp]';
+  };
+
+  var _isBoolean = function _isBoolean(obj) {
+    return toString.call(obj) == '[object Boolean]';
+  }; // Performant way to determine if obj coerces to a number
+
+
+  var _isNumerical = function _isNumerical(obj) {
+    obj = obj - 0;
+    return obj === obj;
+  }; // Sets up function which handles processing keys
+  // allowing the convert function to be modified by a callback
+
+
+  var _processor = function _processor(convert, options) {
+    var callback = options && 'process' in options ? options.process : options;
+
+    if (typeof callback !== 'function') {
+      return convert;
+    }
+
+    return function (string, options) {
+      return callback(string, convert, options);
+    };
+  };
+
+  var humps = {
+    camelize: camelize,
+    decamelize: decamelize,
+    pascalize: pascalize,
+    depascalize: decamelize,
+    camelizeKeys: function camelizeKeys(object, options) {
+      return _processKeys(_processor(camelize, options), object);
+    },
+    decamelizeKeys: function decamelizeKeys(object, options) {
+      return _processKeys(_processor(decamelize, options), object, options);
+    },
+    pascalizeKeys: function pascalizeKeys(object, options) {
+      return _processKeys(_processor(pascalize, options), object);
+    },
+    depascalizeKeys: function depascalizeKeys() {
+      return this.decamelizeKeys.apply(this, arguments);
+    }
+  };
+
+  if (module.exports) {
+    module.exports = humps;
+  } else {
+    global.humps = humps;
+  }
+})(commonjsGlobal);
+});
+
+var titlize = function titlize(str) {
+  return str.split(' ').reduce(function (acc, word) {
+    return _toConsumableArray(acc).concat([word.replace(word[0], word[0].toUpperCase())]);
+  }, []).join(' ');
+};
+
+var castWords = function castWords(camelizedKey) {
+  return humps.decamelize(camelizedKey, {
+    separator: ' '
+  });
+};
+var castTitle = fp.compose(titlize, castWords);
+
 exports.uuid = uuid;
 exports.castNumber = castNumber;
+exports.castWords = castWords;
+exports.castTitle = castTitle;
 exports._ROOT_ATTRIBUTE_ = _ROOT_ATTRIBUTE_;
 exports.COLOR = COLOR;
 exports.FONT_SIZE = FONT_SIZE;
