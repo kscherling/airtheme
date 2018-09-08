@@ -9,6 +9,19 @@ const Input = styled.input.attrs({
   type: 'text'
 })`
   ${resetInput};
+  border-radius: 3px;
+  padding: 0.5rem 0.75rem;
+  text-align: center;
+
+  &[type='text'] {
+    width: 3.5rem;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: #e7f0f7;
+  }
 `
 
 // TODO: Validate - Don't allow negatives
@@ -17,14 +30,12 @@ const InputUnit = ({
   unit: { value = '', name = '' } = {},
   update = noop,
   placeholder = 'Update',
-  cast = val => val
+  castValueTo = val => val
 } = {}) => (
-  <InputContainer>
-    <Input
-      value={value}
-      onChange={e => update({ value: cast(e.target.value) })}
-    />
-  </InputContainer>
+  <Input
+    value={value}
+    onChange={e => update({ value: castValueTo(e.target.value) })}
+  />
 )
 
 export default InputUnit

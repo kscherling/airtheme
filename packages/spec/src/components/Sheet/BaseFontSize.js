@@ -11,11 +11,15 @@ import { IncrementUnit, InputUnit } from '@airtheme/ui'
 import { withBaseFontSizeContent } from '@airtheme/mod'
 
 const Chip = styled.div`
-  width: 100%;
   display: flex;
   justify-content: center;
   padding: 1rem;
-  color: #000000;
+`
+
+const BaseInputGroup = styled.div`
+  display: grid;
+  grid-auto-flow: row;
+  grid-gap: 0.25rem;
 `
 
 const Increment = withBaseFontSizeContent(
@@ -30,30 +34,28 @@ const Increment = withBaseFontSizeContent(
 
 const Input = withBaseFontSizeContent(
   ({ content = {}, updateBaseFontSize }) => (
-    <InputUnit update={updateBaseFontSize} unit={content} cast={Number} />
+    <InputUnit
+      update={updateBaseFontSize}
+      unit={content}
+      castValueTo={Number}
+    />
   )
 )
 
 const BaseFontSize = ({ baseFontSize }) => (
-  <Card pad border>
-    <BaseAttributeEntry
-      attribute={baseFontSize}
-      render={({ unit, content: { value } } = {}) => (
-        <Fragment>
-          <Increment />
+  <Fragment>
+    <Card pad border>
+      <Chip>
+        <BaseInputGroup>
           <Input />
-          <Chip>
-            {value}
-            &nbsp;
-            <small>{unit}</small>
-          </Chip>
-          <Chip>
-            <Typeset />
-          </Chip>
-        </Fragment>
-      )}
-    />
-  </Card>
+          <Increment />
+        </BaseInputGroup>
+      </Chip>
+    </Card>
+    <Chip>
+      <Typeset />
+    </Chip>
+  </Fragment>
 )
 
-export default connect(mapBaseFontSize)(BaseFontSize)
+export default BaseFontSize

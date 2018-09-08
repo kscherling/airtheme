@@ -22,7 +22,11 @@ const Btn = styled.button.attrs({
   }
 `
 
-const IncrementContainer = styled.div``
+const IncrementContainer = styled.div`
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 0.25rem;
+`
 
 const IncrementBtn = props => (
   <Btn {...props} dimension="1.25rem">

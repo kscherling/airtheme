@@ -7,6 +7,8 @@ import connectTheme from '../../utils/connectTheme'
 import BaseAttributeEntry from '../../utils/BaseAttributeEntry'
 const { compose } = require('recompose')
 import Typeset from '../Typeset'
+import { IncrementUnit, InputUnit } from '@airtheme/ui'
+import { withBaseLineHeightContent } from '@airtheme/mod'
 
 const Chip = styled.div`
   width: 100%;
@@ -16,28 +18,46 @@ const Chip = styled.div`
   align-items: baseline;
 `
 
-const BaseLineHeight = ({ baseLineHeight }) => (
-  <Card pad border>
-    <BaseAttributeEntry
-      attribute={baseLineHeight}
-      render={({
-        unit,
-        content: { value } = {},
-        deserialized: { baseLineHeight } = {}
-      } = {}) => (
-        <Fragment>
-          <Chip>
-            {value}
-            &nbsp;
-            <small>{unit}</small>
-          </Chip>
-          <Chip>
-            <Typeset />
-          </Chip>
-        </Fragment>
-      )}
+const BaseInputGroup = styled.div`
+  display: grid;
+  grid-auto-flow: row;
+  grid-gap: 0.25rem;
+`
+
+const Increment = withBaseLineHeightContent(
+  ({ content = {}, updateBaseLineHeight }) => (
+    <IncrementUnit
+      update={updateBaseLineHeight}
+      unit={content}
+      options={{ step: 0.05 }}
     />
-  </Card>
+  )
 )
 
-export default connect(mapBaseLineHeight)(BaseLineHeight)
+const Input = withBaseLineHeightContent(
+  ({ content = {}, updateBaseLineHeight }) => (
+    <InputUnit
+      update={updateBaseLineHeight}
+      unit={content}
+      castValueTo={Number}
+    />
+  )
+)
+
+const BaseLineHeight = () => (
+  <Fragment>
+    <Card pad border>
+      <Chip>
+        <BaseInputGroup>
+          <Input />
+          <Increment />
+        </BaseInputGroup>
+      </Chip>
+    </Card>
+    <Chip>
+      <Typeset />
+    </Chip>
+  </Fragment>
+)
+
+export default BaseLineHeight

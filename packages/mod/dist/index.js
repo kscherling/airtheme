@@ -15,6 +15,13 @@ var withBaseFontSizeContent = reactRedux.connect(make.mapBaseFontSizeContent, {
   updateBaseFontSize: make.updateBaseFontSize
 });
 
+var withBaseLineHeightAttribute = reactRedux.connect(make.mapBaseLineHeight, {
+  updateBaseLineHeightView: make.updateBaseLineHeightView
+});
+var withBaseLineHeightContent = reactRedux.connect(make.mapBaseLineHeightContent, {
+  updateBaseLineHeight: make.updateBaseLineHeight
+});
+
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
@@ -642,13 +649,6 @@ var BaseFontSize = function BaseFontSize() {
   return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(BaseFontSizeAttribute, null), React__default.createElement(BaseFontSizeContent, null));
 };
 
-var withBaseLineHeightAttribute = reactRedux.connect(make.mapBaseLineHeight, {
-  updateBaseLineHeightView: make.updateBaseLineHeightView
-});
-var withBaseLineHeightContent = reactRedux.connect(make.mapBaseLineHeightContent, {
-  updateBaseLineHeight: make.updateBaseLineHeight
-});
-
 var BaseLineHeightAttribute = withBaseLineHeightAttribute(function (_ref) {
   var _ref$baseLineHeight = _ref.baseLineHeight,
       view = _ref$baseLineHeight.view,
@@ -702,6 +702,8 @@ var BaseSpacing = function BaseSpacing() {
 
 exports.withBaseFontSizeAttribute = withBaseFontSizeAttribute;
 exports.withBaseFontSizeContent = withBaseFontSizeContent;
+exports.withBaseLineHeightContent = withBaseLineHeightContent;
+exports.withBaseLineHeightAttribute = withBaseLineHeightAttribute;
 exports.GlobalsMod = Globals;
 exports.SwatchMod = Swatch;
 exports.FontFaceMod = FontFace;
