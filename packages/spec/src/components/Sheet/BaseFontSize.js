@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
 import styled, { css } from 'styled-components'
-const { compose } = require('recompose')
 import { IncrementUnit, InputUnit, EditBaseUnitGroup } from '@airtheme/ui'
 import { withBaseFontSizeContent } from '@airtheme/mod'
 import { castNumber } from '@airtheme/core'

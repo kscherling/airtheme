@@ -729,8 +729,6 @@ var dist_54 = dist.RGB;
 var dist_55 = dist.RGBA;
 var dist_56 = dist.VERSION;
 
-var _require$1 = require('recompose'),
-    compose$1 = _require$1.compose;
 var Increment = mod.withBaseFontSizeContent(function (_ref) {
   var _ref$content = _ref.content,
       content = _ref$content === void 0 ? {} : _ref$content,
@@ -829,8 +827,8 @@ function _templateObject$3() {
   return data;
 }
 
-var _require$2 = require('recompose'),
-    compose$2 = _require$2.compose;
+var _require$1 = require('recompose'),
+    compose$1 = _require$1.compose;
 
 var Chip$1 = styled__default.div(_templateObject$3());
 
@@ -898,7 +896,7 @@ var Typeset = styled__default.div.attrs({
 })(_templateObject$5(), baseTypography);
 
 function _templateObject$6() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n  padding: 1rem;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: space-around;\n  padding: 1rem;\n"]);
 
   _templateObject$6 = function _templateObject() {
     return data;
@@ -912,7 +910,7 @@ var BaseFont = function BaseFont() {
   return React__default.createElement(ui.Card, {
     pad: true,
     border: true
-  }, React__default.createElement(Chip$2, null, React__default.createElement(Typeset, null)));
+  }, React__default.createElement(Chip$2, null, React__default.createElement(BaseFontSize$1, null), React__default.createElement(BaseLineHeight$1, null)), React__default.createElement(Chip$2, null, React__default.createElement(Typeset, null)));
 };
 
 exports.GlobalsInfo = Globals;
