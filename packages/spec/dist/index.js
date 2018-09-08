@@ -113,8 +113,24 @@ function _slicedToArray(arr, i) {
   return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();
 }
 
+function _toConsumableArray(arr) {
+  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
+}
+
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) {
+    for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) arr2[i] = arr[i];
+
+    return arr2;
+  }
+}
+
 function _arrayWithHoles(arr) {
   if (Array.isArray(arr)) return arr;
+}
+
+function _iterableToArray(iter) {
+  if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
 }
 
 function _iterableToArrayLimit(arr, i) {
@@ -141,6 +157,10 @@ function _iterableToArrayLimit(arr, i) {
   }
 
   return _arr;
+}
+
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance");
 }
 
 function _nonIterableRest() {
@@ -582,8 +602,21 @@ var BaseFontSize$1 = function BaseFontSize(_ref2) {
 
 var BaseFontSize$2 = reactRedux.connect(make.mapBaseFontSize)(BaseFontSize$1);
 
+var alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+
+var upCase = function upCase(string) {
+  return string.toUpperCase();
+};
+var uppercase = alpha.map(upCase).join();
+var allcase = alpha.reduce(function (acc, char) {
+  return _toConsumableArray(acc).concat([upCase(char), char]);
+}, []).join('');
+var numerals = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'].join('');
+var puncuation = ['.', ':', ',', ';', '()', '{}', '[]', '!', '@', '#', '$', '%', '^', '&', '*'].join('');
+var typeset = allcase.concat(numerals, puncuation);
+
 function _templateObject$4() {
-  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  display: flex;\n  justify-content: center;\n  padding: 1rem;\n  line-height: ", ";\n  font-size: ", ";\n  color: #000000;\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  display: flex;\n  justify-content: center;\n  padding: 1rem;\n  line-height: ", ";\n  font-size: ", ";\n  color: #000000;\n  word-break: break-all;\n"]);
 
   _templateObject$4 = function _templateObject() {
     return data;
@@ -594,7 +627,6 @@ function _templateObject$4() {
 
 var _require$2 = require('recompose'),
     compose$2 = _require$2.compose;
-
 var Chip$2 = styled__default.div(_templateObject$4(), function (_ref) {
   var lineHeight = _ref.lineHeight;
   return lineHeight;
@@ -621,7 +653,7 @@ var BaseLineHeight$1 = function BaseLineHeight(_ref3) {
       var baseLineHeight = _ref4$deserialized.baseLineHeight;
       return React__default.createElement(Chip$2, {
         lineHeight: baseLineHeight
-      }, React__default.createElement("span", null, value));
+      }, typeset);
     }
   }));
 };

@@ -6,6 +6,7 @@ import { mapBaseLineHeight } from '@airtheme/make'
 import connectTheme from '../../utils/connectTheme'
 import BaseAttributeEntry from '../../utils/BaseAttributeEntry'
 const { compose } = require('recompose')
+import { typeset } from '../../constants/typography'
 
 const Chip = styled.div`
   width: 100%;
@@ -15,6 +16,7 @@ const Chip = styled.div`
   line-height: ${({ lineHeight }) => lineHeight};
   font-size: ${({ theme }) => theme.baseFontSize};
   color: #000000;
+  word-break: break-all;
 `
 
 const BaseLineHeight = ({ baseLineHeight }) => (
@@ -24,11 +26,7 @@ const BaseLineHeight = ({ baseLineHeight }) => (
       render={({
         content: { value } = {},
         deserialized: { baseLineHeight } = {}
-      } = {}) => (
-        <Chip lineHeight={baseLineHeight}>
-          <span>{value}</span>
-        </Chip>
-      )}
+      } = {}) => <Chip lineHeight={baseLineHeight}>{typeset}</Chip>}
     />
   </Card>
 )
