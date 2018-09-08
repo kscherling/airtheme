@@ -12,10 +12,7 @@ const Input = styled.input.attrs({
   border-radius: 3px;
   padding: 0.5rem 0.75rem;
   text-align: center;
-
-  &[type='text'] {
-    width: 3.5rem;
-  }
+  line-height: 1.25;
 
   &:hover,
   &:focus,

@@ -16,3 +16,4 @@ export {
   default as BaseLineHeightSheet
 } from './components/Sheet/BaseLineHeight'
 export { default as BaseSpacingSheet } from './components/Sheet/BaseSpacing'
+export { default as BaseFont } from './components/Sheet/BaseFont'

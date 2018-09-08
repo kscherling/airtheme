@@ -8,6 +8,7 @@ module.exports = {
     '@airtheme/ui',
     '@airtheme/type',
     '@airtheme/mod',
+    '@airtheme/core',
     'react',
     'react-dom',
     'react-redux',

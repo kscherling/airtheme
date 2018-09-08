@@ -68,7 +68,21 @@ var uuid = function uuid() {
   return '12345';
 };
 
+var isFloat = function isFloat(n) {
+  return n % 1 !== 0;
+};
+
+var castFloat = function castFloat(number) {
+  return parseFloat(number.toFixed(2));
+};
+
+var castNumber = function castNumber(string) {
+  var n = Number(string);
+  return isFloat(n) ? castFloat(n) : n;
+};
+
 exports.uuid = uuid;
+exports.castNumber = castNumber;
 exports._ROOT_ATTRIBUTE_ = _ROOT_ATTRIBUTE_;
 exports.COLOR = COLOR;
 exports.FONT_SIZE = FONT_SIZE;

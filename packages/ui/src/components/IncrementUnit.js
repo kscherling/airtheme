@@ -25,6 +25,7 @@ const Btn = styled.button.attrs({
 const IncrementContainer = styled.div`
   display: grid;
   grid-template-columns: auto auto;
+  justify-content: space-between;
   grid-gap: 0.25rem;
 `
 
@@ -44,11 +45,16 @@ const DecrementBtn = props => (
 const IncrementUnit = ({
   unit: { value } = {},
   update,
-  options: { step = 1 } = {}
+  options: { step = 1 } = {},
+  castValueTo = val => val
 } = {}) => (
   <IncrementContainer>
-    <IncrementBtn onClick={() => update({ value: value + step })} />
-    <DecrementBtn onClick={() => update({ value: value - step })} />
+    <IncrementBtn
+      onClick={() => update({ value: castValueTo(value + step) })}
+    />
+    <DecrementBtn
+      onClick={() => update({ value: castValueTo(value - step) })}
+    />
   </IncrementContainer>
 )
 
