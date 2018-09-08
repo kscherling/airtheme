@@ -12,6 +12,7 @@ var make = require('@airtheme/make');
 var reactRedux = require('react-redux');
 var ui = require('@airtheme/ui');
 var type = require('@airtheme/type');
+var mod = require('@airtheme/mod');
 
 function _typeof(obj) {
   if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
@@ -612,20 +613,32 @@ function _templateObject$5() {
 var _require$1 = require('recompose'),
     compose$1 = _require$1.compose;
 var Chip$1 = styled__default.div(_templateObject$5());
+var Increment = mod.withBaseFontSizeContent(function (_ref) {
+  var _ref$content = _ref.content,
+      content = _ref$content === void 0 ? {} : _ref$content,
+      updateBaseFontSize = _ref.updateBaseFontSize;
+  return React__default.createElement(ui.IncrementNumber, {
+    update: updateBaseFontSize,
+    value: content.value,
+    options: {
+      step: 1
+    }
+  });
+});
 
-var BaseFontSize$1 = function BaseFontSize(_ref) {
-  var baseFontSize = _ref.baseFontSize;
+var BaseFontSize$1 = function BaseFontSize(_ref2) {
+  var baseFontSize = _ref2.baseFontSize;
   return React__default.createElement(ui.Card, {
     pad: true,
     border: true
   }, React__default.createElement(BaseAttributeEntry$1, {
     attribute: baseFontSize,
     render: function render() {
-      var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-          unit = _ref2.unit,
-          value = _ref2.content.value;
+      var _ref3 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+          unit = _ref3.unit,
+          value = _ref3.content.value;
 
-      return React__default.createElement(React.Fragment, null, React__default.createElement(Chip$1, null, value, "\xA0", React__default.createElement("small", null, unit)), React__default.createElement(Chip$1, null, React__default.createElement(Typeset, null)));
+      return React__default.createElement(React.Fragment, null, React__default.createElement(Increment, null), React__default.createElement(Chip$1, null, value, "\xA0", React__default.createElement("small", null, unit)), React__default.createElement(Chip$1, null, React__default.createElement(Typeset, null)));
     }
   }));
 };

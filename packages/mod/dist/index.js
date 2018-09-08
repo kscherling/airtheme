@@ -4,11 +4,16 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
+var reactRedux = require('react-redux');
+var make = require('@airtheme/make');
 var React = require('react');
 var React__default = _interopDefault(React);
 var styled = _interopDefault(require('styled-components'));
-var make = require('@airtheme/make');
-var reactRedux = require('react-redux');
+
+var withBaseFontSizeAttribute = reactRedux.connect(make.mapBaseFontSize);
+var withBaseFontSizeContent = reactRedux.connect(make.mapBaseFontSizeContent, {
+  updateBaseFontSize: make.updateBaseFontSize
+});
 
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
@@ -615,11 +620,6 @@ var Spacing = function Spacing() {
   return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(SpacingAttribute, null), React__default.createElement(SpacingContent, null));
 };
 
-var withBaseFontSizeAttribute = reactRedux.connect(make.mapBaseFontSize);
-var withBaseFontSizeContent = reactRedux.connect(make.mapBaseFontSizeContent, {
-  updateBaseFontSize: make.updateBaseFontSize
-});
-
 var BaseFontSizeAttribute = withBaseFontSizeAttribute(function (_ref) {
   var _ref$baseFontSize = _ref.baseFontSize,
       view = _ref$baseFontSize.view,
@@ -700,6 +700,8 @@ var BaseSpacing = function BaseSpacing() {
   return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(BaseSpacingAttribute, null), React__default.createElement(BaseSpacingContent, null));
 };
 
+exports.withBaseFontSizeAttribute = withBaseFontSizeAttribute;
+exports.withBaseFontSizeContent = withBaseFontSizeContent;
 exports.GlobalsMod = Globals;
 exports.SwatchMod = Swatch;
 exports.FontFaceMod = FontFace;

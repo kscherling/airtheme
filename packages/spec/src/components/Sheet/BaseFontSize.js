@@ -7,6 +7,8 @@ import connectTheme from '../../utils/connectTheme'
 import BaseAttributeEntry from '../../utils/BaseAttributeEntry'
 const { compose } = require('recompose')
 import Typeset from '../Typeset'
+import { IncrementNumber } from '@airtheme/ui'
+import { withBaseFontSizeContent } from '@airtheme/mod'
 
 const Chip = styled.div`
   width: 100%;
@@ -16,12 +18,23 @@ const Chip = styled.div`
   color: #000000;
 `
 
+const Increment = withBaseFontSizeContent(
+  ({ content = {}, updateBaseFontSize }) => (
+    <IncrementNumber
+      update={updateBaseFontSize}
+      value={content.value}
+      options={{ step: 1 }}
+    />
+  )
+)
+
 const BaseFontSize = ({ baseFontSize }) => (
   <Card pad border>
     <BaseAttributeEntry
       attribute={baseFontSize}
       render={({ unit, content: { value } } = {}) => (
         <Fragment>
+          <Increment />
           <Chip>
             {value}
             &nbsp;

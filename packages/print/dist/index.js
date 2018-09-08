@@ -2643,7 +2643,9 @@ var normalizeTokens = function normalizeTokens(tokens) {
 function _extends$1() { _extends$1 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1.apply(this, arguments); }
 
 var themeToDict = function themeToDict(theme, language) {
-  var plain = theme.plain;
+  var plain = theme.plain; // $FlowFixMe
+
+  var base = Object.create(null);
   var themeDict = theme.styles.reduce(function (acc, themeEntry) {
     var types = themeEntry.types,
         languages = themeEntry.languages,
@@ -2660,7 +2662,7 @@ var themeToDict = function themeToDict(theme, language) {
       acc[type] = accStyle;
     });
     return acc;
-  }, {}); // $FlowFixMe
+  }, base); // $FlowFixMe
 
   themeDict.root = plain; // $FlowFixMe
 
