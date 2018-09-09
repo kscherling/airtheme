@@ -828,8 +828,58 @@ if (process.env.NODE_ENV !== 'production' && typeof isCrushed.name === 'string' 
   warning("You are currently using minified code outside of NODE_ENV === 'production'. " + 'This means that you are running a slower development build of Redux. ' + 'You can use loose-envify (https://github.com/zertosh/loose-envify) for browserify ' + 'or DefinePlugin for webpack (http://stackoverflow.com/questions/30030031) ' + 'to ensure you have the correct code for your production build.');
 }
 
-function _templateObject3() {
+function _templateObject8() {
   var data = _taggedTemplateLiteral([""]);
+
+  _templateObject8 = function _templateObject8() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject7() {
+  var data = _taggedTemplateLiteral([""]);
+
+  _templateObject7 = function _templateObject7() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject6() {
+  var data = _taggedTemplateLiteral(["\n  font-weight: bold;\n  font-size: 75%;\n"]);
+
+  _templateObject6 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject5() {
+  var data = _taggedTemplateLiteral(["\n  font-weight: bold;\n  font-size: 75%;\n"]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 1fr auto;\n  align-items: space-between;\n"]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-gap: 2rem;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -839,7 +889,7 @@ function _templateObject3() {
 }
 
 function _templateObject2$1() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-auto-flow: column;\n  grid-gap: 0.25rem;\n  color: #666666;\n  font-size: 85%;\n"]);
+  var data = _taggedTemplateLiteral(["\n  &:nth-child(even) {\n    font-weight: bold;\n  }\n"]);
 
   _templateObject2$1 = function _templateObject2() {
     return data;
@@ -849,7 +899,7 @@ function _templateObject2$1() {
 }
 
 function _templateObject$6() {
-  var data = _taggedTemplateLiteral(["\n  padding: 1rem;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-auto-flow: column;\n  grid-gap: 0.25rem;\n  color: #666666;\n  font-size: 75%;\n  width: fit-content;\n"]);
 
   _templateObject$6 = function _templateObject() {
     return data;
@@ -857,20 +907,25 @@ function _templateObject$6() {
 
   return data;
 }
-var Chip$2 = styled__default.div(_templateObject$6());
-var DetailGroup = styled__default.div(_templateObject2$1());
-var DetailItem = styled__default.div(_templateObject3());
+var DetailGroup = styled__default.div(_templateObject$6());
+var DetailItem = styled__default.div(_templateObject2$1());
 var Detail = compose$2(connectTheme(mapBaseFontSize), connectTheme(mapBaseLineHeight))(function (_ref) {
   var baseFontSize = _ref.baseFontSize,
       baseLineHeight = _ref.baseLineHeight;
-  return React__default.createElement(DetailGroup, null, React__default.createElement(DetailItem, null, core.castTitle(core.BASE_FONT_SIZE_KEY)), React__default.createElement(DetailItem, null, baseFontSize), React__default.createElement(DetailItem, null, core.castTitle(core.BASE_LINE_HEIGHT_KEY)), React__default.createElement(DetailItem, null, baseLineHeight));
+  return React__default.createElement(DetailGroup, null, React__default.createElement(DetailItem, null, "Font Size"), React__default.createElement(DetailItem, null, baseFontSize), React__default.createElement(DetailItem, null, "Line Height"), React__default.createElement(DetailItem, null, baseLineHeight));
 });
+var Group = styled__default.div(_templateObject3());
+var Handle = styled__default.div(_templateObject4());
+var HandleTitle = styled__default.div(_templateObject5());
+var HandleControls = styled__default.div(_templateObject6());
+var Visualizer = styled__default.div(_templateObject7());
+var Meta = styled__default.div(_templateObject8());
 
 var BaseFont = function BaseFont() {
   return React__default.createElement(ui.Card, {
     pad: true,
     border: true
-  }, React__default.createElement(Chip$2, null, React__default.createElement(BaseFontSize$1, null), React__default.createElement(BaseLineHeight$1, null)), React__default.createElement(Typeset, null), React__default.createElement(Detail, null));
+  }, React__default.createElement(Group, null, React__default.createElement(Handle, null, React__default.createElement(HandleTitle, null, "Base Font"), React__default.createElement(HandleControls, null, React__default.createElement(ui.IconAdjust, null))), React__default.createElement(Visualizer, null, React__default.createElement(Typeset, null)), React__default.createElement(Meta, null, React__default.createElement(Detail, null))));
 };
 
 exports.GlobalsInfo = Globals;
