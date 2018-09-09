@@ -24,8 +24,7 @@ const Btn = styled.button.attrs({
 
 const IncrementContainer = styled.div`
   display: grid;
-  grid-template-columns: auto auto;
-  justify-content: space-between;
+
   grid-gap: 0.25rem;
 `
 

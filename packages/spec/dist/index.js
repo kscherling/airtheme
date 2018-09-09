@@ -828,6 +828,16 @@ if (process.env.NODE_ENV !== 'production' && typeof isCrushed.name === 'string' 
   warning("You are currently using minified code outside of NODE_ENV === 'production'. " + 'This means that you are running a slower development build of Redux. ' + 'You can use loose-envify (https://github.com/zertosh/loose-envify) for browserify ' + 'or DefinePlugin for webpack (http://stackoverflow.com/questions/30030031) ' + 'to ensure you have the correct code for your production build.');
 }
 
+function _templateObject9() {
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  padding: 1rem;\n"]);
+
+  _templateObject9 = function _templateObject9() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject8() {
   var data = _taggedTemplateLiteral([""]);
 
@@ -920,12 +930,26 @@ var HandleTitle = styled__default.div(_templateObject5());
 var HandleControls = styled__default.div(_templateObject6());
 var Visualizer = styled__default.div(_templateObject7());
 var Meta = styled__default.div(_templateObject8());
+var Pad = styled__default.div(_templateObject9());
 
 var BaseFont = function BaseFont() {
   return React__default.createElement(ui.Card, {
     pad: true,
     border: true
-  }, React__default.createElement(Group, null, React__default.createElement(Handle, null, React__default.createElement(HandleTitle, null, "Base Font"), React__default.createElement(HandleControls, null, React__default.createElement(ui.IconAdjust, null))), React__default.createElement(Visualizer, null, React__default.createElement(Typeset, null)), React__default.createElement(Meta, null, React__default.createElement(Detail, null))));
+  }, React__default.createElement(Group, null, React__default.createElement(Handle, null, React__default.createElement(HandleTitle, null, "Base Font"), React__default.createElement(HandleControls, null, React__default.createElement(ui.Popover, {
+    renderTrigger: function renderTrigger(_ref2) {
+      var ref = _ref2.ref,
+          show = _ref2.show;
+      return React__default.createElement("button", {
+        type: "button",
+        ref: ref,
+        onClick: show
+      }, React__default.createElement(ui.IconAdjust, null));
+    },
+    renderContent: function renderContent() {
+      return React__default.createElement(Pad, null, React__default.createElement(BaseFontSize$1, null), React__default.createElement(BaseLineHeight$1, null));
+    }
+  }))), React__default.createElement(Visualizer, null, React__default.createElement(Typeset, null)), React__default.createElement(Meta, null, React__default.createElement(Detail, null))));
 };
 
 exports.GlobalsInfo = Globals;

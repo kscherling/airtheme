@@ -12,7 +12,7 @@ import {
   BASE_FONT_SIZE_KEY,
   BASE_LINE_HEIGHT_KEY
 } from '@airtheme/core'
-import { IconAdjust } from '@airtheme/ui'
+import { IconAdjust, Popover } from '@airtheme/ui'
 
 const DetailGroup = styled.div`
   display: grid;
@@ -60,6 +60,10 @@ const HandleControls = styled.div`
 
 const Visualizer = styled.div``
 const Meta = styled.div``
+const Pad = styled.div`
+  width: 100%;
+  padding: 1rem;
+`
 
 const BaseFont = () => (
   <Card pad border>
@@ -67,7 +71,19 @@ const BaseFont = () => (
       <Handle>
         <HandleTitle>Base Font</HandleTitle>
         <HandleControls>
-          <IconAdjust />
+          <Popover
+            renderTrigger={({ ref, show }) => (
+              <button type="button" ref={ref} onClick={show}>
+                <IconAdjust />
+              </button>
+            )}
+            renderContent={() => (
+              <Pad>
+                <BaseFontSize />
+                <BaseLineHeight />
+              </Pad>
+            )}
+          />
         </HandleControls>
       </Handle>
       <Visualizer>
@@ -79,14 +95,5 @@ const BaseFont = () => (
     </Group>
   </Card>
 )
-
-{
-  /*
-  <Chip>
-    <BaseFontSize />
-    <BaseLineHeight />
-  </Chip>
-*/
-}
 
 export default BaseFont

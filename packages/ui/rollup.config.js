@@ -7,6 +7,7 @@ module.exports = {
     'react',
     'react-dom',
     'react-redux',
-    'styled-components'
+    'styled-components',
+    'react-popper'
   ]
 }
