@@ -3,17 +3,15 @@ import styled, { css } from 'styled-components'
 import { resetInput } from '../style/utils'
 const noop = () => null
 
-const InputContainer = styled.div``
-
 const Input = styled.input.attrs({
   type: 'text'
 })`
   ${resetInput};
+  display: flex;
+  align-items: center;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
   border-radius: 3px;
-  padding: 0.5rem 0.75rem;
-  text-align: center;
-  line-height: 1.25;
-  width: 100%;
 
   &:hover,
   &:focus,
@@ -23,9 +21,8 @@ const Input = styled.input.attrs({
 `
 
 // TODO: Validate - Don't allow negatives
-
 const InputUnit = ({
-  unit: { value = '', name = '' } = {},
+  unit: { value = '' } = {},
   update = noop,
   placeholder = 'Update',
   castValueTo = val => val

@@ -895,13 +895,15 @@ var Input$1 = mod.withBaseFontSizeContent(function (_ref2) {
     unit: content,
     castValueTo: core.castNumber
   });
-}); // <InputView view={view} viewable={viewable} />
-
+});
 var View = mod.withBaseFontSizeAttribute(function (_ref3) {
   var _ref3$baseFontSize = _ref3.baseFontSize,
       view = _ref3$baseFontSize.view,
       viewable = _ref3$baseFontSize.viewable;
-  return null;
+  return React__default.createElement(ui.ViewUnit, {
+    view: view,
+    viewable: viewable
+  });
 });
 
 var BaseFontSize$1 = function BaseFontSize() {

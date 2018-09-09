@@ -8,4 +8,5 @@ export const resetInput = css`
   -moz-box-shadow: none;
   box-shadow: none;
   outline: 0;
+  width: 100%;
 `
