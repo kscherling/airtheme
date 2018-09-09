@@ -6,8 +6,6 @@ module.exports = {
     ...baseConfig.external,
     '@airtheme/make',
     '@airtheme/core',
-    '@airtheme/type',
-    'cluster',
-    'crypto'
+    '@airtheme/type'
   ]
 }
