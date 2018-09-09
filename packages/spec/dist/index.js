@@ -11,9 +11,9 @@ var styled__default = _interopDefault(styled);
 var make = require('@airtheme/make');
 var reactRedux = require('react-redux');
 var ui = require('@airtheme/ui');
+var type = require('@airtheme/type');
 var mod = require('@airtheme/mod');
 var core = require('@airtheme/core');
-var type = require('@airtheme/type');
 
 function _typeof(obj) {
   if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
@@ -27,6 +27,28 @@ function _typeof(obj) {
   }
 
   return _typeof(obj);
+}
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
 }
 
 function _defineProperty(obj, key, value) {
@@ -63,6 +85,37 @@ function _objectSpread(target) {
   return target;
 }
 
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) _setPrototypeOf(subClass, superClass);
+}
+
+function _getPrototypeOf(o) {
+  _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
+  };
+  return _getPrototypeOf(o);
+}
+
+function _setPrototypeOf(o, p) {
+  _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+
+  return _setPrototypeOf(o, p);
+}
+
 function _objectWithoutPropertiesLoose(source, excluded) {
   if (source == null) return {};
   var target = {};
@@ -97,6 +150,22 @@ function _objectWithoutProperties(source, excluded) {
   }
 
   return target;
+}
+
+function _assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+function _possibleConstructorReturn(self, call) {
+  if (call && (typeof call === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  return _assertThisInitialized(self);
 }
 
 function _taggedTemplateLiteral(strings, raw) {
@@ -541,62 +610,6 @@ var Swatch$1 = function Swatch(_ref2) {
 
 var Swatch$2 = connectTheme(mapSwatch)(Swatch$1);
 
-var Increment = mod.withBaseFontSizeContent(function (_ref) {
-  var _ref$content = _ref.content,
-      content = _ref$content === void 0 ? {} : _ref$content,
-      updateBaseFontSize = _ref.updateBaseFontSize;
-  return React__default.createElement(ui.IncrementUnit, {
-    update: updateBaseFontSize,
-    unit: content,
-    options: {
-      step: 1
-    },
-    castValueTo: core.castNumber
-  });
-});
-var Input = mod.withBaseFontSizeContent(function (_ref2) {
-  var _ref2$content = _ref2.content,
-      content = _ref2$content === void 0 ? {} : _ref2$content,
-      updateBaseFontSize = _ref2.updateBaseFontSize;
-  return React__default.createElement(ui.InputUnit, {
-    update: updateBaseFontSize,
-    unit: content,
-    castValueTo: core.castNumber
-  });
-});
-
-var BaseFontSize$1 = function BaseFontSize() {
-  return React__default.createElement(ui.EditBaseUnitGroup, null, React__default.createElement(Input, null), React__default.createElement(Increment, null));
-};
-
-var Increment$1 = mod.withBaseLineHeightContent(function (_ref) {
-  var _ref$content = _ref.content,
-      content = _ref$content === void 0 ? {} : _ref$content,
-      updateBaseLineHeight = _ref.updateBaseLineHeight;
-  return React__default.createElement(ui.IncrementUnit, {
-    update: updateBaseLineHeight,
-    unit: content,
-    options: {
-      step: 0.05
-    },
-    castValueTo: core.castNumber
-  });
-});
-var Input$1 = mod.withBaseLineHeightContent(function (_ref2) {
-  var _ref2$content = _ref2.content,
-      content = _ref2$content === void 0 ? {} : _ref2$content,
-      updateBaseLineHeight = _ref2.updateBaseLineHeight;
-  return React__default.createElement(ui.InputUnit, {
-    update: updateBaseLineHeight,
-    unit: content,
-    castValueTo: core.castNumber
-  });
-});
-
-var BaseLineHeight$1 = function BaseLineHeight() {
-  return React__default.createElement(ui.EditBaseUnitGroup, null, React__default.createElement(Input$1, null), React__default.createElement(Increment$1, null));
-};
-
 // deserialize
 // return
 // attribute - { unit, object, content, view}
@@ -672,7 +685,9 @@ var alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n
 var upCase = function upCase(string) {
   return string.toUpperCase();
 };
-var uppercase = alpha.map(upCase).join();
+
+var lowercase = alpha.join('');
+var uppercase = alpha.map(upCase).join('');
 var allcase = alpha.reduce(function (acc, char) {
   return _toConsumableArray(acc).concat([upCase(char), char]);
 }, []).join('');
@@ -703,9 +718,11 @@ function _templateObject$5() {
 
   return data;
 }
-var Typeset = styled__default.div.attrs({
-  children: typeset
-})(_templateObject$5(), baseTypography);
+var TypesetContainer = styled__default.div(_templateObject$5(), baseTypography);
+
+var Typeset = function Typeset() {
+  return React__default.createElement(TypesetContainer, null, React__default.createElement("div", null, uppercase), React__default.createElement("div", null, lowercase), React__default.createElement("div", null, numerals), React__default.createElement("div", null, puncuation));
+};
 
 function symbolObservablePonyfill(root) {
   var result;
@@ -828,15 +845,194 @@ if (process.env.NODE_ENV !== 'production' && typeof isCrushed.name === 'string' 
   warning("You are currently using minified code outside of NODE_ENV === 'production'. " + 'This means that you are running a slower development build of Redux. ' + 'You can use loose-envify (https://github.com/zertosh/loose-envify) for browserify ' + 'or DefinePlugin for webpack (http://stackoverflow.com/questions/30030031) ' + 'to ensure you have the correct code for your production build.');
 }
 
-function _templateObject9() {
-  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  padding: 1rem;\n"]);
+var Increment = mod.withBaseLineHeightContent(function (_ref) {
+  var _ref$content = _ref.content,
+      content = _ref$content === void 0 ? {} : _ref$content,
+      updateBaseLineHeight = _ref.updateBaseLineHeight;
+  return React__default.createElement(ui.IncrementUnit, {
+    update: updateBaseLineHeight,
+    unit: content,
+    options: {
+      step: 0.05
+    },
+    castValueTo: core.castNumber
+  });
+});
+var Input = mod.withBaseLineHeightContent(function (_ref2) {
+  var _ref2$content = _ref2.content,
+      content = _ref2$content === void 0 ? {} : _ref2$content,
+      updateBaseLineHeight = _ref2.updateBaseLineHeight;
+  return React__default.createElement(ui.InputUnit, {
+    update: updateBaseLineHeight,
+    unit: content,
+    castValueTo: core.castNumber
+  });
+});
 
-  _templateObject9 = function _templateObject9() {
+var BaseLineHeight$1 = function BaseLineHeight() {
+  return React__default.createElement(ui.EditBaseUnitGroup, null, React__default.createElement(Input, null), React__default.createElement(Increment, null));
+};
+
+var Increment$1 = mod.withBaseFontSizeContent(function (_ref) {
+  var _ref$content = _ref.content,
+      content = _ref$content === void 0 ? {} : _ref$content,
+      updateBaseFontSize = _ref.updateBaseFontSize;
+  return React__default.createElement(ui.IncrementUnit, {
+    update: updateBaseFontSize,
+    unit: content,
+    options: {
+      step: 1
+    },
+    castValueTo: core.castNumber
+  });
+});
+var Input$1 = mod.withBaseFontSizeContent(function (_ref2) {
+  var _ref2$content = _ref2.content,
+      content = _ref2$content === void 0 ? {} : _ref2$content,
+      updateBaseFontSize = _ref2.updateBaseFontSize;
+  return React__default.createElement(ui.InputUnit, {
+    update: updateBaseFontSize,
+    unit: content,
+    castValueTo: core.castNumber
+  });
+}); // <InputView view={view} viewable={viewable} />
+
+var View = mod.withBaseFontSizeAttribute(function (_ref3) {
+  var _ref3$baseFontSize = _ref3.baseFontSize,
+      view = _ref3$baseFontSize.view,
+      viewable = _ref3$baseFontSize.viewable;
+  return null;
+});
+
+var BaseFontSize$1 = function BaseFontSize() {
+  return React__default.createElement(ui.EditBaseUnitGroup, null, React__default.createElement(Input$1, null), React__default.createElement(View, null), React__default.createElement(Increment$1, null));
+};
+
+function _templateObject2$1() {
+  var data = _taggedTemplateLiteral(["\n  padding: 1rem;\n"]);
+
+  _templateObject2$1 = function _templateObject2() {
     return data;
   };
 
   return data;
 }
+
+function _templateObject$6() {
+  var data = _taggedTemplateLiteral([""]);
+
+  _templateObject$6 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var PopoverContent = styled__default.div(_templateObject$6());
+var Pad = styled__default.div(_templateObject2$1());
+
+var TabContainer =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(TabContainer, _Component);
+
+  function TabContainer(props) {
+    var _this;
+
+    _classCallCheck(this, TabContainer);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(TabContainer).call(this, props));
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "update", function (updated) {
+      return _this.setState({
+        current: updated
+      });
+    });
+
+    _this.state = {
+      current: props.default
+    };
+    return _this;
+  }
+
+  _createClass(TabContainer, [{
+    key: "render",
+    value: function render() {
+      var update = this.update;
+      var _this$props = this.props,
+          renderTabs = _this$props.renderTabs,
+          renderContent = _this$props.renderContent;
+      var current = this.state.current;
+      return React__default.createElement(React.Fragment, null, React__default.createElement(ui.PopoverTabs, null, renderTabs({
+        update: update,
+        current: current
+      })), React__default.createElement(PopoverContent, null, renderContent({
+        current: current
+      })));
+    }
+  }]);
+
+  return TabContainer;
+}(React.Component);
+
+_defineProperty(TabContainer, "defaultProps", {
+  default: '',
+  renderTabs: function renderTabs() {
+    return null;
+  },
+  renderContent: function renderContent() {
+    return null;
+  }
+});
+
+var panelFor = function panelFor(current) {
+  switch (current) {
+    case 'fontSize':
+      return React__default.createElement(BaseFontSize$1, null);
+
+    case 'lineHeight':
+      return React__default.createElement(BaseLineHeight$1, null);
+
+    default:
+      return null;
+  }
+};
+
+var AdjustPopover = function AdjustPopover() {
+  return React__default.createElement(ui.Popover, {
+    renderTrigger: function renderTrigger(_ref) {
+      var ref = _ref.ref,
+          show = _ref.show,
+          active = _ref.active;
+      return React__default.createElement(ui.UtilityButton, {
+        innerRef: ref,
+        active: active,
+        onClick: show
+      }, React__default.createElement(ui.IconAdjust, null));
+    },
+    renderContent: function renderContent() {
+      return React__default.createElement(TabContainer, {
+        default: "fontSize",
+        renderTabs: function renderTabs(_ref2) {
+          var update = _ref2.update,
+              current = _ref2.current;
+          return React__default.createElement(React.Fragment, null, React__default.createElement(ui.PopoverTabs.Tab, {
+            value: "fontSize",
+            current: current,
+            update: update
+          }, "Font Size"), React__default.createElement(ui.PopoverTabs.Tab, {
+            value: "lineHeight",
+            current: current,
+            update: update
+          }, "Line Height"));
+        },
+        renderContent: function renderContent(_ref3) {
+          var current = _ref3.current;
+          return React__default.createElement(Pad, null, panelFor(current));
+        }
+      });
+    }
+  });
+};
 
 function _templateObject8() {
   var data = _taggedTemplateLiteral([""]);
@@ -859,7 +1055,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  font-weight: bold;\n  font-size: 75%;\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-weight: bold;\n  font-size: 70%;\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -869,7 +1065,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n  font-weight: bold;\n  font-size: 75%;\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-weight: bold;\n  font-size: 70%;\n"]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -879,7 +1075,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 1fr auto;\n  align-items: space-between;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 1fr auto;\n  align-items: center;\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -889,7 +1085,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-gap: 2rem;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-gap: 1rem;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -898,27 +1094,27 @@ function _templateObject3() {
   return data;
 }
 
-function _templateObject2$1() {
+function _templateObject2$2() {
   var data = _taggedTemplateLiteral(["\n  &:nth-child(even) {\n    font-weight: bold;\n  }\n"]);
 
-  _templateObject2$1 = function _templateObject2() {
+  _templateObject2$2 = function _templateObject2() {
     return data;
   };
 
   return data;
 }
 
-function _templateObject$6() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-auto-flow: column;\n  grid-gap: 0.25rem;\n  color: #666666;\n  font-size: 75%;\n  width: fit-content;\n"]);
+function _templateObject$7() {
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-auto-flow: column;\n  grid-gap: 0.25rem;\n  color: #666666;\n  font-size: 70%;\n  width: fit-content;\n"]);
 
-  _templateObject$6 = function _templateObject() {
+  _templateObject$7 = function _templateObject() {
     return data;
   };
 
   return data;
 }
-var DetailGroup = styled__default.div(_templateObject$6());
-var DetailItem = styled__default.div(_templateObject2$1());
+var DetailGroup = styled__default.div(_templateObject$7());
+var DetailItem = styled__default.div(_templateObject2$2());
 var Detail = compose$2(connectTheme(mapBaseFontSize), connectTheme(mapBaseLineHeight))(function (_ref) {
   var baseFontSize = _ref.baseFontSize,
       baseLineHeight = _ref.baseLineHeight;
@@ -930,27 +1126,12 @@ var HandleTitle = styled__default.div(_templateObject5());
 var HandleControls = styled__default.div(_templateObject6());
 var Visualizer = styled__default.div(_templateObject7());
 var Meta = styled__default.div(_templateObject8());
-var Pad = styled__default.div(_templateObject9());
 
 var BaseFont = function BaseFont() {
   return React__default.createElement(ui.Card, {
     pad: true,
     border: true
-  }, React__default.createElement(Group, null, React__default.createElement(Handle, null, React__default.createElement(HandleTitle, null, "Base Font"), React__default.createElement(HandleControls, null, React__default.createElement(ui.Popover, {
-    renderTrigger: function renderTrigger(_ref2) {
-      var ref = _ref2.ref,
-          show = _ref2.show,
-          active = _ref2.active;
-      return React__default.createElement(ui.UtilityButton, {
-        innerRef: ref,
-        active: active,
-        onClick: show
-      }, React__default.createElement(ui.IconAdjust, null));
-    },
-    renderContent: function renderContent() {
-      return React__default.createElement(Pad, null, React__default.createElement(BaseFontSize$1, null), React__default.createElement(BaseLineHeight$1, null));
-    }
-  }))), React__default.createElement(Visualizer, null, React__default.createElement(Typeset, null)), React__default.createElement(Meta, null, React__default.createElement(Detail, null))));
+  }, React__default.createElement(Group, null, React__default.createElement(Handle, null, React__default.createElement(HandleTitle, null, "Base Font"), React__default.createElement(HandleControls, null, React__default.createElement(AdjustPopover, null))), React__default.createElement(Visualizer, null, React__default.createElement(Typeset, null)), React__default.createElement(Meta, null, React__default.createElement(Detail, null))));
 };
 
 exports.GlobalsInfo = Globals;
@@ -965,8 +1146,6 @@ exports.BaseFontSizeInfo = BaseFontSize;
 exports.BaseLineHeightInfo = BaseLineHeight;
 exports.BaseSpacingInfo = BaseSpacing;
 exports.SwatchSheet = Swatch$2;
-exports.BaseFontSizeSheet = BaseFontSize$1;
-exports.BaseLineHeightSheet = BaseLineHeight$1;
 exports.BaseSpacingSheet = BaseSpacing$2;
 exports.BaseFont = BaseFont;
 //# sourceMappingURL=index.js.map

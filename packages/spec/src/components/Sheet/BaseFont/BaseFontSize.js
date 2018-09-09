@@ -1,7 +1,10 @@
 import React, { Fragment } from 'react'
 import styled, { css } from 'styled-components'
 import { IncrementUnit, InputUnit, EditBaseUnitGroup } from '@airtheme/ui'
-import { withBaseFontSizeContent } from '@airtheme/mod'
+import {
+  withBaseFontSizeContent,
+  withBaseFontSizeAttribute
+} from '@airtheme/mod'
 import { castNumber } from '@airtheme/core'
 
 const Increment = withBaseFontSizeContent(
@@ -25,9 +28,15 @@ const Input = withBaseFontSizeContent(
   )
 )
 
+// <InputView view={view} viewable={viewable} />
+const View = withBaseFontSizeAttribute(
+  ({ baseFontSize: { view, viewable } }) => null
+)
+
 const BaseFontSize = () => (
   <EditBaseUnitGroup>
     <Input />
+    <View />
     <Increment />
   </EditBaseUnitGroup>
 )

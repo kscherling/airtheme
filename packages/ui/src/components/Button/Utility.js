@@ -10,6 +10,7 @@ const UtilityButton = styled.button.attrs({
   border-radius: 3px;
   padding: 0.5rem 0.5rem;
   color: #666666;
+  font-weight: bold;
 
   &:hover {
     background: #e7f0f7;

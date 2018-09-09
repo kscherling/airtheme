@@ -13,6 +13,7 @@ const Input = styled.input.attrs({
   padding: 0.5rem 0.75rem;
   text-align: center;
   line-height: 1.25;
+  width: 100%;
 
   &:hover,
   &:focus,

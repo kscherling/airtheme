@@ -28,9 +28,8 @@ export const alpha = [
 ]
 
 const upCase = string => string.toUpperCase()
-
-export const lowercase = alpha.join()
-export const uppercase = alpha.map(upCase).join()
+export const lowercase = alpha.join('')
+export const uppercase = alpha.map(upCase).join('')
 export const allcase = alpha
   .reduce((acc, char) => [...acc, upCase(char), char], [])
   .join('')

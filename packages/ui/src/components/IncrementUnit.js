@@ -2,12 +2,9 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import { resetButton, unpad, center, round } from '../style/utils'
 import { plus, ndash } from '../constants/symbols'
+import { UtilityButton } from './Button'
 
-const Btn = styled.button.attrs({
-  type: 'button'
-})`
-  ${resetButton};
-  font-weight: bold;
+const Btn = styled(UtilityButton)`
   font-size: 85%;
   line-height: 1.25;
 
@@ -24,7 +21,6 @@ const Btn = styled.button.attrs({
 
 const IncrementContainer = styled.div`
   display: grid;
-
   grid-gap: 0.25rem;
 `
 

@@ -1,11 +1,12 @@
 import React, { Fragment } from 'react'
 import styled, { css } from 'styled-components'
-import { Card } from '@airtheme/ui'
-import BaseLineHeight from './BaseLineHeight'
-import BaseFontSize from './BaseFontSize'
-import Typeset from '../Typeset'
-import connectTheme from '../../utils/connectTheme'
-import { mapBaseFontSize, mapBaseLineHeight } from '../../utils/mapThemeToProps'
+import { Card, PopoverTabs } from '@airtheme/ui'
+import Typeset from '../../Typeset'
+import connectTheme from '../../../utils/connectTheme'
+import {
+  mapBaseFontSize,
+  mapBaseLineHeight
+} from '../../../utils/mapThemeToProps'
 import { compose } from 'redux'
 import {
   castTitle,
@@ -13,13 +14,14 @@ import {
   BASE_LINE_HEIGHT_KEY
 } from '@airtheme/core'
 import { IconAdjust, Popover, UtilityButton } from '@airtheme/ui'
+import AdjustPopover from './AdjustPopover'
 
 const DetailGroup = styled.div`
   display: grid;
   grid-auto-flow: column;
   grid-gap: 0.25rem;
   color: #666666;
-  font-size: 75%;
+  font-size: 70%;
   width: fit-content;
 `
 const DetailItem = styled.div`
@@ -42,28 +44,24 @@ const Detail = compose(
 
 const Group = styled.div`
   display: grid;
-  grid-gap: 2rem;
+  grid-gap: 1rem;
 `
 const Handle = styled.div`
   display: grid;
   grid-template-columns: 1fr auto;
-  align-items: space-between;
+  align-items: center;
 `
 const HandleTitle = styled.div`
   font-weight: bold;
-  font-size: 75%;
+  font-size: 70%;
 `
 const HandleControls = styled.div`
   font-weight: bold;
-  font-size: 75%;
+  font-size: 70%;
 `
 
 const Visualizer = styled.div``
 const Meta = styled.div``
-const Pad = styled.div`
-  width: 100%;
-  padding: 1rem;
-`
 
 const BaseFont = () => (
   <Card pad border>
@@ -71,19 +69,7 @@ const BaseFont = () => (
       <Handle>
         <HandleTitle>Base Font</HandleTitle>
         <HandleControls>
-          <Popover
-            renderTrigger={({ ref, show, active }) => (
-              <UtilityButton innerRef={ref} active={active} onClick={show}>
-                <IconAdjust />
-              </UtilityButton>
-            )}
-            renderContent={() => (
-              <Pad>
-                <BaseFontSize />
-                <BaseLineHeight />
-              </Pad>
-            )}
-          />
+          <AdjustPopover />
         </HandleControls>
       </Handle>
       <Visualizer>

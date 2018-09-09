@@ -1,13 +1,26 @@
+import React from 'react'
 import styled from 'styled-components'
-import { typeset } from '../constants/typography'
+import {
+  lowercase,
+  uppercase,
+  numerals,
+  puncuation
+} from '../constants/typography'
 import { baseTypography } from '../utils/styleHelpers'
 
-const Typeset = styled.div.attrs({
-  children: typeset
-})`
+const TypesetContainer = styled.div`
   transform: font-size 0.2s linear;
   word-break: break-all;
   ${baseTypography};
 `
+
+const Typeset = () => (
+  <TypesetContainer>
+    <div>{uppercase}</div>
+    <div>{lowercase}</div>
+    <div>{numerals}</div>
+    <div>{puncuation}</div>
+  </TypesetContainer>
+)
 
 export default Typeset
