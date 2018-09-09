@@ -939,10 +939,11 @@ var BaseFont = function BaseFont() {
   }, React__default.createElement(Group, null, React__default.createElement(Handle, null, React__default.createElement(HandleTitle, null, "Base Font"), React__default.createElement(HandleControls, null, React__default.createElement(ui.Popover, {
     renderTrigger: function renderTrigger(_ref2) {
       var ref = _ref2.ref,
-          show = _ref2.show;
-      return React__default.createElement("button", {
-        type: "button",
-        ref: ref,
+          show = _ref2.show,
+          active = _ref2.active;
+      return React__default.createElement(ui.UtilityButton, {
+        innerRef: ref,
+        active: active,
         onClick: show
       }, React__default.createElement(ui.IconAdjust, null));
     },

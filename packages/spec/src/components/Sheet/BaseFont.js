@@ -12,7 +12,7 @@ import {
   BASE_FONT_SIZE_KEY,
   BASE_LINE_HEIGHT_KEY
 } from '@airtheme/core'
-import { IconAdjust, Popover } from '@airtheme/ui'
+import { IconAdjust, Popover, UtilityButton } from '@airtheme/ui'
 
 const DetailGroup = styled.div`
   display: grid;
@@ -72,10 +72,10 @@ const BaseFont = () => (
         <HandleTitle>Base Font</HandleTitle>
         <HandleControls>
           <Popover
-            renderTrigger={({ ref, show }) => (
-              <button type="button" ref={ref} onClick={show}>
+            renderTrigger={({ ref, show, active }) => (
+              <UtilityButton innerRef={ref} active={active} onClick={show}>
                 <IconAdjust />
-              </button>
+              </UtilityButton>
             )}
             renderContent={() => (
               <Pad>

@@ -65,7 +65,9 @@ class Popover extends Component {
 
     return (
       <Manager>
-        <Reference>{({ ref }) => renderTrigger({ ref, show })}</Reference>
+        <Reference>
+          {({ ref }) => renderTrigger({ ref, show, active: on })}
+        </Reference>
         {on &&
           createPortal(
             <Popper
