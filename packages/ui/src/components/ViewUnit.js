@@ -18,8 +18,6 @@ const FauxInput = styled.div`
   }
 `
 
-// TODO: Validate - Don't allow negatives
-
 const ViewUnit = ({ view, viewable } = {}) => <FauxInput>{view}</FauxInput>
 
 export default ViewUnit

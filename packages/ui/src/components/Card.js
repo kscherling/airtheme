@@ -4,8 +4,7 @@ import styled, { css } from 'styled-components'
 const border = ({ border }) =>
   border &&
   css`
-    border: 1px solid #dce9f3;
-    box-shadow: 0px 0px 3px 1px #dce9f345;
+    box-shadow: 0px 1px 3px 0px #00000020;
   `
 
 const pad = ({ pad }) =>
@@ -16,7 +15,7 @@ const pad = ({ pad }) =>
 
 const Card = styled.div`
   background: #ffffff;
-  border-radius: 3px;
+  border-radius: 6px;
 
   ${border};
   ${pad};

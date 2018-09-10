@@ -12,6 +12,7 @@ const titlize = str =>
 
 export const castWords = camelizedKey =>
   humps.decamelize(camelizedKey, { separator: ' ' })
+
 export const castTitle = compose(
   titlize,
   castWords
