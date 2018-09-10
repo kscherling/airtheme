@@ -70,7 +70,7 @@ class Popover extends Component {
         <Reference>
           {({ ref }) => renderTrigger({ ref, show, active: on })}
         </Reference>
-        {t &&
+        {on &&
           createPortal(
             <Popper
               placement="bottom"

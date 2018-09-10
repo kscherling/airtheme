@@ -1,7 +1,15 @@
 import React, { Fragment } from 'react'
 import styled, { css } from 'styled-components'
-import { IncrementUnit, InputUnit, EditBaseUnitGroup } from '@airtheme/ui'
-import { withBaseLineHeightContent } from '@airtheme/mod'
+import {
+  IncrementUnit,
+  InputUnit,
+  EditBaseUnitGroup,
+  ViewUnit
+} from '@airtheme/ui'
+import {
+  withBaseLineHeightContent,
+  withBaseLineHeightAttribute
+} from '@airtheme/mod'
 import { castNumber } from '@airtheme/core'
 
 const Increment = withBaseLineHeightContent(
@@ -25,9 +33,16 @@ const Input = withBaseLineHeightContent(
   )
 )
 
+const View = withBaseLineHeightAttribute(
+  ({ baseLineHeight: { view, viewable } }) => (
+    <ViewUnit view={view} viewable={viewable} />
+  )
+)
+
 const BaseLineHeight = () => (
   <EditBaseUnitGroup>
     <Input />
+    <View />
     <Increment />
   </EditBaseUnitGroup>
 )

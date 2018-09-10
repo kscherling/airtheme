@@ -37,7 +37,7 @@ const PopoverTabs = styled.div`
   padding-right: 1rem;
 
   ${PopoverTabContainer} + ${PopoverTabContainer} {
-    margin-left: 0.5rem;
+    margin-left: 1rem;
   }
 `
 

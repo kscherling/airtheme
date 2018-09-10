@@ -868,9 +868,18 @@ var Input = mod.withBaseLineHeightContent(function (_ref2) {
     castValueTo: core.castNumber
   });
 });
+var View = mod.withBaseLineHeightAttribute(function (_ref3) {
+  var _ref3$baseLineHeight = _ref3.baseLineHeight,
+      view = _ref3$baseLineHeight.view,
+      viewable = _ref3$baseLineHeight.viewable;
+  return React__default.createElement(ui.ViewUnit, {
+    view: view,
+    viewable: viewable
+  });
+});
 
 var BaseLineHeight$1 = function BaseLineHeight() {
-  return React__default.createElement(ui.EditBaseUnitGroup, null, React__default.createElement(Input, null), React__default.createElement(Increment, null));
+  return React__default.createElement(ui.EditBaseUnitGroup, null, React__default.createElement(Input, null), React__default.createElement(View, null), React__default.createElement(Increment, null));
 };
 
 var Increment$1 = mod.withBaseFontSizeContent(function (_ref) {
@@ -896,7 +905,7 @@ var Input$1 = mod.withBaseFontSizeContent(function (_ref2) {
     castValueTo: core.castNumber
   });
 });
-var View = mod.withBaseFontSizeAttribute(function (_ref3) {
+var View$1 = mod.withBaseFontSizeAttribute(function (_ref3) {
   var _ref3$baseFontSize = _ref3.baseFontSize,
       view = _ref3$baseFontSize.view,
       viewable = _ref3$baseFontSize.viewable;
@@ -907,7 +916,7 @@ var View = mod.withBaseFontSizeAttribute(function (_ref3) {
 });
 
 var BaseFontSize$1 = function BaseFontSize() {
-  return React__default.createElement(ui.EditBaseUnitGroup, null, React__default.createElement(Input$1, null), React__default.createElement(View, null), React__default.createElement(Increment$1, null));
+  return React__default.createElement(ui.EditBaseUnitGroup, null, React__default.createElement(Input$1, null), React__default.createElement(View$1, null), React__default.createElement(Increment$1, null));
 };
 
 function _templateObject2$1() {
