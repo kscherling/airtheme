@@ -9,6 +9,7 @@ var make = require('@airtheme/make');
 var React = require('react');
 var React__default = _interopDefault(React);
 var styled = _interopDefault(require('styled-components'));
+var ui = require('@airtheme/ui');
 
 var withBaseFontSizeAttribute = reactRedux.connect(make.mapBaseFontSize);
 var withBaseFontSizeContent = reactRedux.connect(make.mapBaseFontSizeContent, {
@@ -309,8 +310,8 @@ var Attribute = function Attribute(_ref4) {
       viewable = _ref4.viewable,
       _ref4$updateView = _ref4.updateView,
       updateView = _ref4$updateView === void 0 ? noop : _ref4$updateView;
-  return React__default.createElement(make.SimpleTabs, null, viewable.map(function (unit, idx) {
-    return React__default.createElement(make.SimpleTabs.Tab, {
+  return React__default.createElement(ui.SimpleTabs, null, viewable.map(function (unit, idx) {
+    return React__default.createElement(ui.SimpleTabs.Tab, {
       key: idx,
       active: view === unit,
       onClick: function onClick() {
@@ -325,7 +326,7 @@ var AttributeContent = function AttributeContent(_ref5) {
       update = _ref5.update,
       remove = _ref5.remove,
       add = _ref5.add;
-  return React__default.createElement(make.SimpleList.FourColumns, null, React__default.createElement(make.THead, {
+  return React__default.createElement(ui.SimpleList.FourColumns, null, React__default.createElement(make.THead, {
     colNames: ['name', 'value', 'ordinal', 'unit']
   }), content.length ? content.map(function (unit, idx) {
     return React__default.createElement(Unit, {
@@ -352,7 +353,7 @@ var AttributeBaseContent = function AttributeBaseContent(_ref6) {
     object: ''
   } : _ref6$content,
       update = _ref6.update;
-  return React__default.createElement(make.SimpleList.ThreeColumns, null, React__default.createElement(BaseUnit, {
+  return React__default.createElement(ui.SimpleList.ThreeColumns, null, React__default.createElement(BaseUnit, {
     unit: content,
     update: update
   }));
@@ -646,7 +647,7 @@ var BaseFontSizeContent = withBaseFontSizeContent(function (_ref2) {
 });
 
 var BaseFontSize = function BaseFontSize() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(BaseFontSizeAttribute, null), React__default.createElement(BaseFontSizeContent, null));
+  return React__default.createElement(ui.SimpleList.OneColumn, null, React__default.createElement(BaseFontSizeAttribute, null), React__default.createElement(BaseFontSizeContent, null));
 };
 
 var BaseLineHeightAttribute = withBaseLineHeightAttribute(function (_ref) {
@@ -670,7 +671,7 @@ var BaseLineHeightContent = withBaseLineHeightContent(function (_ref2) {
 });
 
 var BaseLineHeight = function BaseLineHeight() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(BaseLineHeightAttribute, null), React__default.createElement(BaseLineHeightContent, null));
+  return React__default.createElement(ui.SimpleList.OneColumn, null, React__default.createElement(BaseLineHeightAttribute, null), React__default.createElement(BaseLineHeightContent, null));
 };
 
 var withBaseSpacingAttribute = reactRedux.connect(make.mapBaseSpacing);
@@ -697,7 +698,7 @@ var BaseSpacingContent = withBaseSpacingContent(function (_ref2) {
 });
 
 var BaseSpacing = function BaseSpacing() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(BaseSpacingAttribute, null), React__default.createElement(BaseSpacingContent, null));
+  return React__default.createElement(ui.SimpleList.OneColumn, null, React__default.createElement(BaseSpacingAttribute, null), React__default.createElement(BaseSpacingContent, null));
 };
 
 exports.withBaseFontSizeAttribute = withBaseFontSizeAttribute;

@@ -1,6 +1,7 @@
 import React, { Fragment, Component } from 'react'
 import styled from 'styled-components'
-import { SimpleList, SimpleTabs, THead } from '@airtheme/make'
+import { SimpleList, SimpleTabs } from '@airtheme/ui'
+import { THead } from '@airtheme/make'
 
 const noop = () => {}
 const Strike = styled.span`

@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { mapSpacing, mapSpacingContent, SimpleList } from '@airtheme/make'
+import { mapSpacing, mapSpacingContent } from '@airtheme/make'
+import { SimpleList } from '@airtheme/ui'
 import { Attribute, AttributeContent } from '../../lib/PrintTypes'
 import AttributeGroup from '../../lib/AttributeGroup'
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Node } from '../../lib/PrintTypes'
-import { Grid, SimpleList } from '@airtheme/make'
+import { SimpleList } from '@airtheme/ui'
 import { mapId, mapName, mapVersion } from '@airtheme/make'
 
 const Id = connect(mapId)(({ id }) => (

@@ -8,6 +8,7 @@ module.exports = {
     'react-dom',
     'react-redux',
     'styled-components',
-    'react-popper'
+    'react-popper',
+    'fp'
   ]
 }

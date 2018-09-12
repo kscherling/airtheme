@@ -12,8 +12,8 @@
     "test": "./task test"
   },
   "dependencies": {
-    "@airtheme/core": "^0.1.0",
     "fp": "^0.1.0",
+    "@airtheme/core": "^0.1.0",
     "tinycolor2": "^1.4.1"
   },
   "devDependencies": {

@@ -8,9 +8,9 @@ var React = require('react');
 var React__default = _interopDefault(React);
 var styled = require('styled-components');
 var styled__default = _interopDefault(styled);
+var ui = require('@airtheme/ui');
 var make = require('@airtheme/make');
 var reactRedux = require('react-redux');
-var ui = require('@airtheme/ui');
 var type = require('@airtheme/type');
 var mod = require('@airtheme/mod');
 var core = require('@airtheme/core');
@@ -280,7 +280,7 @@ var Unit = function Unit(_ref2) {
 };
 var Attribute = function Attribute(_ref3) {
   var attribute = _ref3.attribute;
-  return React__default.createElement(make.SimpleList.TwoColumns, null, Object.entries(attribute).map(function (_ref4, idx) {
+  return React__default.createElement(ui.SimpleList.TwoColumns, null, Object.entries(attribute).map(function (_ref4, idx) {
     var _ref5 = _slicedToArray(_ref4, 2),
         key = _ref5[0],
         val = _ref5[1];
@@ -295,7 +295,7 @@ var Attribute = function Attribute(_ref3) {
 var AttributeContent = function AttributeContent(_ref6) {
   var _ref6$content = _ref6.content,
       content = _ref6$content === void 0 ? [] : _ref6$content;
-  return React__default.createElement(make.SimpleList.FourColumns, null, React__default.createElement(make.THead, {
+  return React__default.createElement(ui.SimpleList.FourColumns, null, React__default.createElement(make.THead, {
     colNames: ['name', 'value', 'ordinal', 'unit']
   }), Array.isArray(content) ? content.length ? content.map(function (unit, idx) {
     return React__default.createElement(Unit, {
@@ -309,28 +309,28 @@ var AttributeContent = function AttributeContent(_ref6) {
 
 var Id = reactRedux.connect(make.mapId)(function (_ref) {
   var id = _ref.id;
-  return React__default.createElement(make.SimpleList.TwoColumns, null, React__default.createElement(Node, {
+  return React__default.createElement(ui.SimpleList.TwoColumns, null, React__default.createElement(Node, {
     name: "id",
     val: id
   }));
 });
 var Name = reactRedux.connect(make.mapName)(function (_ref2) {
   var name = _ref2.name;
-  return React__default.createElement(make.SimpleList.TwoColumns, null, React__default.createElement(Node, {
+  return React__default.createElement(ui.SimpleList.TwoColumns, null, React__default.createElement(Node, {
     name: "name",
     val: name
   }));
 });
 var Version = reactRedux.connect(make.mapVersion)(function (_ref3) {
   var version = _ref3.version;
-  return React__default.createElement(make.SimpleList.TwoColumns, null, React__default.createElement(Node, {
+  return React__default.createElement(ui.SimpleList.TwoColumns, null, React__default.createElement(Node, {
     name: "version",
     val: version
   }));
 });
 
 var Globals = function Globals() {
-  return React__default.createElement(make.SimpleList, null, React__default.createElement(Id, null), React__default.createElement(Name, null), React__default.createElement(Version, null));
+  return React__default.createElement(ui.SimpleList, null, React__default.createElement(Id, null), React__default.createElement(Name, null), React__default.createElement(Version, null));
 };
 
 function _templateObject$1() {
@@ -342,7 +342,7 @@ function _templateObject$1() {
 
   return data;
 }
-var AttributeGroup = styled__default(make.SimpleList.OneColumn)(_templateObject$1());
+var AttributeGroup = styled__default(ui.SimpleList.OneColumn)(_templateObject$1());
 
 var SwatchAttribute = reactRedux.connect(make.mapSwatch)(function (_ref) {
   var swatch = _ref.swatch;

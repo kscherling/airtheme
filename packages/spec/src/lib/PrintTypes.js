@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import styled, { css } from 'styled-components'
-import { Grid, SimpleList, THead } from '@airtheme/make'
+import { SimpleList } from '@airtheme/ui'
+import { THead } from '@airtheme/make'
 
 const Strike = styled.span`
   text-decoration: line-through;

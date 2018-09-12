@@ -1,7 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-
-const noop = () => null
+import { noop } from '@airtheme/core'
 
 const PopoverTabContainer = styled.div`
   border-bottom: 3px solid transparent;

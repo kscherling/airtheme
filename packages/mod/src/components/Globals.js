@@ -9,7 +9,6 @@ import {
   updateThemeName,
   updateThemeObject,
   updateThemeVersion,
-  Grid,
   SimpleList
 } from '@airtheme/make'
 import { Node } from '../lib/ModifyTypes'

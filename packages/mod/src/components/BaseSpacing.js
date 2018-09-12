@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import { connect } from 'react-redux'
-import { SimpleList } from '@airtheme/make'
+import { SimpleList } from '@airtheme/ui'
 import { AttributeBaseContent, Attribute } from '../lib/ModifyTypes'
 import {
   withBaseSpacingAttribute,
