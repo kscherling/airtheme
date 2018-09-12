@@ -1,22 +1,15 @@
 import React, { Fragment } from 'react'
-import styled, { css } from 'styled-components'
-import { Card, PopoverTabs } from '@airtheme/ui'
-import Typeset from './Typeset'
+import { Card } from '@airtheme/ui'
 import connectTheme from '../../../utils/connectTheme'
 import {
   mapBaseFontSize,
   mapBaseLineHeight
 } from '../../../utils/mapThemeToProps'
 import { compose } from 'redux'
-import {
-  castTitle,
-  BASE_FONT_SIZE_KEY,
-  BASE_LINE_HEIGHT_KEY
-} from '@airtheme/core'
-import { IconAdjust, Popover, UtilityButton } from '@airtheme/ui'
+import Typeset from './Typeset'
 import AdjustPopover from './AdjustPopover'
-import SpecCard from '../SpecCard'
-import Detail from '../SpecCard/Detail'
+import SpecCard from '../../SpecCard'
+import Detail from '../../SpecCard/Detail'
 
 const BaseFontMeta = compose(
   connectTheme(mapBaseFontSize),

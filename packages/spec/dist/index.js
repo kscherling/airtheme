@@ -680,50 +680,6 @@ var BaseSpacing$1 = function BaseSpacing(_ref) {
 
 var BaseSpacing$2 = reactRedux.connect(make.mapBaseSpacing)(BaseSpacing$1);
 
-var alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-
-var upCase = function upCase(string) {
-  return string.toUpperCase();
-};
-
-var lowercase = alpha.join('');
-var uppercase = alpha.map(upCase).join('');
-var allcase = alpha.reduce(function (acc, char) {
-  return _toConsumableArray(acc).concat([upCase(char), char]);
-}, []).join('');
-var numerals = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'].join('');
-var puncuation = ['.', ':', ',', ';', '()', '{}', '[]', '!', '@', '#', '$', '%', '^', '&', '*'].join('');
-var typeset = allcase.concat(numerals, puncuation);
-
-function _templateObject$4() {
-  var data = _taggedTemplateLiteral(["\n  line-height: ", ";\n  font-size: ", ";\n"]);
-
-  _templateObject$4 = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-var baseTypography = function baseTypography(_ref) {
-  var theme = _ref.theme;
-  return styled.css(_templateObject$4(), theme.baseLineHeight, theme.baseFontSize);
-};
-
-function _templateObject$5() {
-  var data = _taggedTemplateLiteral(["\n  transform: font-size 0.2s linear;\n  word-break: break-all;\n  ", ";\n"]);
-
-  _templateObject$5 = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-var TypesetContainer = styled__default.div(_templateObject$5(), baseTypography);
-
-var Typeset = function Typeset() {
-  return React__default.createElement(TypesetContainer, null, React__default.createElement("div", null, uppercase), React__default.createElement("div", null, lowercase), React__default.createElement("div", null, numerals), React__default.createElement("div", null, puncuation));
-};
-
 function symbolObservablePonyfill(root) {
   var result;
   var _Symbol = root.Symbol;
@@ -844,6 +800,50 @@ function isCrushed() {}
 if (process.env.NODE_ENV !== 'production' && typeof isCrushed.name === 'string' && isCrushed.name !== 'isCrushed') {
   warning("You are currently using minified code outside of NODE_ENV === 'production'. " + 'This means that you are running a slower development build of Redux. ' + 'You can use loose-envify (https://github.com/zertosh/loose-envify) for browserify ' + 'or DefinePlugin for webpack (http://stackoverflow.com/questions/30030031) ' + 'to ensure you have the correct code for your production build.');
 }
+
+var alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+
+var upCase = function upCase(string) {
+  return string.toUpperCase();
+};
+
+var lowercase = alpha.join('');
+var uppercase = alpha.map(upCase).join('');
+var allcase = alpha.reduce(function (acc, char) {
+  return _toConsumableArray(acc).concat([upCase(char), char]);
+}, []).join('');
+var numerals = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'].join('');
+var puncuation = ['.', ':', ',', ';', '()', '{}', '[]', '!', '@', '#', '$', '%', '^', '&', '*'].join('');
+var typeset = allcase.concat(numerals, puncuation);
+
+function _templateObject$4() {
+  var data = _taggedTemplateLiteral(["\n  line-height: ", ";\n  font-size: ", ";\n"]);
+
+  _templateObject$4 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var baseTypography = function baseTypography(_ref) {
+  var theme = _ref.theme;
+  return styled.css(_templateObject$4(), theme.baseLineHeight, theme.baseFontSize);
+};
+
+function _templateObject$5() {
+  var data = _taggedTemplateLiteral(["\n  transform: font-size 0.2s linear;\n  word-break: break-all;\n  ", ";\n"]);
+
+  _templateObject$5 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var TypesetContainer = styled__default.div(_templateObject$5(), baseTypography);
+
+var Typeset = function Typeset() {
+  return React__default.createElement(TypesetContainer, null, React__default.createElement("div", null, uppercase), React__default.createElement("div", null, lowercase), React__default.createElement("div", null, numerals), React__default.createElement("div", null, puncuation));
+};
 
 var Increment = mod.withBaseLineHeightContent(function (_ref) {
   var _ref$content = _ref.content,
@@ -1045,28 +1045,8 @@ var AdjustPopover = function AdjustPopover() {
   });
 };
 
-function _templateObject8() {
-  var data = _taggedTemplateLiteral([""]);
-
-  _templateObject8 = function _templateObject8() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject7() {
-  var data = _taggedTemplateLiteral([""]);
-
-  _templateObject7 = function _templateObject7() {
-    return data;
-  };
-
-  return data;
-}
-
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  font-weight: bold;\n  font-size: 70%;\n"]);
+  var data = _taggedTemplateLiteral([""]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -1086,7 +1066,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 1fr auto;\n  align-items: center;\n"]);
+  var data = _taggedTemplateLiteral([""]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -1096,7 +1076,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-gap: 1rem;\n"]);
+  var data = _taggedTemplateLiteral([""]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -1106,7 +1086,7 @@ function _templateObject3() {
 }
 
 function _templateObject2$2() {
-  var data = _taggedTemplateLiteral(["\n  &:nth-child(even) {\n    font-weight: bold;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 1fr auto;\n  align-items: center;\n"]);
 
   _templateObject2$2 = function _templateObject2() {
     return data;
@@ -1116,7 +1096,7 @@ function _templateObject2$2() {
 }
 
 function _templateObject$7() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-auto-flow: column;\n  grid-gap: 0.25rem;\n  color: #666666;\n  font-size: 70%;\n  width: fit-content;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-gap: 1rem;\n"]);
 
   _templateObject$7 = function _templateObject() {
     return data;
@@ -1124,25 +1104,52 @@ function _templateObject$7() {
 
   return data;
 }
-var DetailGroup = styled__default.div(_templateObject$7());
-var DetailItem = styled__default.div(_templateObject2$2());
-var Detail = compose$2(connectTheme(mapBaseFontSize), connectTheme(mapBaseLineHeight))(function (_ref) {
+var SpecCard = styled__default.div(_templateObject$7());
+var Header = styled__default.div(_templateObject2$2());
+var Content = styled__default.div(_templateObject3());
+var Footer = styled__default.div(_templateObject4());
+var Title = styled__default.div(_templateObject5());
+var Controls = styled__default.div(_templateObject6());
+SpecCard.Header = Header;
+SpecCard.Content = Content;
+SpecCard.Footer = Footer;
+SpecCard.Title = Title;
+SpecCard.Controls = Controls;
+
+function _templateObject2$3() {
+  var data = _taggedTemplateLiteral(["\n  &:nth-child(even) {\n    font-weight: bold;\n  }\n"]);
+
+  _templateObject2$3 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject$8() {
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-auto-flow: column;\n  grid-gap: 0.25rem;\n  color: #666666;\n  font-size: 70%;\n  width: fit-content;\n"]);
+
+  _templateObject$8 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var Detail = styled__default.div(_templateObject$8());
+var Item = styled__default.div(_templateObject2$3());
+Detail.Item = Item;
+
+var BaseFontMeta = compose$2(connectTheme(mapBaseFontSize), connectTheme(mapBaseLineHeight))(function (_ref) {
   var baseFontSize = _ref.baseFontSize,
       baseLineHeight = _ref.baseLineHeight;
-  return React__default.createElement(DetailGroup, null, React__default.createElement(DetailItem, null, "Font Size"), React__default.createElement(DetailItem, null, baseFontSize), React__default.createElement(DetailItem, null, "Line Height"), React__default.createElement(DetailItem, null, baseLineHeight));
+  return React__default.createElement(Detail, null, React__default.createElement(Detail.Item, null, "Font Size"), React__default.createElement(Detail.Item, null, baseFontSize), React__default.createElement(Detail.Item, null, "Line Height"), React__default.createElement(Detail.Item, null, baseLineHeight));
 });
-var Group = styled__default.div(_templateObject3());
-var Handle = styled__default.div(_templateObject4());
-var HandleTitle = styled__default.div(_templateObject5());
-var HandleControls = styled__default.div(_templateObject6());
-var Visualizer = styled__default.div(_templateObject7());
-var Meta = styled__default.div(_templateObject8());
 
 var BaseFont = function BaseFont() {
   return React__default.createElement(ui.Card, {
     pad: true,
     border: true
-  }, React__default.createElement(Group, null, React__default.createElement(Handle, null, React__default.createElement(HandleTitle, null, "Base Font"), React__default.createElement(HandleControls, null, React__default.createElement(AdjustPopover, null))), React__default.createElement(Visualizer, null, React__default.createElement(Typeset, null)), React__default.createElement(Meta, null, React__default.createElement(Detail, null))));
+  }, React__default.createElement(SpecCard, null, React__default.createElement(SpecCard.Header, null, React__default.createElement(SpecCard.Title, null, "Base Font"), React__default.createElement(SpecCard.Controls, null, React__default.createElement(AdjustPopover, null))), React__default.createElement(SpecCard.Content, null, React__default.createElement(Typeset, null)), React__default.createElement(SpecCard.Footer, null, React__default.createElement(BaseFontMeta, null))));
 };
 
 exports.GlobalsInfo = Globals;
