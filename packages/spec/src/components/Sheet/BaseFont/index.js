@@ -1,15 +1,15 @@
 import React, { Fragment } from 'react'
-import { Card } from '@airtheme/ui'
 import connectTheme from '../../../utils/connectTheme'
+import { compose } from 'redux'
+import { Card } from '@airtheme/ui'
+import SpecCard from '../../SpecCard'
+import Detail from '../../SpecCard/Detail'
 import {
   mapBaseFontSize,
   mapBaseLineHeight
 } from '../../../utils/mapThemeToProps'
-import { compose } from 'redux'
 import Typeset from './Typeset'
 import AdjustPopover from './AdjustPopover'
-import SpecCard from '../../SpecCard'
-import Detail from '../../SpecCard/Detail'
 
 const BaseFontMeta = compose(
   connectTheme(mapBaseFontSize),

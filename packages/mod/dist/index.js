@@ -364,7 +364,7 @@ var Name = reactRedux.connect(make.mapName, {
 })(function (_ref) {
   var name = _ref.name,
       updateThemeName = _ref.updateThemeName;
-  return React__default.createElement(make.SimpleList.TwoColumns, null, React__default.createElement(Node, {
+  return React__default.createElement(ui.SimpleList.TwoColumns, null, React__default.createElement(Node, {
     label: "name",
     value: name,
     onChange: updateThemeName
@@ -375,7 +375,7 @@ var Id = reactRedux.connect(make.mapId, {
 })(function (_ref2) {
   var id = _ref2.id,
       updateThemeId = _ref2.updateThemeId;
-  return React__default.createElement(make.SimpleList.TwoColumns, null, React__default.createElement(Node, {
+  return React__default.createElement(ui.SimpleList.TwoColumns, null, React__default.createElement(Node, {
     disabled: true,
     label: "id",
     value: id,
@@ -387,7 +387,7 @@ var Version = reactRedux.connect(make.mapVersion, {
 })(function (_ref3) {
   var version = _ref3.version,
       updateThemeVersion = _ref3.updateThemeVersion;
-  return React__default.createElement(make.SimpleList.TwoColumns, null, React__default.createElement(Node, {
+  return React__default.createElement(ui.SimpleList.TwoColumns, null, React__default.createElement(Node, {
     label: "version",
     value: version,
     onChange: updateThemeVersion
@@ -395,7 +395,7 @@ var Version = reactRedux.connect(make.mapVersion, {
 });
 
 var Globals = function Globals() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(Id, null), React__default.createElement(Name, null), React__default.createElement(Version, null));
+  return React__default.createElement(ui.SimpleList.OneColumn, null, React__default.createElement(Id, null), React__default.createElement(Name, null), React__default.createElement(Version, null));
 };
 
 var SwatchAttribute = reactRedux.connect(make.mapSwatch, {
@@ -429,7 +429,7 @@ var SwatchContent = reactRedux.connect(make.mapSwatchContent, {
 });
 
 var Swatch = function Swatch() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(SwatchAttribute, null), React__default.createElement(SwatchContent, null));
+  return React__default.createElement(ui.SimpleList.OneColumn, null, React__default.createElement(SwatchAttribute, null), React__default.createElement(SwatchContent, null));
 };
 
 var FontFaceAttribute = reactRedux.connect(make.mapFontFace)(function (_ref) {
@@ -459,7 +459,7 @@ var FontFaceContent = reactRedux.connect(make.mapFontFaceContent, {
 });
 
 var FontFace = function FontFace() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(FontFaceAttribute, null), React__default.createElement(FontFaceContent, null));
+  return React__default.createElement(ui.SimpleList.OneColumn, null, React__default.createElement(FontFaceAttribute, null), React__default.createElement(FontFaceContent, null));
 };
 
 var FontFamilyAttribute = reactRedux.connect(make.mapFontFamily, {
@@ -493,7 +493,7 @@ var FontFamilyContent = reactRedux.connect(make.mapFontFamilyContent, {
 });
 
 var FontFamily = function FontFamily() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(FontFamilyAttribute, null), React__default.createElement(FontFamilyContent, null));
+  return React__default.createElement(ui.SimpleList.OneColumn, null, React__default.createElement(FontFamilyAttribute, null), React__default.createElement(FontFamilyContent, null));
 };
 
 var FontSizeAttribute = reactRedux.connect(make.mapFontSize, {
@@ -527,7 +527,7 @@ var FontSizeContent = reactRedux.connect(make.mapFontSizeContent, {
 });
 
 var FontSize = function FontSize() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(FontSizeAttribute, null), React__default.createElement(FontSizeContent, null));
+  return React__default.createElement(ui.SimpleList.OneColumn, null, React__default.createElement(FontSizeAttribute, null), React__default.createElement(FontSizeContent, null));
 };
 
 var FontWeightAttribute = reactRedux.connect(make.mapFontWeight)(function (_ref) {
@@ -557,7 +557,7 @@ var FontWeightContent = reactRedux.connect(make.mapFontWeightContent, {
 });
 
 var FontWeight = function FontWeight() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(FontWeightAttribute, null), React__default.createElement(FontWeightContent, null));
+  return React__default.createElement(ui.SimpleList.OneColumn, null, React__default.createElement(FontWeightAttribute, null), React__default.createElement(FontWeightContent, null));
 };
 
 var ColorAttribute = reactRedux.connect(make.mapColor, {
@@ -591,7 +591,7 @@ var ColorContent = reactRedux.connect(make.mapColorContent, {
 });
 
 var Color = function Color() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(ColorAttribute, null), React__default.createElement(ColorContent, null));
+  return React__default.createElement(ui.SimpleList.OneColumn, null, React__default.createElement(ColorAttribute, null), React__default.createElement(ColorContent, null));
 };
 
 var SpacingAttribute = reactRedux.connect(make.mapSpacing, {
@@ -625,7 +625,7 @@ var SpacingContent = reactRedux.connect(make.mapSpacingContent, {
 });
 
 var Spacing = function Spacing() {
-  return React__default.createElement(make.SimpleList.OneColumn, null, React__default.createElement(SpacingAttribute, null), React__default.createElement(SpacingContent, null));
+  return React__default.createElement(ui.SimpleList.OneColumn, null, React__default.createElement(SpacingAttribute, null), React__default.createElement(SpacingContent, null));
 };
 
 var BaseFontSizeAttribute = withBaseFontSizeAttribute(function (_ref) {

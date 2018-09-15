@@ -11,7 +11,6 @@ var styled__default = _interopDefault(styled);
 var ui = require('@airtheme/ui');
 var make = require('@airtheme/make');
 var reactRedux = require('react-redux');
-var type = require('@airtheme/type');
 var mod = require('@airtheme/mod');
 var core = require('@airtheme/core');
 
@@ -64,25 +63,6 @@ function _defineProperty(obj, key, value) {
   }
 
   return obj;
-}
-
-function _objectSpread(target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i] != null ? arguments[i] : {};
-    var ownKeys = Object.keys(source);
-
-    if (typeof Object.getOwnPropertySymbols === 'function') {
-      ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {
-        return Object.getOwnPropertyDescriptor(source, sym).enumerable;
-      }));
-    }
-
-    ownKeys.forEach(function (key) {
-      _defineProperty(target, key, source[key]);
-    });
-  }
-
-  return target;
 }
 
 function _inherits(subClass, superClass) {
@@ -514,25 +494,6 @@ var BaseSpacing = function BaseSpacing() {
   return React__default.createElement(AttributeGroup, null, React__default.createElement(BaseSpacingAttribute, null), React__default.createElement(BaseSpacingContent, null));
 };
 
-var mapSwatch = function mapSwatch(_ref) {
-  var swatch = _ref.swatch;
-  return {
-    swatch: swatch
-  };
-};
-var mapBaseFontSize = function mapBaseFontSize(_ref2) {
-  var baseFontSize = _ref2.baseFontSize;
-  return {
-    baseFontSize: baseFontSize
-  };
-};
-var mapBaseLineHeight = function mapBaseLineHeight(_ref3) {
-  var baseLineHeight = _ref3.baseLineHeight;
-  return {
-    baseLineHeight: baseLineHeight
-  };
-};
-
 var _require = require('recompose'),
     compose = _require.compose;
 
@@ -546,139 +507,6 @@ var connectTheme = function connectTheme(mapThemeToProps) {
     };
   });
 };
-
-var AttributeEntries = function AttributeEntries(_ref) {
-  var attribute = _ref.attribute,
-      Component = _ref.component,
-      _ref$renderLoading = _ref.renderLoading,
-      renderLoading = _ref$renderLoading === void 0 ? function () {
-    return 'Loading';
-  } : _ref$renderLoading;
-  return attribute ? Object.entries(attribute).map(function (_ref2, idx) {
-    var _ref3 = _slicedToArray(_ref2, 2),
-        k = _ref3[0],
-        v = _ref3[1];
-
-    return React__default.createElement(Component, {
-      key: idx,
-      name: k,
-      value: v
-    });
-  }) : renderLoading();
-};
-
-function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n    color: #00000070;\n    border: 1px solid #00000015;\n  "]);
-
-  _templateObject2 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject$2() {
-  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  height: 5rem;\n  background: ", ";\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 1rem;\n  color: #ffffff90;\n\n  ", ";\n"]);
-
-  _templateObject$2 = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-var Chip = ui.withShade(styled__default.div(_templateObject$2(), function (_ref) {
-  var color = _ref.color;
-  return color;
-}, ui.isLight(styled.css(_templateObject2()))));
-
-var Swatch$1 = function Swatch(_ref2) {
-  var swatch = _ref2.swatch;
-  return React__default.createElement(ui.Card, {
-    pad: true,
-    border: true
-  }, React__default.createElement(AttributeEntries, {
-    attribute: swatch,
-    component: function component(_ref3) {
-      var name = _ref3.name,
-          value = _ref3.value;
-      return React__default.createElement(Chip, {
-        color: value
-      }, React__default.createElement("span", null, name), React__default.createElement("span", null, value));
-    }
-  }));
-};
-
-var Swatch$2 = connectTheme(mapSwatch)(Swatch$1);
-
-// deserialize
-// return
-// attribute - { unit, object, content, view}
-// deserialized - { baseLineHeight: 16px }
-
-
-var isEmpty = function isEmpty(obj) {
-  return Boolean(Object.keys(obj).length);
-};
-
-var BaseAttributeEntry = function BaseAttributeEntry(_ref) {
-  var _ref$attribute = _ref.attribute,
-      attribute = _ref$attribute === void 0 ? {} : _ref$attribute,
-      _ref$theme = _ref.theme,
-      theme = _ref$theme === void 0 ? {} : _ref$theme,
-      _ref$render = _ref.render,
-      render = _ref$render === void 0 ? function () {
-    return null;
-  } : _ref$render,
-      _ref$renderLoading = _ref.renderLoading,
-      renderLoading = _ref$renderLoading === void 0 ? function () {
-    return null;
-  } : _ref$renderLoading;
-  var deserialized = type.deserializeAttribute(attribute, theme);
-  return isEmpty(attribute) ? render(_objectSpread({}, attribute, {
-    deserialized: deserialized
-  })) : renderLoading();
-}; // TODO: Hmmm, this may be perf issue...
-
-
-var BaseAttributeEntry$1 = reactRedux.connect(make.mapTheme)(BaseAttributeEntry);
-
-function _templateObject$3() {
-  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  display: flex;\n  justify-content: center;\n  padding: 1rem;\n  color: #000000;\n"]);
-
-  _templateObject$3 = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
-var _require$1 = require('recompose'),
-    compose$1 = _require$1.compose;
-
-var Chip$1 = styled__default.div(_templateObject$3());
-
-var BaseSpacing$1 = function BaseSpacing(_ref) {
-  var baseSpacing = _ref.baseSpacing;
-  return React__default.createElement(ui.Card, {
-    pad: true,
-    border: true
-  }, React__default.createElement(BaseAttributeEntry$1, {
-    attribute: baseSpacing,
-    render: function render() {
-      var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-          _ref2$content = _ref2.content;
-
-      _ref2$content = _ref2$content === void 0 ? {} : _ref2$content;
-      var value = _ref2$content.value,
-          _ref2$deserialized = _ref2.deserialized;
-      _ref2$deserialized = _ref2$deserialized === void 0 ? {} : _ref2$deserialized;
-      var baseSpacing = _ref2$deserialized.baseSpacing;
-      return React__default.createElement(Chip$1, null, React__default.createElement("span", null, value));
-    }
-  }));
-};
-
-var BaseSpacing$2 = reactRedux.connect(make.mapBaseSpacing)(BaseSpacing$1);
 
 function symbolObservablePonyfill(root) {
   var result;
@@ -768,7 +596,7 @@ function warning(message) {
  */
 
 
-function compose$2() {
+function compose$1() {
   for (var _len = arguments.length, funcs = Array(_len), _key = 0; _key < _len; _key++) {
     funcs[_key] = arguments[_key];
   }
@@ -800,6 +628,113 @@ function isCrushed() {}
 if (process.env.NODE_ENV !== 'production' && typeof isCrushed.name === 'string' && isCrushed.name !== 'isCrushed') {
   warning("You are currently using minified code outside of NODE_ENV === 'production'. " + 'This means that you are running a slower development build of Redux. ' + 'You can use loose-envify (https://github.com/zertosh/loose-envify) for browserify ' + 'or DefinePlugin for webpack (http://stackoverflow.com/questions/30030031) ' + 'to ensure you have the correct code for your production build.');
 }
+
+function _templateObject6() {
+  var data = _taggedTemplateLiteral([""]);
+
+  _templateObject6 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject5() {
+  var data = _taggedTemplateLiteral(["\n  font-weight: bold;\n  font-size: 70%;\n"]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  var data = _taggedTemplateLiteral([""]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteral([""]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 1fr auto;\n  align-items: center;\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject$2() {
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-gap: 1rem;\n"]);
+
+  _templateObject$2 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var SpecCard = styled__default.div(_templateObject$2());
+var Header = styled__default.div(_templateObject2());
+var Content = styled__default.div(_templateObject3());
+var Footer = styled__default.div(_templateObject4());
+var Title = styled__default.div(_templateObject5());
+var Controls = styled__default.div(_templateObject6());
+SpecCard.Header = Header;
+SpecCard.Content = Content;
+SpecCard.Footer = Footer;
+SpecCard.Title = Title;
+SpecCard.Controls = Controls;
+
+function _templateObject2$1() {
+  var data = _taggedTemplateLiteral(["\n  &:nth-child(even) {\n    font-weight: bold;\n  }\n"]);
+
+  _templateObject2$1 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject$3() {
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-auto-flow: column;\n  grid-gap: 0.25rem;\n  color: #666666;\n  font-size: 70%;\n  width: fit-content;\n"]);
+
+  _templateObject$3 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var Detail = styled__default.div(_templateObject$3());
+var Item = styled__default.div(_templateObject2$1());
+Detail.Item = Item;
+
+var mapBaseFontSize = function mapBaseFontSize(_ref2) {
+  var baseFontSize = _ref2.baseFontSize;
+  return {
+    baseFontSize: baseFontSize
+  };
+};
+var mapBaseLineHeight = function mapBaseLineHeight(_ref3) {
+  var baseLineHeight = _ref3.baseLineHeight;
+  return {
+    baseLineHeight: baseLineHeight
+  };
+};
 
 var alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
@@ -919,10 +854,10 @@ var BaseFontSize$1 = function BaseFontSize() {
   return React__default.createElement(ui.EditBaseUnitGroup, null, React__default.createElement(Input$1, null), React__default.createElement(View$1, null), React__default.createElement(Increment$1, null));
 };
 
-function _templateObject2$1() {
+function _templateObject2$2() {
   var data = _taggedTemplateLiteral(["\n  padding: 1rem;\n"]);
 
-  _templateObject2$1 = function _templateObject2() {
+  _templateObject2$2 = function _templateObject2() {
     return data;
   };
 
@@ -939,7 +874,7 @@ function _templateObject$6() {
   return data;
 }
 var PopoverContent = styled__default.div(_templateObject$6());
-var Pad = styled__default.div(_templateObject2$1());
+var Pad = styled__default.div(_templateObject2$2());
 
 var TabContainer =
 /*#__PURE__*/
@@ -1045,101 +980,7 @@ var AdjustPopover = function AdjustPopover() {
   });
 };
 
-function _templateObject6() {
-  var data = _taggedTemplateLiteral([""]);
-
-  _templateObject6 = function _templateObject6() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n  font-weight: bold;\n  font-size: 70%;\n"]);
-
-  _templateObject5 = function _templateObject5() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject4() {
-  var data = _taggedTemplateLiteral([""]);
-
-  _templateObject4 = function _templateObject4() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject3() {
-  var data = _taggedTemplateLiteral([""]);
-
-  _templateObject3 = function _templateObject3() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject2$2() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 1fr auto;\n  align-items: center;\n"]);
-
-  _templateObject2$2 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject$7() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-gap: 1rem;\n"]);
-
-  _templateObject$7 = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-var SpecCard = styled__default.div(_templateObject$7());
-var Header = styled__default.div(_templateObject2$2());
-var Content = styled__default.div(_templateObject3());
-var Footer = styled__default.div(_templateObject4());
-var Title = styled__default.div(_templateObject5());
-var Controls = styled__default.div(_templateObject6());
-SpecCard.Header = Header;
-SpecCard.Content = Content;
-SpecCard.Footer = Footer;
-SpecCard.Title = Title;
-SpecCard.Controls = Controls;
-
-function _templateObject2$3() {
-  var data = _taggedTemplateLiteral(["\n  &:nth-child(even) {\n    font-weight: bold;\n  }\n"]);
-
-  _templateObject2$3 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject$8() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-auto-flow: column;\n  grid-gap: 0.25rem;\n  color: #666666;\n  font-size: 70%;\n  width: fit-content;\n"]);
-
-  _templateObject$8 = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-var Detail = styled__default.div(_templateObject$8());
-var Item = styled__default.div(_templateObject2$3());
-Detail.Item = Item;
-
-var BaseFontMeta = compose$2(connectTheme(mapBaseFontSize), connectTheme(mapBaseLineHeight))(function (_ref) {
+var BaseFontMeta = compose$1(connectTheme(mapBaseFontSize), connectTheme(mapBaseLineHeight))(function (_ref) {
   var baseFontSize = _ref.baseFontSize,
       baseLineHeight = _ref.baseLineHeight;
   return React__default.createElement(Detail, null, React__default.createElement(Detail.Item, null, "Font Size"), React__default.createElement(Detail.Item, null, baseFontSize), React__default.createElement(Detail.Item, null, "Line Height"), React__default.createElement(Detail.Item, null, baseLineHeight));
@@ -1150,6 +991,19 @@ var BaseFont = function BaseFont() {
     pad: true,
     border: true
   }, React__default.createElement(SpecCard, null, React__default.createElement(SpecCard.Header, null, React__default.createElement(SpecCard.Title, null, "Base Font"), React__default.createElement(SpecCard.Controls, null, React__default.createElement(AdjustPopover, null))), React__default.createElement(SpecCard.Content, null, React__default.createElement(Typeset, null)), React__default.createElement(SpecCard.Footer, null, React__default.createElement(BaseFontMeta, null))));
+};
+
+//   <Detail>
+//     <Detail.Item>Font Weight</Detail.Item>
+//     <Detail.Item>{fontWeight}</Detail.Item>
+//   </Detail>
+// ))
+
+var FontWeight$1 = function FontWeight() {
+  return React__default.createElement(ui.Card, {
+    pad: true,
+    border: true
+  }, React__default.createElement(SpecCard, null, React__default.createElement(SpecCard.Header, null, React__default.createElement(SpecCard.Title, null, "Font Weight"), React__default.createElement(SpecCard.Controls, null, "Adjust")), React__default.createElement(SpecCard.Content, null, "Visualize"), React__default.createElement(SpecCard.Footer, null, "Footer")));
 };
 
 exports.GlobalsInfo = Globals;
@@ -1163,7 +1017,6 @@ exports.SpacingInfo = Spacing;
 exports.BaseFontSizeInfo = BaseFontSize;
 exports.BaseLineHeightInfo = BaseLineHeight;
 exports.BaseSpacingInfo = BaseSpacing;
-exports.SwatchSheet = Swatch$2;
-exports.BaseSpacingSheet = BaseSpacing$2;
-exports.BaseFont = BaseFont;
+exports.BaseFontSheet = BaseFont;
+exports.FontWeightSheet = FontWeight$1;
 //# sourceMappingURL=index.js.map

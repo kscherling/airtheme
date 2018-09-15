@@ -5,9 +5,9 @@ import {
   mapFontFaceContent,
   addFontFace,
   removeFontFace,
-  updateFontFace,
-  SimpleList
+  updateFontFace
 } from '@airtheme/make'
+import { SimpleList } from '@airtheme/ui'
 import { AttributeContent, Attribute, AddUnit } from '../lib/ModifyTypes'
 
 const FontFaceAttribute = connect(mapFontFace)(

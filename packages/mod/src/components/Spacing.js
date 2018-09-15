@@ -6,9 +6,9 @@ import {
   updateSpacingView,
   addSpacing,
   removeSpacing,
-  updateSpacing,
-  SimpleList
+  updateSpacing
 } from '@airtheme/make'
+import { SimpleList } from '@airtheme/ui'
 import { AttributeContent, Attribute, AddUnit } from '../lib/ModifyTypes'
 
 const SpacingAttribute = connect(

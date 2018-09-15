@@ -8,9 +8,9 @@ import {
   updateThemeId,
   updateThemeName,
   updateThemeObject,
-  updateThemeVersion,
-  SimpleList
+  updateThemeVersion
 } from '@airtheme/make'
+import { SimpleList } from '@airtheme/ui'
 import { Node } from '../lib/ModifyTypes'
 
 const Name = connect(

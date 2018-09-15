@@ -6,9 +6,9 @@ import {
   updateColorView,
   addColor,
   removeColor,
-  updateColor,
-  SimpleList
+  updateColor
 } from '@airtheme/make'
+import { SimpleList } from '@airtheme/ui'
 import { AttributeContent, Attribute, AddUnit } from '../lib/ModifyTypes'
 
 const ColorAttribute = connect(

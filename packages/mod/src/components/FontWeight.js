@@ -6,9 +6,9 @@ import {
   updateFontWeightView,
   addFontWeight,
   removeFontWeight,
-  updateFontWeight,
-  SimpleList
+  updateFontWeight
 } from '@airtheme/make'
+import { SimpleList } from '@airtheme/ui'
 import { AttributeContent, Attribute, AddUnit } from '../lib/ModifyTypes'
 
 const FontWeightAttribute = connect(mapFontWeight)(

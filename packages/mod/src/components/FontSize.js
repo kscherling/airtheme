@@ -6,9 +6,9 @@ import {
   updateFontSizeView,
   addFontSize,
   removeFontSize,
-  updateFontSize,
-  SimpleList
+  updateFontSize
 } from '@airtheme/make'
+import { SimpleList } from '@airtheme/ui'
 import { AttributeContent, Attribute, AddUnit } from '../lib/ModifyTypes'
 
 const FontSizeAttribute = connect(

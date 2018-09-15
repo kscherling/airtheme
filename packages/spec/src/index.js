@@ -9,7 +9,7 @@ export { default as SpacingInfo } from './components/Info/Spacing'
 export { default as BaseFontSizeInfo } from './components/Info/BaseFontSize'
 export { default as BaseLineHeightInfo } from './components/Info/BaseLineHeight'
 export { default as BaseSpacingInfo } from './components/Info/BaseSpacing'
+
 // Sheet
-export { default as SwatchSheet } from './components/Sheet/Swatch'
-export { default as BaseSpacingSheet } from './components/Sheet/BaseSpacing'
-export { default as BaseFont } from './components/Sheet/BaseFont'
+export { default as BaseFontSheet } from './components/Sheet/BaseFont'
+export { default as FontWeightSheet } from './components/Sheet/FontWeight'

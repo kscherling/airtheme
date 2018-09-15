@@ -6,10 +6,10 @@ import {
   updateFontFamilyView,
   addFontFamily,
   removeFontFamily,
-  updateFontFamily,
-  SimpleList
+  updateFontFamily
 } from '@airtheme/make'
 import { AttributeContent, Attribute, AddUnit } from '../lib/ModifyTypes'
+import { SimpleList } from '@airtheme/ui'
 
 const FontFamilyAttribute = connect(
   mapFontFamily,
