@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { mapColor, mapColorContent } from '@airtheme/make'
 import { SimpleList } from '@airtheme/ui'
 import { Attribute, AttributeContent } from '../lib/PrintTypes'
-import AttributeGroup from '../lib/AttributeGroup'
+import AttributeGroup from '../components/AttributeGroup'
 
 const ColorAttribute = connect(mapColor)(({ color }) => (
   <Attribute attribute={color} />

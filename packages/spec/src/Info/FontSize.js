@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { mapFontSize, mapFontSizeContent } from '@airtheme/make'
 import { SimpleList } from '@airtheme/ui'
 import { Attribute, AttributeContent } from '../lib/PrintTypes'
-import AttributeGroup from '../lib/AttributeGroup'
+import AttributeGroup from '../components/AttributeGroup'
 
 const FontSizeAttribute = connect(mapFontSize)(({ fontSize }) => (
   <Attribute attribute={fontSize} />
