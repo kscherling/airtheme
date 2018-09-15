@@ -326,7 +326,7 @@ var AttributeContent = function AttributeContent(_ref5) {
       update = _ref5.update,
       remove = _ref5.remove,
       add = _ref5.add;
-  return React__default.createElement(ui.SimpleList.FourColumns, null, React__default.createElement(make.THead, {
+  return React__default.createElement(ui.SimpleList.FourColumns, null, React__default.createElement(ui.THead, {
     colNames: ['name', 'value', 'ordinal', 'unit']
   }), content.length ? content.map(function (unit, idx) {
     return React__default.createElement(Unit, {

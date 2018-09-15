@@ -9,8 +9,8 @@ var React__default = _interopDefault(React);
 var styled = require('styled-components');
 var styled__default = _interopDefault(styled);
 var ui = require('@airtheme/ui');
-var make = require('@airtheme/make');
 var reactRedux = require('react-redux');
+var make = require('@airtheme/make');
 var mod = require('@airtheme/mod');
 var core = require('@airtheme/core');
 
@@ -275,7 +275,7 @@ var Attribute = function Attribute(_ref3) {
 var AttributeContent = function AttributeContent(_ref6) {
   var _ref6$content = _ref6.content,
       content = _ref6$content === void 0 ? [] : _ref6$content;
-  return React__default.createElement(ui.SimpleList.FourColumns, null, React__default.createElement(make.THead, {
+  return React__default.createElement(ui.SimpleList.FourColumns, null, React__default.createElement(ui.THead, {
     colNames: ['name', 'value', 'ordinal', 'unit']
   }), Array.isArray(content) ? content.length ? content.map(function (unit, idx) {
     return React__default.createElement(Unit, {

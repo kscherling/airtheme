@@ -2,11 +2,8 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
 var type = require('@airtheme/type');
 var reactRedux = require('react-redux');
-var styled = _interopDefault(require('styled-components'));
 
 function createCommonjsModule(fn, module) {
 	return module = { exports: {} }, fn(module, module.exports), module.exports;
@@ -2525,18 +2522,6 @@ function _objectSpread(target) {
   return target;
 }
 
-function _taggedTemplateLiteral(strings, raw) {
-  if (!raw) {
-    raw = strings.slice(0);
-  }
-
-  return Object.freeze(Object.defineProperties(strings, {
-    raw: {
-      value: Object.freeze(raw)
-    }
-  }));
-}
-
 function _toConsumableArray(arr) {
   return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
 }
@@ -3429,27 +3414,6 @@ var mapSpacingContent = function mapSpacingContent(_ref25) {
   };
 }; // prettier-ignore
 
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  font-size: 80%;\n  font-weight: bold;\n"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-var Th = styled.span(_templateObject());
-
-var THead = function THead(_ref) {
-  var _ref$colNames = _ref.colNames,
-      colNames = _ref$colNames === void 0 ? [] : _ref$colNames;
-  return colNames.map(function (colName, idx) {
-    return react.createElement(Th, {
-      key: idx
-    }, colName);
-  });
-};
-
 exports.Provider = Provider;
 exports.makeStore = makeStore;
 exports.updateTheme = updateTheme;
@@ -3512,5 +3476,4 @@ exports.mapFontWeight = mapFontWeight;
 exports.mapFontWeightContent = mapFontWeightContent;
 exports.mapSpacing = mapSpacing;
 exports.mapSpacingContent = mapSpacingContent;
-exports.THead = THead;
 //# sourceMappingURL=index.js.map
