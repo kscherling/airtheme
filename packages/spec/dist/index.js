@@ -646,7 +646,7 @@ var BaseLineHeight$1 = function BaseLineHeight() {
   return React__default.createElement(ui.EditBaseUnitGroup, null, React__default.createElement(Input, null), React__default.createElement(View, null), React__default.createElement(Increment, null));
 };
 
-var Increment$1 = mod.withBaseFontSizeContent(function (_ref) {
+var Increment$1 = make.withBaseFontSizeContent(function (_ref) {
   var _ref$content = _ref.content,
       content = _ref$content === void 0 ? {} : _ref$content,
       updateBaseFontSize = _ref.updateBaseFontSize;
@@ -659,7 +659,7 @@ var Increment$1 = mod.withBaseFontSizeContent(function (_ref) {
     castValueTo: core.castNumber
   });
 });
-var Input$1 = mod.withBaseFontSizeContent(function (_ref2) {
+var Input$1 = make.withBaseFontSizeContent(function (_ref2) {
   var _ref2$content = _ref2.content,
       content = _ref2$content === void 0 ? {} : _ref2$content,
       updateBaseFontSize = _ref2.updateBaseFontSize;
@@ -669,7 +669,7 @@ var Input$1 = mod.withBaseFontSizeContent(function (_ref2) {
     castValueTo: core.castNumber
   });
 });
-var View$1 = mod.withBaseFontSizeAttribute(function (_ref3) {
+var View$1 = make.withBaseFontSizeAttribute(function (_ref3) {
   var _ref3$baseFontSize = _ref3.baseFontSize,
       view = _ref3$baseFontSize.view,
       viewable = _ref3$baseFontSize.viewable;

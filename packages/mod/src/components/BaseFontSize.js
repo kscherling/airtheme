@@ -5,7 +5,7 @@ import { AttributeBaseContent, Attribute } from '../lib/ModifyTypes'
 import {
   withBaseFontSizeAttribute,
   withBaseFontSizeContent
-} from '../connector/BaseFontSize'
+} from '@airtheme/make'
 
 const BaseFontSizeAttribute = withBaseFontSizeAttribute(
   ({ baseFontSize: { view, viewable } }) => (

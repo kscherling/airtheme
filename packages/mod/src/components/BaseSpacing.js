@@ -5,7 +5,7 @@ import { AttributeBaseContent, Attribute } from '../lib/ModifyTypes'
 import {
   withBaseSpacingAttribute,
   withBaseSpacingContent
-} from '../connector/BaseSpacing'
+} from '@airtheme/make'
 
 const BaseSpacingAttribute = withBaseSpacingAttribute(
   ({ baseSpacing: { view, viewable } }) => (

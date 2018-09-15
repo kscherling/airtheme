@@ -5,7 +5,7 @@ import { AttributeBaseContent, Attribute } from '../lib/ModifyTypes'
 import {
   withBaseLineHeightContent,
   withBaseLineHeightAttribute
-} from '../connector/BaseLineHeight'
+} from '@airtheme/make'
 
 const BaseLineHeightAttribute = withBaseLineHeightAttribute(
   ({ baseLineHeight: { view, viewable }, updateBaseLineHeightView }) => (

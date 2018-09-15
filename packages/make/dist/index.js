@@ -3414,6 +3414,23 @@ var mapSpacingContent = function mapSpacingContent(_ref25) {
   };
 }; // prettier-ignore
 
+var withBaseFontSizeAttribute = reactRedux.connect(mapBaseFontSize);
+var withBaseFontSizeContent = reactRedux.connect(mapBaseFontSizeContent, {
+  updateBaseFontSize: updateBaseFontSize
+});
+
+var withBaseLineHeightAttribute = reactRedux.connect(mapBaseLineHeight, {
+  updateBaseLineHeightView: updateBaseLineHeightView
+});
+var withBaseLineHeightContent = reactRedux.connect(mapBaseLineHeightContent, {
+  updateBaseLineHeight: updateBaseLineHeight
+});
+
+var withBaseSpacingAttribute = reactRedux.connect(mapBaseSpacing);
+var withBaseSpacingContent = reactRedux.connect(mapBaseSpacingContent, {
+  updateBaseSpacing: updateBaseSpacing
+});
+
 exports.Provider = Provider;
 exports.makeStore = makeStore;
 exports.updateTheme = updateTheme;
@@ -3476,4 +3493,10 @@ exports.mapFontWeight = mapFontWeight;
 exports.mapFontWeightContent = mapFontWeightContent;
 exports.mapSpacing = mapSpacing;
 exports.mapSpacingContent = mapSpacingContent;
+exports.withBaseFontSizeAttribute = withBaseFontSizeAttribute;
+exports.withBaseFontSizeContent = withBaseFontSizeContent;
+exports.withBaseLineHeightAttribute = withBaseLineHeightAttribute;
+exports.withBaseLineHeightContent = withBaseLineHeightContent;
+exports.withBaseSpacingAttribute = withBaseSpacingAttribute;
+exports.withBaseSpacingContent = withBaseSpacingContent;
 //# sourceMappingURL=index.js.map
