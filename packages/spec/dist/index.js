@@ -494,141 +494,6 @@ var BaseSpacing = function BaseSpacing() {
   return React__default.createElement(AttributeGroup, null, React__default.createElement(BaseSpacingAttribute, null), React__default.createElement(BaseSpacingContent, null));
 };
 
-var _require = require('recompose'),
-    compose = _require.compose;
-
-var connectTheme = function connectTheme(mapThemeToProps) {
-  return compose(styled.withTheme, function (Component) {
-    return function (_ref) {
-      var theme = _ref.theme,
-          props = _objectWithoutProperties(_ref, ["theme"]);
-
-      return React__default.createElement(Component, Object.assign({}, props, mapThemeToProps(theme)));
-    };
-  });
-};
-
-function symbolObservablePonyfill(root) {
-  var result;
-  var _Symbol = root.Symbol;
-
-  if (typeof _Symbol === 'function') {
-    if (_Symbol.observable) {
-      result = _Symbol.observable;
-    } else {
-      result = _Symbol('observable');
-      _Symbol.observable = result;
-    }
-  } else {
-    result = '@@observable';
-  }
-
-  return result;
-}
-
-/* global window */
-var root;
-
-if (typeof self !== 'undefined') {
-  root = self;
-} else if (typeof window !== 'undefined') {
-  root = window;
-} else if (typeof global !== 'undefined') {
-  root = global;
-} else if (typeof module !== 'undefined') {
-  root = module;
-} else {
-  root = Function('return this')();
-}
-
-var result = symbolObservablePonyfill(root);
-
-/**
- * These are private action types reserved by Redux.
- * For any unknown actions, you must return the current state.
- * If the current state is undefined, you must return the initial state.
- * Do not reference these action types directly in your code.
- */
-
-var ActionTypes = {
-  INIT: '@@redux/INIT' + Math.random().toString(36).substring(7).split('').join('.'),
-  REPLACE: '@@redux/REPLACE' + Math.random().toString(36).substring(7).split('').join('.')
-};
-
-var _typeof$1 = typeof Symbol === "function" && _typeof(Symbol.iterator) === "symbol" ? function (obj) {
-  return _typeof(obj);
-} : function (obj) {
-  return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof(obj);
-};
-/**
- * Prints a warning in the console if it exists.
- *
- * @param {String} message The warning message.
- * @returns {void}
- */
-
-
-function warning(message) {
-  /* eslint-disable no-console */
-  if (typeof console !== 'undefined' && typeof console.error === 'function') {
-    console.error(message);
-  }
-  /* eslint-enable no-console */
-
-
-  try {
-    // This error was thrown as a convenience so that if you enable
-    // "break on all exceptions" in your console,
-    // it would pause the execution at this line.
-    throw new Error(message);
-  } catch (e) {} // eslint-disable-line no-empty
-
-}
-/**
- * Composes single-argument functions from right to left. The rightmost
- * function can take multiple arguments as it provides the signature for
- * the resulting composite function.
- *
- * @param {...Function} funcs The functions to compose.
- * @returns {Function} A function obtained by composing the argument functions
- * from right to left. For example, compose(f, g, h) is identical to doing
- * (...args) => f(g(h(...args))).
- */
-
-
-function compose$1() {
-  for (var _len = arguments.length, funcs = Array(_len), _key = 0; _key < _len; _key++) {
-    funcs[_key] = arguments[_key];
-  }
-
-  if (funcs.length === 0) {
-    return function (arg) {
-      return arg;
-    };
-  }
-
-  if (funcs.length === 1) {
-    return funcs[0];
-  }
-
-  return funcs.reduce(function (a, b) {
-    return function () {
-      return a(b.apply(undefined, arguments));
-    };
-  });
-}
-/*
- * This is a dummy function to check if the function name has been altered by minification.
- * If the function has been minified and NODE_ENV !== 'production', warn the user.
- */
-
-
-function isCrushed() {}
-
-if (process.env.NODE_ENV !== 'production' && typeof isCrushed.name === 'string' && isCrushed.name !== 'isCrushed') {
-  warning("You are currently using minified code outside of NODE_ENV === 'production'. " + 'This means that you are running a slower development build of Redux. ' + 'You can use loose-envify (https://github.com/zertosh/loose-envify) for browserify ' + 'or DefinePlugin for webpack (http://stackoverflow.com/questions/30030031) ' + 'to ensure you have the correct code for your production build.');
-}
-
 function _templateObject6() {
   var data = _taggedTemplateLiteral([""]);
 
@@ -700,42 +565,6 @@ SpecCard.Footer = Footer;
 SpecCard.Title = Title;
 SpecCard.Controls = Controls;
 
-function _templateObject2$1() {
-  var data = _taggedTemplateLiteral(["\n  &:nth-child(even) {\n    font-weight: bold;\n  }\n"]);
-
-  _templateObject2$1 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject$3() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-auto-flow: column;\n  grid-gap: 0.25rem;\n  color: #666666;\n  font-size: 70%;\n  width: fit-content;\n"]);
-
-  _templateObject$3 = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-var Detail = styled__default.div(_templateObject$3());
-var Item = styled__default.div(_templateObject2$1());
-Detail.Item = Item;
-
-var mapBaseFontSize = function mapBaseFontSize(_ref2) {
-  var baseFontSize = _ref2.baseFontSize;
-  return {
-    baseFontSize: baseFontSize
-  };
-};
-var mapBaseLineHeight = function mapBaseLineHeight(_ref3) {
-  var baseLineHeight = _ref3.baseLineHeight;
-  return {
-    baseLineHeight: baseLineHeight
-  };
-};
-
 var alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
 var upCase = function upCase(string) {
@@ -751,10 +580,10 @@ var numerals = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'].join('');
 var puncuation = ['.', ':', ',', ';', '()', '{}', '[]', '!', '@', '#', '$', '%', '^', '&', '*'].join('');
 var typeset = allcase.concat(numerals, puncuation);
 
-function _templateObject$4() {
+function _templateObject$3() {
   var data = _taggedTemplateLiteral(["\n  line-height: ", ";\n  font-size: ", ";\n"]);
 
-  _templateObject$4 = function _templateObject() {
+  _templateObject$3 = function _templateObject() {
     return data;
   };
 
@@ -762,19 +591,19 @@ function _templateObject$4() {
 }
 var baseTypography = function baseTypography(_ref) {
   var theme = _ref.theme;
-  return styled.css(_templateObject$4(), theme.baseLineHeight, theme.baseFontSize);
+  return styled.css(_templateObject$3(), theme.baseLineHeight, theme.baseFontSize);
 };
 
-function _templateObject$5() {
+function _templateObject$4() {
   var data = _taggedTemplateLiteral(["\n  transform: font-size 0.2s linear;\n  word-break: break-all;\n  ", ";\n"]);
 
-  _templateObject$5 = function _templateObject() {
+  _templateObject$4 = function _templateObject() {
     return data;
   };
 
   return data;
 }
-var TypesetContainer = styled__default.div(_templateObject$5(), baseTypography);
+var TypesetContainer = styled__default.div(_templateObject$4(), baseTypography);
 
 var Typeset = function Typeset() {
   return React__default.createElement(TypesetContainer, null, React__default.createElement("div", null, uppercase), React__default.createElement("div", null, lowercase), React__default.createElement("div", null, numerals), React__default.createElement("div", null, puncuation));
@@ -854,27 +683,27 @@ var BaseFontSize$1 = function BaseFontSize() {
   return React__default.createElement(ui.EditBaseUnitGroup, null, React__default.createElement(Input$1, null), React__default.createElement(View$1, null), React__default.createElement(Increment$1, null));
 };
 
-function _templateObject2$2() {
+function _templateObject2$1() {
   var data = _taggedTemplateLiteral(["\n  padding: 1rem;\n"]);
 
-  _templateObject2$2 = function _templateObject2() {
+  _templateObject2$1 = function _templateObject2() {
     return data;
   };
 
   return data;
 }
 
-function _templateObject$6() {
+function _templateObject$5() {
   var data = _taggedTemplateLiteral([""]);
 
-  _templateObject$6 = function _templateObject() {
+  _templateObject$5 = function _templateObject() {
     return data;
   };
 
   return data;
 }
-var PopoverContent = styled__default.div(_templateObject$6());
-var Pad = styled__default.div(_templateObject2$2());
+var PopoverContent = styled__default.div(_templateObject$5());
+var Pad = styled__default.div(_templateObject2$1());
 
 var TabContainer =
 /*#__PURE__*/
@@ -980,7 +809,178 @@ var AdjustPopover = function AdjustPopover() {
   });
 };
 
-var BaseFontMeta = compose$1(connectTheme(mapBaseFontSize), connectTheme(mapBaseLineHeight))(function (_ref) {
+function symbolObservablePonyfill(root) {
+  var result;
+  var _Symbol = root.Symbol;
+
+  if (typeof _Symbol === 'function') {
+    if (_Symbol.observable) {
+      result = _Symbol.observable;
+    } else {
+      result = _Symbol('observable');
+      _Symbol.observable = result;
+    }
+  } else {
+    result = '@@observable';
+  }
+
+  return result;
+}
+
+/* global window */
+var root;
+
+if (typeof self !== 'undefined') {
+  root = self;
+} else if (typeof window !== 'undefined') {
+  root = window;
+} else if (typeof global !== 'undefined') {
+  root = global;
+} else if (typeof module !== 'undefined') {
+  root = module;
+} else {
+  root = Function('return this')();
+}
+
+var result = symbolObservablePonyfill(root);
+
+/**
+ * These are private action types reserved by Redux.
+ * For any unknown actions, you must return the current state.
+ * If the current state is undefined, you must return the initial state.
+ * Do not reference these action types directly in your code.
+ */
+
+var ActionTypes = {
+  INIT: '@@redux/INIT' + Math.random().toString(36).substring(7).split('').join('.'),
+  REPLACE: '@@redux/REPLACE' + Math.random().toString(36).substring(7).split('').join('.')
+};
+
+var _typeof$1 = typeof Symbol === "function" && _typeof(Symbol.iterator) === "symbol" ? function (obj) {
+  return _typeof(obj);
+} : function (obj) {
+  return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof(obj);
+};
+/**
+ * Prints a warning in the console if it exists.
+ *
+ * @param {String} message The warning message.
+ * @returns {void}
+ */
+
+
+function warning(message) {
+  /* eslint-disable no-console */
+  if (typeof console !== 'undefined' && typeof console.error === 'function') {
+    console.error(message);
+  }
+  /* eslint-enable no-console */
+
+
+  try {
+    // This error was thrown as a convenience so that if you enable
+    // "break on all exceptions" in your console,
+    // it would pause the execution at this line.
+    throw new Error(message);
+  } catch (e) {} // eslint-disable-line no-empty
+
+}
+/**
+ * Composes single-argument functions from right to left. The rightmost
+ * function can take multiple arguments as it provides the signature for
+ * the resulting composite function.
+ *
+ * @param {...Function} funcs The functions to compose.
+ * @returns {Function} A function obtained by composing the argument functions
+ * from right to left. For example, compose(f, g, h) is identical to doing
+ * (...args) => f(g(h(...args))).
+ */
+
+
+function compose() {
+  for (var _len = arguments.length, funcs = Array(_len), _key = 0; _key < _len; _key++) {
+    funcs[_key] = arguments[_key];
+  }
+
+  if (funcs.length === 0) {
+    return function (arg) {
+      return arg;
+    };
+  }
+
+  if (funcs.length === 1) {
+    return funcs[0];
+  }
+
+  return funcs.reduce(function (a, b) {
+    return function () {
+      return a(b.apply(undefined, arguments));
+    };
+  });
+}
+/*
+ * This is a dummy function to check if the function name has been altered by minification.
+ * If the function has been minified and NODE_ENV !== 'production', warn the user.
+ */
+
+
+function isCrushed() {}
+
+if (process.env.NODE_ENV !== 'production' && typeof isCrushed.name === 'string' && isCrushed.name !== 'isCrushed') {
+  warning("You are currently using minified code outside of NODE_ENV === 'production'. " + 'This means that you are running a slower development build of Redux. ' + 'You can use loose-envify (https://github.com/zertosh/loose-envify) for browserify ' + 'or DefinePlugin for webpack (http://stackoverflow.com/questions/30030031) ' + 'to ensure you have the correct code for your production build.');
+}
+
+var mapBaseFontSize = function mapBaseFontSize(_ref2) {
+  var baseFontSize = _ref2.baseFontSize;
+  return {
+    baseFontSize: baseFontSize
+  };
+};
+var mapBaseLineHeight = function mapBaseLineHeight(_ref3) {
+  var baseLineHeight = _ref3.baseLineHeight;
+  return {
+    baseLineHeight: baseLineHeight
+  };
+};
+
+var _require = require('recompose'),
+    compose$1 = _require.compose;
+
+var connectTheme = function connectTheme(mapThemeToProps) {
+  return compose$1(styled.withTheme, function (Component) {
+    return function (_ref) {
+      var theme = _ref.theme,
+          props = _objectWithoutProperties(_ref, ["theme"]);
+
+      return React__default.createElement(Component, Object.assign({}, props, mapThemeToProps(theme)));
+    };
+  });
+};
+
+function _templateObject2$2() {
+  var data = _taggedTemplateLiteral(["\n  &:nth-child(even) {\n    font-weight: bold;\n  }\n"]);
+
+  _templateObject2$2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject$6() {
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-auto-flow: column;\n  grid-gap: 0.25rem;\n  color: #666666;\n  font-size: 70%;\n  width: fit-content;\n"]);
+
+  _templateObject$6 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var Detail = styled__default.div(_templateObject$6());
+var Item = styled__default.div(_templateObject2$2());
+Detail.Item = Item;
+
+var BaseFontMeta = compose(connectTheme(mapBaseFontSize), connectTheme(mapBaseLineHeight))(function (_ref) {
   var baseFontSize = _ref.baseFontSize,
       baseLineHeight = _ref.baseLineHeight;
   return React__default.createElement(Detail, null, React__default.createElement(Detail.Item, null, "Font Size"), React__default.createElement(Detail.Item, null, baseFontSize), React__default.createElement(Detail.Item, null, "Line Height"), React__default.createElement(Detail.Item, null, baseLineHeight));
