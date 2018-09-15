@@ -998,6 +998,64 @@ var BaseFont = function BaseFont() {
   }, React__default.createElement(SpecCard, null, React__default.createElement(SpecCard.Header, null, React__default.createElement(SpecCard.Title, null, "Base Font"), React__default.createElement(SpecCard.Controls, null, React__default.createElement(AdjustPopover, null))), React__default.createElement(SpecCard.Content, null, React__default.createElement(Typeset, null)), React__default.createElement(SpecCard.Footer, null, React__default.createElement(BaseFontMeta, null))));
 };
 
+var FontWeight$1 = function FontWeight(_ref) {
+  var unit = _ref.unit,
+      updateFontWeight = _ref.updateFontWeight,
+      _ref$fontWeight = _ref.fontWeight,
+      view = _ref$fontWeight.view,
+      viewable = _ref$fontWeight.viewable;
+  return React__default.createElement(ui.EditBaseUnitGroup, null, React__default.createElement(ui.InputUnit, {
+    update: updateFontWeight,
+    unit: unit,
+    castValueTo: core.castNumber
+  }), React__default.createElement(ui.ViewUnit, {
+    view: view,
+    viewable: viewable
+  }), React__default.createElement(ui.IncrementUnit, {
+    update: updateFontWeight,
+    unit: unit,
+    options: {
+      step: 100
+    },
+    castValueFrom: core.castNumber,
+    castValueTo: core.castNumber
+  }));
+};
+
+var FontWeight$2 = compose(make.withFontWeightContent, make.withFontWeightAttribute)(FontWeight$1);
+
+function _templateObject$7() {
+  var data = _taggedTemplateLiteral(["\n  padding: 1rem;\n"]);
+
+  _templateObject$7 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var Pad$1 = styled__default.div(_templateObject$7());
+
+var AdjustUnitPopover = function AdjustUnitPopover(_ref) {
+  var unit = _ref.unit;
+  return React__default.createElement(ui.Popover, {
+    renderTrigger: function renderTrigger(_ref2) {
+      var ref = _ref2.ref,
+          show = _ref2.show,
+          active = _ref2.active;
+      return React__default.createElement(AdjustButton, {
+        innerRef: ref,
+        active: active,
+        onClick: show
+      });
+    },
+    renderContent: function renderContent() {
+      return React__default.createElement(Pad$1, null, React__default.createElement(FontWeight$2, {
+        unit: unit
+      }));
+    }
+  });
+};
+
 function _templateObject4$1() {
   var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 1fr auto;\n  padding: 1rem 0;\n"]);
 
@@ -1028,10 +1086,10 @@ function _templateObject2$3() {
   return data;
 }
 
-function _templateObject$7() {
+function _templateObject$8() {
   var data = _taggedTemplateLiteral([""]);
 
-  _templateObject$7 = function _templateObject() {
+  _templateObject$8 = function _templateObject() {
     return data;
   };
 
@@ -1044,7 +1102,7 @@ function _templateObject$7() {
 // ))
 
 var SPECIMEN = 'The quick brown fox jumped over the lazy dog.';
-var Visual = styled__default.div(_templateObject$7());
+var Visual = styled__default.div(_templateObject$8());
 var Control = styled__default.div(_templateObject2$3());
 
 var mapFontWeight$1 = function mapFontWeight() {
@@ -1079,7 +1137,9 @@ var Item$1 = function Item(_ref3) {
   var unit = _ref3.unit;
   return React__default.createElement(Unit$1, null, React__default.createElement(Visual, null, React__default.createElement(Specimen, {
     unitName: unit.name
-  }), React__default.createElement("div", null, "Meta")), React__default.createElement(Control, null, "Control"));
+  }), React__default.createElement("div", null, " ")), React__default.createElement(Control, null, React__default.createElement(AdjustUnitPopover, {
+    unit: unit
+  })));
 };
 
 var Unit$1 = styled__default.div(_templateObject4$1());
@@ -1093,11 +1153,11 @@ var Content$1 = make.withFontWeightContent(function (_ref4) {
   });
 });
 
-var FontWeight$1 = function FontWeight() {
+var FontWeight$3 = function FontWeight() {
   return React__default.createElement(ui.Card, {
     pad: true,
     border: true
-  }, React__default.createElement(SpecCard, null, React__default.createElement(SpecCard.Header, null, React__default.createElement(SpecCard.Title, null, "Font Weight"), React__default.createElement(SpecCard.Controls, null, "Add")), React__default.createElement(SpecCard.Content, null, React__default.createElement(Content$1, null)), React__default.createElement(SpecCard.Footer, null, "Footer")));
+  }, React__default.createElement(SpecCard, null, React__default.createElement(SpecCard.Header, null, React__default.createElement(SpecCard.Title, null, "Font Weight"), React__default.createElement(SpecCard.Controls, null, " ")), React__default.createElement(SpecCard.Content, null, React__default.createElement(Content$1, null)), React__default.createElement(SpecCard.Footer, null, " ")));
 };
 
 exports.GlobalsInfo = Globals;
@@ -1112,5 +1172,5 @@ exports.BaseFontSizeInfo = BaseFontSize;
 exports.BaseLineHeightInfo = BaseLineHeight;
 exports.BaseSpacingInfo = BaseSpacing;
 exports.BaseFontSheet = BaseFont;
-exports.FontWeightSheet = FontWeight$1;
+exports.FontWeightSheet = FontWeight$3;
 //# sourceMappingURL=index.js.map

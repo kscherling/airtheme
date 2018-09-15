@@ -7,6 +7,7 @@ import SpecCard from '../../components/SpecCard'
 import Detail from '../../components/SpecCard/Detail'
 import { withFontWeightAttribute, withFontWeightContent } from '@airtheme/make'
 import { baseTypography } from '../../utils/styleHelpers'
+import AdjustUnitPopover from './AdjustUnitPopover'
 
 // const FontWeightMeta = connectTheme(mapFontWeight)(({ fontWeight }) => (
 //   <Detail>
@@ -36,9 +37,11 @@ const Item = ({ unit }) => (
   <Unit>
     <Visual>
       <Specimen unitName={unit.name} />
-      <div>Meta</div>
+      <div>{` `}</div>
     </Visual>
-    <Control>Control</Control>
+    <Control>
+      <AdjustUnitPopover unit={unit} />
+    </Control>
   </Unit>
 )
 
@@ -57,12 +60,12 @@ const FontWeight = () => (
     <SpecCard>
       <SpecCard.Header>
         <SpecCard.Title>Font Weight</SpecCard.Title>
-        <SpecCard.Controls>Add</SpecCard.Controls>
+        <SpecCard.Controls>{` `}</SpecCard.Controls>
       </SpecCard.Header>
       <SpecCard.Content>
         <Content />
       </SpecCard.Content>
-      <SpecCard.Footer>Footer</SpecCard.Footer>
+      <SpecCard.Footer>{` `}</SpecCard.Footer>
     </SpecCard>
   </Card>
 )

@@ -22,14 +22,14 @@ const Input = styled.input.attrs({
 
 // TODO: Validate - Don't allow negatives
 const InputUnit = ({
-  unit: { value = '' } = {},
+  unit = {},
   update = noop,
   placeholder = 'Update',
   castValueTo = val => val
 } = {}) => (
   <Input
-    value={value}
-    onChange={e => update({ value: castValueTo(e.target.value) })}
+    value={unit.value}
+    onChange={e => update(unit, { value: castValueTo(e.target.value) })}
   />
 )
 

@@ -38,19 +38,24 @@ const DecrementBtn = props => (
 // TODO: Validate - Don't allow negatives
 
 const IncrementUnit = ({
-  unit: { value } = {},
+  unit,
   update,
   options: { step = 1 } = {},
+  castValueFrom = val => val,
   castValueTo = val => val
-} = {}) => (
-  <IncrementContainer>
-    <IncrementBtn
-      onClick={() => update({ value: castValueTo(value + step) })}
-    />
-    <DecrementBtn
-      onClick={() => update({ value: castValueTo(value - step) })}
-    />
-  </IncrementContainer>
-)
+} = {}) => {
+  const value = castValueFrom(unit.value)
+
+  return (
+    <IncrementContainer>
+      <IncrementBtn
+        onClick={() => update(unit, { value: castValueTo(value + step) })}
+      />
+      <DecrementBtn
+        onClick={() => update(unit, { value: castValueTo(value - step) })}
+      />
+    </IncrementContainer>
+  )
+}
 
 export default IncrementUnit
