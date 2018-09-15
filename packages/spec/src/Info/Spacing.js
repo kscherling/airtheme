@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { mapSpacing, mapSpacingContent } from '@airtheme/make'
 import { SimpleList } from '@airtheme/ui'
-import { Attribute, AttributeContent } from '../lib/PrintTypes'
+import { Attribute, AttributeContent } from '../components/PrintTypes'
 import AttributeGroup from '../components/AttributeGroup'
 
 const SpacingAttribute = connect(mapSpacing)(({ spacing }) => (

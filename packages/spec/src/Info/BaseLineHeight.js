@@ -5,7 +5,7 @@ import {
   mapBaseLineHeightContent,
   SimpleList
 } from '@airtheme/make'
-import { Attribute, AttributeContent } from '../lib/PrintTypes'
+import { Attribute, AttributeContent } from '../components/PrintTypes'
 import AttributeGroup from '../components/AttributeGroup'
 
 const BaseLineHeightAttribute = connect(mapBaseLineHeight)(
