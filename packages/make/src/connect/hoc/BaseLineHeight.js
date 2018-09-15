@@ -6,7 +6,6 @@ export const withBaseLineHeightAttribute = connect(
   mapBaseLineHeight,
   { updateBaseLineHeightView }
 )
-
 export const withBaseLineHeightContent = connect(
   mapBaseLineHeightContent,
   { updateBaseLineHeight }

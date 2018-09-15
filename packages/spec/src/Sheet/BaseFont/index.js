@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card } from '@airtheme/ui'
-import SpecCard from '../../SpecCard'
+import SpecCard from '../../components/SpecCard'
 import Typeset from './Typeset'
 import AdjustPopover from './AdjustPopover'
 import BaseFontMeta from './BaseFontMeta'

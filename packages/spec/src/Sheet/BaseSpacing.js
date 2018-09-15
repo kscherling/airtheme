@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 import { Card } from '@airtheme/ui'
 import { connect } from 'react-redux'
 import { mapBaseSpacing } from '@airtheme/make'
-import BaseAttributeEntry from '../../utils/BaseAttributeEntry'
+import BaseAttributeEntry from '../utils/BaseAttributeEntry'
 const { compose } = require('recompose')
 
 const Chip = styled.div`

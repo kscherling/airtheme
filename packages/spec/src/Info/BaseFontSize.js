@@ -5,8 +5,8 @@ import {
   mapBaseFontSizeContent,
   SimpleList
 } from '@airtheme/make'
-import { Attribute, AttributeContent } from '../../lib/PrintTypes'
-import AttributeGroup from '../../lib/AttributeGroup'
+import { Attribute, AttributeContent } from '../lib/PrintTypes'
+import AttributeGroup from '../lib/AttributeGroup'
 
 const BaseFontSizeAttribute = connect(mapBaseFontSize)(({ baseFontSize }) => (
   <Attribute attribute={baseFontSize} />

@@ -3431,6 +3431,13 @@ var withBaseSpacingContent = reactRedux.connect(mapBaseSpacingContent, {
   updateBaseSpacing: updateBaseSpacing
 });
 
+var withFontWeightAttribute = reactRedux.connect(mapFontWeight);
+var withFontWeightContent = reactRedux.connect(mapFontWeightContent, {
+  updateFontWeight: updateFontWeight,
+  addFontWeight: addFontWeight,
+  removeFontWeight: removeFontWeight
+});
+
 exports.Provider = Provider;
 exports.makeStore = makeStore;
 exports.updateTheme = updateTheme;
@@ -3499,4 +3506,6 @@ exports.withBaseLineHeightAttribute = withBaseLineHeightAttribute;
 exports.withBaseLineHeightContent = withBaseLineHeightContent;
 exports.withBaseSpacingAttribute = withBaseSpacingAttribute;
 exports.withBaseSpacingContent = withBaseSpacingContent;
+exports.withFontWeightAttribute = withFontWeightAttribute;
+exports.withFontWeightContent = withFontWeightContent;
 //# sourceMappingURL=index.js.map

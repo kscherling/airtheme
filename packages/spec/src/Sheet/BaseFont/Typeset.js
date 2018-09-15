@@ -5,8 +5,8 @@ import {
   uppercase,
   numerals,
   puncuation
-} from '../../../constants/typography'
-import { baseTypography } from '../../../utils/styleHelpers'
+} from '../../constants/typography'
+import { baseTypography } from '../../utils/styleHelpers'
 
 const TypesetContainer = styled.div`
   transform: font-size 0.2s linear;

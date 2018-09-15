@@ -3,7 +3,7 @@ import { mapTheme } from '@airtheme/make'
 import { deserializeAttribute } from '@airtheme/type'
 import { connect } from 'react-redux'
 
-// NOTE: This also may not be necessary
+// NOTE: May not be necesary, review after building out real spec for
 
 const firstVal = obj => Object.values(obj)[0]
 const isEmpty = obj => Boolean(Object.keys(obj).length)

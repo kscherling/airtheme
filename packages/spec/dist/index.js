@@ -994,17 +994,106 @@ var BaseFont = function BaseFont() {
   }, React__default.createElement(SpecCard, null, React__default.createElement(SpecCard.Header, null, React__default.createElement(SpecCard.Title, null, "Base Font"), React__default.createElement(SpecCard.Controls, null, React__default.createElement(AdjustPopover, null))), React__default.createElement(SpecCard.Content, null, React__default.createElement(Typeset, null)), React__default.createElement(SpecCard.Footer, null, React__default.createElement(BaseFontMeta, null))));
 };
 
+function _templateObject4$1() {
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 1fr auto;\n  padding: 1rem 0;\n"]);
+
+  _templateObject4$1 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3$1() {
+  var data = _taggedTemplateLiteral(["\n  font-weight: ", ";\n  ", ";\n"]);
+
+  _templateObject3$1 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2$3() {
+  var data = _taggedTemplateLiteral([""]);
+
+  _templateObject2$3 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject$7() {
+  var data = _taggedTemplateLiteral([""]);
+
+  _templateObject$7 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
 //   <Detail>
 //     <Detail.Item>Font Weight</Detail.Item>
 //     <Detail.Item>{fontWeight}</Detail.Item>
 //   </Detail>
 // ))
 
+var SPECIMEN = 'The quick brown fox jumped over the lazy dog.';
+var Visual = styled__default.div(_templateObject$7());
+var Control = styled__default.div(_templateObject2$3());
+
+var mapFontWeight$1 = function mapFontWeight() {
+  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      _ref$theme = _ref.theme;
+
+  _ref$theme = _ref$theme === void 0 ? {} : _ref$theme;
+  var _ref$theme$setting = _ref$theme.setting;
+  _ref$theme$setting = _ref$theme$setting === void 0 ? {} : _ref$theme$setting;
+  var fontWeight = _ref$theme$setting.fontWeight;
+  return {
+    fontWeight: fontWeight
+  };
+};
+
+var fontWeight = function fontWeight(key) {
+  return function (props) {
+    return mapFontWeight$1(props).fontWeight[key];
+  };
+};
+
+var Specimen = styled__default.div.attrs({
+  children: SPECIMEN
+})(_templateObject3$1(), function (_ref2) {
+  var unitName = _ref2.unitName,
+      props = _objectWithoutProperties(_ref2, ["unitName"]);
+
+  return fontWeight(unitName)(props);
+}, baseTypography);
+
+var Item$1 = function Item(_ref3) {
+  var unit = _ref3.unit;
+  return React__default.createElement(Unit$1, null, React__default.createElement(Visual, null, React__default.createElement(Specimen, {
+    unitName: unit.name
+  }), React__default.createElement("div", null, "Meta")), React__default.createElement(Control, null, "Control"));
+};
+
+var Unit$1 = styled__default.div(_templateObject4$1());
+var Content$1 = make.withFontWeightContent(function (_ref4) {
+  var content = _ref4.content;
+  return content.map(function (unit, idx) {
+    return React__default.createElement(Item$1, {
+      key: idx,
+      unit: unit
+    });
+  });
+});
+
 var FontWeight$1 = function FontWeight() {
   return React__default.createElement(ui.Card, {
     pad: true,
     border: true
-  }, React__default.createElement(SpecCard, null, React__default.createElement(SpecCard.Header, null, React__default.createElement(SpecCard.Title, null, "Font Weight"), React__default.createElement(SpecCard.Controls, null, "Adjust")), React__default.createElement(SpecCard.Content, null, "Visualize"), React__default.createElement(SpecCard.Footer, null, "Footer")));
+  }, React__default.createElement(SpecCard, null, React__default.createElement(SpecCard.Header, null, React__default.createElement(SpecCard.Title, null, "Font Weight"), React__default.createElement(SpecCard.Controls, null, "Add")), React__default.createElement(SpecCard.Content, null, React__default.createElement(Content$1, null)), React__default.createElement(SpecCard.Footer, null, "Footer")));
 };
 
 exports.GlobalsInfo = Globals;
