@@ -1,27 +1,9 @@
-import React, { Fragment } from 'react'
-import connectTheme from '../../../utils/connectTheme'
-import { compose } from 'redux'
+import React from 'react'
 import { Card } from '@airtheme/ui'
 import SpecCard from '../../SpecCard'
-import Detail from '../../SpecCard/Detail'
-import {
-  mapBaseFontSize,
-  mapBaseLineHeight
-} from '../../../utils/mapThemeToProps'
 import Typeset from './Typeset'
 import AdjustPopover from './AdjustPopover'
-
-const BaseFontMeta = compose(
-  connectTheme(mapBaseFontSize),
-  connectTheme(mapBaseLineHeight)
-)(({ baseFontSize, baseLineHeight }) => (
-  <Detail>
-    <Detail.Item>Font Size</Detail.Item>
-    <Detail.Item>{baseFontSize}</Detail.Item>
-    <Detail.Item>Line Height</Detail.Item>
-    <Detail.Item>{baseLineHeight}</Detail.Item>
-  </Detail>
-))
+import BaseFontMeta from './BaseFontMeta'
 
 const BaseFont = () => (
   <Card pad border>
