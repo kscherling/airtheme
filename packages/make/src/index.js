@@ -1,5 +1,5 @@
 export { default as Provider } from './Provider'
 export { default as makeStore } from './store'
 export * from './action'
-export * from './react-utils/mapStateToProps'
+export * from './connect'
 export * from './react-utils/ui'
