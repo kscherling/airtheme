@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components'
 import { IconAdjust, Popover, UtilityButton, PopoverTabs } from '@airtheme/ui'
 import BaseLineHeight from './BaseLineHeight'
 import BaseFontSize from './BaseFontSize'
+import AdjustButton from '../../components/AdjustButton'
 
 const PopoverContent = styled.div``
 const Pad = styled.div`
@@ -54,9 +55,7 @@ const panelFor = current => {
 const AdjustPopover = () => (
   <Popover
     renderTrigger={({ ref, show, active }) => (
-      <UtilityButton innerRef={ref} active={active} onClick={show}>
-        <IconAdjust />
-      </UtilityButton>
+      <AdjustButton innerRef={ref} active={active} onClick={show} />
     )}
     renderContent={() => (
       <TabContainer

@@ -683,6 +683,10 @@ var BaseFontSize$1 = function BaseFontSize() {
   return React__default.createElement(ui.EditBaseUnitGroup, null, React__default.createElement(Input$1, null), React__default.createElement(View$1, null), React__default.createElement(Increment$1, null));
 };
 
+var AdjustButton = function AdjustButton(props) {
+  return React__default.createElement(ui.UtilityButton, props, React__default.createElement(ui.IconAdjust, null));
+};
+
 function _templateObject2$1() {
   var data = _taggedTemplateLiteral(["\n  padding: 1rem;\n"]);
 
@@ -778,11 +782,11 @@ var AdjustPopover = function AdjustPopover() {
       var ref = _ref.ref,
           show = _ref.show,
           active = _ref.active;
-      return React__default.createElement(ui.UtilityButton, {
+      return React__default.createElement(AdjustButton, {
         innerRef: ref,
         active: active,
         onClick: show
-      }, React__default.createElement(ui.IconAdjust, null));
+      });
     },
     renderContent: function renderContent() {
       return React__default.createElement(TabContainer, {
