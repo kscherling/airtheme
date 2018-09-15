@@ -3008,7 +3008,7 @@ var defaultStore = makeStore({
   theme: type.theme.base()
 });
 
-var MakeProvider = function MakeProvider(_ref) {
+var Provider = function Provider(_ref) {
   var _ref$store = _ref.store,
       store = _ref$store === void 0 ? defaultStore : _ref$store,
       children = _ref.children;
@@ -3450,7 +3450,7 @@ var THead = function THead(_ref) {
   });
 };
 
-exports.MakeProvider = MakeProvider;
+exports.Provider = Provider;
 exports.makeStore = makeStore;
 exports.updateTheme = updateTheme;
 exports.updateThemeId = updateThemeId;
