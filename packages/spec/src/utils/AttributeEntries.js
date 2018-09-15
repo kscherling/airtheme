@@ -1,5 +1,6 @@
 import React from 'react'
 
+// NOTE: Legacy from initial swatch spec
 const AttributeEntries = ({
   attribute,
   component: Component,

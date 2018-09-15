@@ -2,6 +2,7 @@ import React from 'react'
 const { compose } = require('recompose')
 import { withTheme } from 'styled-components'
 
+// NOTE: This may be unnecessary.  In any case consider moving to Make
 const connectTheme = mapThemeToProps =>
   compose(
     withTheme,

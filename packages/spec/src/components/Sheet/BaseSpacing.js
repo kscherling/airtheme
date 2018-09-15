@@ -3,7 +3,6 @@ import styled, { css } from 'styled-components'
 import { Card } from '@airtheme/ui'
 import { connect } from 'react-redux'
 import { mapBaseSpacing } from '@airtheme/make'
-import connectTheme from '../../utils/connectTheme'
 import BaseAttributeEntry from '../../utils/BaseAttributeEntry'
 const { compose } = require('recompose')
 

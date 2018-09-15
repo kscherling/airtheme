@@ -3,16 +3,10 @@ import { mapTheme } from '@airtheme/make'
 import { deserializeAttribute } from '@airtheme/type'
 import { connect } from 'react-redux'
 
+// NOTE: This also may not be necessary
+
 const firstVal = obj => Object.values(obj)[0]
-
-// take an attribute
-// deserialize
-// return
-// attribute - { unit, object, content, view}
-// deserialized - { baseLineHeight: 16px }
-
 const isEmpty = obj => Boolean(Object.keys(obj).length)
-
 const BaseAttributeEntry = ({
   attribute = {},
   theme = {},
