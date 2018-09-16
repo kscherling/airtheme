@@ -11,16 +11,10 @@ const Meta = compose(
 )(({ baseFontSize, baseLineHeight }) => (
   <Fragment>
     <MetaGroup>
-      <MetaGroup.Item>Key</MetaGroup.Item>
-      <MetaGroup.Item>baseFontSize</MetaGroup.Item>
-      <MetaGroup.Item>Font Size</MetaGroup.Item>
-      <MetaGroup.Item>{baseFontSize}</MetaGroup.Item>
-    </MetaGroup>
-    <MetaGroup>
-      <MetaGroup.Item>Key</MetaGroup.Item>
-      <MetaGroup.Item>baseLineHeight</MetaGroup.Item>
-      <MetaGroup.Item>Line Height</MetaGroup.Item>
-      <MetaGroup.Item>{baseLineHeight}</MetaGroup.Item>
+      <MetaGroup.Item>baseFont</MetaGroup.Item>
+      <MetaGroup.Item>
+        {baseFontSize} / {baseLineHeight}
+      </MetaGroup.Item>
     </MetaGroup>
   </Fragment>
 ))

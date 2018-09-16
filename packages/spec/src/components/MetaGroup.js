@@ -4,7 +4,7 @@ const MetaGroup = styled.div`
   display: grid;
   grid-auto-flow: column;
   grid-gap: 0.25rem;
-  color: #666666;
+  color: #888888;
   font-size: 70%;
   width: fit-content;
 

@@ -949,7 +949,7 @@ function _templateObject2$3() {
 }
 
 function _templateObject$7() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-auto-flow: column;\n  grid-gap: 0.25rem;\n  color: #666666;\n  font-size: 70%;\n  width: fit-content;\n\n  & + & {\n    margin-top: 0.5rem;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-auto-flow: column;\n  grid-gap: 0.25rem;\n  color: #888888;\n  font-size: 70%;\n  width: fit-content;\n\n  & + & {\n    margin-top: 0.5rem;\n  }\n"]);
 
   _templateObject$7 = function _templateObject() {
     return data;
@@ -964,7 +964,7 @@ MetaGroup.Item = Item;
 var Meta$1 = compose(connectTheme(mapBaseFontSize), connectTheme(mapBaseLineHeight))(function (_ref) {
   var baseFontSize = _ref.baseFontSize,
       baseLineHeight = _ref.baseLineHeight;
-  return React__default.createElement(React.Fragment, null, React__default.createElement(MetaGroup, null, React__default.createElement(MetaGroup.Item, null, "Key"), React__default.createElement(MetaGroup.Item, null, "baseFontSize"), React__default.createElement(MetaGroup.Item, null, "Font Size"), React__default.createElement(MetaGroup.Item, null, baseFontSize)), React__default.createElement(MetaGroup, null, React__default.createElement(MetaGroup.Item, null, "Key"), React__default.createElement(MetaGroup.Item, null, "baseLineHeight"), React__default.createElement(MetaGroup.Item, null, "Line Height"), React__default.createElement(MetaGroup.Item, null, baseLineHeight)));
+  return React__default.createElement(React.Fragment, null, React__default.createElement(MetaGroup, null, React__default.createElement(MetaGroup.Item, null, "baseFont"), React__default.createElement(MetaGroup.Item, null, baseFontSize, " / ", baseLineHeight)));
 });
 
 var Unit$3 = function Unit(_ref) {
@@ -1026,7 +1026,7 @@ var Meta$2 = connectTheme(mapFontWeight)(function (_ref) {
   var fontWeight = _ref.fontWeight,
       _ref$unit = _ref.unit,
       unit = _ref$unit === void 0 ? {} : _ref$unit;
-  return React__default.createElement(MetaGroup, null, React__default.createElement(MetaGroup.Item, null, "Key"), React__default.createElement(MetaGroup.Item, null, unit.name), React__default.createElement(MetaGroup.Item, null, "Font Weight"), React__default.createElement(MetaGroup.Item, null, fontWeight[unit.name]));
+  return React__default.createElement(MetaGroup, null, React__default.createElement(MetaGroup.Item, null, unit.name), React__default.createElement(MetaGroup.Item, null, fontWeight[unit.name]));
 });
 
 var Edit$1 = function Edit(_ref) {
