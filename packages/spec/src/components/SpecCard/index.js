@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Meta from './Meta'
 
 const SpecCard = styled.div`
   display: grid;
@@ -22,5 +23,6 @@ SpecCard.Content = Content
 SpecCard.Footer = Footer
 SpecCard.Title = Title
 SpecCard.Controls = Controls
+SpecCard.Meta = Meta
 
 export default SpecCard

@@ -494,6 +494,29 @@ var BaseSpacing = function BaseSpacing() {
   return React__default.createElement(AttributeGroup, null, React__default.createElement(BaseSpacingAttribute, null), React__default.createElement(BaseSpacingContent, null));
 };
 
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n  &:nth-child(even) {\n    font-weight: bold;\n  }\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject$2() {
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-auto-flow: column;\n  grid-gap: 0.25rem;\n  color: #666666;\n  font-size: 70%;\n  width: fit-content;\n"]);
+
+  _templateObject$2 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var Meta = styled__default.div(_templateObject$2());
+var Item = styled__default.div(_templateObject2());
+Meta.Item = Item;
+
 function _templateObject6() {
   var data = _taggedTemplateLiteral([""]);
 
@@ -534,27 +557,27 @@ function _templateObject3() {
   return data;
 }
 
-function _templateObject2() {
+function _templateObject2$1() {
   var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 1fr auto;\n  align-items: center;\n"]);
 
-  _templateObject2 = function _templateObject2() {
+  _templateObject2$1 = function _templateObject2() {
     return data;
   };
 
   return data;
 }
 
-function _templateObject$2() {
+function _templateObject$3() {
   var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-gap: 1rem;\n"]);
 
-  _templateObject$2 = function _templateObject() {
+  _templateObject$3 = function _templateObject() {
     return data;
   };
 
   return data;
 }
-var SpecCard = styled__default.div(_templateObject$2());
-var Header = styled__default.div(_templateObject2());
+var SpecCard = styled__default.div(_templateObject$3());
+var Header = styled__default.div(_templateObject2$1());
 var Content = styled__default.div(_templateObject3());
 var Footer = styled__default.div(_templateObject4());
 var Title = styled__default.div(_templateObject5());
@@ -564,6 +587,7 @@ SpecCard.Content = Content;
 SpecCard.Footer = Footer;
 SpecCard.Title = Title;
 SpecCard.Controls = Controls;
+SpecCard.Meta = Meta;
 
 var alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
@@ -580,22 +604,8 @@ var numerals = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'].join('');
 var puncuation = ['.', ':', ',', ';', '()', '{}', '[]', '!', '@', '#', '$', '%', '^', '&', '*'].join('');
 var typeset = allcase.concat(numerals, puncuation);
 
-function _templateObject$3() {
-  var data = _taggedTemplateLiteral(["\n  line-height: ", ";\n  font-size: ", ";\n"]);
-
-  _templateObject$3 = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-var baseTypography = function baseTypography(_ref) {
-  var theme = _ref.theme;
-  return styled.css(_templateObject$3(), theme.baseLineHeight, theme.baseFontSize);
-};
-
 function _templateObject$4() {
-  var data = _taggedTemplateLiteral(["\n  transform: font-size 0.2s linear;\n  word-break: break-all;\n  ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  line-height: ", ";\n  font-size: ", ";\n"]);
 
   _templateObject$4 = function _templateObject() {
     return data;
@@ -603,7 +613,21 @@ function _templateObject$4() {
 
   return data;
 }
-var TypesetContainer = styled__default.div(_templateObject$4(), baseTypography);
+var baseTypography = function baseTypography(_ref) {
+  var theme = _ref.theme;
+  return styled.css(_templateObject$4(), theme.baseLineHeight, theme.baseFontSize);
+};
+
+function _templateObject$5() {
+  var data = _taggedTemplateLiteral(["\n  transform: font-size 0.2s linear;\n  word-break: break-all;\n  ", ";\n"]);
+
+  _templateObject$5 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var TypesetContainer = styled__default.div(_templateObject$5(), baseTypography);
 
 var Specimen = function Specimen() {
   return React__default.createElement(TypesetContainer, null, React__default.createElement("div", null, uppercase), React__default.createElement("div", null, lowercase), React__default.createElement("div", null, numerals), React__default.createElement("div", null, puncuation));
@@ -687,27 +711,27 @@ var AdjustButton = function AdjustButton(props) {
   return React__default.createElement(ui.UtilityButton, props, React__default.createElement(ui.IconAdjust, null));
 };
 
-function _templateObject2$1() {
+function _templateObject2$2() {
   var data = _taggedTemplateLiteral(["\n  padding: 1rem;\n"]);
 
-  _templateObject2$1 = function _templateObject2() {
+  _templateObject2$2 = function _templateObject2() {
     return data;
   };
 
   return data;
 }
 
-function _templateObject$5() {
+function _templateObject$6() {
   var data = _taggedTemplateLiteral([""]);
 
-  _templateObject$5 = function _templateObject() {
+  _templateObject$6 = function _templateObject() {
     return data;
   };
 
   return data;
 }
-var PopoverContent = styled__default.div(_templateObject$5());
-var Pad = styled__default.div(_templateObject2$1());
+var PopoverContent = styled__default.div(_templateObject$6());
+var Pad = styled__default.div(_templateObject2$2());
 
 var TabContainer =
 /*#__PURE__*/
@@ -968,33 +992,10 @@ var connectTheme = function connectTheme(mapThemeToProps) {
   });
 };
 
-function _templateObject2$2() {
-  var data = _taggedTemplateLiteral(["\n  &:nth-child(even) {\n    font-weight: bold;\n  }\n"]);
-
-  _templateObject2$2 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject$6() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-auto-flow: column;\n  grid-gap: 0.25rem;\n  color: #666666;\n  font-size: 70%;\n  width: fit-content;\n"]);
-
-  _templateObject$6 = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-var Detail = styled__default.div(_templateObject$6());
-var Item = styled__default.div(_templateObject2$2());
-Detail.Item = Item;
-
 var BaseFontMeta = compose(connectTheme(mapBaseFontSize), connectTheme(mapBaseLineHeight))(function (_ref) {
   var baseFontSize = _ref.baseFontSize,
       baseLineHeight = _ref.baseLineHeight;
-  return React__default.createElement(Detail, null, React__default.createElement(Detail.Item, null, "Font Size"), React__default.createElement(Detail.Item, null, baseFontSize), React__default.createElement(Detail.Item, null, "Line Height"), React__default.createElement(Detail.Item, null, baseLineHeight));
+  return React__default.createElement(Meta, null, React__default.createElement(Meta.Item, null, "Font Size"), React__default.createElement(Meta.Item, null, baseFontSize), React__default.createElement(Meta.Item, null, "Line Height"), React__default.createElement(Meta.Item, null, baseLineHeight));
 });
 
 var BaseFont = function BaseFont() {
@@ -1101,6 +1102,13 @@ var Specimen$1 = styled__default.div.attrs({
   return fontWeight(name)(props);
 }, baseTypography);
 
+var Meta$1 = connectTheme(mapFontWeight)(function (_ref) {
+  var fontWeight = _ref.fontWeight,
+      _ref$unit = _ref.unit,
+      unit = _ref$unit === void 0 ? {} : _ref$unit;
+  return React__default.createElement(SpecCard.Meta, null, React__default.createElement(SpecCard.Meta.Item, null), React__default.createElement(SpecCard.Meta.Item, null, unit.name), React__default.createElement(SpecCard.Meta.Item, null, "Font Weight"), React__default.createElement(SpecCard.Meta.Item, null, fontWeight[unit.name]));
+});
+
 function _templateObject3$1() {
   var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 1fr auto;\n  padding: 1rem 0;\n"]);
 
@@ -1130,20 +1138,14 @@ function _templateObject$9() {
 
   return data;
 }
-var Meta = connectTheme(mapFontWeight)(function (_ref) {
-  var fontWeight = _ref.fontWeight,
-      _ref$unit = _ref.unit,
-      unit = _ref$unit === void 0 ? {} : _ref$unit;
-  return React__default.createElement(Detail, null, React__default.createElement(Detail.Item, null), React__default.createElement(Detail.Item, null, unit.name), React__default.createElement(Detail.Item, null, "Font Weight"), React__default.createElement(Detail.Item, null, fontWeight[unit.name]));
-});
 var Visual = styled__default.div(_templateObject$9());
 var Control = styled__default.div(_templateObject2$3());
 
-var Item$1 = function Item(_ref2) {
-  var unit = _ref2.unit;
+var Item$1 = function Item(_ref) {
+  var unit = _ref.unit;
   return React__default.createElement(Unit$1, null, React__default.createElement(Visual, null, React__default.createElement(Specimen$1, {
     unit: unit
-  }), React__default.createElement(Meta, {
+  }), React__default.createElement(Meta$1, {
     unit: unit
   })), React__default.createElement(Control, null, React__default.createElement(AdjustPopover$1, {
     unit: unit
@@ -1151,8 +1153,8 @@ var Item$1 = function Item(_ref2) {
 };
 
 var Unit$1 = styled__default.div(_templateObject3$1());
-var Content$1 = make.withFontWeightContent(function (_ref3) {
-  var content = _ref3.content;
+var Content$1 = make.withFontWeightContent(function (_ref2) {
+  var content = _ref2.content;
   return content.map(function (unit, idx) {
     return React__default.createElement(Item$1, {
       key: idx,

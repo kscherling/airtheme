@@ -2,18 +2,18 @@ import React from 'react'
 import { compose } from 'redux'
 import { mapBaseFontSize, mapBaseLineHeight } from '../../utils/mapThemeToProps'
 import connectTheme from '../../utils/connectTheme'
-import Detail from '../../components/SpecCard/Detail'
+import Meta from '../../components/SpecCard/Meta'
 
 const BaseFontMeta = compose(
   connectTheme(mapBaseFontSize),
   connectTheme(mapBaseLineHeight)
 )(({ baseFontSize, baseLineHeight }) => (
-  <Detail>
-    <Detail.Item>Font Size</Detail.Item>
-    <Detail.Item>{baseFontSize}</Detail.Item>
-    <Detail.Item>Line Height</Detail.Item>
-    <Detail.Item>{baseLineHeight}</Detail.Item>
-  </Detail>
+  <Meta>
+    <Meta.Item>Font Size</Meta.Item>
+    <Meta.Item>{baseFontSize}</Meta.Item>
+    <Meta.Item>Line Height</Meta.Item>
+    <Meta.Item>{baseLineHeight}</Meta.Item>
+  </Meta>
 ))
 
 export default BaseFontMeta

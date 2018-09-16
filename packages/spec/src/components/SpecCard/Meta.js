@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Detail = styled.div`
+const Meta = styled.div`
   display: grid;
   grid-auto-flow: column;
   grid-gap: 0.25rem;
@@ -14,6 +14,6 @@ const Item = styled.div`
   }
 `
 
-Detail.Item = Item
+Meta.Item = Item
 
-export default Detail
+export default Meta

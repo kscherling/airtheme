@@ -1,23 +1,12 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
-import connectTheme from '../../utils/connectTheme'
 import { compose } from 'redux'
 import { Card } from '@airtheme/ui'
 import SpecCard from '../../components/SpecCard'
-import Detail from '../../components/SpecCard/Detail'
 import { withFontWeightAttribute, withFontWeightContent } from '@airtheme/make'
 import AdjustPopover from './AdjustPopover'
-import { mapFontWeight as mapThemeFontWeight } from '../../utils/mapThemeToProps'
 import Specimen from './Specimen'
-
-const Meta = connectTheme(mapThemeFontWeight)(({ fontWeight, unit = {} }) => (
-  <Detail>
-    <Detail.Item />
-    <Detail.Item>{unit.name}</Detail.Item>
-    <Detail.Item>Font Weight</Detail.Item>
-    <Detail.Item>{fontWeight[unit.name]}</Detail.Item>
-  </Detail>
-))
+import Meta from './Meta'
 
 const Visual = styled.div`
   display: grid;
