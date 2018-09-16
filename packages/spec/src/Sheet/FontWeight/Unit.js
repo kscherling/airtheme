@@ -3,6 +3,7 @@ import Spec from '../../components/Spec'
 import Specimen from './Specimen'
 import Meta from './Meta'
 import EditPopover from './EditPopover'
+import Delete from './Delete'
 
 const Unit = ({ unit }) => (
   <Spec.Unit>
@@ -13,6 +14,7 @@ const Unit = ({ unit }) => (
       <Meta unit={unit} />
     </Spec.Unit.Meta>
     <Spec.Unit.Actions>
+      <Delete unit={unit} />
       <EditPopover unit={unit} />
     </Spec.Unit.Actions>
   </Spec.Unit>

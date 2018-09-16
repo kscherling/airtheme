@@ -19,6 +19,10 @@ const Meta = styled.div`
 `
 const Actions = styled.div`
   grid-area: actions;
+  display: grid;
+  grid-auto-flow: column;
+  grid-column-gap: 0.5rem;
+  align-items: flex-start;
 `
 
 Unit.Specimen = Specimen

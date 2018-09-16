@@ -410,7 +410,7 @@ var BaseSpacing = function BaseSpacing() {
 };
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n  grid-area: actions;\n"]);
+  var data = _taggedTemplateLiteral(["\n  grid-area: actions;\n  display: grid;\n  grid-auto-flow: column;\n  grid-column-gap: 0.5rem;\n  align-items: flex-start;\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -1075,13 +1075,25 @@ var EditPopover$1 = function EditPopover(_ref) {
   });
 };
 
+var Delete = make.withFontWeightContent(function (_ref) {
+  var removeFontWeight = _ref.removeFontWeight,
+      unit = _ref.unit;
+  return React__default.createElement(ui.UtilityButton, {
+    onClick: function onClick() {
+      return removeFontWeight(unit);
+    }
+  }, React__default.createElement(ui.IconTrash, null));
+});
+
 var Unit$4 = function Unit(_ref) {
   var unit = _ref.unit;
   return React__default.createElement(Spec.Unit, null, React__default.createElement(Spec.Unit.Specimen, null, React__default.createElement(Specimen$2, {
     unit: unit
   })), React__default.createElement(Spec.Unit.Meta, null, React__default.createElement(Meta$2, {
     unit: unit
-  })), React__default.createElement(Spec.Unit.Actions, null, React__default.createElement(EditPopover$1, {
+  })), React__default.createElement(Spec.Unit.Actions, null, React__default.createElement(Delete, {
+    unit: unit
+  }), React__default.createElement(EditPopover$1, {
     unit: unit
   })));
 };
