@@ -572,111 +572,8 @@ var Specimen$1 = function Specimen() {
   return React__default.createElement(TypesetContainer, null, React__default.createElement("div", null, uppercase), React__default.createElement("div", null, lowercase), React__default.createElement("div", null, numerals), React__default.createElement("div", null, puncuation));
 };
 
-var Increment = make.withBaseLineHeightContent(function (_ref) {
-  var _ref$content = _ref.content,
-      content = _ref$content === void 0 ? {} : _ref$content,
-      updateBaseLineHeight = _ref.updateBaseLineHeight;
-  return React__default.createElement(ui.IncrementUnit, {
-    update: updateBaseLineHeight,
-    unit: content,
-    options: {
-      step: 0.05
-    },
-    castValueTo: core.castNumber
-  });
-});
-var Input = make.withBaseLineHeightContent(function (_ref2) {
-  var _ref2$content = _ref2.content,
-      content = _ref2$content === void 0 ? {} : _ref2$content,
-      updateBaseLineHeight = _ref2.updateBaseLineHeight;
-  return React__default.createElement(ui.InputUnitValue, {
-    update: updateBaseLineHeight,
-    unit: content,
-    castValueTo: core.castNumber
-  });
-});
-var View = make.withBaseLineHeightAttribute(function (_ref3) {
-  var _ref3$baseLineHeight = _ref3.baseLineHeight,
-      view = _ref3$baseLineHeight.view,
-      viewable = _ref3$baseLineHeight.viewable;
-  return React__default.createElement(ui.ViewUnit, {
-    view: view,
-    viewable: viewable
-  });
-});
-
-var BaseLineHeight$1 = function BaseLineHeight() {
-  return React__default.createElement(ui.EditBaseUnitGroup, null, React__default.createElement(Input, null), React__default.createElement(View, null), React__default.createElement(Increment, null));
-};
-
-var Increment$1 = make.withBaseFontSizeContent(function (_ref) {
-  var _ref$content = _ref.content,
-      content = _ref$content === void 0 ? {} : _ref$content,
-      updateBaseFontSize = _ref.updateBaseFontSize;
-  return React__default.createElement(ui.IncrementUnit, {
-    update: updateBaseFontSize,
-    unit: content,
-    options: {
-      step: 1
-    },
-    castValueTo: core.castNumber
-  });
-});
-var Input$1 = make.withBaseFontSizeContent(function (_ref2) {
-  var _ref2$content = _ref2.content,
-      content = _ref2$content === void 0 ? {} : _ref2$content,
-      updateBaseFontSize = _ref2.updateBaseFontSize;
-  return React__default.createElement(ui.InputUnitValue, {
-    update: updateBaseFontSize,
-    unit: content,
-    castValueTo: core.castNumber
-  });
-});
-var View$1 = make.withBaseFontSizeAttribute(function (_ref3) {
-  var _ref3$baseFontSize = _ref3.baseFontSize,
-      view = _ref3$baseFontSize.view,
-      viewable = _ref3$baseFontSize.viewable;
-  return React__default.createElement(ui.ViewUnit, {
-    view: view,
-    viewable: viewable
-  });
-});
-
-var BaseFontSize$1 = function BaseFontSize() {
-  return React__default.createElement(ui.EditBaseUnitGroup, null, React__default.createElement(Input$1, null), React__default.createElement(View$1, null), React__default.createElement(Increment$1, null));
-};
-
 var AdjustButton = function AdjustButton(props) {
   return React__default.createElement(ui.UtilityButton, props, React__default.createElement(ui.IconAdjust, null));
-};
-
-function _templateObject$6() {
-  var data = _taggedTemplateLiteral(["\n  padding: 1rem;\n"]);
-
-  _templateObject$6 = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-var Pad = styled__default.div(_templateObject$6());
-
-var AdjustPopover = function AdjustPopover() {
-  return React__default.createElement(ui.Popover, {
-    renderTrigger: function renderTrigger(_ref) {
-      var ref = _ref.ref,
-          show = _ref.show,
-          active = _ref.active;
-      return React__default.createElement(AdjustButton, {
-        innerRef: ref,
-        active: active,
-        onClick: show
-      });
-    },
-    renderContent: function renderContent() {
-      return React__default.createElement(Pad, null, React__default.createElement(BaseFontSize$1, null), React__default.createElement(BaseLineHeight$1, null));
-    }
-  });
 };
 
 function symbolObservablePonyfill(root) {
@@ -800,6 +697,213 @@ if (process.env.NODE_ENV !== 'production' && typeof isCrushed.name === 'string' 
   warning("You are currently using minified code outside of NODE_ENV === 'production'. " + 'This means that you are running a slower development build of Redux. ' + 'You can use loose-envify (https://github.com/zertosh/loose-envify) for browserify ' + 'or DefinePlugin for webpack (http://stackoverflow.com/questions/30030031) ' + 'to ensure you have the correct code for your production build.');
 }
 
+function _templateObject7() {
+  var data = _taggedTemplateLiteral([""]);
+
+  _templateObject7 = function _templateObject7() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject6$1() {
+  var data = _taggedTemplateLiteral(["\n  ", ";\n\n  > div {\n    padding: 0.5rem;\n  }\n"]);
+
+  _templateObject6$1 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject5$1() {
+  var data = _taggedTemplateLiteral([""]);
+
+  _templateObject5$1 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4$2() {
+  var data = _taggedTemplateLiteral(["\n  ", ";\n"]);
+
+  _templateObject4$2 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3$2() {
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n"]);
+
+  _templateObject3$2 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2$2() {
+  var data = _taggedTemplateLiteral(["\n    display: grid;\n    grid-template-columns: 1fr auto;\n  "]);
+
+  _templateObject2$2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject$6() {
+  var data = _taggedTemplateLiteral(["\n  border-bottom: 1px solid #eee;\n"]);
+
+  _templateObject$6 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var divider = styled.css(_templateObject$6());
+
+var incrementGroup = function incrementGroup(_ref) {
+  var incrementGroup = _ref.incrementGroup;
+  return incrementGroup && styled.css(_templateObject2$2());
+};
+
+var EditForm = styled__default.div(_templateObject3$2());
+var Name$1 = styled__default.div(_templateObject4$2(), divider);
+var Units = styled__default.div(_templateObject5$1());
+var Unit$2 = styled__default.div(_templateObject6$1(), incrementGroup);
+var Footer$1 = styled__default.div(_templateObject7());
+EditForm.Name = Name$1;
+EditForm.Units = Units;
+EditForm.Units.Unit = Unit$2;
+EditForm.Footer = Footer$1;
+
+var Increment = function Increment(_ref) {
+  var unit = _ref.unit,
+      update = _ref.update;
+  return React__default.createElement(ui.IncrementUnit, {
+    update: update,
+    unit: unit,
+    options: {
+      step: 0.05
+    },
+    castValueTo: core.castNumber
+  });
+};
+
+var Input = function Input(_ref2) {
+  var unit = _ref2.unit,
+      update = _ref2.update;
+  return React__default.createElement(ui.InputUnitValue, {
+    update: update,
+    unit: unit,
+    castValueTo: core.castNumber
+  });
+};
+
+var BaseLineHeight$1 = function BaseLineHeight(_ref3) {
+  var _ref3$content = _ref3.content,
+      content = _ref3$content === void 0 ? {} : _ref3$content,
+      updateBaseLineHeight = _ref3.updateBaseLineHeight;
+  return React__default.createElement(React.Fragment, null, React__default.createElement(Input, {
+    update: updateBaseLineHeight,
+    unit: content
+  }), React__default.createElement(Increment, {
+    update: updateBaseLineHeight,
+    unit: content
+  }));
+};
+
+var EditBaseLineHeight = make.withBaseLineHeightContent(BaseLineHeight$1);
+
+var Increment$1 = function Increment(_ref) {
+  var unit = _ref.unit,
+      update = _ref.update;
+  return React__default.createElement(ui.IncrementUnit, {
+    update: update,
+    unit: unit,
+    options: {
+      step: 1
+    },
+    castValueTo: core.castNumber
+  });
+};
+
+var Input$1 = function Input(_ref2) {
+  var unit = _ref2.unit,
+      update = _ref2.update;
+  return React__default.createElement(ui.InputUnitValue, {
+    update: update,
+    unit: unit,
+    castValueTo: core.castNumber
+  });
+};
+
+var BaseFontSize$1 = function BaseFontSize(_ref3) {
+  var _ref3$content = _ref3.content,
+      content = _ref3$content === void 0 ? {} : _ref3$content,
+      updateBaseFontSize = _ref3.updateBaseFontSize;
+  return React__default.createElement(React.Fragment, null, React__default.createElement(Input$1, {
+    update: updateBaseFontSize,
+    unit: content
+  }), React__default.createElement(Increment$1, {
+    update: updateBaseFontSize,
+    unit: content
+  }));
+};
+
+var EditBaseFontSize = make.withBaseFontSizeContent(BaseFontSize$1);
+
+var BaseFontSizeInput = make.withBaseFontSizeContent(function (_ref) {
+  var updateBaseFontSize = _ref.updateBaseFontSize,
+      content = _ref.content;
+  return React__default.createElement(ui.InputUnitName, {
+    disabled: true,
+    update: updateBaseFontSize,
+    unit: content
+  });
+});
+var BaseLineHeightInput = make.withBaseLineHeightContent(function (_ref2) {
+  var updateBaseLineHeight = _ref2.updateBaseLineHeight,
+      content = _ref2.content;
+  return React__default.createElement(ui.InputUnitName, {
+    disabled: true,
+    update: updateBaseLineHeight,
+    unit: content
+  });
+});
+
+var Edit = function Edit() {
+  return React__default.createElement(EditForm, null, React__default.createElement(EditForm.Name, null, React__default.createElement(BaseFontSizeInput, null)), React__default.createElement(EditForm.Units, null, React__default.createElement(EditForm.Units.Unit, {
+    incrementGroup: true
+  }, React__default.createElement(EditBaseFontSize, null))), React__default.createElement(EditForm.Name, null, React__default.createElement(BaseLineHeightInput, null)), React__default.createElement(EditForm.Units, null, React__default.createElement(EditForm.Units.Unit, {
+    incrementGroup: true
+  }, React__default.createElement(EditBaseLineHeight, null))), React__default.createElement(EditForm.Footer, null));
+};
+
+var EditPopover = function EditPopover() {
+  return React__default.createElement(ui.Popover, {
+    renderTrigger: function renderTrigger(_ref) {
+      var ref = _ref.ref,
+          show = _ref.show,
+          active = _ref.active;
+      return React__default.createElement(AdjustButton, {
+        innerRef: ref,
+        active: active,
+        onClick: show
+      });
+    },
+    renderContent: function renderContent() {
+      return React__default.createElement(Edit, null);
+    }
+  });
+};
+
 var _require = require('recompose'),
     compose$1 = _require.compose;
 
@@ -834,10 +938,10 @@ var mapFontWeight = function mapFontWeight(_ref4) {
   };
 };
 
-function _templateObject2$2() {
+function _templateObject2$3() {
   var data = _taggedTemplateLiteral(["\n  &:nth-child(even) {\n    font-weight: bold;\n  }\n"]);
 
-  _templateObject2$2 = function _templateObject2() {
+  _templateObject2$3 = function _templateObject2() {
     return data;
   };
 
@@ -854,7 +958,7 @@ function _templateObject$7() {
   return data;
 }
 var MetaGroup = styled__default.div(_templateObject$7());
-var Item = styled__default.div(_templateObject2$2());
+var Item = styled__default.div(_templateObject2$3());
 MetaGroup.Item = Item;
 
 var Meta$1 = compose(connectTheme(mapBaseFontSize), connectTheme(mapBaseLineHeight))(function (_ref) {
@@ -863,13 +967,13 @@ var Meta$1 = compose(connectTheme(mapBaseFontSize), connectTheme(mapBaseLineHeig
   return React__default.createElement(React.Fragment, null, React__default.createElement(MetaGroup, null, React__default.createElement(MetaGroup.Item, null, "Key"), React__default.createElement(MetaGroup.Item, null, "baseFontSize"), React__default.createElement(MetaGroup.Item, null, "Font Size"), React__default.createElement(MetaGroup.Item, null, baseFontSize)), React__default.createElement(MetaGroup, null, React__default.createElement(MetaGroup.Item, null, "Key"), React__default.createElement(MetaGroup.Item, null, "baseLineHeight"), React__default.createElement(MetaGroup.Item, null, "Line Height"), React__default.createElement(MetaGroup.Item, null, baseLineHeight)));
 });
 
-var Unit$2 = function Unit(_ref) {
+var Unit$3 = function Unit(_ref) {
   var unit = _ref.unit;
-  return React__default.createElement(Spec.Unit, null, React__default.createElement(Spec.Unit.Specimen, null, React__default.createElement(Specimen$1, null)), React__default.createElement(Spec.Unit.Meta, null, React__default.createElement(Meta$1, null)), React__default.createElement(Spec.Unit.Actions, null, React__default.createElement(AdjustPopover, null)));
+  return React__default.createElement(Spec.Unit, null, React__default.createElement(Spec.Unit.Specimen, null, React__default.createElement(Specimen$1, null)), React__default.createElement(Spec.Unit.Meta, null, React__default.createElement(Meta$1, null)), React__default.createElement(Spec.Unit.Actions, null, React__default.createElement(EditPopover, null)));
 };
 
 var Content$1 = function Content() {
-  return React__default.createElement(Unit$2, null);
+  return React__default.createElement(Unit$3, null);
 };
 
 var BaseFont = function BaseFont() {
@@ -925,92 +1029,9 @@ var Meta$2 = connectTheme(mapFontWeight)(function (_ref) {
   return React__default.createElement(MetaGroup, null, React__default.createElement(MetaGroup.Item, null, "Key"), React__default.createElement(MetaGroup.Item, null, unit.name), React__default.createElement(MetaGroup.Item, null, "Font Weight"), React__default.createElement(MetaGroup.Item, null, fontWeight[unit.name]));
 });
 
-function _templateObject7() {
-  var data = _taggedTemplateLiteral([""]);
-
-  _templateObject7 = function _templateObject7() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject6$1() {
-  var data = _taggedTemplateLiteral(["\n      display: grid;\n      grid-template-columns: 1fr auto;\n    "]);
-
-  _templateObject6$1 = function _templateObject6() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject5$1() {
-  var data = _taggedTemplateLiteral(["\n  ", ";\n\n  > div {\n    padding: 0.5rem;\n  }\n"]);
-
-  _templateObject5$1 = function _templateObject5() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject4$2() {
-  var data = _taggedTemplateLiteral([""]);
-
-  _templateObject4$2 = function _templateObject4() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject3$2() {
-  var data = _taggedTemplateLiteral(["\n  ", ";\n"]);
-
-  _templateObject3$2 = function _templateObject3() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject2$3() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n"]);
-
-  _templateObject2$3 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject$9() {
-  var data = _taggedTemplateLiteral(["\n  border-bottom: 1px solid #eee;\n"]);
-
-  _templateObject$9 = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-var divider = styled.css(_templateObject$9());
-var EditForm = styled__default.div(_templateObject2$3());
-var Name$1 = styled__default.div(_templateObject3$2(), divider);
-var Units = styled__default.div(_templateObject4$2());
-var Unit$3 = styled__default.div(_templateObject5$1(), function (_ref) {
-  var incrementGroup = _ref.incrementGroup;
-  return incrementGroup && styled.css(_templateObject6$1());
-});
-var Footer$1 = styled__default.div(_templateObject7());
-EditForm.Name = Name$1;
-EditForm.Units = Units;
-EditForm.Units.Unit = Unit$3;
-EditForm.Footer = Footer$1;
-
-var Edit = function Edit(_ref2) {
-  var updateFontWeight = _ref2.updateFontWeight,
-      unit = _ref2.unit;
+var Edit$1 = function Edit(_ref) {
+  var updateFontWeight = _ref.updateFontWeight,
+      unit = _ref.unit;
   return React__default.createElement(EditForm, null, React__default.createElement(EditForm.Name, null, React__default.createElement(ui.InputUnitName, {
     update: updateFontWeight,
     unit: unit
@@ -1031,9 +1052,9 @@ var Edit = function Edit(_ref2) {
   }))), React__default.createElement(EditForm.Footer, null));
 };
 
-var Edit$1 = make.withFontWeightContent(Edit);
+var Edit$2 = make.withFontWeightContent(Edit$1);
 
-var EditPopover = function EditPopover(_ref) {
+var EditPopover$1 = function EditPopover(_ref) {
   var unit = _ref.unit;
   return React__default.createElement(ui.Popover, {
     renderTrigger: function renderTrigger(_ref2) {
@@ -1047,7 +1068,7 @@ var EditPopover = function EditPopover(_ref) {
       });
     },
     renderContent: function renderContent() {
-      return React__default.createElement(Edit$1, {
+      return React__default.createElement(Edit$2, {
         unit: unit
       });
     }
@@ -1060,7 +1081,7 @@ var Unit$4 = function Unit(_ref) {
     unit: unit
   })), React__default.createElement(Spec.Unit.Meta, null, React__default.createElement(Meta$2, {
     unit: unit
-  })), React__default.createElement(Spec.Unit.Actions, null, React__default.createElement(EditPopover, {
+  })), React__default.createElement(Spec.Unit.Actions, null, React__default.createElement(EditPopover$1, {
     unit: unit
   })));
 };

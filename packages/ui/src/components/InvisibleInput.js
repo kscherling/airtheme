@@ -12,6 +12,10 @@ const InvisibleInput = styled.input.attrs({
   &:focus,
   &:active {
   }
+
+  &:disabled {
+    color: #999;
+  }
 `
 
 export default InvisibleInput

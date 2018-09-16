@@ -1,50 +1,26 @@
 import React, { Fragment } from 'react'
-import styled, { css } from 'styled-components'
-import {
-  IncrementUnit,
-  InputUnitValue,
-  EditBaseUnitGroup,
-  ViewUnit
-} from '@airtheme/ui'
-import {
-  withBaseLineHeightContent,
-  withBaseLineHeightAttribute
-} from '@airtheme/make'
+import { IncrementUnit, InputUnitValue } from '@airtheme/ui'
+import { withBaseLineHeightContent } from '@airtheme/make'
 import { castNumber } from '@airtheme/core'
 
-const Increment = withBaseLineHeightContent(
-  ({ content = {}, updateBaseLineHeight }) => (
-    <IncrementUnit
-      update={updateBaseLineHeight}
-      unit={content}
-      options={{ step: 0.05 }}
-      castValueTo={castNumber}
-    />
-  )
+const Increment = ({ unit, update }) => (
+  <IncrementUnit
+    update={update}
+    unit={unit}
+    options={{ step: 0.05 }}
+    castValueTo={castNumber}
+  />
 )
 
-const Input = withBaseLineHeightContent(
-  ({ content = {}, updateBaseLineHeight }) => (
-    <InputUnitValue
-      update={updateBaseLineHeight}
-      unit={content}
-      castValueTo={castNumber}
-    />
-  )
+const Input = ({ unit, update }) => (
+  <InputUnitValue update={update} unit={unit} castValueTo={castNumber} />
 )
 
-const View = withBaseLineHeightAttribute(
-  ({ baseLineHeight: { view, viewable } }) => (
-    <ViewUnit view={view} viewable={viewable} />
-  )
+const BaseLineHeight = ({ content = {}, updateBaseLineHeight }) => (
+  <Fragment>
+    <Input update={updateBaseLineHeight} unit={content} />
+    <Increment update={updateBaseLineHeight} unit={content} />
+  </Fragment>
 )
 
-const BaseLineHeight = () => (
-  <EditBaseUnitGroup>
-    <Input />
-    <View />
-    <Increment />
-  </EditBaseUnitGroup>
-)
-
-export default BaseLineHeight
+export default withBaseLineHeightContent(BaseLineHeight)

@@ -1,50 +1,26 @@
 import React, { Fragment } from 'react'
-import styled, { css } from 'styled-components'
-import {
-  IncrementUnit,
-  InputUnitValue,
-  EditBaseUnitGroup,
-  ViewUnit
-} from '@airtheme/ui'
-import {
-  withBaseFontSizeContent,
-  withBaseFontSizeAttribute
-} from '@airtheme/make'
+import { IncrementUnit, InputUnitValue } from '@airtheme/ui'
+import { withBaseFontSizeContent } from '@airtheme/make'
 import { castNumber } from '@airtheme/core'
 
-const Increment = withBaseFontSizeContent(
-  ({ content = {}, updateBaseFontSize }) => (
-    <IncrementUnit
-      update={updateBaseFontSize}
-      unit={content}
-      options={{ step: 1 }}
-      castValueTo={castNumber}
-    />
-  )
+const Increment = ({ unit, update }) => (
+  <IncrementUnit
+    update={update}
+    unit={unit}
+    options={{ step: 1 }}
+    castValueTo={castNumber}
+  />
 )
 
-const Input = withBaseFontSizeContent(
-  ({ content = {}, updateBaseFontSize }) => (
-    <InputUnitValue
-      update={updateBaseFontSize}
-      unit={content}
-      castValueTo={castNumber}
-    />
-  )
+const Input = ({ unit, update }) => (
+  <InputUnitValue update={update} unit={unit} castValueTo={castNumber} />
 )
 
-const View = withBaseFontSizeAttribute(
-  ({ baseFontSize: { view, viewable } }) => (
-    <ViewUnit view={view} viewable={viewable} />
-  )
+const BaseFontSize = ({ content = {}, updateBaseFontSize }) => (
+  <Fragment>
+    <Input update={updateBaseFontSize} unit={content} />
+    <Increment update={updateBaseFontSize} unit={content} />
+  </Fragment>
 )
 
-const BaseFontSize = () => (
-  <EditBaseUnitGroup>
-    <Input />
-    <View />
-    <Increment />
-  </EditBaseUnitGroup>
-)
-
-export default BaseFontSize
+export default withBaseFontSizeContent(BaseFontSize)
