@@ -27,74 +27,6 @@ function _typeof(obj) {
   return _typeof(obj);
 }
 
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-
-function _defineProperties(target, props) {
-  for (var i = 0; i < props.length; i++) {
-    var descriptor = props[i];
-    descriptor.enumerable = descriptor.enumerable || false;
-    descriptor.configurable = true;
-    if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, descriptor.key, descriptor);
-  }
-}
-
-function _createClass(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties(Constructor, staticProps);
-  return Constructor;
-}
-
-function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-
-  return obj;
-}
-
-function _inherits(subClass, superClass) {
-  if (typeof superClass !== "function" && superClass !== null) {
-    throw new TypeError("Super expression must either be null or a function");
-  }
-
-  subClass.prototype = Object.create(superClass && superClass.prototype, {
-    constructor: {
-      value: subClass,
-      writable: true,
-      configurable: true
-    }
-  });
-  if (superClass) _setPrototypeOf(subClass, superClass);
-}
-
-function _getPrototypeOf(o) {
-  _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
-    return o.__proto__ || Object.getPrototypeOf(o);
-  };
-  return _getPrototypeOf(o);
-}
-
-function _setPrototypeOf(o, p) {
-  _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
-    o.__proto__ = p;
-    return o;
-  };
-
-  return _setPrototypeOf(o, p);
-}
-
 function _objectWithoutPropertiesLoose(source, excluded) {
   if (source == null) return {};
   var target = {};
@@ -129,22 +61,6 @@ function _objectWithoutProperties(source, excluded) {
   }
 
   return target;
-}
-
-function _assertThisInitialized(self) {
-  if (self === void 0) {
-    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-  }
-
-  return self;
-}
-
-function _possibleConstructorReturn(self, call) {
-  if (call && (typeof call === "object" || typeof call === "function")) {
-    return call;
-  }
-
-  return _assertThisInitialized(self);
 }
 
 function _taggedTemplateLiteral(strings, raw) {
@@ -734,18 +650,8 @@ var AdjustButton = function AdjustButton(props) {
   return React__default.createElement(ui.UtilityButton, props, React__default.createElement(ui.IconAdjust, null));
 };
 
-function _templateObject2$2() {
-  var data = _taggedTemplateLiteral(["\n  padding: 1rem;\n"]);
-
-  _templateObject2$2 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
 function _templateObject$6() {
-  var data = _taggedTemplateLiteral([""]);
+  var data = _taggedTemplateLiteral(["\n  padding: 1rem;\n"]);
 
   _templateObject$6 = function _templateObject() {
     return data;
@@ -753,62 +659,7 @@ function _templateObject$6() {
 
   return data;
 }
-var PopoverContent = styled__default.div(_templateObject$6());
-var Pad = styled__default.div(_templateObject2$2());
-
-var TabContainer =
-/*#__PURE__*/
-function (_Component) {
-  _inherits(TabContainer, _Component);
-
-  function TabContainer(props) {
-    var _this;
-
-    _classCallCheck(this, TabContainer);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(TabContainer).call(this, props));
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "update", function (updated) {
-      return _this.setState({
-        current: updated
-      });
-    });
-
-    _this.state = {
-      current: props.default
-    };
-    return _this;
-  }
-
-  _createClass(TabContainer, [{
-    key: "render",
-    value: function render() {
-      var update = this.update;
-      var _this$props = this.props,
-          renderTabs = _this$props.renderTabs,
-          renderContent = _this$props.renderContent;
-      var current = this.state.current;
-      return React__default.createElement(React.Fragment, null, React__default.createElement(ui.PopoverTabs, null, renderTabs({
-        update: update,
-        current: current
-      })), React__default.createElement(PopoverContent, null, renderContent({
-        current: current
-      })));
-    }
-  }]);
-
-  return TabContainer;
-}(React.Component);
-
-_defineProperty(TabContainer, "defaultProps", {
-  default: '',
-  renderTabs: function renderTabs() {
-    return null;
-  },
-  renderContent: function renderContent() {
-    return null;
-  }
-});
+var Pad = styled__default.div(_templateObject$6());
 
 var panelFor = function panelFor(current) {
   switch (current) {
@@ -836,16 +687,16 @@ var AdjustPopover = function AdjustPopover() {
       });
     },
     renderContent: function renderContent() {
-      return React__default.createElement(TabContainer, {
+      return React__default.createElement(ui.Tabs, {
         default: "fontSize",
         renderTabs: function renderTabs(_ref2) {
           var update = _ref2.update,
               current = _ref2.current;
-          return React__default.createElement(React.Fragment, null, React__default.createElement(ui.PopoverTabs.Tab, {
+          return React__default.createElement(React.Fragment, null, React__default.createElement(ui.Tabs.Tab, {
             value: "fontSize",
             current: current,
             update: update
-          }, "Font Size"), React__default.createElement(ui.PopoverTabs.Tab, {
+          }, "Font Size"), React__default.createElement(ui.Tabs.Tab, {
             value: "lineHeight",
             current: current,
             update: update
@@ -1015,10 +866,10 @@ var mapFontWeight = function mapFontWeight(_ref4) {
   };
 };
 
-function _templateObject2$3() {
+function _templateObject2$2() {
   var data = _taggedTemplateLiteral(["\n  &:nth-child(even) {\n    font-weight: bold;\n  }\n"]);
 
-  _templateObject2$3 = function _templateObject2() {
+  _templateObject2$2 = function _templateObject2() {
     return data;
   };
 
@@ -1035,7 +886,7 @@ function _templateObject$7() {
   return data;
 }
 var MetaGroup = styled__default.div(_templateObject$7());
-var Item = styled__default.div(_templateObject2$3());
+var Item = styled__default.div(_templateObject2$2());
 MetaGroup.Item = Item;
 
 var Meta$1 = compose(connectTheme(mapBaseFontSize), connectTheme(mapBaseLineHeight))(function (_ref) {

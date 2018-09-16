@@ -1,6 +1,6 @@
 import React, { Fragment, Component } from 'react'
 import styled, { css } from 'styled-components'
-import { Popover, PopoverTabs } from '@airtheme/ui'
+import { Popover } from '@airtheme/ui'
 import AdjustButton from '../../components/AdjustButton'
 import EditFontWeight from './EditFontWeight'
 
