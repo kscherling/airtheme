@@ -7,6 +7,7 @@ const Meta = styled.div`
   color: #666666;
   font-size: 70%;
   width: fit-content;
+  grid-area: meta;
 `
 const Item = styled.div`
   &:nth-child(even) {

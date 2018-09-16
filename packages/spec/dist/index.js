@@ -504,7 +504,7 @@ function _templateObject2() {
 }
 
 function _templateObject$2() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-auto-flow: column;\n  grid-gap: 0.25rem;\n  color: #666666;\n  font-size: 70%;\n  width: fit-content;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-auto-flow: column;\n  grid-gap: 0.25rem;\n  color: #666666;\n  font-size: 70%;\n  width: fit-content;\n  grid-area: meta;\n"]);
 
   _templateObject$2 = function _templateObject() {
     return data;
@@ -516,18 +516,8 @@ var Meta = styled__default.div(_templateObject$2());
 var Item = styled__default.div(_templateObject2());
 Meta.Item = Item;
 
-function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 1fr auto;\n  padding: 1rem 0;\n"]);
-
-  _templateObject4 = function _templateObject4() {
-    return data;
-  };
-
-  return data;
-}
-
 function _templateObject3() {
-  var data = _taggedTemplateLiteral([""]);
+  var data = _taggedTemplateLiteral(["\n  grid-area: specimen;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -537,7 +527,7 @@ function _templateObject3() {
 }
 
 function _templateObject2$1() {
-  var data = _taggedTemplateLiteral([""]);
+  var data = _taggedTemplateLiteral(["\n  grid-area: actions;\n"]);
 
   _templateObject2$1 = function _templateObject2() {
     return data;
@@ -547,7 +537,7 @@ function _templateObject2$1() {
 }
 
 function _templateObject$3() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-gap: 1rem;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 1fr auto;\n  padding: 1rem 0;\n  grid-gap: 1rem;\n  grid-template-areas:\n    \"specimen actions\"\n    \"meta actions\";\n}\n"]);
 
   _templateObject$3 = function _templateObject() {
     return data;
@@ -555,13 +545,12 @@ function _templateObject$3() {
 
   return data;
 }
-var Visual = styled__default.div(_templateObject$3());
-var Control$1 = styled__default.div(_templateObject2$1());
+var Unit$1 = styled__default.div(_templateObject$3());
+var Actions = styled__default.div(_templateObject2$1());
 var Specimen = styled__default.div(_templateObject3());
-var Unit$1 = styled__default.div(_templateObject4());
 Unit$1.Specimen = Specimen;
 Unit$1.Meta = Meta;
-Unit$1.Control = Control$1;
+Unit$1.Actions = Actions;
 
 function _templateObject6() {
   var data = _taggedTemplateLiteral([""]);
@@ -583,10 +572,10 @@ function _templateObject5() {
   return data;
 }
 
-function _templateObject4$1() {
+function _templateObject4() {
   var data = _taggedTemplateLiteral([""]);
 
-  _templateObject4$1 = function _templateObject4() {
+  _templateObject4 = function _templateObject4() {
     return data;
   };
 
@@ -625,7 +614,7 @@ function _templateObject$4() {
 var Spec = styled__default.div(_templateObject$4());
 var Header = styled__default.div(_templateObject2$2());
 var Content = styled__default.div(_templateObject3$1());
-var Footer = styled__default.div(_templateObject4$1());
+var Footer = styled__default.div(_templateObject4());
 var HeaderTitle = styled__default.div(_templateObject5());
 var HeaderActions = styled__default.div(_templateObject6());
 Spec.Header = Header;
@@ -984,68 +973,10 @@ var BaseFont = function BaseFont() {
   return 'hello';
 };
 
-var AdjustForm = function AdjustForm(_ref) {
-  var unit = _ref.unit,
-      updateFontWeight = _ref.updateFontWeight,
-      _ref$fontWeight = _ref.fontWeight,
-      view = _ref$fontWeight.view,
-      viewable = _ref$fontWeight.viewable;
-  return React__default.createElement(ui.EditBaseUnitGroup, null, React__default.createElement(ui.InputUnit, {
-    update: updateFontWeight,
-    unit: unit,
-    castValueTo: core.castNumber
-  }), React__default.createElement(ui.ViewUnit, {
-    view: view,
-    viewable: viewable
-  }), React__default.createElement(ui.IncrementUnit, {
-    update: updateFontWeight,
-    unit: unit,
-    options: {
-      step: 100
-    },
-    castValueFrom: core.castNumber,
-    castValueTo: core.castNumber
-  }));
-};
-
-var AdjustForm$1 = compose(make.withFontWeightContent, make.withFontWeightAttribute)(AdjustForm);
-
 function _templateObject$8() {
-  var data = _taggedTemplateLiteral(["\n  padding: 1rem;\n"]);
-
-  _templateObject$8 = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-var Pad$1 = styled__default.div(_templateObject$8());
-
-var AdjustPopover$1 = function AdjustPopover(_ref) {
-  var unit = _ref.unit;
-  return React__default.createElement(ui.Popover, {
-    renderTrigger: function renderTrigger(_ref2) {
-      var ref = _ref2.ref,
-          show = _ref2.show,
-          active = _ref2.active;
-      return React__default.createElement(AdjustButton, {
-        innerRef: ref,
-        active: active,
-        onClick: show
-      });
-    },
-    renderContent: function renderContent() {
-      return React__default.createElement(Pad$1, null, React__default.createElement(AdjustForm$1, {
-        unit: unit
-      }));
-    }
-  });
-};
-
-function _templateObject$9() {
   var data = _taggedTemplateLiteral(["\n  font-weight: ", ";\n  ", ";\n"]);
 
-  _templateObject$9 = function _templateObject() {
+  _templateObject$8 = function _templateObject() {
     return data;
   };
 
@@ -1074,7 +1005,7 @@ var fontWeight = function fontWeight(key) {
 
 var Specimen$2 = styled__default.div.attrs({
   children: DEFAULT_TEXT
-})(_templateObject$9(), function (_ref2) {
+})(_templateObject$8(), function (_ref2) {
   var name = _ref2.unit.name,
       props = _objectWithoutProperties(_ref2, ["unit"]);
 
@@ -1085,23 +1016,124 @@ var Meta$1 = connectTheme(mapFontWeight)(function (_ref) {
   var fontWeight = _ref.fontWeight,
       _ref$unit = _ref.unit,
       unit = _ref$unit === void 0 ? {} : _ref$unit;
-  return React__default.createElement(Spec.Meta, null, React__default.createElement(Spec.Meta.Item, null), React__default.createElement(Spec.Meta.Item, null, unit.name), React__default.createElement(Spec.Meta.Item, null, "Font Weight"), React__default.createElement(Spec.Meta.Item, null, fontWeight[unit.name]));
+  return React__default.createElement(React.Fragment, null, React__default.createElement(Spec.Unit.Meta.Item, null), React__default.createElement(Spec.Unit.Meta.Item, null, unit.name), React__default.createElement(Spec.Unit.Meta.Item, null, "Font Weight"), React__default.createElement(Spec.Unit.Meta.Item, null, fontWeight[unit.name]));
 });
+
+var AdjustForm = function AdjustForm(_ref) {
+  var unit = _ref.unit,
+      updateFontWeight = _ref.updateFontWeight,
+      _ref$fontWeight = _ref.fontWeight,
+      view = _ref$fontWeight.view,
+      viewable = _ref$fontWeight.viewable;
+  return React__default.createElement(ui.EditBaseUnitGroup, null, React__default.createElement(ui.InputUnit, {
+    update: updateFontWeight,
+    unit: unit,
+    castValueTo: core.castNumber
+  }), React__default.createElement(ui.ViewUnit, {
+    view: view,
+    viewable: viewable
+  }), React__default.createElement(ui.IncrementUnit, {
+    update: updateFontWeight,
+    unit: unit,
+    options: {
+      step: 100
+    },
+    castValueFrom: core.castNumber,
+    castValueTo: core.castNumber
+  }));
+};
+
+var AdjustForm$1 = compose(make.withFontWeightContent, make.withFontWeightAttribute)(AdjustForm);
+
+function _templateObject$9() {
+  var data = _taggedTemplateLiteral(["\n  padding: 1rem;\n"]);
+
+  _templateObject$9 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var Pad$1 = styled__default.div(_templateObject$9());
+
+var AdjustPopover$1 = function AdjustPopover(_ref) {
+  var unit = _ref.unit;
+  return React__default.createElement(ui.Popover, {
+    renderTrigger: function renderTrigger(_ref2) {
+      var ref = _ref2.ref,
+          show = _ref2.show,
+          active = _ref2.active;
+      return React__default.createElement(AdjustButton, {
+        innerRef: ref,
+        active: active,
+        onClick: show
+      });
+    },
+    renderContent: function renderContent() {
+      return React__default.createElement(Pad$1, null, React__default.createElement(AdjustForm$1, {
+        unit: unit
+      }));
+    }
+  });
+};
+
+var Unit$2 = function Unit(_ref) {
+  var unit = _ref.unit;
+  return React__default.createElement(Spec.Unit, null, React__default.createElement(Spec.Unit.Specimen, null, React__default.createElement(Specimen$2, {
+    unit: unit
+  })), React__default.createElement(Spec.Unit.Meta, null, React__default.createElement(Meta$1, {
+    unit: unit
+  })), React__default.createElement(Spec.Unit.Actions, null, React__default.createElement(AdjustPopover$1, {
+    unit: unit
+  })));
+};
+
+var noop = function noop() {
+  return null;
+};
+
+var isEmpty = function isEmpty(arr) {
+  return !Boolean(arr.length);
+};
+
+var isArray = function isArray(arr) {
+  return Array.isArray(arr);
+};
+
+var AttributeContent$1 = function AttributeContent(_ref) {
+  var _ref$renderUnit = _ref.renderUnit,
+      renderUnit = _ref$renderUnit === void 0 ? noop : _ref$renderUnit,
+      _ref$renderEmpty = _ref.renderEmpty,
+      renderEmpty = _ref$renderEmpty === void 0 ? noop : _ref$renderEmpty,
+      content = _ref.content;
+
+  // Handle most setting cases where content is array
+  if (isArray(content)) {
+    return isEmpty(content) ? renderEmpty() : content.map(function (unit, idx) {
+      return renderUnit({
+        unit: unit,
+        idx: idx
+      });
+    });
+  } // Handle base unit where content is object
+
+
+  return renderUnit({
+    unit: content
+  });
+};
 
 var Content$1 = make.withFontWeightContent(function (_ref) {
   var content = _ref.content;
-  return React__default.createElement(Spec.AttributeContent, {
+  return React__default.createElement(AttributeContent$1, {
     content: content,
     renderUnit: function renderUnit(_ref2) {
       var unit = _ref2.unit,
           idx = _ref2.idx;
-      return React__default.createElement(Spec.Unit, null, React__default.createElement(Spec.Unit.Visual, null, React__default.createElement(Specimen$2, {
-        unit: unit
-      }), React__default.createElement(Meta$1, {
-        unit: unit
-      })), React__default.createElement(Control, null, React__default.createElement(AdjustPopover$1, {
-        unit: unit
-      })));
+      return React__default.createElement(Unit$2, {
+        unit: unit,
+        key: idx
+      });
     }
   });
 });
@@ -1110,7 +1142,7 @@ var FontWeight$1 = function FontWeight() {
   return React__default.createElement(ui.Card, {
     pad: true,
     border: true
-  }, React__default.createElement(Spec, null, React__default.createElement(Spec.Header, null, React__default.createElement(Spec.Header.Title, null, "Font Weight"), React__default.createElement(Spec.Header.Controls, null, " ")), React__default.createElement(Spec.Content, null, React__default.createElement(Content$1, null)), React__default.createElement(Spec.Footer, null, " ")));
+  }, React__default.createElement(Spec, null, React__default.createElement(Spec.Header, null, React__default.createElement(Spec.Header.Title, null, "Font Weight"), React__default.createElement(Spec.Header.Actions, null)), React__default.createElement(Spec.Content, null, React__default.createElement(Content$1, null)), React__default.createElement(Spec.Footer, null)));
 };
 
 exports.GlobalsInfo = Globals;

@@ -1,22 +1,26 @@
 import styled from 'styled-components'
 import Meta from './Meta'
 
-const Visual = styled.div`
-  display: grid;
-  grid-gap: 1rem;
-`
-
-const Control = styled.div``
-const Specimen = styled.div``
-
 const Unit = styled.div`
   display: grid;
   grid-template-columns: 1fr auto;
   padding: 1rem 0;
+  grid-gap: 1rem;
+  grid-template-areas:
+    "specimen actions"
+    "meta actions";
+}
+`
+
+const Actions = styled.div`
+  grid-area: actions;
+`
+const Specimen = styled.div`
+  grid-area: specimen;
 `
 
 Unit.Specimen = Specimen
 Unit.Meta = Meta
-Unit.Control = Control
+Unit.Actions = Actions
 
 export default Unit
