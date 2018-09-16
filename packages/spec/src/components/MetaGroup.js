@@ -1,13 +1,16 @@
 import styled from 'styled-components'
 
-const Meta = styled.div`
+const MetaGroup = styled.div`
   display: grid;
   grid-auto-flow: column;
   grid-gap: 0.25rem;
   color: #666666;
   font-size: 70%;
   width: fit-content;
-  grid-area: meta;
+
+  & + & {
+    margin-top: 0.5rem;
+  }
 `
 const Item = styled.div`
   &:nth-child(even) {
@@ -15,6 +18,6 @@ const Item = styled.div`
   }
 `
 
-Meta.Item = Item
+MetaGroup.Item = Item
 
-export default Meta
+export default MetaGroup

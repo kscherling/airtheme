@@ -2,14 +2,15 @@ import React, { Fragment } from 'react'
 import connectTheme from '../../utils/connectTheme'
 import { mapFontWeight } from '../../utils/mapThemeToProps'
 import Spec from '../../components/Spec'
+import MetaGroup from '../../components/MetaGroup'
 
 const Meta = connectTheme(mapFontWeight)(({ fontWeight, unit = {} }) => (
-  <Fragment>
-    <Spec.Unit.Meta.Item />
-    <Spec.Unit.Meta.Item>{unit.name}</Spec.Unit.Meta.Item>
-    <Spec.Unit.Meta.Item>Font Weight</Spec.Unit.Meta.Item>
-    <Spec.Unit.Meta.Item>{fontWeight[unit.name]}</Spec.Unit.Meta.Item>
-  </Fragment>
+  <MetaGroup>
+    <MetaGroup.Item>Key</MetaGroup.Item>
+    <MetaGroup.Item>{unit.name}</MetaGroup.Item>
+    <MetaGroup.Item>Font Weight</MetaGroup.Item>
+    <MetaGroup.Item>{fontWeight[unit.name]}</MetaGroup.Item>
+  </MetaGroup>
 ))
 
 export default Meta

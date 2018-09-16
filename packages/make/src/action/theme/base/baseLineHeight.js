@@ -8,7 +8,7 @@ export const updateBaseLineHeightView = view => ({
   view
 })
 
-export const updateBaseLineHeight = updated => ({
+export const updateBaseLineHeight = (_original, updated) => ({
   type: UPDATE_BASE_LINE_HEIGHT,
   updated
 })

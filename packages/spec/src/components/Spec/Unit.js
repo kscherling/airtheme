@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import Meta from './Meta'
 
 const Unit = styled.div`
   display: grid;
@@ -12,11 +11,14 @@ const Unit = styled.div`
 }
 `
 
-const Actions = styled.div`
-  grid-area: actions;
-`
 const Specimen = styled.div`
   grid-area: specimen;
+`
+const Meta = styled.div`
+  grid-area: meta;
+`
+const Actions = styled.div`
+  grid-area: actions;
 `
 
 Unit.Specimen = Specimen

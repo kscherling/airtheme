@@ -1,8 +1,8 @@
 import React, { Fragment, Component } from 'react'
 import styled, { css } from 'styled-components'
 import { IconAdjust, Popover, UtilityButton, PopoverTabs } from '@airtheme/ui'
-import BaseLineHeight from './BaseLineHeight'
-import BaseFontSize from './BaseFontSize'
+import EditBaseLineHeight from './EditBaseLineHeight'
+import EditBaseFontSize from './EditBaseFontSize'
 import AdjustButton from '../../components/AdjustButton'
 
 const PopoverContent = styled.div``
@@ -44,9 +44,9 @@ class TabContainer extends Component {
 const panelFor = current => {
   switch (current) {
     case 'fontSize':
-      return <BaseFontSize />
+      return <EditBaseFontSize />
     case 'lineHeight':
-      return <BaseLineHeight />
+      return <EditBaseLineHeight />
     default:
       return null
   }

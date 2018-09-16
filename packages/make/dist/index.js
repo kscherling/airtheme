@@ -3034,14 +3034,16 @@ var updateThemeVersion = function updateThemeVersion(version) {
   };
 };
 
-var updateBaseFontSize = function updateBaseFontSize(updated) {
+// with standard unit updates that require the original and the updated.
+
+var updateBaseFontSize = function updateBaseFontSize(_original, updated) {
   return {
     type: UPDATE_BASE_FONT_SIZE,
     updated: updated
   };
 };
 
-var updateBaseSpacing = function updateBaseSpacing(updated) {
+var updateBaseSpacing = function updateBaseSpacing(_original, updated) {
   return {
     type: UPDATE_BASE_SPACING,
     updated: updated
@@ -3054,7 +3056,7 @@ var updateBaseLineHeightView = function updateBaseLineHeightView(view) {
     view: view
   };
 };
-var updateBaseLineHeight = function updateBaseLineHeight(updated) {
+var updateBaseLineHeight = function updateBaseLineHeight(_original, updated) {
   return {
     type: UPDATE_BASE_LINE_HEIGHT,
     updated: updated

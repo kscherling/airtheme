@@ -2,7 +2,7 @@ import React, { Fragment, Component } from 'react'
 import styled, { css } from 'styled-components'
 import { Popover, PopoverTabs } from '@airtheme/ui'
 import AdjustButton from '../../components/AdjustButton'
-import AdjustForm from './AdjustForm'
+import EditFontWeight from './EditFontWeight'
 
 const Pad = styled.div`
   padding: 1rem;
@@ -15,7 +15,7 @@ const AdjustPopover = ({ unit }) => (
     )}
     renderContent={() => (
       <Pad>
-        <AdjustForm unit={unit} />
+        <EditFontWeight unit={unit} />
       </Pad>
     )}
   />

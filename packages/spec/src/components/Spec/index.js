@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import Unit from './Unit'
-import Meta from './Meta'
 
 const Spec = styled.div`
   display: grid;
