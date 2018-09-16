@@ -6,9 +6,9 @@ import { Card } from '@airtheme/ui'
 import SpecCard from '../../components/SpecCard'
 import Detail from '../../components/SpecCard/Detail'
 import { withFontWeightAttribute, withFontWeightContent } from '@airtheme/make'
-import { baseTypography } from '../../utils/styleHelpers'
 import AdjustPopover from './AdjustPopover'
 import { mapFontWeight as mapThemeFontWeight } from '../../utils/mapThemeToProps'
+import Specimen from './Specimen'
 
 const Meta = connectTheme(mapThemeFontWeight)(({ fontWeight, unit = {} }) => (
   <Detail>
@@ -19,24 +19,11 @@ const Meta = connectTheme(mapThemeFontWeight)(({ fontWeight, unit = {} }) => (
   </Detail>
 ))
 
-const SPECIMEN = 'The quick brown fox jumped over the lazy dog.'
-
 const Visual = styled.div`
   display: grid;
   grid-gap: 1rem;
 `
 const Control = styled.div``
-
-const mapFontWeight = ({
-  theme: { setting: { fontWeight } = {} } = {}
-} = {}) => ({
-  fontWeight
-})
-const fontWeight = key => props => mapFontWeight(props).fontWeight[key]
-const Specimen = styled.div.attrs({ children: SPECIMEN })`
-  font-weight: ${({ unit: { name }, ...props }) => fontWeight(name)(props)};
-  ${baseTypography};
-`
 
 const Item = ({ unit }) => (
   <Unit>

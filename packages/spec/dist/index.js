@@ -605,7 +605,7 @@ function _templateObject$4() {
 }
 var TypesetContainer = styled__default.div(_templateObject$4(), baseTypography);
 
-var Typeset = function Typeset() {
+var Specimen = function Specimen() {
   return React__default.createElement(TypesetContainer, null, React__default.createElement("div", null, uppercase), React__default.createElement("div", null, lowercase), React__default.createElement("div", null, numerals), React__default.createElement("div", null, puncuation));
 };
 
@@ -1001,7 +1001,7 @@ var BaseFont = function BaseFont() {
   return React__default.createElement(ui.Card, {
     pad: true,
     border: true
-  }, React__default.createElement(SpecCard, null, React__default.createElement(SpecCard.Header, null, React__default.createElement(SpecCard.Title, null, "Base Font"), React__default.createElement(SpecCard.Controls, null, React__default.createElement(AdjustPopover, null))), React__default.createElement(SpecCard.Content, null, React__default.createElement(Typeset, null)), React__default.createElement(SpecCard.Footer, null, React__default.createElement(BaseFontMeta, null))));
+  }, React__default.createElement(SpecCard, null, React__default.createElement(SpecCard.Header, null, React__default.createElement(SpecCard.Title, null, "Base Font"), React__default.createElement(SpecCard.Controls, null, React__default.createElement(AdjustPopover, null))), React__default.createElement(SpecCard.Content, null, React__default.createElement(Specimen, null)), React__default.createElement(SpecCard.Footer, null, React__default.createElement(BaseFontMeta, null))));
 };
 
 var AdjustForm = function AdjustForm(_ref) {
@@ -1062,18 +1062,47 @@ var AdjustPopover$1 = function AdjustPopover(_ref) {
   });
 };
 
-function _templateObject4$1() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 1fr auto;\n  padding: 1rem 0;\n"]);
+function _templateObject$8() {
+  var data = _taggedTemplateLiteral(["\n  font-weight: ", ";\n  ", ";\n"]);
 
-  _templateObject4$1 = function _templateObject4() {
+  _templateObject$8 = function _templateObject() {
     return data;
   };
 
   return data;
 }
+var DEFAULT_TEXT = 'The quick brown fox jumped over the lazy dog.'; // TODO: Move to general utils
+
+var mapFontWeight$1 = function mapFontWeight() {
+  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      _ref$theme = _ref.theme;
+
+  _ref$theme = _ref$theme === void 0 ? {} : _ref$theme;
+  var _ref$theme$setting = _ref$theme.setting;
+  _ref$theme$setting = _ref$theme$setting === void 0 ? {} : _ref$theme$setting;
+  var fontWeight = _ref$theme$setting.fontWeight;
+  return {
+    fontWeight: fontWeight
+  };
+};
+
+var fontWeight = function fontWeight(key) {
+  return function (props) {
+    return mapFontWeight$1(props).fontWeight[key];
+  };
+};
+
+var Specimen$1 = styled__default.div.attrs({
+  children: DEFAULT_TEXT
+})(_templateObject$8(), function (_ref2) {
+  var name = _ref2.unit.name,
+      props = _objectWithoutProperties(_ref2, ["unit"]);
+
+  return fontWeight(name)(props);
+}, baseTypography);
 
 function _templateObject3$1() {
-  var data = _taggedTemplateLiteral(["\n  font-weight: ", ";\n  ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 1fr auto;\n  padding: 1rem 0;\n"]);
 
   _templateObject3$1 = function _templateObject3() {
     return data;
@@ -1092,10 +1121,10 @@ function _templateObject2$3() {
   return data;
 }
 
-function _templateObject$8() {
+function _templateObject$9() {
   var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-gap: 1rem;\n"]);
 
-  _templateObject$8 = function _templateObject() {
+  _templateObject$9 = function _templateObject() {
     return data;
   };
 
@@ -1107,41 +1136,12 @@ var Meta = connectTheme(mapFontWeight)(function (_ref) {
       unit = _ref$unit === void 0 ? {} : _ref$unit;
   return React__default.createElement(Detail, null, React__default.createElement(Detail.Item, null), React__default.createElement(Detail.Item, null, unit.name), React__default.createElement(Detail.Item, null, "Font Weight"), React__default.createElement(Detail.Item, null, fontWeight[unit.name]));
 });
-var SPECIMEN = 'The quick brown fox jumped over the lazy dog.';
-var Visual = styled__default.div(_templateObject$8());
+var Visual = styled__default.div(_templateObject$9());
 var Control = styled__default.div(_templateObject2$3());
 
-var mapFontWeight$1 = function mapFontWeight$$1() {
-  var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-      _ref2$theme = _ref2.theme;
-
-  _ref2$theme = _ref2$theme === void 0 ? {} : _ref2$theme;
-  var _ref2$theme$setting = _ref2$theme.setting;
-  _ref2$theme$setting = _ref2$theme$setting === void 0 ? {} : _ref2$theme$setting;
-  var fontWeight = _ref2$theme$setting.fontWeight;
-  return {
-    fontWeight: fontWeight
-  };
-};
-
-var fontWeight = function fontWeight(key) {
-  return function (props) {
-    return mapFontWeight$1(props).fontWeight[key];
-  };
-};
-
-var Specimen = styled__default.div.attrs({
-  children: SPECIMEN
-})(_templateObject3$1(), function (_ref3) {
-  var name = _ref3.unit.name,
-      props = _objectWithoutProperties(_ref3, ["unit"]);
-
-  return fontWeight(name)(props);
-}, baseTypography);
-
-var Item$1 = function Item(_ref4) {
-  var unit = _ref4.unit;
-  return React__default.createElement(Unit$1, null, React__default.createElement(Visual, null, React__default.createElement(Specimen, {
+var Item$1 = function Item(_ref2) {
+  var unit = _ref2.unit;
+  return React__default.createElement(Unit$1, null, React__default.createElement(Visual, null, React__default.createElement(Specimen$1, {
     unit: unit
   }), React__default.createElement(Meta, {
     unit: unit
@@ -1150,9 +1150,9 @@ var Item$1 = function Item(_ref4) {
   })));
 };
 
-var Unit$1 = styled__default.div(_templateObject4$1());
-var Content$1 = make.withFontWeightContent(function (_ref5) {
-  var content = _ref5.content;
+var Unit$1 = styled__default.div(_templateObject3$1());
+var Content$1 = make.withFontWeightContent(function (_ref3) {
+  var content = _ref3.content;
   return content.map(function (unit, idx) {
     return React__default.createElement(Item$1, {
       key: idx,

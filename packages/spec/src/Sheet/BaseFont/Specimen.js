@@ -14,7 +14,7 @@ const TypesetContainer = styled.div`
   ${baseTypography};
 `
 
-const Typeset = () => (
+const Specimen = () => (
   <TypesetContainer>
     <div>{uppercase}</div>
     <div>{lowercase}</div>
@@ -23,4 +23,4 @@ const Typeset = () => (
   </TypesetContainer>
 )
 
-export default Typeset
+export default Specimen

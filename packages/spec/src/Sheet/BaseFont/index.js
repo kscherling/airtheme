@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card } from '@airtheme/ui'
 import SpecCard from '../../components/SpecCard'
-import Typeset from './Typeset'
+import Specimen from './Specimen'
 import AdjustPopover from './AdjustPopover'
 import BaseFontMeta from './BaseFontMeta'
 
@@ -15,7 +15,7 @@ const BaseFont = () => (
         </SpecCard.Controls>
       </SpecCard.Header>
       <SpecCard.Content>
-        <Typeset />
+        <Specimen />
       </SpecCard.Content>
       <SpecCard.Footer>
         <BaseFontMeta />
