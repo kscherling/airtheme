@@ -10,10 +10,10 @@
     "clean": "./task clean",
     "build": "./task build",
     "build:watch": "./task build:watch",
-    "test": "./task test"
+    "test": "./task test",
+    "relink": "./task relink"
   },
   "dependencies": {
-    "fp": "^0.1.0",
     "humps": "^2.0.1"
   },
   "devDependencies": {

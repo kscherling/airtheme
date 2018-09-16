@@ -9,9 +9,11 @@
     "clean": "./task clean",
     "build": "./task build",
     "build:watch": "./task build:watch",
-    "test": "./task test"
+    "test": "./task test",
+    "relink": "./task relink"
   },
   "dependencies": {
+    "fp": "^0.1.0",
     "@airtheme/core": "^0.1.0",
     "@airtheme/make": "^0.1.0",
     "@airtheme/type": "^0.1.0"

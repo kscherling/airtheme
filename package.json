@@ -7,7 +7,8 @@
     "clean": "lerna run clean",
     "build": "lerna run build",
     "build:watch": "lerna run build:watch",
-    "test": "lerna run test"
+    "test": "lerna run test",
+    "relink": "lerna run relink"
   },
   "devDependencies": {
     "lerna": "^2.11.0"

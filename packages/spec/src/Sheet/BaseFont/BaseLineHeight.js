@@ -9,7 +9,7 @@ import {
 import {
   withBaseLineHeightContent,
   withBaseLineHeightAttribute
-} from '@airtheme/mod'
+} from '@airtheme/make'
 import { castNumber } from '@airtheme/core'
 
 const Increment = withBaseLineHeightContent(

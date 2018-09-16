@@ -1,5 +1,5 @@
 import humps from 'humps'
-import { compose } from 'fp'
+import compose from './compose'
 
 const titlize = str =>
   str

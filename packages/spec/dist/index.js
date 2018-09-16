@@ -11,7 +11,6 @@ var styled__default = _interopDefault(styled);
 var ui = require('@airtheme/ui');
 var reactRedux = require('react-redux');
 var make = require('@airtheme/make');
-var mod = require('@airtheme/mod');
 var core = require('@airtheme/core');
 
 function _typeof(obj) {
@@ -674,7 +673,7 @@ function _templateObject$6() {
 }
 var TypesetContainer = styled__default.div(_templateObject$6(), baseTypography);
 
-var Increment = mod.withBaseLineHeightContent(function (_ref) {
+var Increment = make.withBaseLineHeightContent(function (_ref) {
   var _ref$content = _ref.content,
       content = _ref$content === void 0 ? {} : _ref$content,
       updateBaseLineHeight = _ref.updateBaseLineHeight;
@@ -687,7 +686,7 @@ var Increment = mod.withBaseLineHeightContent(function (_ref) {
     castValueTo: core.castNumber
   });
 });
-var Input = mod.withBaseLineHeightContent(function (_ref2) {
+var Input = make.withBaseLineHeightContent(function (_ref2) {
   var _ref2$content = _ref2.content,
       content = _ref2$content === void 0 ? {} : _ref2$content,
       updateBaseLineHeight = _ref2.updateBaseLineHeight;
@@ -697,7 +696,7 @@ var Input = mod.withBaseLineHeightContent(function (_ref2) {
     castValueTo: core.castNumber
   });
 });
-var View = mod.withBaseLineHeightAttribute(function (_ref3) {
+var View = make.withBaseLineHeightAttribute(function (_ref3) {
   var _ref3$baseLineHeight = _ref3.baseLineHeight,
       view = _ref3$baseLineHeight.view,
       viewable = _ref3$baseLineHeight.viewable;

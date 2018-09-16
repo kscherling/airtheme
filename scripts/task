@@ -22,6 +22,12 @@ case $CMD in
     exe "../../node_modules/.bin/jest -c $(pwd)/jest.config.js --rootDir ../ $@"
     ;;
 
+  relink)
+    exe "yarn unlink"
+    exe "yarn link"
+    exe "yarn link fp"
+    ;;
+
   *)
     if [[ -z "$CMD" ]]; then
       echo "USAGE: ./task (clean|build|test|<node_modules_bin_command>) command_args"

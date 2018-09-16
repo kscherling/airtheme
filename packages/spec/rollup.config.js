@@ -4,6 +4,7 @@ module.exports = {
   ...baseConfig,
   external: [
     ...baseConfig.external,
+    'fp',
     '@airtheme/make',
     '@airtheme/ui',
     '@airtheme/type',

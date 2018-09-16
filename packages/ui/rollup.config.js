@@ -4,11 +4,11 @@ module.exports = {
   ...baseConfig,
   external: [
     ...baseConfig.external,
+    'fp',
     'react',
     'react-dom',
     'react-redux',
     'styled-components',
-    'react-popper',
-    'fp'
+    'react-popper'
   ]
 }
