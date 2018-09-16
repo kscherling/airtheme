@@ -589,7 +589,7 @@ var Input = make.withBaseLineHeightContent(function (_ref2) {
   var _ref2$content = _ref2.content,
       content = _ref2$content === void 0 ? {} : _ref2$content,
       updateBaseLineHeight = _ref2.updateBaseLineHeight;
-  return React__default.createElement(ui.InputUnit, {
+  return React__default.createElement(ui.InputUnitValue, {
     update: updateBaseLineHeight,
     unit: content,
     castValueTo: core.castNumber
@@ -626,7 +626,7 @@ var Input$1 = make.withBaseFontSizeContent(function (_ref2) {
   var _ref2$content = _ref2.content,
       content = _ref2$content === void 0 ? {} : _ref2$content,
       updateBaseFontSize = _ref2.updateBaseFontSize;
-  return React__default.createElement(ui.InputUnit, {
+  return React__default.createElement(ui.InputUnitValue, {
     update: updateBaseFontSize,
     unit: content,
     castValueTo: core.castNumber
@@ -925,19 +925,101 @@ var Meta$2 = connectTheme(mapFontWeight)(function (_ref) {
   return React__default.createElement(MetaGroup, null, React__default.createElement(MetaGroup.Item, null, "Key"), React__default.createElement(MetaGroup.Item, null, unit.name), React__default.createElement(MetaGroup.Item, null, "Font Weight"), React__default.createElement(MetaGroup.Item, null, fontWeight[unit.name]));
 });
 
-var EditFontWeight = function EditFontWeight(_ref) {
-  var unit = _ref.unit,
-      updateFontWeight = _ref.updateFontWeight,
-      _ref$fontWeight = _ref.fontWeight,
-      view = _ref$fontWeight.view,
-      viewable = _ref$fontWeight.viewable;
-  return React__default.createElement(ui.EditBaseUnitGroup, null, React__default.createElement(ui.InputUnit, {
+function _templateObject7() {
+  var data = _taggedTemplateLiteral([""]);
+
+  _templateObject7 = function _templateObject7() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject6$1() {
+  var data = _taggedTemplateLiteral(["\n      display: grid;\n      grid-template-columns: 1fr auto;\n    "]);
+
+  _templateObject6$1 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject5$1() {
+  var data = _taggedTemplateLiteral(["\n  ", ";\n\n  > div {\n    padding: 0.5rem;\n  }\n"]);
+
+  _templateObject5$1 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4$2() {
+  var data = _taggedTemplateLiteral([""]);
+
+  _templateObject4$2 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3$2() {
+  var data = _taggedTemplateLiteral(["\n  ", ";\n"]);
+
+  _templateObject3$2 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2$3() {
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n"]);
+
+  _templateObject2$3 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject$9() {
+  var data = _taggedTemplateLiteral(["\n  border-bottom: 1px solid #eee;\n"]);
+
+  _templateObject$9 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var divider = styled.css(_templateObject$9());
+var EditForm = styled__default.div(_templateObject2$3());
+var Name$1 = styled__default.div(_templateObject3$2(), divider);
+var Units = styled__default.div(_templateObject4$2());
+var Unit$3 = styled__default.div(_templateObject5$1(), function (_ref) {
+  var incrementGroup = _ref.incrementGroup;
+  return incrementGroup && styled.css(_templateObject6$1());
+});
+var Footer$1 = styled__default.div(_templateObject7());
+EditForm.Name = Name$1;
+EditForm.Units = Units;
+EditForm.Units.Unit = Unit$3;
+EditForm.Footer = Footer$1;
+
+var Edit = function Edit(_ref2) {
+  var updateFontWeight = _ref2.updateFontWeight,
+      unit = _ref2.unit;
+  return React__default.createElement(EditForm, null, React__default.createElement(EditForm.Name, null, React__default.createElement(ui.InputUnitName, {
+    update: updateFontWeight,
+    unit: unit
+  })), React__default.createElement(EditForm.Units, null, React__default.createElement(EditForm.Units.Unit, {
+    incrementGroup: true
+  }, React__default.createElement(ui.InputUnitValue, {
     update: updateFontWeight,
     unit: unit,
     castValueTo: core.castNumber
-  }), React__default.createElement(ui.ViewUnit, {
-    view: view,
-    viewable: viewable
   }), React__default.createElement(ui.IncrementUnit, {
     update: updateFontWeight,
     unit: unit,
@@ -946,23 +1028,12 @@ var EditFontWeight = function EditFontWeight(_ref) {
     },
     castValueFrom: core.castNumber,
     castValueTo: core.castNumber
-  }));
+  }))), React__default.createElement(EditForm.Footer, null));
 };
 
-var EditFontWeight$1 = compose(make.withFontWeightContent, make.withFontWeightAttribute)(EditFontWeight);
+var Edit$1 = make.withFontWeightContent(Edit);
 
-function _templateObject$9() {
-  var data = _taggedTemplateLiteral(["\n  padding: 1rem;\n"]);
-
-  _templateObject$9 = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-var Pad$1 = styled__default.div(_templateObject$9());
-
-var AdjustPopover$1 = function AdjustPopover(_ref) {
+var EditPopover = function EditPopover(_ref) {
   var unit = _ref.unit;
   return React__default.createElement(ui.Popover, {
     renderTrigger: function renderTrigger(_ref2) {
@@ -976,20 +1047,20 @@ var AdjustPopover$1 = function AdjustPopover(_ref) {
       });
     },
     renderContent: function renderContent() {
-      return React__default.createElement(Pad$1, null, React__default.createElement(EditFontWeight$1, {
+      return React__default.createElement(Edit$1, {
         unit: unit
-      }));
+      });
     }
   });
 };
 
-var Unit$3 = function Unit(_ref) {
+var Unit$4 = function Unit(_ref) {
   var unit = _ref.unit;
   return React__default.createElement(Spec.Unit, null, React__default.createElement(Spec.Unit.Specimen, null, React__default.createElement(Specimen$2, {
     unit: unit
   })), React__default.createElement(Spec.Unit.Meta, null, React__default.createElement(Meta$2, {
     unit: unit
-  })), React__default.createElement(Spec.Unit.Actions, null, React__default.createElement(AdjustPopover$1, {
+  })), React__default.createElement(Spec.Unit.Actions, null, React__default.createElement(EditPopover, {
     unit: unit
   })));
 };
@@ -1036,7 +1107,7 @@ var Content$2 = make.withFontWeightContent(function (_ref) {
     renderUnit: function renderUnit(_ref2) {
       var unit = _ref2.unit,
           idx = _ref2.idx;
-      return React__default.createElement(Unit$3, {
+      return React__default.createElement(Unit$4, {
         unit: unit,
         key: idx
       });

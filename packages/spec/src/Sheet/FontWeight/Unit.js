@@ -2,7 +2,7 @@ import React from 'react'
 import Spec from '../../components/Spec'
 import Specimen from './Specimen'
 import Meta from './Meta'
-import AdjustPopover from './AdjustPopover'
+import EditPopover from './EditPopover'
 
 const Unit = ({ unit }) => (
   <Spec.Unit>
@@ -13,7 +13,7 @@ const Unit = ({ unit }) => (
       <Meta unit={unit} />
     </Spec.Unit.Meta>
     <Spec.Unit.Actions>
-      <AdjustPopover unit={unit} />
+      <EditPopover unit={unit} />
     </Spec.Unit.Actions>
   </Spec.Unit>
 )

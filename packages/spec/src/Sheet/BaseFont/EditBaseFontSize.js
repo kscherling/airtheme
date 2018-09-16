@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import styled, { css } from 'styled-components'
 import {
   IncrementUnit,
-  InputUnit,
+  InputUnitValue,
   EditBaseUnitGroup,
   ViewUnit
 } from '@airtheme/ui'
@@ -25,7 +25,7 @@ const Increment = withBaseFontSizeContent(
 
 const Input = withBaseFontSizeContent(
   ({ content = {}, updateBaseFontSize }) => (
-    <InputUnit
+    <InputUnitValue
       update={updateBaseFontSize}
       unit={content}
       castValueTo={castNumber}

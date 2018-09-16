@@ -8,8 +8,15 @@ const Btn = styled(UtilityButton)`
   font-size: 85%;
   line-height: 1.25;
 
-  &:hover {
-    background: #e7f0f7;
+  &:hover,
+  &:focus {
+    background: #fff;
+    box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.35);
+  }
+
+  &:active {
+    background: #f9f9f9;
+    box-shadow: inset 0 1px 2px 0px rgba(0, 0, 0, 0.15);
   }
 
   &[type='button'] {
