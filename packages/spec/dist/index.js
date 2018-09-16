@@ -661,19 +661,6 @@ function _templateObject$6() {
 }
 var Pad = styled__default.div(_templateObject$6());
 
-var panelFor = function panelFor(current) {
-  switch (current) {
-    case 'fontSize':
-      return React__default.createElement(BaseFontSize$1, null);
-
-    case 'lineHeight':
-      return React__default.createElement(BaseLineHeight$1, null);
-
-    default:
-      return null;
-  }
-};
-
 var AdjustPopover = function AdjustPopover() {
   return React__default.createElement(ui.Popover, {
     renderTrigger: function renderTrigger(_ref) {
@@ -687,26 +674,7 @@ var AdjustPopover = function AdjustPopover() {
       });
     },
     renderContent: function renderContent() {
-      return React__default.createElement(ui.Tabs, {
-        default: "fontSize",
-        renderTabs: function renderTabs(_ref2) {
-          var update = _ref2.update,
-              current = _ref2.current;
-          return React__default.createElement(React.Fragment, null, React__default.createElement(ui.Tabs.Tab, {
-            value: "fontSize",
-            current: current,
-            update: update
-          }, "Font Size"), React__default.createElement(ui.Tabs.Tab, {
-            value: "lineHeight",
-            current: current,
-            update: update
-          }, "Line Height"));
-        },
-        renderContent: function renderContent(_ref3) {
-          var current = _ref3.current;
-          return React__default.createElement(Pad, null, panelFor(current));
-        }
-      });
+      return React__default.createElement(Pad, null, React__default.createElement(BaseFontSize$1, null), React__default.createElement(BaseLineHeight$1, null));
     }
   });
 };
