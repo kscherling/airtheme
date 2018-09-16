@@ -947,6 +947,12 @@ var mapBaseLineHeight = function mapBaseLineHeight(_ref3) {
     baseLineHeight: baseLineHeight
   };
 };
+var mapFontWeight = function mapFontWeight(_ref4) {
+  var fontWeight = _ref4.setting.fontWeight;
+  return {
+    fontWeight: fontWeight
+  };
+};
 
 var _require = require('recompose'),
     compose$1 = _require.compose;
@@ -998,7 +1004,7 @@ var BaseFont = function BaseFont() {
   }, React__default.createElement(SpecCard, null, React__default.createElement(SpecCard.Header, null, React__default.createElement(SpecCard.Title, null, "Base Font"), React__default.createElement(SpecCard.Controls, null, React__default.createElement(AdjustPopover, null))), React__default.createElement(SpecCard.Content, null, React__default.createElement(Typeset, null)), React__default.createElement(SpecCard.Footer, null, React__default.createElement(BaseFontMeta, null))));
 };
 
-var FontWeight$1 = function FontWeight(_ref) {
+var AdjustForm = function AdjustForm(_ref) {
   var unit = _ref.unit,
       updateFontWeight = _ref.updateFontWeight,
       _ref$fontWeight = _ref.fontWeight,
@@ -1022,7 +1028,7 @@ var FontWeight$1 = function FontWeight(_ref) {
   }));
 };
 
-var FontWeight$2 = compose(make.withFontWeightContent, make.withFontWeightAttribute)(FontWeight$1);
+var AdjustForm$1 = compose(make.withFontWeightContent, make.withFontWeightAttribute)(AdjustForm);
 
 function _templateObject$7() {
   var data = _taggedTemplateLiteral(["\n  padding: 1rem;\n"]);
@@ -1035,7 +1041,7 @@ function _templateObject$7() {
 }
 var Pad$1 = styled__default.div(_templateObject$7());
 
-var AdjustUnitPopover = function AdjustUnitPopover(_ref) {
+var AdjustPopover$1 = function AdjustPopover(_ref) {
   var unit = _ref.unit;
   return React__default.createElement(ui.Popover, {
     renderTrigger: function renderTrigger(_ref2) {
@@ -1049,7 +1055,7 @@ var AdjustUnitPopover = function AdjustUnitPopover(_ref) {
       });
     },
     renderContent: function renderContent() {
-      return React__default.createElement(Pad$1, null, React__default.createElement(FontWeight$2, {
+      return React__default.createElement(Pad$1, null, React__default.createElement(AdjustForm$1, {
         unit: unit
       }));
     }
@@ -1087,7 +1093,7 @@ function _templateObject2$3() {
 }
 
 function _templateObject$8() {
-  var data = _taggedTemplateLiteral([""]);
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-gap: 1rem;\n"]);
 
   _templateObject$8 = function _templateObject() {
     return data;
@@ -1095,24 +1101,24 @@ function _templateObject$8() {
 
   return data;
 }
-//   <Detail>
-//     <Detail.Item>Font Weight</Detail.Item>
-//     <Detail.Item>{fontWeight}</Detail.Item>
-//   </Detail>
-// ))
-
+var Meta = connectTheme(mapFontWeight)(function (_ref) {
+  var fontWeight = _ref.fontWeight,
+      _ref$unit = _ref.unit,
+      unit = _ref$unit === void 0 ? {} : _ref$unit;
+  return React__default.createElement(Detail, null, React__default.createElement(Detail.Item, null), React__default.createElement(Detail.Item, null, unit.name), React__default.createElement(Detail.Item, null, "Font Weight"), React__default.createElement(Detail.Item, null, fontWeight[unit.name]));
+});
 var SPECIMEN = 'The quick brown fox jumped over the lazy dog.';
 var Visual = styled__default.div(_templateObject$8());
 var Control = styled__default.div(_templateObject2$3());
 
-var mapFontWeight$1 = function mapFontWeight() {
-  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-      _ref$theme = _ref.theme;
+var mapFontWeight$1 = function mapFontWeight$$1() {
+  var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      _ref2$theme = _ref2.theme;
 
-  _ref$theme = _ref$theme === void 0 ? {} : _ref$theme;
-  var _ref$theme$setting = _ref$theme.setting;
-  _ref$theme$setting = _ref$theme$setting === void 0 ? {} : _ref$theme$setting;
-  var fontWeight = _ref$theme$setting.fontWeight;
+  _ref2$theme = _ref2$theme === void 0 ? {} : _ref2$theme;
+  var _ref2$theme$setting = _ref2$theme.setting;
+  _ref2$theme$setting = _ref2$theme$setting === void 0 ? {} : _ref2$theme$setting;
+  var fontWeight = _ref2$theme$setting.fontWeight;
   return {
     fontWeight: fontWeight
   };
@@ -1126,25 +1132,27 @@ var fontWeight = function fontWeight(key) {
 
 var Specimen = styled__default.div.attrs({
   children: SPECIMEN
-})(_templateObject3$1(), function (_ref2) {
-  var unitName = _ref2.unitName,
-      props = _objectWithoutProperties(_ref2, ["unitName"]);
+})(_templateObject3$1(), function (_ref3) {
+  var name = _ref3.unit.name,
+      props = _objectWithoutProperties(_ref3, ["unit"]);
 
-  return fontWeight(unitName)(props);
+  return fontWeight(name)(props);
 }, baseTypography);
 
-var Item$1 = function Item(_ref3) {
-  var unit = _ref3.unit;
+var Item$1 = function Item(_ref4) {
+  var unit = _ref4.unit;
   return React__default.createElement(Unit$1, null, React__default.createElement(Visual, null, React__default.createElement(Specimen, {
-    unitName: unit.name
-  }), React__default.createElement("div", null, " ")), React__default.createElement(Control, null, React__default.createElement(AdjustUnitPopover, {
+    unit: unit
+  }), React__default.createElement(Meta, {
+    unit: unit
+  })), React__default.createElement(Control, null, React__default.createElement(AdjustPopover$1, {
     unit: unit
   })));
 };
 
 var Unit$1 = styled__default.div(_templateObject4$1());
-var Content$1 = make.withFontWeightContent(function (_ref4) {
-  var content = _ref4.content;
+var Content$1 = make.withFontWeightContent(function (_ref5) {
+  var content = _ref5.content;
   return content.map(function (unit, idx) {
     return React__default.createElement(Item$1, {
       key: idx,
@@ -1153,7 +1161,7 @@ var Content$1 = make.withFontWeightContent(function (_ref4) {
   });
 });
 
-var FontWeight$3 = function FontWeight() {
+var FontWeight$1 = function FontWeight() {
   return React__default.createElement(ui.Card, {
     pad: true,
     border: true
@@ -1172,5 +1180,5 @@ exports.BaseFontSizeInfo = BaseFontSize;
 exports.BaseLineHeightInfo = BaseLineHeight;
 exports.BaseSpacingInfo = BaseSpacing;
 exports.BaseFontSheet = BaseFont;
-exports.FontWeightSheet = FontWeight$3;
+exports.FontWeightSheet = FontWeight$1;
 //# sourceMappingURL=index.js.map

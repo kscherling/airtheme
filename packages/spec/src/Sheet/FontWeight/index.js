@@ -7,18 +7,24 @@ import SpecCard from '../../components/SpecCard'
 import Detail from '../../components/SpecCard/Detail'
 import { withFontWeightAttribute, withFontWeightContent } from '@airtheme/make'
 import { baseTypography } from '../../utils/styleHelpers'
-import AdjustUnitPopover from './AdjustUnitPopover'
+import AdjustPopover from './AdjustPopover'
+import { mapFontWeight as mapThemeFontWeight } from '../../utils/mapThemeToProps'
 
-// const FontWeightMeta = connectTheme(mapFontWeight)(({ fontWeight }) => (
-//   <Detail>
-//     <Detail.Item>Font Weight</Detail.Item>
-//     <Detail.Item>{fontWeight}</Detail.Item>
-//   </Detail>
-// ))
+const Meta = connectTheme(mapThemeFontWeight)(({ fontWeight, unit = {} }) => (
+  <Detail>
+    <Detail.Item />
+    <Detail.Item>{unit.name}</Detail.Item>
+    <Detail.Item>Font Weight</Detail.Item>
+    <Detail.Item>{fontWeight[unit.name]}</Detail.Item>
+  </Detail>
+))
 
 const SPECIMEN = 'The quick brown fox jumped over the lazy dog.'
 
-const Visual = styled.div``
+const Visual = styled.div`
+  display: grid;
+  grid-gap: 1rem;
+`
 const Control = styled.div``
 
 const mapFontWeight = ({
@@ -27,20 +33,19 @@ const mapFontWeight = ({
   fontWeight
 })
 const fontWeight = key => props => mapFontWeight(props).fontWeight[key]
-
 const Specimen = styled.div.attrs({ children: SPECIMEN })`
-  font-weight: ${({ unitName, ...props }) => fontWeight(unitName)(props)};
+  font-weight: ${({ unit: { name }, ...props }) => fontWeight(name)(props)};
   ${baseTypography};
 `
 
 const Item = ({ unit }) => (
   <Unit>
     <Visual>
-      <Specimen unitName={unit.name} />
-      <div>{` `}</div>
+      <Specimen unit={unit} />
+      <Meta unit={unit} />
     </Visual>
     <Control>
-      <AdjustUnitPopover unit={unit} />
+      <AdjustPopover unit={unit} />
     </Control>
   </Unit>
 )

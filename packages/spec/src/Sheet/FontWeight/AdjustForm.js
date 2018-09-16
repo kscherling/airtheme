@@ -10,7 +10,7 @@ import { withFontWeightContent, withFontWeightAttribute } from '@airtheme/make'
 import { castNumber } from '@airtheme/core'
 import { compose } from 'redux'
 
-const FontWeight = ({
+const AdjustForm = ({
   unit,
   updateFontWeight,
   fontWeight: { view, viewable }
@@ -31,4 +31,4 @@ const FontWeight = ({
 export default compose(
   withFontWeightContent,
   withFontWeightAttribute
-)(FontWeight)
+)(AdjustForm)
