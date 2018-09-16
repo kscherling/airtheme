@@ -1,7 +1,8 @@
 import styled from 'styled-components'
+import Unit from './Unit'
 import Meta from './Meta'
 
-const SpecCard = styled.div`
+const Spec = styled.div`
   display: grid;
   grid-gap: 1rem;
 `
@@ -12,17 +13,20 @@ const Header = styled.div`
 `
 const Content = styled.div``
 const Footer = styled.div``
-const Title = styled.div`
+
+const HeaderTitle = styled.div`
   font-weight: bold;
   font-size: 70%;
 `
-const Controls = styled.div``
+const HeaderActions = styled.div``
 
-SpecCard.Header = Header
-SpecCard.Content = Content
-SpecCard.Footer = Footer
-SpecCard.Title = Title
-SpecCard.Controls = Controls
-SpecCard.Meta = Meta
+Spec.Header = Header
+Spec.Header.Title = HeaderTitle
+Spec.Header.Actions = HeaderActions
 
-export default SpecCard
+Spec.Content = Content
+Spec.Footer = Footer
+
+Spec.Unit = Unit
+
+export default Spec

@@ -4,24 +4,12 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var reactRedux = require('react-redux');
-var make = require('@airtheme/make');
 var React = require('react');
 var React__default = _interopDefault(React);
 var styled = _interopDefault(require('styled-components'));
 var ui = require('@airtheme/ui');
-
-var withBaseFontSizeAttribute = reactRedux.connect(make.mapBaseFontSize);
-var withBaseFontSizeContent = reactRedux.connect(make.mapBaseFontSizeContent, {
-  updateBaseFontSize: make.updateBaseFontSize
-});
-
-var withBaseLineHeightAttribute = reactRedux.connect(make.mapBaseLineHeight, {
-  updateBaseLineHeightView: make.updateBaseLineHeightView
-});
-var withBaseLineHeightContent = reactRedux.connect(make.mapBaseLineHeightContent, {
-  updateBaseLineHeight: make.updateBaseLineHeight
-});
+var reactRedux = require('react-redux');
+var make = require('@airtheme/make');
 
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
@@ -696,10 +684,6 @@ var BaseSpacing = function BaseSpacing() {
   return React__default.createElement(ui.SimpleList.OneColumn, null, React__default.createElement(BaseSpacingAttribute, null), React__default.createElement(BaseSpacingContent, null));
 };
 
-exports.withBaseFontSizeAttribute = withBaseFontSizeAttribute;
-exports.withBaseFontSizeContent = withBaseFontSizeContent;
-exports.withBaseLineHeightContent = withBaseLineHeightContent;
-exports.withBaseLineHeightAttribute = withBaseLineHeightAttribute;
 exports.GlobalsMod = Globals;
 exports.SwatchMod = Swatch;
 exports.FontFaceMod = FontFace;

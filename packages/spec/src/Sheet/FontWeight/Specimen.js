@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { baseTypography } from '../../utils/styleHelpers'
+import Spec from '../../components/Spec'
 
 const DEFAULT_TEXT = 'The quick brown fox jumped over the lazy dog.'
 

@@ -517,6 +517,53 @@ var Meta = styled__default.div(_templateObject$2());
 var Item = styled__default.div(_templateObject2());
 Meta.Item = Item;
 
+function _templateObject4() {
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 1fr auto;\n  padding: 1rem 0;\n"]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteral([""]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2$1() {
+  var data = _taggedTemplateLiteral([""]);
+
+  _templateObject2$1 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject$3() {
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-gap: 1rem;\n"]);
+
+  _templateObject$3 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var Visual = styled__default.div(_templateObject$3());
+var Control$1 = styled__default.div(_templateObject2$1());
+var Specimen = styled__default.div(_templateObject3());
+var Unit$1 = styled__default.div(_templateObject4());
+Unit$1.Specimen = Specimen;
+Unit$1.Meta = Meta;
+Unit$1.Control = Control$1;
+
 function _templateObject6() {
   var data = _taggedTemplateLiteral([""]);
 
@@ -537,65 +584,63 @@ function _templateObject5() {
   return data;
 }
 
-function _templateObject4() {
+function _templateObject4$1() {
   var data = _taggedTemplateLiteral([""]);
 
-  _templateObject4 = function _templateObject4() {
+  _templateObject4$1 = function _templateObject4() {
     return data;
   };
 
   return data;
 }
 
-function _templateObject3() {
+function _templateObject3$1() {
   var data = _taggedTemplateLiteral([""]);
 
-  _templateObject3 = function _templateObject3() {
+  _templateObject3$1 = function _templateObject3() {
     return data;
   };
 
   return data;
 }
 
-function _templateObject2$1() {
+function _templateObject2$2() {
   var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 1fr auto;\n  align-items: center;\n"]);
 
-  _templateObject2$1 = function _templateObject2() {
+  _templateObject2$2 = function _templateObject2() {
     return data;
   };
 
   return data;
 }
 
-function _templateObject$3() {
+function _templateObject$4() {
   var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-gap: 1rem;\n"]);
 
-  _templateObject$3 = function _templateObject() {
+  _templateObject$4 = function _templateObject() {
     return data;
   };
 
   return data;
 }
-var SpecCard = styled__default.div(_templateObject$3());
-var Header = styled__default.div(_templateObject2$1());
-var Content = styled__default.div(_templateObject3());
-var Footer = styled__default.div(_templateObject4());
-var Title = styled__default.div(_templateObject5());
-var Controls = styled__default.div(_templateObject6());
-SpecCard.Header = Header;
-SpecCard.Content = Content;
-SpecCard.Footer = Footer;
-SpecCard.Title = Title;
-SpecCard.Controls = Controls;
-SpecCard.Meta = Meta;
+var Spec = styled__default.div(_templateObject$4());
+var Header = styled__default.div(_templateObject2$2());
+var Content = styled__default.div(_templateObject3$1());
+var Footer = styled__default.div(_templateObject4$1());
+var HeaderTitle = styled__default.div(_templateObject5());
+var HeaderActions = styled__default.div(_templateObject6());
+Spec.Header = Header;
+Spec.Header.Title = HeaderTitle;
+Spec.Header.Actions = HeaderActions;
+Spec.Content = Content;
+Spec.Footer = Footer;
+Spec.Unit = Unit$1;
 
 var alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
 var upCase = function upCase(string) {
   return string.toUpperCase();
 };
-
-var lowercase = alpha.join('');
 var uppercase = alpha.map(upCase).join('');
 var allcase = alpha.reduce(function (acc, char) {
   return _toConsumableArray(acc).concat([upCase(char), char]);
@@ -604,22 +649,8 @@ var numerals = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'].join('');
 var puncuation = ['.', ':', ',', ';', '()', '{}', '[]', '!', '@', '#', '$', '%', '^', '&', '*'].join('');
 var typeset = allcase.concat(numerals, puncuation);
 
-function _templateObject$4() {
-  var data = _taggedTemplateLiteral(["\n  line-height: ", ";\n  font-size: ", ";\n"]);
-
-  _templateObject$4 = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-var baseTypography = function baseTypography(_ref) {
-  var theme = _ref.theme;
-  return styled.css(_templateObject$4(), theme.baseLineHeight, theme.baseFontSize);
-};
-
 function _templateObject$5() {
-  var data = _taggedTemplateLiteral(["\n  transform: font-size 0.2s linear;\n  word-break: break-all;\n  ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  line-height: ", ";\n  font-size: ", ";\n"]);
 
   _templateObject$5 = function _templateObject() {
     return data;
@@ -627,11 +658,21 @@ function _templateObject$5() {
 
   return data;
 }
-var TypesetContainer = styled__default.div(_templateObject$5(), baseTypography);
-
-var Specimen = function Specimen() {
-  return React__default.createElement(TypesetContainer, null, React__default.createElement("div", null, uppercase), React__default.createElement("div", null, lowercase), React__default.createElement("div", null, numerals), React__default.createElement("div", null, puncuation));
+var baseTypography = function baseTypography(_ref) {
+  var theme = _ref.theme;
+  return styled.css(_templateObject$5(), theme.baseLineHeight, theme.baseFontSize);
 };
+
+function _templateObject$6() {
+  var data = _taggedTemplateLiteral(["\n  transform: font-size 0.2s linear;\n  word-break: break-all;\n  ", ";\n"]);
+
+  _templateObject$6 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var TypesetContainer = styled__default.div(_templateObject$6(), baseTypography);
 
 var Increment = mod.withBaseLineHeightContent(function (_ref) {
   var _ref$content = _ref.content,
@@ -666,10 +707,6 @@ var View = mod.withBaseLineHeightAttribute(function (_ref3) {
   });
 });
 
-var BaseLineHeight$1 = function BaseLineHeight() {
-  return React__default.createElement(ui.EditBaseUnitGroup, null, React__default.createElement(Input, null), React__default.createElement(View, null), React__default.createElement(Increment, null));
-};
-
 var Increment$1 = make.withBaseFontSizeContent(function (_ref) {
   var _ref$content = _ref.content,
       content = _ref$content === void 0 ? {} : _ref$content,
@@ -703,35 +740,31 @@ var View$1 = make.withBaseFontSizeAttribute(function (_ref3) {
   });
 });
 
-var BaseFontSize$1 = function BaseFontSize() {
-  return React__default.createElement(ui.EditBaseUnitGroup, null, React__default.createElement(Input$1, null), React__default.createElement(View$1, null), React__default.createElement(Increment$1, null));
-};
-
 var AdjustButton = function AdjustButton(props) {
   return React__default.createElement(ui.UtilityButton, props, React__default.createElement(ui.IconAdjust, null));
 };
 
-function _templateObject2$2() {
+function _templateObject2$3() {
   var data = _taggedTemplateLiteral(["\n  padding: 1rem;\n"]);
 
-  _templateObject2$2 = function _templateObject2() {
+  _templateObject2$3 = function _templateObject2() {
     return data;
   };
 
   return data;
 }
 
-function _templateObject$6() {
+function _templateObject$7() {
   var data = _taggedTemplateLiteral([""]);
 
-  _templateObject$6 = function _templateObject() {
+  _templateObject$7 = function _templateObject() {
     return data;
   };
 
   return data;
 }
-var PopoverContent = styled__default.div(_templateObject$6());
-var Pad = styled__default.div(_templateObject2$2());
+var PopoverContent = styled__default.div(_templateObject$7());
+var Pad = styled__default.div(_templateObject2$3());
 
 var TabContainer =
 /*#__PURE__*/
@@ -786,56 +819,6 @@ _defineProperty(TabContainer, "defaultProps", {
     return null;
   }
 });
-
-var panelFor = function panelFor(current) {
-  switch (current) {
-    case 'fontSize':
-      return React__default.createElement(BaseFontSize$1, null);
-
-    case 'lineHeight':
-      return React__default.createElement(BaseLineHeight$1, null);
-
-    default:
-      return null;
-  }
-};
-
-var AdjustPopover = function AdjustPopover() {
-  return React__default.createElement(ui.Popover, {
-    renderTrigger: function renderTrigger(_ref) {
-      var ref = _ref.ref,
-          show = _ref.show,
-          active = _ref.active;
-      return React__default.createElement(AdjustButton, {
-        innerRef: ref,
-        active: active,
-        onClick: show
-      });
-    },
-    renderContent: function renderContent() {
-      return React__default.createElement(TabContainer, {
-        default: "fontSize",
-        renderTabs: function renderTabs(_ref2) {
-          var update = _ref2.update,
-              current = _ref2.current;
-          return React__default.createElement(React.Fragment, null, React__default.createElement(ui.PopoverTabs.Tab, {
-            value: "fontSize",
-            current: current,
-            update: update
-          }, "Font Size"), React__default.createElement(ui.PopoverTabs.Tab, {
-            value: "lineHeight",
-            current: current,
-            update: update
-          }, "Line Height"));
-        },
-        renderContent: function renderContent(_ref3) {
-          var current = _ref3.current;
-          return React__default.createElement(Pad, null, panelFor(current));
-        }
-      });
-    }
-  });
-};
 
 function symbolObservablePonyfill(root) {
   var result;
@@ -999,10 +982,7 @@ var BaseFontMeta = compose(connectTheme(mapBaseFontSize), connectTheme(mapBaseLi
 });
 
 var BaseFont = function BaseFont() {
-  return React__default.createElement(ui.Card, {
-    pad: true,
-    border: true
-  }, React__default.createElement(SpecCard, null, React__default.createElement(SpecCard.Header, null, React__default.createElement(SpecCard.Title, null, "Base Font"), React__default.createElement(SpecCard.Controls, null, React__default.createElement(AdjustPopover, null))), React__default.createElement(SpecCard.Content, null, React__default.createElement(Specimen, null)), React__default.createElement(SpecCard.Footer, null, React__default.createElement(BaseFontMeta, null))));
+  return 'hello';
 };
 
 var AdjustForm = function AdjustForm(_ref) {
@@ -1031,16 +1011,16 @@ var AdjustForm = function AdjustForm(_ref) {
 
 var AdjustForm$1 = compose(make.withFontWeightContent, make.withFontWeightAttribute)(AdjustForm);
 
-function _templateObject$7() {
+function _templateObject$8() {
   var data = _taggedTemplateLiteral(["\n  padding: 1rem;\n"]);
 
-  _templateObject$7 = function _templateObject() {
+  _templateObject$8 = function _templateObject() {
     return data;
   };
 
   return data;
 }
-var Pad$1 = styled__default.div(_templateObject$7());
+var Pad$1 = styled__default.div(_templateObject$8());
 
 var AdjustPopover$1 = function AdjustPopover(_ref) {
   var unit = _ref.unit;
@@ -1063,10 +1043,10 @@ var AdjustPopover$1 = function AdjustPopover(_ref) {
   });
 };
 
-function _templateObject$8() {
+function _templateObject$9() {
   var data = _taggedTemplateLiteral(["\n  font-weight: ", ";\n  ", ";\n"]);
 
-  _templateObject$8 = function _templateObject() {
+  _templateObject$9 = function _templateObject() {
     return data;
   };
 
@@ -1093,9 +1073,9 @@ var fontWeight = function fontWeight(key) {
   };
 };
 
-var Specimen$1 = styled__default.div.attrs({
+var Specimen$2 = styled__default.div.attrs({
   children: DEFAULT_TEXT
-})(_templateObject$8(), function (_ref2) {
+})(_templateObject$9(), function (_ref2) {
   var name = _ref2.unit.name,
       props = _objectWithoutProperties(_ref2, ["unit"]);
 
@@ -1106,60 +1086,24 @@ var Meta$1 = connectTheme(mapFontWeight)(function (_ref) {
   var fontWeight = _ref.fontWeight,
       _ref$unit = _ref.unit,
       unit = _ref$unit === void 0 ? {} : _ref$unit;
-  return React__default.createElement(SpecCard.Meta, null, React__default.createElement(SpecCard.Meta.Item, null), React__default.createElement(SpecCard.Meta.Item, null, unit.name), React__default.createElement(SpecCard.Meta.Item, null, "Font Weight"), React__default.createElement(SpecCard.Meta.Item, null, fontWeight[unit.name]));
+  return React__default.createElement(Spec.Meta, null, React__default.createElement(Spec.Meta.Item, null), React__default.createElement(Spec.Meta.Item, null, unit.name), React__default.createElement(Spec.Meta.Item, null, "Font Weight"), React__default.createElement(Spec.Meta.Item, null, fontWeight[unit.name]));
 });
 
-function _templateObject3$1() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 1fr auto;\n  padding: 1rem 0;\n"]);
-
-  _templateObject3$1 = function _templateObject3() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject2$3() {
-  var data = _taggedTemplateLiteral([""]);
-
-  _templateObject2$3 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject$9() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-gap: 1rem;\n"]);
-
-  _templateObject$9 = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-var Visual = styled__default.div(_templateObject$9());
-var Control = styled__default.div(_templateObject2$3());
-
-var Item$1 = function Item(_ref) {
-  var unit = _ref.unit;
-  return React__default.createElement(Unit$1, null, React__default.createElement(Visual, null, React__default.createElement(Specimen$1, {
-    unit: unit
-  }), React__default.createElement(Meta$1, {
-    unit: unit
-  })), React__default.createElement(Control, null, React__default.createElement(AdjustPopover$1, {
-    unit: unit
-  })));
-};
-
-var Unit$1 = styled__default.div(_templateObject3$1());
-var Content$1 = make.withFontWeightContent(function (_ref2) {
-  var content = _ref2.content;
-  return content.map(function (unit, idx) {
-    return React__default.createElement(Item$1, {
-      key: idx,
-      unit: unit
-    });
+var Content$1 = make.withFontWeightContent(function (_ref) {
+  var content = _ref.content;
+  return React__default.createElement(Spec.AttributeContent, {
+    content: content,
+    renderUnit: function renderUnit(_ref2) {
+      var unit = _ref2.unit,
+          idx = _ref2.idx;
+      return React__default.createElement(Spec.Unit, null, React__default.createElement(Spec.Unit.Visual, null, React__default.createElement(Specimen$2, {
+        unit: unit
+      }), React__default.createElement(Meta$1, {
+        unit: unit
+      })), React__default.createElement(Control, null, React__default.createElement(AdjustPopover$1, {
+        unit: unit
+      })));
+    }
   });
 });
 
@@ -1167,7 +1111,7 @@ var FontWeight$1 = function FontWeight() {
   return React__default.createElement(ui.Card, {
     pad: true,
     border: true
-  }, React__default.createElement(SpecCard, null, React__default.createElement(SpecCard.Header, null, React__default.createElement(SpecCard.Title, null, "Font Weight"), React__default.createElement(SpecCard.Controls, null, " ")), React__default.createElement(SpecCard.Content, null, React__default.createElement(Content$1, null)), React__default.createElement(SpecCard.Footer, null, " ")));
+  }, React__default.createElement(Spec, null, React__default.createElement(Spec.Header, null, React__default.createElement(Spec.Header.Title, null, "Font Weight"), React__default.createElement(Spec.Header.Controls, null, " ")), React__default.createElement(Spec.Content, null, React__default.createElement(Content$1, null)), React__default.createElement(Spec.Footer, null, " ")));
 };
 
 exports.GlobalsInfo = Globals;

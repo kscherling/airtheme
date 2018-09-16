@@ -2,7 +2,7 @@ import React from 'react'
 import { compose } from 'redux'
 import { mapBaseFontSize, mapBaseLineHeight } from '../../utils/mapThemeToProps'
 import connectTheme from '../../utils/connectTheme'
-import Meta from '../../components/SpecCard/Meta'
+import Meta from '../../components/Spec/Meta'
 
 const BaseFontMeta = compose(
   connectTheme(mapBaseFontSize),

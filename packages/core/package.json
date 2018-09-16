@@ -13,8 +13,8 @@
     "test": "./task test"
   },
   "dependencies": {
-    "humps": "^2.0.1",
-    "fp": "^0.1.0"
+    "fp": "^0.1.0",
+    "humps": "^2.0.1"
   },
   "devDependencies": {
     "prettier": "^1.14.2"
