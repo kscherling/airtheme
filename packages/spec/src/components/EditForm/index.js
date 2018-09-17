@@ -11,6 +11,13 @@ const incrementGroup = ({ incrementGroup }) =>
     grid-template-columns: 1fr auto;
   `
 
+const combinedGroup = ({ combinedGroup }) =>
+  combinedGroup &&
+  css`
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+  `
+
 const EditForm = styled.div`
   display: grid;
 `
@@ -30,6 +37,7 @@ const Name = styled.div`
 const Units = styled.div``
 const Unit = styled.div`
   ${incrementGroup};
+  ${combinedGroup};
 
   > div {
     padding: 0.5rem;

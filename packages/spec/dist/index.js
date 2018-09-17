@@ -782,8 +782,18 @@ if (process.env.NODE_ENV !== 'production' && typeof isCrushed.name === 'string' 
   warning("You are currently using minified code outside of NODE_ENV === 'production'. " + 'This means that you are running a slower development build of Redux. ' + 'You can use loose-envify (https://github.com/zertosh/loose-envify) for browserify ' + 'or DefinePlugin for webpack (http://stackoverflow.com/questions/30030031) ' + 'to ensure you have the correct code for your production build.');
 }
 
-function _templateObject9() {
+function _templateObject10() {
   var data = _taggedTemplateLiteral(["\n  display: grid;\n  justify-items: flex-end;\n  padding: 1rem;\n"]);
+
+  _templateObject10 = function _templateObject10() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject9() {
+  var data = _taggedTemplateLiteral(["\n  ", ";\n"]);
 
   _templateObject9 = function _templateObject9() {
     return data;
@@ -793,7 +803,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\n  ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n  ", ";\n\n  > div {\n    padding: 0.5rem;\n  }\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -803,7 +813,7 @@ function _templateObject8() {
 }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n  ", ";\n\n  > div {\n    padding: 0.5rem;\n  }\n"]);
+  var data = _taggedTemplateLiteral([""]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -813,7 +823,7 @@ function _templateObject7() {
 }
 
 function _templateObject6$1() {
-  var data = _taggedTemplateLiteral([""]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n"]);
 
   _templateObject6$1 = function _templateObject6() {
     return data;
@@ -823,7 +833,7 @@ function _templateObject6$1() {
 }
 
 function _templateObject5$1() {
-  var data = _taggedTemplateLiteral(["\n  ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 1fr auto;\n  padding: 1rem;\n\n  > strong {\n    font-size: 70%;\n  }\n"]);
 
   _templateObject5$1 = function _templateObject5() {
     return data;
@@ -833,7 +843,7 @@ function _templateObject5$1() {
 }
 
 function _templateObject4$2() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 1fr auto;\n  padding: 1rem;\n\n  > strong {\n    font-size: 70%;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n"]);
 
   _templateObject4$2 = function _templateObject4() {
     return data;
@@ -843,7 +853,7 @@ function _templateObject4$2() {
 }
 
 function _templateObject3$2() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n"]);
+  var data = _taggedTemplateLiteral(["\n    display: grid;\n    grid-template-columns: 1fr 1fr auto;\n  "]);
 
   _templateObject3$2 = function _templateObject3() {
     return data;
@@ -878,13 +888,18 @@ var incrementGroup = function incrementGroup(_ref) {
   return incrementGroup && styled.css(_templateObject2$2());
 };
 
-var EditForm = styled__default.div(_templateObject3$2());
-var Header$1 = styled__default.div(_templateObject4$2());
-var Name$1 = styled__default.div(_templateObject5$1(), divider);
-var Units = styled__default.div(_templateObject6$1());
-var Unit$2 = styled__default.div(_templateObject7(), incrementGroup);
-var Specimen$2 = styled__default.div(_templateObject8(), divider);
-var Footer$1 = styled__default.div(_templateObject9());
+var combinedGroup = function combinedGroup(_ref2) {
+  var combinedGroup = _ref2.combinedGroup;
+  return combinedGroup && styled.css(_templateObject3$2());
+};
+
+var EditForm = styled__default.div(_templateObject4$2());
+var Header$1 = styled__default.div(_templateObject5$1());
+var Name$1 = styled__default.div(_templateObject6$1(), divider);
+var Units = styled__default.div(_templateObject7());
+var Unit$2 = styled__default.div(_templateObject8(), incrementGroup, combinedGroup);
+var Specimen$2 = styled__default.div(_templateObject9(), divider);
+var Footer$1 = styled__default.div(_templateObject10());
 EditForm.Header = Header$1;
 EditForm.Name = Name$1;
 EditForm.Units = Units;
@@ -1432,17 +1447,17 @@ var Add = make.withFontWeightContent(function (_ref) {
           addFontWeight(unit.value, unit.name, unit.ordinal);
           hide();
         }), _ref3)
-      }), React__default.createElement(EditForm, null, React__default.createElement(EditForm.Header, null, React__default.createElement("strong", null, "Add Font Weight"), React__default.createElement("div", null, "Cancel (Esc)")), React__default.createElement(EditForm.Name, null, React__default.createElement(ui.InvisibleInput, {
-        placeholder: "Key",
+      }), React__default.createElement(EditForm, null, React__default.createElement(EditForm.Header, null, React__default.createElement("strong", null, "Add Font Weight"), React__default.createElement(ui.QuickKey, null, React__default.createElement("em", null, "esc"), " cancel")), React__default.createElement(EditForm.Specimen, null, React__default.createElement(AddSpecimen, {
+        attribute: attribute
+      })), React__default.createElement(EditForm.Units, null, React__default.createElement(EditForm.Units.Unit, {
+        combinedGroup: true
+      }, React__default.createElement(ui.InvisibleInput, {
+        placeholder: "Theme key",
         onChange: function onChange(e) {
           return updateName(e.target.value);
         },
         value: unit.name
-      })), React__default.createElement(EditForm.Specimen, null, React__default.createElement(AddSpecimen, {
-        attribute: attribute
-      })), React__default.createElement(EditForm.Units, null, React__default.createElement(EditForm.Units.Unit, {
-        incrementGroup: true
-      }, React__default.createElement(ui.InvisibleInput, {
+      }), React__default.createElement(ui.InvisibleInput, {
         placeholder: "Value",
         onChange: function onChange(e) {
           return updateValue(core.castNumber(e.target.value));
@@ -1459,7 +1474,7 @@ var Add = make.withFontWeightContent(function (_ref) {
         },
         castValueFrom: core.castNumber,
         castValueTo: core.castNumber
-      }))), React__default.createElement(EditForm.Footer, null, "Ok (Enter)")));
+      }))), React__default.createElement(EditForm.Footer, null, React__default.createElement(ui.QuickKey, null, React__default.createElement("em", null, "enter"), " submit"))));
     }
   });
 });
