@@ -6,9 +6,10 @@ import Deserialize from '../../components/Deserialize'
 const DEFAULT_TEXT = 'The quick brown fox jumped over the lazy dog.'
 
 const Styles = styled.div`
-  min-height: 72px;
+  min-height: 100px;
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 1rem;
   font-weight: ${({ fontWeight }) => fontWeight};
 `

@@ -782,8 +782,18 @@ if (process.env.NODE_ENV !== 'production' && typeof isCrushed.name === 'string' 
   warning("You are currently using minified code outside of NODE_ENV === 'production'. " + 'This means that you are running a slower development build of Redux. ' + 'You can use loose-envify (https://github.com/zertosh/loose-envify) for browserify ' + 'or DefinePlugin for webpack (http://stackoverflow.com/questions/30030031) ' + 'to ensure you have the correct code for your production build.');
 }
 
+function _templateObject9() {
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  justify-items: flex-end;\n  padding: 1rem;\n"]);
+
+  _templateObject9 = function _templateObject9() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\n  padding: 1rem;\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -793,7 +803,7 @@ function _templateObject8() {
 }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n  ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n\n  > div {\n    padding: 0.5rem;\n  }\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -803,7 +813,7 @@ function _templateObject7() {
 }
 
 function _templateObject6$1() {
-  var data = _taggedTemplateLiteral(["\n  ", ";\n\n  > div {\n    padding: 0.5rem;\n  }\n"]);
+  var data = _taggedTemplateLiteral([""]);
 
   _templateObject6$1 = function _templateObject6() {
     return data;
@@ -813,7 +823,7 @@ function _templateObject6$1() {
 }
 
 function _templateObject5$1() {
-  var data = _taggedTemplateLiteral([""]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n"]);
 
   _templateObject5$1 = function _templateObject5() {
     return data;
@@ -823,7 +833,7 @@ function _templateObject5$1() {
 }
 
 function _templateObject4$2() {
-  var data = _taggedTemplateLiteral(["\n  ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 1fr auto;\n  padding: 1rem;\n\n  > strong {\n    font-size: 70%;\n  }\n"]);
 
   _templateObject4$2 = function _templateObject4() {
     return data;
@@ -869,11 +879,13 @@ var incrementGroup = function incrementGroup(_ref) {
 };
 
 var EditForm = styled__default.div(_templateObject3$2());
-var Name$1 = styled__default.div(_templateObject4$2(), divider);
-var Units = styled__default.div(_templateObject5$1());
-var Unit$2 = styled__default.div(_templateObject6$1(), incrementGroup);
-var Specimen$2 = styled__default.div(_templateObject7(), divider);
-var Footer$1 = styled__default.div(_templateObject8());
+var Header$1 = styled__default.div(_templateObject4$2());
+var Name$1 = styled__default.div(_templateObject5$1(), divider);
+var Units = styled__default.div(_templateObject6$1());
+var Unit$2 = styled__default.div(_templateObject7(), incrementGroup);
+var Specimen$2 = styled__default.div(_templateObject8(), divider);
+var Footer$1 = styled__default.div(_templateObject9());
+EditForm.Header = Header$1;
 EditForm.Name = Name$1;
 EditForm.Units = Units;
 EditForm.Units.Unit = Unit$2;
@@ -1316,7 +1328,7 @@ var Deserialize = function Deserialize(_ref) {
 };
 
 function _templateObject$9() {
-  var data = _taggedTemplateLiteral(["\n  min-height: 72px;\n  display: flex;\n  align-items: center;\n  padding: 1rem;\n  font-weight: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  min-height: 100px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 1rem;\n  font-weight: ", ";\n"]);
 
   _templateObject$9 = function _templateObject() {
     return data;
@@ -1343,6 +1355,60 @@ var AddSpecimen = function AddSpecimen(_ref2) {
   });
 };
 
+var ESC = 27;
+var ENTER = 13;
+
+var KeyboardEvents =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(KeyboardEvents, _Component);
+
+  function KeyboardEvents() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    _classCallCheck(this, KeyboardEvents);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(KeyboardEvents)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleKeydown", function (e) {
+      var eventHandler = _this.props.eventMap[e.keyCode];
+      eventHandler && eventHandler(e);
+    });
+
+    return _this;
+  }
+
+  _createClass(KeyboardEvents, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      document.addEventListener('keydown', this.handleKeydown);
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      document.removeEventListener('keydown', this.handleKeydown);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var children = this.props.children;
+      return Boolean(children) ? children : null;
+    }
+  }]);
+
+  return KeyboardEvents;
+}(React.Component);
+
+_defineProperty(KeyboardEvents, "defaultProps", {
+  eventMap: {}
+});
+
 var Add = make.withFontWeightContent(function (_ref) {
   var addFontWeight = _ref.addFontWeight,
       content = _ref.content,
@@ -1355,11 +1421,18 @@ var Add = make.withFontWeightContent(function (_ref) {
     attribute: type.attribute.fontWeight,
     nextOrdinal: content.length + 1,
     render: function render(_ref2) {
+      var _ref3;
+
       var attribute = _ref2.attribute,
           unit = _ref2.unit,
           updateName = _ref2.updateName,
           updateValue = _ref2.updateValue;
-      return React__default.createElement(EditForm, null, React__default.createElement(EditForm.Name, null, React__default.createElement(ui.InvisibleInput, {
+      return React__default.createElement(React.Fragment, null, React__default.createElement(KeyboardEvents, {
+        eventMap: (_ref3 = {}, _defineProperty(_ref3, ESC, hide), _defineProperty(_ref3, ENTER, function () {
+          addFontWeight(unit.value, unit.name, unit.ordinal);
+          hide();
+        }), _ref3)
+      }), React__default.createElement(EditForm, null, React__default.createElement(EditForm.Header, null, React__default.createElement("strong", null, "Add Font Weight"), React__default.createElement("div", null, "Cancel (Esc)")), React__default.createElement(EditForm.Name, null, React__default.createElement(ui.InvisibleInput, {
         placeholder: "Key",
         onChange: function onChange(e) {
           return updateName(e.target.value);
@@ -1375,12 +1448,18 @@ var Add = make.withFontWeightContent(function (_ref) {
           return updateValue(core.castNumber(e.target.value));
         },
         value: unit.value
-      }))), React__default.createElement(EditForm.Footer, null, React__default.createElement(ui.UtilityButton, {
-        onClick: function onClick() {
-          addFontWeight(unit.value, unit.name, unit.ordinal);
-          hide();
-        }
-      }, "Add")));
+      }), React__default.createElement(ui.IncrementUnit, {
+        update: function update(_, _ref4) {
+          var value = _ref4.value;
+          return updateValue(value);
+        },
+        unit: unit,
+        options: {
+          step: 100
+        },
+        castValueFrom: core.castNumber,
+        castValueTo: core.castNumber
+      }))), React__default.createElement(EditForm.Footer, null, "Ok (Enter)")));
     }
   });
 });

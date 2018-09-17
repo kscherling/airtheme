@@ -14,6 +14,16 @@ const incrementGroup = ({ incrementGroup }) =>
 const EditForm = styled.div`
   display: grid;
 `
+const Header = styled.div`
+  display: grid;
+  grid-template-columns: 1fr auto;
+  padding: 1rem;
+
+  > strong {
+    font-size: 70%;
+  }
+`
+
 const Name = styled.div`
   ${divider};
 `
@@ -30,9 +40,12 @@ const Specimen = styled.div`
 `
 
 const Footer = styled.div`
+  display: grid;
+  justify-items: flex-end;
   padding: 1rem;
 `
 
+EditForm.Header = Header
 EditForm.Name = Name
 EditForm.Units = Units
 EditForm.Units.Unit = Unit
