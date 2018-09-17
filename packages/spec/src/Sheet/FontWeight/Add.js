@@ -10,7 +10,7 @@ import {
   QuickKey
 } from '@airtheme/ui'
 import { attribute, unit } from '@airtheme/type'
-import AddSpeciment from './AddSpecimen'
+import FontWeightSpecimen from '../../Specimen/FontWeight'
 
 const ESC = 27
 const ENTER = 13
@@ -65,7 +65,7 @@ const Add = withFontWeightContent(({ addFontWeight, content, hide }) => (
             </QuickKey>
           </EditForm.Header>
           <EditForm.Specimen>
-            <AddSpeciment attribute={attribute} />
+            <FontWeightSpecimen pad unit={unit} attribute={attribute} />
           </EditForm.Specimen>
           <EditForm.Units>
             <EditForm.Units.Unit combinedGroup>

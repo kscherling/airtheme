@@ -3,14 +3,19 @@ import { castNumber } from '@airtheme/core'
 import { withFontWeightContent } from '@airtheme/make'
 import { IncrementUnit, InputUnitValue, InputUnitName } from '@airtheme/ui'
 import EditForm from '../../components/EditForm'
+import FontWeightSpecimen from '../../Specimen/FontWeight'
 
-const Edit = ({ updateFontWeight, unit }) => (
+const Edit = ({ updateFontWeight, unit, attribute }) => (
   <EditForm>
-    <EditForm.Name>
-      <InputUnitName update={updateFontWeight} unit={unit} />
-    </EditForm.Name>
     <EditForm.Units>
-      <EditForm.Units.Unit incrementGroup>
+      <EditForm.Header>
+        <strong>FontWeight</strong>
+      </EditForm.Header>
+      <EditForm.Specimen>
+        <FontWeightSpecimen pad micro unit={unit} attribute={attribute} />
+      </EditForm.Specimen>
+      <EditForm.Units.Unit combinedGroup>
+        <InputUnitName update={updateFontWeight} unit={unit} />
         <InputUnitValue
           update={updateFontWeight}
           unit={unit}
@@ -25,7 +30,6 @@ const Edit = ({ updateFontWeight, unit }) => (
         />
       </EditForm.Units.Unit>
     </EditForm.Units>
-    <EditForm.Footer />
   </EditForm>
 )
 

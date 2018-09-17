@@ -1,10 +1,10 @@
 import React from 'react'
 import { deserializeAttribute } from '@airtheme/type'
 
-const Deserialize = ({ attribute, render, theme = {} }) =>
+const Deserialize = ({ attribute, unit = {}, render, theme = {} }) =>
   render({
     deserialized: Boolean(attribute)
-      ? deserializeAttribute(attribute, theme)
+      ? deserializeAttribute({ ...attribute, content: [unit] }, theme)
       : {}
   })
 

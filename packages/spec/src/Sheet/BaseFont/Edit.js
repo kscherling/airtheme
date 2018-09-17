@@ -24,23 +24,19 @@ const BaseLineHeightInput = withBaseLineHeightContent(
 
 const Edit = () => (
   <EditForm>
-    <EditForm.Name>
-      <BaseFontSizeInput />
-    </EditForm.Name>
+    <EditForm.Header>
+      <strong>Base Font</strong>
+    </EditForm.Header>
     <EditForm.Units>
-      <EditForm.Units.Unit incrementGroup>
+      <EditForm.Units.Unit combinedGroup>
+        <BaseFontSizeInput />
         <EditBaseFontSize />
       </EditForm.Units.Unit>
-    </EditForm.Units>
-    <EditForm.Name>
-      <BaseLineHeightInput />
-    </EditForm.Name>
-    <EditForm.Units>
-      <EditForm.Units.Unit incrementGroup>
+      <EditForm.Units.Unit combinedGroup>
+        <BaseLineHeightInput />
         <EditBaseLineHeight />
       </EditForm.Units.Unit>
     </EditForm.Units>
-    <EditForm.Footer />
   </EditForm>
 )
 

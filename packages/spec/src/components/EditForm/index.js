@@ -1,7 +1,10 @@
 import styled, { css } from 'styled-components'
 
-const divider = css`
+const dividerBottom = css`
   border-bottom: 1px solid #eee;
+`
+const dividerTop = css`
+  border-top: 1px solid #eee;
 `
 
 const incrementGroup = ({ incrementGroup }) =>
@@ -32,7 +35,7 @@ const Header = styled.div`
 `
 
 const Name = styled.div`
-  ${divider};
+  ${dividerBottom};
 `
 const Units = styled.div``
 const Unit = styled.div`
@@ -42,9 +45,13 @@ const Unit = styled.div`
   > div {
     padding: 0.5rem;
   }
+
+  & + & {
+    ${dividerTop};
+  }
 `
 const Specimen = styled.div`
-  ${divider};
+  ${dividerBottom};
 `
 
 const Footer = styled.div`

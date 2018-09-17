@@ -15,7 +15,7 @@ const PopoverContainer = styled.div`
   background: ${popOverBg};
   border-radius: 3px;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
-  margin-top: 6px;
+  margin-top: 10px;
   width: ${({ width }) =>
     css`
       ${width};
@@ -24,11 +24,11 @@ const PopoverContainer = styled.div`
 
 const PopoverArrow = styled.div`
   position: absolute;
-  border: 5px solid transparent;
+  border: 8px solid transparent;
 
   &[data-placement*="bottom"] {
-    top: -10px
-    border-bottom-color: ${popOverBg};
+    top: -16px
+    border-bottom-color: #f2f2f2;
   }
 `
 
@@ -36,7 +36,7 @@ class Popover extends Component {
   static defaultProps = {
     renderTrigger: noop,
     renderContent: noop,
-    width: '200px'
+    width: '220px'
   }
 
   constructor(props) {

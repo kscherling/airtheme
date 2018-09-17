@@ -65,6 +65,25 @@ function _defineProperty(obj, key, value) {
   return obj;
 }
 
+function _objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+    var ownKeys = Object.keys(source);
+
+    if (typeof Object.getOwnPropertySymbols === 'function') {
+      ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {
+        return Object.getOwnPropertyDescriptor(source, sym).enumerable;
+      }));
+    }
+
+    ownKeys.forEach(function (key) {
+      _defineProperty(target, key, source[key]);
+    });
+  }
+
+  return target;
+}
+
 function _inherits(subClass, superClass) {
   if (typeof superClass !== "function" && superClass !== null) {
     throw new TypeError("Super expression must either be null or a function");
@@ -782,8 +801,18 @@ if (process.env.NODE_ENV !== 'production' && typeof isCrushed.name === 'string' 
   warning("You are currently using minified code outside of NODE_ENV === 'production'. " + 'This means that you are running a slower development build of Redux. ' + 'You can use loose-envify (https://github.com/zertosh/loose-envify) for browserify ' + 'or DefinePlugin for webpack (http://stackoverflow.com/questions/30030031) ' + 'to ensure you have the correct code for your production build.');
 }
 
-function _templateObject10() {
+function _templateObject11() {
   var data = _taggedTemplateLiteral(["\n  display: grid;\n  justify-items: flex-end;\n  padding: 1rem;\n"]);
+
+  _templateObject11 = function _templateObject11() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject10() {
+  var data = _taggedTemplateLiteral(["\n  ", ";\n"]);
 
   _templateObject10 = function _templateObject10() {
     return data;
@@ -793,7 +822,7 @@ function _templateObject10() {
 }
 
 function _templateObject9() {
-  var data = _taggedTemplateLiteral(["\n  ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n  ", ";\n\n  > div {\n    padding: 0.5rem;\n  }\n\n  & + & {\n    ", ";\n  }\n"]);
 
   _templateObject9 = function _templateObject9() {
     return data;
@@ -803,7 +832,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\n  ", ";\n  ", ";\n\n  > div {\n    padding: 0.5rem;\n  }\n"]);
+  var data = _taggedTemplateLiteral([""]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -813,7 +842,7 @@ function _templateObject8() {
 }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral([""]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -823,7 +852,7 @@ function _templateObject7() {
 }
 
 function _templateObject6$1() {
-  var data = _taggedTemplateLiteral(["\n  ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 1fr auto;\n  padding: 1rem;\n\n  > strong {\n    font-size: 70%;\n  }\n"]);
 
   _templateObject6$1 = function _templateObject6() {
     return data;
@@ -833,7 +862,7 @@ function _templateObject6$1() {
 }
 
 function _templateObject5$1() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 1fr auto;\n  padding: 1rem;\n\n  > strong {\n    font-size: 70%;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n"]);
 
   _templateObject5$1 = function _templateObject5() {
     return data;
@@ -843,7 +872,7 @@ function _templateObject5$1() {
 }
 
 function _templateObject4$2() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n"]);
+  var data = _taggedTemplateLiteral(["\n    display: grid;\n    grid-template-columns: 1fr 1fr auto;\n  "]);
 
   _templateObject4$2 = function _templateObject4() {
     return data;
@@ -853,7 +882,7 @@ function _templateObject4$2() {
 }
 
 function _templateObject3$2() {
-  var data = _taggedTemplateLiteral(["\n    display: grid;\n    grid-template-columns: 1fr 1fr auto;\n  "]);
+  var data = _taggedTemplateLiteral(["\n    display: grid;\n    grid-template-columns: 1fr auto;\n  "]);
 
   _templateObject3$2 = function _templateObject3() {
     return data;
@@ -863,7 +892,7 @@ function _templateObject3$2() {
 }
 
 function _templateObject2$2() {
-  var data = _taggedTemplateLiteral(["\n    display: grid;\n    grid-template-columns: 1fr auto;\n  "]);
+  var data = _taggedTemplateLiteral(["\n  border-top: 1px solid #eee;\n"]);
 
   _templateObject2$2 = function _templateObject2() {
     return data;
@@ -881,25 +910,26 @@ function _templateObject$6() {
 
   return data;
 }
-var divider = styled.css(_templateObject$6());
+var dividerBottom = styled.css(_templateObject$6());
+var dividerTop = styled.css(_templateObject2$2());
 
 var incrementGroup = function incrementGroup(_ref) {
   var incrementGroup = _ref.incrementGroup;
-  return incrementGroup && styled.css(_templateObject2$2());
+  return incrementGroup && styled.css(_templateObject3$2());
 };
 
 var combinedGroup = function combinedGroup(_ref2) {
   var combinedGroup = _ref2.combinedGroup;
-  return combinedGroup && styled.css(_templateObject3$2());
+  return combinedGroup && styled.css(_templateObject4$2());
 };
 
-var EditForm = styled__default.div(_templateObject4$2());
-var Header$1 = styled__default.div(_templateObject5$1());
-var Name$1 = styled__default.div(_templateObject6$1(), divider);
-var Units = styled__default.div(_templateObject7());
-var Unit$2 = styled__default.div(_templateObject8(), incrementGroup, combinedGroup);
-var Specimen$2 = styled__default.div(_templateObject9(), divider);
-var Footer$1 = styled__default.div(_templateObject10());
+var EditForm = styled__default.div(_templateObject5$1());
+var Header$1 = styled__default.div(_templateObject6$1());
+var Name$1 = styled__default.div(_templateObject7(), dividerBottom);
+var Units = styled__default.div(_templateObject8());
+var Unit$2 = styled__default.div(_templateObject9(), incrementGroup, combinedGroup, dividerTop);
+var Specimen$2 = styled__default.div(_templateObject10(), dividerBottom);
+var Footer$1 = styled__default.div(_templateObject11());
 EditForm.Header = Header$1;
 EditForm.Name = Name$1;
 EditForm.Units = Units;
@@ -1003,11 +1033,11 @@ var BaseLineHeightInput = make.withBaseLineHeightContent(function (_ref2) {
 });
 
 var Edit = function Edit() {
-  return React__default.createElement(EditForm, null, React__default.createElement(EditForm.Name, null, React__default.createElement(BaseFontSizeInput, null)), React__default.createElement(EditForm.Units, null, React__default.createElement(EditForm.Units.Unit, {
-    incrementGroup: true
-  }, React__default.createElement(EditBaseFontSize, null))), React__default.createElement(EditForm.Name, null, React__default.createElement(BaseLineHeightInput, null)), React__default.createElement(EditForm.Units, null, React__default.createElement(EditForm.Units.Unit, {
-    incrementGroup: true
-  }, React__default.createElement(EditBaseLineHeight, null))), React__default.createElement(EditForm.Footer, null));
+  return React__default.createElement(EditForm, null, React__default.createElement(EditForm.Header, null, React__default.createElement("strong", null, "Base Font")), React__default.createElement(EditForm.Units, null, React__default.createElement(EditForm.Units.Unit, {
+    combinedGroup: true
+  }, React__default.createElement(BaseFontSizeInput, null), React__default.createElement(EditBaseFontSize, null)), React__default.createElement(EditForm.Units.Unit, {
+    combinedGroup: true
+  }, React__default.createElement(BaseLineHeightInput, null), React__default.createElement(EditBaseLineHeight, null))));
 };
 
 var EditPopover = function EditPopover() {
@@ -1107,8 +1137,42 @@ var BaseFont = function BaseFont() {
   }, React__default.createElement(Spec, null, React__default.createElement(Spec.Header, null, React__default.createElement(Spec.Header.Title, null, "Base Font"), React__default.createElement(Spec.Header.Actions, null)), React__default.createElement(Spec.Content, null, React__default.createElement(Content$1, null)), React__default.createElement(Spec.Footer, null)));
 };
 
+var Deserialize = function Deserialize(_ref) {
+  var attribute = _ref.attribute,
+      _ref$unit = _ref.unit,
+      unit = _ref$unit === void 0 ? {} : _ref$unit,
+      render = _ref.render,
+      _ref$theme = _ref.theme,
+      theme = _ref$theme === void 0 ? {} : _ref$theme;
+  return render({
+    deserialized: Boolean(attribute) ? type.deserializeAttribute(_objectSpread({}, attribute, {
+      content: [unit]
+    }), theme) : {}
+  });
+};
+
+function _templateObject3$3() {
+  var data = _taggedTemplateLiteral(["\n      min-height: 72px;\n    "]);
+
+  _templateObject3$3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2$4() {
+  var data = _taggedTemplateLiteral(["\n      min-height: 100px;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      padding: 1rem;\n    "]);
+
+  _templateObject2$4 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject$8() {
-  var data = _taggedTemplateLiteral(["\n  font-weight: ", ";\n  ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-weight: ", ";\n\n  ", ";\n\n  ", ";\n"]);
 
   _templateObject$8 = function _templateObject() {
     return data;
@@ -1116,36 +1180,39 @@ function _templateObject$8() {
 
   return data;
 }
-var DEFAULT_TEXT = 'The quick brown fox jumped over the lazy dog.'; // TODO: Move to general utils
+var DEFAULT_TEXT = 'The quick brown fox jumped over the lazy dog.';
+var MICRO_TEXT = 'Aa';
+var Styles = styled__default.div(_templateObject$8(), function (_ref) {
+  var fontWeight = _ref.fontWeight;
+  return fontWeight;
+}, function (_ref2) {
+  var pad = _ref2.pad;
+  return pad && styled.css(_templateObject2$4());
+}, function (_ref3) {
+  var micro = _ref3.micro;
+  return micro && styled.css(_templateObject3$3());
+});
 
-var mapFontWeight$1 = function mapFontWeight() {
-  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-      _ref$theme = _ref.theme;
-
-  _ref$theme = _ref$theme === void 0 ? {} : _ref$theme;
-  var _ref$theme$setting = _ref$theme.setting;
-  _ref$theme$setting = _ref$theme$setting === void 0 ? {} : _ref$theme$setting;
-  var fontWeight = _ref$theme$setting.fontWeight;
-  return {
-    fontWeight: fontWeight
-  };
+var FontWeightSpecimen = function FontWeightSpecimen(_ref4) {
+  var attribute = _ref4.attribute,
+      unit = _ref4.unit,
+      _ref4$micro = _ref4.micro,
+      micro = _ref4$micro === void 0 ? false : _ref4$micro,
+      _ref4$pad = _ref4.pad,
+      pad = _ref4$pad === void 0 ? false : _ref4$pad;
+  return React__default.createElement(Deserialize, {
+    attribute: attribute,
+    unit: unit,
+    render: function render(_ref5) {
+      var deserialized = _ref5.deserialized;
+      return React__default.createElement(Styles, {
+        fontWeight: Object.values(deserialized)[0],
+        micro: micro,
+        pad: pad
+      }, micro ? MICRO_TEXT : DEFAULT_TEXT);
+    }
+  });
 };
-
-var fontWeight = function fontWeight(key) {
-  return function (props) {
-    return mapFontWeight$1(props).fontWeight[key];
-  };
-};
-
-var Specimen$3 = styled__default.div.attrs({
-  children: DEFAULT_TEXT
-})(_templateObject$8(), function (_ref2) {
-  var name = _ref2.unit.name,
-      props = _objectWithoutProperties(_ref2, ["unit"]);
-
-  return fontWeight(name)(props);
-}, baseTypography);
-var Specimen$4 = styled.withTheme(Specimen$3);
 
 var Meta$2 = connectTheme(mapFontWeight)(function (_ref) {
   var fontWeight = _ref.fontWeight,
@@ -1156,13 +1223,19 @@ var Meta$2 = connectTheme(mapFontWeight)(function (_ref) {
 
 var Edit$1 = function Edit(_ref) {
   var updateFontWeight = _ref.updateFontWeight,
-      unit = _ref.unit;
-  return React__default.createElement(EditForm, null, React__default.createElement(EditForm.Name, null, React__default.createElement(ui.InputUnitName, {
+      unit = _ref.unit,
+      attribute = _ref.attribute;
+  return React__default.createElement(EditForm, null, React__default.createElement(EditForm.Units, null, React__default.createElement(EditForm.Header, null, React__default.createElement("strong", null, "FontWeight")), React__default.createElement(EditForm.Specimen, null, React__default.createElement(FontWeightSpecimen, {
+    pad: true,
+    micro: true,
+    unit: unit,
+    attribute: attribute
+  })), React__default.createElement(EditForm.Units.Unit, {
+    combinedGroup: true
+  }, React__default.createElement(ui.InputUnitName, {
     update: updateFontWeight,
     unit: unit
-  })), React__default.createElement(EditForm.Units, null, React__default.createElement(EditForm.Units.Unit, {
-    incrementGroup: true
-  }, React__default.createElement(ui.InputUnitValue, {
+  }), React__default.createElement(ui.InputUnitValue, {
     update: updateFontWeight,
     unit: unit,
     castValueTo: core.castNumber
@@ -1174,13 +1247,14 @@ var Edit$1 = function Edit(_ref) {
     },
     castValueFrom: core.castNumber,
     castValueTo: core.castNumber
-  }))), React__default.createElement(EditForm.Footer, null));
+  }))));
 };
 
 var Edit$2 = make.withFontWeightContent(Edit$1);
 
 var EditPopover$1 = function EditPopover(_ref) {
-  var unit = _ref.unit;
+  var unit = _ref.unit,
+      attribute = _ref.attribute;
   return React__default.createElement(ui.Popover, {
     renderTrigger: function renderTrigger(_ref2) {
       var ref = _ref2.ref,
@@ -1194,7 +1268,8 @@ var EditPopover$1 = function EditPopover(_ref) {
     },
     renderContent: function renderContent() {
       return React__default.createElement(Edit$2, {
-        unit: unit
+        unit: unit,
+        attribute: attribute
       });
     }
   });
@@ -1211,15 +1286,18 @@ var Delete = make.withFontWeightContent(function (_ref) {
 });
 
 var Unit$4 = function Unit(_ref) {
-  var unit = _ref.unit;
-  return React__default.createElement(Spec.Unit, null, React__default.createElement(Spec.Unit.Specimen, null, React__default.createElement(Specimen$4, {
-    unit: unit
+  var unit = _ref.unit,
+      attribute = _ref.attribute;
+  return React__default.createElement(Spec.Unit, null, React__default.createElement(Spec.Unit.Specimen, null, React__default.createElement(FontWeightSpecimen, {
+    unit: unit,
+    attribute: attribute
   })), React__default.createElement(Spec.Unit.Meta, null, React__default.createElement(Meta$2, {
     unit: unit
   })), React__default.createElement(Spec.Unit.Actions, null, React__default.createElement(Delete, {
     unit: unit
   }), React__default.createElement(EditPopover$1, {
-    unit: unit
+    unit: unit,
+    attribute: attribute
   })));
 };
 
@@ -1258,20 +1336,23 @@ var AttributeContent$1 = function AttributeContent(_ref) {
   });
 };
 
-var Content$2 = make.withFontWeightContent(function (_ref) {
-  var content = _ref.content;
+var Content$2 = function Content(_ref) {
+  var fontWeight = _ref.fontWeight;
   return React__default.createElement(AttributeContent$1, {
-    content: content,
+    content: fontWeight.content,
     renderUnit: function renderUnit(_ref2) {
       var unit = _ref2.unit,
           idx = _ref2.idx;
       return React__default.createElement(Unit$4, {
+        attribute: fontWeight,
         unit: unit,
         key: idx
       });
     }
   });
-});
+};
+
+var Content$3 = make.withFontWeightAttribute(Content$2);
 
 var NewUnit =
 /*#__PURE__*/
@@ -1331,44 +1412,6 @@ _defineProperty(NewUnit, "defaultProps", {
   nextOrdinal: null,
   render: core.noop
 });
-
-var Deserialize = function Deserialize(_ref) {
-  var attribute = _ref.attribute,
-      render = _ref.render,
-      _ref$theme = _ref.theme,
-      theme = _ref$theme === void 0 ? {} : _ref$theme;
-  return render({
-    deserialized: Boolean(attribute) ? type.deserializeAttribute(attribute, theme) : {}
-  });
-};
-
-function _templateObject$9() {
-  var data = _taggedTemplateLiteral(["\n  min-height: 100px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 1rem;\n  font-weight: ", ";\n"]);
-
-  _templateObject$9 = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-var DEFAULT_TEXT$1 = 'The quick brown fox jumped over the lazy dog.';
-var Styles = styled__default.div(_templateObject$9(), function (_ref) {
-  var fontWeight = _ref.fontWeight;
-  return fontWeight;
-});
-
-var AddSpecimen = function AddSpecimen(_ref2) {
-  var attribute = _ref2.attribute;
-  return React__default.createElement(Deserialize, {
-    attribute: attribute,
-    render: function render(_ref3) {
-      var deserialized = _ref3.deserialized;
-      return React__default.createElement(Styles, {
-        fontWeight: Object.values(deserialized)[0]
-      }, DEFAULT_TEXT$1);
-    }
-  });
-};
 
 var ESC = 27;
 var ENTER = 13;
@@ -1447,7 +1490,9 @@ var Add = make.withFontWeightContent(function (_ref) {
           addFontWeight(unit.value, unit.name, unit.ordinal);
           hide();
         }), _ref3)
-      }), React__default.createElement(EditForm, null, React__default.createElement(EditForm.Header, null, React__default.createElement("strong", null, "Add Font Weight"), React__default.createElement(ui.QuickKey, null, React__default.createElement("em", null, "esc"), " cancel")), React__default.createElement(EditForm.Specimen, null, React__default.createElement(AddSpecimen, {
+      }), React__default.createElement(EditForm, null, React__default.createElement(EditForm.Header, null, React__default.createElement("strong", null, "Add Font Weight"), React__default.createElement(ui.QuickKey, null, React__default.createElement("em", null, "esc"), " cancel")), React__default.createElement(EditForm.Specimen, null, React__default.createElement(FontWeightSpecimen, {
+        pad: true,
+        unit: unit,
         attribute: attribute
       })), React__default.createElement(EditForm.Units, null, React__default.createElement(EditForm.Units.Unit, {
         combinedGroup: true
@@ -1502,7 +1547,7 @@ var FontWeight$1 = function FontWeight() {
   return React__default.createElement(ui.Card, {
     pad: true,
     border: true
-  }, React__default.createElement(Spec, null, React__default.createElement(Spec.Header, null, React__default.createElement(Spec.Header.Title, null, "Font Weight"), React__default.createElement(Spec.Header.Actions, null, React__default.createElement(AddModal, null))), React__default.createElement(Spec.Content, null, React__default.createElement(Content$2, null)), React__default.createElement(Spec.Footer, null)));
+  }, React__default.createElement(Spec, null, React__default.createElement(Spec.Header, null, React__default.createElement(Spec.Header.Title, null, "Font Weight"), React__default.createElement(Spec.Header.Actions, null, React__default.createElement(AddModal, null))), React__default.createElement(Spec.Content, null, React__default.createElement(Content$3, null)), React__default.createElement(Spec.Footer, null)));
 };
 
 exports.GlobalsInfo = Globals;
