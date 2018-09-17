@@ -18,7 +18,7 @@ class Modal extends Component {
   }
 
   state = {
-    on: false
+    on: true
   }
 
   show = () => {

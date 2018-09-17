@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { withTheme } from 'styled-components'
 import { baseTypography } from '../../utils/styleHelpers'
 import Spec from '../../components/Spec'
 
@@ -19,4 +19,4 @@ const Specimen = styled.div.attrs({ children: DEFAULT_TEXT })`
   ${baseTypography};
 `
 
-export default Specimen
+export default withTheme(Specimen)

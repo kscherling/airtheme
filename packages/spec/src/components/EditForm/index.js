@@ -25,11 +25,18 @@ const Unit = styled.div`
     padding: 0.5rem;
   }
 `
-const Footer = styled.div``
+const Specimen = styled.div`
+  ${divider};
+`
+
+const Footer = styled.div`
+  padding: 1rem;
+`
 
 EditForm.Name = Name
 EditForm.Units = Units
 EditForm.Units.Unit = Unit
+EditForm.Specimen = Specimen
 EditForm.Footer = Footer
 
 export default EditForm

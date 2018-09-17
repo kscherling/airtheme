@@ -12,6 +12,7 @@ var ui = require('@airtheme/ui');
 var reactRedux = require('react-redux');
 var make = require('@airtheme/make');
 var core = require('@airtheme/core');
+var type = require('@airtheme/type');
 
 function _typeof(obj) {
   if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
@@ -25,6 +26,74 @@ function _typeof(obj) {
   }
 
   return _typeof(obj);
+}
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) _setPrototypeOf(subClass, superClass);
+}
+
+function _getPrototypeOf(o) {
+  _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
+  };
+  return _getPrototypeOf(o);
+}
+
+function _setPrototypeOf(o, p) {
+  _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+
+  return _setPrototypeOf(o, p);
 }
 
 function _objectWithoutPropertiesLoose(source, excluded) {
@@ -61,6 +130,22 @@ function _objectWithoutProperties(source, excluded) {
   }
 
   return target;
+}
+
+function _assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+function _possibleConstructorReturn(self, call) {
+  if (call && (typeof call === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  return _assertThisInitialized(self);
 }
 
 function _taggedTemplateLiteral(strings, raw) {
@@ -697,8 +782,18 @@ if (process.env.NODE_ENV !== 'production' && typeof isCrushed.name === 'string' 
   warning("You are currently using minified code outside of NODE_ENV === 'production'. " + 'This means that you are running a slower development build of Redux. ' + 'You can use loose-envify (https://github.com/zertosh/loose-envify) for browserify ' + 'or DefinePlugin for webpack (http://stackoverflow.com/questions/30030031) ' + 'to ensure you have the correct code for your production build.');
 }
 
+function _templateObject8() {
+  var data = _taggedTemplateLiteral(["\n  padding: 1rem;\n"]);
+
+  _templateObject8 = function _templateObject8() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject7() {
-  var data = _taggedTemplateLiteral([""]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -777,10 +872,12 @@ var EditForm = styled__default.div(_templateObject3$2());
 var Name$1 = styled__default.div(_templateObject4$2(), divider);
 var Units = styled__default.div(_templateObject5$1());
 var Unit$2 = styled__default.div(_templateObject6$1(), incrementGroup);
-var Footer$1 = styled__default.div(_templateObject7());
+var Specimen$2 = styled__default.div(_templateObject7(), divider);
+var Footer$1 = styled__default.div(_templateObject8());
 EditForm.Name = Name$1;
 EditForm.Units = Units;
 EditForm.Units.Unit = Unit$2;
+EditForm.Specimen = Specimen$2;
 EditForm.Footer = Footer$1;
 
 var Increment = function Increment(_ref) {
@@ -1013,7 +1110,7 @@ var fontWeight = function fontWeight(key) {
   };
 };
 
-var Specimen$2 = styled__default.div.attrs({
+var Specimen$3 = styled__default.div.attrs({
   children: DEFAULT_TEXT
 })(_templateObject$8(), function (_ref2) {
   var name = _ref2.unit.name,
@@ -1021,6 +1118,7 @@ var Specimen$2 = styled__default.div.attrs({
 
   return fontWeight(name)(props);
 }, baseTypography);
+var Specimen$4 = styled.withTheme(Specimen$3);
 
 var Meta$2 = connectTheme(mapFontWeight)(function (_ref) {
   var fontWeight = _ref.fontWeight,
@@ -1087,7 +1185,7 @@ var Delete = make.withFontWeightContent(function (_ref) {
 
 var Unit$4 = function Unit(_ref) {
   var unit = _ref.unit;
-  return React__default.createElement(Spec.Unit, null, React__default.createElement(Spec.Unit.Specimen, null, React__default.createElement(Specimen$2, {
+  return React__default.createElement(Spec.Unit, null, React__default.createElement(Spec.Unit.Specimen, null, React__default.createElement(Specimen$4, {
     unit: unit
   })), React__default.createElement(Spec.Unit.Meta, null, React__default.createElement(Meta$2, {
     unit: unit
@@ -1148,28 +1246,169 @@ var Content$2 = make.withFontWeightContent(function (_ref) {
   });
 });
 
+var NewUnit =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(NewUnit, _Component);
+
+  function NewUnit(props) {
+    var _this;
+
+    _classCallCheck(this, NewUnit);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(NewUnit).call(this, props));
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "updateName", function (name) {
+      return _this.setState({
+        name: name
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "updateValue", function (value) {
+      return _this.setState({
+        value: value
+      });
+    });
+
+    _this.state = props.unit(props.unitDefaults);
+    return _this;
+  }
+
+  _createClass(NewUnit, [{
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          render = _this$props.render,
+          attribute = _this$props.attribute;
+      var unit = this.state,
+          updateName = this.updateName,
+          updateValue = this.updateValue;
+      return render({
+        attribute: attribute({
+          content: [unit]
+        }),
+        unit: unit,
+        updateName: updateName,
+        updateValue: updateValue
+      });
+    }
+  }]);
+
+  return NewUnit;
+}(React.Component);
+
+_defineProperty(NewUnit, "defaultProps", {
+  unit: core.noop,
+  attribute: core.noop,
+  unitDefaults: {},
+  nextOrdinal: null,
+  render: core.noop
+});
+
+var Deserialize = function Deserialize(_ref) {
+  var attribute = _ref.attribute,
+      render = _ref.render,
+      _ref$theme = _ref.theme,
+      theme = _ref$theme === void 0 ? {} : _ref$theme;
+  return render({
+    deserialized: Boolean(attribute) ? type.deserializeAttribute(attribute, theme) : {}
+  });
+};
+
+function _templateObject$9() {
+  var data = _taggedTemplateLiteral(["\n  min-height: 72px;\n  display: flex;\n  align-items: center;\n  padding: 1rem;\n  font-weight: ", ";\n"]);
+
+  _templateObject$9 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var DEFAULT_TEXT$1 = 'The quick brown fox jumped over the lazy dog.';
+var Styles = styled__default.div(_templateObject$9(), function (_ref) {
+  var fontWeight = _ref.fontWeight;
+  return fontWeight;
+});
+
+var AddSpecimen = function AddSpecimen(_ref2) {
+  var attribute = _ref2.attribute;
+  return React__default.createElement(Deserialize, {
+    attribute: attribute,
+    render: function render(_ref3) {
+      var deserialized = _ref3.deserialized;
+      return React__default.createElement(Styles, {
+        fontWeight: Object.values(deserialized)[0]
+      }, DEFAULT_TEXT$1);
+    }
+  });
+};
+
 var Add = make.withFontWeightContent(function (_ref) {
-  var addFontWeight = _ref.addFontWeight;
+  var addFontWeight = _ref.addFontWeight,
+      content = _ref.content,
+      hide = _ref.hide;
+  return React__default.createElement(NewUnit, {
+    unitDefaults: {
+      value: 100
+    },
+    unit: type.unit.string,
+    attribute: type.attribute.fontWeight,
+    nextOrdinal: content.length + 1,
+    render: function render(_ref2) {
+      var attribute = _ref2.attribute,
+          unit = _ref2.unit,
+          updateName = _ref2.updateName,
+          updateValue = _ref2.updateValue;
+      return React__default.createElement(EditForm, null, React__default.createElement(EditForm.Name, null, React__default.createElement(ui.InvisibleInput, {
+        placeholder: "Key",
+        onChange: function onChange(e) {
+          return updateName(e.target.value);
+        },
+        value: unit.name
+      })), React__default.createElement(EditForm.Specimen, null, React__default.createElement(AddSpecimen, {
+        attribute: attribute
+      })), React__default.createElement(EditForm.Units, null, React__default.createElement(EditForm.Units.Unit, {
+        incrementGroup: true
+      }, React__default.createElement(ui.InvisibleInput, {
+        placeholder: "Value",
+        onChange: function onChange(e) {
+          return updateValue(core.castNumber(e.target.value));
+        },
+        value: unit.value
+      }))), React__default.createElement(EditForm.Footer, null, React__default.createElement(ui.UtilityButton, {
+        onClick: function onClick() {
+          addFontWeight(unit.value, unit.name, unit.ordinal);
+          hide();
+        }
+      }, "Add")));
+    }
+  });
+});
+
+var AddModal = function AddModal() {
   return React__default.createElement(ui.Modal, {
-    renderTrigger: function renderTrigger(_ref2) {
-      var show = _ref2.show,
-          active = _ref2.active;
+    renderTrigger: function renderTrigger(_ref) {
+      var show = _ref.show,
+          active = _ref.active;
       return React__default.createElement(ui.UtilityButton, {
         onClick: show,
         active: active
       }, React__default.createElement(ui.IconPlus, null));
     },
-    renderContent: function renderContent() {
-      return React__default.createElement(React.Fragment, null, "hello");
+    renderContent: function renderContent(_ref2) {
+      var hide = _ref2.hide;
+      return React__default.createElement(Add, {
+        hide: hide
+      });
     }
   });
-});
+};
 
 var FontWeight$1 = function FontWeight() {
   return React__default.createElement(ui.Card, {
     pad: true,
     border: true
-  }, React__default.createElement(Spec, null, React__default.createElement(Spec.Header, null, React__default.createElement(Spec.Header.Title, null, "Font Weight"), React__default.createElement(Spec.Header.Actions, null, React__default.createElement(Add, null))), React__default.createElement(Spec.Content, null, React__default.createElement(Content$2, null)), React__default.createElement(Spec.Footer, null)));
+  }, React__default.createElement(Spec, null, React__default.createElement(Spec.Header, null, React__default.createElement(Spec.Header.Title, null, "Font Weight"), React__default.createElement(Spec.Header.Actions, null, React__default.createElement(AddModal, null))), React__default.createElement(Spec.Content, null, React__default.createElement(Content$2, null)), React__default.createElement(Spec.Footer, null)));
 };
 
 exports.GlobalsInfo = Globals;

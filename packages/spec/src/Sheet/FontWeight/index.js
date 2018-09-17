@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Card } from '@airtheme/ui'
 import Spec from '../../components/Spec'
 import Content from './Content'
-import Add from './Add'
+import AddModal from './AddModal'
 
 const FontWeight = () => (
   <Card pad border>
@@ -11,7 +11,7 @@ const FontWeight = () => (
       <Spec.Header>
         <Spec.Header.Title>Font Weight</Spec.Header.Title>
         <Spec.Header.Actions>
-          <Add />
+          <AddModal />
         </Spec.Header.Actions>
       </Spec.Header>
       <Spec.Content>
