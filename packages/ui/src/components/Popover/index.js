@@ -2,7 +2,8 @@ import React, { Component, Fragment } from 'react'
 import { Manager, Reference, Popper } from 'react-popper'
 import { createPortal } from 'react-dom'
 import styled, { css } from 'styled-components'
-const noop = () => null
+import { noop } from '@airtheme/core'
+
 const preventDefault = e => {
   e.stopPropagation()
   e.nativeEvent.stopImmediatePropagation()

@@ -1148,11 +1148,28 @@ var Content$2 = make.withFontWeightContent(function (_ref) {
   });
 });
 
+var Add = make.withFontWeightContent(function (_ref) {
+  var addFontWeight = _ref.addFontWeight;
+  return React__default.createElement(ui.Modal, {
+    renderTrigger: function renderTrigger(_ref2) {
+      var show = _ref2.show,
+          active = _ref2.active;
+      return React__default.createElement(ui.UtilityButton, {
+        onClick: show,
+        active: active
+      }, React__default.createElement(ui.IconPlus, null));
+    },
+    renderContent: function renderContent() {
+      return React__default.createElement(React.Fragment, null, "hello");
+    }
+  });
+});
+
 var FontWeight$1 = function FontWeight() {
   return React__default.createElement(ui.Card, {
     pad: true,
     border: true
-  }, React__default.createElement(Spec, null, React__default.createElement(Spec.Header, null, React__default.createElement(Spec.Header.Title, null, "Font Weight"), React__default.createElement(Spec.Header.Actions, null)), React__default.createElement(Spec.Content, null, React__default.createElement(Content$2, null)), React__default.createElement(Spec.Footer, null)));
+  }, React__default.createElement(Spec, null, React__default.createElement(Spec.Header, null, React__default.createElement(Spec.Header.Title, null, "Font Weight"), React__default.createElement(Spec.Header.Actions, null, React__default.createElement(Add, null))), React__default.createElement(Spec.Content, null, React__default.createElement(Content$2, null)), React__default.createElement(Spec.Footer, null)));
 };
 
 exports.GlobalsInfo = Globals;
