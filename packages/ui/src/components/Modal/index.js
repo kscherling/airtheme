@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom'
 import styled, { css } from 'styled-components'
 import ModalContent from './ModalContent'
 import { noop } from '@airtheme/core'
+import { ModalBlurConsumer } from './ModalBlurProvider'
 
 class Modal extends Component {
   static defaultProps = {
@@ -23,11 +24,13 @@ class Modal extends Component {
 
   show = () => {
     document.addEventListener('click', this.hide)
+    this.props.blurOn()
     this.setState({ on: true })
   }
 
   hide = () => {
     document.removeEventListener('click', this.hide)
+    this.props.blurOff()
     this.setState({ on: false })
   }
 
@@ -51,4 +54,10 @@ class Modal extends Component {
   }
 }
 
-export default Modal
+const ModalWithBlur = props => (
+  <ModalBlurConsumer>
+    {blurProps => <Modal {...props} {...blurProps} />}
+  </ModalBlurConsumer>
+)
+
+export default ModalWithBlur

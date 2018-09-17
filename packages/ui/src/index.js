@@ -11,6 +11,10 @@ export { default as SimpleList } from './components/SimpleList'
 export { default as SimpleTabs } from './components/SimpleTabs'
 export { default as Tabs } from './components/Tabs'
 export { default as Modal } from './components/Modal'
+export {
+  default as ModalBlurProvider,
+  ModalBlurConsumer
+} from './components/Modal/ModalBlurProvider'
 export { default as InvisibleInput } from './components/InvisibleInput'
 export { default as THead } from './components/THead'
 export { default as QuickKey } from './components/QuickKey'
