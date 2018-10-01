@@ -544,7 +544,7 @@ function _templateObject2() {
 }
 
 function _templateObject$2() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 1fr auto;\n  padding: 1rem 0;\n  grid-gap: 1rem;\n  grid-template-areas:\n    \"specimen actions\"\n    \"meta actions\";\n}\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: 120px 1fr auto;\n  padding: 1rem 0;\n  grid-gap: 1rem;\n  grid-template-areas:\n    \"meta specimen actions\";\n\n  > div {\n    display: flex;\n    align-items: flex-start;\n  }\n}\n"]);
 
   _templateObject$2 = function _templateObject() {
     return data;
@@ -1093,7 +1093,7 @@ var mapFontWeight = function mapFontWeight(_ref4) {
 };
 
 function _templateObject2$3() {
-  var data = _taggedTemplateLiteral(["\n  &:nth-child(even) {\n    font-weight: bold;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  &:first-child {\n    color: #999;\n    font-weight: 300;\n    font-size: 1rem;\n  }\n\n  &:nth-child(even) {\n    color: #999;\n  }\n"]);
 
   _templateObject2$3 = function _templateObject2() {
     return data;
@@ -1103,7 +1103,7 @@ function _templateObject2$3() {
 }
 
 function _templateObject$7() {
-  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-auto-flow: column;\n  grid-gap: 0.25rem;\n  color: #888888;\n  font-size: 70%;\n  width: fit-content;\n\n  & + & {\n    margin-top: 0.5rem;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-auto-flow: row;\n  grid-gap: 0.5rem;\n  font-size: 70%;\n"]);
 
   _templateObject$7 = function _templateObject() {
     return data;

@@ -2,19 +2,19 @@ import styled from 'styled-components'
 
 const MetaGroup = styled.div`
   display: grid;
-  grid-auto-flow: column;
-  grid-gap: 0.25rem;
-  color: #888888;
+  grid-auto-flow: row;
+  grid-gap: 0.5rem;
   font-size: 70%;
-  width: fit-content;
-
-  & + & {
-    margin-top: 0.5rem;
-  }
 `
 const Item = styled.div`
+  &:first-child {
+    color: #999;
+    font-weight: 300;
+    font-size: 1rem;
+  }
+
   &:nth-child(even) {
-    font-weight: bold;
+    color: #999;
   }
 `
 

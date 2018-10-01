@@ -4,6 +4,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 var type = require('@airtheme/type');
 var reactRedux = require('react-redux');
+var styledComponents = require('styled-components');
 
 function createCommonjsModule(fn, module) {
 	return module = { exports: {} }, fn(module, module.exports), module.exports;
@@ -2522,6 +2523,42 @@ function _objectSpread(target) {
   return target;
 }
 
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+function _objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+
+  var target = _objectWithoutPropertiesLoose(source, excluded);
+
+  var key, i;
+
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+
+  return target;
+}
+
 function _toConsumableArray(arr) {
   return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
 }
@@ -3440,6 +3477,44 @@ var withFontWeightContent = reactRedux.connect(mapFontWeightContent, {
   removeFontWeight: removeFontWeight
 });
 
+var connectTheme = function connectTheme(mapThemeToProps) {
+  return compose(styledComponents.withTheme, function (Component) {
+    return function (_ref) {
+      var theme = _ref.theme,
+          props = _objectWithoutProperties(_ref, ["theme"]);
+
+      return react.createElement(Component, Object.assign({}, props, mapThemeToProps(theme)));
+    };
+  });
+};
+
+// NOTE: This should likely be an aspect of core or make or type?
+var mapThemeSwatch = function mapThemeSwatch(_ref) {
+  var swatch = _ref.swatch;
+  return {
+    swatch: swatch
+  };
+};
+var mapThemeBaseFontSize = function mapThemeBaseFontSize(_ref2) {
+  var baseFontSize = _ref2.baseFontSize;
+  return {
+    baseFontSize: baseFontSize
+  };
+};
+var mapThemeBaseLineHeight = function mapThemeBaseLineHeight(_ref3) {
+  var baseLineHeight = _ref3.baseLineHeight;
+  return {
+    baseLineHeight: baseLineHeight
+  };
+}; // prettier-ignore
+
+var mapThemeFontWeight = function mapThemeFontWeight(_ref4) {
+  var fontWeight = _ref4.setting.fontWeight;
+  return {
+    fontWeight: fontWeight
+  };
+}; // prettier-ignore
+
 exports.Provider = Provider;
 exports.makeStore = makeStore;
 exports.updateTheme = updateTheme;
@@ -3510,4 +3585,9 @@ exports.withBaseSpacingAttribute = withBaseSpacingAttribute;
 exports.withBaseSpacingContent = withBaseSpacingContent;
 exports.withFontWeightAttribute = withFontWeightAttribute;
 exports.withFontWeightContent = withFontWeightContent;
+exports.connectTheme = connectTheme;
+exports.mapThemeSwatch = mapThemeSwatch;
+exports.mapThemeBaseFontSize = mapThemeBaseFontSize;
+exports.mapThemeBaseLineHeight = mapThemeBaseLineHeight;
+exports.mapThemeFontWeight = mapThemeFontWeight;
 //# sourceMappingURL=index.js.map

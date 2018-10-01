@@ -2,12 +2,16 @@ import styled from 'styled-components'
 
 const Unit = styled.div`
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 120px 1fr auto;
   padding: 1rem 0;
   grid-gap: 1rem;
   grid-template-areas:
-    "specimen actions"
-    "meta actions";
+    "meta specimen actions";
+
+  > div {
+    display: flex;
+    align-items: flex-start;
+  }
 }
 `
 

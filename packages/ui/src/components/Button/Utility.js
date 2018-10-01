@@ -7,7 +7,7 @@ const UtilityButton = styled.button.attrs({
 })`
   ${resetButton};
   display: flex;
-  color: #888888;
+  color: #999999;
   border-radius: 3px;
   padding: 0.5rem 0.5rem;
   font-weight: bold;
