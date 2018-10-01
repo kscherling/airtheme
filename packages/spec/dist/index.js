@@ -1550,6 +1550,21 @@ var FontWeight$1 = function FontWeight() {
   }, React__default.createElement(Spec, null, React__default.createElement(Spec.Header, null, React__default.createElement(Spec.Header.Title, null, "Font Weight"), React__default.createElement(Spec.Header.Actions, null, React__default.createElement(AddModal, null))), React__default.createElement(Spec.Content, null, React__default.createElement(Content$3, null)), React__default.createElement(Spec.Footer, null)));
 };
 
+function _templateObject$9() {
+  var data = _taggedTemplateLiteral(["\n  transform: font-size 0.2s linear;\n  word-break: break-all;\n  ", ";\n"]);
+
+  _templateObject$9 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var TypesetContainer$1 = styled__default.div(_templateObject$9(), baseTypography);
+
+var BaseFontSpecimen = function BaseFontSpecimen() {
+  return React__default.createElement(TypesetContainer$1, null, React__default.createElement("div", null, uppercase), React__default.createElement("div", null, lowercase), React__default.createElement("div", null, numerals), React__default.createElement("div", null, puncuation));
+};
+
 exports.GlobalsInfo = Globals;
 exports.SwatchInfo = Swatch;
 exports.FontFaceInfo = FontFace;
@@ -1563,4 +1578,6 @@ exports.BaseLineHeightInfo = BaseLineHeight;
 exports.BaseSpacingInfo = BaseSpacing;
 exports.BaseFontSheet = BaseFont;
 exports.FontWeightSheet = FontWeight$1;
+exports.SpecimenBaseFont = BaseFontSpecimen;
+exports.SpecimenFontWeight = FontWeightSpecimen;
 //# sourceMappingURL=index.js.map

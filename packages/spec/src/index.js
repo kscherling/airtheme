@@ -13,3 +13,7 @@ export { default as BaseSpacingInfo } from './Info/BaseSpacing'
 // Sheet
 export { default as BaseFontSheet } from './Sheet/BaseFont'
 export { default as FontWeightSheet } from './Sheet/FontWeight'
+
+// Specimen
+export { default as SpecimenBaseFont } from './Specimen/BaseFont'
+export { default as SpecimenFontWeight } from './Specimen/FontWeight'

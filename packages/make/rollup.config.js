@@ -7,6 +7,7 @@ module.exports = {
     'fp',
     '@airtheme/type',
     '@airtheme/core',
+    'react',
     'react-redux',
     'styled-components'
   ]
