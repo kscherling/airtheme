@@ -1,6 +1,7 @@
 import React from 'react'
 
-// NOTE: Legacy from initial swatch spec
+// NOTE: Delete after base spacing is moved to app
+
 const AttributeEntries = ({
   attribute,
   component: Component,

@@ -2,7 +2,7 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import { Card } from '@airtheme/ui'
 import { mapSwatch } from '../utils/mapThemeToProps'
-import connectTheme from '../utils/connectTheme'
+import { connectTheme } from '@airtheme/make'
 import AttributeEntries from '../utils/AttributeEntries'
 import { withShade, isLight } from '@airtheme/ui'
 
