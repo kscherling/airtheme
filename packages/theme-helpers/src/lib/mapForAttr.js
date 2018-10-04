@@ -43,7 +43,8 @@ import {
   PADDING,
   RIGHT,
   TOP,
-  WIDTH
+  WIDTH,
+  ZINDEX
 } from './properties'
 
 import {
@@ -103,5 +104,6 @@ export default {
   [PADDING]: mapSpacing,
   [RIGHT]: mapSpacing,
   [TOP]: mapSpacing,
-  [WIDTH]: mapSpacing
+  [WIDTH]: mapSpacing,
+  [ZINDEX]: npimp
 }
