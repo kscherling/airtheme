@@ -1,9 +1,11 @@
 {
-  "name": "@airtheme/core",
+  "name": "@airtheme/theme-helpers",
   "version": "0.1.0",
   "author": "Kyle Scherling",
   "main": "dist/index.js",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "clean": "./task clean",
     "build": "./task build",
@@ -11,7 +13,9 @@
     "test": "./task test",
     "relink": "./task relink"
   },
-  "dependencies": {},
+  "dependencies": {
+    "styled-components": "^3.4.5"
+  },
   "devDependencies": {
     "prettier": "^1.14.2"
   },
