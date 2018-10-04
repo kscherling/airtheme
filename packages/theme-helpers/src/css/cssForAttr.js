@@ -5,16 +5,16 @@ import warning from 'warning'
 
 const cssForAttr = cssAttr =>
   curry((key, props) => {
-    warn(props.theme, `Missing required prop theme in '${props}'`)
+    warning(props.theme, `Missing required prop theme in '${props}'`)
 
-    warn(mapForAttr[cssAttr], `Missing map function for '${cssAttr}'`)
+    warning(mapForAttr[cssAttr], `Missing map function for '${cssAttr}'`)
 
-    warn(
+    warning(
       mapForAttr[cssAttr](props),
       `Map function for ${cssAttr} returned falsey`
     )
 
-    warn(
+    warning(
       mapForAttr[cssAttr](props)[key],
       `Missing setting ${key} in ${mapForAttr[cssAttr](props)}`
     )

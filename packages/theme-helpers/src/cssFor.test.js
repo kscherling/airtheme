@@ -1,17 +1,8 @@
-import { background } from './cssFor'
-import theme from './test/theme'
-import renderWithTheme from './test/renderWithTheme'
-import styled from 'styled-components'
-import 'jest-styled-components'
+import { cleanup } from 'react-testing-library'
+import assertStyleRule from './test/assertStyleRule'
+import { background, backgroundColor } from './cssFor'
 
-test('#background', () => {
-  const Component = styled.div`
-    ${background('primary')};
-  `
+afterEach(cleanup)
 
-  const { getByTestId } = renderWithTheme(
-    <StyledElement data-testid="element" />
-  )
-
-  expect(false).toBe(true)
-})
+assertStyleRule(background, 'primary', 'background', '#0b3954')
+assertStyleRule(backgroundColor, 'primary', 'background-color', '#0b3954')

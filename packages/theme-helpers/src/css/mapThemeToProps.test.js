@@ -12,19 +12,20 @@ import {
 import theme from '../test/theme'
 
 const props = { theme }
-const matches = (mapFn, target) => expect(mapFn(props)).toBe(target)
+const matches = (mapFn, expected) => expect(mapFn(props)).toBe(expected)
 
 // Base
-it('#mapBaseFontSize', () => matches(mapBaseFontSize, theme.baseFontSize))
-it('#mapBaseLineHeight', () => matches(mapBaseLineHeight, theme.baseLineHeight))
-it('#mapBaseSpacing', () => matches(mapBaseSpacing, theme.baseSpacing))
+test('#mapBaseFontSize', () => matches(mapBaseFontSize, theme.baseFontSize))
+test('#mapBaseLineHeight', () =>
+  matches(mapBaseLineHeight, theme.baseLineHeight))
+test('#mapBaseSpacing', () => matches(mapBaseSpacing, theme.baseSpacing))
 
 // Swatch
-it('#mapSwatch', () => matches(mapSwatch, theme.swatch))
+test('#mapSwatch', () => matches(mapSwatch, theme.swatch))
 
 // Settings
-it('#mapColor', () => matches(mapColor, theme.setting.color))
-it('#mapFontFamily', () => matches(mapFontFamily, theme.setting.fontFamily))
-it('#mapFontSize', () => matches(mapFontSize, theme.setting.fontSize))
-it('#mapFontWeight', () => matches(mapFontWeight, theme.setting.fontWeight))
-it('#mapSpacing', () => matches(mapSpacing, theme.setting.spacing))
+test('#mapColor', () => matches(mapColor, theme.setting.color))
+test('#mapFontFamily', () => matches(mapFontFamily, theme.setting.fontFamily))
+test('#mapFontSize', () => matches(mapFontSize, theme.setting.fontSize))
+test('#mapFontWeight', () => matches(mapFontWeight, theme.setting.fontWeight))
+test('#mapSpacing', () => matches(mapSpacing, theme.setting.spacing))
