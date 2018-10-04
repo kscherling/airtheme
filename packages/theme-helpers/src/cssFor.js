@@ -6,7 +6,6 @@ import {
   BORDER_BOTTOM_COLOR,
   BORDER_BOTTOM_LEFT_RADIUS,
   BORDER_BOTTOM_RIGHT_RADIUS,
-  BORDER_BOTTOM,
   BORDER_COLOR,
   BORDER_LEFT_COLOR,
   BORDER_RADIUS,
@@ -46,62 +45,48 @@ import {
   WIDTH
 } from './css/properties'
 
-const cssFor = (cssAttr, mapFn) => props => css`
-  [cssattr]: ${mapFn(props)};
-`
-
-export const background = cssForAttr(BACKGROUND)
 export const backgroundColor = cssForAttr(BACKGROUND_COLOR)
-// Background
-
-// Border
-// export const borderColor = cssFor('border-color', mapColor)
-// export const borderBottomColor = cssFor('border-bottom-color', mapColor)
-// export const borderLeftColor = cssFor('border-left-color', mapColor)
-// export const borderRightColor = cssFor('border-right-color', mapColor)
-// export const borderTopColor = cssFor('border-top-color', mapColor)
-
-// Dimension
-// export const height = cssFor('height', mapSpacing)
-// export const maxHeight = cssFor('max-height', mapSpacing)
-// export const maxWidth = cssFor('max-width', mapSpacing)
-// export const minHeight = cssFor('min-height', mapSpacing)
-// export const minWidth = cssFor('min-width', mapSpacing)
-// export const width = cssFor('width', mapSpacing)
-
-// Font
-// export const color = cssFor('color', mapColor)
-// export const fontFamily = cssFor('font-family', mapFontFamily)
-// export const fontSize = cssFor('font-size', mapFontSize)
-// export const fontWeight = cssFor('font-weight', mapFontWeight)
-
-// Position
-// export const zIndex = cssFor('z-index', 'zIndex')
-// export const top = cssFor('top', mapSpacing)
-// export const left = cssFor('left', mapSpacing)
-// export const right = cssFor('right', mapSpacing)
-// export const bottom = cssFor('bottom', mapSpacing)
-
-// Margin
-// export const margin = cssFor('margin', mapSpacing)
-// export const marginTop = cssFor('margin-top', mapSpacing)
-// export const marginBottom = cssFor('margin-bottom', mapSpacing)
-// export const marginLeft = cssFor('margin-left', mapSpacing)
-// export const marginRight = cssFor('margin-right', mapSpacing)
-
-// Padding
-// export const padding = cssFor('padding', mapSpacing)
-// export const paddingTop = cssFor('padding-top', mapSpacing)
-// export const paddingBottom = cssFor('padding-bottom', mapSpacing)
-// export const paddingLeft = cssFor('padding-left', mapSpacing)
-// export const paddingRight = cssFor('padding-right', mapSpacing)
-
-// BorderRadius
-// export const borderRadius = cssFor('border-radius', 'borderRadius')
-// export const borderTopLeftRadius = cssFor( 'border-top-left-radius', 'borderRadius') //prettier-ignore
-// export const borderTopRightRadius = cssFor( 'border-top-right-radius', 'borderRadius') //prettier-ignore
-// export const borderBottomLeftRadius = cssFor( 'border-bottom-left-radius', 'borderRadius') //prettier-ignore
-// export const borderBottomRightRadius = cssFor( 'border-bottom-right-radius', 'borderRadius') //prettier-ignore
-
-// boxShadow
-// export const boxShadow = cssFor('box-shadow', 'boxShadow')
+export const background = cssForAttr(BACKGROUND)
+export const borderBottomColor = cssForAttr(BORDER_BOTTOM_COLOR)
+export const borderBottomLeftRadius = cssForAttr(BORDER_BOTTOM_LEFT_RADIUS) //prettier-ignore
+export const borderBottomRightRadius = cssForAttr(BORDER_BOTTOM_RIGHT_RADIUS) //prettier-ignore
+export const borderColor = cssForAttr(BORDER_COLOR)
+export const borderLeftColor = cssForAttr(BORDER_LEFT_COLOR)
+// export const borderRadius = cssForAttr('border-radius', 'borderRadius')
+export const borderRightColor = cssForAttr(BORDER_RIGHT_COLOR)
+export const borderTopColor = cssForAttr(BORDER_TOP_COLOR)
+// export const borderTopLeftRadius = cssForAttr( 'border-top-left-radius', 'borderRadius') //prettier-ignore
+// export const borderTopRightRadius = cssForAttr( 'border-top-right-radius', 'borderRadius') //prettier-ignore
+// export const bottom = cssForAttr('bottom', mapSpacing)
+// export const boxShadow = cssForAttr('box-shadow', 'boxShadow')
+export const caretColor = cssForAttr(CARET_COLOR)
+export const color = cssForAttr(COLOR)
+// export const fontFamily = cssForAttr('font-family', mapFontFamily)
+// export const fontSize = cssForAttr('font-size', mapFontSize)
+// export const fontWeight = cssForAttr('font-weight', mapFontWeight)
+// export const gridGap = cssForAttr()
+// export const gridColumnGap = cssForAttr()
+// export const gridRowGap = cssForAttr()
+// export const height = cssForAttr('height', mapSpacing)
+// export const left = cssForAttr('left', mapSpacing)
+// export const lineHeight = cssForAttr()
+// export const marginBottom = cssForAttr('margin-bottom', mapSpacing)
+// export const marginLeft = cssForAttr('margin-left', mapSpacing)
+// export const marginRight = cssForAttr('margin-right', mapSpacing)
+// export const marginTop = cssForAttr('margin-top', mapSpacing)
+// export const margin = cssForAttr('margin', mapSpacing)
+// export const maxHeight = cssForAttr('max-height', mapSpacing)
+// export const maxWidth = cssForAttr('max-width', mapSpacing)
+// export const minHeight = cssForAttr('min-height', mapSpacing)
+// export const minWidth = cssForAttr('min-width', mapSpacing)
+// export const opacity = cssForAttr('opacity', mapSpacing)
+export const outlineColor = cssForAttr(OUTLINE_COLOR)
+// export const paddingBottom = cssForAttr('padding-bottom', mapSpacing)
+// export const paddingLeft = cssForAttr('padding-left', mapSpacing)
+// export const paddingRight = cssForAttr('padding-right', mapSpacing)
+// export const paddingTop = cssForAttr('padding-top', mapSpacing)
+// export const padding = cssForAttr('padding', mapSpacing)
+// export const right = cssForAttr('right', mapSpacing)
+// export const top = cssForAttr('top', mapSpacing)
+// export const width = cssForAttr('width', mapSpacing)
+// export const zIndex = cssForAttr('z-index', 'zIndex')

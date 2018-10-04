@@ -1,10 +1,10 @@
+import invariant from 'invariant'
 import {
   BACKGROUND_COLOR,
   BACKGROUND,
   BORDER_BOTTOM_COLOR,
   BORDER_BOTTOM_LEFT_RADIUS,
   BORDER_BOTTOM_RIGHT_RADIUS,
-  BORDER_BOTTOM,
   BORDER_COLOR,
   BORDER_LEFT_COLOR,
   BORDER_RADIUS,
@@ -19,8 +19,8 @@ import {
   FONT_FAMILY,
   FONT_SIZE,
   FONT_WEIGHT,
-  GRID_GAP,
   GRID_COLUMN_GAP,
+  GRID_GAP,
   GRID_ROW_GAP,
   HEIGHT,
   LINE_HEIGHT,
@@ -55,22 +55,22 @@ import {
   mapSpacing
 } from './mapThemeToProps'
 
-const noop = () => null
+const noimp = () => invariant(false, `cssAttr not implemented`)
 
 export default {
   [BACKGROUND_COLOR]: mapColor,
   [BACKGROUND]: mapColor,
   [BORDER_BOTTOM_COLOR]: mapColor,
-  [BORDER_BOTTOM_LEFT_RADIUS]: noop,
-  [BORDER_BOTTOM_RIGHT_RADIUS]: noop,
+  [BORDER_BOTTOM_LEFT_RADIUS]: noimp,
+  [BORDER_BOTTOM_RIGHT_RADIUS]: noimp,
   [BORDER_COLOR]: mapColor,
   [BORDER_LEFT_COLOR]: mapColor,
-  [BORDER_RADIUS]: noop,
+  [BORDER_RADIUS]: noimp,
   [BORDER_RIGHT_COLOR]: mapColor,
   [BORDER_TOP_COLOR]: mapColor,
-  [BORDER_TOP_LEFT_RADIUS]: noop,
-  [BORDER_TOP_RIGHT_RADIUS]: noop,
-  [BOX_SHADOW]: noop,
+  [BORDER_TOP_LEFT_RADIUS]: noimp,
+  [BORDER_TOP_RIGHT_RADIUS]: noimp,
+  [BOX_SHADOW]: noimp,
   [CARET_COLOR]: mapColor,
   [COLOR]: mapColor,
   [FONT_FAMILY]: mapFontFamily,
@@ -80,7 +80,7 @@ export default {
   [GRID_COLUMN_GAP]: mapSpacing,
   [GRID_ROW_GAP]: mapSpacing,
   [HEIGHT]: mapSpacing,
-  [LINE_HEIGHT]: noop,
+  [LINE_HEIGHT]: noimp,
   [MARGIN_BOTTOM]: mapSpacing,
   [MARGIN_LEFT]: mapSpacing,
   [MARGIN_RIGHT]: mapSpacing,
@@ -90,7 +90,7 @@ export default {
   [MAX_WIDTH]: mapSpacing,
   [MIN_HEIGHT]: mapSpacing,
   [MIN_WIDTH]: mapSpacing,
-  [OPACITY]: noop,
+  [OPACITY]: noimp,
   [OUTLINE_COLOR]: mapColor,
   [PADDING_BOTTOM]: mapSpacing,
   [PADDING_LEFT]: mapSpacing,
