@@ -9,14 +9,10 @@ import {
   mapSpacing,
   mapSwatch
 } from './mapThemeToProps'
-import theme from './theme'
+import theme from '../test/theme'
 
 const props = { theme }
-
-const matches = (mapFn, target) => {
-  const response = mapFn(props)
-  expect(response).toBe(target)
-}
+const matches = (mapFn, target) => expect(mapFn(props)).toBe(target)
 
 // Base
 it('#mapBaseFontSize', () => matches(mapBaseFontSize, theme.baseFontSize))
