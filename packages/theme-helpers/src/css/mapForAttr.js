@@ -23,6 +23,7 @@ import {
   GRID_GAP,
   GRID_ROW_GAP,
   HEIGHT,
+  LEFT,
   LINE_HEIGHT,
   MARGIN_BOTTOM,
   MARGIN_LEFT,
@@ -40,6 +41,7 @@ import {
   PADDING_RIGHT,
   PADDING_TOP,
   PADDING,
+  RIGHT,
   TOP,
   WIDTH
 } from './properties'
@@ -70,6 +72,7 @@ export default {
   [BORDER_TOP_COLOR]: mapColor,
   [BORDER_TOP_LEFT_RADIUS]: noimp,
   [BORDER_TOP_RIGHT_RADIUS]: noimp,
+  [BOTTOM]: mapSpacing,
   [BOX_SHADOW]: noimp,
   [CARET_COLOR]: mapColor,
   [COLOR]: mapColor,
@@ -80,6 +83,7 @@ export default {
   [GRID_COLUMN_GAP]: mapSpacing,
   [GRID_ROW_GAP]: mapSpacing,
   [HEIGHT]: mapSpacing,
+  [LEFT]: mapSpacing,
   [LINE_HEIGHT]: noimp,
   [MARGIN_BOTTOM]: mapSpacing,
   [MARGIN_LEFT]: mapSpacing,
@@ -97,6 +101,7 @@ export default {
   [PADDING_RIGHT]: mapSpacing,
   [PADDING_TOP]: mapSpacing,
   [PADDING]: mapSpacing,
+  [RIGHT]: mapSpacing,
   [TOP]: mapSpacing,
   [WIDTH]: mapSpacing
 }
