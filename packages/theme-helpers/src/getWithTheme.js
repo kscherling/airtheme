@@ -11,9 +11,11 @@ import {
   mapSpacing
 } from './lib/mapThemeToProps'
 
-export const baseFontSize = getWithTheme(mapBaseFontSize)
-export const baseLineHeight = getWithTheme(mapBaseLineHeight)
-export const baseSpacing = getWithTheme(mapBaseSpacing)
+import getWithTheme from './lib/getWithTheme'
+
+export const baseFontSize = getWithTheme(mapBaseFontSize)('baseFontSize')
+export const baseLineHeight = getWithTheme(mapBaseLineHeight)('baseLineHeight')
+export const baseSpacing = getWithTheme(mapBaseSpacing)('baseSpacing')
 export const color = getWithTheme(mapColor)
 export const fontFace = getWithTheme(mapFontFace)
 export const fontFamily = getWithTheme(mapFontFamily)

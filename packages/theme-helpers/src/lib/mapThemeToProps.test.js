@@ -17,9 +17,9 @@ const props = { theme }
 const expectMap = (name, mapFn, expected) =>
   test(name, () => expect(mapFn(props)).toBe(expected))
 
-expectMap('#mapBaseFontSize', mapBaseFontSize, theme.baseFontSize)
-expectMap('#mapBaseLineHeight', mapBaseLineHeight, theme.baseLineHeight)
-expectMap('#mapBaseSpacing', mapBaseSpacing, theme.baseSpacing)
+expectMap('#mapBaseFontSize', mapBaseFontSize, theme)
+expectMap('#mapBaseLineHeight', mapBaseLineHeight, theme)
+expectMap('#mapBaseSpacing', mapBaseSpacing, theme)
 expectMap('#mapColor', mapColor, theme.setting.color)
 expectMap('#mapFontFace', mapFontFace, theme.fontFace)
 expectMap('#mapFontFamily', mapFontFamily, theme.setting.fontFamily)

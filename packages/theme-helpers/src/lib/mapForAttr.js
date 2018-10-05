@@ -58,7 +58,7 @@ import {
   mapSpacing
 } from './mapThemeToProps'
 
-const noimp = () => invariant(false, `cssAttr not implemented`)
+const noimp = () => null
 
 export default {
   [BACKGROUND_COLOR]: mapColor,
