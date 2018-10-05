@@ -47,7 +47,6 @@ import {
   width,
   zIndex
 } from './cssFor'
-const noop = () => null
 
 afterEach(cleanup)
 
@@ -96,5 +95,3 @@ assertStyleRule(right, 'md', 'right', '16px')
 assertStyleRule(top, 'md', 'top', '16px')
 assertStyleRule(width, 'md', 'width', '16px')
 assertStyleRule(zIndex, '', '', '', true)
-
-assertStyleRule(noop, '', '', '', true)

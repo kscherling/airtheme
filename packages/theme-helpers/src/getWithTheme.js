@@ -10,8 +10,25 @@ import {
   mapFontWeight,
   mapSpacing
 } from './lib/mapThemeToProps'
-
 import getWithTheme from './lib/getWithTheme'
+
+/*
+For root level nodes we preload the 'key' arg so user does not have to supply.
+
+const C = styled.div `
+  font-size: ${baseFontSize}
+
+  vs
+
+  font-size: ${baseFontSize('baseFontSize')}
+`
+
+For all others, the user supplies the 'key', props are curried.
+
+const C = styled.div `
+  color: ${color('primary')}
+`
+*/
 
 export const baseFontSize = getWithTheme(mapBaseFontSize)('baseFontSize')
 export const baseLineHeight = getWithTheme(mapBaseLineHeight)('baseLineHeight')
