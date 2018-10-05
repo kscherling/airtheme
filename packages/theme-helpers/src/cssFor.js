@@ -1,5 +1,5 @@
 import { css } from 'styled-components'
-import cssForAttr from './css/cssForAttr'
+import cssForAttr from './lib/cssForAttr'
 import {
   BACKGROUND_COLOR,
   BACKGROUND,
@@ -46,7 +46,7 @@ import {
   TOP,
   WIDTH,
   ZINDEX
-} from './css/properties'
+} from './lib/properties'
 
 export const backgroundColor = cssForAttr(BACKGROUND_COLOR)
 export const background = cssForAttr(BACKGROUND)
