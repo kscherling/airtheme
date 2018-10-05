@@ -3,6 +3,7 @@ import {
   mapBaseLineHeight,
   mapBaseSpacing,
   mapColor,
+  mapFontFace,
   mapFontFamily,
   mapFontSize,
   mapFontWeight,
@@ -12,20 +13,17 @@ import {
 import theme from '../test/theme'
 
 const props = { theme }
-const matches = (mapFn, expected) => expect(mapFn(props)).toBe(expected)
 
-// Base
-test('#mapBaseFontSize', () => matches(mapBaseFontSize, theme.baseFontSize))
-test('#mapBaseLineHeight', () =>
-  matches(mapBaseLineHeight, theme.baseLineHeight))
-test('#mapBaseSpacing', () => matches(mapBaseSpacing, theme.baseSpacing))
+const expectMap = (name, mapFn, expected) =>
+  test(name, () => expect(mapFn(props)).toBe(expected))
 
-// Swatch
-test('#mapSwatch', () => matches(mapSwatch, theme.swatch))
-
-// Settings
-test('#mapColor', () => matches(mapColor, theme.setting.color))
-test('#mapFontFamily', () => matches(mapFontFamily, theme.setting.fontFamily))
-test('#mapFontSize', () => matches(mapFontSize, theme.setting.fontSize))
-test('#mapFontWeight', () => matches(mapFontWeight, theme.setting.fontWeight))
-test('#mapSpacing', () => matches(mapSpacing, theme.setting.spacing))
+expectMap('#mapBaseFontSize', mapBaseFontSize, theme.baseFontSize)
+expectMap('#mapBaseLineHeight', mapBaseLineHeight, theme.baseLineHeight)
+expectMap('#mapBaseSpacing', mapBaseSpacing, theme.baseSpacing)
+expectMap('#mapColor', mapColor, theme.setting.color)
+expectMap('#mapFontFace', mapFontFace, theme.fontFace)
+expectMap('#mapFontFamily', mapFontFamily, theme.setting.fontFamily)
+expectMap('#mapFontSize', mapFontSize, theme.setting.fontSize)
+expectMap('#mapFontWeight', mapFontWeight, theme.setting.fontWeight)
+expectMap('#mapSpacing', mapSpacing, theme.setting.spacing)
+expectMap('#mapSwatch', mapSwatch, theme.swatch)

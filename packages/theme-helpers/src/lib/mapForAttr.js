@@ -105,5 +105,5 @@ export default {
   [RIGHT]: mapSpacing,
   [TOP]: mapSpacing,
   [WIDTH]: mapSpacing,
-  [ZINDEX]: npimp
+  [ZINDEX]: noimp
 }
