@@ -3,55 +3,78 @@
 ### Table of Contents
 
 -   [cssAttr][1]
--   [cssRule][2]
--   [mapContextFn][3]
--   [props][4]
-    -   [Properties][5]
--   [theme][6]
-    -   [Properties][7]
--   [unitContext][8]
--   [unitKey][9]
--   [unitValue][10]
--   [cssRuleFor][11]
-    -   [Parameters][12]
--   [getWithContext][13]
-    -   [Parameters][14]
--   [connectContext][15]
-    -   [Parameters][16]
--   [get][17]
-    -   [Parameters][18]
+    -   [Examples][2]
+-   [cssRule][3]
+    -   [Examples][4]
+-   [mapContextFn][5]
+    -   [Examples][6]
+-   [props][7]
+    -   [Properties][8]
+-   [theme][9]
+    -   [Properties][10]
+-   [unitContext][11]
+-   [unitKey][12]
+-   [unitValue][13]
+-   [cssRuleFor][14]
+    -   [Parameters][15]
+-   [getWithContext][16]
+    -   [Parameters][17]
+-   [connectContext][18]
+    -   [Parameters][19]
+-   [get][20]
+    -   [Parameters][21]
 
 ## cssAttr
 
-A css property string
+A css property string.
 
-Type: [string][19]
+Type: [string][22]
+
+### Examples
+
+```javascript
+'background-color'
+```
 
 ## cssRule
 
-A css property string
+A css property string.
 
-Type: [string][19]
+Type: [string][22]
+
+### Examples
+
+```javascript
+css`
+  background-color: #ffffff;
+`
+```
 
 ## mapContextFn
 
-Map function for extracting `unitContext` from `props`
+Map function for extracting `unitContext` from `props`.
 
-Type: function ([props][20]): [unitContext][21]
+Type: function ([props][23]): [unitContext][24]
+
+### Examples
+
+```javascript
+'const someUnitContext = ({ theme: { context } }) => context'
+```
 
 ## props
 
-Object containing `theme` prop analogous to React component props with theme provider
+Object containing `theme` prop analogous to React component props with theme provider.
 
-Type: {theme: [theme][22]}
+Type: {theme: [theme][25]}
 
 ### Properties
 
--   `theme` **[theme][22]** 
+-   `theme` **[theme][25]** 
 
 ## theme
 
-Object containing `theme` prop analogous to React component props with theme provider
+An Airtheme object.
 
 Type: {swatch: {}, fontFace: {}, setting: {}}
 
@@ -63,21 +86,21 @@ Type: {swatch: {}, fontFace: {}, setting: {}}
 
 ## unitContext
 
-An object of keyed unit values
+An object of keyed unit values.
 
 Type: {}
 
 ## unitKey
 
-Key for unit in `unitContext`
+Key for unit in `unitContext`.
 
-Type: [string][19]
+Type: [string][22]
 
 ## unitValue
 
-Value for unit in `unitContext`
+Value for unit in `unitContext`.
 
-Type: ([string][19] \| [number][23])
+Type: ([string][22] \| [number][26])
 
 ## cssRuleFor
 
@@ -89,11 +112,11 @@ Constructs a styled-components cssRule
 -   `unitKey`  
 -   `props`  
 
-Returns **[cssRule][24]** 
+Returns **[cssRule][27]** 
 
 ## getWithContext
 
-Curried function returning a `unitValue` for given context, key, and props
+Curried get `unitValue` for given `mapContextFn`, `unitKey`, and `props`
 
 ### Parameters
 
@@ -103,74 +126,80 @@ Curried function returning a `unitValue` for given context, key, and props
 
 ## connectContext
 
-Applies a mapContextFn to props
+Curried get `unitContext` for given `mapContextFn` and `props`.
 
 ### Parameters
 
--   `mapContextFn` **[mapContextFn][25]** 
+-   `mapContextFn` **[mapContextFn][28]** 
 -   `props`  
 
-Returns **[unitContext][21]** 
+Returns **[unitContext][24]** 
 
 ## get
 
-Description
+Curried get `unitValue` for given `unitKey` and `unitContext`.
 
 ### Parameters
 
--   `unitKey` **[string][19]** 
+-   `unitKey` **[string][22]** 
 -   `unitContext`  
 
-Returns **[unitValue][26]** 
+Returns **[unitValue][29]** 
 
 [1]: #cssattr
 
-[2]: #cssrule
+[2]: #examples
 
-[3]: #mapcontextfn
+[3]: #cssrule
 
-[4]: #props
+[4]: #examples-1
 
-[5]: #properties
+[5]: #mapcontextfn
 
-[6]: #theme
+[6]: #examples-2
 
-[7]: #properties-1
+[7]: #props
 
-[8]: #unitcontext
+[8]: #properties
 
-[9]: #unitkey
+[9]: #theme
 
-[10]: #unitvalue
+[10]: #properties-1
 
-[11]: #cssrulefor
+[11]: #unitcontext
 
-[12]: #parameters
+[12]: #unitkey
 
-[13]: #getwithcontext
+[13]: #unitvalue
 
-[14]: #parameters-1
+[14]: #cssrulefor
 
-[15]: #connectcontext
+[15]: #parameters
 
-[16]: #parameters-2
+[16]: #getwithcontext
 
-[17]: #get
+[17]: #parameters-1
 
-[18]: #parameters-3
+[18]: #connectcontext
 
-[19]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+[19]: #parameters-2
 
-[20]: #props
+[20]: #get
 
-[21]: #unitcontext
+[21]: #parameters-3
 
-[22]: #theme
+[22]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
 
-[23]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+[23]: #props
 
-[24]: #cssrule
+[24]: #unitcontext
 
-[25]: #mapcontextfn
+[25]: #theme
 
-[26]: #unitvalue
+[26]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+
+[27]: #cssrule
+
+[28]: #mapcontextfn
+
+[29]: #unitvalue

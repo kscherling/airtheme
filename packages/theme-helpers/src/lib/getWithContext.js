@@ -12,7 +12,7 @@ import type {
 } from '../flow/types'
 
 /**
- * Curried function returning a `unitValue` for given context, key, and props
+ * Curried get `unitValue` for given `mapContextFn`, `unitKey`, and `props`
  * @param {mapContextFn}
  * @param {unitKey}
  * @param {props}
@@ -24,7 +24,7 @@ const getWithContext = curry(
 )
 
 /**
- * Applies a mapContextFn to props
+ * Curried get `unitContext` for given `mapContextFn` and `props`.
  * @param {mapContextFn}
  * @param {props}
  * @returns {unitContext}
@@ -34,7 +34,7 @@ const connectContext = (mapContextFn: mapContextFn) =>
   (props => mapContextFn(props): (props: props) => unitContext)
 
 /**
- * Description
+ * Curried get `unitValue` for given `unitKey` and `unitContext`.
  * @param {unitKey}
  * @param {unitContext}
  * @returns {unitValue}
