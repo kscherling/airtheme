@@ -1,26 +1,19 @@
+// @flow
+
 import { css } from 'styled-components'
 import mapForAttr from './mapForAttr'
 import curry from './curry'
 import invariant from 'invariant'
+import getWithTheme from './getWithTheme'
 
-const cssForAttr = cssAttr =>
-  curry((key, props) => {
-    invariant(props.theme, `Missing required prop theme in '${props}'`)
+/**
+ * Description
+ */
 
-    invariant(mapForAttr[cssAttr], `Missing map function for '${cssAttr}'`)
-
-    invariant(
-      mapForAttr[cssAttr](props),
-      `Map function for ${cssAttr} returned falsey`
-    )
-
-    invariant(
-      mapForAttr[cssAttr](props)[key],
-      `Missing setting ${key} in ${mapForAttr[cssAttr](props)}`
-    )
-
+const cssForAttr = (cssAttr: string) =>
+  curry((key: string, props: { theme: {} }) => {
     return css`
-      ${cssAttr}: ${mapForAttr[cssAttr](props)[key]};
+      ${cssAttr}: ${getWithTheme(mapForAttr[cssAttr])(key, props)};
     `
   })
 
