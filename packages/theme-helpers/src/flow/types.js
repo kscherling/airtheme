@@ -1,10 +1,24 @@
 // @flow
 
 /**
+ * A css property string
+ @example
+ */
+
+export type cssAttr = string
+
+/**
+ * A css property string
+ @example
+ */
+
+export type cssRule = string
+
+/**
  * Map function for extracting `unitContext` from `props`
  */
 
-export type mapContext = props => unitContext
+export type mapContextFn = props => unitContext
 
 /**
  * Object containing `theme` prop analogous to React component props with theme provider

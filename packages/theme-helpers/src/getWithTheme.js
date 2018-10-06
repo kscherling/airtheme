@@ -10,7 +10,7 @@ import {
   mapFontWeight,
   mapSpacing
 } from './lib/mapThemeToProps'
-import getWithTheme from './lib/getWithTheme'
+import getWithContext from './lib/getWithContext'
 
 /*
 For root level nodes we preload the 'key' arg so user does not have to supply.
@@ -30,13 +30,15 @@ const C = styled.div `
 `
 */
 
-export const baseFontSize = getWithTheme(mapBaseFontSize)('baseFontSize')
-export const baseLineHeight = getWithTheme(mapBaseLineHeight)('baseLineHeight')
-export const baseSpacing = getWithTheme(mapBaseSpacing)('baseSpacing')
-export const color = getWithTheme(mapColor)
-export const fontFace = getWithTheme(mapFontFace)
-export const fontFamily = getWithTheme(mapFontFamily)
-export const fontSize = getWithTheme(mapFontSize)
-export const fontWeight = getWithTheme(mapFontWeight)
-export const spacing = getWithTheme(mapSpacing)
-export const swatch = getWithTheme(mapSwatch)
+export const baseFontSize = getWithContext(mapBaseFontSize)('baseFontSize')
+export const baseLineHeight = getWithContext(mapBaseLineHeight)(
+  'baseLineHeight'
+)
+export const baseSpacing = getWithContext(mapBaseSpacing)('baseSpacing')
+export const color = getWithContext(mapColor)
+export const fontFace = getWithContext(mapFontFace)
+export const fontFamily = getWithContext(mapFontFamily)
+export const fontSize = getWithContext(mapFontSize)
+export const fontWeight = getWithContext(mapFontWeight)
+export const spacing = getWithContext(mapSpacing)
+export const swatch = getWithContext(mapSwatch)

@@ -2,38 +2,52 @@
 
 ### Table of Contents
 
--   [mapContext][1]
--   [props][2]
-    -   [Properties][3]
--   [theme][4]
+-   [cssAttr][1]
+-   [cssRule][2]
+-   [mapContextFn][3]
+-   [props][4]
     -   [Properties][5]
--   [unitContext][6]
--   [unitKey][7]
--   [unitValue][8]
--   [cssForAttr][9]
-    -   [Parameters][10]
--   [getWithContext][11]
+-   [theme][6]
+    -   [Properties][7]
+-   [unitContext][8]
+-   [unitKey][9]
+-   [unitValue][10]
+-   [cssRuleFor][11]
     -   [Parameters][12]
--   [connectContext][13]
+-   [getWithContext][13]
     -   [Parameters][14]
--   [get][15]
+-   [connectContext][15]
     -   [Parameters][16]
+-   [get][17]
+    -   [Parameters][18]
 
-## mapContext
+## cssAttr
+
+A css property string
+
+Type: [string][19]
+
+## cssRule
+
+A css property string
+
+Type: [string][19]
+
+## mapContextFn
 
 Map function for extracting `unitContext` from `props`
 
-Type: function ([props][17]): [unitContext][18]
+Type: function ([props][20]): [unitContext][21]
 
 ## props
 
 Object containing `theme` prop analogous to React component props with theme provider
 
-Type: {theme: [theme][19]}
+Type: {theme: [theme][22]}
 
 ### Properties
 
--   `theme` **[theme][19]** 
+-   `theme` **[theme][22]** 
 
 ## theme
 
@@ -57,21 +71,25 @@ Type: {}
 
 Key for unit in `unitContext`
 
-Type: [string][20]
+Type: [string][19]
 
 ## unitValue
 
 Value for unit in `unitContext`
 
-Type: ([string][20] \| [number][21])
+Type: ([string][19] \| [number][23])
 
-## cssForAttr
+## cssRuleFor
 
-Description
+Constructs a styled-components cssRule
 
 ### Parameters
 
--   `cssAttr` **[string][20]** 
+-   `cssAttr`  
+-   `unitKey`  
+-   `props`  
+
+Returns **[cssRule][24]** 
 
 ## getWithContext
 
@@ -79,20 +97,20 @@ Curried function returning a `unitValue` for given context, key, and props
 
 ### Parameters
 
--   `mapContext`  
+-   `mapContextFn`  
 -   `unitKey`  
 -   `props`  
 
 ## connectContext
 
-Description
+Applies a mapContextFn to props
 
 ### Parameters
 
--   `mapContext` **[mapContext][22]** 
+-   `mapContextFn` **[mapContextFn][25]** 
 -   `props`  
 
-Returns **[object][23]** 
+Returns **[unitContext][21]** 
 
 ## get
 
@@ -100,53 +118,59 @@ Description
 
 ### Parameters
 
--   `unitKey` **[string][20]** 
+-   `unitKey` **[string][19]** 
 -   `unitContext`  
 
-Returns **[unitContext][18]** 
+Returns **[unitValue][26]** 
 
-[1]: #mapcontext
+[1]: #cssattr
 
-[2]: #props
+[2]: #cssrule
 
-[3]: #properties
+[3]: #mapcontextfn
 
-[4]: #theme
+[4]: #props
 
-[5]: #properties-1
+[5]: #properties
 
-[6]: #unitcontext
+[6]: #theme
 
-[7]: #unitkey
+[7]: #properties-1
 
-[8]: #unitvalue
+[8]: #unitcontext
 
-[9]: #cssforattr
+[9]: #unitkey
 
-[10]: #parameters
+[10]: #unitvalue
 
-[11]: #getwithcontext
+[11]: #cssrulefor
 
-[12]: #parameters-1
+[12]: #parameters
 
-[13]: #connectcontext
+[13]: #getwithcontext
 
-[14]: #parameters-2
+[14]: #parameters-1
 
-[15]: #get
+[15]: #connectcontext
 
-[16]: #parameters-3
+[16]: #parameters-2
 
-[17]: #props
+[17]: #get
 
-[18]: #unitcontext
+[18]: #parameters-3
 
-[19]: #theme
+[19]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
 
-[20]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+[20]: #props
 
-[21]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+[21]: #unitcontext
 
-[22]: #mapcontext
+[22]: #theme
 
-[23]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+[23]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+
+[24]: #cssrule
+
+[25]: #mapcontextfn
+
+[26]: #unitvalue
