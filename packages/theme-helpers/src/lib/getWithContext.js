@@ -1,7 +1,7 @@
 // @flow
 
-import curry from './curry'
-import compose from './compose'
+import curry from '../utils/curry'
+import compose from '../utils/compose'
 
 import type {
   mapContextFn,

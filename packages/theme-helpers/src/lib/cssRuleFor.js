@@ -2,7 +2,7 @@
 
 import { css } from 'styled-components'
 import mapForAttr from './mapForAttr'
-import curry from './curry'
+import curry from '../utils/curry'
 import invariant from 'invariant'
 import getWithContext from './getWithContext'
 
