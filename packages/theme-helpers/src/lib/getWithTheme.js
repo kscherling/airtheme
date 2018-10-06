@@ -3,7 +3,7 @@
 import curry from './curry'
 
 /**
- *
+ * Description
  */
 
 const getWithTheme = (mapFn: ({ theme: {} }) => {}) =>

@@ -11,13 +11,16 @@
     "build": "./task build",
     "build:watch": "./task build:watch",
     "test": "./task test",
-    "relink": "./task relink"
+    "relink": "./task relink",
+    "docs:build": "documentation build src/** --format md --output docs/index.md",
+    "docs:watch": "yarn docs:build --watch"
   },
   "dependencies": {
     "react": "^16.4.2",
     "styled-components": "^3.4.5"
   },
   "devDependencies": {
+    "documentation": "^8.1.2",
     "invariant": "^2.2.4",
     "jest-styled-components": "^6.2.1",
     "prettier": "^1.14.2",
