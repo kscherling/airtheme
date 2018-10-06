@@ -1,7 +1,7 @@
 // @flow
 
 import { css } from 'styled-components'
-import mapForAttr from './mapForAttr'
+import cssAttrMap from '../constants/cssAttrMap'
 import curry from '../utils/curry'
 import invariant from 'invariant'
 import getWithContext from './getWithContext'
@@ -25,7 +25,7 @@ import type {
 const cssRuleFor = (curry(
   (cssAttr: cssAttr, unitKey: unitKey, props: props) =>
     css`
-      ${cssAttr}: ${getWithContext(mapForAttr[cssAttr])(unitKey, props)};
+      ${cssAttr}: ${getWithContext(cssAttrMap[cssAttr])(unitKey, props)};
     `
 ): cssRule)
 

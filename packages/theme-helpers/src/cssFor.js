@@ -46,7 +46,7 @@ import {
   TOP,
   WIDTH,
   ZINDEX
-} from './lib/properties'
+} from './constants/cssAttrs'
 
 export const backgroundColor = cssRuleFor(BACKGROUND_COLOR)
 export const background = cssRuleFor(BACKGROUND)

@@ -45,7 +45,7 @@ import {
   TOP,
   WIDTH,
   ZINDEX
-} from './properties'
+} from './cssAttrs'
 
 import {
   mapBaseFontSize,
@@ -56,7 +56,7 @@ import {
   mapFontSize,
   mapFontWeight,
   mapSpacing
-} from './mapThemeToProps'
+} from '../lib/mapThemeToProps'
 
 const noimp = () => null
 

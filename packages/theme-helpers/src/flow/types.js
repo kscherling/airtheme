@@ -42,7 +42,13 @@ export type props = {
 export type theme = {
   swatch: {},
   fontFace: {},
-  setting: {}
+  setting: {
+    color: {},
+    fontFamily: {},
+    fontSize: {},
+    fontWeight: {},
+    spacing: {}
+  }
 }
 
 /**

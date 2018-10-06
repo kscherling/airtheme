@@ -23,12 +23,32 @@
     -   [Parameters][19]
 -   [get][20]
     -   [Parameters][21]
+-   [mapBaseFontSize][22]
+    -   [Parameters][23]
+-   [mapBaseLineHeight][24]
+    -   [Parameters][25]
+-   [mapBaseSpacing][26]
+    -   [Parameters][27]
+-   [mapColor][28]
+    -   [Parameters][29]
+-   [mapFontFace][30]
+    -   [Parameters][31]
+-   [mapFontFamily][32]
+    -   [Parameters][33]
+-   [mapFontSize][34]
+    -   [Parameters][35]
+-   [mapFontWeight][36]
+    -   [Parameters][37]
+-   [mapSpacing][38]
+    -   [Parameters][39]
+-   [mapSwatch][40]
+    -   [Parameters][41]
 
 ## cssAttr
 
 A css property string.
 
-Type: [string][22]
+Type: [string][42]
 
 ### Examples
 
@@ -40,7 +60,7 @@ Type: [string][22]
 
 A css property string.
 
-Type: [string][22]
+Type: [string][42]
 
 ### Examples
 
@@ -54,7 +74,7 @@ css`
 
 Map function for extracting `unitContext` from `props`.
 
-Type: function ([props][23]): [unitContext][24]
+Type: function ([props][43]): [unitContext][44]
 
 ### Examples
 
@@ -66,23 +86,28 @@ Type: function ([props][23]): [unitContext][24]
 
 Object containing `theme` prop analogous to React component props with theme provider.
 
-Type: {theme: [theme][25]}
+Type: {theme: [theme][45]}
 
 ### Properties
 
--   `theme` **[theme][25]** 
+-   `theme` **[theme][45]** 
 
 ## theme
 
 An Airtheme object.
 
-Type: {swatch: {}, fontFace: {}, setting: {}}
+Type: {swatch: {}, fontFace: {}, setting: {color: {}, fontFamily: {}, fontSize: {}, fontWeight: {}, spacing: {}}}
 
 ### Properties
 
 -   `swatch` **{}** 
 -   `fontFace` **{}** 
--   `setting` **{}** 
+-   `setting` **{color: {}, fontFamily: {}, fontSize: {}, fontWeight: {}, spacing: {}}** 
+-   `setting.color` **{}** 
+-   `setting.fontFamily` **{}** 
+-   `setting.fontSize` **{}** 
+-   `setting.fontWeight` **{}** 
+-   `setting.spacing` **{}** 
 
 ## unitContext
 
@@ -94,13 +119,13 @@ Type: {}
 
 Key for unit in `unitContext`.
 
-Type: [string][22]
+Type: [string][42]
 
 ## unitValue
 
 Value for unit in `unitContext`.
 
-Type: ([string][22] \| [number][26])
+Type: ([string][42] \| [number][46])
 
 ## cssRuleFor
 
@@ -112,7 +137,7 @@ Constructs a styled-components cssRule
 -   `unitKey`  
 -   `props`  
 
-Returns **[cssRule][27]** 
+Returns **[cssRule][47]** 
 
 ## getWithContext
 
@@ -130,10 +155,10 @@ Curried get `unitContext` for given `mapContextFn` and `props`.
 
 ### Parameters
 
--   `mapContextFn` **[mapContextFn][28]** 
+-   `mapContextFn` **[mapContextFn][48]** 
 -   `props`  
 
-Returns **[unitContext][24]** 
+Returns **[unitContext][44]** 
 
 ## get
 
@@ -141,10 +166,90 @@ Curried get `unitValue` for given `unitKey` and `unitContext`.
 
 ### Parameters
 
--   `unitKey` **[string][22]** 
+-   `unitKey` **[string][42]** 
 -   `unitContext`  
 
-Returns **[unitValue][29]** 
+Returns **[unitValue][49]** 
+
+## mapBaseFontSize
+
+### Parameters
+
+-   `props`  
+
+Returns **[unitContext][44]** 
+
+## mapBaseLineHeight
+
+### Parameters
+
+-   `props`  
+
+Returns **[unitContext][44]** 
+
+## mapBaseSpacing
+
+### Parameters
+
+-   `props`  
+
+Returns **[unitContext][44]** 
+
+## mapColor
+
+### Parameters
+
+-   `props`  
+
+Returns **[unitContext][44]** 
+
+## mapFontFace
+
+### Parameters
+
+-   `props`  
+
+Returns **[unitContext][44]** 
+
+## mapFontFamily
+
+### Parameters
+
+-   `props`  
+
+Returns **[unitContext][44]** 
+
+## mapFontSize
+
+### Parameters
+
+-   `props`  
+
+Returns **[unitContext][44]** 
+
+## mapFontWeight
+
+### Parameters
+
+-   `props`  
+
+Returns **[unitContext][44]** 
+
+## mapSpacing
+
+### Parameters
+
+-   `props`  
+
+Returns **[unitContext][44]** 
+
+## mapSwatch
+
+### Parameters
+
+-   `props`  
+
+Returns **[unitContext][44]** 
 
 [1]: #cssattr
 
@@ -188,18 +293,58 @@ Returns **[unitValue][29]**
 
 [21]: #parameters-3
 
-[22]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+[22]: #mapbasefontsize
 
-[23]: #props
+[23]: #parameters-4
 
-[24]: #unitcontext
+[24]: #mapbaselineheight
 
-[25]: #theme
+[25]: #parameters-5
 
-[26]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+[26]: #mapbasespacing
 
-[27]: #cssrule
+[27]: #parameters-6
 
-[28]: #mapcontextfn
+[28]: #mapcolor
 
-[29]: #unitvalue
+[29]: #parameters-7
+
+[30]: #mapfontface
+
+[31]: #parameters-8
+
+[32]: #mapfontfamily
+
+[33]: #parameters-9
+
+[34]: #mapfontsize
+
+[35]: #parameters-10
+
+[36]: #mapfontweight
+
+[37]: #parameters-11
+
+[38]: #mapspacing
+
+[39]: #parameters-12
+
+[40]: #mapswatch
+
+[41]: #parameters-13
+
+[42]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+
+[43]: #props
+
+[44]: #unitcontext
+
+[45]: #theme
+
+[46]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+
+[47]: #cssrule
+
+[48]: #mapcontextfn
+
+[49]: #unitvalue
