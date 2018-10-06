@@ -2,10 +2,68 @@
 
 ### Table of Contents
 
--   [cssForAttr][1]
-    -   [Parameters][2]
--   [getWithTheme][3]
-    -   [Parameters][4]
+-   [mapContext][1]
+-   [props][2]
+    -   [Properties][3]
+-   [theme][4]
+    -   [Properties][5]
+-   [unitContext][6]
+-   [unitKey][7]
+-   [unitValue][8]
+-   [cssForAttr][9]
+    -   [Parameters][10]
+-   [getWithContext][11]
+    -   [Parameters][12]
+-   [connectContext][13]
+    -   [Parameters][14]
+-   [get][15]
+    -   [Parameters][16]
+
+## mapContext
+
+Map function for extracting `unitContext` from `props`
+
+Type: function ([props][17]): [unitContext][18]
+
+## props
+
+Object containing `theme` prop analogous to React component props with theme provider
+
+Type: {theme: [theme][19]}
+
+### Properties
+
+-   `theme` **[theme][19]** 
+
+## theme
+
+Object containing `theme` prop analogous to React component props with theme provider
+
+Type: {swatch: {}, fontFace: {}, setting: {}}
+
+### Properties
+
+-   `swatch` **{}** 
+-   `fontFace` **{}** 
+-   `setting` **{}** 
+
+## unitContext
+
+An object of keyed unit values
+
+Type: {}
+
+## unitKey
+
+Key for unit in `unitContext`
+
+Type: [string][20]
+
+## unitValue
+
+Value for unit in `unitContext`
+
+Type: ([string][20] \| [number][21])
 
 ## cssForAttr
 
@@ -13,22 +71,82 @@ Description
 
 ### Parameters
 
--   `cssAttr` **[string][5]** 
+-   `cssAttr` **[string][20]** 
 
-## getWithTheme
+## getWithContext
+
+Curried function returning a `unitValue` for given context, key, and props
+
+### Parameters
+
+-   `mapContext`  
+-   `unitKey`  
+-   `props`  
+
+## connectContext
 
 Description
 
 ### Parameters
 
--   `mapFn` **function ({theme: {}}): {}** 
+-   `mapContext` **[mapContext][22]** 
+-   `props`  
 
-[1]: #cssforattr
+Returns **[object][23]** 
 
-[2]: #parameters
+## get
 
-[3]: #getwiththeme
+Description
 
-[4]: #parameters-1
+### Parameters
 
-[5]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+-   `unitKey` **[string][20]** 
+-   `unitContext`  
+
+Returns **[unitContext][18]** 
+
+[1]: #mapcontext
+
+[2]: #props
+
+[3]: #properties
+
+[4]: #theme
+
+[5]: #properties-1
+
+[6]: #unitcontext
+
+[7]: #unitkey
+
+[8]: #unitvalue
+
+[9]: #cssforattr
+
+[10]: #parameters
+
+[11]: #getwithcontext
+
+[12]: #parameters-1
+
+[13]: #connectcontext
+
+[14]: #parameters-2
+
+[15]: #get
+
+[16]: #parameters-3
+
+[17]: #props
+
+[18]: #unitcontext
+
+[19]: #theme
+
+[20]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+
+[21]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+
+[22]: #mapcontext
+
+[23]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
