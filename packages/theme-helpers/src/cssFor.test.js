@@ -1,97 +1,51 @@
 import { cleanup } from 'react-testing-library'
 import assertStyleRule from './test/assertStyleRule'
-import {
-  background,
-  backgroundColor,
-  borderBottomColor,
-  borderBottomLeftRadius,
-  borderBottomRightRadius,
-  borderColor,
-  borderLeftColor,
-  borderRadius,
-  borderRightColor,
-  borderTopColor,
-  borderTopLeftRadius,
-  borderTopRightRadius,
-  bottom,
-  boxShadow,
-  caretColor,
-  color,
-  fontFamily,
-  fontSize,
-  fontWeight,
-  gridGap,
-  gridColumnGap,
-  gridRowGap,
-  height,
-  left,
-  lineHeight,
-  marginBottom,
-  marginLeft,
-  marginRight,
-  marginTop,
-  margin,
-  maxHeight,
-  maxWidth,
-  minHeight,
-  minWidth,
-  opacity,
-  outlineColor,
-  paddingBottom,
-  paddingLeft,
-  paddingRight,
-  paddingTop,
-  padding,
-  right,
-  top,
-  width,
-  zIndex
-} from './cssFor'
+import * as cssFor from './cssFor'
 
 afterEach(cleanup)
 
-assertStyleRule(background, 'primary', 'background', '#0b3954')
-assertStyleRule(backgroundColor, 'primary', 'background-color', '#0b3954')
-assertStyleRule(borderBottomColor, 'primary', 'border-bottom-color', '#0b3954')
-assertStyleRule(borderBottomLeftRadius, 'sm', 'border-bottom-left-radius', '3px', true) // prettier-ignore
-assertStyleRule(borderBottomRightRadius, 'sm', 'border-bottom-right-radius', '3px', true) // prettier-ignore
-assertStyleRule(borderColor, 'primary', 'border-color', '#0b3954')
-assertStyleRule(borderLeftColor, 'primary', 'border-left-color', '#0b3954')
-assertStyleRule(borderRadius, 'sm', 'border-radius', '3px', true)
-assertStyleRule(borderRightColor, 'primary', 'border-right-color', '#0b3954') // prettier-ignore
-assertStyleRule(borderTopColor, 'primary', 'border-top-color', '#0b3954')
-assertStyleRule(borderTopLeftRadius, 'sm', 'border-top-left-radius', '3px', true) // prettier-ignore
-assertStyleRule(borderTopRightRadius, 'sm', 'border-top-right-radius', '3px', true) // prettier-ignore
-assertStyleRule(bottom, 'md', 'bottom', '16px')
-assertStyleRule(boxShadow, '', '', '', true)
-assertStyleRule(caretColor, 'primary', 'caret-color', '#0b3954')
-assertStyleRule(color, 'primary', 'color', '#0b3954')
-assertStyleRule(fontFamily, 'title', 'font-family', 'Helvetica')
-assertStyleRule(fontSize, 'sm', 'font-size', '14.4px')
-assertStyleRule(fontWeight, 'lt', 'font-weight', '300')
-assertStyleRule(gridColumnGap, 'md', 'grid-column-gap', '16px')
-assertStyleRule(gridGap, 'md', 'grid-gap', '16px')
-assertStyleRule(gridRowGap, 'md', 'grid-row-gap', '16px')
-assertStyleRule(height, 'md', 'height', '16px')
-assertStyleRule(left, 'md', 'left', '16px')
-assertStyleRule(lineHeight, '', '', '', true)
-assertStyleRule(margin, 'md', 'margin', '16px')
-assertStyleRule(marginBottom, 'md', 'margin-bottom', '16px')
-assertStyleRule(marginLeft, 'md', 'margin-left', '16px')
-assertStyleRule(marginRight, 'md', 'margin-right', '16px')
-assertStyleRule(marginTop, 'md', 'margin-top', '16px')
-assertStyleRule(maxHeight, 'md', 'max-height', '16px')
-assertStyleRule(maxWidth, 'md', 'max-width', '16px')
-assertStyleRule(minHeight, 'md', 'min-height', '16px')
-assertStyleRule(minWidth, 'md', 'min-width', '16px')
-assertStyleRule(opacity, '', '', '', true)
-assertStyleRule(outlineColor, 'primary', 'outline-color', '#0b3954')
-assertStyleRule(padding, 'md', 'padding', '16px')
-assertStyleRule(paddingBottom, 'md', 'padding-bottom', '16px')
-assertStyleRule(paddingLeft, 'md', 'padding-left', '16px')
-assertStyleRule(paddingRight, 'md', 'padding-right', '16px')
-assertStyleRule(paddingTop, 'md', 'padding-top', '16px')
-assertStyleRule(right, 'md', 'right', '16px')
-assertStyleRule(top, 'md', 'top', '16px')
-assertStyleRule(width, 'md', 'width', '16px')
-assertStyleRule(zIndex, '', '', '', true)
+assertStyleRule(cssFor.background, 'primary', 'background', '#0b3954')
+assertStyleRule(cssFor.backgroundColor, 'primary', 'background-color', '#0b3954') // prettier-ignore
+assertStyleRule(cssFor.borderBottomColor, 'primary', 'border-bottom-color', '#0b3954') // prettier-ignore
+assertStyleRule(cssFor.borderBottomLeftRadius, 'sm', 'border-bottom-left-radius', '3px', true) // prettier-ignore
+assertStyleRule(cssFor.borderBottomRightRadius, 'sm', 'border-bottom-right-radius', '3px', true) // prettier-ignore
+assertStyleRule(cssFor.borderColor, 'primary', 'border-color', '#0b3954')
+assertStyleRule(cssFor.borderLeftColor, 'primary', 'border-left-color', '#0b3954') // prettier-ignore
+assertStyleRule(cssFor.borderRadius, 'sm', 'border-radius', '3px', true)
+assertStyleRule(cssFor.borderRightColor, 'primary', 'border-right-color', '#0b3954') // prettier-ignore
+assertStyleRule(cssFor.borderTopColor, 'primary', 'border-top-color', '#0b3954')
+assertStyleRule(cssFor.borderTopLeftRadius, 'sm', 'border-top-left-radius', '3px', true) // prettier-ignore
+assertStyleRule(cssFor.borderTopRightRadius, 'sm', 'border-top-right-radius', '3px', true) // prettier-ignore
+assertStyleRule(cssFor.bottom, 'md', 'bottom', '16px')
+assertStyleRule(cssFor.boxShadow, '', '', '', true)
+assertStyleRule(cssFor.caretColor, 'primary', 'caret-color', '#0b3954')
+assertStyleRule(cssFor.color, 'primary', 'color', '#0b3954')
+assertStyleRule(cssFor.fontFamily, 'title', 'font-family', 'Helvetica')
+assertStyleRule(cssFor.fontSize, 'sm', 'font-size', '14.4px')
+assertStyleRule(cssFor.fontWeight, 'lt', 'font-weight', '300')
+assertStyleRule(cssFor.gridColumnGap, 'md', 'grid-column-gap', '16px')
+assertStyleRule(cssFor.gridGap, 'md', 'grid-gap', '16px')
+assertStyleRule(cssFor.gridRowGap, 'md', 'grid-row-gap', '16px')
+assertStyleRule(cssFor.height, 'md', 'height', '16px')
+assertStyleRule(cssFor.left, 'md', 'left', '16px')
+assertStyleRule(cssFor.lineHeight, '', '', '', true)
+assertStyleRule(cssFor.margin, 'md', 'margin', '16px')
+assertStyleRule(cssFor.marginBottom, 'md', 'margin-bottom', '16px')
+assertStyleRule(cssFor.marginLeft, 'md', 'margin-left', '16px')
+assertStyleRule(cssFor.marginRight, 'md', 'margin-right', '16px')
+assertStyleRule(cssFor.marginTop, 'md', 'margin-top', '16px')
+assertStyleRule(cssFor.maxHeight, 'md', 'max-height', '16px')
+assertStyleRule(cssFor.maxWidth, 'md', 'max-width', '16px')
+assertStyleRule(cssFor.minHeight, 'md', 'min-height', '16px')
+assertStyleRule(cssFor.minWidth, 'md', 'min-width', '16px')
+assertStyleRule(cssFor.opacity, '', '', '', true)
+assertStyleRule(cssFor.outlineColor, 'primary', 'outline-color', '#0b3954')
+assertStyleRule(cssFor.padding, 'md', 'padding', '16px')
+assertStyleRule(cssFor.paddingBottom, 'md', 'padding-bottom', '16px')
+assertStyleRule(cssFor.paddingLeft, 'md', 'padding-left', '16px')
+assertStyleRule(cssFor.paddingRight, 'md', 'padding-right', '16px')
+assertStyleRule(cssFor.paddingTop, 'md', 'padding-top', '16px')
+assertStyleRule(cssFor.right, 'md', 'right', '16px')
+assertStyleRule(cssFor.top, 'md', 'top', '16px')
+assertStyleRule(cssFor.width, 'md', 'width', '16px')
+assertStyleRule(cssFor.zIndex, '', '', '', true)

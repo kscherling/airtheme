@@ -1,12 +1,20 @@
 // @flow
 
 /**
- * A css property string.
+ *  Dasherized property string.
  * @example
  * 'background-color'
  */
 
 export type cssAttr = string
+
+/**
+ * Camel-cased css property string.
+ * @example
+ * 'backgroundColor'
+ */
+
+export type cssAttrKey = string
 
 /**
  * A css property string.
@@ -25,6 +33,14 @@ export type cssRule = string
  */
 
 export type mapContextFn = props => unitContext
+
+/**
+ * Map function for extracting `unitContext` from `props`.
+ * @example
+ * 'const someUnitContext = ({ theme: { context } }) => context'
+ */
+
+export type cssForFn = (unitKey, props) => unitContext
 
 /**
  * Object containing `theme` prop analogous to React component props with theme provider.
