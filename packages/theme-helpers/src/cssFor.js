@@ -48,48 +48,364 @@ import {
   ZINDEX
 } from './constants/cssAttrs'
 
-export const backgroundColor = cssRuleFor(BACKGROUND_COLOR)
-export const background = cssRuleFor(BACKGROUND)
-export const borderBottomColor = cssRuleFor(BORDER_BOTTOM_COLOR)
-export const borderBottomLeftRadius = cssRuleFor(BORDER_BOTTOM_LEFT_RADIUS) //prettier-ignore
-export const borderBottomRightRadius = cssRuleFor(BORDER_BOTTOM_RIGHT_RADIUS) //prettier-ignore
-export const borderColor = cssRuleFor(BORDER_COLOR)
-export const borderLeftColor = cssRuleFor(BORDER_LEFT_COLOR)
-export const borderRadius = cssRuleFor(BORDER_RADIUS)
-export const borderRightColor = cssRuleFor(BORDER_RIGHT_COLOR)
-export const borderTopColor = cssRuleFor(BORDER_TOP_COLOR)
-export const borderTopLeftRadius = cssRuleFor(BORDER_TOP_LEFT_RADIUS)
-export const borderTopRightRadius = cssRuleFor(BORDER_TOP_RIGHT_RADIUS)
-export const bottom = cssRuleFor(BOTTOM)
-export const boxShadow = cssRuleFor(BOX_SHADOW)
-export const caretColor = cssRuleFor(CARET_COLOR)
-export const color = cssRuleFor(COLOR)
-export const fontFamily = cssRuleFor(FONT_FAMILY)
-export const fontSize = cssRuleFor(FONT_SIZE)
-export const fontWeight = cssRuleFor(FONT_WEIGHT)
-export const gridGap = cssRuleFor(GRID_GAP)
-export const gridColumnGap = cssRuleFor(GRID_COLUMN_GAP)
-export const gridRowGap = cssRuleFor(GRID_ROW_GAP)
-export const height = cssRuleFor(HEIGHT)
-export const left = cssRuleFor(LEFT)
-export const lineHeight = cssRuleFor(LINE_HEIGHT)
-export const marginBottom = cssRuleFor(MARGIN_BOTTOM)
-export const marginLeft = cssRuleFor(MARGIN_LEFT)
-export const marginRight = cssRuleFor(MARGIN_RIGHT)
-export const marginTop = cssRuleFor(MARGIN_TOP)
-export const margin = cssRuleFor(MARGIN)
-export const maxHeight = cssRuleFor(MAX_HEIGHT)
-export const maxWidth = cssRuleFor(MAX_WIDTH)
-export const minHeight = cssRuleFor(MIN_HEIGHT)
-export const minWidth = cssRuleFor(MIN_WIDTH)
-export const opacity = cssRuleFor(OPACITY)
-export const outlineColor = cssRuleFor(OUTLINE_COLOR)
-export const paddingBottom = cssRuleFor(PADDING_BOTTOM)
-export const paddingLeft = cssRuleFor(PADDING_LEFT)
-export const paddingRight = cssRuleFor(PADDING_RIGHT)
-export const paddingTop = cssRuleFor(PADDING_TOP)
-export const padding = cssRuleFor(PADDING)
-export const right = cssRuleFor(RIGHT)
-export const top = cssRuleFor(TOP)
-export const width = cssRuleFor(WIDTH)
-export const zIndex = cssRuleFor(ZINDEX)
+import type { props, cssRule, unitKey } from './flow/types'
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const backgroundColor = (cssRuleFor(BACKGROUND_COLOR): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const background = (cssRuleFor(BACKGROUND): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const borderBottomColor = (cssRuleFor(BORDER_BOTTOM_COLOR): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const borderBottomLeftRadius = (cssRuleFor(BORDER_BOTTOM_LEFT_RADIUS): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const borderBottomRightRadius = (cssRuleFor(BORDER_BOTTOM_RIGHT_RADIUS): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const borderColor = (cssRuleFor(BORDER_COLOR): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const borderLeftColor = (cssRuleFor(BORDER_LEFT_COLOR): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const borderRadius = (cssRuleFor(BORDER_RADIUS): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const borderRightColor = (cssRuleFor(BORDER_RIGHT_COLOR): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const borderTopColor = (cssRuleFor(BORDER_TOP_COLOR): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const borderTopLeftRadius = (cssRuleFor(BORDER_TOP_LEFT_RADIUS): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const borderTopRightRadius = (cssRuleFor(BORDER_TOP_RIGHT_RADIUS): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const bottom = (cssRuleFor(BOTTOM): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const boxShadow = (cssRuleFor(BOX_SHADOW): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const caretColor = (cssRuleFor(CARET_COLOR): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const color = (cssRuleFor(COLOR): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const fontFamily = (cssRuleFor(FONT_FAMILY): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const fontSize = (cssRuleFor(FONT_SIZE): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const fontWeight = (cssRuleFor(FONT_WEIGHT): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const gridGap = (cssRuleFor(GRID_GAP): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const gridColumnGap = (cssRuleFor(GRID_COLUMN_GAP): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const gridRowGap = (cssRuleFor(GRID_ROW_GAP): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const height = (cssRuleFor(HEIGHT): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const left = (cssRuleFor(LEFT): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const lineHeight = (cssRuleFor(LINE_HEIGHT): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const marginBottom = (cssRuleFor(MARGIN_BOTTOM): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const marginLeft = (cssRuleFor(MARGIN_LEFT): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const marginRight = (cssRuleFor(MARGIN_RIGHT): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const marginTop = (cssRuleFor(MARGIN_TOP): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const margin = (cssRuleFor(MARGIN): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const maxHeight = (cssRuleFor(MAX_HEIGHT): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const maxWidth = (cssRuleFor(MAX_WIDTH): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const minHeight = (cssRuleFor(MIN_HEIGHT): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const minWidth = (cssRuleFor(MIN_WIDTH): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const opacity = (cssRuleFor(OPACITY): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const outlineColor = (cssRuleFor(OUTLINE_COLOR): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const paddingBottom = (cssRuleFor(PADDING_BOTTOM): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const paddingLeft = (cssRuleFor(PADDING_LEFT): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const paddingRight = (cssRuleFor(PADDING_RIGHT): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const paddingTop = (cssRuleFor(PADDING_TOP): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const padding = (cssRuleFor(PADDING): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const right = (cssRuleFor(RIGHT): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const top = (cssRuleFor(TOP): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const width = (cssRuleFor(WIDTH): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore
+
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
+
+export const zIndex = (cssRuleFor(ZINDEX): (unitKey: unitKey, props: props) => cssRule) //prettier-ignore

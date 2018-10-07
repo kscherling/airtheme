@@ -2,53 +2,604 @@
 
 ### Table of Contents
 
--   [cssAttr][1]
-    -   [Examples][2]
--   [cssRule][3]
-    -   [Examples][4]
--   [mapContextFn][5]
-    -   [Examples][6]
--   [props][7]
-    -   [Properties][8]
--   [theme][9]
-    -   [Properties][10]
--   [unitContext][11]
--   [unitKey][12]
--   [unitValue][13]
--   [cssRuleFor][14]
-    -   [Parameters][15]
--   [getWithContext][16]
-    -   [Parameters][17]
--   [connectContext][18]
-    -   [Parameters][19]
--   [get][20]
-    -   [Parameters][21]
--   [mapBaseFontSize][22]
-    -   [Parameters][23]
--   [mapBaseLineHeight][24]
-    -   [Parameters][25]
--   [mapBaseSpacing][26]
-    -   [Parameters][27]
--   [mapColor][28]
-    -   [Parameters][29]
--   [mapFontFace][30]
-    -   [Parameters][31]
--   [mapFontFamily][32]
-    -   [Parameters][33]
--   [mapFontSize][34]
-    -   [Parameters][35]
--   [mapFontWeight][36]
-    -   [Parameters][37]
--   [mapSpacing][38]
-    -   [Parameters][39]
--   [mapSwatch][40]
-    -   [Parameters][41]
+-   [backgroundColor][1]
+    -   [Parameters][2]
+-   [background][3]
+    -   [Parameters][4]
+-   [borderBottomColor][5]
+    -   [Parameters][6]
+-   [borderBottomLeftRadius][7]
+    -   [Parameters][8]
+-   [borderBottomRightRadius][9]
+    -   [Parameters][10]
+-   [borderColor][11]
+    -   [Parameters][12]
+-   [borderLeftColor][13]
+    -   [Parameters][14]
+-   [borderRadius][15]
+    -   [Parameters][16]
+-   [borderRightColor][17]
+    -   [Parameters][18]
+-   [borderTopColor][19]
+    -   [Parameters][20]
+-   [borderTopLeftRadius][21]
+    -   [Parameters][22]
+-   [borderTopRightRadius][23]
+    -   [Parameters][24]
+-   [bottom][25]
+    -   [Parameters][26]
+-   [boxShadow][27]
+    -   [Parameters][28]
+-   [caretColor][29]
+    -   [Parameters][30]
+-   [color][31]
+    -   [Parameters][32]
+-   [color][33]
+    -   [Parameters][34]
+-   [fontFamily][35]
+    -   [Parameters][36]
+-   [fontFamily][37]
+    -   [Parameters][38]
+-   [fontSize][39]
+    -   [Parameters][40]
+-   [fontSize][41]
+    -   [Parameters][42]
+-   [fontWeight][43]
+    -   [Parameters][44]
+-   [fontWeight][45]
+    -   [Parameters][46]
+-   [gridGap][47]
+    -   [Parameters][48]
+-   [gridColumnGap][49]
+    -   [Parameters][50]
+-   [gridRowGap][51]
+    -   [Parameters][52]
+-   [height][53]
+    -   [Parameters][54]
+-   [left][55]
+    -   [Parameters][56]
+-   [lineHeight][57]
+    -   [Parameters][58]
+-   [marginBottom][59]
+    -   [Parameters][60]
+-   [marginLeft][61]
+    -   [Parameters][62]
+-   [marginRight][63]
+    -   [Parameters][64]
+-   [marginTop][65]
+    -   [Parameters][66]
+-   [margin][67]
+    -   [Parameters][68]
+-   [maxHeight][69]
+    -   [Parameters][70]
+-   [maxWidth][71]
+    -   [Parameters][72]
+-   [minHeight][73]
+    -   [Parameters][74]
+-   [minWidth][75]
+    -   [Parameters][76]
+-   [opacity][77]
+    -   [Parameters][78]
+-   [outlineColor][79]
+    -   [Parameters][80]
+-   [paddingBottom][81]
+    -   [Parameters][82]
+-   [paddingLeft][83]
+    -   [Parameters][84]
+-   [paddingRight][85]
+    -   [Parameters][86]
+-   [paddingTop][87]
+    -   [Parameters][88]
+-   [padding][89]
+    -   [Parameters][90]
+-   [right][91]
+    -   [Parameters][92]
+-   [top][93]
+    -   [Parameters][94]
+-   [width][95]
+    -   [Parameters][96]
+-   [zIndex][97]
+    -   [Parameters][98]
+-   [cssAttr][99]
+    -   [Examples][100]
+-   [cssRule][101]
+    -   [Examples][102]
+-   [mapContextFn][103]
+    -   [Examples][104]
+-   [props][105]
+    -   [Properties][106]
+-   [theme][107]
+    -   [Properties][108]
+-   [unitContext][109]
+-   [unitKey][110]
+-   [unitValue][111]
+-   [baseFontSize][112]
+    -   [Parameters][113]
+-   [baseLineHeight][114]
+    -   [Parameters][115]
+-   [baseSpacing][116]
+    -   [Parameters][117]
+-   [fontFace][118]
+    -   [Parameters][119]
+-   [spacing][120]
+    -   [Parameters][121]
+-   [swatch][122]
+    -   [Parameters][123]
+-   [cssRuleFor][124]
+    -   [Parameters][125]
+-   [getWithContext][126]
+    -   [Parameters][127]
+-   [connectContext][128]
+    -   [Parameters][129]
+-   [get][130]
+    -   [Parameters][131]
+-   [mapBaseFontSize][132]
+    -   [Parameters][133]
+-   [mapBaseLineHeight][134]
+    -   [Parameters][135]
+-   [mapBaseSpacing][136]
+    -   [Parameters][137]
+-   [mapColor][138]
+    -   [Parameters][139]
+-   [mapFontFace][140]
+    -   [Parameters][141]
+-   [mapFontFamily][142]
+    -   [Parameters][143]
+-   [mapFontSize][144]
+    -   [Parameters][145]
+-   [mapFontWeight][146]
+    -   [Parameters][147]
+-   [mapSpacing][148]
+    -   [Parameters][149]
+-   [mapSwatch][150]
+    -   [Parameters][151]
+
+## backgroundColor
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## background
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## borderBottomColor
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## borderBottomLeftRadius
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## borderBottomRightRadius
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## borderColor
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## borderLeftColor
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## borderRadius
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## borderRightColor
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## borderTopColor
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## borderTopLeftRadius
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## borderTopRightRadius
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## bottom
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## boxShadow
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## caretColor
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## color
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## color
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## fontFamily
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## fontFamily
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## fontSize
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## fontSize
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## fontWeight
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## fontWeight
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## gridGap
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## gridColumnGap
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## gridRowGap
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## height
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## left
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## lineHeight
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## marginBottom
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## marginLeft
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## marginRight
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## marginTop
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## margin
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## maxHeight
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## maxWidth
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## minHeight
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## minWidth
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## opacity
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## outlineColor
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## paddingBottom
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## paddingLeft
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## paddingRight
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## paddingTop
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## padding
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## right
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## top
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## width
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## zIndex
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
 
 ## cssAttr
 
 A css property string.
 
-Type: [string][42]
+Type: [string][153]
 
 ### Examples
 
@@ -60,7 +611,7 @@ Type: [string][42]
 
 A css property string.
 
-Type: [string][42]
+Type: [string][153]
 
 ### Examples
 
@@ -74,7 +625,7 @@ css`
 
 Map function for extracting `unitContext` from `props`.
 
-Type: function ([props][43]): [unitContext][44]
+Type: function ([props][154]): [unitContext][155]
 
 ### Examples
 
@@ -86,11 +637,11 @@ Type: function ([props][43]): [unitContext][44]
 
 Object containing `theme` prop analogous to React component props with theme provider.
 
-Type: {theme: [theme][45]}
+Type: {theme: [theme][156]}
 
 ### Properties
 
--   `theme` **[theme][45]** 
+-   `theme` **[theme][156]** 
 
 ## theme
 
@@ -119,13 +670,64 @@ Type: {}
 
 Key for unit in `unitContext`.
 
-Type: [string][42]
+Type: [string][153]
 
 ## unitValue
 
 Value for unit in `unitContext`.
 
-Type: ([string][42] \| [number][46])
+Type: ([string][153] \| [number][157])
+
+## baseFontSize
+
+### Parameters
+
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## baseLineHeight
+
+### Parameters
+
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## baseSpacing
+
+### Parameters
+
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## fontFace
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## spacing
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
+
+## swatch
+
+### Parameters
+
+-   `unitKey`  
+-   `props`  
+
+Returns **[unitValue][152]** 
 
 ## cssRuleFor
 
@@ -137,7 +739,7 @@ Constructs a styled-components `cssRule`.
 -   `unitKey`  
 -   `props`  
 
-Returns **[cssRule][47]** 
+Returns **[cssRule][158]** 
 
 ## getWithContext
 
@@ -155,10 +757,10 @@ Curried get `unitContext` for given `mapContextFn` and `props`.
 
 ### Parameters
 
--   `mapContextFn` **[mapContextFn][48]** 
+-   `mapContextFn` **[mapContextFn][159]** 
 -   `props`  
 
-Returns **[unitContext][44]** 
+Returns **[unitContext][155]** 
 
 ## get
 
@@ -166,10 +768,10 @@ Curried get `unitValue` for given `unitKey` and `unitContext`.
 
 ### Parameters
 
--   `unitKey` **[string][42]** 
+-   `unitKey` **[string][153]** 
 -   `unitContext`  
 
-Returns **[unitValue][49]** 
+Returns **[unitValue][152]** 
 
 ## mapBaseFontSize
 
@@ -177,7 +779,7 @@ Returns **[unitValue][49]**
 
 -   `props`  
 
-Returns **[unitContext][44]** 
+Returns **[unitContext][155]** 
 
 ## mapBaseLineHeight
 
@@ -185,7 +787,7 @@ Returns **[unitContext][44]**
 
 -   `props`  
 
-Returns **[unitContext][44]** 
+Returns **[unitContext][155]** 
 
 ## mapBaseSpacing
 
@@ -193,7 +795,7 @@ Returns **[unitContext][44]**
 
 -   `props`  
 
-Returns **[unitContext][44]** 
+Returns **[unitContext][155]** 
 
 ## mapColor
 
@@ -201,7 +803,7 @@ Returns **[unitContext][44]**
 
 -   `props`  
 
-Returns **[unitContext][44]** 
+Returns **[unitContext][155]** 
 
 ## mapFontFace
 
@@ -209,7 +811,7 @@ Returns **[unitContext][44]**
 
 -   `props`  
 
-Returns **[unitContext][44]** 
+Returns **[unitContext][155]** 
 
 ## mapFontFamily
 
@@ -217,7 +819,7 @@ Returns **[unitContext][44]**
 
 -   `props`  
 
-Returns **[unitContext][44]** 
+Returns **[unitContext][155]** 
 
 ## mapFontSize
 
@@ -225,7 +827,7 @@ Returns **[unitContext][44]**
 
 -   `props`  
 
-Returns **[unitContext][44]** 
+Returns **[unitContext][155]** 
 
 ## mapFontWeight
 
@@ -233,7 +835,7 @@ Returns **[unitContext][44]**
 
 -   `props`  
 
-Returns **[unitContext][44]** 
+Returns **[unitContext][155]** 
 
 ## mapSpacing
 
@@ -241,7 +843,7 @@ Returns **[unitContext][44]**
 
 -   `props`  
 
-Returns **[unitContext][44]** 
+Returns **[unitContext][155]** 
 
 ## mapSwatch
 
@@ -249,102 +851,322 @@ Returns **[unitContext][44]**
 
 -   `props`  
 
-Returns **[unitContext][44]** 
+Returns **[unitContext][155]** 
 
-[1]: #cssattr
+[1]: #backgroundcolor
 
-[2]: #examples
+[2]: #parameters
 
-[3]: #cssrule
+[3]: #background
 
-[4]: #examples-1
+[4]: #parameters-1
 
-[5]: #mapcontextfn
+[5]: #borderbottomcolor
 
-[6]: #examples-2
+[6]: #parameters-2
 
-[7]: #props
+[7]: #borderbottomleftradius
 
-[8]: #properties
+[8]: #parameters-3
 
-[9]: #theme
+[9]: #borderbottomrightradius
 
-[10]: #properties-1
+[10]: #parameters-4
 
-[11]: #unitcontext
+[11]: #bordercolor
 
-[12]: #unitkey
+[12]: #parameters-5
 
-[13]: #unitvalue
+[13]: #borderleftcolor
 
-[14]: #cssrulefor
+[14]: #parameters-6
 
-[15]: #parameters
+[15]: #borderradius
 
-[16]: #getwithcontext
+[16]: #parameters-7
 
-[17]: #parameters-1
+[17]: #borderrightcolor
 
-[18]: #connectcontext
+[18]: #parameters-8
 
-[19]: #parameters-2
+[19]: #bordertopcolor
 
-[20]: #get
+[20]: #parameters-9
 
-[21]: #parameters-3
+[21]: #bordertopleftradius
 
-[22]: #mapbasefontsize
+[22]: #parameters-10
 
-[23]: #parameters-4
+[23]: #bordertoprightradius
 
-[24]: #mapbaselineheight
+[24]: #parameters-11
 
-[25]: #parameters-5
+[25]: #bottom
 
-[26]: #mapbasespacing
+[26]: #parameters-12
 
-[27]: #parameters-6
+[27]: #boxshadow
 
-[28]: #mapcolor
+[28]: #parameters-13
 
-[29]: #parameters-7
+[29]: #caretcolor
 
-[30]: #mapfontface
+[30]: #parameters-14
 
-[31]: #parameters-8
+[31]: #color
 
-[32]: #mapfontfamily
+[32]: #parameters-15
 
-[33]: #parameters-9
+[33]: #color-1
 
-[34]: #mapfontsize
+[34]: #parameters-16
 
-[35]: #parameters-10
+[35]: #fontfamily
 
-[36]: #mapfontweight
+[36]: #parameters-17
 
-[37]: #parameters-11
+[37]: #fontfamily-1
 
-[38]: #mapspacing
+[38]: #parameters-18
 
-[39]: #parameters-12
+[39]: #fontsize
 
-[40]: #mapswatch
+[40]: #parameters-19
 
-[41]: #parameters-13
+[41]: #fontsize-1
 
-[42]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+[42]: #parameters-20
 
-[43]: #props
+[43]: #fontweight
 
-[44]: #unitcontext
+[44]: #parameters-21
 
-[45]: #theme
+[45]: #fontweight-1
 
-[46]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+[46]: #parameters-22
 
-[47]: #cssrule
+[47]: #gridgap
 
-[48]: #mapcontextfn
+[48]: #parameters-23
 
-[49]: #unitvalue
+[49]: #gridcolumngap
+
+[50]: #parameters-24
+
+[51]: #gridrowgap
+
+[52]: #parameters-25
+
+[53]: #height
+
+[54]: #parameters-26
+
+[55]: #left
+
+[56]: #parameters-27
+
+[57]: #lineheight
+
+[58]: #parameters-28
+
+[59]: #marginbottom
+
+[60]: #parameters-29
+
+[61]: #marginleft
+
+[62]: #parameters-30
+
+[63]: #marginright
+
+[64]: #parameters-31
+
+[65]: #margintop
+
+[66]: #parameters-32
+
+[67]: #margin
+
+[68]: #parameters-33
+
+[69]: #maxheight
+
+[70]: #parameters-34
+
+[71]: #maxwidth
+
+[72]: #parameters-35
+
+[73]: #minheight
+
+[74]: #parameters-36
+
+[75]: #minwidth
+
+[76]: #parameters-37
+
+[77]: #opacity
+
+[78]: #parameters-38
+
+[79]: #outlinecolor
+
+[80]: #parameters-39
+
+[81]: #paddingbottom
+
+[82]: #parameters-40
+
+[83]: #paddingleft
+
+[84]: #parameters-41
+
+[85]: #paddingright
+
+[86]: #parameters-42
+
+[87]: #paddingtop
+
+[88]: #parameters-43
+
+[89]: #padding
+
+[90]: #parameters-44
+
+[91]: #right
+
+[92]: #parameters-45
+
+[93]: #top
+
+[94]: #parameters-46
+
+[95]: #width
+
+[96]: #parameters-47
+
+[97]: #zindex
+
+[98]: #parameters-48
+
+[99]: #cssattr
+
+[100]: #examples
+
+[101]: #cssrule
+
+[102]: #examples-1
+
+[103]: #mapcontextfn
+
+[104]: #examples-2
+
+[105]: #props
+
+[106]: #properties
+
+[107]: #theme
+
+[108]: #properties-1
+
+[109]: #unitcontext
+
+[110]: #unitkey
+
+[111]: #unitvalue
+
+[112]: #basefontsize
+
+[113]: #parameters-49
+
+[114]: #baselineheight
+
+[115]: #parameters-50
+
+[116]: #basespacing
+
+[117]: #parameters-51
+
+[118]: #fontface
+
+[119]: #parameters-52
+
+[120]: #spacing
+
+[121]: #parameters-53
+
+[122]: #swatch
+
+[123]: #parameters-54
+
+[124]: #cssrulefor
+
+[125]: #parameters-55
+
+[126]: #getwithcontext
+
+[127]: #parameters-56
+
+[128]: #connectcontext
+
+[129]: #parameters-57
+
+[130]: #get
+
+[131]: #parameters-58
+
+[132]: #mapbasefontsize
+
+[133]: #parameters-59
+
+[134]: #mapbaselineheight
+
+[135]: #parameters-60
+
+[136]: #mapbasespacing
+
+[137]: #parameters-61
+
+[138]: #mapcolor
+
+[139]: #parameters-62
+
+[140]: #mapfontface
+
+[141]: #parameters-63
+
+[142]: #mapfontfamily
+
+[143]: #parameters-64
+
+[144]: #mapfontsize
+
+[145]: #parameters-65
+
+[146]: #mapfontweight
+
+[147]: #parameters-66
+
+[148]: #mapspacing
+
+[149]: #parameters-67
+
+[150]: #mapswatch
+
+[151]: #parameters-68
+
+[152]: #unitvalue
+
+[153]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+
+[154]: #props
+
+[155]: #unitcontext
+
+[156]: #theme
+
+[157]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+
+[158]: #cssrule
+
+[159]: #mapcontextfn

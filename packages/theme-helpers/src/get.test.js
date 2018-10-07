@@ -9,7 +9,7 @@ import {
   fontWeight,
   spacing,
   swatch
-} from './getWithTheme'
+} from './get'
 import theme from './test/theme'
 
 const props = { theme }
