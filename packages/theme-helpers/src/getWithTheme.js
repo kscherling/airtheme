@@ -1,3 +1,5 @@
+// @flow
+
 import {
   mapBaseFontSize,
   mapBaseLineHeight,
@@ -9,31 +11,19 @@ import {
   mapFontSize,
   mapFontWeight,
   mapSpacing
-} from './lib/mapThemeToProps'
+} from './lib/mapPropsToContext'
 import getWithContext from './lib/getWithContext'
 
-/*
-For root level nodes we preload the 'key' arg so user does not have to supply.
+import type { props, unitValue, unitKey } from './flow/types'
 
-const C = styled.div `
-  font-size: ${baseFontSize}
-
-  vs
-
-  font-size: ${baseFontSize('baseFontSize')}
-`
-
-For all others, the user supplies the 'key', props are curried.
-
-const C = styled.div `
-  color: ${color('primary')}
-`
-*/
+/**
+ * @param {unitKey}
+ * @param {props}
+ * @returns {unitValue}
+ */
 
 export const baseFontSize = getWithContext(mapBaseFontSize)('baseFontSize')
-export const baseLineHeight = getWithContext(mapBaseLineHeight)(
-  'baseLineHeight'
-)
+export const baseLineHeight = getWithContext(mapBaseLineHeight)('baseLineHeight') // prettier-ignore
 export const baseSpacing = getWithContext(mapBaseSpacing)('baseSpacing')
 export const color = getWithContext(mapColor)
 export const fontFace = getWithContext(mapFontFace)

@@ -9,7 +9,7 @@ import {
   mapFontWeight,
   mapSpacing,
   mapSwatch
-} from './mapThemeToProps'
+} from './mapPropsToContext'
 import theme from '../test/theme'
 
 const props = { theme }

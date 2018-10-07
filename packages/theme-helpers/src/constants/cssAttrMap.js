@@ -56,7 +56,7 @@ import {
   mapFontSize,
   mapFontWeight,
   mapSpacing
-} from '../lib/mapThemeToProps'
+} from '../lib/mapPropsToContext'
 
 const noimp = () => null
 
