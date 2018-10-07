@@ -1,0 +1,3 @@
+export const ADD_FONT_FACE = 'ADD_FONT_FACE'
+export const REMOVE_FONT_FACE = 'REMOVE_FONT_FACE'
+export const UPDATE_FONT_FACE = 'UPDATE_FONT_FACE'

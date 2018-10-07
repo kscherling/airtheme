@@ -1,73 +1,51 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import {
-  mapBaseFontSize,
-  mapBaseLineHeight,
-  mapBaseSpacing,
   mapId,
   mapName,
   mapType,
   mapVersion,
-  updateBaseFontSize,
-  updateBaseLineHeight,
-  updateBaseSpacing,
   updateThemeId,
   updateThemeName,
-  updateThemeType,
+  updateThemeObject,
   updateThemeVersion
 } from '@airtheme/make'
-import { Input } from '../lib/basicControls'
+import { SimpleList } from '@airtheme/ui'
+import { Node } from '../lib/ModifyTypes'
 
-export const Name = connect(
+const Name = connect(
   mapName,
   { updateThemeName }
 )(({ name, updateThemeName }) => (
-  <Input label="name" value={name} onChange={updateThemeName} />
+  <SimpleList.TwoColumns>
+    <Node label="name" value={name} onChange={updateThemeName} />
+  </SimpleList.TwoColumns>
 ))
 
-export const Id = connect(
+const Id = connect(
   mapId,
   { updateThemeId }
 )(({ id, updateThemeId }) => (
-  <Input disabled label="id" value={id} onChange={updateThemeId} />
+  <SimpleList.TwoColumns>
+    <Node disabled label="id" value={id} onChange={updateThemeId} />
+  </SimpleList.TwoColumns>
 ))
 
-export const Version = connect(
+const Version = connect(
   mapVersion,
   { updateThemeVersion }
 )(({ version, updateThemeVersion }) => (
-  <Input label="version" value={version} onChange={updateThemeVersion} />
+  <SimpleList.TwoColumns>
+    <Node label="version" value={version} onChange={updateThemeVersion} />
+  </SimpleList.TwoColumns>
 ))
 
-export const BaseFontSize = connect(
-  mapBaseFontSize,
-  { updateBaseFontSize }
-)(({ baseFontSize, updateBaseFontSize }) => (
-  <Input
-    label="baseFontSize"
-    value={baseFontSize}
-    onChange={updateBaseFontSize}
-  />
-))
+const Globals = () => (
+  <SimpleList.OneColumn>
+    <Id />
+    <Name />
+    <Version />
+  </SimpleList.OneColumn>
+)
 
-export const BaseLineHeight = connect(
-  mapBaseLineHeight,
-  { updateBaseLineHeight }
-)(({ baseLineHeight, updateBaseLineHeight }) => (
-  <Input
-    label="baseLineHeight"
-    value={baseLineHeight}
-    onChange={updateBaseLineHeight}
-  />
-))
-
-export const BaseSpacing = connect(
-  mapBaseSpacing,
-  { updateBaseSpacing }
-)(({ baseSpacing, updateBaseSpacing }) => (
-  <Input
-    label="baseLineHeight"
-    value={baseSpacing}
-    onChange={updateBaseSpacing}
-  />
-))
+export default Globals

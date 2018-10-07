@@ -1,0 +1,31 @@
+{
+  "name": "@airtheme/ui",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "./task clean",
+    "build": "./task build",
+    "build:watch": "./task build:watch",
+    "test": "./task test",
+    "relink": "./task relink"
+  },
+  "dependencies": {
+    "fp": "^0.1.0",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-popper": "^1.0.0-beta.6",
+    "styled-components": "^3.4.5",
+    "tinycolor2": "^1.4.1"
+  },
+  "devDependencies": {
+    "prettier": "^1.14.2"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "bracketSpacing": true
+  }
+}

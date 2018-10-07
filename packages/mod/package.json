@@ -1,33 +1,28 @@
 {
   "name": "@airtheme/mod",
   "version": "0.1.0",
-  "author": "Kyle Scherling",
   "main": "dist/index.js",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "rollup --config",
-    "build:watch": "yarn run build --watch"
-  },
-  "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-jest": "^23.4.2",
-    "babel-plugin-external-helpers": "^6.22.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-2": "^6.24.1",
-    "prettier": "^1.14.2",
-    "rollup-plugin-babel": "^3.0.7",
-    "rollup-plugin-commonjs": "^9.1.3",
-    "rollup-plugin-node-resolve": "^3.3.0"
+    "clean": "./task clean",
+    "build": "./task build",
+    "build:watch": "./task build:watch",
+    "test": "./task test",
+    "relink": "./task relink"
   },
   "dependencies": {
+    "fp": "^0.1.0",
+    "@airtheme/make": "^0.1.0",
+    "@airtheme/ui": "^0.1.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-redux": "^5.0.7",
-    "@airtheme/make": "^0.1.0"
-  },
-  "peerDependencies": {
     "styled-components": "^3.4.5"
+  },
+  "devDependencies": {
+    "prettier": "^1.14.2"
   },
   "prettier": {
     "semi": false,
