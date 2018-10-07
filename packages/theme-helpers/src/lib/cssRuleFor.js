@@ -15,7 +15,7 @@ import type {
 } from '../flow/types'
 
 /**
- * Constructs a styled-components cssRule
+ * Constructs a styled-components `cssRule`.
  * @param {cssAttr}
  * @param {unitKey}
  * @param {props}

@@ -15,42 +15,40 @@
 -   [unitContext][11]
 -   [unitKey][12]
 -   [unitValue][13]
--   [baseFontSize][14]
+-   [cssRuleFor][14]
     -   [Parameters][15]
--   [cssRuleFor][16]
+-   [getWithContext][16]
     -   [Parameters][17]
--   [getWithContext][18]
+-   [connectContext][18]
     -   [Parameters][19]
--   [connectContext][20]
+-   [get][20]
     -   [Parameters][21]
--   [get][22]
+-   [mapBaseFontSize][22]
     -   [Parameters][23]
--   [mapBaseFontSize][24]
+-   [mapBaseLineHeight][24]
     -   [Parameters][25]
--   [mapBaseLineHeight][26]
+-   [mapBaseSpacing][26]
     -   [Parameters][27]
--   [mapBaseSpacing][28]
+-   [mapColor][28]
     -   [Parameters][29]
--   [mapColor][30]
+-   [mapFontFace][30]
     -   [Parameters][31]
--   [mapFontFace][32]
+-   [mapFontFamily][32]
     -   [Parameters][33]
--   [mapFontFamily][34]
+-   [mapFontSize][34]
     -   [Parameters][35]
--   [mapFontSize][36]
+-   [mapFontWeight][36]
     -   [Parameters][37]
--   [mapFontWeight][38]
+-   [mapSpacing][38]
     -   [Parameters][39]
--   [mapSpacing][40]
+-   [mapSwatch][40]
     -   [Parameters][41]
--   [mapSwatch][42]
-    -   [Parameters][43]
 
 ## cssAttr
 
 A css property string.
 
-Type: [string][44]
+Type: [string][42]
 
 ### Examples
 
@@ -62,7 +60,7 @@ Type: [string][44]
 
 A css property string.
 
-Type: [string][44]
+Type: [string][42]
 
 ### Examples
 
@@ -76,7 +74,7 @@ css`
 
 Map function for extracting `unitContext` from `props`.
 
-Type: function ([props][45]): [unitContext][46]
+Type: function ([props][43]): [unitContext][44]
 
 ### Examples
 
@@ -88,11 +86,11 @@ Type: function ([props][45]): [unitContext][46]
 
 Object containing `theme` prop analogous to React component props with theme provider.
 
-Type: {theme: [theme][47]}
+Type: {theme: [theme][45]}
 
 ### Properties
 
--   `theme` **[theme][47]** 
+-   `theme` **[theme][45]** 
 
 ## theme
 
@@ -121,26 +119,17 @@ Type: {}
 
 Key for unit in `unitContext`.
 
-Type: [string][44]
+Type: [string][42]
 
 ## unitValue
 
 Value for unit in `unitContext`.
 
-Type: ([string][44] \| [number][48])
-
-## baseFontSize
-
-### Parameters
-
--   `unitKey`  
--   `props`  
-
-Returns **[unitValue][49]** 
+Type: ([string][42] \| [number][46])
 
 ## cssRuleFor
 
-Constructs a styled-components cssRule
+Constructs a styled-components `cssRule`.
 
 ### Parameters
 
@@ -148,7 +137,7 @@ Constructs a styled-components cssRule
 -   `unitKey`  
 -   `props`  
 
-Returns **[cssRule][50]** 
+Returns **[cssRule][47]** 
 
 ## getWithContext
 
@@ -166,10 +155,10 @@ Curried get `unitContext` for given `mapContextFn` and `props`.
 
 ### Parameters
 
--   `mapContextFn` **[mapContextFn][51]** 
+-   `mapContextFn` **[mapContextFn][48]** 
 -   `props`  
 
-Returns **[unitContext][46]** 
+Returns **[unitContext][44]** 
 
 ## get
 
@@ -177,7 +166,7 @@ Curried get `unitValue` for given `unitKey` and `unitContext`.
 
 ### Parameters
 
--   `unitKey` **[string][44]** 
+-   `unitKey` **[string][42]** 
 -   `unitContext`  
 
 Returns **[unitValue][49]** 
@@ -188,7 +177,7 @@ Returns **[unitValue][49]**
 
 -   `props`  
 
-Returns **[unitContext][46]** 
+Returns **[unitContext][44]** 
 
 ## mapBaseLineHeight
 
@@ -196,7 +185,7 @@ Returns **[unitContext][46]**
 
 -   `props`  
 
-Returns **[unitContext][46]** 
+Returns **[unitContext][44]** 
 
 ## mapBaseSpacing
 
@@ -204,7 +193,7 @@ Returns **[unitContext][46]**
 
 -   `props`  
 
-Returns **[unitContext][46]** 
+Returns **[unitContext][44]** 
 
 ## mapColor
 
@@ -212,7 +201,7 @@ Returns **[unitContext][46]**
 
 -   `props`  
 
-Returns **[unitContext][46]** 
+Returns **[unitContext][44]** 
 
 ## mapFontFace
 
@@ -220,7 +209,7 @@ Returns **[unitContext][46]**
 
 -   `props`  
 
-Returns **[unitContext][46]** 
+Returns **[unitContext][44]** 
 
 ## mapFontFamily
 
@@ -228,7 +217,7 @@ Returns **[unitContext][46]**
 
 -   `props`  
 
-Returns **[unitContext][46]** 
+Returns **[unitContext][44]** 
 
 ## mapFontSize
 
@@ -236,7 +225,7 @@ Returns **[unitContext][46]**
 
 -   `props`  
 
-Returns **[unitContext][46]** 
+Returns **[unitContext][44]** 
 
 ## mapFontWeight
 
@@ -244,7 +233,7 @@ Returns **[unitContext][46]**
 
 -   `props`  
 
-Returns **[unitContext][46]** 
+Returns **[unitContext][44]** 
 
 ## mapSpacing
 
@@ -252,7 +241,7 @@ Returns **[unitContext][46]**
 
 -   `props`  
 
-Returns **[unitContext][46]** 
+Returns **[unitContext][44]** 
 
 ## mapSwatch
 
@@ -260,7 +249,7 @@ Returns **[unitContext][46]**
 
 -   `props`  
 
-Returns **[unitContext][46]** 
+Returns **[unitContext][44]** 
 
 [1]: #cssattr
 
@@ -288,78 +277,74 @@ Returns **[unitContext][46]**
 
 [13]: #unitvalue
 
-[14]: #basefontsize
+[14]: #cssrulefor
 
 [15]: #parameters
 
-[16]: #cssrulefor
+[16]: #getwithcontext
 
 [17]: #parameters-1
 
-[18]: #getwithcontext
+[18]: #connectcontext
 
 [19]: #parameters-2
 
-[20]: #connectcontext
+[20]: #get
 
 [21]: #parameters-3
 
-[22]: #get
+[22]: #mapbasefontsize
 
 [23]: #parameters-4
 
-[24]: #mapbasefontsize
+[24]: #mapbaselineheight
 
 [25]: #parameters-5
 
-[26]: #mapbaselineheight
+[26]: #mapbasespacing
 
 [27]: #parameters-6
 
-[28]: #mapbasespacing
+[28]: #mapcolor
 
 [29]: #parameters-7
 
-[30]: #mapcolor
+[30]: #mapfontface
 
 [31]: #parameters-8
 
-[32]: #mapfontface
+[32]: #mapfontfamily
 
 [33]: #parameters-9
 
-[34]: #mapfontfamily
+[34]: #mapfontsize
 
 [35]: #parameters-10
 
-[36]: #mapfontsize
+[36]: #mapfontweight
 
 [37]: #parameters-11
 
-[38]: #mapfontweight
+[38]: #mapspacing
 
 [39]: #parameters-12
 
-[40]: #mapspacing
+[40]: #mapswatch
 
 [41]: #parameters-13
 
-[42]: #mapswatch
+[42]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
 
-[43]: #parameters-14
+[43]: #props
 
-[44]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+[44]: #unitcontext
 
-[45]: #props
+[45]: #theme
 
-[46]: #unitcontext
+[46]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
 
-[47]: #theme
+[47]: #cssrule
 
-[48]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+[48]: #mapcontextfn
 
 [49]: #unitvalue
-
-[50]: #cssrule
-
-[51]: #mapcontextfn
