@@ -23,10 +23,12 @@ import type {
  */
 
 const cssRuleFor = (curry(
-  (cssAttr: cssAttr, unitKey: unitKey, props: props) =>
-    css`
+  (cssAttr: cssAttr, unitKey: unitKey, props: props) => {
+    console.log(cssAttrMap[cssAttr])
+    return css`
       ${cssAttr}: ${getWithContext(cssAttrMap[cssAttr])(unitKey, props)};
     `
+  }
 ): cssRule)
 
 export default cssRuleFor
