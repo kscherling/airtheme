@@ -9,6 +9,7 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, auto);
   grid-gap: 20px;
+  width: fit-content;
 `
 
 const Cell = styled.div`
@@ -40,6 +41,8 @@ storiesOf('Icons', module).add('16pt', () => (
     <Aircon name="dragHorz" />
     <Aircon name="dragVert" />
     <Aircon name="minus" />
+    <Aircon name="moreHorz" />
+    <Aircon name="moreVert" />
     <Aircon name="plus" />
     <Aircon name="trash" />
   </Fragment>
