@@ -38,5 +38,7 @@ storiesOf('Icons', module).add('16pt', () => (
   <Fragment>
     <Aircon name="trash" />
     <Aircon name="adjust" />
+    <Aircon name="dragHorz" />
+    <Aircon name="dragVert" />
   </Fragment>
 ))
