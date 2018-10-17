@@ -36,9 +36,11 @@ addDecorator(GridDecorator)
 
 storiesOf('Icons', module).add('16pt', () => (
   <Fragment>
-    <Aircon name="trash" />
     <Aircon name="adjust" />
     <Aircon name="dragHorz" />
     <Aircon name="dragVert" />
+    <Aircon name="minus" />
+    <Aircon name="plus" />
+    <Aircon name="trash" />
   </Fragment>
 ))
