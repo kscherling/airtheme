@@ -11,10 +11,16 @@
     "build": "./task build",
     "build:watch": "./task build:watch",
     "test": "./task test",
-    "relink": "./task relink"
+    "relink": "./task relink",
+    "storybook": "start-storybook -p 9001 -c .storybook"
   },
-  "dependencies": {},
+  "dependencies": {
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "styled-components": "^3.4.5"
+  },
   "devDependencies": {
+    "@storybook/react": "^3.4.11",
     "prettier": "^1.14.2"
   },
   "prettier": {
