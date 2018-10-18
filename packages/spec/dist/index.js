@@ -1583,28 +1583,20 @@ Object.freeze({
   ifWidth: ifWidth,
   ifZIndex: ifZIndex
 });
+exports.cssAttrMap = cssAttrMap;
 exports.cssFor = cssFor;
 exports.get = get$1;
 exports.ifCss = ifCss;
 });
 
 unwrapExports(dist);
-var dist_1 = dist.cssFor;
-var dist_2 = dist.get;
-var dist_3 = dist.ifCss;
-
-function _templateObject4$2() {
-  var data = _taggedTemplateLiteral(["\n  font-size: ", ";\n  line-height: ", ";\n"]);
-
-  _templateObject4$2 = function _templateObject4() {
-    return data;
-  };
-
-  return data;
-}
+var dist_1 = dist.cssAttrMap;
+var dist_2 = dist.cssFor;
+var dist_3 = dist.get;
+var dist_4 = dist.ifCss;
 
 function _templateObject3$3() {
-  var data = _taggedTemplateLiteral(["\n      min-height: 72px;\n    "]);
+  var data = _taggedTemplateLiteral(["\n  font-size: ", ";\n  line-height: ", ";\n"]);
 
   _templateObject3$3 = function _templateObject3() {
     return data;
@@ -1614,7 +1606,7 @@ function _templateObject3$3() {
 }
 
 function _templateObject2$3() {
-  var data = _taggedTemplateLiteral(["\n      min-height: 100px;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      padding: 1rem;\n    "]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n"]);
 
   _templateObject2$3 = function _templateObject2() {
     return data;
@@ -1624,7 +1616,7 @@ function _templateObject2$3() {
 }
 
 function _templateObject$7() {
-  var data = _taggedTemplateLiteral(["\n  font-weight: ", ";\n\n  ", ";\n\n  ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n    ", ": ", ";\n  "]);
 
   _templateObject$7 = function _templateObject() {
     return data;
@@ -1633,30 +1625,19 @@ function _templateObject$7() {
   return data;
 }
 var DEFAULT_TEXT$1 = 'The quick brown fox jumped over the lazy dog.';
-var MICRO_TEXT$1 = 'Aa';
-var Styles$1 = styled__default.div(_templateObject$7(), function (_ref) {
-  var fontWeight = _ref.fontWeight;
-  return fontWeight;
-}, function (_ref2) {
-  var pad = _ref2.pad;
-  return pad && styled.css(_templateObject2$3());
-}, function (_ref3) {
-  var micro = _ref3.micro;
-  return micro && styled.css(_templateObject3$3());
-});
-var Global = styled__default.div(_templateObject4$2(), dist_2.baseFontSize, dist_2.baseLineHeight);
 
-var FontWeightSpecimen$1 = function FontWeightSpecimen(_ref4) {
-  var attribute = _ref4.attribute,
-      unit = _ref4.unit,
-      _ref4$micro = _ref4.micro,
-      micro = _ref4$micro === void 0 ? false : _ref4$micro,
-      _ref4$pad = _ref4.pad,
-      pad = _ref4$pad === void 0 ? false : _ref4$pad;
-  return React__default.createElement(Global, null, React__default.createElement(Styles$1, {
-    micro: micro,
-    pad: pad
-  }, micro ? MICRO_TEXT$1 : DEFAULT_TEXT$1));
+var cssForDeserialized = function cssForDeserialized(_ref) {
+  var attribute = _ref.attribute,
+      cssAttr = _ref.cssAttr,
+      deserializedValue = _ref.deserializedValue;
+  return deserializedValue && cssAttr && styled.css(_templateObject$7(), cssAttr, deserializedValue);
+};
+
+var Styles$1 = styled__default.div(_templateObject2$3(), cssForDeserialized);
+var Globals$1 = styled__default.div(_templateObject3$3(), dist_3.baseFontSize, dist_3.baseLineHeight);
+
+var Typography = function Typography(props) {
+  return React__default.createElement(Globals$1, null, React__default.createElement(Styles$1, props, DEFAULT_TEXT$1));
 };
 
 exports.GlobalsInfo = Globals;
@@ -1672,5 +1653,5 @@ exports.BaseLineHeightInfo = BaseLineHeight;
 exports.BaseSpacingInfo = BaseSpacing;
 exports.SpecimenBaseFont = BaseFontSpecimen;
 exports.SpecimenFontWeight = FontWeightSpecimen;
-exports.Typography = FontWeightSpecimen$1;
+exports.Typography = Typography;
 //# sourceMappingURL=index.js.map
