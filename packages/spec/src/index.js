@@ -13,3 +13,4 @@ export { default as BaseSpacingInfo } from './Info/BaseSpacing'
 // Specimen
 export { default as SpecimenBaseFont } from './Specimen/BaseFont'
 export { default as SpecimenFontWeight } from './Specimen/FontWeight'
+export { default as Typography } from './Specimen/Typography'

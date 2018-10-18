@@ -9,17 +9,18 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, auto);
   grid-gap: 20px;
-  width: fit-content;
+  width: fit-content
+  font-family: sans-serif;
+  font-size: 11px;
 `
 
 const Cell = styled.div`
   display: grid;
-  justify-content: center;
   align-items: center;
+  justify-items: center;
   height: ${CELL_DIM};
   width: ${CELL_DIM};
-  border: 1px solid #ccc;
-  grid-auto-flow: column;
+  grid-auto-flow: row;
 `
 
 const Aircon = ({ name }) => {
