@@ -1777,12 +1777,12 @@ var Deserialize = function Deserialize(_ref) {
       _ref$unit = _ref.unit,
       unit = _ref$unit === void 0 ? {} : _ref$unit,
       render = _ref.render,
-      _ref$theme = _ref.theme,
-      theme = _ref$theme === void 0 ? {} : _ref$theme;
+      _ref$schema = _ref.schema,
+      schema = _ref$schema === void 0 ? {} : _ref$schema;
   return render({
     deserialized: Boolean(attribute) ? type.deserializeAttribute(_objectSpread({}, attribute, {
       content: [unit]
-    }), theme) : {}
+    }), schema) : {}
   });
 };
 
