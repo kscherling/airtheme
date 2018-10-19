@@ -6,9 +6,19 @@ test('builds setting values', () => {
   const result = pipe(basicTheme)(setting, output)
 
   expect(result).toEqual({
-    baseFontSize: { baseFontSize: '16px' },
-    baseLineHeight: { baseLineHeight: '18.4px' },
-    baseSpacing: { baseSpacing: '16px' },
+    baseFontSize: '16px',
+    baseLineHeight: '18.4px',
+    baseSpacing: '16px',
+    fontFace: {
+      'Andale Mono': 'Andale Mono',
+      'Arial Black': 'Arial Black',
+      Helvetica: 'Helvetica'
+    },
+    swatch: {
+      'pale aqua': '#bfd7ea',
+      'pastel red': '#ff6663',
+      'prussian blue': '#0b3954'
+    },
     setting: {
       color: { ltGrey: '#bfd7ea', primary: '#0b3954', secondary: '#ff6663' },
       fontFamily: {

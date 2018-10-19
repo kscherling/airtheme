@@ -20,7 +20,7 @@ it('`updateBaseSpacing` update base font size', () => {
     unit: 'px'
   })
 
-  store.dispatch(updateBaseSpacing({ value: 14 }))
+  store.dispatch(updateBaseSpacing(null, { value: 14 }))
   const updatedState = store.getState()
 
   expect(updatedState.theme.base.baseSpacing).toEqual({

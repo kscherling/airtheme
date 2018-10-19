@@ -22,7 +22,7 @@ it('creates `base`', () => {
         value: 1.15
       },
       object: 'baseLineHeight',
-      reference: 'baseFontSize',
+      reference: 'base.baseFontSize',
       unit: 'factor',
       view: 'factor',
       viewable: ['factor', 'px']
@@ -63,7 +63,7 @@ it('can initialize with custom `attribute`', () => {
         value: 1.15
       },
       object: 'baseLineHeight',
-      reference: 'baseFontSize',
+      reference: 'base.baseFontSize',
       unit: 'factor',
       view: 'factor',
       viewable: ['factor', 'px']

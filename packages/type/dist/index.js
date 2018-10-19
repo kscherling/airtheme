@@ -132,7 +132,7 @@ var fontWeight = {
 var lineHeight = {
   view: core.FACTOR,
   viewable: [core.FACTOR, core.PX],
-  reference: core.BASE_FONT_SIZE_KEY,
+  reference: core.BASE_FONT_SIZE_PATH,
   object: core.LINE_HEIGHT,
   unit: core.FACTOR
 };
@@ -476,12 +476,8 @@ var deserializeFactor = function deserializeFactor() {
 
   var attribute = arguments.length > 1 ? arguments[1] : undefined;
   var theme = arguments.length > 2 ? arguments[2] : undefined;
-  // TODO: Does not account for arrays of units (base only)
-  console.log(attribute, theme);
-  console.log(getReferencedAttribute({
-    reference: 'baseFontSize'
-  }, theme));
 
+  // TODO: Does not account for arrays of units (base only)
   var _getReferencedAttribu = getReferencedAttribute(attribute, theme),
       _getReferencedAttribu2 = _getReferencedAttribu.content;
 

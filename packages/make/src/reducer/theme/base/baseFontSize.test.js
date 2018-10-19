@@ -20,7 +20,7 @@ it('`updateBaseFontSize` update base font size', () => {
     unit: 'px'
   })
 
-  store.dispatch(updateBaseFontSize({ value: 14 }))
+  store.dispatch(updateBaseFontSize(null, { value: 14 }))
   const updatedState = store.getState()
 
   expect(updatedState.theme.base.baseFontSize).toEqual({

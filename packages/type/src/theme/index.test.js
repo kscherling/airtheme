@@ -21,7 +21,7 @@ const baseTheme = {
         value: 1.15
       },
       object: 'baseLineHeight',
-      reference: 'baseFontSize',
+      reference: 'base.baseFontSize',
       unit: 'factor',
       view: 'factor',
       viewable: ['factor', 'px']
@@ -67,7 +67,7 @@ const baseTheme = {
     fontSize: {
       content: [],
       object: 'fontSize',
-      reference: 'baseFontSize',
+      reference: 'base.baseFontSize',
       unit: 'factor',
       view: 'factor',
       viewable: ['factor', 'px', 'rem']
@@ -84,7 +84,7 @@ const baseTheme = {
     spacing: {
       content: [],
       object: 'spacing',
-      reference: 'baseSpacing',
+      reference: 'base.baseSpacing',
       unit: 'factor',
       view: 'factor',
       viewable: ['factor', 'px']

@@ -33,7 +33,7 @@ it('creates `fontSize`', () => {
     content: [],
     view: 'factor',
     viewable: ['factor', 'px', 'rem'],
-    reference: 'baseFontSize',
+    reference: 'base.baseFontSize',
     object: 'fontSize',
     unit: 'factor'
   })
@@ -59,7 +59,7 @@ it('creates `lineHeight`', () => {
     content: [],
     view: 'factor',
     viewable: ['factor', 'px'],
-    reference: 'baseFontSize',
+    reference: 'base.baseFontSize',
     object: 'lineHeight',
     unit: 'factor'
   })
@@ -72,7 +72,7 @@ it('creates `spacing`', () => {
     content: [],
     view: 'factor',
     viewable: ['factor', 'px'],
-    reference: 'baseSpacing',
+    reference: 'base.baseSpacing',
     object: 'spacing',
     unit: 'factor'
   })

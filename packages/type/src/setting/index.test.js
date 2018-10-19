@@ -27,7 +27,7 @@ it('creates `setting`', () => {
       content: [],
       view: 'factor',
       viewable: ['factor', 'px', 'rem'],
-      reference: 'baseFontSize',
+      reference: 'base.baseFontSize',
       object: 'fontSize',
       unit: 'factor'
     },
@@ -43,7 +43,7 @@ it('creates `setting`', () => {
       content: [],
       view: 'factor',
       viewable: ['factor', 'px'],
-      reference: 'baseSpacing',
+      reference: 'base.baseSpacing',
       object: 'spacing',
       unit: 'factor'
     }
@@ -58,7 +58,9 @@ it('can initialize with custom `attribute`', () => {
   })
 
   expect(result.color).toEqual({
-    content: [{ name: null, ordinal: null, object: 'hexa', value: '#000000, 1' }],
+    content: [
+      { name: null, ordinal: null, object: 'hexa', value: '#000000, 1' }
+    ],
     view: 'reference',
     viewable: ['reference', 'hex', 'hexa', 'rgb', 'rgba'],
     reference: 'swatch',

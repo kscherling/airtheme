@@ -19,13 +19,13 @@ it('`updateBaseLineHeight` update base font size', () => {
       value: 1.15
     },
     object: 'baseLineHeight',
-    reference: 'baseFontSize',
+    reference: 'base.baseFontSize',
     unit: 'factor',
     view: 'factor',
     viewable: ['factor', 'px']
   })
 
-  store.dispatch(updateBaseLineHeight({ value: 1.25 }))
+  store.dispatch(updateBaseLineHeight(null, { value: 1.25 }))
   const updatedState = store.getState()
 
   expect(updatedState.theme.base.baseLineHeight).toEqual({
@@ -36,7 +36,7 @@ it('`updateBaseLineHeight` update base font size', () => {
       value: 1.25 // changed
     },
     object: 'baseLineHeight',
-    reference: 'baseFontSize',
+    reference: 'base.baseFontSize',
     unit: 'factor',
     view: 'factor',
     viewable: ['factor', 'px']
