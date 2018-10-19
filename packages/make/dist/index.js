@@ -1695,6 +1695,13 @@ var withFontWeightContent = reactRedux.connect(mapFontWeightContent, {
   removeFontWeight: removeFontWeight
 });
 
+var withFontSizeAttribute = reactRedux.connect(mapFontSize);
+var withFontSizeContent = reactRedux.connect(mapFontSizeContent, {
+  updateFontSize: updateFontSize,
+  addFontSize: addFontSize,
+  removeFontSize: removeFontSize
+});
+
 var connectTheme = function connectTheme(mapThemeToProps) {
   return compose(styledComponents.withTheme, function (Component) {
     return function (_ref) {
@@ -1876,6 +1883,8 @@ exports.withBaseSpacingAttribute = withBaseSpacingAttribute;
 exports.withBaseSpacingContent = withBaseSpacingContent;
 exports.withFontWeightAttribute = withFontWeightAttribute;
 exports.withFontWeightContent = withFontWeightContent;
+exports.withFontSizeAttribute = withFontSizeAttribute;
+exports.withFontSizeContent = withFontSizeContent;
 exports.connectTheme = connectTheme;
 exports.NewUnit = NewUnit;
 exports.Deserialize = Deserialize;

@@ -476,8 +476,12 @@ var deserializeFactor = function deserializeFactor() {
 
   var attribute = arguments.length > 1 ? arguments[1] : undefined;
   var theme = arguments.length > 2 ? arguments[2] : undefined;
-
   // TODO: Does not account for arrays of units (base only)
+  console.log(attribute, theme);
+  console.log(getReferencedAttribute({
+    reference: 'baseFontSize'
+  }, theme));
+
   var _getReferencedAttribu = getReferencedAttribute(attribute, theme),
       _getReferencedAttribu2 = _getReferencedAttribu.content;
 

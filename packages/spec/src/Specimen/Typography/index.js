@@ -1,6 +1,5 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import Spec from '../../components/Spec'
 import { get } from '@airtheme/theme-helpers'
 
 const DEFAULT_TEXT = 'The quick brown fox jumped over the lazy dog.'

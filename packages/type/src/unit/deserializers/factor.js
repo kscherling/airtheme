@@ -6,6 +6,9 @@ const deserializeFactor = (
   theme
 ) => {
   // TODO: Does not account for arrays of units (base only)
+  console.log(attribute, theme)
+  console.log(getReferencedAttribute({ reference: 'baseFontSize' }, theme))
+
   const { content: { value: refValue, object } = {} } = getReferencedAttribute(
     attribute,
     theme
