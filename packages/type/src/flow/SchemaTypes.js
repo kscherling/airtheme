@@ -1,3 +1,5 @@
+import type { BaseT } from './ThemeTypes'
+
 // @flow
 export type Typename = string
 
@@ -5,7 +7,7 @@ export type Typename = string
  * @description Base Schema Type
  */
 
-export type Base = {
+export type BaseST = {
   __schemaname: 'Base',
   __typename: ?Typename,
   baseFontSize: any,
@@ -17,7 +19,7 @@ export type Base = {
  *  @description Attribute Schema Type
  */
 
-export type Attribute = {
+export type AttributeST = {
   __schemaname: 'Attribute',
   __typename: ?Typename,
   reference: ?string,
@@ -30,7 +32,7 @@ export type Attribute = {
  * @description Unit Schema Type
  */
 
-export type Unit = {
+export type UnitST = {
   __schemaname: 'Base',
   __typename: ?Typename,
   name: ?string,
@@ -42,7 +44,7 @@ export type Unit = {
  * @description Setting Schema Type
  */
 
-export type Setting = {
+export type SettingST = {
   __schemaname: 'Setting',
   __typename: ?Typename,
   color: ?{},
@@ -56,10 +58,10 @@ export type Setting = {
  * Theme Schema Type
  */
 
-export type Theme = {
+export type ThemeST = {
   __schemaname: 'Theme',
   __typename: ?Typename,
-  base: ?Base,
+  base: ?BaseT,
   fontFace: ?{},
   id: ?string,
   name: ?string,

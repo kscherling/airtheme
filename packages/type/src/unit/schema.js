@@ -1,10 +1,10 @@
-import type { Unit } from '../flow/SchemaTypes'
+import type { UnitST } from '../flow/SchemaTypes'
 
 /**
  *  @description Unit schema object.
  */
 
-const UnitSchema: Unit = {
+const UnitSchema: UnitST = {
   __schemaname: 'Unit',
   __typename: null,
   name: null,

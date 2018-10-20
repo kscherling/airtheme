@@ -4,33 +4,35 @@
 
 -   [AttributeSchema][1]
 -   [BaseSchema][2]
--   [Base][3]
+-   [BaseST][3]
     -   [Properties][4]
--   [Attribute][5]
+-   [AttributeST][5]
     -   [Properties][6]
--   [Unit][7]
+-   [UnitST][7]
     -   [Properties][8]
--   [Setting][9]
+-   [SettingST][9]
     -   [Properties][10]
--   [Theme][11]
+-   [ThemeST][11]
     -   [Properties][12]
--   [SettingSchema][13]
--   [ThemeSchema][14]
--   [UnitSchema][15]
+-   [BaseT][13]
+    -   [Properties][14]
+-   [SettingSchema][15]
+-   [ThemeSchema][16]
+-   [UnitSchema][17]
 
 ## AttributeSchema
 
 Attribute schema object.
 
-Type: [Attribute][16]
+Type: [AttributeST][18]
 
 ## BaseSchema
 
 Base schema object.
 
-Type: [Base][17]
+Type: [BaseST][19]
 
-## Base
+## BaseST
 
 Base Schema Type
 
@@ -44,36 +46,36 @@ Type: {\_\_schemaname: `"Base"`, \_\_typename: Typename?, baseFontSize: any, bas
 -   `baseLineHeight` **any** 
 -   `baseLineHeight` **any** 
 
-## Attribute
+## AttributeST
 
 Attribute Schema Type
 
-Type: {\_\_schemaname: `"Attribute"`, \_\_typename: Typename?, reference: [string][18]?, unit: [string][18]?, view: \[]?, viewable: \[]?}
+Type: {\_\_schemaname: `"Attribute"`, \_\_typename: Typename?, reference: [string][20]?, unit: [string][20]?, view: \[]?, viewable: \[]?}
 
 ### Properties
 
 -   `__schemaname` **`"Attribute"`** 
 -   `__typename` **Typename?** 
--   `reference` **[string][18]?** 
--   `unit` **[string][18]?** 
+-   `reference` **[string][20]?** 
+-   `unit` **[string][20]?** 
 -   `view` **\[]?** 
 -   `viewable` **\[]?** 
 
-## Unit
+## UnitST
 
 Unit Schema Type
 
-Type: {\_\_schemaname: `"Base"`, \_\_typename: Typename?, name: [string][18]?, ordinal: [number][19]?, value: [string][18]?}
+Type: {\_\_schemaname: `"Base"`, \_\_typename: Typename?, name: [string][20]?, ordinal: [number][21]?, value: [string][20]?}
 
 ### Properties
 
 -   `__schemaname` **`"Base"`** 
 -   `__typename` **Typename?** 
--   `name` **[string][18]?** 
--   `ordinal` **[number][19]?** 
--   `value` **[string][18]?** 
+-   `name` **[string][20]?** 
+-   `ordinal` **[number][21]?** 
+-   `value` **[string][20]?** 
 
-## Setting
+## SettingST
 
 Setting Schema Type
 
@@ -89,82 +91,101 @@ Type: {\_\_schemaname: `"Setting"`, \_\_typename: Typename?, color: {}?, fontFam
 -   `fontWeight` **{}?** 
 -   `spacing` **{}?** 
 
-## Theme
+## ThemeST
 
 Theme Schema Type
 
-Type: {\_\_schemaname: `"Theme"`, \_\_typename: Typename?, base: [Base][17]?, fontFace: {}?, id: [string][18]?, name: [string][18]?, setting: {}?, swatch: {}?, version: [string][18]?}
+Type: {\_\_schemaname: `"Theme"`, \_\_typename: Typename?, base: [BaseT][22]?, fontFace: {}?, id: [string][20]?, name: [string][20]?, setting: {}?, swatch: {}?, version: [string][20]?}
 
 ### Properties
 
 -   `__schemaname` **`"Theme"`** 
 -   `__typename` **Typename?** 
--   `base` **[Base][17]?** 
+-   `base` **[BaseT][22]?** 
 -   `fontFace` **{}?** 
--   `id` **[string][18]?** 
--   `name` **[string][18]?** 
+-   `id` **[string][20]?** 
+-   `name` **[string][20]?** 
 -   `setting` **{}?** 
 -   `swatch` **{}?** 
--   `version` **[string][18]?** 
+-   `version` **[string][20]?** 
+
+## BaseT
+
+Base type
+
+Type: {\_\_typename: `"Base"`, baseFontSize: [string][20], baseLineHeight: [string][20], baseLineHeight: [string][20]}
+
+### Properties
+
+-   `__typename` **`"Base"`** 
+-   `baseFontSize` **[string][20]** 
+-   `baseLineHeight` **[string][20]** 
+-   `baseLineHeight` **[string][20]** 
 
 ## SettingSchema
 
 Setting schema object.
 
-Type: [Setting][20]
+Type: [SettingST][23]
 
 ## ThemeSchema
 
 Theme schema object.
 
-Type: [Theme][21]
+Type: [ThemeST][24]
 
 ## UnitSchema
 
 Unit schema object.
 
-Type: [Unit][22]
+Type: [UnitST][25]
 
 [1]: #attributeschema
 
 [2]: #baseschema
 
-[3]: #base
+[3]: #basest
 
 [4]: #properties
 
-[5]: #attribute
+[5]: #attributest
 
 [6]: #properties-1
 
-[7]: #unit
+[7]: #unitst
 
 [8]: #properties-2
 
-[9]: #setting
+[9]: #settingst
 
 [10]: #properties-3
 
-[11]: #theme
+[11]: #themest
 
 [12]: #properties-4
 
-[13]: #settingschema
+[13]: #baset
 
-[14]: #themeschema
+[14]: #properties-5
 
-[15]: #unitschema
+[15]: #settingschema
 
-[16]: #attribute
+[16]: #themeschema
 
-[17]: #base
+[17]: #unitschema
 
-[18]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+[18]: #attributest
 
-[19]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+[19]: #basest
 
-[20]: #setting
+[20]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
 
-[21]: #theme
+[21]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
 
-[22]: #unit
+[22]: #baset
+
+[23]: #settingst
+
+[24]: #themest
+
+[25]: #unitst

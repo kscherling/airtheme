@@ -5,6 +5,21 @@ Object.defineProperty(exports, '__esModule', { value: true });
 var core = require('@airtheme/core');
 var fp = require('fp');
 
+/**
+ *  @description Theme schema object.
+ */
+var ThemeSchema = {
+  __schemaname: 'Theme',
+  __typename: null,
+  base: null,
+  fontFace: null,
+  id: null,
+  name: null,
+  setting: null,
+  swatch: null,
+  version: null
+};
+
 function _defineProperty(obj, key, value) {
   if (key in obj) {
     Object.defineProperty(obj, key, {
@@ -39,27 +54,18 @@ function _objectSpread(target) {
   return target;
 }
 
-// object for a theme attribute, has many units
-
-var schema = {
-  // content
-  // Object : reference/val store for settings. User selected.
+/**
+ * @description Attribute schema object.
+ */
+var AttributeSchema = {
+  __schemaname: 'Attribute',
+  __typename: null,
   content: [],
-  // view
-  // The unit the content items are displayed. User selected.
-  view: null,
-  // viewable
-  // Array : Units this object can serialize to.
-  viewable: [],
-  // reference
-  // A string namespace global reference
+  object: null,
   reference: null,
-  // object
-  // The name of the object. The same as the 'class'
-  object: core._ROOT_ATTRIBUTE_,
-  // unit
-  // The unit the content items are stored. Static.
-  unit: null
+  unit: null,
+  view: null,
+  viewable: null
 };
 
 // prettier-ignore
@@ -154,20 +160,14 @@ var swatch = {
   content: []
 };
 
-// A typed unit for communicating css units
-
-var schema$1 = {
-  // name
-  // string : the friendly name
+/**
+ *  @description Unit schema object.
+ */
+var UnitSchema = {
+  __schemaname: 'Unit',
+  __typename: null,
   name: null,
-  // ordinal
-  // int : the stack order index
   ordinal: null,
-  // object
-  // string : The name of the unit.
-  object: core._ROOT_UNIT_,
-  // value
-  // Any : The value of the unit
   value: null
 };
 
@@ -252,15 +252,15 @@ var string = {
 };
 
 var unit = {
-  factor: factoryFor$1(factor, schema$1),
-  hex: factoryFor$1(hex, schema$1),
-  hexa: factoryFor$1(hexa, schema$1),
-  px: factoryFor$1(px, schema$1),
-  reference: factoryFor$1(reference, schema$1),
-  rem: factoryFor$1(rem, schema$1),
-  rgb: factoryFor$1(rgb, schema$1),
-  rgba: factoryFor$1(rgba, schema$1),
-  string: factoryFor$1(string, schema$1)
+  factor: factoryFor$1(factor, UnitSchema),
+  hex: factoryFor$1(hex, UnitSchema),
+  hexa: factoryFor$1(hexa, UnitSchema),
+  px: factoryFor$1(px, UnitSchema),
+  reference: factoryFor$1(reference, UnitSchema),
+  rem: factoryFor$1(rem, UnitSchema),
+  rgb: factoryFor$1(rgb, UnitSchema),
+  rgba: factoryFor$1(rgba, UnitSchema),
+  string: factoryFor$1(string, UnitSchema)
 };
 
 var baseSpacing = {
@@ -301,23 +301,29 @@ var baseFontSize = {
 
 var _attribute;
 var attribute = (_attribute = {
-  baseFontSize: factoryFor(baseFontSize, schema),
-  baseSpacing: factoryFor(baseSpacing, schema),
-  baseLineHeight: factoryFor(baseLineHeight, schema),
-  color: factoryFor(color, schema),
-  fontFamily: factoryFor(fontFamily, schema),
-  fontSize: factoryFor(fontSize, schema),
-  fontWeight: factoryFor(fontWeight, schema),
-  lineHeight: factoryFor(lineHeight, schema),
-  fontFace: factoryFor(fontFace, schema)
-}, _defineProperty(_attribute, "fontFamily", factoryFor(fontFamily, schema)), _defineProperty(_attribute, "spacing", factoryFor(spacing, schema)), _defineProperty(_attribute, "swatch", factoryFor(swatch, schema)), _attribute);
+  baseFontSize: factoryFor(baseFontSize, AttributeSchema),
+  baseSpacing: factoryFor(baseSpacing, AttributeSchema),
+  baseLineHeight: factoryFor(baseLineHeight, AttributeSchema),
+  color: factoryFor(color, AttributeSchema),
+  fontFamily: factoryFor(fontFamily, AttributeSchema),
+  fontSize: factoryFor(fontSize, AttributeSchema),
+  fontWeight: factoryFor(fontWeight, AttributeSchema),
+  lineHeight: factoryFor(lineHeight, AttributeSchema),
+  fontFace: factoryFor(fontFace, AttributeSchema)
+}, _defineProperty(_attribute, "fontFamily", factoryFor(fontFamily, AttributeSchema)), _defineProperty(_attribute, "spacing", factoryFor(spacing, AttributeSchema)), _defineProperty(_attribute, "swatch", factoryFor(swatch, AttributeSchema)), _attribute);
 
-var _object$COLOR_KEY$FON;
-// Settings hash
-
-var schema$2 = (_object$COLOR_KEY$FON = {
-  object: core._THEME_SETTING_
-}, _defineProperty(_object$COLOR_KEY$FON, core.COLOR_KEY, {}), _defineProperty(_object$COLOR_KEY$FON, core.FONT_FAMILY_KEY, {}), _defineProperty(_object$COLOR_KEY$FON, core.FONT_SIZE_KEY, {}), _defineProperty(_object$COLOR_KEY$FON, core.FONT_WEIGHT_KEY, {}), _defineProperty(_object$COLOR_KEY$FON, core.SPACING_KEY, {}), _object$COLOR_KEY$FON);
+/**
+ * @description Setting schema object.
+ */
+var SettingSchema = {
+  __schemaname: 'Setting',
+  __typename: null,
+  color: {},
+  fontFamily: {},
+  fontSize: {},
+  fontWeight: {},
+  spacing: {}
+};
 
 var _COLOR_KEY$FONT_FAMIL;
 // The base setting object
@@ -353,15 +359,19 @@ var factoryFor$2 = function factoryFor() {
 };
 
 var setting = {
-  base: factoryFor$2(base, schema$2)
+  base: factoryFor$2(base, SettingSchema)
 };
 
-var _object$BASE_FONT_SIZ;
-// Settings hash
-
-var schema$3 = (_object$BASE_FONT_SIZ = {
-  object: core._THEME_BASE_
-}, _defineProperty(_object$BASE_FONT_SIZ, core.BASE_FONT_SIZE_KEY, {}), _defineProperty(_object$BASE_FONT_SIZ, core.BASE_LINE_HEIGHT_KEY, {}), _defineProperty(_object$BASE_FONT_SIZ, core.BASE_SPACING_KEY, {}), _object$BASE_FONT_SIZ);
+/**
+ * @description Base schema object.
+ */
+var BaseSchema = {
+  __schemaname: 'Base',
+  __typename: null,
+  baseFontSize: {},
+  baseLineHeight: {},
+  baseSpacing: {}
+};
 
 var _BASE_FONT_SIZE_KEY$B;
 // Root hash
@@ -390,43 +400,18 @@ var factoryFor$3 = function factoryFor() {
 };
 
 var root = {
-  base: factoryFor$3(base$1, schema$3)
+  base: factoryFor$3(base$1, BaseSchema)
 };
 
-// The container object
-
-var schema$4 = {
-  // name
-  // Friendly name of the theme
-  name: null,
-  // id
-  // you know, the id
-  id: core.uuid(),
-  // object
-  // string : The name of the unit.
-  object: core._ROOT_THEME_,
-  // version
-  // string : the version of the airthemek
-  version: core.VERSION,
-  // base
-  // Base : Keyed object of base attribute types
+var BaseType = {
+  __typename: 'base',
   base: root.base(),
-  // swatch
-  // Swatch : Swatch attribute object
-  swatch: attribute.swatch(),
-  // fontFace
-  // FontFace : fontFace attribute object
   fontFace: attribute.fontFace(),
-  // setting
-  // Setting : Keyed object of attribute types
-  setting: setting.base()
-};
-
-// The container object
-
-var base$2 = {
+  id: core.uuid(),
   name: 'Basic Airtheme',
-  object: core.BASIC,
+  object: 'base',
+  setting: setting.base(),
+  swatch: attribute.swatch(),
   version: core.VERSION
 };
 
@@ -461,7 +446,7 @@ var factoryFor$4 = function factoryFor() {
 };
 
 var theme = {
-  base: factoryFor$4(base$2, schema$4)
+  base: factoryFor$4(BaseType, ThemeSchema)
 };
 
 var getReferencedAttribute = function getReferencedAttribute(_ref, theme) {
@@ -626,19 +611,19 @@ var deserialize$1 = function deserialize$$1(attribute, theme) {
 };
 
 exports.theme = theme;
-exports.themeSchema = schema$4;
+exports.themeSchema = ThemeSchema;
 exports.factoryForTheme = factoryFor$4;
 exports.base = root;
-exports.baseSchema = schema$3;
+exports.baseSchema = BaseSchema;
 exports.factoryForBase = factoryFor$3;
 exports.setting = setting;
-exports.settingSchema = schema$2;
+exports.settingSchema = SettingSchema;
 exports.factoryForSetting = factoryFor$2;
 exports.attribute = attribute;
-exports.attributeSchema = schema;
+exports.attributeSchema = AttributeSchema;
 exports.factoryForAttribute = factoryFor;
 exports.deserializeAttribute = deserialize$1;
 exports.unit = unit;
-exports.unitSchema = schema$1;
+exports.unitSchema = UnitSchema;
 exports.factoryForUnit = factoryFor$1;
 //# sourceMappingURL=index.js.map

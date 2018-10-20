@@ -1,11 +1,11 @@
 // @flow
-import type { Setting } from '../flow/SchemaTypes'
+import type { SettingST } from '../flow/SchemaTypes'
 
 /**
  * @description Setting schema object.
  */
 
-const SettingSchema: Setting = {
+const SettingSchema: SettingST = {
   __schemaname: 'Setting',
   __typename: null,
   color: {},

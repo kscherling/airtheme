@@ -1,11 +1,11 @@
 // @flow
-import type { Attribute } from '../flow/SchemaTypes'
+import type { AttributeST } from '../flow/SchemaTypes'
 
 /**
  * @description Attribute schema object.
  */
 
-const AttributeSchema: Attribute = {
+const AttributeSchema: AttributeST = {
   __schemaname: 'Attribute',
   __typename: null,
   content: [],

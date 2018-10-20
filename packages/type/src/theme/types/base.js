@@ -3,10 +3,9 @@ import attribute from '../../attribute'
 import setting from '../../setting'
 import base from '../../base'
 
-// base
-// The container object
+import type { BaseT } from '../../flow/ThemeTypes'
 
-export default {
+const BaseType: BaseT = {
   __typename: 'base',
   base: base.base(),
   fontFace: attribute.fontFace(),
@@ -17,3 +16,5 @@ export default {
   swatch: attribute.swatch(),
   version: VERSION
 }
+
+export default BaseType

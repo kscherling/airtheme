@@ -1,12 +1,11 @@
 // @flow
-
-import type { Theme } from '../flow/SchemaTypes'
+import type { ThemeST } from '../flow/SchemaTypes'
 
 /**
  *  @description Theme schema object.
  */
 
-const ThemeSchema: Theme = {
+const ThemeSchema: ThemeST = {
   __schemaname: 'Theme',
   __typename: null,
   base: null,

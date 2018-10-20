@@ -1,10 +1,10 @@
-import type { Base } from '../flow/SchemaTypes'
+import type { BaseST } from '../flow/SchemaTypes'
 
 /**
  * @description Base schema object.
  */
 
-const BaseSchema: Base = {
+const BaseSchema: BaseST = {
   __schemaname: 'Base',
   __typename: null,
   baseFontSize: {},
