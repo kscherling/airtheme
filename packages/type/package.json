@@ -10,7 +10,8 @@
     "build": "./task build",
     "build:watch": "./task build:watch",
     "test": "./task test",
-    "relink": "./task relink"
+    "relink": "./task relink",
+    "flow": "./task flow"
   },
   "dependencies": {
     "fp": "^0.1.0",

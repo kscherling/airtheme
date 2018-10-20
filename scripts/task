@@ -22,6 +22,10 @@ case $CMD in
     exe "../../node_modules/.bin/jest -c $(pwd)/jest.config.js --rootDir ../ --watchAll"
     ;;
 
+  flow)
+    exe "../../node_modules/.bin/flow"
+    ;;
+
   relink)
     exe "yarn unlink"
     exe "yarn link"
