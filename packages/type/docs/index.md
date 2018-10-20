@@ -2,28 +2,169 @@
 
 ### Table of Contents
 
--   [Schema][1]
-    -   [Properties][2]
+-   [AttributeSchema][1]
+-   [BaseSchema][2]
+-   [Base][3]
+    -   [Properties][4]
+-   [Attribute][5]
+    -   [Properties][6]
+-   [Unit][7]
+    -   [Properties][8]
+-   [Setting][9]
+    -   [Properties][10]
+-   [Theme][11]
+    -   [Properties][12]
+-   [SettingSchema][13]
+-   [ThemeSchema][14]
+-   [UnitSchema][15]
 
-## Schema
+## AttributeSchema
 
-Schema for theme object.
+Attribute schema object.
 
-Type: {base: any, fontFace: any, id: [string][3], name: [string][3], object: [string][3], setting: any, swatch: any, version: [string][3]}
+Type: [Attribute][16]
+
+## BaseSchema
+
+Base schema object.
+
+Type: [Base][17]
+
+## Base
+
+Base Schema Type
+
+Type: {\_\_schemaname: `"Base"`, \_\_typename: Typename?, baseFontSize: any, baseLineHeight: any, baseLineHeight: any}
 
 ### Properties
 
--   `base` **any** 
--   `fontFace` **any** 
--   `id` **[string][3]** 
--   `name` **[string][3]** 
--   `object` **[string][3]** 
--   `setting` **any** 
--   `swatch` **any** 
--   `version` **[string][3]** 
+-   `__schemaname` **`"Base"`** 
+-   `__typename` **Typename?** 
+-   `baseFontSize` **any** 
+-   `baseLineHeight` **any** 
+-   `baseLineHeight` **any** 
 
-[1]: #schema
+## Attribute
 
-[2]: #properties
+Attribute Schema Type
 
-[3]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+Type: {\_\_schemaname: `"Attribute"`, \_\_typename: Typename?, reference: [string][18]?, unit: [string][18]?, view: \[]?, viewable: \[]?}
+
+### Properties
+
+-   `__schemaname` **`"Attribute"`** 
+-   `__typename` **Typename?** 
+-   `reference` **[string][18]?** 
+-   `unit` **[string][18]?** 
+-   `view` **\[]?** 
+-   `viewable` **\[]?** 
+
+## Unit
+
+Unit Schema Type
+
+Type: {\_\_schemaname: `"Base"`, \_\_typename: Typename?, name: [string][18]?, ordinal: [number][19]?, value: [string][18]?}
+
+### Properties
+
+-   `__schemaname` **`"Base"`** 
+-   `__typename` **Typename?** 
+-   `name` **[string][18]?** 
+-   `ordinal` **[number][19]?** 
+-   `value` **[string][18]?** 
+
+## Setting
+
+Setting Schema Type
+
+Type: {\_\_schemaname: `"Setting"`, \_\_typename: Typename?, color: {}?, fontFamily: {}?, fontSize: {}?, fontWeight: {}?, spacing: {}?}
+
+### Properties
+
+-   `__schemaname` **`"Setting"`** 
+-   `__typename` **Typename?** 
+-   `color` **{}?** 
+-   `fontFamily` **{}?** 
+-   `fontSize` **{}?** 
+-   `fontWeight` **{}?** 
+-   `spacing` **{}?** 
+
+## Theme
+
+Theme Schema Type
+
+Type: {\_\_schemaname: `"Theme"`, \_\_typename: Typename?, base: [Base][17]?, fontFace: {}?, id: [string][18]?, name: [string][18]?, setting: {}?, swatch: {}?, version: [string][18]?}
+
+### Properties
+
+-   `__schemaname` **`"Theme"`** 
+-   `__typename` **Typename?** 
+-   `base` **[Base][17]?** 
+-   `fontFace` **{}?** 
+-   `id` **[string][18]?** 
+-   `name` **[string][18]?** 
+-   `setting` **{}?** 
+-   `swatch` **{}?** 
+-   `version` **[string][18]?** 
+
+## SettingSchema
+
+Setting schema object.
+
+Type: [Setting][20]
+
+## ThemeSchema
+
+Theme schema object.
+
+Type: [Theme][21]
+
+## UnitSchema
+
+Unit schema object.
+
+Type: [Unit][22]
+
+[1]: #attributeschema
+
+[2]: #baseschema
+
+[3]: #base
+
+[4]: #properties
+
+[5]: #attribute
+
+[6]: #properties-1
+
+[7]: #unit
+
+[8]: #properties-2
+
+[9]: #setting
+
+[10]: #properties-3
+
+[11]: #theme
+
+[12]: #properties-4
+
+[13]: #settingschema
+
+[14]: #themeschema
+
+[15]: #unitschema
+
+[16]: #attribute
+
+[17]: #base
+
+[18]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+
+[19]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+
+[20]: #setting
+
+[21]: #theme
+
+[22]: #unit

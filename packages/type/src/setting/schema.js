@@ -1,21 +1,18 @@
-import attribute from '../attribute'
-import {
-  COLOR_KEY,
-  FONT_FAMILY_KEY,
-  FONT_SIZE_KEY,
-  FONT_WEIGHT_KEY,
-  SPACING_KEY,
-  _THEME_SETTING_
-} from '@airtheme/core'
+// @flow
+import type { Setting } from '../flow/SchemaTypes'
 
-// setting
-// Settings hash
+/**
+ * @description Setting schema object.
+ */
 
-export default {
-  object: _THEME_SETTING_,
-  [COLOR_KEY]: {},
-  [FONT_FAMILY_KEY]: {},
-  [FONT_SIZE_KEY]: {},
-  [FONT_WEIGHT_KEY]: {},
-  [SPACING_KEY]: {}
+const SettingSchema: Setting = {
+  __schemaname: 'Setting',
+  __typename: null,
+  color: {},
+  fontFamily: {},
+  fontSize: {},
+  fontWeight: {},
+  spacing: {}
 }
+
+export default SettingSchema

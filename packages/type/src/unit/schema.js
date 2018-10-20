@@ -1,26 +1,15 @@
-import { _ROOT_UNIT_ } from '@airtheme/core'
+import type { Unit } from '../flow/SchemaTypes'
 
-// unit
-// A typed unit for communicating css units
+/**
+ *  @description Unit schema object.
+ */
 
-export default {
-  // name
-  // string : the friendly name
-
+const UnitSchema: Unit = {
+  __schemaname: 'Unit',
+  __typename: null,
   name: null,
-
-  // ordinal
-  // int : the stack order index
-
   ordinal: null,
-
-  // object
-  // string : The name of the unit.
-
-  object: _ROOT_UNIT_,
-
-  // value
-  // Any : The value of the unit
-
   value: null
 }
+
+export default UnitSchema
