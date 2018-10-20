@@ -1640,6 +1640,21 @@ var Typography = function Typography(props) {
   return React__default.createElement(Globals$1, null, React__default.createElement(Styles$1, props, DEFAULT_TEXT$1));
 };
 
+function _templateObject$8() {
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  height: 5rem;\n  background: ", ";\n"]);
+
+  _templateObject$8 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var Swatch$1 = styled__default.div(_templateObject$8(), function (_ref) {
+  var color = _ref.color;
+  return color;
+});
+var index$1 = ui.withShade(Swatch$1);
+
 exports.GlobalsInfo = Globals;
 exports.SwatchInfo = Swatch;
 exports.FontFaceInfo = FontFace;
@@ -1654,4 +1669,5 @@ exports.BaseSpacingInfo = BaseSpacing;
 exports.SpecimenBaseFont = BaseFontSpecimen;
 exports.SpecimenFontWeight = FontWeightSpecimen;
 exports.Typography = Typography;
+exports.Swatch = index$1;
 //# sourceMappingURL=index.js.map

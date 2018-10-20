@@ -1702,6 +1702,13 @@ var withFontSizeContent = reactRedux.connect(mapFontSizeContent, {
   removeFontSize: removeFontSize
 });
 
+var withSwatchAttribute = reactRedux.connect(mapSwatch);
+var withSwatchContent = reactRedux.connect(mapSwatchContent, {
+  updateSwatch: updateSwatch,
+  addSwatch: addSwatch,
+  removeSwatch: removeSwatch
+});
+
 var connectTheme = function connectTheme(mapThemeToProps) {
   return compose(styledComponents.withTheme, function (Component) {
     return function (_ref) {
@@ -1885,6 +1892,8 @@ exports.withFontWeightAttribute = withFontWeightAttribute;
 exports.withFontWeightContent = withFontWeightContent;
 exports.withFontSizeAttribute = withFontSizeAttribute;
 exports.withFontSizeContent = withFontSizeContent;
+exports.withSwatchAttribute = withSwatchAttribute;
+exports.withSwatchContent = withSwatchContent;
 exports.connectTheme = connectTheme;
 exports.NewUnit = NewUnit;
 exports.Deserialize = Deserialize;
