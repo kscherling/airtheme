@@ -64,6 +64,9 @@ var RGBA = 'rgba';
 
 var VERSION = '0.1.0';
 
+var ESC = 27;
+var ENTER = 13;
+
 var uuid = function uuid() {
   return '12345';
 };
@@ -327,6 +330,8 @@ exports.REM = REM;
 exports.RGB = RGB;
 exports.RGBA = RGBA;
 exports.VERSION = VERSION;
+exports.ESC = ESC;
+exports.ENTER = ENTER;
 exports.uuid = uuid;
 exports.noop = noop;
 exports.castNumber = castNumber;
