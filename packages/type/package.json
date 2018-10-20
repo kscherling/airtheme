@@ -11,9 +11,12 @@
     "build:watch": "./task build:watch",
     "test": "./task test",
     "relink": "./task relink",
-    "flow": "./task flow"
+    "flow": "./task flow",
+    "docs:build": "documentation build src/** --format md --output docs/index.md",
+    "docs:watch": "yarn docs:build --watch"
   },
   "dependencies": {
+    "documentation": "^8.1.2",
     "fp": "^0.1.0",
     "@airtheme/core": "^0.1.0",
     "tinycolor2": "^1.4.1"
