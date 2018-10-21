@@ -32,11 +32,11 @@ export type AttributeBaseFontSizeT = {
  * @description Base line height type
  */
 
-export type BaseLineHeightT = {
+export type AttributeBaseLineHeightT = {
   __typename: 'BaseLineHeight',
   content: {},
-  reference: null,
-  unit: 'px',
-  view: 'px',
-  viewable: ['px']
+  reference: 'base.baseFontSize',
+  unit: 'factor',
+  view: 'factor' | 'px',
+  viewable: ['factor', 'px']
 }

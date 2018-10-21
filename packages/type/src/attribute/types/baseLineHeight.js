@@ -7,11 +7,11 @@ import type { AttributeBaseLineHeightT } from '../../flow/AttributeTypes'
 
 const BaseLineHeight: AttributeBaseLineHeightT = {
   __typename: 'BaseLineHeight',
-  view: 'factor' | 'px',
-  viewable: ['factor', 'px'],
+  content: unit.factor({ name: 'baseLineHeight', value: 1.15 }),
   reference: 'base.baseFontSize',
   unit: 'factor',
-  content: unit.factor({ name: 'baseLineHeight', value: 1.15 })
+  view: 'factor',
+  viewable: ['factor', 'px']
 }
 
 export default BaseLineHeight
