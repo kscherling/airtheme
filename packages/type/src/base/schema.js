@@ -6,7 +6,7 @@ import type { BaseST } from '../flow/BaseTypes'
  * @description Base schema object.
  */
 
-const BaseSchema: BaseST = {
+const Base: BaseST = {
   __schemaname: 'Base',
   __typename: '',
   baseFontSize: attribute.baseFontSize(),
@@ -14,4 +14,4 @@ const BaseSchema: BaseST = {
   baseSpacing: attribute.baseSpacing()
 }
 
-export default BaseSchema
+export default Base

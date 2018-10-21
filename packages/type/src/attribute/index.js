@@ -1,30 +1,34 @@
-import schema from './schema'
+import * as types from './types'
+import Schema from './schema'
 import factoryFor from './factoryFor'
-import color from './types/color'
-import fontFamily from './types/fontFamily'
-import fontSize from './types/fontSize'
-import fontFace from './types/fontFace'
-import fontWeight from './types/fontWeight'
-import lineHeight from './types/lineHeight'
-import spacing from './types/spacing'
-import swatch from './types/swatch'
-import baseSpacing from './types/baseSpacing'
-import baseLineHeight from './types/baseLineHeight'
-import baseFontSize from './types/baseFontSize'
+
+const {
+  Color,
+  FontFamily,
+  FontSize,
+  FontFace,
+  FontWeight,
+  LineHeight,
+  Spacing,
+  Swatch,
+  BaseSpacing,
+  BaseLineHeight,
+  BaseFontSize
+} = types
 
 const attribute = {
-  baseFontSize: factoryFor(baseFontSize, schema),
-  baseSpacing: factoryFor(baseSpacing, schema),
-  baseLineHeight: factoryFor(baseLineHeight, schema),
-  color: factoryFor(color, schema),
-  fontFamily: factoryFor(fontFamily, schema),
-  fontSize: factoryFor(fontSize, schema),
-  fontWeight: factoryFor(fontWeight, schema),
-  lineHeight: factoryFor(lineHeight, schema),
-  fontFace: factoryFor(fontFace, schema),
-  fontFamily: factoryFor(fontFamily, schema),
-  spacing: factoryFor(spacing, schema),
-  swatch: factoryFor(swatch, schema)
+  baseFontSize: factoryFor(BaseFontSize, Schema),
+  baseSpacing: factoryFor(BaseSpacing, Schema),
+  baseLineHeight: factoryFor(BaseLineHeight, Schema),
+  color: factoryFor(Color, Schema),
+  fontFamily: factoryFor(FontFamily, Schema),
+  fontSize: factoryFor(FontSize, Schema),
+  fontWeight: factoryFor(FontWeight, Schema),
+  lineHeight: factoryFor(LineHeight, Schema),
+  fontFace: factoryFor(FontFace, Schema),
+  fontFamily: factoryFor(FontFamily, Schema),
+  spacing: factoryFor(Spacing, Schema),
+  swatch: factoryFor(Swatch, Schema)
 }
 
 export default attribute
