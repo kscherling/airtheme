@@ -112,7 +112,7 @@ export const Rgba: UnitRgbaT = {
  * Unit string type
  */
 
-export const String: UnitStringT = {
+export const Str: UnitStringT = {
   __schemaname: 'Unit',
   __typename: 'String',
   name: '',

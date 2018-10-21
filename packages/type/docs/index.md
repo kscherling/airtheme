@@ -608,15 +608,15 @@ Unit schema type
 
 Type: [UnitST][96]
 
-## 
-
-Unit hex type
-
 ## Factor
 
 Unit factor type
 
 Type: [UnitFactorT][97]
+
+## 
+
+Unit hex type
 
 ## 
 
