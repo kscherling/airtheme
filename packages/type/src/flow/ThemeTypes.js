@@ -5,7 +5,7 @@ import type { BaseBaseT } from './BaseTypes'
 import type { AttributeFontFaceT, AttributeSwatchT } from './AttributeTypes'
 
 /**
- * @description Theme schema type
+ * Theme schema type
  */
 
 export type ThemeST = {|
@@ -21,7 +21,7 @@ export type ThemeST = {|
 |}
 
 /**
- * @description Theme base type
+ * Theme base type
  */
 
 export type ThemeBaseT = {|
@@ -37,15 +37,27 @@ export type ThemeBaseT = {|
 |}
 
 /**
- * @description Theme factory args type
+ * Theme factory args type
  */
 
-export type ThemeFactoryProps = {|
-  base: BaseBaseT,
-  fontFace: AttributeFontFaceT,
-  id: Id,
-  name: Name,
-  setting: SettingBaseT,
-  swatch: AttributeSwatchT,
-  version: Version
+export type ThemeFactoryOptions = {|
+  base: ?BaseBaseT,
+  fontFace: ?AttributeFontFaceT,
+  id: ?Id,
+  name: ?Name,
+  setting: ?SettingBaseT,
+  swatch: ?AttributeSwatchT,
+  version: ?Version
+|}
+
+/*
+ * @name ThemeFactoryResult
+ * Theme factory result type
+ * This is a workaround for exact types mismatch with spread operators
+ * Also spread breaks jsdocs with auto name detection
+ */
+
+export type ThemeFactoryResult = {|
+  ...ThemeST,
+  ...ThemeFactoryOptions
 |}

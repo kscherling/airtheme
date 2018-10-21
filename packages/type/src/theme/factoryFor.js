@@ -1,14 +1,16 @@
 //@flow
-import type { ThemeST } from '../flow/ThemeTypes'
+import type {
+  ThemeST,
+  ThemeFactoryOptions,
+  ThemeFactoryResult
+} from '../flow/ThemeTypes'
 
 /**
+ * @name factoryForTheme
  * Theme factory for
  */
 
-type ThemeFactoryFn = (args: ThemeST) => ThemeST
-
-const factoryForTheme = (schema: ThemeST): ThemeFactoryFn => (
-  factoryProps: ThemeST
-): ThemeST => ({ ...schema, ...factoryProps })
+const factoryForTheme = (schema: ThemeST) => (options: ThemeFactoryOptions) =>
+  ({ ...schema, ...options }: ThemeFactoryResult)
 
 export default factoryForTheme
