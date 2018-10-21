@@ -9,9 +9,9 @@ export type AttributeST = {
   __schemaname: 'Attribute',
   __typename: string,
   content: [] | {},
-  reference: string,
+  reference: string | null,
   unit: string,
-  view: [],
+  view: string,
   viewable: []
 }
 

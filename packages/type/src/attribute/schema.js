@@ -7,13 +7,12 @@ import type { AttributeST } from '../flow/AttributeTypes'
 
 const AttributeSchema: AttributeST = {
   __schemaname: 'Attribute',
-  __typename: null,
+  __typename: '',
   content: [],
-  object: null,
   reference: null,
-  unit: null,
-  view: null,
-  viewable: null
+  unit: '',
+  view: '',
+  viewable: []
 }
 
 export default AttributeSchema

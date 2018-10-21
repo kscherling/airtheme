@@ -1,15 +1,16 @@
-import type { UnitST } from '../flow/SchemaTypes'
+// @flow
+import type { UnitST } from '../flow/UnitTypes'
 
 /**
- *  @description Unit schema object.
+ *  Unit schema object
  */
 
 const UnitSchema: UnitST = {
   __schemaname: 'Unit',
-  __typename: null,
-  name: null,
-  ordinal: null,
-  value: null
+  __typename: '',
+  name: '',
+  ordinal: 0,
+  value: ''
 }
 
 export default UnitSchema

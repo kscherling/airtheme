@@ -1,14 +1,6 @@
+import * as types from './types'
 import schema from './schema'
 import factoryFor from './factoryFor'
-import factor from './types/factor'
-import hex from './types/hex'
-import hexa from './types/hexa'
-import px from './types/px'
-import reference from './types/reference'
-import rem from './types/rem'
-import rgb from './types/rgb'
-import rgba from './types/rgba'
-import string from './types/string'
 
 const unit = {
   factor: factoryFor(factor, schema),
