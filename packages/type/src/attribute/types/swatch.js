@@ -1,11 +1,17 @@
-import { SWATCH } from '@airtheme/core'
-import { HEX, HEXA, RGB, RGBA } from '@airtheme/core'
+// @flow
+import type { AttributeSwatchT } from '../../flow/AttributeTypes'
 
-export default {
-  view: HEXA,
-  viewable: [HEX, HEXA, RGB, RGBA],
+/**
+ * @description Base font face object
+ */
+
+const Swatch: AttributeSwatchT = {
+  __typename: 'Swatch',
+  view: 'hexa',
+  viewable: ['hex', 'hexa', 'rgb', 'rgba'],
   reference: null,
-  object: SWATCH,
-  unit: HEXA,
+  unit: 'hexa',
   content: []
 }
+
+export default Swatch

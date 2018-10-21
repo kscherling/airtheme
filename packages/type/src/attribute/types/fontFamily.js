@@ -1,10 +1,17 @@
-import { FONT_FAMILY, FONT_FACE } from '@airtheme/core'
-import { REFERENCE, STRING } from '@airtheme/core'
+// @flow
+import type { AttributeFontFamilyT } from '../../flow/AttributeTypes'
 
-export default {
-  view: REFERENCE,
-  viewable: [REFERENCE, STRING],
-  reference: FONT_FACE,
-  object: FONT_FAMILY,
-  unit: REFERENCE
+/**
+ * @description Base font face object
+ */
+
+const FontFamily: AttributeFontFamilyT = {
+  __typename: 'FontFamily',
+  view: 'reference',
+  viewable: ['reference'],
+  reference: 'fontFace',
+  unit: 'reference',
+  content: []
 }
+
+export default FontFamily

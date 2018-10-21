@@ -1,11 +1,17 @@
-import { LINE_HEIGHT } from '@airtheme/core'
-import { FACTOR, PX } from '@airtheme/core'
-import { BASE_FONT_SIZE_PATH } from '@airtheme/core'
+// @flow
+import type { AttributeLineHeightT } from '../../flow/AttributeTypes'
 
-export default {
-  view: FACTOR,
-  viewable: [FACTOR, PX],
-  reference: BASE_FONT_SIZE_PATH,
-  object: LINE_HEIGHT,
-  unit: FACTOR
+/**
+ * @description Base line height object
+ */
+
+const LineHeight: AttributeLineHeightT = {
+  __typename: 'LineHeight',
+  view: 'factor',
+  viewable: ['factor', 'px'],
+  reference: 'base.baseFontSize',
+  unit: 'factor',
+  content: []
 }
+
+export default LineHeight

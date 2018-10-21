@@ -1,10 +1,17 @@
-import { FONT_WEIGHT } from '@airtheme/core'
-import { STRING } from '@airtheme/core'
+// @flow
+import type { AttributeFontWeightT } from '../../flow/AttributeTypes'
 
-export default {
-  view: STRING,
-  viewable: [STRING],
+/**
+ * @description Base font face object
+ */
+
+const FontWeight: AttributeFontWeightT = {
+  __typename: 'FontWeight',
+  view: 'string',
+  viewable: ['string'],
   reference: null,
-  object: FONT_WEIGHT,
-  unit: STRING
+  unit: 'string',
+  content: []
 }
+
+export default FontWeight

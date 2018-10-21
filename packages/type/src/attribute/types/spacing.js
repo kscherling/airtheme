@@ -1,11 +1,17 @@
-import { SPACING } from '@airtheme/core'
-import { FACTOR, PX } from '@airtheme/core'
-import { BASE_SPACING_PATH } from '@airtheme/core'
+// @flow
+import type { AttributeSpacingT } from '../../flow/AttributeTypes'
 
-export default {
-  view: FACTOR,
-  viewable: [FACTOR, PX],
-  reference: BASE_SPACING_PATH,
-  object: SPACING,
-  unit: FACTOR
+/**
+ * @description Base font face object
+ */
+
+const Spacing: AttributeSpacingT = {
+  __typename: 'Spacing',
+  view: 'factor',
+  viewable: ['factor', 'px'],
+  reference: 'base.baseSpacing',
+  unit: 'factor',
+  content: []
 }
+
+export default Spacing

@@ -1,11 +1,17 @@
-import { FONT_SIZE } from '@airtheme/core'
-import { FACTOR, PX, REM } from '@airtheme/core'
-import { BASE_FONT_SIZE_PATH } from '@airtheme/core'
+// @flow
+import type { AttributeFontSizeT } from '../../flow/AttributeTypes'
 
-export default {
-  view: FACTOR,
-  viewable: [FACTOR, PX, REM],
-  reference: BASE_FONT_SIZE_PATH,
-  object: FONT_SIZE,
-  unit: FACTOR
+/**
+ * @description Base font face object
+ */
+
+const FontSize: AttributeFontSizeT = {
+  __typename: 'FontSize',
+  view: 'factor',
+  viewable: ['factor', 'px', 'rem'],
+  reference: 'base.baseFontSize',
+  unit: 'factor',
+  content: []
 }
+
+export default FontSize
