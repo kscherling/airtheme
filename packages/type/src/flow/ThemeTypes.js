@@ -26,7 +26,21 @@ export type ThemeST = {|
 
 export type ThemeBaseT = {|
   __schemaname: 'Theme',
-  __typename: 'Base',
+  __typename: Typename,
+  base: BaseBaseT,
+  fontFace: AttributeFontFaceT,
+  id: Id,
+  name: Name,
+  setting: SettingBaseT,
+  swatch: AttributeSwatchT,
+  version: Version
+|}
+
+/**
+ * @description Theme factory args type
+ */
+
+export type ThemeFactoryProps = {|
   base: BaseBaseT,
   fontFace: AttributeFontFaceT,
   id: Id,

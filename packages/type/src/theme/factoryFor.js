@@ -1,21 +1,14 @@
-const factoryFor = (
-  { name, id, fontFace, swatch, setting, base } = {},
-  schema
-) => ({
-  name: instanceName,
-  id: instanceId,
-  fontFace: instanceFontFace,
-  swatch: instanceSwatch,
-  setting: instanceSetting,
-  base: instanceBase
-} = {}) =>
-  Object.assign({}, schema, {
-    name: instanceName || name || schema.name,
-    id: instanceId || id || schema.id,
-    fontFace: instanceFontFace || fontFace || schema.fontFace,
-    swatch: instanceSwatch || swatch || schema.swatch,
-    setting: instanceSetting || setting || schema.setting,
-    base: instanceBase || base || schema.base
-  })
+//@flow
+import type { ThemeST } from '../flow/ThemeTypes'
 
-export default factoryFor
+/**
+ * Theme factory for
+ */
+
+type ThemeFactoryFn = (args: ThemeST) => ThemeST
+
+const factoryForTheme = (schema: ThemeST): ThemeFactoryFn => (
+  factoryProps: ThemeST
+): ThemeST => ({ ...schema, ...factoryProps })
+
+export default factoryForTheme

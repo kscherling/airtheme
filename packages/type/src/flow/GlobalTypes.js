@@ -16,6 +16,7 @@ export type UnitTypename =
   | 'Rgb'
   | 'Rgba'
   | 'String'
+  | ''
 
 export type AttributeTypename =
   | 'BaseFontSize'
@@ -29,3 +30,4 @@ export type AttributeTypename =
   | 'LineHeight'
   | 'Spacing'
   | 'Swatch'
+  | ''
