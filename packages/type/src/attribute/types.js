@@ -15,144 +15,161 @@ import type {
 } from '../flow/AttributeTypes'
 
 /**
- * @description Base font size object
+ * Base font size object
  */
 
 export const BaseFontSize: AttributeBaseFontSizeT = {
+  __schemaname: 'Attribute',
+  __schemaname: 'Attribute',
   __typename: 'BaseFontSize',
-  view: 'px',
-  viewable: ['px'],
+  view: 'Px',
+  viewable: ['Px'],
   reference: null,
-  unit: 'px',
-  content: unit.px({ name: 'baseFontSize', value: 16 })
+  unit: 'Px',
+  content: unit.px()
 }
 
 /**
- * @description Base line height object
+ * Base line height object
  */
 
 export const BaseLineHeight: AttributeBaseLineHeightT = {
+  __schemaname: 'Attribute',
+  __schemaname: 'Attribute',
   __typename: 'BaseLineHeight',
-  content: unit.factor({ name: 'baseLineHeight', value: 1.15 }),
+  content: unit.factor(),
   reference: 'base.baseFontSize',
-  unit: 'factor',
-  view: 'factor',
-  viewable: ['factor', 'px']
+  unit: 'Factor',
+  view: 'Factor',
+  viewable: ['Factor', 'Px']
 }
 
 /**
- * @description Base spacing object
+ * Base spacing object
  */
 
 export const BaseSpacing: AttributeBaseSpacingT = {
+  __schemaname: 'Attribute',
+  __schemaname: 'Attribute',
   __typename: 'BaseSpacing',
-  content: unit.px({ name: 'baseSpacing', value: 16 }),
+  content: unit.px(),
   reference: null,
-  unit: 'px',
-  view: 'px',
-  viewable: ['px']
+  unit: 'Px',
+  view: 'Px',
+  viewable: ['Px']
 }
 
 /**
- * @description Color object
+ * Color object
  */
 
 export const Color: AttributeColorT = {
+  __schemaname: 'Attribute',
+  __schemaname: 'Attribute',
   __typename: 'Color',
-  view: 'reference',
-  viewable: ['reference', 'hex', 'hexa', 'rgb', 'rgba'],
+  view: 'Reference',
+  viewable: ['Reference', 'Hex', 'Hexa', 'Rgb', 'Rgba'],
   reference: 'swatch',
-  unit: 'reference',
+  unit: 'Reference',
   content: []
 }
 
 /**
- * @description Font face object
+ * Font face object
  */
 
 export const FontFace: AttributeFontFaceT = {
+  __schemaname: 'Attribute',
+  __schemaname: 'Attribute',
   __typename: 'FontFace',
-  view: 'string',
-  viewable: ['string'],
+  view: 'String',
+  viewable: ['String'],
   reference: null,
-  unit: 'string',
+  unit: 'String',
   content: []
 }
 
 /**
- * @description Font family object
+ * Font family object
  */
 
 export const FontFamily: AttributeFontFamilyT = {
+  __schemaname: 'Attribute',
+  __schemaname: 'Attribute',
   __typename: 'FontFamily',
-  view: 'reference',
-  viewable: ['reference'],
+  view: 'Reference',
+  viewable: ['Reference'],
   reference: 'fontFace',
-  unit: 'reference',
+  unit: 'Reference',
   content: []
 }
 
 /**
- * @description Font size object
+ * Font size object
  */
 
 export const FontSize: AttributeFontSizeT = {
+  __schemaname: 'Attribute',
   __typename: 'FontSize',
-  view: 'factor',
-  viewable: ['factor', 'px', 'rem'],
+  view: 'Factor',
+  viewable: ['Factor', 'Px', 'Rem'],
   reference: 'base.baseFontSize',
-  unit: 'factor',
+  unit: 'Factor',
   content: []
 }
 
 /**
- * @description Font weight object
+ * Font weight object
  */
 
 export const FontWeight: AttributeFontWeightT = {
+  __schemaname: 'Attribute',
   __typename: 'FontWeight',
-  view: 'string',
-  viewable: ['string'],
+  view: 'String',
+  viewable: ['String'],
   reference: null,
-  unit: 'string',
+  unit: 'String',
   content: []
 }
 
 /**
- * @description Line height object
+ * Line height object
  */
 
 export const LineHeight: AttributeLineHeightT = {
+  __schemaname: 'Attribute',
   __typename: 'LineHeight',
-  view: 'factor',
-  viewable: ['factor', 'px'],
+  view: 'Factor',
+  viewable: ['Factor', 'Px'],
   reference: 'base.baseFontSize',
-  unit: 'factor',
+  unit: 'Factor',
   content: []
 }
 
 /**
- * @description Spacing object
+ * Spacing object
  */
 
 export const Spacing: AttributeSpacingT = {
+  __schemaname: 'Attribute',
   __typename: 'Spacing',
-  view: 'factor',
-  viewable: ['factor', 'px'],
+  content: [],
   reference: 'base.baseSpacing',
-  unit: 'factor',
-  content: []
+  unit: 'Factor',
+  view: 'Factor',
+  viewable: ['Factor', 'Px']
 }
 
 /**
- * @description Swatch object
+ * Swatch object
  */
 
 export const Swatch: AttributeSwatchT = {
+  __schemaname: 'Attribute',
   __typename: 'Swatch',
-  view: 'hexa',
-  viewable: ['hex', 'hexa', 'rgb', 'rgba'],
+  content: [],
   reference: null,
-  unit: 'hexa',
-  content: []
+  unit: 'Hexa',
+  view: 'Hexa',
+  viewable: ['Hex', 'Hexa', 'Rgb', 'Rgba']
 }

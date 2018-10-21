@@ -2,17 +2,17 @@
 import type { AttributeST } from '../flow/AttributeTypes'
 
 /**
- * @description Attribute schema object.
+ * Attribute schema object.
  */
 
-const AttributeSchema: AttributeST = {
+const Attribute: AttributeST = {
   __schemaname: 'Attribute',
   __typename: '',
   content: [],
-  reference: null,
+  reference: '',
   unit: '',
   view: '',
   viewable: []
 }
 
-export default AttributeSchema
+export default Attribute

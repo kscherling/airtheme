@@ -1,159 +1,183 @@
 // @flow
-import type { Typename } from './GlobalTypes'
+import type {
+  Typename,
+  UnitTypename,
+  AttributeTypename,
+  Reference
+} from './GlobalTypes'
+import type {
+  UnitST,
+  UnitPxT,
+  UnitFactorT,
+  UnitStringT,
+  UnitReferenceT,
+  UnitHexaT
+} from './UnitTypes'
 
 /**
  *  @description Attribute schema type
  */
 
-export type AttributeST = {
+export type AttributeST = {|
   __schemaname: 'Attribute',
-  __typename: string,
-  content: [] | {},
-  reference: string | null,
-  unit: string,
-  view: string,
-  viewable: []
-}
+  __typename: AttributeTypename,
+  content: UnitST | UnitST[],
+  reference: Reference,
+  unit: UnitTypename,
+  view: UnitTypename,
+  viewable: UnitTypename[]
+|}
 
 /**
  * @description Base font size type
  */
 
-export type AttributeBaseFontSizeT = {
+export type AttributeBaseFontSizeT = {|
+  __schemaname: 'Attribute',
   __typename: 'BaseFontSize',
-  content: {},
+  content: UnitPxT,
   reference: null,
-  unit: 'px',
-  view: 'px',
-  viewable: ['px']
-}
+  unit: 'Px',
+  view: 'Px',
+  viewable: ['Px']
+|}
 
 /**
  * @description Base line height type
  */
 
-export type AttributeBaseLineHeightT = {
+export type AttributeBaseLineHeightT = {|
+  __schemaname: 'Attribute',
   __typename: 'BaseLineHeight',
-  content: {},
+  content: UnitFactorT,
   reference: 'base.baseFontSize',
-  unit: 'factor',
-  view: 'factor' | 'px',
-  viewable: ['factor', 'px']
-}
+  unit: 'Factor',
+  view: 'Factor' | 'Px',
+  viewable: ['Factor', 'Px']
+|}
 
 /**
  * @description Base spacing type
  */
 
-export type AttributeBaseSpacingT = {
+export type AttributeBaseSpacingT = {|
+  __schemaname: 'Attribute',
   __typename: 'BaseSpacing',
-  content: {},
+  content: UnitPxT,
   reference: null,
-  unit: 'px',
-  view: 'px',
-  viewable: ['px']
-}
+  unit: 'Px',
+  view: 'Px',
+  viewable: ['Px']
+|}
 
 /**
  * @description Color type
  */
 
-export type AttributeColorT = {
+export type AttributeColorT = {|
+  __schemaname: 'Attribute',
   __typename: 'Color',
-  view: 'reference' | 'hex' | 'hexa' | 'rgb' | 'rgba',
-  viewable: ['reference', 'hex', 'hexa', 'rgb', 'rgba'],
+  content: UnitHexaT[],
   reference: 'swatch',
-  unit: 'reference',
-  content: []
-}
+  unit: 'Reference',
+  view: 'Reference' | 'Hex' | 'Hexa' | 'Rgb' | 'Rgba',
+  viewable: ['Reference', 'Hex', 'Hexa', 'Rgb', 'Rgba']
+|}
 
 /**
  * @description Font face type
  */
 
-export type AttributeFontFaceT = {
+export type AttributeFontFaceT = {|
+  __schemaname: 'Attribute',
   __typename: 'FontFace',
-  content: [],
+  content: UnitStringT[],
   reference: null,
-  unit: 'string',
-  view: 'string',
-  viewable: ['string']
-}
+  unit: 'String',
+  view: 'String',
+  viewable: ['String']
+|}
 
 /**
  * @description Font family type
  */
 
-export type AttributeFontFamilyT = {
+export type AttributeFontFamilyT = {|
+  __schemaname: 'Attribute',
   __typename: 'FontFamily',
-  content: [],
+  content: UnitReferenceT[],
   reference: 'fontFace',
-  unit: 'reference',
-  view: 'reference',
-  viewable: ['reference']
-}
+  unit: 'Reference',
+  view: 'Reference',
+  viewable: ['Reference']
+|}
 
 /**
  * @description Font size type
  */
 
-export type AttributeFontSizeT = {
+export type AttributeFontSizeT = {|
+  __schemaname: 'Attribute',
   __typename: 'FontSize',
-  content: [],
+  content: UnitPxT[],
   reference: 'base.baseFontSize',
-  unit: 'factor',
-  view: 'factor' | 'px' | 'rem',
-  viewable: ['factor', 'px', 'rem']
-}
+  unit: 'Factor',
+  view: 'Factor' | 'Px' | 'Rem',
+  viewable: ['Factor', 'Px', 'Rem']
+|}
 
 /**
  * @description Font weight type
  */
 
-export type AttributeFontWeightT = {
+export type AttributeFontWeightT = {|
+  __schemaname: 'Attribute',
   __typename: 'FontWeight',
-  content: [],
+  content: UnitStringT[],
   reference: null,
-  unit: 'string',
-  view: 'string',
-  viewable: ['string']
-}
+  unit: 'String',
+  view: 'String',
+  viewable: ['String']
+|}
 
 /**
  * @description Line height type
  */
 
-export type AttributeLineHeightT = {
+export type AttributeLineHeightT = {|
+  __schemaname: 'Attribute',
   __typename: 'LineHeight',
-  content: [],
+  content: UnitFactorT[],
   reference: 'base.baseFontSize',
-  unit: 'factor',
-  view: 'factor' | 'px',
-  viewable: ['factor', 'px']
-}
+  unit: 'Factor',
+  view: 'Factor' | 'Px',
+  viewable: ['Factor', 'Px']
+|}
 
 /**
  * @description Spacing type
  */
 
-export type AttributeSpacingT = {
+export type AttributeSpacingT = {|
+  __schemaname: 'Attribute',
   __typename: 'Spacing',
-  content: [],
+  content: UnitFactorT[],
   reference: 'base.baseSpacing',
-  unit: 'factor',
-  view: 'factor' | 'px',
-  viewable: ['factor', 'px']
-}
+  unit: 'Factor',
+  view: 'Factor' | 'Px',
+  viewable: ['Factor', 'Px']
+|}
 
 /**
  * @description Swatch type
  */
 
-export type AttributeSwatchT = {
+export type AttributeSwatchT = {|
+  __schemaname: 'Attribute',
   __typename: 'Swatch',
-  content: [],
+  content: UnitReferenceT[],
   reference: null,
-  unit: 'hexa',
-  view: 'hexa' | 'hexa' | 'rgb' | 'rgba',
-  viewable: ['hex', 'hexa', 'rgb', 'rgba']
-}
+  unit: 'Hexa',
+  view: 'Hex' | 'Hexa' | 'Rgb' | 'Rgba',
+  viewable: ['Hex', 'Hexa', 'Rgb', 'Rgba']
+|}
