@@ -1,13 +1,33 @@
 // @flow
-import type { Typename } from './SchemaTypes'
+import type { Typename } from './GlobalTypes'
 
 /**
- * @description Base type
+ * @description Theme schema type
  */
 
-export type BaseT = {
-  __typename: 'Base',
-  baseFontSize: string,
-  baseLineHeight: string,
-  baseLineHeight: string
+export type ThemeST = {
+  __schemaname: 'Theme',
+  __typename: ?Typename,
+  base: ?{},
+  fontFace: ?{},
+  id: ?string,
+  name: ?string,
+  setting: ?{},
+  swatch: ?{},
+  version: ?string
+}
+
+/**
+ * @description Theme `base` type
+ */
+
+export type ThemeBaseT = {
+  __typename: 'ThemeBase',
+  base: ?{},
+  fontFace: ?{},
+  id: ?string,
+  name: ?string,
+  setting: ?{},
+  swatch: ?{},
+  version: ?string
 }

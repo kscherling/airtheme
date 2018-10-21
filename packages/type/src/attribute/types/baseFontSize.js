@@ -1,11 +1,18 @@
-import { BASE_FONT_SIZE, PX } from '@airtheme/core'
+// @flow
 import unit from '../../unit'
+import type { AttributeBaseFontSizeT } from '../../flow/AttributeTypes'
 
-export default {
-  view: PX,
-  viewable: [PX],
+/**
+ * @description Base font size object
+ */
+
+const BaseFontSize: AttributeBaseFontSizeT = {
+  __typename: 'BaseFontSize',
+  view: 'px',
+  viewable: ['px'],
   reference: null,
-  object: BASE_FONT_SIZE,
-  unit: PX,
+  unit: 'px',
   content: unit.px({ name: 'baseFontSize', value: 16 })
 }
+
+export default BaseFontSize

@@ -1,5 +1,5 @@
 // @flow
-import type { SettingST } from '../flow/SchemaTypes'
+import type { SettingST } from '../flow/SettingTypes'
 
 /**
  * @description Setting schema object.

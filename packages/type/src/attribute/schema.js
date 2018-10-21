@@ -1,5 +1,5 @@
 // @flow
-import type { AttributeST } from '../flow/SchemaTypes'
+import type { AttributeST } from '../flow/AttributeTypes'
 
 /**
  * @description Attribute schema object.

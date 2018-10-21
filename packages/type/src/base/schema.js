@@ -1,4 +1,4 @@
-import type { BaseST } from '../flow/SchemaTypes'
+import type { BaseST } from '../flow/BaseTypes'
 
 /**
  * @description Base schema object.

@@ -1,11 +1,11 @@
-import { BASIC, VERSION, uuid } from '@airtheme/core'
+import { VERSION, uuid } from '@airtheme/core'
 import attribute from '../../attribute'
 import setting from '../../setting'
 import base from '../../base'
 
-import type { BaseT } from '../../flow/ThemeTypes'
+import type { ThemeBaseT } from '../../flow/ThemeTypes'
 
-const BaseType: BaseT = {
+const BaseType: ThemeBaseT = {
   __typename: 'base',
   base: base.base(),
   fontFace: attribute.fontFace(),

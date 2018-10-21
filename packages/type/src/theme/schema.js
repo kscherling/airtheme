@@ -1,5 +1,5 @@
 // @flow
-import type { ThemeST } from '../flow/SchemaTypes'
+import type { ThemeST } from '../flow/ThemeTypes'
 
 /**
  *  @description Theme schema object.

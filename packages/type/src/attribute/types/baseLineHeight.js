@@ -1,16 +1,17 @@
-import {
-  BASE_LINE_HEIGHT,
-  BASE_FONT_SIZE_PATH,
-  PX,
-  FACTOR
-} from '@airtheme/core'
 import unit from '../../unit'
+import type { AttributeBaseLineHeightT } from '../../flow/AttributeTypes'
 
-export default {
-  view: FACTOR,
-  viewable: [FACTOR, PX],
-  reference: BASE_FONT_SIZE_PATH,
-  object: BASE_LINE_HEIGHT,
-  unit: FACTOR,
+/**
+ * @description Base line height object
+ */
+
+const BaseLineHeight: AttributeBaseLineHeightT = {
+  __typename: 'BaseLineHeight',
+  view: 'factor' | 'px',
+  viewable: ['factor', 'px'],
+  reference: 'base.baseFontSize',
+  unit: 'factor',
   content: unit.factor({ name: 'baseLineHeight', value: 1.15 })
 }
+
+export default BaseLineHeight
