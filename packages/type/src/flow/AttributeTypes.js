@@ -2,17 +2,17 @@
 import type { Typename } from './GlobalTypes'
 
 /**
- *  @description Attribute Schema Type
+ *  @description Attribute schema type
  */
 
 export type AttributeST = {
   __schemaname: 'Attribute',
-  __typename: ?Typename,
-  content: ?[] | {},
-  reference: ?string,
-  unit: ?string,
-  view: ?[],
-  viewable: ?[]
+  __typename: string,
+  content: [] | {},
+  reference: string,
+  unit: string,
+  view: [],
+  viewable: []
 }
 
 /**
@@ -68,92 +68,92 @@ export type AttributeColorT = {
 }
 
 /**
- * @description Font face object
+ * @description Font face type
  */
 
 export type AttributeFontFaceT = {
   __typename: 'FontFace',
-  view: 'string',
-  viewable: ['string'],
+  content: [],
   reference: null,
   unit: 'string',
-  content: []
+  view: 'string',
+  viewable: ['string']
 }
 
 /**
- * @description  Font family object
+ * @description Font family type
  */
 
 export type AttributeFontFamilyT = {
   __typename: 'FontFamily',
-  view: 'reference',
-  viewable: ['reference'],
+  content: [],
   reference: 'fontFace',
   unit: 'reference',
-  content: []
+  view: 'reference',
+  viewable: ['reference']
 }
 
 /**
- * @description Font size object
+ * @description Font size type
  */
 
 export type AttributeFontSizeT = {
   __typename: 'FontSize',
-  view: 'factor' | 'px' | 'rem',
-  viewable: ['factor', 'px', 'rem'],
+  content: [],
   reference: 'base.baseFontSize',
   unit: 'factor',
-  content: []
+  view: 'factor' | 'px' | 'rem',
+  viewable: ['factor', 'px', 'rem']
 }
 
 /**
- * @description Font weight object
+ * @description Font weight type
  */
 
 export type AttributeFontWeightT = {
   __typename: 'FontWeight',
-  view: 'string',
-  viewable: ['string'],
+  content: [],
   reference: null,
   unit: 'string',
-  content: []
+  view: 'string',
+  viewable: ['string']
 }
 
 /**
- * @description Line height object
+ * @description Line height type
  */
 
 export type AttributeLineHeightT = {
   __typename: 'LineHeight',
-  view: 'factor' | 'px',
-  viewable: ['factor', 'px'],
+  content: [],
   reference: 'base.baseFontSize',
   unit: 'factor',
-  content: []
+  view: 'factor' | 'px',
+  viewable: ['factor', 'px']
 }
 
 /**
- * @description Spacing object
+ * @description Spacing type
  */
 
 export type AttributeSpacingT = {
   __typename: 'Spacing',
-  view: 'factor' | 'px',
-  viewable: ['factor', 'px'],
+  content: [],
   reference: 'base.baseSpacing',
   unit: 'factor',
-  content: []
+  view: 'factor' | 'px',
+  viewable: ['factor', 'px']
 }
 
 /**
- * @description Swatch object
+ * @description Swatch type
  */
 
 export type AttributeSwatchT = {
   __typename: 'Swatch',
-  view: 'hexa' | 'hexa' | 'rgb' | 'rgba',
-  viewable: ['hex', 'hexa', 'rgb', 'rgba'],
+  content: [],
   reference: null,
   unit: 'hexa',
-  content: []
+  view: 'hexa' | 'hexa' | 'rgb' | 'rgba',
+  viewable: ['hex', 'hexa', 'rgb', 'rgba']
 }

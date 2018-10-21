@@ -135,19 +135,19 @@ Type: [BaseBaseT][65]
 
 ## AttributeST
 
-Attribute Schema Type
+Attribute schema type
 
-Type: {\_\_schemaname: `"Attribute"`, \_\_typename: Typename?, content: (\[]? | {}), reference: [string][66]?, unit: [string][66]?, view: \[]?, viewable: \[]?}
+Type: {\_\_schemaname: `"Attribute"`, \_\_typename: [string][66], content: (\[] | {}), reference: [string][66], unit: [string][66], view: \[], viewable: \[]}
 
 ### Properties
 
 -   `__schemaname` **`"Attribute"`** 
--   `__typename` **Typename?** 
--   `content` **(\[]? | {})** 
--   `reference` **[string][66]?** 
--   `unit` **[string][66]?** 
--   `view` **\[]?** 
--   `viewable` **\[]?** 
+-   `__typename` **[string][66]** 
+-   `content` **(\[] | {})** 
+-   `reference` **[string][66]** 
+-   `unit` **[string][66]** 
+-   `view` **\[]** 
+-   `viewable` **\[]** 
 
 ## AttributeBaseFontSizeT
 
@@ -211,108 +211,108 @@ Type: {\_\_typename: `"Color"`, view: (`"reference"` \| `"hex"` \| `"hexa"` \| `
 
 ## AttributeFontFaceT
 
-Font face object
+Font face type
 
-Type: {\_\_typename: `"FontFace"`, view: `"string"`, viewable: \[`"string"`], reference: null, unit: `"string"`, content: \[]}
+Type: {\_\_typename: `"FontFace"`, content: \[], reference: null, unit: `"string"`, view: `"string"`, viewable: \[`"string"`]}
 
 ### Properties
 
 -   `__typename` **`"FontFace"`** 
--   `view` **`"string"`** 
--   `viewable` **\[`"string"`]** 
+-   `content` **\[]** 
 -   `reference` **null** 
 -   `unit` **`"string"`** 
--   `content` **\[]** 
+-   `view` **`"string"`** 
+-   `viewable` **\[`"string"`]** 
 
 ## AttributeFontFamilyT
 
-Font family object
+Font family type
 
-Type: {\_\_typename: `"FontFamily"`, view: `"reference"`, viewable: \[`"reference"`], reference: `"fontFace"`, unit: `"reference"`, content: \[]}
+Type: {\_\_typename: `"FontFamily"`, content: \[], reference: `"fontFace"`, unit: `"reference"`, view: `"reference"`, viewable: \[`"reference"`]}
 
 ### Properties
 
 -   `__typename` **`"FontFamily"`** 
--   `view` **`"reference"`** 
--   `viewable` **\[`"reference"`]** 
+-   `content` **\[]** 
 -   `reference` **`"fontFace"`** 
 -   `unit` **`"reference"`** 
--   `content` **\[]** 
+-   `view` **`"reference"`** 
+-   `viewable` **\[`"reference"`]** 
 
 ## AttributeFontSizeT
 
-Font size object
+Font size type
 
-Type: {\_\_typename: `"FontSize"`, view: (`"factor"` \| `"px"` \| `"rem"`), viewable: \[`"factor"`, `"px"`, `"rem"`], reference: `"base.baseFontSize"`, unit: `"factor"`, content: \[]}
+Type: {\_\_typename: `"FontSize"`, content: \[], reference: `"base.baseFontSize"`, unit: `"factor"`, view: (`"factor"` \| `"px"` \| `"rem"`), viewable: \[`"factor"`, `"px"`, `"rem"`]}
 
 ### Properties
 
 -   `__typename` **`"FontSize"`** 
--   `view` **(`"factor"` \| `"px"` \| `"rem"`)** 
--   `viewable` **\[`"factor"`, `"px"`, `"rem"`]** 
+-   `content` **\[]** 
 -   `reference` **`"base.baseFontSize"`** 
 -   `unit` **`"factor"`** 
--   `content` **\[]** 
+-   `view` **(`"factor"` \| `"px"` \| `"rem"`)** 
+-   `viewable` **\[`"factor"`, `"px"`, `"rem"`]** 
 
 ## AttributeFontWeightT
 
-Font weight object
+Font weight type
 
-Type: {\_\_typename: `"FontWeight"`, view: `"string"`, viewable: \[`"string"`], reference: null, unit: `"string"`, content: \[]}
+Type: {\_\_typename: `"FontWeight"`, content: \[], reference: null, unit: `"string"`, view: `"string"`, viewable: \[`"string"`]}
 
 ### Properties
 
 -   `__typename` **`"FontWeight"`** 
--   `view` **`"string"`** 
--   `viewable` **\[`"string"`]** 
+-   `content` **\[]** 
 -   `reference` **null** 
 -   `unit` **`"string"`** 
--   `content` **\[]** 
+-   `view` **`"string"`** 
+-   `viewable` **\[`"string"`]** 
 
 ## AttributeLineHeightT
 
-Line height object
+Line height type
 
-Type: {\_\_typename: `"LineHeight"`, view: (`"factor"` \| `"px"`), viewable: \[`"factor"`, `"px"`], reference: `"base.baseFontSize"`, unit: `"factor"`, content: \[]}
+Type: {\_\_typename: `"LineHeight"`, content: \[], reference: `"base.baseFontSize"`, unit: `"factor"`, view: (`"factor"` \| `"px"`), viewable: \[`"factor"`, `"px"`]}
 
 ### Properties
 
 -   `__typename` **`"LineHeight"`** 
--   `view` **(`"factor"` \| `"px"`)** 
--   `viewable` **\[`"factor"`, `"px"`]** 
+-   `content` **\[]** 
 -   `reference` **`"base.baseFontSize"`** 
 -   `unit` **`"factor"`** 
--   `content` **\[]** 
+-   `view` **(`"factor"` \| `"px"`)** 
+-   `viewable` **\[`"factor"`, `"px"`]** 
 
 ## AttributeSpacingT
 
-Spacing object
+Spacing type
 
-Type: {\_\_typename: `"Spacing"`, view: (`"factor"` \| `"px"`), viewable: \[`"factor"`, `"px"`], reference: `"base.baseSpacing"`, unit: `"factor"`, content: \[]}
+Type: {\_\_typename: `"Spacing"`, content: \[], reference: `"base.baseSpacing"`, unit: `"factor"`, view: (`"factor"` \| `"px"`), viewable: \[`"factor"`, `"px"`]}
 
 ### Properties
 
 -   `__typename` **`"Spacing"`** 
--   `view` **(`"factor"` \| `"px"`)** 
--   `viewable` **\[`"factor"`, `"px"`]** 
+-   `content` **\[]** 
 -   `reference` **`"base.baseSpacing"`** 
 -   `unit` **`"factor"`** 
--   `content` **\[]** 
+-   `view` **(`"factor"` \| `"px"`)** 
+-   `viewable` **\[`"factor"`, `"px"`]** 
 
 ## AttributeSwatchT
 
-Swatch object
+Swatch type
 
-Type: {\_\_typename: `"Swatch"`, view: (`"hexa"` \| `"hexa"` \| `"rgb"` \| `"rgba"`), viewable: \[`"hex"`, `"hexa"`, `"rgb"`, `"rgba"`], reference: null, unit: `"hexa"`, content: \[]}
+Type: {\_\_typename: `"Swatch"`, content: \[], reference: null, unit: `"hexa"`, view: (`"hexa"` \| `"hexa"` \| `"rgb"` \| `"rgba"`), viewable: \[`"hex"`, `"hexa"`, `"rgb"`, `"rgba"`]}
 
 ### Properties
 
 -   `__typename` **`"Swatch"`** 
--   `view` **(`"hexa"` \| `"hexa"` \| `"rgb"` \| `"rgba"`)** 
--   `viewable` **\[`"hex"`, `"hexa"`, `"rgb"`, `"rgba"`]** 
+-   `content` **\[]** 
 -   `reference` **null** 
 -   `unit` **`"hexa"`** 
--   `content` **\[]** 
+-   `view` **(`"hexa"` \| `"hexa"` \| `"rgb"` \| `"rgba"`)** 
+-   `viewable` **\[`"hex"`, `"hexa"`, `"rgb"`, `"rgba"`]** 
 
 ## BaseST
 
