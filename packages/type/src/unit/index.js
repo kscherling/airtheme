@@ -2,7 +2,7 @@ import * as types from './types'
 import Schema from './schema'
 import factoryFor from './factoryFor'
 
-const { Factor, Hex, Hexa, Px, Reference, Rem, Rgba, Str } = types
+const { Factor, Hex, Hexa, Px, Reference, Rem, Rgb, Rgba, Str } = types
 
 const unit = {
   factor: factoryFor(Factor, Schema),
