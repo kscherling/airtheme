@@ -2,10 +2,10 @@
 import type { UnitST } from '../flow/UnitTypes'
 
 /**
- *  Unit schema object
+ * Unit schema type
  */
 
-const UnitSchema: UnitST = {
+const Unit: UnitST = {
   __schemaname: 'Unit',
   __typename: '',
   name: '',
@@ -13,4 +13,4 @@ const UnitSchema: UnitST = {
   value: ''
 }
 
-export default UnitSchema
+export default Unit

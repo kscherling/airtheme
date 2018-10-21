@@ -15,161 +15,168 @@
 -   [Swatch][11]
 -   [BaseSchema][12]
 -   [Base][13]
--   [AttributeST][14]
-    -   [Properties][15]
--   [AttributeBaseFontSizeT][16]
-    -   [Properties][17]
--   [AttributeBaseLineHeightT][18]
-    -   [Properties][19]
--   [AttributeBaseSpacingT][20]
-    -   [Properties][21]
--   [AttributeColorT][22]
-    -   [Properties][23]
--   [AttributeFontFaceT][24]
-    -   [Properties][25]
--   [AttributeFontFamilyT][26]
-    -   [Properties][27]
--   [AttributeFontSizeT][28]
-    -   [Properties][29]
--   [AttributeFontWeightT][30]
-    -   [Properties][31]
--   [AttributeLineHeightT][32]
-    -   [Properties][33]
--   [AttributeSpacingT][34]
-    -   [Properties][35]
--   [AttributeSwatchT][36]
-    -   [Properties][37]
--   [BaseST][38]
-    -   [Properties][39]
--   [BaseBaseT][40]
-    -   [Properties][41]
--   [SettingST][42]
-    -   [Properties][43]
--   [SettingBaseT][44]
-    -   [Properties][45]
--   [ThemeST][46]
-    -   [Properties][47]
--   [ThemeBaseT][48]
-    -   [Properties][49]
--   [UnitST][50]
-    -   [Properties][51]
--   [UnitFactorT][52]
-    -   [Properties][53]
--   [UnitHexT][54]
-    -   [Properties][55]
--   [UnitHexaT][56]
-    -   [Properties][57]
--   [UnitPxT][58]
-    -   [Properties][59]
--   [UnitReferenceT][60]
-    -   [Properties][61]
--   [UnitRemT][62]
-    -   [Properties][63]
--   [UnitRgbT][64]
-    -   [Properties][65]
--   [UnitRgbaT][66]
-    -   [Properties][67]
--   [UnitStringT][68]
-    -   [Properties][69]
--   [SettingSchema][70]
--   [SettingBase][71]
--   [ThemeSchema][72]
--   [ThemeBase][73]
--   [UnitSchema][74]
--   [Factor][75]
+-   [Base][14]
+-   [AttributeST][15]
+    -   [Properties][16]
+-   [AttributeBaseFontSizeT][17]
+    -   [Properties][18]
+-   [AttributeBaseLineHeightT][19]
+    -   [Properties][20]
+-   [AttributeBaseSpacingT][21]
+    -   [Properties][22]
+-   [AttributeColorT][23]
+    -   [Properties][24]
+-   [AttributeFontFaceT][25]
+    -   [Properties][26]
+-   [AttributeFontFamilyT][27]
+    -   [Properties][28]
+-   [AttributeFontSizeT][29]
+    -   [Properties][30]
+-   [AttributeFontWeightT][31]
+    -   [Properties][32]
+-   [AttributeLineHeightT][33]
+    -   [Properties][34]
+-   [AttributeSpacingT][35]
+    -   [Properties][36]
+-   [AttributeSwatchT][37]
+    -   [Properties][38]
+-   [BaseST][39]
+    -   [Properties][40]
+-   [BaseBaseT][41]
+    -   [Properties][42]
+-   [SettingST][43]
+    -   [Properties][44]
+-   [SettingBaseT][45]
+    -   [Properties][46]
+-   [ThemeST][47]
+    -   [Properties][48]
+-   [ThemeBaseT][49]
+    -   [Properties][50]
+-   [UnitST][51]
+    -   [Properties][52]
+-   [UnitFactorT][53]
+    -   [Properties][54]
+-   [UnitHexT][55]
+    -   [Properties][56]
+-   [UnitHexaT][57]
+    -   [Properties][58]
+-   [UnitPxT][59]
+    -   [Properties][60]
+-   [UnitReferenceT][61]
+    -   [Properties][62]
+-   [UnitRemT][63]
+    -   [Properties][64]
+-   [UnitRgbT][65]
+    -   [Properties][66]
+-   [UnitRgbaT][67]
+    -   [Properties][68]
+-   [UnitStringT][69]
+    -   [Properties][70]
+-   [SettingSchema][71]
+-   [SettingBase][72]
+-   [Theme][73]
+-   [ThemeBase][74]
+-   [Unit][75]
+-   [Factor][76]
 
 ## AttributeSchema
 
 Attribute schema object.
 
-Type: [AttributeST][76]
+Type: [AttributeST][77]
 
 ## BaseFontSize
 
 Base font size object
 
-Type: [AttributeBaseFontSizeT][77]
+Type: [AttributeBaseFontSizeT][78]
 
 ## BaseLineHeight
 
 Base line height object
 
-Type: [AttributeBaseLineHeightT][78]
+Type: [AttributeBaseLineHeightT][79]
 
 ## Color
 
 Base font size object
 
-Type: [AttributeColorT][79]
+Type: [AttributeColorT][80]
 
 ## Color
 
 Base font face object
 
-Type: [AttributeFontFaceT][80]
+Type: [AttributeFontFaceT][81]
 
 ## FontFamily
 
 Base font face object
 
-Type: [AttributeFontFamilyT][81]
+Type: [AttributeFontFamilyT][82]
 
 ## FontSize
 
 Base font face object
 
-Type: [AttributeFontSizeT][82]
+Type: [AttributeFontSizeT][83]
 
 ## FontWeight
 
 Base font face object
 
-Type: [AttributeFontWeightT][83]
+Type: [AttributeFontWeightT][84]
 
 ## LineHeight
 
 Base line height object
 
-Type: [AttributeLineHeightT][84]
+Type: [AttributeLineHeightT][85]
 
 ## Spacing
 
 Base font face object
 
-Type: [AttributeSpacingT][85]
+Type: [AttributeSpacingT][86]
 
 ## Swatch
 
 Base font face object
 
-Type: [AttributeSwatchT][86]
+Type: [AttributeSwatchT][87]
 
 ## BaseSchema
 
 Base schema object.
 
-Type: [BaseST][87]
+Type: [BaseST][88]
 
 ## Base
 
 Base base (default) type
 
-Type: [BaseBaseT][88]
+Type: [BaseBaseT][89]
+
+## Base
+
+Theme base (default) type
+
+Type: [ThemeBaseT][90]
 
 ## AttributeST
 
 Attribute schema type
 
-Type: {\_\_schemaname: `"Attribute"`, \_\_typename: [string][89], content: (\[] | {}), reference: ([string][89] | null), unit: [string][89], view: [string][89], viewable: \[]}
+Type: {\_\_schemaname: `"Attribute"`, \_\_typename: [string][91], content: (\[] | {}), reference: ([string][91] | null), unit: [string][91], view: [string][91], viewable: \[]}
 
 ### Properties
 
 -   `__schemaname` **`"Attribute"`** 
--   `__typename` **[string][89]** 
+-   `__typename` **[string][91]** 
 -   `content` **(\[] | {})** 
--   `reference` **([string][89] | null)** 
--   `unit` **[string][89]** 
--   `view` **[string][89]** 
+-   `reference` **([string][91] | null)** 
+-   `unit` **[string][91]** 
+-   `view` **[string][91]** 
 -   `viewable` **\[]** 
 
 ## AttributeBaseFontSizeT
@@ -355,14 +362,14 @@ Type: {\_\_schemaname: `"Base"`, \_\_typename: Typename?, baseFontSize: any, bas
 
 Base base (default) type
 
-Type: {\_\_typename: `"BaseBase"`, baseFontSize: [string][89], baseLineHeight: [string][89], baseLineHeight: [string][89]}
+Type: {\_\_typename: `"BaseBase"`, baseFontSize: [string][91], baseLineHeight: [string][91], baseLineHeight: [string][91]}
 
 ### Properties
 
 -   `__typename` **`"BaseBase"`** 
--   `baseFontSize` **[string][89]** 
--   `baseLineHeight` **[string][89]** 
--   `baseLineHeight` **[string][89]** 
+-   `baseFontSize` **[string][91]** 
+-   `baseLineHeight` **[string][91]** 
+-   `baseLineHeight` **[string][91]** 
 
 ## SettingST
 
@@ -399,48 +406,49 @@ Type: {\_\_typename: `"SettingBase"`, color: {}?, fontFamily: {}?, fontSize: {}?
 
 Theme schema type
 
-Type: {\_\_schemaname: `"Theme"`, \_\_typename: Typename?, base: {}?, fontFace: {}?, id: [string][89]?, name: [string][89]?, setting: {}?, swatch: {}?, version: [string][89]?}
+Type: {\_\_schemaname: `"Theme"`, \_\_typename: Typename, base: [BaseBaseT][89], fontFace: [AttributeFontFaceT][81], id: Id, name: [Name][92], setting: [SettingBaseT][93], swatch: [AttributeSwatchT][87], version: Version}
 
 ### Properties
 
 -   `__schemaname` **`"Theme"`** 
--   `__typename` **Typename?** 
--   `base` **{}?** 
--   `fontFace` **{}?** 
--   `id` **[string][89]?** 
--   `name` **[string][89]?** 
--   `setting` **{}?** 
--   `swatch` **{}?** 
--   `version` **[string][89]?** 
+-   `__typename` **Typename** 
+-   `base` **[BaseBaseT][89]** 
+-   `fontFace` **[AttributeFontFaceT][81]** 
+-   `id` **Id** 
+-   `name` **[Name][92]** 
+-   `setting` **[SettingBaseT][93]** 
+-   `swatch` **[AttributeSwatchT][87]** 
+-   `version` **Version** 
 
 ## ThemeBaseT
 
-Theme `base` type
+Theme base type
 
-Type: {\_\_typename: `"ThemeBase"`, base: {}?, fontFace: {}?, id: [string][89]?, name: [string][89]?, setting: {}?, swatch: {}?, version: [string][89]?}
+Type: {\_\_schemaname: `"Theme"`, \_\_typename: `"Base"`, base: [BaseBaseT][89], fontFace: [AttributeFontFaceT][81], id: Id, name: [Name][92], setting: [SettingBaseT][93], swatch: [AttributeSwatchT][87], version: Version}
 
 ### Properties
 
--   `__typename` **`"ThemeBase"`** 
--   `base` **{}?** 
--   `fontFace` **{}?** 
--   `id` **[string][89]?** 
--   `name` **[string][89]?** 
--   `setting` **{}?** 
--   `swatch` **{}?** 
--   `version` **[string][89]?** 
+-   `__schemaname` **`"Theme"`** 
+-   `__typename` **`"Base"`** 
+-   `base` **[BaseBaseT][89]** 
+-   `fontFace` **[AttributeFontFaceT][81]** 
+-   `id` **Id** 
+-   `name` **[Name][92]** 
+-   `setting` **[SettingBaseT][93]** 
+-   `swatch` **[AttributeSwatchT][87]** 
+-   `version` **Version** 
 
 ## UnitST
 
 Unit schema type
 
-Type: {\_\_schemaname: `"Unit"`, \_\_typename: Typename, name: [Name][90], ordinal: Ordinal, value: Value}
+Type: {\_\_schemaname: `"Unit"`, \_\_typename: Typename, name: [Name][92], ordinal: Ordinal, value: Value}
 
 ### Properties
 
 -   `__schemaname` **`"Unit"`** 
 -   `__typename` **Typename** 
--   `name` **[Name][90]** 
+-   `name` **[Name][92]** 
 -   `ordinal` **Ordinal** 
 -   `value` **Value** 
 
@@ -448,13 +456,13 @@ Type: {\_\_schemaname: `"Unit"`, \_\_typename: Typename, name: [Name][90], ordin
 
 Unit factor type
 
-Type: {\_\_schemaname: `"Unit"`, \_\_typename: `"Factor"`, name: [Name][90], ordinal: Ordinal, value: Value}
+Type: {\_\_schemaname: `"Unit"`, \_\_typename: `"Factor"`, name: [Name][92], ordinal: Ordinal, value: Value}
 
 ### Properties
 
 -   `__schemaname` **`"Unit"`** 
 -   `__typename` **`"Factor"`** 
--   `name` **[Name][90]** 
+-   `name` **[Name][92]** 
 -   `ordinal` **Ordinal** 
 -   `value` **Value** 
 
@@ -462,13 +470,13 @@ Type: {\_\_schemaname: `"Unit"`, \_\_typename: `"Factor"`, name: [Name][90], ord
 
 Unit hex type
 
-Type: {\_\_schemaname: `"Unit"`, \_\_typename: `"Hex"`, name: [Name][90], ordinal: Ordinal, value: Value}
+Type: {\_\_schemaname: `"Unit"`, \_\_typename: `"Hex"`, name: [Name][92], ordinal: Ordinal, value: Value}
 
 ### Properties
 
 -   `__schemaname` **`"Unit"`** 
 -   `__typename` **`"Hex"`** 
--   `name` **[Name][90]** 
+-   `name` **[Name][92]** 
 -   `ordinal` **Ordinal** 
 -   `value` **Value** 
 
@@ -476,13 +484,13 @@ Type: {\_\_schemaname: `"Unit"`, \_\_typename: `"Hex"`, name: [Name][90], ordina
 
 Unit hexa type
 
-Type: {\_\_schemaname: `"Unit"`, \_\_typename: `"Hexa"`, name: [Name][90], ordinal: Ordinal, value: Value}
+Type: {\_\_schemaname: `"Unit"`, \_\_typename: `"Hexa"`, name: [Name][92], ordinal: Ordinal, value: Value}
 
 ### Properties
 
 -   `__schemaname` **`"Unit"`** 
 -   `__typename` **`"Hexa"`** 
--   `name` **[Name][90]** 
+-   `name` **[Name][92]** 
 -   `ordinal` **Ordinal** 
 -   `value` **Value** 
 
@@ -490,13 +498,13 @@ Type: {\_\_schemaname: `"Unit"`, \_\_typename: `"Hexa"`, name: [Name][90], ordin
 
 Unit px type
 
-Type: {\_\_schemaname: `"Unit"`, \_\_typename: `"Px"`, name: [Name][90], ordinal: Ordinal, value: Value}
+Type: {\_\_schemaname: `"Unit"`, \_\_typename: `"Px"`, name: [Name][92], ordinal: Ordinal, value: Value}
 
 ### Properties
 
 -   `__schemaname` **`"Unit"`** 
 -   `__typename` **`"Px"`** 
--   `name` **[Name][90]** 
+-   `name` **[Name][92]** 
 -   `ordinal` **Ordinal** 
 -   `value` **Value** 
 
@@ -504,13 +512,13 @@ Type: {\_\_schemaname: `"Unit"`, \_\_typename: `"Px"`, name: [Name][90], ordinal
 
 Unit reference type
 
-Type: {\_\_schemaname: `"Unit"`, \_\_typename: `"Reference"`, name: [Name][90], ordinal: Ordinal, value: Value}
+Type: {\_\_schemaname: `"Unit"`, \_\_typename: `"Reference"`, name: [Name][92], ordinal: Ordinal, value: Value}
 
 ### Properties
 
 -   `__schemaname` **`"Unit"`** 
 -   `__typename` **`"Reference"`** 
--   `name` **[Name][90]** 
+-   `name` **[Name][92]** 
 -   `ordinal` **Ordinal** 
 -   `value` **Value** 
 
@@ -518,13 +526,13 @@ Type: {\_\_schemaname: `"Unit"`, \_\_typename: `"Reference"`, name: [Name][90], 
 
 Unit rem type
 
-Type: {\_\_schemaname: `"Unit"`, \_\_typename: `"Rem"`, name: [Name][90], ordinal: Ordinal, value: Value}
+Type: {\_\_schemaname: `"Unit"`, \_\_typename: `"Rem"`, name: [Name][92], ordinal: Ordinal, value: Value}
 
 ### Properties
 
 -   `__schemaname` **`"Unit"`** 
 -   `__typename` **`"Rem"`** 
--   `name` **[Name][90]** 
+-   `name` **[Name][92]** 
 -   `ordinal` **Ordinal** 
 -   `value` **Value** 
 
@@ -532,13 +540,13 @@ Type: {\_\_schemaname: `"Unit"`, \_\_typename: `"Rem"`, name: [Name][90], ordina
 
 Unit rgb type
 
-Type: {\_\_schemaname: `"Unit"`, \_\_typename: `"Rgb"`, name: [Name][90], ordinal: Ordinal, value: Value}
+Type: {\_\_schemaname: `"Unit"`, \_\_typename: `"Rgb"`, name: [Name][92], ordinal: Ordinal, value: Value}
 
 ### Properties
 
 -   `__schemaname` **`"Unit"`** 
 -   `__typename` **`"Rgb"`** 
--   `name` **[Name][90]** 
+-   `name` **[Name][92]** 
 -   `ordinal` **Ordinal** 
 -   `value` **Value** 
 
@@ -546,13 +554,13 @@ Type: {\_\_schemaname: `"Unit"`, \_\_typename: `"Rgb"`, name: [Name][90], ordina
 
 Unit rgba type
 
-Type: {\_\_schemaname: `"Unit"`, \_\_typename: `"Rgba"`, name: [Name][90], ordinal: Ordinal, value: Value}
+Type: {\_\_schemaname: `"Unit"`, \_\_typename: `"Rgba"`, name: [Name][92], ordinal: Ordinal, value: Value}
 
 ### Properties
 
 -   `__schemaname` **`"Unit"`** 
 -   `__typename` **`"Rgba"`** 
--   `name` **[Name][90]** 
+-   `name` **[Name][92]** 
 -   `ordinal` **Ordinal** 
 -   `value` **Value** 
 
@@ -560,13 +568,13 @@ Type: {\_\_schemaname: `"Unit"`, \_\_typename: `"Rgba"`, name: [Name][90], ordin
 
 Unit rgba type
 
-Type: {\_\_schemaname: `"Unit"`, \_\_typename: `"String"`, name: [Name][90], ordinal: Ordinal, value: Value}
+Type: {\_\_schemaname: `"Unit"`, \_\_typename: `"String"`, name: [Name][92], ordinal: Ordinal, value: Value}
 
 ### Properties
 
 -   `__schemaname` **`"Unit"`** 
 -   `__typename` **`"String"`** 
--   `name` **[Name][90]** 
+-   `name` **[Name][92]** 
 -   `ordinal` **Ordinal** 
 -   `value` **Value** 
 
@@ -574,31 +582,31 @@ Type: {\_\_schemaname: `"Unit"`, \_\_typename: `"String"`, name: [Name][90], ord
 
 Setting schema object.
 
-Type: [SettingST][91]
+Type: [SettingST][94]
 
 ## SettingBase
 
 Setting base (default) type
 
-Type: [SettingBaseT][92]
+Type: [SettingBaseT][93]
 
-## ThemeSchema
+## Theme
 
-Theme schema object.
+Theme schema type
 
-Type: [ThemeST][93]
+Type: [ThemeST][95]
 
 ## ThemeBase
 
 Theme base (default) type
 
-Type: [ThemeBaseT][94]
+Type: [ThemeBaseT][90]
 
-## UnitSchema
+## Unit
 
-Unit schema object
+Unit schema type
 
-Type: [UnitST][95]
+Type: [UnitST][96]
 
 ## 
 
@@ -608,7 +616,7 @@ Unit hex type
 
 Unit factor type
 
-Type: [UnitFactorT][96]
+Type: [UnitFactorT][97]
 
 ## 
 
@@ -664,168 +672,170 @@ Unit string type
 
 [13]: #base
 
-[14]: #attributest
+[14]: #base-1
 
-[15]: #properties
+[15]: #attributest
 
-[16]: #attributebasefontsizet
+[16]: #properties
 
-[17]: #properties-1
+[17]: #attributebasefontsizet
 
-[18]: #attributebaselineheightt
+[18]: #properties-1
 
-[19]: #properties-2
+[19]: #attributebaselineheightt
 
-[20]: #attributebasespacingt
+[20]: #properties-2
 
-[21]: #properties-3
+[21]: #attributebasespacingt
 
-[22]: #attributecolort
+[22]: #properties-3
 
-[23]: #properties-4
+[23]: #attributecolort
 
-[24]: #attributefontfacet
+[24]: #properties-4
 
-[25]: #properties-5
+[25]: #attributefontfacet
 
-[26]: #attributefontfamilyt
+[26]: #properties-5
 
-[27]: #properties-6
+[27]: #attributefontfamilyt
 
-[28]: #attributefontsizet
+[28]: #properties-6
 
-[29]: #properties-7
+[29]: #attributefontsizet
 
-[30]: #attributefontweightt
+[30]: #properties-7
 
-[31]: #properties-8
+[31]: #attributefontweightt
 
-[32]: #attributelineheightt
+[32]: #properties-8
 
-[33]: #properties-9
+[33]: #attributelineheightt
 
-[34]: #attributespacingt
+[34]: #properties-9
 
-[35]: #properties-10
+[35]: #attributespacingt
 
-[36]: #attributeswatcht
+[36]: #properties-10
 
-[37]: #properties-11
+[37]: #attributeswatcht
 
-[38]: #basest
+[38]: #properties-11
 
-[39]: #properties-12
+[39]: #basest
 
-[40]: #basebaset
+[40]: #properties-12
 
-[41]: #properties-13
+[41]: #basebaset
 
-[42]: #settingst
+[42]: #properties-13
 
-[43]: #properties-14
+[43]: #settingst
 
-[44]: #settingbaset
+[44]: #properties-14
 
-[45]: #properties-15
+[45]: #settingbaset
 
-[46]: #themest
+[46]: #properties-15
 
-[47]: #properties-16
+[47]: #themest
 
-[48]: #themebaset
+[48]: #properties-16
 
-[49]: #properties-17
+[49]: #themebaset
 
-[50]: #unitst
+[50]: #properties-17
 
-[51]: #properties-18
+[51]: #unitst
 
-[52]: #unitfactort
+[52]: #properties-18
 
-[53]: #properties-19
+[53]: #unitfactort
 
-[54]: #unithext
+[54]: #properties-19
 
-[55]: #properties-20
+[55]: #unithext
 
-[56]: #unithexat
+[56]: #properties-20
 
-[57]: #properties-21
+[57]: #unithexat
 
-[58]: #unitpxt
+[58]: #properties-21
 
-[59]: #properties-22
+[59]: #unitpxt
 
-[60]: #unitreferencet
+[60]: #properties-22
 
-[61]: #properties-23
+[61]: #unitreferencet
 
-[62]: #unitremt
+[62]: #properties-23
 
-[63]: #properties-24
+[63]: #unitremt
 
-[64]: #unitrgbt
+[64]: #properties-24
 
-[65]: #properties-25
+[65]: #unitrgbt
 
-[66]: #unitrgbat
+[66]: #properties-25
 
-[67]: #properties-26
+[67]: #unitrgbat
 
-[68]: #unitstringt
+[68]: #properties-26
 
-[69]: #properties-27
+[69]: #unitstringt
 
-[70]: #settingschema
+[70]: #properties-27
 
-[71]: #settingbase
+[71]: #settingschema
 
-[72]: #themeschema
+[72]: #settingbase
 
-[73]: #themebase
+[73]: #theme
 
-[74]: #unitschema
+[74]: #themebase
 
-[75]: #factor
+[75]: #unit
 
-[76]: #attributest
+[76]: #factor
 
-[77]: #attributebasefontsizet
+[77]: #attributest
 
-[78]: #attributebaselineheightt
+[78]: #attributebasefontsizet
 
-[79]: #attributecolort
+[79]: #attributebaselineheightt
 
-[80]: #attributefontfacet
+[80]: #attributecolort
 
-[81]: #attributefontfamilyt
+[81]: #attributefontfacet
 
-[82]: #attributefontsizet
+[82]: #attributefontfamilyt
 
-[83]: #attributefontweightt
+[83]: #attributefontsizet
 
-[84]: #attributelineheightt
+[84]: #attributefontweightt
 
-[85]: #attributespacingt
+[85]: #attributelineheightt
 
-[86]: #attributeswatcht
+[86]: #attributespacingt
 
-[87]: #basest
+[87]: #attributeswatcht
 
-[88]: #basebaset
+[88]: #basest
 
-[89]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+[89]: #basebaset
 
-[90]: https://developer.mozilla.org/
+[90]: #themebaset
 
-[91]: #settingst
+[91]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
 
-[92]: #settingbaset
+[92]: https://developer.mozilla.org/
 
-[93]: #themest
+[93]: #settingbaset
 
-[94]: #themebaset
+[94]: #settingst
 
-[95]: #unitst
+[95]: #themest
 
-[96]: #unitfactort
+[96]: #unitst
+
+[97]: #unitfactort

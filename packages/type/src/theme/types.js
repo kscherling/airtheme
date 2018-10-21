@@ -1,24 +1,22 @@
 // @flow
-import type { ThemeST } from '../flow/ThemeTypes'
-import { VERSION } from '@airtheme/core'
+import { VERSION, uuid } from '@airtheme/core'
 import attribute from '../attribute'
 import setting from '../setting'
 import base from '../base'
+import type { ThemeBaseT } from '../flow/ThemeTypes'
 
 /**
- *  @description Theme schema type
+ * @description Theme base (default) type
  */
 
-const Theme: ThemeST = {
+export const Base: ThemeBaseT = {
   __schemaname: 'Theme',
-  __typename: '',
+  __typename: 'Base',
   base: base.base(),
   fontFace: attribute.fontFace(),
-  id: '',
-  name: '',
+  id: uuid(),
+  name: 'My Awesome Theme',
   setting: setting.base(),
   swatch: attribute.swatch(),
   version: VERSION
 }
-
-export default Theme
