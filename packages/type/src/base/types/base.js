@@ -3,7 +3,7 @@ import attribute from '../../attribute'
 import type { BaseBaseT } from '../../flow/BaseTypes'
 
 /**
- * @description Base base object type
+ * @description Base base (default) type
  */
 
 const Base: BaseBaseT = {

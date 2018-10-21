@@ -1,3 +1,4 @@
+// @flow
 import { VERSION, uuid } from '@airtheme/core'
 import attribute from '../../attribute'
 import setting from '../../setting'
@@ -5,8 +6,12 @@ import base from '../../base'
 
 import type { ThemeBaseT } from '../../flow/ThemeTypes'
 
-const BaseType: ThemeBaseT = {
-  __typename: 'base',
+/**
+ * @description Theme base (default) type
+ */
+
+const ThemeBase: ThemeBaseT = {
+  __typename: 'ThemeBase',
   base: base.base(),
   fontFace: attribute.fontFace(),
   id: uuid(),
@@ -17,4 +22,4 @@ const BaseType: ThemeBaseT = {
   version: VERSION
 }
 
-export default BaseType
+export default ThemeBase

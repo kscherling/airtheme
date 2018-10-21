@@ -45,107 +45,111 @@
     -   [Properties][41]
 -   [SettingST][42]
     -   [Properties][43]
--   [ThemeST][44]
+-   [SettingBaseT][44]
     -   [Properties][45]
--   [ThemeBaseT][46]
+-   [ThemeST][46]
     -   [Properties][47]
--   [UnitST][48]
+-   [ThemeBaseT][48]
     -   [Properties][49]
--   [SettingSchema][50]
--   [ThemeSchema][51]
--   [UnitSchema][52]
+-   [UnitST][50]
+    -   [Properties][51]
+-   [SettingSchema][52]
+-   [SettingBase][53]
+-   [ThemeSchema][54]
+-   [ThemeBase][55]
+-   [UnitSchema][56]
 
 ## AttributeSchema
 
 Attribute schema object.
 
-Type: [AttributeST][53]
+Type: [AttributeST][57]
 
 ## BaseFontSize
 
 Base font size object
 
-Type: [AttributeBaseFontSizeT][54]
+Type: [AttributeBaseFontSizeT][58]
 
 ## BaseLineHeight
 
 Base line height object
 
-Type: [AttributeBaseLineHeightT][55]
+Type: [AttributeBaseLineHeightT][59]
 
 ## Color
 
 Base font size object
 
-Type: [AttributeColorT][56]
+Type: [AttributeColorT][60]
 
 ## Color
 
 Base font face object
 
-Type: [AttributeFontFaceT][57]
+Type: [AttributeFontFaceT][61]
 
 ## FontFamily
 
 Base font face object
 
-Type: [AttributeFontFamilyT][58]
+Type: [AttributeFontFamilyT][62]
 
 ## FontSize
 
 Base font face object
 
-Type: [AttributeFontSizeT][59]
+Type: [AttributeFontSizeT][63]
 
 ## FontWeight
 
 Base font face object
 
-Type: [AttributeFontWeightT][60]
+Type: [AttributeFontWeightT][64]
 
 ## LineHeight
 
 Base line height object
 
-Type: [AttributeLineHeightT][61]
+Type: [AttributeLineHeightT][65]
 
 ## Spacing
 
 Base font face object
 
-Type: [AttributeSpacingT][62]
+Type: [AttributeSpacingT][66]
 
 ## Swatch
 
 Base font face object
 
-Type: [AttributeSwatchT][63]
+Type: [AttributeSwatchT][67]
 
 ## BaseSchema
 
 Base schema object.
 
-Type: [BaseST][64]
+Type: [BaseST][68]
 
 ## Base
 
-Base base object type
+Base base (default) type
 
-Type: [BaseBaseT][65]
+Type: [BaseBaseT][69]
 
 ## AttributeST
 
 Attribute schema type
 
-Type: {\_\_schemaname: `"Attribute"`, \_\_typename: [string][66], content: (\[] | {}), reference: [string][66], unit: [string][66], view: \[], viewable: \[]}
+Type: {\_\_schemaname: `"Attribute"`, \_\_typename: [string][70], content: (\[] | {}), reference: [string][70], unit: [string][70], view: \[], viewable: \[]}
 
 ### Properties
 
 -   `__schemaname` **`"Attribute"`** 
--   `__typename` **[string][66]** 
+-   `__typename` **[string][70]** 
 -   `content` **(\[] | {})** 
--   `reference` **[string][66]** 
--   `unit` **[string][66]** 
+-   `reference` **[string][70]** 
+-   `unit` **[string][70]** 
 -   `view` **\[]** 
 -   `viewable` **\[]** 
 
@@ -332,14 +336,14 @@ Type: {\_\_schemaname: `"Base"`, \_\_typename: Typename?, baseFontSize: any, bas
 
 Base base (default) type
 
-Type: {\_\_typename: `"BaseBase"`, baseFontSize: [string][66], baseLineHeight: [string][66], baseLineHeight: [string][66]}
+Type: {\_\_typename: `"BaseBase"`, baseFontSize: [string][70], baseLineHeight: [string][70], baseLineHeight: [string][70]}
 
 ### Properties
 
 -   `__typename` **`"BaseBase"`** 
--   `baseFontSize` **[string][66]** 
--   `baseLineHeight` **[string][66]** 
--   `baseLineHeight` **[string][66]** 
+-   `baseFontSize` **[string][70]** 
+-   `baseLineHeight` **[string][70]** 
+-   `baseLineHeight` **[string][70]** 
 
 ## SettingST
 
@@ -357,11 +361,26 @@ Type: {\_\_schemaname: `"Setting"`, \_\_typename: Typename?, color: {}?, fontFam
 -   `fontWeight` **{}?** 
 -   `spacing` **{}?** 
 
+## SettingBaseT
+
+Setting base (default) type
+
+Type: {\_\_typename: `"SettingBase"`, color: {}?, fontFamily: {}?, fontSize: {}?, fontWeight: {}?, spacing: {}?}
+
+### Properties
+
+-   `__typename` **`"SettingBase"`** 
+-   `color` **{}?** 
+-   `fontFamily` **{}?** 
+-   `fontSize` **{}?** 
+-   `fontWeight` **{}?** 
+-   `spacing` **{}?** 
+
 ## ThemeST
 
 Theme schema type
 
-Type: {\_\_schemaname: `"Theme"`, \_\_typename: Typename?, base: {}?, fontFace: {}?, id: [string][66]?, name: [string][66]?, setting: {}?, swatch: {}?, version: [string][66]?}
+Type: {\_\_schemaname: `"Theme"`, \_\_typename: Typename?, base: {}?, fontFace: {}?, id: [string][70]?, name: [string][70]?, setting: {}?, swatch: {}?, version: [string][70]?}
 
 ### Properties
 
@@ -369,60 +388,72 @@ Type: {\_\_schemaname: `"Theme"`, \_\_typename: Typename?, base: {}?, fontFace: 
 -   `__typename` **Typename?** 
 -   `base` **{}?** 
 -   `fontFace` **{}?** 
--   `id` **[string][66]?** 
--   `name` **[string][66]?** 
+-   `id` **[string][70]?** 
+-   `name` **[string][70]?** 
 -   `setting` **{}?** 
 -   `swatch` **{}?** 
--   `version` **[string][66]?** 
+-   `version` **[string][70]?** 
 
 ## ThemeBaseT
 
 Theme `base` type
 
-Type: {\_\_typename: `"ThemeBase"`, base: {}?, fontFace: {}?, id: [string][66]?, name: [string][66]?, setting: {}?, swatch: {}?, version: [string][66]?}
+Type: {\_\_typename: `"ThemeBase"`, base: {}?, fontFace: {}?, id: [string][70]?, name: [string][70]?, setting: {}?, swatch: {}?, version: [string][70]?}
 
 ### Properties
 
 -   `__typename` **`"ThemeBase"`** 
 -   `base` **{}?** 
 -   `fontFace` **{}?** 
--   `id` **[string][66]?** 
--   `name` **[string][66]?** 
+-   `id` **[string][70]?** 
+-   `name` **[string][70]?** 
 -   `setting` **{}?** 
 -   `swatch` **{}?** 
--   `version` **[string][66]?** 
+-   `version` **[string][70]?** 
 
 ## UnitST
 
 Unit schema Type
 
-Type: {\_\_schemaname: `"Base"`, \_\_typename: Typename?, name: [string][66]?, ordinal: [number][67]?, value: [string][66]?}
+Type: {\_\_schemaname: `"Base"`, \_\_typename: Typename?, name: [string][70]?, ordinal: [number][71]?, value: [string][70]?}
 
 ### Properties
 
 -   `__schemaname` **`"Base"`** 
 -   `__typename` **Typename?** 
--   `name` **[string][66]?** 
--   `ordinal` **[number][67]?** 
--   `value` **[string][66]?** 
+-   `name` **[string][70]?** 
+-   `ordinal` **[number][71]?** 
+-   `value` **[string][70]?** 
 
 ## SettingSchema
 
 Setting schema object.
 
-Type: [SettingST][68]
+Type: [SettingST][72]
+
+## SettingBase
+
+Setting base (default) type
+
+Type: [SettingBaseT][73]
 
 ## ThemeSchema
 
 Theme schema object.
 
-Type: [ThemeST][69]
+Type: [ThemeST][74]
+
+## ThemeBase
+
+Theme base (default) type
+
+Type: [ThemeBaseT][75]
 
 ## UnitSchema
 
 Unit schema object.
 
-Type: [UnitST][70]
+Type: [UnitST][76]
 
 [1]: #attributeschema
 
@@ -510,56 +541,68 @@ Type: [UnitST][70]
 
 [43]: #properties-14
 
-[44]: #themest
+[44]: #settingbaset
 
 [45]: #properties-15
 
-[46]: #themebaset
+[46]: #themest
 
 [47]: #properties-16
 
-[48]: #unitst
+[48]: #themebaset
 
 [49]: #properties-17
 
-[50]: #settingschema
+[50]: #unitst
 
-[51]: #themeschema
+[51]: #properties-18
 
-[52]: #unitschema
+[52]: #settingschema
 
-[53]: #attributest
+[53]: #settingbase
 
-[54]: #attributebasefontsizet
+[54]: #themeschema
 
-[55]: #attributebaselineheightt
+[55]: #themebase
 
-[56]: #attributecolort
+[56]: #unitschema
 
-[57]: #attributefontfacet
+[57]: #attributest
 
-[58]: #attributefontfamilyt
+[58]: #attributebasefontsizet
 
-[59]: #attributefontsizet
+[59]: #attributebaselineheightt
 
-[60]: #attributefontweightt
+[60]: #attributecolort
 
-[61]: #attributelineheightt
+[61]: #attributefontfacet
 
-[62]: #attributespacingt
+[62]: #attributefontfamilyt
 
-[63]: #attributeswatcht
+[63]: #attributefontsizet
 
-[64]: #basest
+[64]: #attributefontweightt
 
-[65]: #basebaset
+[65]: #attributelineheightt
 
-[66]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+[66]: #attributespacingt
 
-[67]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+[67]: #attributeswatcht
 
-[68]: #settingst
+[68]: #basest
 
-[69]: #themest
+[69]: #basebaset
 
-[70]: #unitst
+[70]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+
+[71]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+
+[72]: #settingst
+
+[73]: #settingbaset
+
+[74]: #themest
+
+[75]: #themebaset
+
+[76]: #unitst

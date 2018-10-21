@@ -1,3 +1,4 @@
+// @flow
 import attribute from '../../attribute'
 import {
   COLOR_KEY,
@@ -6,14 +7,19 @@ import {
   FONT_WEIGHT_KEY,
   SPACING_KEY
 } from '@airtheme/core'
+import type { SettingBaseT } from '../../flow/SettingTypes'
 
-// base
-// The base setting object
+/**
+ * @description Setting base (default) type
+ */
 
-export default {
-  [COLOR_KEY]: attribute.color(),
-  [FONT_FAMILY_KEY]: attribute.fontFamily(),
-  [FONT_SIZE_KEY]: attribute.fontSize(),
-  [FONT_WEIGHT_KEY]: attribute.fontWeight(),
-  [SPACING_KEY]: attribute.spacing()
+const SettingBase: SettingBaseT = {
+  __typename: 'SettingBase',
+  color: attribute.color(),
+  fontFamily: attribute.fontFamily(),
+  fontSize: attribute.fontSize(),
+  fontWeight: attribute.fontWeight(),
+  spacing: attribute.spacing()
 }
+
+export default SettingBase

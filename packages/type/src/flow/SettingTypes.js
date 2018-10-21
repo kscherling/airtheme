@@ -14,3 +14,16 @@ export type SettingST = {
   fontWeight: ?{},
   spacing: ?{}
 }
+
+/**
+ * @description Setting base (default) type
+ */
+
+export type SettingBaseT = {
+  __typename: 'SettingBase',
+  color: ?{},
+  fontFamily: ?{},
+  fontSize: ?{},
+  fontWeight: ?{},
+  spacing: ?{}
+}
