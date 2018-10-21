@@ -375,32 +375,33 @@ Type: {\_\_typename: `"BaseBase"`, baseFontSize: [string][91], baseLineHeight: [
 
 Setting schema type
 
-Type: {\_\_schemaname: `"Setting"`, \_\_typename: Typename?, color: {}?, fontFamily: {}?, fontSize: {}?, fontWeight: {}?, spacing: {}?}
+Type: {\_\_schemaname: `"Setting"`, \_\_typename: Typename, color: [AttributeColorT][80], fontFamily: [AttributeFontFamilyT][82], fontSize: [AttributeFontSizeT][83], fontWeight: [AttributeFontFamilyT][82], spacing: [AttributeSpacingT][86]}
 
 ### Properties
 
 -   `__schemaname` **`"Setting"`** 
--   `__typename` **Typename?** 
--   `color` **{}?** 
--   `fontFamily` **{}?** 
--   `fontSize` **{}?** 
--   `fontWeight` **{}?** 
--   `spacing` **{}?** 
+-   `__typename` **Typename** 
+-   `color` **[AttributeColorT][80]** 
+-   `fontFamily` **[AttributeFontFamilyT][82]** 
+-   `fontSize` **[AttributeFontSizeT][83]** 
+-   `fontWeight` **[AttributeFontFamilyT][82]** 
+-   `spacing` **[AttributeSpacingT][86]** 
 
 ## SettingBaseT
 
 Setting base (default) type
 
-Type: {\_\_typename: `"SettingBase"`, color: {}?, fontFamily: {}?, fontSize: {}?, fontWeight: {}?, spacing: {}?}
+Type: {\_\_schemaname: `"Setting"`, \_\_typename: `"SettingBase"`, color: [AttributeColorT][80], fontFamily: [AttributeFontFamilyT][82], fontSize: [AttributeFontSizeT][83], fontWeight: [AttributeFontFamilyT][82], spacing: [AttributeSpacingT][86]}
 
 ### Properties
 
+-   `__schemaname` **`"Setting"`** 
 -   `__typename` **`"SettingBase"`** 
--   `color` **{}?** 
--   `fontFamily` **{}?** 
--   `fontSize` **{}?** 
--   `fontWeight` **{}?** 
--   `spacing` **{}?** 
+-   `color` **[AttributeColorT][80]** 
+-   `fontFamily` **[AttributeFontFamilyT][82]** 
+-   `fontSize` **[AttributeFontSizeT][83]** 
+-   `fontWeight` **[AttributeFontFamilyT][82]** 
+-   `spacing` **[AttributeSpacingT][86]** 
 
 ## ThemeST
 
@@ -608,15 +609,15 @@ Unit schema type
 
 Type: [UnitST][96]
 
+## 
+
+Unit hex type
+
 ## Factor
 
 Unit factor type
 
 Type: [UnitFactorT][97]
-
-## 
-
-Unit hex type
 
 ## 
 
