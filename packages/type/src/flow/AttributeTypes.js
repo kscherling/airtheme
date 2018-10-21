@@ -40,3 +40,42 @@ export type AttributeBaseLineHeightT = {
   view: 'factor' | 'px',
   viewable: ['factor', 'px']
 }
+
+/**
+ * @description Base spacing type
+ */
+
+export type AttributeBaseSpacingT = {
+  __typename: 'BaseSpacing',
+  content: {},
+  reference: null,
+  unit: 'px',
+  view: 'px',
+  viewable: ['px']
+}
+
+/**
+ * @description Color type
+ */
+
+export type AttributeColorT = {
+  __typename: 'Color',
+  view: 'reference' | 'hex' | 'hexa' | 'rgb' | 'rgba',
+  viewable: ['reference', 'hex', 'hexa', 'rgb', 'rgba'],
+  reference: 'swatch',
+  unit: 'reference',
+  content: []
+}
+
+/**
+ * @description Base font size object
+ */
+
+export type AttributeFontFaceT = {
+  __typename: 'FontFace',
+  view: 'string',
+  viewable: ['string'],
+  reference: null,
+  unit: 'string',
+  content: []
+}

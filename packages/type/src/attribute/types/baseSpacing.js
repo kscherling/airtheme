@@ -1,11 +1,14 @@
-import { BASE_SPACING, PX } from '@airtheme/core'
+// @flow
 import unit from '../../unit'
+import type { AttributeBaseSpacingT } from '../../flow/AttributeTypes'
 
-export default {
-  view: PX,
-  viewable: [PX],
+const BaseSpacing: AttributeBaseSpacingT = {
+  __typename: 'BaseSpacing',
+  content: unit.px({ name: 'baseSpacing', value: 16 }),
   reference: null,
-  object: BASE_SPACING,
-  unit: PX,
-  content: unit.px({ name: 'baseSpacing', value: 16 })
+  unit: 'px',
+  view: 'px',
+  viewable: ['px']
 }
+
+export default BaseSpacing

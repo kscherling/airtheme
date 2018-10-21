@@ -1,10 +1,17 @@
-import { COLOR, SWATCH } from '@airtheme/core'
-import { REFERENCE, HEX, HEXA, RGB, RGBA } from '@airtheme/core'
+// @flow
+import type { AttributeColorT } from '../../flow/AttributeTypes'
 
-export default {
-  view: REFERENCE,
-  viewable: [REFERENCE, HEX, HEXA, RGB, RGBA],
-  reference: SWATCH,
-  object: COLOR,
-  unit: REFERENCE
+/**
+ * @description Base font size object
+ */
+
+const Color: AttributeColorT = {
+  __typename: 'Color',
+  view: 'reference',
+  viewable: ['reference', 'hex', 'hexa', 'rgb', 'rgba'],
+  reference: 'swatch',
+  unit: 'reference',
+  content: []
 }
+
+export default Color

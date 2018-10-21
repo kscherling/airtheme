@@ -1,9 +1,17 @@
-import { FONT_FACE, STRING } from '@airtheme/core'
+// @flow
+import type { AttributeFontFaceT } from '../../flow/AttributeTypes'
 
-export default {
-  view: STRING,
-  viewable: [STRING],
+/**
+ * @description Base font face object
+ */
+
+const Color: AttributeFontFaceT = {
+  __typename: 'FontFace',
+  view: 'string',
+  viewable: ['string'],
   reference: null,
-  object: FONT_FACE,
-  unit: STRING
+  unit: 'string',
+  content: []
 }
+
+export default Color
