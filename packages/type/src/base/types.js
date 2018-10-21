@@ -1,17 +1,15 @@
 // @flow
 import attribute from '../attribute'
-import type { BaseST } from '../flow/BaseTypes'
+import type { BaseBaseT } from '../flow/BaseTypes'
 
 /**
- * @description Base schema object.
+ * @description Base base (default) type
  */
 
-const BaseSchema: BaseST = {
+export const Base: BaseBaseT = {
   __schemaname: 'Base',
-  __typename: '',
+  __typename: 'Base',
   baseFontSize: attribute.baseFontSize(),
   baseLineHeight: attribute.baseLineHeight(),
   baseSpacing: attribute.baseSpacing()
 }
-
-export default BaseSchema
