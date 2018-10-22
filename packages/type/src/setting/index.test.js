@@ -5,60 +5,53 @@ import unit from '../unit'
 it('creates `setting`', () => {
   const result = setting.base()
 
-  console.log(result)
-
   expect(result).toEqual({
     __schemaname: 'Setting',
     __typename: '',
     color: {
       __schemaname: 'Attribute',
-      __typename: '',
+      __typename: 'Color',
       content: [],
       reference: 'swatch',
       unit: 'Reference',
       view: 'Reference',
-      viewable: ['Reference', 'Hex', 'Hexa', 'Rgb', 'Rgba'],
-      object: undefined
+      viewable: ['Reference', 'Hex', 'Hexa', 'Rgb', 'Rgba']
     },
     fontFamily: {
       __schemaname: 'Attribute',
-      __typename: '',
+      __typename: 'FontFamily',
       content: [],
       reference: 'fontFace',
       unit: 'Reference',
       view: 'Reference',
-      viewable: ['Reference'],
-      object: undefined
+      viewable: ['Reference']
     },
     fontSize: {
       __schemaname: 'Attribute',
-      __typename: '',
+      __typename: 'FontSize',
       content: [],
       reference: 'base.baseFontSize',
       unit: 'Factor',
       view: 'Factor',
-      viewable: ['Factor', 'Px', 'Rem'],
-      object: undefined
+      viewable: ['Factor', 'Px', 'Rem']
     },
     fontWeight: {
       __schemaname: 'Attribute',
-      __typename: '',
+      __typename: 'FontWeight',
       content: [],
-      reference: '',
+      reference: null,
       unit: 'String',
       view: 'String',
-      viewable: ['String'],
-      object: undefined
+      viewable: ['String']
     },
     spacing: {
       __schemaname: 'Attribute',
-      __typename: '',
+      __typename: 'Spacing',
       content: [],
       reference: 'base.baseSpacing',
       unit: 'Factor',
       view: 'Factor',
-      viewable: ['Factor', 'Px'],
-      object: undefined
+      viewable: ['Factor', 'Px']
     }
   })
 })

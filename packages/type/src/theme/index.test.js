@@ -4,99 +4,125 @@ import { VERSION } from '@airtheme/core'
 const withId = (mock, base) => ({ ...base, id: mock.id })
 
 const baseTheme = {
+  __schemaname: 'Theme',
+  __typename: 'Base',
   base: {
+    __schemaname: 'Base',
+    __typename: 'Base',
     baseFontSize: {
-      content: { name: 'baseFontSize', object: 'px', ordinal: null, value: 16 },
-      object: 'baseFontSize',
+      __schemaname: 'Attribute',
+      __typename: 'BaseFontSize',
+      content: {
+        __schemaname: 'Unit',
+        __typename: 'Px',
+        name: '',
+        ordinal: 0,
+        value: ''
+      },
       reference: null,
-      unit: 'px',
-      view: 'px',
-      viewable: ['px']
+      unit: 'Px',
+      view: 'Px',
+      viewable: ['Px']
     },
     baseLineHeight: {
+      __schemaname: 'Attribute',
+      __typename: 'BaseLineHeight',
       content: {
-        name: 'baseLineHeight',
-        object: 'factor',
-        ordinal: null,
-        value: 1.15
+        __schemaname: 'Unit',
+        __typename: 'Factor',
+        name: '',
+        ordinal: 0,
+        value: ''
       },
-      object: 'baseLineHeight',
       reference: 'base.baseFontSize',
-      unit: 'factor',
-      view: 'factor',
-      viewable: ['factor', 'px']
+      unit: 'Factor',
+      view: 'Factor',
+      viewable: ['Factor', 'Px']
     },
     baseSpacing: {
-      content: { name: 'baseSpacing', object: 'px', ordinal: null, value: 16 },
-      object: 'baseSpacing',
+      __schemaname: 'Attribute',
+      __typename: 'BaseSpacing',
+      content: {
+        __schemaname: 'Unit',
+        __typename: 'Px',
+        name: '',
+        ordinal: 0,
+        value: ''
+      },
       reference: null,
-      unit: 'px',
-      view: 'px',
-      viewable: ['px']
-    },
-    object: 'base'
+      unit: 'Px',
+      view: 'Px',
+      viewable: ['Px']
+    }
   },
   fontFace: {
+    __schemaname: 'Attribute',
+    __typename: 'FontFace',
     content: [],
-    object: 'fontFace',
     reference: null,
-    unit: 'string',
-    view: 'string',
-    viewable: ['string']
+    unit: 'String',
+    view: 'String',
+    viewable: ['String']
   },
-  id: 'icGOyk4F_',
-  name: 'Basic Airtheme',
-  object: 'theme',
+  id: '12345',
+  name: 'My Awesome Theme',
   setting: {
+    __schemaname: 'Setting',
+    __typename: '',
     color: {
+      __schemaname: 'Attribute',
+      __typename: 'Color',
       content: [],
-      object: 'color',
       reference: 'swatch',
-      unit: 'reference',
-      view: 'reference',
-      viewable: ['reference', 'hex', 'hexa', 'rgb', 'rgba']
+      unit: 'Reference',
+      view: 'Reference',
+      viewable: ['Reference', 'Hex', 'Hexa', 'Rgb', 'Rgba']
     },
     fontFamily: {
+      __schemaname: 'Attribute',
+      __typename: 'FontFamily',
       content: [],
-      object: 'fontFamily',
       reference: 'fontFace',
-      unit: 'reference',
-      view: 'reference',
-      viewable: ['reference', 'string']
+      unit: 'Reference',
+      view: 'Reference',
+      viewable: ['Reference']
     },
     fontSize: {
+      __schemaname: 'Attribute',
+      __typename: 'FontSize',
       content: [],
-      object: 'fontSize',
       reference: 'base.baseFontSize',
-      unit: 'factor',
-      view: 'factor',
-      viewable: ['factor', 'px', 'rem']
+      unit: 'Factor',
+      view: 'Factor',
+      viewable: ['Factor', 'Px', 'Rem']
     },
     fontWeight: {
+      __schemaname: 'Attribute',
+      __typename: 'FontWeight',
       content: [],
-      object: 'fontWeight',
       reference: null,
-      unit: 'string',
-      view: 'string',
-      viewable: ['string']
+      unit: 'String',
+      view: 'String',
+      viewable: ['String']
     },
-    object: 'setting',
     spacing: {
+      __schemaname: 'Attribute',
+      __typename: 'Spacing',
       content: [],
-      object: 'spacing',
       reference: 'base.baseSpacing',
-      unit: 'factor',
-      view: 'factor',
-      viewable: ['factor', 'px']
+      unit: 'Factor',
+      view: 'Factor',
+      viewable: ['Factor', 'Px']
     }
   },
   swatch: {
+    __schemaname: 'Attribute',
+    __typename: 'Swatch',
     content: [],
-    object: 'swatch',
     reference: null,
-    unit: 'hexa',
-    view: 'hexa',
-    viewable: ['hex', 'hexa', 'rgb', 'rgba']
+    unit: 'Hexa',
+    view: 'Hexa',
+    viewable: ['Hex', 'Hexa', 'Rgb', 'Rgba']
   },
   version: '0.1.0'
 }
@@ -104,38 +130,31 @@ const baseTheme = {
 it('creates a `theme`', () => {
   const result = theme.base()
 
-  expect(result).toEqual(withId(result, baseTheme))
+  expect(result).toEqual(baseTheme)
 })
 
 it('initializes with prop overrides', () => {
   const result = theme.base({
-    id: 123,
-    name: 'My Theme',
+    base: {},
+    fontFace: {},
+    id: 1,
+    name: 'My Awesome Theme',
     ordinal: 1,
-    setting: { some: 'data' },
-    swatch: { some: 'data' },
-    fontFace: { some: 'data' },
-    base: { some: 'data' }
+    setting: {},
+    swatch: {},
+    version: '0.1.0'
   })
 
   expect(result).toEqual({
-    id: 123,
-    name: 'My Theme',
-    setting: { some: 'data' },
-    swatch: { some: 'data' },
-    fontFace: { some: 'data' },
-    base: { some: 'data' },
-    object: 'theme',
+    __schemaname: 'Theme',
+    __typename: 'Base',
+    base: {},
+    fontFace: {},
+    id: 1,
+    name: 'My Awesome Theme',
+    ordinal: 1,
+    setting: {},
+    swatch: {},
     version: '0.1.0'
   })
-})
-
-it('sanitizes params', () => {
-  const result = theme.base({
-    object: 'oops',
-    version: '100.1.1',
-    nope: true
-  })
-
-  expect(result).toEqual(withId(result, baseTheme))
 })

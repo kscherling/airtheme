@@ -3,79 +3,97 @@ import types from './index'
 describe('#px', () => {})
 
 it('creates `factor`', () => {
-  const result = types.factor({ value: 1 })
+  const result = types.factor({ name: 'md', value: 1 })
 
   expect(result).toEqual({
-    object: 'factor',
-    value: 1,
-    ordinal: null,
-    name: null
+    __schemaname: 'Unit',
+    __typename: 'Factor',
+    name: 'md',
+    ordinal: 0,
+    value: 1
   })
 })
 
 it('creates `hex`', () => {
-  const result = types.hex({ value: '#000000' })
+  const result = types.hex({ name: 'black', value: '#000000' })
 
   expect(result).toEqual({
-    object: 'hex',
-    value: '#000000',
-    ordinal: null,
-    name: null
+    __schemaname: 'Unit',
+    __typename: 'Hex',
+    name: 'black',
+    ordinal: 0,
+    value: '#000000'
   })
 })
 
 it('creates `hexa`', () => {
-  const result = types.hexa({ value: '#000000,0.5' })
+  const result = types.hexa({ name: 'md', value: '#000000ff' })
 
   expect(result).toEqual({
-    object: 'hexa',
-    value: '#000000,0.5',
-    ordinal: null,
-    name: null
+    __schemaname: 'Unit',
+    __typename: 'Hexa',
+    name: 'md',
+    ordinal: 0,
+    value: '#000000ff'
   })
 })
 
 it('creates `px`', () => {
-  const result = types.px({ value: 1 })
-
-  expect(result).toEqual({ object: 'px', value: 1, ordinal: null, name: null })
-})
-
-it('creates `name`', () => {
-  const result = types.reference({ value: 'swatches.black' })
+  const result = types.px({ name: 'md', value: 1 })
 
   expect(result).toEqual({
-    object: 'reference',
+    __schemaname: 'Unit',
+    __typename: 'Px',
+    name: 'md',
+    ordinal: 0,
+    value: 1
+  })
+})
+
+it('creates `reference`', () => {
+  const result = types.reference({ name: 'primary', value: 'swatches.black' })
+
+  expect(result).toEqual({
+    __schemaname: 'Unit',
+    __typename: 'Reference',
     value: 'swatches.black',
-    ordinal: null,
-    name: null
+    ordinal: 0,
+    name: 'primary'
   })
 })
 
 it('creates `rem`', () => {
-  const result = types.rem({ value: 1 })
+  const result = types.rem({ name: 'md', value: 1 })
 
-  expect(result).toEqual({ object: 'rem', value: 1, ordinal: null, name: null })
+  expect(result).toEqual({
+    __schemaname: 'Unit',
+    __typename: 'Rem',
+    name: 'md',
+    ordinal: 0,
+    value: 1
+  })
 })
 
 it('creates `rgb`', () => {
-  const result = types.rgb({ value: '0,0,0' })
+  const result = types.rgb({ name: 'black', value: '0,0,0' })
 
   expect(result).toEqual({
-    object: 'rgb',
-    value: '0,0,0',
-    ordinal: null,
-    name: null
+    __schemaname: 'Unit',
+    __typename: 'Rgb',
+    name: 'black',
+    ordinal: 0,
+    value: '0,0,0'
   })
 })
 
 it('creates `rgba`', () => {
-  const result = types.rgba({ value: '0,0,0,0' })
+  const result = types.rgba({ name: 'black', value: '0,0,0,0' })
 
   expect(result).toEqual({
-    object: 'rgba',
-    value: '0,0,0,0',
-    ordinal: null,
-    name: null
+    __schemaname: 'Unit',
+    __typename: 'Rgba',
+    name: 'black',
+    ordinal: 0,
+    value: '0,0,0,0'
   })
 })

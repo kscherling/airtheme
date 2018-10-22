@@ -22,11 +22,11 @@ export const BaseFontSize: AttributeBaseFontSizeT = {
   __schemaname: 'Attribute',
   __schemaname: 'Attribute',
   __typename: 'BaseFontSize',
-  view: 'Px',
-  viewable: ['Px'],
+  content: unit.px(),
   reference: null,
   unit: 'Px',
-  content: unit.px()
+  view: 'Px',
+  viewable: ['Px']
 }
 
 /**
@@ -65,13 +65,12 @@ export const BaseSpacing: AttributeBaseSpacingT = {
 
 export const Color: AttributeColorT = {
   __schemaname: 'Attribute',
-  __schemaname: 'Attribute',
   __typename: 'Color',
-  view: 'Reference',
-  viewable: ['Reference', 'Hex', 'Hexa', 'Rgb', 'Rgba'],
+  content: [],
   reference: 'swatch',
   unit: 'Reference',
-  content: []
+  view: 'Reference',
+  viewable: ['Reference', 'Hex', 'Hexa', 'Rgb', 'Rgba']
 }
 
 /**
@@ -80,13 +79,12 @@ export const Color: AttributeColorT = {
 
 export const FontFace: AttributeFontFaceT = {
   __schemaname: 'Attribute',
-  __schemaname: 'Attribute',
   __typename: 'FontFace',
-  view: 'String',
-  viewable: ['String'],
+  content: [],
   reference: null,
   unit: 'String',
-  content: []
+  view: 'String',
+  viewable: ['String']
 }
 
 /**
@@ -95,13 +93,12 @@ export const FontFace: AttributeFontFaceT = {
 
 export const FontFamily: AttributeFontFamilyT = {
   __schemaname: 'Attribute',
-  __schemaname: 'Attribute',
   __typename: 'FontFamily',
-  view: 'Reference',
-  viewable: ['Reference'],
+  content: [],
   reference: 'fontFace',
   unit: 'Reference',
-  content: []
+  view: 'Reference',
+  viewable: ['Reference']
 }
 
 /**
@@ -111,11 +108,11 @@ export const FontFamily: AttributeFontFamilyT = {
 export const FontSize: AttributeFontSizeT = {
   __schemaname: 'Attribute',
   __typename: 'FontSize',
-  view: 'Factor',
-  viewable: ['Factor', 'Px', 'Rem'],
+  content: [],
   reference: 'base.baseFontSize',
   unit: 'Factor',
-  content: []
+  view: 'Factor',
+  viewable: ['Factor', 'Px', 'Rem']
 }
 
 /**
@@ -125,11 +122,11 @@ export const FontSize: AttributeFontSizeT = {
 export const FontWeight: AttributeFontWeightT = {
   __schemaname: 'Attribute',
   __typename: 'FontWeight',
-  view: 'String',
-  viewable: ['String'],
+  content: [],
   reference: null,
   unit: 'String',
-  content: []
+  view: 'String',
+  viewable: ['String']
 }
 
 /**
@@ -139,11 +136,11 @@ export const FontWeight: AttributeFontWeightT = {
 export const LineHeight: AttributeLineHeightT = {
   __schemaname: 'Attribute',
   __typename: 'LineHeight',
-  view: 'Factor',
-  viewable: ['Factor', 'Px'],
+  content: [],
   reference: 'base.baseFontSize',
   unit: 'Factor',
-  content: []
+  view: 'Factor',
+  viewable: ['Factor', 'Px']
 }
 
 /**

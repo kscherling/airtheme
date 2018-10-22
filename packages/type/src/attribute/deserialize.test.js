@@ -1,9 +1,16 @@
 import unit from '../unit'
-import themeType from '../theme'
+import base from '../base'
 import attribute from './index'
+import themeType from '../theme'
 import deserializeAttribute from './deserialize'
 
-const theme = themeType.base()
+const theme = themeType.base({
+  base: base.base({
+    baseFontSize: attribute.baseFontSize({
+      content: unit.px({ name: 'baseFontSize', value: '16' })
+    })
+  })
+})
 
 it('deserializes', () => {
   const serialized = attribute.fontSize({

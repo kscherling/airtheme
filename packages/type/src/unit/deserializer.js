@@ -1,14 +1,14 @@
 import * as deserializers from './deserializers'
 
 const deserialize = (unit, attribute, theme) => {
-  if (!deserializers[unit.object]) {
+  if (!deserializers[unit.__typename]) {
     console.warn(
-      `Attempting to deserialize an unknown unit type: ${unit.object}`
+      `Attempting to deserialize an unknown unit type: ${unit.__typename}`
     )
     return
   }
 
-  return deserializers[unit.object](unit, attribute, theme)
+  return deserializers[unit.__typename](unit, attribute, theme)
 }
 
 export default deserialize
