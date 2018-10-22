@@ -47,35 +47,46 @@ it('can initialize with custom `attribute`', () => {
   })
 
   expect(result).toEqual({
+    __schemaname: 'Base',
+    __typename: '',
     baseFontSize: {
+      __schemaname: 'Attribute',
+      __typename: 'BaseFontSize',
       content: { some: 'data' },
-      object: 'baseFontSize',
       reference: null,
-      unit: 'px',
-      view: 'px',
-      viewable: ['px']
+      unit: 'Px',
+      view: 'Px',
+      viewable: ['Px']
     },
     baseLineHeight: {
+      __schemaname: 'Attribute',
+      __typename: 'BaseLineHeight',
       content: {
-        name: 'baseLineHeight',
-        object: 'factor',
-        ordinal: null,
-        value: 1.15
+        __schemaname: 'Unit',
+        __typename: 'Factor',
+        name: '',
+        ordinal: 0,
+        value: ''
       },
-      object: 'baseLineHeight',
       reference: 'base.baseFontSize',
-      unit: 'factor',
-      view: 'factor',
-      viewable: ['factor', 'px']
+      unit: 'Factor',
+      view: 'Factor',
+      viewable: ['Factor', 'Px']
     },
     baseSpacing: {
-      content: { name: 'baseSpacing', object: 'px', ordinal: null, value: 16 },
-      object: 'baseSpacing',
+      __schemaname: 'Attribute',
+      __typename: 'BaseSpacing',
+      content: {
+        __schemaname: 'Unit',
+        __typename: 'Px',
+        name: '',
+        ordinal: 0,
+        value: ''
+      },
       reference: null,
-      unit: 'px',
-      view: 'px',
-      viewable: ['px']
-    },
-    object: 'base'
+      unit: 'Px',
+      view: 'Px',
+      viewable: ['Px']
+    }
   })
 })

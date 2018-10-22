@@ -5,47 +5,60 @@ import unit from '../unit'
 it('creates `setting`', () => {
   const result = setting.base()
 
+  console.log(result)
+
   expect(result).toEqual({
-    object: 'setting',
+    __schemaname: 'Setting',
+    __typename: '',
     color: {
+      __schemaname: 'Attribute',
+      __typename: '',
       content: [],
-      view: 'reference',
-      viewable: ['reference', 'hex', 'hexa', 'rgb', 'rgba'],
       reference: 'swatch',
-      object: 'color',
-      unit: 'reference'
+      unit: 'Reference',
+      view: 'Reference',
+      viewable: ['Reference', 'Hex', 'Hexa', 'Rgb', 'Rgba'],
+      object: undefined
     },
     fontFamily: {
+      __schemaname: 'Attribute',
+      __typename: '',
       content: [],
-      view: 'reference',
-      viewable: ['reference', 'string'],
       reference: 'fontFace',
-      object: 'fontFamily',
-      unit: 'reference'
+      unit: 'Reference',
+      view: 'Reference',
+      viewable: ['Reference'],
+      object: undefined
     },
     fontSize: {
+      __schemaname: 'Attribute',
+      __typename: '',
       content: [],
-      view: 'factor',
-      viewable: ['factor', 'px', 'rem'],
       reference: 'base.baseFontSize',
-      object: 'fontSize',
-      unit: 'factor'
+      unit: 'Factor',
+      view: 'Factor',
+      viewable: ['Factor', 'Px', 'Rem'],
+      object: undefined
     },
     fontWeight: {
+      __schemaname: 'Attribute',
+      __typename: '',
       content: [],
-      view: 'string',
-      viewable: ['string'],
-      reference: null,
-      object: 'fontWeight',
-      unit: 'string'
+      reference: '',
+      unit: 'String',
+      view: 'String',
+      viewable: ['String'],
+      object: undefined
     },
     spacing: {
+      __schemaname: 'Attribute',
+      __typename: '',
       content: [],
-      view: 'factor',
-      viewable: ['factor', 'px'],
       reference: 'base.baseSpacing',
-      object: 'spacing',
-      unit: 'factor'
+      unit: 'Factor',
+      view: 'Factor',
+      viewable: ['Factor', 'Px'],
+      object: undefined
     }
   })
 })
@@ -58,13 +71,20 @@ it('can initialize with custom `attribute`', () => {
   })
 
   expect(result.color).toEqual({
+    __schemaname: 'Attribute',
+    __typename: 'Color',
     content: [
-      { name: null, ordinal: null, object: 'hexa', value: '#000000, 1' }
+      {
+        __schemaname: 'Unit',
+        __typename: 'Hexa',
+        name: '',
+        ordinal: 0,
+        value: '#000000, 1'
+      }
     ],
-    view: 'reference',
-    viewable: ['reference', 'hex', 'hexa', 'rgb', 'rgba'],
     reference: 'swatch',
-    object: 'color',
-    unit: 'reference'
+    unit: 'Reference',
+    view: 'Reference',
+    viewable: ['Reference', 'Hex', 'Hexa', 'Rgb', 'Rgba']
   })
 })

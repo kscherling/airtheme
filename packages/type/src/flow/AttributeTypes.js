@@ -181,3 +181,27 @@ export type AttributeSwatchT = {|
   view: 'Hex' | 'Hexa' | 'Rgb' | 'Rgba',
   viewable: ['Hex', 'Hexa', 'Rgb', 'Rgba']
 |}
+
+/**
+ * Attribute factory args type
+ */
+
+export type AttributeFactoryOptions = {|
+  content: ?UnitST | UnitST[],
+  reference: ?Reference,
+  unit: ?UnitTypename,
+  view: ?UnitTypename,
+  viewable: ?(UnitTypename[])
+|}
+
+/*
+ * @name AttributeFactoryResult
+ * Attribute factory result type
+ * This is a workaround for exact types mismatch with spread operators
+ * Also spread breaks jsdocs with auto name detection
+ */
+
+export type AttributeFactoryInstance = {|
+  ...AttributeST,
+  ...AttributeFactoryOptions
+|}

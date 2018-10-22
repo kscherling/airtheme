@@ -1,48 +1,39 @@
 import schema from './schema'
 import factoryFor from './factoryFor'
 
-const object = {
-  content: [],
-  view: 'factor',
-  viewable: ['factor', 'px', 'rem'],
-  reference: 'baseFontSize',
-  object: 'fontSize',
-  unit: 'factor'
-}
-
-it('handles empty values', () => {
-  const factory = factoryFor({}, schema)
-  const instance = factory()
-
-  expect(instance).toEqual(schema)
-})
-
-it('returns factory', () => {
-  const factory = factoryFor(object, schema)
+it('returns attribute instance with defaults', () => {
+  const factory = factoryFor(schema)
   const instance = factory()
 
   expect(instance).toEqual({
+    __schemaname: 'Attribute',
+    __typename: '',
     content: [],
-    view: 'factor',
-    viewable: ['factor', 'px', 'rem'],
-    reference: 'baseFontSize',
-    object: 'fontSize',
-    unit: 'factor'
+    reference: '',
+    unit: '',
+    view: '',
+    viewable: []
   })
 })
 
 it('initializes with content', () => {
-  const factory = factoryFor(object, schema)
+  const factory = factoryFor(schema)
   const instance = factory({
-    content: [{ some: 'stuff' }]
+    __typename: 'baseFontSize',
+    content: {},
+    view: 'factor',
+    viewable: ['px'],
+    reference: null,
+    unit: 'px'
   })
 
   expect(instance).toEqual({
-    content: [{ some: 'stuff' }],
+    __schemaname: 'Attribute',
+    __typename: 'baseFontSize',
+    content: {},
+    reference: null,
+    unit: 'px',
     view: 'factor',
-    viewable: ['factor', 'px', 'rem'],
-    reference: 'baseFontSize',
-    object: 'fontSize',
-    unit: 'factor'
+    viewable: ['px']
   })
 })

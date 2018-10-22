@@ -2,7 +2,7 @@
 import type {
   ThemeST,
   ThemeFactoryOptions,
-  ThemeFactoryResult
+  ThemeFactoryInstance
 } from '../flow/ThemeTypes'
 
 /**
@@ -11,6 +11,6 @@ import type {
  */
 
 const factoryForTheme = (schema: ThemeST) => (options: ThemeFactoryOptions) =>
-  ({ ...schema, ...options }: ThemeFactoryResult)
+  ({ ...schema, ...options }: ThemeFactoryInstance)
 
 export default factoryForTheme

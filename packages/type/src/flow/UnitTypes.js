@@ -124,3 +124,25 @@ export type UnitStringT = {|
   ordinal: Ordinal,
   value: Value
 |}
+
+/**
+ * Theme factory args type
+ */
+
+export type UnitFactoryOptions = {|
+  name: ?Name,
+  ordinal: ?Ordinal,
+  value: ?Value
+|}
+
+/*
+ * @name ThemeFactoryResult
+ * Theme factory result type
+ * This is a workaround for exact types mismatch with spread operators
+ * Also spread breaks jsdocs with auto name detection
+ */
+
+export type UnitFactoryInstance = {|
+  ...UnitST,
+  ...UnitFactoryOptions
+|}

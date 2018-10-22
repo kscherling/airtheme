@@ -1,20 +1,11 @@
-// createFactoryFor
-// Accepts a unit object and root schema
-// returns a function used to create new unit instances
+// @flow
+import type {
+  UnitST,
+  UnitFactoryOptions,
+  UnitFactoryInstance
+} from '../flow/UnitTypes'
 
-// prettier-ignore
-const factoryFor =
-  ({ object } = {}, schema) =>
-  ({ value, name, ordinal } = {}) =>
-    Object.assign(
-      {},
-      schema,
-      { object },
-      {
-        value: value || schema.value,
-        name: name || schema.name,
-        ordinal: ordinal || schema.ordinal
-      }
-    )
+const factoryForUnit = (schema: UnitST) => (options: UnitFactoryOptions) =>
+  ({ ...schema, ...options }: UnitFactoryInstance)
 
-export default factoryFor
+export default factoryForUnit

@@ -57,7 +57,7 @@ export type ThemeFactoryOptions = {|
  * Also spread breaks jsdocs with auto name detection
  */
 
-export type ThemeFactoryResult = {|
+export type ThemeFactoryInstance = {|
   ...ThemeST,
   ...ThemeFactoryOptions
 |}
