@@ -5,6 +5,11 @@ import type {
   UnitFactoryInstance
 } from '../flow/UnitTypes'
 
+/**
+ * @name factoryForUnit
+ * Unit factory for
+ */
+
 const factoryForUnit = (schema: UnitST) => (options: UnitFactoryOptions) =>
   ({ ...schema, ...options }: UnitFactoryInstance)
 

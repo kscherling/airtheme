@@ -35,3 +35,27 @@ export type SettingBaseT = {|
   fontWeight: AttributeFontFamilyT,
   spacing: AttributeSpacingT
 |}
+
+/**
+ * Setting factory args type
+ */
+
+export type SettingFactoryOptions = {|
+  color: AttributeColorT,
+  fontFamily: AttributeFontFamilyT,
+  fontSize: AttributeFontSizeT,
+  fontWeight: AttributeFontFamilyT,
+  spacing: AttributeSpacingT
+|}
+
+/*
+ * @name SettingFactoryResult
+ * Setting factory result type
+ * This is a workaround for exact types mismatch with spread operators
+ * Also spread breaks jsdocs with auto name detection
+ */
+
+export type SettingFactoryInstance = {|
+  ...SettingST,
+  ...SettingFactoryOptions
+|}

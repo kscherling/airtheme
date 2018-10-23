@@ -1,25 +1,12 @@
 import factoryFor from './factoryFor'
-import unitSchema from './schema'
+import * as types from './types'
+
+const { Factor } = types
 
 describe('#createFactoryForUnit', () => {
   it('returns unit instance with defaults', () => {
-    const factory = factoryFor(unitSchema)
+    const factory = factoryFor(Factor)
     const instance = factory()
-
-    expect(instance).toEqual({
-      __schemaname: 'Unit',
-      __typename: '',
-      name: '',
-      ordinal: 0,
-      value: ''
-    })
-  })
-
-  it('sanitizes input', () => {
-    const factory = factoryFor(unitSchema)
-    const instance = factory({
-      __typename: 'Factor'
-    })
 
     expect(instance).toEqual({
       __schemaname: 'Unit',
@@ -27,6 +14,23 @@ describe('#createFactoryForUnit', () => {
       name: '',
       ordinal: 0,
       value: ''
+    })
+  })
+
+  it('sanitizes input', () => {
+    const factory = factoryFor()
+    const instance = factory({
+      name: 'md',
+      ordinal: 1,
+      value: '1.12'
+    })
+
+    expect(instance).toEqual({
+      __schemaname: 'Unit',
+      __typename: 'Factor',
+      name: 'md',
+      ordinal: 1,
+      value: '1.12'
     })
   })
 })
