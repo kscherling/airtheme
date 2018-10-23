@@ -3,7 +3,7 @@ import { withBaseBase } from './baseBase'
 
 const updatedState = {
   theme: {
-    object: 'theme',
+    __typename: 'theme',
     fontFace: {},
     id: '123456',
     name: 'Test Theme',
@@ -19,7 +19,7 @@ const updatedState = {
       fontWeight: {},
       spacing: {}
     }),
-    swatch: { type: 'swatch' },
+    swatch: {},
     version: '1.0.0'
   }
 }

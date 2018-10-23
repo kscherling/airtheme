@@ -1,12 +1,6 @@
-import { attribute } from '@airtheme/type'
-import { baseSchema } from '@airtheme/type'
+import { attribute, base, unit } from '@airtheme/type'
 
-const baseBase = {
-  object: baseSchema.object,
-  baseFontSize: attribute.baseFontSize(),
-  baseLineHeight: attribute.baseLineHeight(),
-  baseSpacing: attribute.baseSpacing()
-}
+const baseBase = base.base()
 
 export const withBaseBase = ({ ...args }) => ({ ...baseBase, ...args })
 
