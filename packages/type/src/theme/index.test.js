@@ -68,7 +68,7 @@ const baseTheme = {
   name: 'My Awesome Theme',
   setting: {
     __schemaname: 'Setting',
-    __typename: '',
+    __typename: 'Base',
     color: {
       __schemaname: 'Attribute',
       __typename: 'Color',

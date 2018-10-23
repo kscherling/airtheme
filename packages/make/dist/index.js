@@ -797,6 +797,248 @@ if (process.env.NODE_ENV === 'development') {
 
 var composedMiddleware = compose.apply(void 0, [applyMiddleware.apply(void 0, middleware)].concat(enhancers));
 
+function symbolObservablePonyfill$1(root) {
+	var result;
+	var Symbol = root.Symbol;
+
+	if (typeof Symbol === 'function') {
+		if (Symbol.observable) {
+			result = Symbol.observable;
+		} else {
+			result = Symbol('observable');
+			Symbol.observable = result;
+		}
+	} else {
+		result = '@@observable';
+	}
+
+	return result;
+}
+
+/* global window */
+
+var root$1;
+
+if (typeof self !== 'undefined') {
+  root$1 = self;
+} else if (typeof window !== 'undefined') {
+  root$1 = window;
+} else if (typeof global !== 'undefined') {
+  root$1 = global;
+} else if (typeof module !== 'undefined') {
+  root$1 = module;
+} else {
+  root$1 = Function('return this')();
+}
+
+var result$1 = symbolObservablePonyfill$1(root$1);
+
+/**
+ * These are private action types reserved by Redux.
+ * For any unknown actions, you must return the current state.
+ * If the current state is undefined, you must return the initial state.
+ * Do not reference these action types directly in your code.
+ */
+var randomString = function randomString() {
+  return Math.random().toString(36).substring(7).split('').join('.');
+};
+
+var ActionTypes$1 = {
+  INIT: "@@redux/INIT" + randomString(),
+  REPLACE: "@@redux/REPLACE" + randomString(),
+  PROBE_UNKNOWN_ACTION: function PROBE_UNKNOWN_ACTION() {
+    return "@@redux/PROBE_UNKNOWN_ACTION" + randomString();
+  }
+};
+
+/**
+ * @param {any} obj The object to inspect.
+ * @returns {boolean} True if the argument appears to be a plain object.
+ */
+function isPlainObject$1(obj) {
+  if (typeof obj !== 'object' || obj === null) return false;
+  var proto = obj;
+
+  while (Object.getPrototypeOf(proto) !== null) {
+    proto = Object.getPrototypeOf(proto);
+  }
+
+  return Object.getPrototypeOf(obj) === proto;
+}
+
+/**
+ * Prints a warning in the console if it exists.
+ *
+ * @param {String} message The warning message.
+ * @returns {void}
+ */
+function warning$1(message) {
+  /* eslint-disable no-console */
+  if (typeof console !== 'undefined' && typeof console.error === 'function') {
+    console.error(message);
+  }
+  /* eslint-enable no-console */
+
+
+  try {
+    // This error was thrown as a convenience so that if you enable
+    // "break on all exceptions" in your console,
+    // it would pause the execution at this line.
+    throw new Error(message);
+  } catch (e) {} // eslint-disable-line no-empty
+
+}
+
+function getUndefinedStateErrorMessage$1(key, action) {
+  var actionType = action && action.type;
+  var actionDescription = actionType && "action \"" + String(actionType) + "\"" || 'an action';
+  return "Given " + actionDescription + ", reducer \"" + key + "\" returned undefined. " + "To ignore an action, you must explicitly return the previous state. " + "If you want this reducer to hold no value, you can return null instead of undefined.";
+}
+
+function getUnexpectedStateShapeWarningMessage$1(inputState, reducers, action, unexpectedKeyCache) {
+  var reducerKeys = Object.keys(reducers);
+  var argumentName = action && action.type === ActionTypes$1.INIT ? 'preloadedState argument passed to createStore' : 'previous state received by the reducer';
+
+  if (reducerKeys.length === 0) {
+    return 'Store does not have a valid reducer. Make sure the argument passed ' + 'to combineReducers is an object whose values are reducers.';
+  }
+
+  if (!isPlainObject$1(inputState)) {
+    return "The " + argumentName + " has unexpected type of \"" + {}.toString.call(inputState).match(/\s([a-z|A-Z]+)/)[1] + "\". Expected argument to be an object with the following " + ("keys: \"" + reducerKeys.join('", "') + "\"");
+  }
+
+  var unexpectedKeys = Object.keys(inputState).filter(function (key) {
+    return !reducers.hasOwnProperty(key) && !unexpectedKeyCache[key];
+  });
+  unexpectedKeys.forEach(function (key) {
+    unexpectedKeyCache[key] = true;
+  });
+  if (action && action.type === ActionTypes$1.REPLACE) return;
+
+  if (unexpectedKeys.length > 0) {
+    return "Unexpected " + (unexpectedKeys.length > 1 ? 'keys' : 'key') + " " + ("\"" + unexpectedKeys.join('", "') + "\" found in " + argumentName + ". ") + "Expected to find one of the known reducer keys instead: " + ("\"" + reducerKeys.join('", "') + "\". Unexpected keys will be ignored.");
+  }
+}
+
+function assertReducerShape$1(reducers) {
+  Object.keys(reducers).forEach(function (key) {
+    var reducer = reducers[key];
+    var initialState = reducer(undefined, {
+      type: ActionTypes$1.INIT
+    });
+
+    if (typeof initialState === 'undefined') {
+      throw new Error("Reducer \"" + key + "\" returned undefined during initialization. " + "If the state passed to the reducer is undefined, you must " + "explicitly return the initial state. The initial state may " + "not be undefined. If you don't want to set a value for this reducer, " + "you can use null instead of undefined.");
+    }
+
+    if (typeof reducer(undefined, {
+      type: ActionTypes$1.PROBE_UNKNOWN_ACTION()
+    }) === 'undefined') {
+      throw new Error("Reducer \"" + key + "\" returned undefined when probed with a random type. " + ("Don't try to handle " + ActionTypes$1.INIT + " or other actions in \"redux/*\" ") + "namespace. They are considered private. Instead, you must return the " + "current state for any unknown actions, unless it is undefined, " + "in which case you must return the initial state, regardless of the " + "action type. The initial state may not be undefined, but can be null.");
+    }
+  });
+}
+/**
+ * Turns an object whose values are different reducer functions, into a single
+ * reducer function. It will call every child reducer, and gather their results
+ * into a single state object, whose keys correspond to the keys of the passed
+ * reducer functions.
+ *
+ * @param {Object} reducers An object whose values correspond to different
+ * reducer functions that need to be combined into one. One handy way to obtain
+ * it is to use ES6 `import * as reducers` syntax. The reducers may never return
+ * undefined for any action. Instead, they should return their initial state
+ * if the state passed to them was undefined, and the current state for any
+ * unrecognized action.
+ *
+ * @returns {Function} A reducer function that invokes every reducer inside the
+ * passed object, and builds a state object with the same shape.
+ */
+
+
+function combineReducers$1(reducers) {
+  var reducerKeys = Object.keys(reducers);
+  var finalReducers = {};
+
+  for (var i = 0; i < reducerKeys.length; i++) {
+    var key = reducerKeys[i];
+
+    if (process.env.NODE_ENV !== 'production') {
+      if (typeof reducers[key] === 'undefined') {
+        warning$1("No reducer provided for key \"" + key + "\"");
+      }
+    }
+
+    if (typeof reducers[key] === 'function') {
+      finalReducers[key] = reducers[key];
+    }
+  }
+
+  var finalReducerKeys = Object.keys(finalReducers);
+  var unexpectedKeyCache;
+
+  if (process.env.NODE_ENV !== 'production') {
+    unexpectedKeyCache = {};
+  }
+
+  var shapeAssertionError;
+
+  try {
+    assertReducerShape$1(finalReducers);
+  } catch (e) {
+    shapeAssertionError = e;
+  }
+
+  return function combination(state, action) {
+    if (state === void 0) {
+      state = {};
+    }
+
+    if (shapeAssertionError) {
+      throw shapeAssertionError;
+    }
+
+    if (process.env.NODE_ENV !== 'production') {
+      var warningMessage = getUnexpectedStateShapeWarningMessage$1(state, finalReducers, action, unexpectedKeyCache);
+
+      if (warningMessage) {
+        warning$1(warningMessage);
+      }
+    }
+
+    var hasChanged = false;
+    var nextState = {};
+
+    for (var _i = 0; _i < finalReducerKeys.length; _i++) {
+      var _key = finalReducerKeys[_i];
+      var reducer = finalReducers[_key];
+      var previousStateForKey = state[_key];
+      var nextStateForKey = reducer(previousStateForKey, action);
+
+      if (typeof nextStateForKey === 'undefined') {
+        var errorMessage = getUndefinedStateErrorMessage$1(_key, action);
+        throw new Error(errorMessage);
+      }
+
+      nextState[_key] = nextStateForKey;
+      hasChanged = hasChanged || nextStateForKey !== previousStateForKey;
+    }
+
+    return hasChanged ? nextState : state;
+  };
+}
+
+/*
+ * This is a dummy function to check if the function name has been altered by minification.
+ * If the function has been minified and NODE_ENV !== 'production', warn the user.
+ */
+
+function isCrushed$1() {}
+
+if (process.env.NODE_ENV !== 'production' && typeof isCrushed$1.name === 'string' && isCrushed$1.name !== 'isCrushed') {
+  warning$1('You are currently using minified code outside of NODE_ENV === "production". ' + 'This means that you are running a slower development build of Redux. ' + 'You can use loose-envify (https://github.com/zertosh/loose-envify) for browserify ' + 'or setting mode to production in webpack (https://webpack.js.org/concepts/mode/) ' + 'to ensure you have the correct code for your production build.');
+}
+
 var UPDATE_THEME = 'UPDATE_THEME';
 
 var ADD_SWATCH = 'ADD_SWATCH';
@@ -1054,21 +1296,21 @@ var spacing = function spacing() {
   }
 };
 
-var object = function object() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : type.settingSchema.object;
+var __typename = function __typename() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : type.settingSchema.__typename;
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
   switch (action.type) {
     case UPDATE_THEME:
-      return action.theme.setting.object || type.settingSchema.object;
+      return action.theme.setting.__typename || type.settingSchema.__typename;
 
     default:
       return state;
   }
 };
 
-var setting = combineReducers({
-  object: object,
+var setting = combineReducers$1({
+  __typename: __typename,
   color: color,
   fontFamily: fontFamily,
   fontSize: fontSize,
@@ -1138,24 +1380,24 @@ var baseFontSize$2 = function baseFontSize() {
   }
 };
 
-var object$1 = function object() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : type.baseSchema.object;
+var __typename$1 = function __typename() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : type.baseSchema.__typename;
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
   switch (action.type) {
     case UPDATE_THEME:
-      return action.theme.base.object || type.baseSchema.object;
+      return action.theme.base.__typename || type.baseSchema.__typename;
 
     default:
       return state;
   }
 };
 
-var setting$1 = combineReducers({
+var setting$1 = combineReducers$1({
   baseFontSize: baseFontSize,
   baseLineHeight: baseFontSize$1,
   baseSpacing: baseFontSize$2,
-  object: object$1
+  __typename: __typename$1
 });
 
 var UPDATE_THEME_ID = 'UPDATE_THEME_ID';
@@ -1211,27 +1453,27 @@ var version = function version() {
   }
 };
 
-var object$2 = function object() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : type.themeSchema.object;
+var __typename$2 = function __typename() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : type.themeSchema.__typename;
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
   switch (action.type) {
     case UPDATE_THEME:
-      return action.theme.object || type.themeSchema.object;
+      return action.theme.__typename || type.themeSchema.__typename;
 
     default:
       return state;
   }
 };
 
-var theme = combineReducers({
+var theme = combineReducers$1({
   fontFace: fontFace,
   id: id$1,
   name: name,
   setting: setting,
   base: setting$1,
   swatch: swatch,
-  object: object$2,
+  __typename: __typename$2,
   version: version
 });
 

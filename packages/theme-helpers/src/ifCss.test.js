@@ -3,6 +3,9 @@ import * as ifCss from './ifCss'
 import assertStyleRuleIf from './test/assertStyleRuleIf'
 
 afterEach(cleanup)
+beforeEach(() => {
+  spyOn(console, 'error')
+})
 
 assertStyleRuleIf(ifCss.ifBackgroundColor, 'backgroundColor', 'primary', 'background-color', '#0b3954') // prettier-ignore
 assertStyleRuleIf(ifCss.ifBackground, 'background', 'primary', 'background', '#0b3954') // prettier-ignore

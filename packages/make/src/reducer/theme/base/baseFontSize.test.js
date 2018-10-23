@@ -12,11 +12,11 @@ it('`updateBaseFontSize` update base font size', () => {
   const initialState = store.getState()
 
   expect(initialState.theme.base.baseFontSize).toEqual({
-    content: { name: 'baseFontSize', ordinal: null, object: 'px', value: 16 },
+    content: { name: 'baseFontSize', ordinal: null, __typename: 'px', value: 16 },
     view: 'px',
     viewable: ['px'],
     reference: null,
-    object: 'baseFontSize',
+    __typename: 'baseFontSize',
     unit: 'px'
   })
 
@@ -24,8 +24,8 @@ it('`updateBaseFontSize` update base font size', () => {
   const updatedState = store.getState()
 
   expect(updatedState.theme.base.baseFontSize).toEqual({
-    content: { name: 'baseFontSize', object: 'px', ordinal: null, value: 14 },
-    object: 'baseFontSize',
+    content: { name: 'baseFontSize', __typename: 'px', ordinal: null, value: 14 },
+    __typename: 'baseFontSize',
     reference: null,
     unit: 'px',
     view: 'px',

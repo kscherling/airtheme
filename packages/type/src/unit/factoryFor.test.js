@@ -16,21 +16,4 @@ describe('#createFactoryForUnit', () => {
       value: ''
     })
   })
-
-  it('sanitizes input', () => {
-    const factory = factoryFor()
-    const instance = factory({
-      name: 'md',
-      ordinal: 1,
-      value: '1.12'
-    })
-
-    expect(instance).toEqual({
-      __schemaname: 'Unit',
-      __typename: 'Factor',
-      name: 'md',
-      ordinal: 1,
-      value: '1.12'
-    })
-  })
 })

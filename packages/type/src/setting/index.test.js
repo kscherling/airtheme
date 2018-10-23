@@ -7,7 +7,7 @@ it('creates `setting`', () => {
 
   expect(result).toEqual({
     __schemaname: 'Setting',
-    __typename: '',
+    __typename: 'Base',
     color: {
       __schemaname: 'Attribute',
       __typename: 'Color',

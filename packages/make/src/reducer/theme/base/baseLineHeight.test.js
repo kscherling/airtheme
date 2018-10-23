@@ -14,11 +14,11 @@ it('`updateBaseLineHeight` update base font size', () => {
   expect(initialState.theme.base.baseLineHeight).toEqual({
     content: {
       name: 'baseLineHeight',
-      object: 'factor',
+      __typename: 'factor',
       ordinal: null,
       value: 1.15
     },
-    object: 'baseLineHeight',
+    __typename: 'baseLineHeight',
     reference: 'base.baseFontSize',
     unit: 'factor',
     view: 'factor',
@@ -31,11 +31,11 @@ it('`updateBaseLineHeight` update base font size', () => {
   expect(updatedState.theme.base.baseLineHeight).toEqual({
     content: {
       name: 'baseLineHeight',
-      object: 'factor',
+      __typename: 'factor',
       ordinal: null,
       value: 1.25 // changed
     },
-    object: 'baseLineHeight',
+    __typename: 'baseLineHeight',
     reference: 'base.baseFontSize',
     unit: 'factor',
     view: 'factor',

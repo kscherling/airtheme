@@ -7,17 +7,17 @@ import spacing from './setting/spacing'
 import { UPDATE_THEME } from '../../constant/root'
 import { settingSchema } from '@airtheme/type'
 
-const object = (state = settingSchema.object, action) => {
+const __typename = (state = settingSchema.__typename, action) => {
   switch (action.type) {
     case UPDATE_THEME:
-      return action.theme.setting.object || settingSchema.object
+      return action.theme.setting.__typename || settingSchema.__typename
     default:
       return state
   }
 }
 
 const setting = combineReducers({
-  object,
+  __typename,
   color,
   fontFamily,
   fontSize,
