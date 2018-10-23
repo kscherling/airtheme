@@ -26,3 +26,65 @@ const fontFamily = (state = attribute.fontFamily(), action) => {
 }
 
 export default fontFamily
+
+const a = {
+  theme: {
+    setting: {
+      __schemaname: 'Setting',
+      __typename: 'Base',
+      color: {
+        __schemaname: 'Attribute',
+        __typename: 'Color',
+        content: [],
+        reference: 'swatch',
+        unit: 'Reference',
+        view: 'Reference',
+        viewable: ['Reference', 'Hex', 'Hexa', 'Rgb', 'Rgba']
+      },
+      fontFamily: {
+        __schemaname: 'Attribute',
+        __typename: 'FontFamily',
+        content: [
+          {
+            __schemaname: 'Unit',
+            __typename: 'Reference',
+            name: 'fontFace',
+            ordinal: 1,
+            value: 'Roboto'
+          }
+        ],
+        reference: 'fontFace',
+        unit: 'Reference',
+        view: 'Reference',
+        viewable: ['Reference']
+      },
+      fontSize: {
+        __schemaname: 'Attribute',
+        __typename: 'FontSize',
+        content: [],
+        reference: 'base.baseFontSize',
+        unit: 'Factor',
+        view: 'Factor',
+        viewable: ['Factor', 'Px', 'Rem']
+      },
+      fontWeight: {
+        __schemaname: 'Attribute',
+        __typename: 'FontWeight',
+        content: [],
+        reference: null,
+        unit: 'String',
+        view: 'String',
+        viewable: ['String']
+      },
+      spacing: {
+        __schemaname: 'Attribute',
+        __typename: 'Spacing',
+        content: [],
+        reference: 'base.baseSpacing',
+        unit: 'Factor',
+        view: 'Factor',
+        viewable: ['Factor', 'Px']
+      }
+    }
+  }
+}

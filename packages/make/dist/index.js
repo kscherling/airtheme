@@ -1055,12 +1055,16 @@ var not = function not(a) {
   };
 };
 
+var downcase = function downcase(str) {
+  return str && str.toLowerCase();
+};
+
 var addUnit = function addUnit(state, _ref) {
   var name = _ref.name,
       value = _ref.value,
       ordinal = _ref.ordinal;
   return _objectSpread({}, state, {
-    content: _toConsumableArray(state.content).concat([type.unit[state.unit]({
+    content: _toConsumableArray(state.content).concat([type.unit[downcase(state.unit)]({
       name: name,
       ordinal: ordinal,
       value: value
@@ -1296,6 +1300,19 @@ var spacing = function spacing() {
   }
 };
 
+var __schemaname = function __schemaname() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : type.settingSchema.__schemaname;
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case UPDATE_THEME:
+      return action.theme.setting.__schemaname || type.settingSchema.__schemaname;
+
+    default:
+      return state;
+  }
+};
+
 var __typename = function __typename() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : type.settingSchema.__typename;
   var action = arguments.length > 1 ? arguments[1] : undefined;
@@ -1310,6 +1327,7 @@ var __typename = function __typename() {
 };
 
 var setting = combineReducers$1({
+  __schemaname: __schemaname,
   __typename: __typename,
   color: color,
   fontFamily: fontFamily,
@@ -1380,6 +1398,19 @@ var baseFontSize$2 = function baseFontSize() {
   }
 };
 
+var __schemaname$1 = function __schemaname() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : type.baseSchema.__schemaname;
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case UPDATE_THEME:
+      return action.theme.base.__schemaname || type.baseSchema.__schemaname;
+
+    default:
+      return state;
+  }
+};
+
 var __typename$1 = function __typename() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : type.baseSchema.__typename;
   var action = arguments.length > 1 ? arguments[1] : undefined;
@@ -1393,11 +1424,12 @@ var __typename$1 = function __typename() {
   }
 };
 
-var setting$1 = combineReducers$1({
+var base = combineReducers$1({
+  __schemaname: __schemaname$1,
+  __typename: __typename$1,
   baseFontSize: baseFontSize,
   baseLineHeight: baseFontSize$1,
-  baseSpacing: baseFontSize$2,
-  __typename: __typename$1
+  baseSpacing: baseFontSize$2
 });
 
 var UPDATE_THEME_ID = 'UPDATE_THEME_ID';
@@ -1453,6 +1485,19 @@ var version = function version() {
   }
 };
 
+var __schemaname$2 = function __schemaname() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : type.themeSchema.__schemaname;
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case UPDATE_THEME:
+      return action.theme.__schemaname || type.themeSchema.__schemaname;
+
+    default:
+      return state;
+  }
+};
+
 var __typename$2 = function __typename() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : type.themeSchema.__typename;
   var action = arguments.length > 1 ? arguments[1] : undefined;
@@ -1467,13 +1512,14 @@ var __typename$2 = function __typename() {
 };
 
 var theme = combineReducers$1({
+  __schemaname: __schemaname$2,
+  __typename: __typename$2,
+  base: base,
   fontFace: fontFace,
   id: id$1,
   name: name,
   setting: setting,
-  base: setting$1,
   swatch: swatch,
-  __typename: __typename$2,
   version: version
 });
 

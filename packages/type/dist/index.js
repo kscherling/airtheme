@@ -359,7 +359,7 @@ var attribute = (_attribute = {
  */
 var SettingSchema = {
   __schemaname: 'Setting',
-  __typename: '',
+  __typename: 'Base',
   color: attribute.color(),
   fontFamily: attribute.fontFamily(),
   fontSize: attribute.fontSize(),
@@ -429,8 +429,8 @@ var Base$4 = {
   __typename: 'Base',
   base: root.base(),
   fontFace: attribute.fontFace(),
-  id: core.uuid(),
-  name: 'My Awesome Theme',
+  id: '',
+  name: '',
   setting: setting.base(),
   swatch: attribute.swatch(),
   version: core.VERSION
@@ -454,10 +454,12 @@ var theme = {
 /**
  *  @description Theme schema type
  */
+// Included Base typename for ease.  Technically we are mixing types and interfaces
+// Theme shouldn't necessarally be an interface and can be more of a type.
 
 var Theme = {
   __schemaname: 'Theme',
-  __typename: '',
+  __typename: 'Base',
   base: root.base(),
   fontFace: attribute.fontFace(),
   id: '',
@@ -472,7 +474,7 @@ var Theme = {
  */
 var Base$6 = {
   __schemaname: 'Base',
-  __typename: '',
+  __typename: 'Base',
   baseFontSize: attribute.baseFontSize(),
   baseLineHeight: attribute.baseLineHeight(),
   baseSpacing: attribute.baseSpacing()

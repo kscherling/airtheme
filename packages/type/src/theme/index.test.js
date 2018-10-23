@@ -64,8 +64,8 @@ const baseTheme = {
     view: 'String',
     viewable: ['String']
   },
-  id: '12345',
-  name: 'My Awesome Theme',
+  id: '',
+  name: '',
   setting: {
     __schemaname: 'Setting',
     __typename: 'Base',

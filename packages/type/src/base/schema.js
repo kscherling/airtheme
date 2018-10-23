@@ -8,7 +8,7 @@ import type { BaseST } from '../flow/BaseTypes'
 
 const Base: BaseST = {
   __schemaname: 'Base',
-  __typename: '',
+  __typename: 'Base',
   baseFontSize: attribute.baseFontSize(),
   baseLineHeight: attribute.baseLineHeight(),
   baseSpacing: attribute.baseSpacing()

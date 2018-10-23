@@ -1,7 +1,7 @@
 import { attribute, base, setting, theme, unit } from '@airtheme/type'
 
 export default theme.base({
-  name: 'My Awesome Theme',
+  name: '',
   version: '0.1.0',
   base: base.base({
     baseFontSize: attribute.baseFontSize({

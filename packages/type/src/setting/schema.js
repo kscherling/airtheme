@@ -8,7 +8,7 @@ import type { SettingST } from '../flow/SettingTypes'
 
 const SettingSchema: SettingST = {
   __schemaname: 'Setting',
-  __typename: '',
+  __typename: 'Base',
   color: attribute.color(),
   fontFamily: attribute.fontFamily(),
   fontSize: attribute.fontSize(),

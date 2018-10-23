@@ -14,8 +14,8 @@ export const Base: ThemeBaseT = {
   __typename: 'Base',
   base: base.base(),
   fontFace: attribute.fontFace(),
-  id: uuid(),
-  name: 'My Awesome Theme',
+  id: '',
+  name: '',
   setting: setting.base(),
   swatch: attribute.swatch(),
   version: VERSION

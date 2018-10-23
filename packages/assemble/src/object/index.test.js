@@ -16,7 +16,7 @@ test('builds theme object', () => {
       Helvetica: 'Helvetica'
     },
     id: 'test_id',
-    name: 'My Awesome Theme',
+    name: '',
     setting: {
       color: { ltGrey: '#bfd7ea', primary: '#0b3954', secondary: '#ff6663' },
       fontFamily: {

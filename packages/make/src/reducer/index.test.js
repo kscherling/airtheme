@@ -14,7 +14,7 @@ it('initial state (baseState)', () => {
   const store = makeStore()
   const state = store.getState()
 
-  expect(state).toEqual(baseState)
+  expect(state.theme).toEqual(baseState)
 })
 
 it('`updateTheme` updates theme', () => {

@@ -12,7 +12,7 @@ let store
 
 beforeEach(() => {
   store = makeStore()
-  store.dispatch(updateTheme(baseState.theme))
+  store.dispatch(updateTheme(baseState))
 })
 
 it('`addSwatch` adds a swatch', () => {

@@ -3,15 +3,16 @@ import { withBaseBase } from './baseBase'
 
 const updatedState = {
   theme: {
-    __typename: 'theme',
-    fontFace: {},
-    id: '123456',
-    name: 'Test Theme',
+    __schemaname: 'Theme',
+    __typename: 'Base',
     base: withBaseBase({
       baseFontSize: {},
       baseLineHeight: {},
       baseSpacing: {}
     }),
+    fontFace: {},
+    id: '',
+    name: 'Test Theme',
     setting: withBaseSetting({
       color: {},
       fontFamily: {},
@@ -25,7 +26,7 @@ const updatedState = {
 }
 
 export const withUpdatedState = ({ ...args }) => ({
-  theme: { ...updatedState.theme, ...args }
+  theme: { ...updatedState, ...args }
 })
 
 export default updatedState

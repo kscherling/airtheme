@@ -1,9 +1,14 @@
 import { unit } from '@airtheme/type'
 import { eq, not } from './helpers'
 
+const downcase = str => str && str.toLowerCase()
+
 export const addUnit = (state, { name, value, ordinal }) => ({
   ...state,
-  content: [...state.content, unit[state.unit]({ name, ordinal, value })]
+  content: [
+    ...state.content,
+    unit[downcase(state.unit)]({ name, ordinal, value })
+  ]
 })
 
 export const removeUnit = (state, { original }) => ({

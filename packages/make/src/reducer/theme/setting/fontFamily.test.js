@@ -13,7 +13,7 @@ let store
 
 beforeEach(() => {
   store = makeStore()
-  store.dispatch(updateTheme(baseState.theme))
+  store.dispatch(updateTheme(baseState))
 })
 
 it('`addFontFamily` adds a font family', () => {
@@ -28,9 +28,8 @@ it('`addFontFamily` adds a font family', () => {
   })
 
   store.dispatch(addFontFamily(value, name, ordinal))
-  const state = store.getState()
 
-  expect(state).toEqual(updatedState)
+  expect(store.getState()).toEqual(updatedState)
 })
 
 it('`removeFontFamily` removes font family', () => {
@@ -50,9 +49,8 @@ it('`removeFontFamily` removes font family', () => {
 
   store.dispatch(updateTheme(initialState.theme))
   store.dispatch(removeFontFamily(fontFamilyA))
-  const state = store.getState()
 
-  expect(state).toEqual(updatedState)
+  expect(store.getState()).toEqual(updatedState)
 })
 
 it('`updateFontFamily` update font family', () => {
@@ -77,12 +75,7 @@ it('`updateFontFamily` update font family', () => {
   })
 
   store.dispatch(updateTheme(initialState.theme))
-  store.dispatch(
-    updateFontFamily(
-      initialFontFamilyA,
-      updatedFactor
-    )
-  )
+  store.dispatch(updateFontFamily(initialFontFamilyA, updatedFactor))
   const state = store.getState()
 
   expect(state).toEqual(updatedState)
