@@ -1,37 +1,72 @@
-/*
+// @flow
 
-Example
+/**
+ * The accumulated object values passed through the pipeableFns
+ * similar in concept to an array reduce accumulator.
+ */
 
-pipeable functions must accept two params and return the called value of next with the output as the sole argument
+type Accumulator = {}
 
-const pipeable(next, input = {}) => {
-  const output = reducer(input)
+/**
+ * The data passed through the pipeableFn's as reference
+ * The source of accumulated values
+ */
+type InitialData = {}
 
-  return next(output)
-}
+/**
+ * Recursive function called so long as args array has length
+ * @private
+ */
 
-const pipeline = pipe(
-  pipeableA,
-  pipeableB,
-  pipeableC
-)
+type NextFn = (Accumulator, InitialData) => Accumulator | void
 
-pipeline({ some: 'data' })
+/**
+ * Similar concept to a reducer fn, called recursively in a pipe
+ * Aways returns the result of the nextFn arg called with accumulator and initialData
+ *
+ * @example
+ * const pipeableFn = (nextFn, accumulator = {}, initialData) => {
+ *   const output = {
+ *     ...accumulator,
+       foo: transform(accumulator.foo)
+ *   }
+ *
+ *   return nextFn(output, initialData)
+ * }
+ */
 
-*/
+type PipeableFn = (
+  nextFn: NextFn,
+  accumulator: Accumulator,
+  data: InitialData
+) => Accumulator
 
-const pipe = theme => (...args) => {
-  const next = (output, theme) => {
-    const fn = args.shift()
+/**
+ * Pipe data through a list of reducer fn's and return an accumulated value
+ *
+ * @example
+ *
+ * const pipeline = pipe(
+ *   pipeableA,
+ *   pipeableB,
+ *   pipeableC
+ * )
+ *
+ * pipeline({ some: 'data' })
+ */
 
-    if (fn) {
-      return fn(next, output, theme)
+const pipe = (...args: PipeableFn[]) => (data: InitialData) => {
+  const next: NextFn = (accumulator, data) => {
+    const pipeableFn = args.shift()
+
+    if (pipeableFn) {
+      return pipeableFn(next, accumulator, data)
     }
+
+    return accumulator
   }
 
-  return next({}, theme)
+  return next({}, data)
 }
-
-export const output = (_, output) => output
 
 export default pipe
