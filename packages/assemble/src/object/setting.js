@@ -13,36 +13,45 @@ import {
   SWATCH_KEY
 } from '@airtheme/core'
 
-const setting = (next, input, theme) => {
-  return next(
+const setting = (nextFn, accumulator, themeData) =>
+  nextFn(
     {
-      ...input,
-      [BASE_FONT_SIZE_KEY]: deserializeAttribute(theme.base.baseFontSize, theme)
-        .baseFontSize,
-      [BASE_SPACING_KEY]: deserializeAttribute(theme.base.baseSpacing, theme)
-        .baseSpacing,
+      ...accumulator,
+      [BASE_FONT_SIZE_KEY]: deserializeAttribute(
+        themeData.base.baseFontSize,
+        themeData
+      ).baseFontSize,
+      [BASE_SPACING_KEY]: deserializeAttribute(
+        themeData.base.baseSpacing,
+        themeData
+      ).baseSpacing,
       [BASE_LINE_HEIGHT_KEY]: deserializeAttribute(
-        theme.base.baseLineHeight,
-        theme
+        themeData.base.baseLineHeight,
+        themeData
       ).baseLineHeight,
-      [FONT_FACE_KEY]: deserializeAttribute(theme.fontFace, theme),
-      [SWATCH_KEY]: deserializeAttribute(theme.swatch, theme),
+      [FONT_FACE_KEY]: deserializeAttribute(themeData.fontFace, themeData),
+      [SWATCH_KEY]: deserializeAttribute(themeData.swatch, themeData),
       [SETTING_KEY]: {
-        [COLOR_KEY]: deserializeAttribute(theme.setting.color, theme),
+        [COLOR_KEY]: deserializeAttribute(themeData.setting.color, themeData),
         [FONT_FAMILY_KEY]: deserializeAttribute(
-          theme.setting.fontFamily,
-          theme
+          themeData.setting.fontFamily,
+          themeData
         ),
-        [FONT_SIZE_KEY]: deserializeAttribute(theme.setting.fontSize, theme),
+        [FONT_SIZE_KEY]: deserializeAttribute(
+          themeData.setting.fontSize,
+          themeData
+        ),
         [FONT_WEIGHT_KEY]: deserializeAttribute(
-          theme.setting.fontWeight,
-          theme
+          themeData.setting.fontWeight,
+          themeData
         ),
-        [SPACING_KEY]: deserializeAttribute(theme.setting.spacing, theme)
+        [SPACING_KEY]: deserializeAttribute(
+          themeData.setting.spacing,
+          themeData
+        )
       }
     },
-    theme
+    themeData
   )
-}
 
 export default setting
