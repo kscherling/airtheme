@@ -1,28 +1,25 @@
-import { withBaseSetting } from './baseSetting'
-import { withBaseBase } from './baseBase'
+import { setting, base } from '@airtheme/type'
 
 const updatedState = {
-  theme: {
-    __schemaname: 'Theme',
-    __typename: 'Base',
-    base: withBaseBase({
-      baseFontSize: {},
-      baseLineHeight: {},
-      baseSpacing: {}
-    }),
-    fontFace: {},
-    id: '',
-    name: 'Test Theme',
-    setting: withBaseSetting({
-      color: {},
-      fontFamily: {},
-      fontSize: {},
-      fontWeight: {},
-      spacing: {}
-    }),
-    swatch: {},
-    version: '1.0.0'
-  }
+  __schemaname: 'Theme',
+  __typename: 'Base',
+  base: base.base({
+    baseFontSize: {},
+    baseLineHeight: {},
+    baseSpacing: {}
+  }),
+  fontFace: {},
+  id: '',
+  name: 'Test Theme',
+  setting: setting.base({
+    color: {},
+    fontFamily: {},
+    fontSize: {},
+    fontWeight: {},
+    spacing: {}
+  }),
+  swatch: {},
+  version: '1.0.0'
 }
 
 export const withUpdatedState = ({ ...args }) => ({

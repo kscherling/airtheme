@@ -6,10 +6,12 @@ import {
 import { attribute } from '@airtheme/type'
 import { updateBaseUnit } from '../../../lib/unitReducers'
 
-const baseFontSize = (state = attribute.baseLineHeight(), action) => {
+const defaultBaseLineHeight = attribute.baseLineHeight()
+
+const baseLineHeight = (state = defaultBaseLineHeight, action) => {
   switch (action.type) {
     case UPDATE_THEME:
-      return action.theme.base.baseLineHeight
+      return action.theme.base.baseLineHeight || defaultBaseLineHeight
     case UPDATE_BASE_LINE_HEIGHT_VIEW:
       return { ...state, view: action.view }
     case UPDATE_BASE_LINE_HEIGHT:
@@ -19,4 +21,4 @@ const baseFontSize = (state = attribute.baseLineHeight(), action) => {
   }
 }
 
-export default baseFontSize
+export default baseLineHeight

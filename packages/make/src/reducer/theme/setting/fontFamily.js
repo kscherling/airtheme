@@ -8,7 +8,9 @@ import {
 import { attribute } from '@airtheme/type'
 import { addUnit, removeUnit, updateUnit } from '../../../lib/unitReducers'
 
-const fontFamily = (state = attribute.fontFamily(), action) => {
+const defaultFontFamily = attribute.fontFamily()
+
+const fontFamily = (state = defaultFontFamily, action) => {
   switch (action.type) {
     case UPDATE_THEME:
       return action.theme.setting.fontFamily

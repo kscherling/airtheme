@@ -7,21 +7,21 @@ import {
   updateThemeName
 } from '../action/theme'
 import { updateTheme } from '../action/root'
-import baseState from '../test/baseState'
 import updatedState from '../test/updatedState'
+import { theme } from '@airtheme/type'
 
-it('initial state (baseState)', () => {
+it('initial state', () => {
   const store = makeStore()
   const state = store.getState()
 
-  expect(state.theme).toEqual(baseState)
+  expect(state).toEqual({ theme: theme.base() })
 })
 
 it('`updateTheme` updates theme', () => {
   const store = makeStore()
 
-  store.dispatch(updateTheme(updatedState.theme))
+  store.dispatch(updateTheme(updatedState))
   const state = store.getState()
 
-  expect(state).toEqual(updatedState)
+  expect(state).toEqual({ theme: updatedState })
 })

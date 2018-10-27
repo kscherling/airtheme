@@ -13,8 +13,11 @@ import {
   SWATCH_KEY
 } from '@airtheme/core'
 
-const setting = (nextFn, accumulator, themeData) =>
-  nextFn(
+const setting = (nextFn, accumulator, themeData) => {
+  console.log(
+    deserializeAttribute(themeData.base.baseFontSize, themeData).baseFontSize
+  )
+  const result = nextFn(
     {
       ...accumulator,
       [BASE_FONT_SIZE_KEY]: deserializeAttribute(
@@ -53,5 +56,10 @@ const setting = (nextFn, accumulator, themeData) =>
     },
     themeData
   )
+  // console.log('accumulator', accumulator)
+  // console.log('setting', result)
+  // console.log('setting', themeData)
 
+  return result
+}
 export default setting

@@ -8,7 +8,9 @@ import {
 import { attribute } from '@airtheme/type'
 import { addUnit, removeUnit, updateUnit } from '../../lib/unitReducers'
 
-const swatch = (state = attribute.swatch(), action) => {
+const defaultSwatch = attribute.swatch()
+
+const swatch = (state = defaultSwatch, action) => {
   switch (action.type) {
     case UPDATE_THEME:
       return action.theme.swatch || {}

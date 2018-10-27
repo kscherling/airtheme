@@ -7,10 +7,12 @@ import {
 import { attribute } from '@airtheme/type'
 import { addUnit, removeUnit, updateUnit } from '../../lib/unitReducers'
 
-const fontFace = (state = attribute.fontFace(), action) => {
+const defaultFontFace = attribute.fontFace()
+
+const fontFace = (state = defaultFontFace, action) => {
   switch (action.type) {
     case UPDATE_THEME:
-      return action.theme.fontFace || {}
+      return action.theme.fontFace || defaultFontFace
     case ADD_FONT_FACE:
       return addUnit(state, action)
     case REMOVE_FONT_FACE:

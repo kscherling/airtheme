@@ -630,6 +630,9 @@ var validTypes = function validTypes() {
 };
 
 var deserialize$1 = function deserialize$$1(attribute, theme) {
+  console.log('attribute', attribute);
+  console.log('theme', theme);
+
   if (isEmpty(attribute)) {
     console.warn('Content is empty');
     return;
