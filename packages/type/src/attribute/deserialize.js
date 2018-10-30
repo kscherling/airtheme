@@ -37,9 +37,6 @@ const validTypes = ({ content, unit } = {}) =>
     : content && unit === content.__typename
 
 const deserialize = (attribute, theme) => {
-  console.log('attribute', attribute)
-  console.log('theme', theme)
-
   if (isEmpty(attribute)) {
     console.warn('Content is empty')
     return

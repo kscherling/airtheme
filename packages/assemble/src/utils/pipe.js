@@ -35,7 +35,7 @@ type NextFn = (Accumulator, InitialData) => Accumulator | void
  * }
  */
 
-type PipeableFn = (
+export type PipeableFn = (
   nextFn: NextFn,
   accumulator: Accumulator,
   data: InitialData
@@ -56,17 +56,17 @@ type PipeableFn = (
  */
 
 const pipe = (...args: PipeableFn[]) => (data: InitialData) => {
-  const next: NextFn = (accumulator, data) => {
+  const nextFn: NextFn = (accumulator, data) => {
     const pipeableFn = args.shift()
 
     if (pipeableFn) {
-      return pipeableFn(next, accumulator, data)
+      return pipeableFn(nextFn, accumulator, data)
     }
 
     return accumulator
   }
 
-  return next({}, data)
+  return nextFn({}, data)
 }
 
 export default pipe
