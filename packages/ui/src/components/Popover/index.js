@@ -64,8 +64,6 @@ class Popover extends Component {
     const { show, rootElement } = this
     const { renderTrigger, renderContent, width } = this.props
 
-    const t = true
-
     return (
       <Manager>
         <Reference>
