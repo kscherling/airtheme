@@ -36,7 +36,8 @@ class Popover extends Component {
   static defaultProps = {
     renderTrigger: noop,
     renderContent: noop,
-    width: '220px'
+    placement: 'bottom',
+    width: '200px'
   }
 
   constructor(props) {
@@ -62,7 +63,7 @@ class Popover extends Component {
   render() {
     const { on } = this.state
     const { show, rootElement } = this
-    const { renderTrigger, renderContent, width } = this.props
+    const { renderTrigger, renderContent, width, placement } = this.props
 
     return (
       <Manager>
@@ -72,7 +73,7 @@ class Popover extends Component {
         {on &&
           createPortal(
             <Popper
-              placement="bottom"
+              placement={placement}
               modifiers={{
                 preventOverflow: { enabled: false },
                 hide: { enabled: false }

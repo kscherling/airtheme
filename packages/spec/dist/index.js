@@ -1640,7 +1640,7 @@ var Typography = function Typography(props) {
 };
 
 function _templateObject$8() {
-  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  height: 200px;\n  background: ", ";\n  border-top-right-radius: 6px;\n  border-top-left-radius: 6px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  height: 200px;\n  background: ", ";\n"]);
 
   _templateObject$8 = function _templateObject() {
     return data;
