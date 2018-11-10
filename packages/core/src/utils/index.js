@@ -1,4 +1,6 @@
 export { default as uuid } from './uuid'
 export { default as noop } from './noop'
+export { default as compose } from './compose'
+export { default as curry } from './curry'
 export * from './castTypes'
 export * from './castString'
