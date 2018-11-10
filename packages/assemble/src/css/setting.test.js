@@ -1,9 +1,9 @@
-import assemble from '../index'
+import setting from './setting'
 import basicTheme from '../test/theme'
-import { VERSION } from '@airtheme/core'
+import pipe from '../utils/pipe'
 
-test('builds css custom attributes from settings', () => {
-  const result = assemble.css(basicTheme)
+test('builds base values', () => {
+  const result = pipe(setting)(basicTheme)
 
   expect(result).toEqual({
     '--base-font-size': '16px',
@@ -28,6 +28,4 @@ test('builds css custom attributes from settings', () => {
     '--swatch_pastel red': '#ff6663',
     '--swatch_prussian blue': '#0b3954'
   })
-
-  expect(true).toEqual(true)
 })
