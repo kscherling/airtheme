@@ -1579,168 +1579,161 @@ var mapTheme = function mapTheme(_ref) {
     theme: theme
   };
 };
-var mapId = function mapId(_ref2) {
-  var id = _ref2.theme.id;
+var mapMeta = function mapMeta(_ref2) {
+  var _ref2$theme = _ref2.theme,
+      id = _ref2$theme.id,
+      name = _ref2$theme.name,
+      type$$1 = _ref2$theme.type,
+      version = _ref2$theme.version;
   return {
-    id: id
-  };
-};
-var mapName = function mapName(_ref3) {
-  var name = _ref3.theme.name;
-  return {
-    name: name
-  };
-};
-var mapType = function mapType(_ref4) {
-  var type$$1 = _ref4.theme.type;
-  return {
-    type: type$$1
-  };
-};
-var mapVersion = function mapVersion(_ref5) {
-  var version = _ref5.theme.version;
-  return {
+    id: id,
+    name: name,
+    type: type$$1,
     version: version
   };
 };
-var mapBaseFontSize = function mapBaseFontSize(_ref6) {
-  var baseFontSize = _ref6.theme.base.baseFontSize;
+var mapBaseFontSize = function mapBaseFontSize(_ref3) {
+  var baseFontSize = _ref3.theme.base.baseFontSize;
   return {
     baseFontSize: baseFontSize
   };
 }; // prettier-ignore
 
-var mapBaseFontSizeContent = function mapBaseFontSizeContent(_ref7) {
-  var content = _ref7.theme.base.baseFontSize.content;
+var mapBaseFontSizeContent = function mapBaseFontSizeContent(_ref4) {
+  var content = _ref4.theme.base.baseFontSize.content;
   return {
     content: content
   };
 }; // prettier-ignore
 
-var mapBaseLineHeight = function mapBaseLineHeight(_ref8) {
-  var baseLineHeight = _ref8.theme.base.baseLineHeight;
+var mapBaseLineHeight = function mapBaseLineHeight(_ref5) {
+  var baseLineHeight = _ref5.theme.base.baseLineHeight;
   return {
     baseLineHeight: baseLineHeight
   };
 }; // prettier-ignore
 
-var mapBaseLineHeightContent = function mapBaseLineHeightContent(_ref9) {
-  var content = _ref9.theme.base.baseLineHeight.content;
+var mapBaseLineHeightContent = function mapBaseLineHeightContent(_ref6) {
+  var content = _ref6.theme.base.baseLineHeight.content;
   return {
     content: content
   };
 }; // prettier-ignore
 
-var mapBaseSpacing = function mapBaseSpacing(_ref10) {
-  var baseSpacing = _ref10.theme.base.baseSpacing;
+var mapBaseSpacing = function mapBaseSpacing(_ref7) {
+  var baseSpacing = _ref7.theme.base.baseSpacing;
   return {
     baseSpacing: baseSpacing
   };
 }; // prettier-ignore
 
-var mapBaseSpacingContent = function mapBaseSpacingContent(_ref11) {
-  var content = _ref11.theme.base.baseSpacing.content;
+var mapBaseSpacingContent = function mapBaseSpacingContent(_ref8) {
+  var content = _ref8.theme.base.baseSpacing.content;
   return {
     content: content
   };
 }; // prettier-ignore
 
-var mapFontFace = function mapFontFace(_ref12) {
-  var fontFace = _ref12.theme.fontFace;
+var mapFontFace = function mapFontFace(_ref9) {
+  var fontFace = _ref9.theme.fontFace;
   return {
     fontFace: fontFace
   };
 }; // prettier-ignore
 
-var mapFontFaceContent = function mapFontFaceContent(_ref13) {
-  var content = _ref13.theme.fontFace.content;
+var mapFontFaceContent = function mapFontFaceContent(_ref10) {
+  var content = _ref10.theme.fontFace.content;
   return {
     content: content
   };
 }; // prettier-ignore
 
-var mapSwatch = function mapSwatch(_ref14) {
-  var swatch = _ref14.theme.swatch;
+var mapSwatch = function mapSwatch(_ref11) {
+  var swatch = _ref11.theme.swatch;
   return {
     swatch: swatch
   };
 };
-var mapSwatchContent = function mapSwatchContent(_ref15) {
-  var content = _ref15.theme.swatch.content;
+var mapSwatchContent = function mapSwatchContent(_ref12) {
+  var content = _ref12.theme.swatch.content;
   return {
     content: content
   };
 }; // prettier-ignore
 
-var mapColor = function mapColor(_ref16) {
-  var color = _ref16.theme.setting.color;
+var mapColor = function mapColor(_ref13) {
+  var color = _ref13.theme.setting.color;
   return {
     color: color
   };
 }; // prettier-ignore
 
-var mapColorContent = function mapColorContent(_ref17) {
-  var content = _ref17.theme.setting.color.content;
+var mapColorContent = function mapColorContent(_ref14) {
+  var content = _ref14.theme.setting.color.content;
   return {
     content: content
   };
 }; // prettier-ignore
 
-var mapFontFamily = function mapFontFamily(_ref18) {
-  var fontFamily = _ref18.theme.setting.fontFamily;
+var mapFontFamily = function mapFontFamily(_ref15) {
+  var fontFamily = _ref15.theme.setting.fontFamily;
   return {
     fontFamily: fontFamily
   };
 }; // prettier-ignore
 
-var mapFontFamilyContent = function mapFontFamilyContent(_ref19) {
-  var content = _ref19.theme.setting.fontFamily.content;
+var mapFontFamilyContent = function mapFontFamilyContent(_ref16) {
+  var content = _ref16.theme.setting.fontFamily.content;
   return {
     content: content
   };
 }; // prettier-ignore
 
-var mapFontSize = function mapFontSize(_ref20) {
-  var fontSize = _ref20.theme.setting.fontSize;
+var mapFontSize = function mapFontSize(_ref17) {
+  var fontSize = _ref17.theme.setting.fontSize;
   return {
     fontSize: fontSize
   };
 }; // prettier-ignore
 
-var mapFontSizeContent = function mapFontSizeContent(_ref21) {
-  var content = _ref21.theme.setting.fontSize.content;
+var mapFontSizeContent = function mapFontSizeContent(_ref18) {
+  var content = _ref18.theme.setting.fontSize.content;
   return {
     content: content
   };
 }; // prettier-ignore
 
-var mapFontWeight = function mapFontWeight(_ref22) {
-  var fontWeight = _ref22.theme.setting.fontWeight;
+var mapFontWeight = function mapFontWeight(_ref19) {
+  var fontWeight = _ref19.theme.setting.fontWeight;
   return {
     fontWeight: fontWeight
   };
 }; // prettier-ignore
 
-var mapFontWeightContent = function mapFontWeightContent(_ref23) {
-  var content = _ref23.theme.setting.fontWeight.content;
+var mapFontWeightContent = function mapFontWeightContent(_ref20) {
+  var content = _ref20.theme.setting.fontWeight.content;
   return {
     content: content
   };
 }; // prettier-ignore
 
-var mapSpacing = function mapSpacing(_ref24) {
-  var spacing = _ref24.theme.setting.spacing;
+var mapSpacing = function mapSpacing(_ref21) {
+  var spacing = _ref21.theme.setting.spacing;
   return {
     spacing: spacing
   };
 }; // prettier-ignore
 
-var mapSpacingContent = function mapSpacingContent(_ref25) {
-  var content = _ref25.theme.setting.spacing.content;
+var mapSpacingContent = function mapSpacingContent(_ref22) {
+  var content = _ref22.theme.setting.spacing.content;
   return {
     content: content
   };
 }; // prettier-ignore
+
+var withThemeMeta = reactRedux.connect(mapMeta, {
+  updateThemeName: updateThemeName
+});
 
 var withBaseFontSizeAttribute = reactRedux.connect(mapBaseFontSize);
 var withBaseFontSizeContent = reactRedux.connect(mapBaseFontSizeContent, {
@@ -1929,10 +1922,7 @@ exports.addSpacing = addSpacing;
 exports.removeSpacing = removeSpacing;
 exports.updateSpacing = updateSpacing;
 exports.mapTheme = mapTheme;
-exports.mapId = mapId;
-exports.mapName = mapName;
-exports.mapType = mapType;
-exports.mapVersion = mapVersion;
+exports.mapMeta = mapMeta;
 exports.mapBaseFontSize = mapBaseFontSize;
 exports.mapBaseFontSizeContent = mapBaseFontSizeContent;
 exports.mapBaseLineHeight = mapBaseLineHeight;
@@ -1953,6 +1943,7 @@ exports.mapFontWeight = mapFontWeight;
 exports.mapFontWeightContent = mapFontWeightContent;
 exports.mapSpacing = mapSpacing;
 exports.mapSpacingContent = mapSpacingContent;
+exports.withThemeMeta = withThemeMeta;
 exports.withBaseFontSizeAttribute = withBaseFontSizeAttribute;
 exports.withBaseFontSizeContent = withBaseFontSizeContent;
 exports.withBaseLineHeightAttribute = withBaseLineHeightAttribute;

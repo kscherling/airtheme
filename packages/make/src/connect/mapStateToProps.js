@@ -1,9 +1,11 @@
 export const mapTheme = ({ theme }) => ({ theme })
 
-export const mapId = ({ theme: { id } }) => ({ id })
-export const mapName = ({ theme: { name } }) => ({ name })
-export const mapType = ({ theme: { type } }) => ({ type })
-export const mapVersion = ({ theme: { version } }) => ({ version })
+export const mapMeta = ({ theme: { id, name, type, version } }) => ({
+  id,
+  name,
+  type,
+  version
+})
 
 export const mapBaseFontSize = ({ theme: { base: { baseFontSize }}}) => ({ baseFontSize }) // prettier-ignore
 export const mapBaseFontSizeContent = ({ theme: { base: { baseFontSize: { content }}}}) => ({ content }) // prettier-ignore
