@@ -1,12 +1,12 @@
 // @flow
 import attribute from '../attribute'
-import type { SettingST } from '../flow/SettingTypes'
+import type { SettingBaseT } from '../flow/SettingTypes'
 
 /**
- * @description Setting schema object.
+ * @description Setting base (default) type
  */
 
-const SettingSchema: SettingST = {
+export const Base: SettingBaseT = {
   __schemaname: 'Setting',
   __typename: 'Base',
   color: attribute.color(),
@@ -15,5 +15,3 @@ const SettingSchema: SettingST = {
   fontWeight: attribute.fontWeight(),
   spacing: attribute.spacing()
 }
-
-export default SettingSchema

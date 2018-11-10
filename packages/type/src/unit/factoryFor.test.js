@@ -1,29 +1,19 @@
 import factoryFor from './factoryFor'
+import * as types from './types'
+
+const { Factor } = types
 
 describe('#createFactoryForUnit', () => {
-  it('returns factory', () => {
-    const schema = { object: null, value: null }
-    const object = { object: 'object' }
-
-    const factory = factoryFor(object, schema)
-    const instance = factory({ value: 'value' })
+  it('returns unit instance with defaults', () => {
+    const factory = factoryFor(Factor)
+    const instance = factory()
 
     expect(instance).toEqual({
-      object: 'object',
-      value: 'value'
-    })
-  })
-
-  it('sanitizes input', () => {
-    const schema = { object: null, value: null }
-    const object = { object: 'object' }
-
-    const factory = factoryFor(object, schema)
-    const instance = factory({ value: 'value', nope: true })
-
-    expect(instance).toEqual({
-      object: 'object',
-      value: 'value'
+      __schemaname: 'Unit',
+      __typename: 'Factor',
+      name: '',
+      ordinal: 0,
+      value: ''
     })
   })
 })

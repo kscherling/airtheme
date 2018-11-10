@@ -5,21 +5,6 @@ Object.defineProperty(exports, '__esModule', { value: true });
 var core = require('@airtheme/core');
 var fp = require('fp');
 
-/**
- *  @description Theme schema object.
- */
-var ThemeSchema = {
-  __schemaname: 'Theme',
-  __typename: null,
-  base: null,
-  fontFace: null,
-  id: null,
-  name: null,
-  setting: null,
-  swatch: null,
-  version: null
-};
-
 function _defineProperty(obj, key, value) {
   if (key in obj) {
     Object.defineProperty(obj, key, {
@@ -55,403 +40,453 @@ function _objectSpread(target) {
 }
 
 /**
- * @description Attribute schema object.
+ * Unit factor type
  */
-var AttributeSchema = {
-  __schemaname: 'Attribute',
-  __typename: null,
-  content: [],
-  object: null,
-  reference: null,
-  unit: null,
-  view: null,
-  viewable: null
+var Factor = {
+  __schemaname: 'Unit',
+  __typename: 'Factor',
+  name: '',
+  ordinal: 0,
+  value: ''
+  /**
+   * Unit hex type
+   */
+
 };
+var Hex = {
+  __schemaname: 'Unit',
+  __typename: 'Hex',
+  name: '',
+  ordinal: 0,
+  value: ''
+  /**
+   * Unit hexa type
+   */
 
-// prettier-ignore
-var factoryFor = function factoryFor() {
-  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-      object = _ref.object,
-      view = _ref.view,
-      unit = _ref.unit,
-      viewable = _ref.viewable,
-      reference = _ref.reference,
-      content = _ref.content;
-
-  var schema = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-  return function () {
-    var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-        factoryDisplay = _ref2.view,
-        factoryContent = _ref2.content;
-
-    return Object.assign({}, schema, {
-      object: object || schema.object,
-      view: factoryDisplay || view || schema.view,
-      unit: unit || schema.unit,
-      viewable: viewable || schema.viewable,
-      reference: reference || schema.reference,
-      content: factoryContent || content || schema.content
-    });
-  };
 };
+var Hexa = {
+  __schemaname: 'Unit',
+  __typename: 'Hexa',
+  name: '',
+  ordinal: 0,
+  value: ''
+  /**
+   * Unit px type
+   */
 
-var color = {
-  view: core.REFERENCE,
-  viewable: [core.REFERENCE, core.HEX, core.HEXA, core.RGB, core.RGBA],
-  reference: core.SWATCH,
-  object: core.COLOR,
-  unit: core.REFERENCE
 };
+var Px = {
+  __schemaname: 'Unit',
+  __typename: 'Px',
+  name: '',
+  ordinal: 0,
+  value: ''
+  /**
+   * Unit reference type
+   */
 
-var fontFamily = {
-  view: core.REFERENCE,
-  viewable: [core.REFERENCE, core.STRING],
-  reference: core.FONT_FACE,
-  object: core.FONT_FAMILY,
-  unit: core.REFERENCE
 };
+var Reference = {
+  __schemaname: 'Unit',
+  __typename: 'Reference',
+  name: '',
+  ordinal: 0,
+  value: ''
+  /**
+   * Unit rem type
+   */
 
-var fontSize = {
-  view: core.FACTOR,
-  viewable: [core.FACTOR, core.PX, core.REM],
-  reference: core.BASE_FONT_SIZE_PATH,
-  object: core.FONT_SIZE,
-  unit: core.FACTOR
 };
+var Rem = {
+  __schemaname: 'Unit',
+  __typename: 'Rem',
+  name: '',
+  ordinal: 0,
+  value: ''
+  /**
+   * Unit rgb type
+   */
 
-var fontFace = {
-  view: core.STRING,
-  viewable: [core.STRING],
-  reference: null,
-  object: core.FONT_FACE,
-  unit: core.STRING
 };
+var Rgb = {
+  __schemaname: 'Unit',
+  __typename: 'Rgb',
+  name: '',
+  ordinal: 0,
+  value: ''
+  /**
+   * Unit rgba type
+   */
 
-var fontWeight = {
-  view: core.STRING,
-  viewable: [core.STRING],
-  reference: null,
-  object: core.FONT_WEIGHT,
-  unit: core.STRING
 };
+var Rgba = {
+  __schemaname: 'Unit',
+  __typename: 'Rgba',
+  name: '',
+  ordinal: 0,
+  value: ''
+  /**
+   * Unit string type
+   */
 
-var lineHeight = {
-  view: core.FACTOR,
-  viewable: [core.FACTOR, core.PX],
-  reference: core.BASE_FONT_SIZE_PATH,
-  object: core.LINE_HEIGHT,
-  unit: core.FACTOR
 };
-
-var spacing = {
-  view: core.FACTOR,
-  viewable: [core.FACTOR, core.PX],
-  reference: core.BASE_SPACING_PATH,
-  object: core.SPACING,
-  unit: core.FACTOR
-};
-
-var swatch = {
-  view: core.HEXA,
-  viewable: [core.HEX, core.HEXA, core.RGB, core.RGBA],
-  reference: null,
-  object: core.SWATCH,
-  unit: core.HEXA,
-  content: []
+var Str = {
+  __schemaname: 'Unit',
+  __typename: 'String',
+  name: '',
+  ordinal: 0,
+  value: ''
 };
 
 /**
- *  @description Unit schema object.
+ * Unit schema type
  */
-var UnitSchema = {
+var Unit = {
   __schemaname: 'Unit',
-  __typename: null,
-  name: null,
-  ordinal: null,
-  value: null
+  __typename: '',
+  name: '',
+  ordinal: 0,
+  value: ''
 };
 
-// createFactoryFor
-// Accepts a unit object and root schema
-// returns a function used to create new unit instances
-// prettier-ignore
-var factoryFor$1 = function factoryFor() {
-  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-      object = _ref.object;
-
-  var schema = arguments.length > 1 ? arguments[1] : undefined;
-  return function () {
-    var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-        value = _ref2.value,
-        name = _ref2.name,
-        ordinal = _ref2.ordinal;
-
-    return Object.assign({}, schema, {
-      object: object
-    }, {
-      value: value || schema.value,
-      name: name || schema.name,
-      ordinal: ordinal || schema.ordinal
-    });
+/**
+ * @name factoryForUnit
+ * Unit factory for
+ */
+var factoryForUnit = function factoryForUnit(schema) {
+  return function (options) {
+    return _objectSpread({}, schema, options);
   };
 };
 
-// a relative unit multiplied by a reference
-
-var factor = {
-  object: core.FACTOR
-};
-
-// a hexidecimal color value
-
-var hex = {
-  object: core.HEX
-};
-
-// A hex value follow by an alpha valu '#000000,0.5'
-// NOTE: Units are serialized to the smallest css var that expresses
-
-var hexa = {
-  object: core.HEXA
-};
-
-// a px unit
-
-var px = {
-  object: core.PX
-};
-
-// a string path of a theme global
-
-var reference = {
-  object: core.REFERENCE
-};
-
-// a css rem unit
-
-var rem = {
-  object: core.REM
-};
-
-// a rgb color value: '0,0,0'
-
-var rgb = {
-  object: core.RGB
-};
-
-// a rgba color value '0,0,0,0'
-
-var rgba = {
-  object: core.RGBA
-};
-
-// a non transformable value
-
-var string = {
-  object: core.STRING
-};
-
+var Factor$1 = Factor,
+    Hex$1 = Hex,
+    Hexa$1 = Hexa,
+    Px$1 = Px,
+    Reference$1 = Reference,
+    Rem$1 = Rem,
+    Rgb$1 = Rgb,
+    Rgba$1 = Rgba,
+    Str$1 = Str;
 var unit = {
-  factor: factoryFor$1(factor, UnitSchema),
-  hex: factoryFor$1(hex, UnitSchema),
-  hexa: factoryFor$1(hexa, UnitSchema),
-  px: factoryFor$1(px, UnitSchema),
-  reference: factoryFor$1(reference, UnitSchema),
-  rem: factoryFor$1(rem, UnitSchema),
-  rgb: factoryFor$1(rgb, UnitSchema),
-  rgba: factoryFor$1(rgba, UnitSchema),
-  string: factoryFor$1(string, UnitSchema)
+  factor: factoryForUnit(Factor$1, Unit),
+  hex: factoryForUnit(Hex$1, Unit),
+  hexa: factoryForUnit(Hexa$1, Unit),
+  px: factoryForUnit(Px$1, Unit),
+  reference: factoryForUnit(Reference$1, Unit),
+  rem: factoryForUnit(Rem$1, Unit),
+  rgb: factoryForUnit(Rgb$1, Unit),
+  rgba: factoryForUnit(Rgba$1, Unit),
+  string: factoryForUnit(Str$1, Unit)
 };
 
-var baseSpacing = {
-  view: core.PX,
-  viewable: [core.PX],
+var _BaseFontSize, _BaseLineHeight, _BaseSpacing;
+
+/**
+ * Base font size object
+ */
+var BaseFontSize = (_BaseFontSize = {
+  __schemaname: 'Attribute'
+}, _defineProperty(_BaseFontSize, "__schemaname", 'Attribute'), _defineProperty(_BaseFontSize, "__typename", 'BaseFontSize'), _defineProperty(_BaseFontSize, "content", unit.px()), _defineProperty(_BaseFontSize, "reference", null), _defineProperty(_BaseFontSize, "unit", 'Px'), _defineProperty(_BaseFontSize, "view", 'Px'), _defineProperty(_BaseFontSize, "viewable", ['Px']), _BaseFontSize);
+/**
+ * Base line height object
+ */
+
+var BaseLineHeight = (_BaseLineHeight = {
+  __schemaname: 'Attribute'
+}, _defineProperty(_BaseLineHeight, "__schemaname", 'Attribute'), _defineProperty(_BaseLineHeight, "__typename", 'BaseLineHeight'), _defineProperty(_BaseLineHeight, "content", unit.factor()), _defineProperty(_BaseLineHeight, "reference", 'base.baseFontSize'), _defineProperty(_BaseLineHeight, "unit", 'Factor'), _defineProperty(_BaseLineHeight, "view", 'Factor'), _defineProperty(_BaseLineHeight, "viewable", ['Factor', 'Px']), _BaseLineHeight);
+/**
+ * Base spacing object
+ */
+
+var BaseSpacing = (_BaseSpacing = {
+  __schemaname: 'Attribute'
+}, _defineProperty(_BaseSpacing, "__schemaname", 'Attribute'), _defineProperty(_BaseSpacing, "__typename", 'BaseSpacing'), _defineProperty(_BaseSpacing, "content", unit.px()), _defineProperty(_BaseSpacing, "reference", null), _defineProperty(_BaseSpacing, "unit", 'Px'), _defineProperty(_BaseSpacing, "view", 'Px'), _defineProperty(_BaseSpacing, "viewable", ['Px']), _BaseSpacing);
+/**
+ * Color object
+ */
+
+var Color = {
+  __schemaname: 'Attribute',
+  __typename: 'Color',
+  content: [],
+  reference: 'swatch',
+  unit: 'Reference',
+  view: 'Reference',
+  viewable: ['Reference', 'Hex', 'Hexa', 'Rgb', 'Rgba']
+  /**
+   * Font face object
+   */
+
+};
+var FontFace = {
+  __schemaname: 'Attribute',
+  __typename: 'FontFace',
+  content: [],
   reference: null,
-  object: core.BASE_SPACING,
-  unit: core.PX,
-  content: unit.px({
-    name: 'baseSpacing',
-    value: 16
-  })
-};
+  unit: 'String',
+  view: 'String',
+  viewable: ['String']
+  /**
+   * Font family object
+   */
 
-var baseLineHeight = {
-  view: core.FACTOR,
-  viewable: [core.FACTOR, core.PX],
-  reference: core.BASE_FONT_SIZE_PATH,
-  object: core.BASE_LINE_HEIGHT,
-  unit: core.FACTOR,
-  content: unit.factor({
-    name: 'baseLineHeight',
-    value: 1.15
-  })
 };
+var FontFamily = {
+  __schemaname: 'Attribute',
+  __typename: 'FontFamily',
+  content: [],
+  reference: 'fontFace',
+  unit: 'Reference',
+  view: 'Reference',
+  viewable: ['Reference']
+  /**
+   * Font size object
+   */
 
-var baseFontSize = {
-  view: core.PX,
-  viewable: [core.PX],
+};
+var FontSize = {
+  __schemaname: 'Attribute',
+  __typename: 'FontSize',
+  content: [],
+  reference: 'base.baseFontSize',
+  unit: 'Factor',
+  view: 'Factor',
+  viewable: ['Factor', 'Px', 'Rem']
+  /**
+   * Font weight object
+   */
+
+};
+var FontWeight = {
+  __schemaname: 'Attribute',
+  __typename: 'FontWeight',
+  content: [],
   reference: null,
-  object: core.BASE_FONT_SIZE,
-  unit: core.PX,
-  content: unit.px({
-    name: 'baseFontSize',
-    value: 16
-  })
+  unit: 'String',
+  view: 'String',
+  viewable: ['String']
+  /**
+   * Line height object
+   */
+
+};
+var LineHeight = {
+  __schemaname: 'Attribute',
+  __typename: 'LineHeight',
+  content: [],
+  reference: 'base.baseFontSize',
+  unit: 'Factor',
+  view: 'Factor',
+  viewable: ['Factor', 'Px']
+  /**
+   * Spacing object
+   */
+
+};
+var Spacing = {
+  __schemaname: 'Attribute',
+  __typename: 'Spacing',
+  content: [],
+  reference: 'base.baseSpacing',
+  unit: 'Factor',
+  view: 'Factor',
+  viewable: ['Factor', 'Px']
+  /**
+   * Swatch object
+   */
+
+};
+var Swatch = {
+  __schemaname: 'Attribute',
+  __typename: 'Swatch',
+  content: [],
+  reference: null,
+  unit: 'Hexa',
+  view: 'Hexa',
+  viewable: ['Hex', 'Hexa', 'Rgb', 'Rgba']
+};
+
+/**
+ * Attribute schema object.
+ */
+var Attribute = {
+  __schemaname: 'Attribute',
+  __typename: '',
+  content: [],
+  reference: '',
+  unit: '',
+  view: '',
+  viewable: []
+};
+
+/**
+ * @name factoryForAttribute
+ * Attribute factory for
+ */
+var factoryForAttribute = function factoryForAttribute(schema) {
+  return function (options) {
+    return _objectSpread({}, schema, options);
+  };
 };
 
 var _attribute;
+var Color$1 = Color,
+    FontFamily$1 = FontFamily,
+    FontSize$1 = FontSize,
+    FontFace$1 = FontFace,
+    FontWeight$1 = FontWeight,
+    LineHeight$1 = LineHeight,
+    Spacing$1 = Spacing,
+    Swatch$1 = Swatch,
+    BaseSpacing$1 = BaseSpacing,
+    BaseLineHeight$1 = BaseLineHeight,
+    BaseFontSize$1 = BaseFontSize;
 var attribute = (_attribute = {
-  baseFontSize: factoryFor(baseFontSize, AttributeSchema),
-  baseSpacing: factoryFor(baseSpacing, AttributeSchema),
-  baseLineHeight: factoryFor(baseLineHeight, AttributeSchema),
-  color: factoryFor(color, AttributeSchema),
-  fontFamily: factoryFor(fontFamily, AttributeSchema),
-  fontSize: factoryFor(fontSize, AttributeSchema),
-  fontWeight: factoryFor(fontWeight, AttributeSchema),
-  lineHeight: factoryFor(lineHeight, AttributeSchema),
-  fontFace: factoryFor(fontFace, AttributeSchema)
-}, _defineProperty(_attribute, "fontFamily", factoryFor(fontFamily, AttributeSchema)), _defineProperty(_attribute, "spacing", factoryFor(spacing, AttributeSchema)), _defineProperty(_attribute, "swatch", factoryFor(swatch, AttributeSchema)), _attribute);
+  baseFontSize: factoryForAttribute(BaseFontSize$1, Attribute),
+  baseSpacing: factoryForAttribute(BaseSpacing$1, Attribute),
+  baseLineHeight: factoryForAttribute(BaseLineHeight$1, Attribute),
+  color: factoryForAttribute(Color$1, Attribute),
+  fontFamily: factoryForAttribute(FontFamily$1, Attribute),
+  fontSize: factoryForAttribute(FontSize$1, Attribute),
+  fontWeight: factoryForAttribute(FontWeight$1, Attribute),
+  lineHeight: factoryForAttribute(LineHeight$1, Attribute),
+  fontFace: factoryForAttribute(FontFace$1, Attribute)
+}, _defineProperty(_attribute, "fontFamily", factoryForAttribute(FontFamily$1, Attribute)), _defineProperty(_attribute, "spacing", factoryForAttribute(Spacing$1, Attribute)), _defineProperty(_attribute, "swatch", factoryForAttribute(Swatch$1, Attribute)), _attribute);
 
 /**
  * @description Setting schema object.
  */
 var SettingSchema = {
   __schemaname: 'Setting',
-  __typename: null,
-  color: {},
-  fontFamily: {},
-  fontSize: {},
-  fontWeight: {},
-  spacing: {}
-};
-
-var _COLOR_KEY$FONT_FAMIL;
-// The base setting object
-
-var base = (_COLOR_KEY$FONT_FAMIL = {}, _defineProperty(_COLOR_KEY$FONT_FAMIL, core.COLOR_KEY, attribute.color()), _defineProperty(_COLOR_KEY$FONT_FAMIL, core.FONT_FAMILY_KEY, attribute.fontFamily()), _defineProperty(_COLOR_KEY$FONT_FAMIL, core.FONT_SIZE_KEY, attribute.fontSize()), _defineProperty(_COLOR_KEY$FONT_FAMIL, core.FONT_WEIGHT_KEY, attribute.fontWeight()), _defineProperty(_COLOR_KEY$FONT_FAMIL, core.SPACING_KEY, attribute.spacing()), _COLOR_KEY$FONT_FAMIL);
-
-// prettier-ignore
-var factoryFor$2 = function factoryFor() {
-  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-      color = _ref.color,
-      fontFamily = _ref.fontFamily,
-      fontSize = _ref.fontSize,
-      fontWeight = _ref.fontWeight,
-      spacing = _ref.spacing;
-
-  var schema = arguments.length > 1 ? arguments[1] : undefined;
-  return function () {
-    var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-        instanceColor = _ref2.color,
-        instanceFontFamily = _ref2.fontFamily,
-        instanceFontSize = _ref2.fontSize,
-        instanceFontWeight = _ref2.fontWeight,
-        instanceSpacing = _ref2.spacing;
-
-    return Object.assign({}, schema, {
-      color: instanceColor || color || schema.color,
-      fontFamily: instanceFontFamily || fontFamily || schema.fontFamily,
-      fontSize: instanceFontSize || fontSize || schema.fontSize,
-      fontWeight: instanceFontWeight || fontWeight || schema.fontWeight,
-      spacing: instanceSpacing || spacing || schema.spacing
-    });
-  };
-};
-
-var setting = {
-  base: factoryFor$2(base, SettingSchema)
+  __typename: 'Base',
+  color: attribute.color(),
+  fontFamily: attribute.fontFamily(),
+  fontSize: attribute.fontSize(),
+  fontWeight: attribute.fontWeight(),
+  spacing: attribute.spacing()
 };
 
 /**
- * @description Base schema object.
+ * @description Setting base (default) type
  */
-var BaseSchema = {
-  __schemaname: 'Base',
-  __typename: null,
-  baseFontSize: {},
-  baseLineHeight: {},
-  baseSpacing: {}
+var Base = {
+  __schemaname: 'Setting',
+  __typename: 'Base',
+  color: attribute.color(),
+  fontFamily: attribute.fontFamily(),
+  fontSize: attribute.fontSize(),
+  fontWeight: attribute.fontWeight(),
+  spacing: attribute.spacing()
 };
 
-var _BASE_FONT_SIZE_KEY$B;
-// Root hash
-
-var base$1 = (_BASE_FONT_SIZE_KEY$B = {}, _defineProperty(_BASE_FONT_SIZE_KEY$B, core.BASE_FONT_SIZE_KEY, attribute.baseFontSize()), _defineProperty(_BASE_FONT_SIZE_KEY$B, core.BASE_LINE_HEIGHT_KEY, attribute.baseLineHeight()), _defineProperty(_BASE_FONT_SIZE_KEY$B, core.BASE_SPACING_KEY, attribute.baseSpacing()), _BASE_FONT_SIZE_KEY$B);
-
-var factoryFor$3 = function factoryFor() {
-  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-      baseFontSize = _ref.baseFontSize,
-      baseSpacing = _ref.baseSpacing,
-      baseLineHeight = _ref.baseLineHeight;
-
-  var schema = arguments.length > 1 ? arguments[1] : undefined;
-  return function () {
-    var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-        instanceBaseFontSize = _ref2.baseFontSize,
-        instanceBaseSpacing = _ref2.baseSpacing,
-        instanceBaseLineHeight = _ref2.baseLineHeight;
-
-    return Object.assign({}, schema, {
-      baseFontSize: instanceBaseFontSize || baseFontSize || schema.baseFontSize,
-      baseSpacing: instanceBaseSpacing || baseSpacing || schema.baseSpacing,
-      baseLineHeight: instanceBaseLineHeight || baseLineHeight || schema.baseLineHeight
-    });
+/**
+ * @name factoryForSetting
+ * Setting factory for
+ */
+var factoryForSetting = function factoryForSetting(schema) {
+  return function (options) {
+    return _objectSpread({}, schema, options);
   };
 };
 
-var root = {
-  base: factoryFor$3(base$1, BaseSchema)
+var Base$1 = Base;
+var setting = {
+  base: factoryForSetting(Base$1, SettingSchema)
 };
 
-var BaseType = {
-  __typename: 'base',
+/**
+ * @description Base base (default) type
+ */
+var Base$2 = {
+  __schemaname: 'Base',
+  __typename: 'Base',
+  baseFontSize: attribute.baseFontSize(),
+  baseLineHeight: attribute.baseLineHeight(),
+  baseSpacing: attribute.baseSpacing()
+};
+
+/**
+ * @name factoryForBase
+ * Base factory for
+ */
+var factoryForBase = function factoryForBase(schema) {
+  return function (options) {
+    return _objectSpread({}, schema, options);
+  };
+};
+
+var Base$3 = Base$2;
+var root = {
+  base: factoryForBase(Base$3)
+};
+
+/**
+ * @description Theme base (default) type
+ */
+var Base$4 = {
+  __schemaname: 'Theme',
+  __typename: 'Base',
   base: root.base(),
   fontFace: attribute.fontFace(),
-  id: core.uuid(),
-  name: 'Basic Airtheme',
-  object: 'base',
+  id: '',
+  name: '',
   setting: setting.base(),
   swatch: attribute.swatch(),
   version: core.VERSION
 };
 
-var factoryFor$4 = function factoryFor() {
-  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-      name = _ref.name,
-      id = _ref.id,
-      fontFace = _ref.fontFace,
-      swatch = _ref.swatch,
-      setting = _ref.setting,
-      base = _ref.base;
-
-  var schema = arguments.length > 1 ? arguments[1] : undefined;
-  return function () {
-    var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-        instanceName = _ref2.name,
-        instanceId = _ref2.id,
-        instanceFontFace = _ref2.fontFace,
-        instanceSwatch = _ref2.swatch,
-        instanceSetting = _ref2.setting,
-        instanceBase = _ref2.base;
-
-    return Object.assign({}, schema, {
-      name: instanceName || name || schema.name,
-      id: instanceId || id || schema.id,
-      fontFace: instanceFontFace || fontFace || schema.fontFace,
-      swatch: instanceSwatch || swatch || schema.swatch,
-      setting: instanceSetting || setting || schema.setting,
-      base: instanceBase || base || schema.base
-    });
+/**
+ * @name factoryForTheme
+ * Theme factory for
+ */
+var factoryForTheme = function factoryForTheme(schema) {
+  return function (options) {
+    return _objectSpread({}, schema, options);
   };
 };
 
+var Base$5 = Base$4;
 var theme = {
-  base: factoryFor$4(BaseType, ThemeSchema)
+  base: factoryForTheme(Base$5)
+};
+
+/**
+ *  @description Theme schema type
+ */
+// Included Base typename for ease.  Technically we are mixing types and interfaces
+// Theme shouldn't necessarally be an interface and can be more of a type.
+
+var Theme = {
+  __schemaname: 'Theme',
+  __typename: 'Base',
+  base: root.base(),
+  fontFace: attribute.fontFace(),
+  id: '',
+  name: '',
+  setting: setting.base(),
+  swatch: attribute.swatch(),
+  version: core.VERSION
+};
+
+/**
+ * @description Base schema object.
+ */
+var Base$6 = {
+  __schemaname: 'Base',
+  __typename: 'Base',
+  baseFontSize: attribute.baseFontSize(),
+  baseLineHeight: attribute.baseLineHeight(),
+  baseSpacing: attribute.baseSpacing()
 };
 
 var getReferencedAttribute = function getReferencedAttribute(_ref, theme) {
   var reference = _ref.reference;
   return fp.dig(reference, theme);
+};
+
+var downcase = function downcase(str) {
+  return str && str.toLowerCase();
 };
 
 var deserializeFactor = function deserializeFactor() {
@@ -468,17 +503,21 @@ var deserializeFactor = function deserializeFactor() {
 
   _getReferencedAttribu2 = _getReferencedAttribu2 === void 0 ? {} : _getReferencedAttribu2;
   var refValue = _getReferencedAttribu2.value,
-      object = _getReferencedAttribu2.object;
-  return _defineProperty({}, unitName, "".concat(refValue * unitVal).concat(object));
+      __typename = _getReferencedAttribu2.__typename;
+  return _defineProperty({}, unitName, "".concat(refValue * unitVal).concat(downcase(__typename)));
+};
+
+var downcase$1 = function downcase(str) {
+  return str && str.toLowerCase();
 };
 
 var deserializePx = function deserializePx() {
   var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
       unitVal = _ref.value,
       unitName = _ref.name,
-      unitObject = _ref.object;
+      __typename = _ref.__typename;
 
-  return _defineProperty({}, unitName, "".concat(unitVal).concat(unitObject));
+  return _defineProperty({}, unitName, "".concat(unitVal).concat(downcase$1(__typename)));
 };
 
 var deserializeString = function deserializeString() {
@@ -532,40 +571,40 @@ var deserializeHexa = function deserializeHexa() {
 
 
 var deserializers = /*#__PURE__*/Object.freeze({
-  factor: deserializeFactor,
-  px: deserializePx,
-  string: deserializeString,
-  reference: deserializeReference,
-  hexa: deserializeHexa
+  Factor: deserializeFactor,
+  Px: deserializePx,
+  String: deserializeString,
+  Reference: deserializeReference,
+  Hexa: deserializeHexa
 });
 
 var deserialize = function deserialize(unit, attribute, theme) {
-  if (!deserializers[unit.object]) {
-    console.warn("Attempting to deserialize an unknown unit type: ".concat(unit.object));
+  if (!deserializers[unit.__typename]) {
+    console.warn("Attempting to deserialize an unknown unit type: ".concat(unit.__typename));
     return;
   }
 
-  return deserializers[unit.object](unit, attribute, theme);
+  return deserializers[unit.__typename](unit, attribute, theme);
 };
 
 /*
-Accepts an attribute object and theme object
-Returns object of deserialzied values
-must pass attribute and theme object for reference
+Accepts an attribute __typename and theme __typename
+Returns __typename of deserialzied values
+must pass attribute and theme __typename for reference
 
 fontSize: {
   view: "factor",
   viewable: [ "factor", "px", "rem" ],
   reference: "baseFontSize",
-  object: "fontSize",
+  __typename: "fontSize",
   unit: "factor"
   content: [
-    { name: "xs", ordinal: 1, object: "factor", value: "0.8" },
-    { name: "sm", ordinal: 2, object: "factor", value: "0.9" },
-    { name: "md", ordinal: 3, object: "factor", value: "1" },
-    { name: "lg", ordinal: 4, object: "factor", value: "1.1" },
-    { name: "xl", ordinal: 5, object: "factor", value: "1.2" },
-    { name: "xxl", ordinal: 6, object: "factor", value: "1.3" }
+    { name: "xs", ordinal: 1, __typename: "factor", value: "0.8" },
+    { name: "sm", ordinal: 2, __typename: "factor", value: "0.9" },
+    { name: "md", ordinal: 3, __typename: "factor", value: "1" },
+    { name: "lg", ordinal: 4, __typename: "factor", value: "1.1" },
+    { name: "xl", ordinal: 5, __typename: "factor", value: "1.2" },
+    { name: "xxl", ordinal: 6, __typename: "factor", value: "1.3" }
   ],
 },
 
@@ -587,7 +626,7 @@ var validTypes = function validTypes() {
       content = _ref2.content,
       unit = _ref2.unit;
 
-  return Array.isArray(content) ? content.length && unit === content[0].object : content && unit === content.object;
+  return Array.isArray(content) ? content.length && unit === content[0].__typename : content && unit === content.__typename;
 };
 
 var deserialize$1 = function deserialize$$1(attribute, theme) {
@@ -611,19 +650,19 @@ var deserialize$1 = function deserialize$$1(attribute, theme) {
 };
 
 exports.theme = theme;
-exports.themeSchema = ThemeSchema;
-exports.factoryForTheme = factoryFor$4;
+exports.themeSchema = Theme;
+exports.factoryForTheme = factoryForTheme;
 exports.base = root;
-exports.baseSchema = BaseSchema;
-exports.factoryForBase = factoryFor$3;
+exports.baseSchema = Base$6;
+exports.factoryForBase = factoryForBase;
 exports.setting = setting;
 exports.settingSchema = SettingSchema;
-exports.factoryForSetting = factoryFor$2;
+exports.factoryForSetting = factoryForSetting;
 exports.attribute = attribute;
-exports.attributeSchema = AttributeSchema;
-exports.factoryForAttribute = factoryFor;
+exports.attributeSchema = Attribute;
+exports.factoryForAttribute = factoryForAttribute;
 exports.deserializeAttribute = deserialize$1;
 exports.unit = unit;
-exports.unitSchema = UnitSchema;
-exports.factoryForUnit = factoryFor$1;
+exports.unitSchema = Unit;
+exports.factoryForUnit = factoryForUnit;
 //# sourceMappingURL=index.js.map

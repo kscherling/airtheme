@@ -12,23 +12,37 @@ it('`updateBaseSpacing` update base font size', () => {
   const initialState = store.getState()
 
   expect(initialState.theme.base.baseSpacing).toEqual({
-    content: { name: 'baseSpacing', ordinal: null, object: 'px', value: 16 },
-    view: 'px',
-    viewable: ['px'],
+    __schemaname: 'Attribute',
+    __typename: 'BaseSpacing',
+    content: {
+      __schemaname: 'Unit',
+      __typename: 'Px',
+      name: '',
+      ordinal: 0,
+      value: ''
+    },
     reference: null,
-    object: 'baseSpacing',
-    unit: 'px'
+    unit: 'Px',
+    view: 'Px',
+    viewable: ['Px']
   })
 
   store.dispatch(updateBaseSpacing(null, { value: 14 }))
   const updatedState = store.getState()
 
   expect(updatedState.theme.base.baseSpacing).toEqual({
-    content: { name: 'baseSpacing', object: 'px', ordinal: null, value: 14 },
-    object: 'baseSpacing',
+    __schemaname: 'Attribute',
+    __typename: 'BaseSpacing',
+    content: {
+      __schemaname: 'Unit',
+      __typename: 'Px',
+      name: '',
+      ordinal: 0,
+      value: 14
+    },
     reference: null,
-    unit: 'px',
-    view: 'px',
-    viewable: ['px']
+    unit: 'Px',
+    view: 'Px',
+    viewable: ['Px']
   })
 })

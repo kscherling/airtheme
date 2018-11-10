@@ -11,198 +11,26 @@ var reactRedux = require('react-redux');
 var styledComponents = require('styled-components');
 var core = require('@airtheme/core');
 
-function _typeof(obj) {
-  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
-    _typeof = function (obj) {
-      return typeof obj;
-    };
-  } else {
-    _typeof = function (obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-    };
-  }
-
-  return _typeof(obj);
-}
-
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-
-function _defineProperties(target, props) {
-  for (var i = 0; i < props.length; i++) {
-    var descriptor = props[i];
-    descriptor.enumerable = descriptor.enumerable || false;
-    descriptor.configurable = true;
-    if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, descriptor.key, descriptor);
-  }
-}
-
-function _createClass(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties(Constructor, staticProps);
-  return Constructor;
-}
-
-function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-
-  return obj;
-}
-
-function _objectSpread(target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i] != null ? arguments[i] : {};
-    var ownKeys = Object.keys(source);
-
-    if (typeof Object.getOwnPropertySymbols === 'function') {
-      ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {
-        return Object.getOwnPropertyDescriptor(source, sym).enumerable;
-      }));
-    }
-
-    ownKeys.forEach(function (key) {
-      _defineProperty(target, key, source[key]);
-    });
-  }
-
-  return target;
-}
-
-function _inherits(subClass, superClass) {
-  if (typeof superClass !== "function" && superClass !== null) {
-    throw new TypeError("Super expression must either be null or a function");
-  }
-
-  subClass.prototype = Object.create(superClass && superClass.prototype, {
-    constructor: {
-      value: subClass,
-      writable: true,
-      configurable: true
-    }
-  });
-  if (superClass) _setPrototypeOf(subClass, superClass);
-}
-
-function _getPrototypeOf(o) {
-  _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
-    return o.__proto__ || Object.getPrototypeOf(o);
-  };
-  return _getPrototypeOf(o);
-}
-
-function _setPrototypeOf(o, p) {
-  _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
-    o.__proto__ = p;
-    return o;
-  };
-
-  return _setPrototypeOf(o, p);
-}
-
-function _objectWithoutPropertiesLoose(source, excluded) {
-  if (source == null) return {};
-  var target = {};
-  var sourceKeys = Object.keys(source);
-  var key, i;
-
-  for (i = 0; i < sourceKeys.length; i++) {
-    key = sourceKeys[i];
-    if (excluded.indexOf(key) >= 0) continue;
-    target[key] = source[key];
-  }
-
-  return target;
-}
-
-function _objectWithoutProperties(source, excluded) {
-  if (source == null) return {};
-
-  var target = _objectWithoutPropertiesLoose(source, excluded);
-
-  var key, i;
-
-  if (Object.getOwnPropertySymbols) {
-    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
-
-    for (i = 0; i < sourceSymbolKeys.length; i++) {
-      key = sourceSymbolKeys[i];
-      if (excluded.indexOf(key) >= 0) continue;
-      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
-      target[key] = source[key];
-    }
-  }
-
-  return target;
-}
-
-function _assertThisInitialized(self) {
-  if (self === void 0) {
-    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-  }
-
-  return self;
-}
-
-function _possibleConstructorReturn(self, call) {
-  if (call && (typeof call === "object" || typeof call === "function")) {
-    return call;
-  }
-
-  return _assertThisInitialized(self);
-}
-
-function _toConsumableArray(arr) {
-  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
-}
-
-function _arrayWithoutHoles(arr) {
-  if (Array.isArray(arr)) {
-    for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) arr2[i] = arr[i];
-
-    return arr2;
-  }
-}
-
-function _iterableToArray(iter) {
-  if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
-}
-
-function _nonIterableSpread() {
-  throw new TypeError("Invalid attempt to spread non-iterable instance");
-}
-
 function symbolObservablePonyfill(root) {
-  var result;
-  var _Symbol = root.Symbol;
+	var result;
+	var Symbol = root.Symbol;
 
-  if (typeof _Symbol === 'function') {
-    if (_Symbol.observable) {
-      result = _Symbol.observable;
-    } else {
-      result = _Symbol('observable');
-      _Symbol.observable = result;
-    }
-  } else {
-    result = '@@observable';
-  }
+	if (typeof Symbol === 'function') {
+		if (Symbol.observable) {
+			result = Symbol.observable;
+		} else {
+			result = Symbol('observable');
+			Symbol.observable = result;
+		}
+	} else {
+		result = '@@observable';
+	}
 
-  return result;
+	return result;
 }
 
 /* global window */
+
 var root;
 
 if (typeof self !== 'undefined') {
@@ -225,39 +53,24 @@ var result = symbolObservablePonyfill(root);
  * If the current state is undefined, you must return the initial state.
  * Do not reference these action types directly in your code.
  */
+var randomString = function randomString() {
+  return Math.random().toString(36).substring(7).split('').join('.');
+};
 
 var ActionTypes = {
-  INIT: '@@redux/INIT' + Math.random().toString(36).substring(7).split('').join('.'),
-  REPLACE: '@@redux/REPLACE' + Math.random().toString(36).substring(7).split('').join('.')
-};
-
-var _typeof$1 = typeof Symbol === "function" && _typeof(Symbol.iterator) === "symbol" ? function (obj) {
-  return _typeof(obj);
-} : function (obj) {
-  return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof(obj);
-};
-
-var _extends$1 = Object.assign || function (target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i];
-
-    for (var key in source) {
-      if (Object.prototype.hasOwnProperty.call(source, key)) {
-        target[key] = source[key];
-      }
-    }
+  INIT: "@@redux/INIT" + randomString(),
+  REPLACE: "@@redux/REPLACE" + randomString(),
+  PROBE_UNKNOWN_ACTION: function PROBE_UNKNOWN_ACTION() {
+    return "@@redux/PROBE_UNKNOWN_ACTION" + randomString();
   }
-
-  return target;
 };
+
 /**
  * @param {any} obj The object to inspect.
  * @returns {boolean} True if the argument appears to be a plain object.
  */
-
-
 function isPlainObject(obj) {
-  if ((typeof obj === 'undefined' ? 'undefined' : _typeof$1(obj)) !== 'object' || obj === null) return false;
+  if (typeof obj !== 'object' || obj === null) return false;
   var proto = obj;
 
   while (Object.getPrototypeOf(proto) !== null) {
@@ -266,6 +79,7 @@ function isPlainObject(obj) {
 
   return Object.getPrototypeOf(obj) === proto;
 }
+
 /**
  * Creates a Redux store that holds the state tree.
  * The only way to change the data in the store is to call `dispatch()` on it.
@@ -292,9 +106,12 @@ function isPlainObject(obj) {
  * and subscribe to changes.
  */
 
-
 function createStore(reducer, preloadedState, enhancer) {
   var _ref2;
+
+  if (typeof preloadedState === 'function' && typeof enhancer === 'function' || typeof enhancer === 'function' && typeof arguments[3] === 'function') {
+    throw new Error('It looks like you are passing several store enhancers to ' + 'createStore(). This is not supported. Instead, compose them ' + 'together to a single function');
+  }
 
   if (typeof preloadedState === 'function' && typeof enhancer === 'undefined') {
     enhancer = preloadedState;
@@ -490,7 +307,7 @@ function createStore(reducer, preloadedState, enhancer) {
        * emission of values from the observable.
        */
       subscribe: function subscribe(observer) {
-        if ((typeof observer === 'undefined' ? 'undefined' : _typeof$1(observer)) !== 'object' || observer === null) {
+        if (typeof observer !== 'object' || observer === null) {
           throw new TypeError('Expected the observer to be an object.');
         }
 
@@ -524,14 +341,13 @@ function createStore(reducer, preloadedState, enhancer) {
     replaceReducer: replaceReducer
   }, _ref2[result] = observable, _ref2;
 }
+
 /**
  * Prints a warning in the console if it exists.
  *
  * @param {String} message The warning message.
  * @returns {void}
  */
-
-
 function warning(message) {
   /* eslint-disable no-console */
   if (typeof console !== 'undefined' && typeof console.error === 'function') {
@@ -551,8 +367,8 @@ function warning(message) {
 
 function getUndefinedStateErrorMessage(key, action) {
   var actionType = action && action.type;
-  var actionDescription = actionType && 'action "' + String(actionType) + '"' || 'an action';
-  return 'Given ' + actionDescription + ', reducer "' + key + '" returned undefined. ' + 'To ignore an action, you must explicitly return the previous state. ' + 'If you want this reducer to hold no value, you can return null instead of undefined.';
+  var actionDescription = actionType && "action \"" + String(actionType) + "\"" || 'an action';
+  return "Given " + actionDescription + ", reducer \"" + key + "\" returned undefined. " + "To ignore an action, you must explicitly return the previous state. " + "If you want this reducer to hold no value, you can return null instead of undefined.";
 }
 
 function getUnexpectedStateShapeWarningMessage(inputState, reducers, action, unexpectedKeyCache) {
@@ -564,7 +380,7 @@ function getUnexpectedStateShapeWarningMessage(inputState, reducers, action, une
   }
 
   if (!isPlainObject(inputState)) {
-    return 'The ' + argumentName + ' has unexpected type of "' + {}.toString.call(inputState).match(/\s([a-z|A-Z]+)/)[1] + '". Expected argument to be an object with the following ' + ('keys: "' + reducerKeys.join('", "') + '"');
+    return "The " + argumentName + " has unexpected type of \"" + {}.toString.call(inputState).match(/\s([a-z|A-Z]+)/)[1] + "\". Expected argument to be an object with the following " + ("keys: \"" + reducerKeys.join('", "') + "\"");
   }
 
   var unexpectedKeys = Object.keys(inputState).filter(function (key) {
@@ -576,7 +392,7 @@ function getUnexpectedStateShapeWarningMessage(inputState, reducers, action, une
   if (action && action.type === ActionTypes.REPLACE) return;
 
   if (unexpectedKeys.length > 0) {
-    return 'Unexpected ' + (unexpectedKeys.length > 1 ? 'keys' : 'key') + ' ' + ('"' + unexpectedKeys.join('", "') + '" found in ' + argumentName + '. ') + 'Expected to find one of the known reducer keys instead: ' + ('"' + reducerKeys.join('", "') + '". Unexpected keys will be ignored.');
+    return "Unexpected " + (unexpectedKeys.length > 1 ? 'keys' : 'key') + " " + ("\"" + unexpectedKeys.join('", "') + "\" found in " + argumentName + ". ") + "Expected to find one of the known reducer keys instead: " + ("\"" + reducerKeys.join('", "') + "\". Unexpected keys will be ignored.");
   }
 }
 
@@ -588,15 +404,13 @@ function assertReducerShape(reducers) {
     });
 
     if (typeof initialState === 'undefined') {
-      throw new Error('Reducer "' + key + '" returned undefined during initialization. ' + 'If the state passed to the reducer is undefined, you must ' + 'explicitly return the initial state. The initial state may ' + 'not be undefined. If you don\'t want to set a value for this reducer, ' + 'you can use null instead of undefined.');
+      throw new Error("Reducer \"" + key + "\" returned undefined during initialization. " + "If the state passed to the reducer is undefined, you must " + "explicitly return the initial state. The initial state may " + "not be undefined. If you don't want to set a value for this reducer, " + "you can use null instead of undefined.");
     }
 
-    var type$$1 = '@@redux/PROBE_UNKNOWN_ACTION_' + Math.random().toString(36).substring(7).split('').join('.');
-
     if (typeof reducer(undefined, {
-      type: type$$1
+      type: ActionTypes.PROBE_UNKNOWN_ACTION()
     }) === 'undefined') {
-      throw new Error('Reducer "' + key + '" returned undefined when probed with a random type. ' + ('Don\'t try to handle ' + ActionTypes.INIT + ' or other actions in "redux/*" ') + 'namespace. They are considered private. Instead, you must return the ' + 'current state for any unknown actions, unless it is undefined, ' + 'in which case you must return the initial state, regardless of the ' + 'action type. The initial state may not be undefined, but can be null.');
+      throw new Error("Reducer \"" + key + "\" returned undefined when probed with a random type. " + ("Don't try to handle " + ActionTypes.INIT + " or other actions in \"redux/*\" ") + "namespace. They are considered private. Instead, you must return the " + "current state for any unknown actions, unless it is undefined, " + "in which case you must return the initial state, regardless of the " + "action type. The initial state may not be undefined, but can be null.");
     }
   });
 }
@@ -627,7 +441,7 @@ function combineReducers(reducers) {
 
     if (process.env.NODE_ENV !== 'production') {
       if (typeof reducers[key] === 'undefined') {
-        warning('No reducer provided for key "' + key + '"');
+        warning("No reducer provided for key \"" + key + "\"");
       }
     }
 
@@ -637,13 +451,13 @@ function combineReducers(reducers) {
   }
 
   var finalReducerKeys = Object.keys(finalReducers);
-  var unexpectedKeyCache = void 0;
+  var unexpectedKeyCache;
 
   if (process.env.NODE_ENV !== 'production') {
     unexpectedKeyCache = {};
   }
 
-  var shapeAssertionError = void 0;
+  var shapeAssertionError;
 
   try {
     assertReducerShape(finalReducers);
@@ -651,9 +465,10 @@ function combineReducers(reducers) {
     shapeAssertionError = e;
   }
 
-  return function combination() {
-    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-    var action = arguments[1];
+  return function combination(state, action) {
+    if (state === void 0) {
+      state = {};
+    }
 
     if (shapeAssertionError) {
       throw shapeAssertionError;
@@ -688,6 +503,41 @@ function combineReducers(reducers) {
     return hasChanged ? nextState : state;
   };
 }
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function _objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+    var ownKeys = Object.keys(source);
+
+    if (typeof Object.getOwnPropertySymbols === 'function') {
+      ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {
+        return Object.getOwnPropertyDescriptor(source, sym).enumerable;
+      }));
+    }
+
+    ownKeys.forEach(function (key) {
+      _defineProperty(target, key, source[key]);
+    });
+  }
+
+  return target;
+}
+
 /**
  * Composes single-argument functions from right to left. The rightmost
  * function can take multiple arguments as it provides the signature for
@@ -698,10 +548,8 @@ function combineReducers(reducers) {
  * from right to left. For example, compose(f, g, h) is identical to doing
  * (...args) => f(g(h(...args))).
  */
-
-
 function compose() {
-  for (var _len = arguments.length, funcs = Array(_len), _key = 0; _key < _len; _key++) {
+  for (var _len = arguments.length, funcs = new Array(_len), _key = 0; _key < _len; _key++) {
     funcs[_key] = arguments[_key];
   }
 
@@ -717,10 +565,11 @@ function compose() {
 
   return funcs.reduce(function (a, b) {
     return function () {
-      return a(b.apply(undefined, arguments));
+      return a(b.apply(void 0, arguments));
     };
   });
 }
+
 /**
  * Creates a store enhancer that applies middleware to the dispatch method
  * of the Redux store. This is handy for a variety of tasks, such as expressing
@@ -738,50 +587,45 @@ function compose() {
  * @returns {Function} A store enhancer applying the middleware.
  */
 
-
 function applyMiddleware() {
-  for (var _len = arguments.length, middlewares = Array(_len), _key = 0; _key < _len; _key++) {
+  for (var _len = arguments.length, middlewares = new Array(_len), _key = 0; _key < _len; _key++) {
     middlewares[_key] = arguments[_key];
   }
 
   return function (createStore) {
     return function () {
-      for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-        args[_key2] = arguments[_key2];
-      }
-
-      var store = createStore.apply(undefined, args);
+      var store = createStore.apply(void 0, arguments);
 
       var _dispatch = function dispatch() {
-        throw new Error('Dispatching while constructing your middleware is not allowed. ' + 'Other middleware would not be applied to this dispatch.');
+        throw new Error("Dispatching while constructing your middleware is not allowed. " + "Other middleware would not be applied to this dispatch.");
       };
 
       var middlewareAPI = {
         getState: store.getState,
         dispatch: function dispatch() {
-          return _dispatch.apply(undefined, arguments);
+          return _dispatch.apply(void 0, arguments);
         }
       };
       var chain = middlewares.map(function (middleware) {
         return middleware(middlewareAPI);
       });
-      _dispatch = compose.apply(undefined, chain)(store.dispatch);
-      return _extends$1({}, store, {
+      _dispatch = compose.apply(void 0, chain)(store.dispatch);
+      return _objectSpread({}, store, {
         dispatch: _dispatch
       });
     };
   };
 }
+
 /*
  * This is a dummy function to check if the function name has been altered by minification.
  * If the function has been minified and NODE_ENV !== 'production', warn the user.
  */
 
-
 function isCrushed() {}
 
 if (process.env.NODE_ENV !== 'production' && typeof isCrushed.name === 'string' && isCrushed.name !== 'isCrushed') {
-  warning("You are currently using minified code outside of NODE_ENV === 'production'. " + 'This means that you are running a slower development build of Redux. ' + 'You can use loose-envify (https://github.com/zertosh/loose-envify) for browserify ' + 'or DefinePlugin for webpack (http://stackoverflow.com/questions/30030031) ' + 'to ensure you have the correct code for your production build.');
+  warning('You are currently using minified code outside of NODE_ENV === "production". ' + 'This means that you are running a slower development build of Redux. ' + 'You can use loose-envify (https://github.com/zertosh/loose-envify) for browserify ' + 'or setting mode to production in webpack (https://webpack.js.org/concepts/mode/) ' + 'to ensure you have the correct code for your production build.');
 }
 
 var enhancers = [];
@@ -796,6 +640,165 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 var composedMiddleware = compose.apply(void 0, [applyMiddleware.apply(void 0, middleware)].concat(enhancers));
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+function _defineProperty$1(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function _objectSpread$1(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+    var ownKeys = Object.keys(source);
+
+    if (typeof Object.getOwnPropertySymbols === 'function') {
+      ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {
+        return Object.getOwnPropertyDescriptor(source, sym).enumerable;
+      }));
+    }
+
+    ownKeys.forEach(function (key) {
+      _defineProperty$1(target, key, source[key]);
+    });
+  }
+
+  return target;
+}
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) _setPrototypeOf(subClass, superClass);
+}
+
+function _getPrototypeOf(o) {
+  _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
+  };
+  return _getPrototypeOf(o);
+}
+
+function _setPrototypeOf(o, p) {
+  _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+
+  return _setPrototypeOf(o, p);
+}
+
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+function _objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+
+  var target = _objectWithoutPropertiesLoose(source, excluded);
+
+  var key, i;
+
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+
+  return target;
+}
+
+function _assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+function _possibleConstructorReturn(self, call) {
+  if (call && (typeof call === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  return _assertThisInitialized(self);
+}
+
+function _toConsumableArray(arr) {
+  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
+}
+
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) {
+    for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) arr2[i] = arr[i];
+
+    return arr2;
+  }
+}
+
+function _iterableToArray(iter) {
+  if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
+}
+
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance");
+}
 
 var UPDATE_THEME = 'UPDATE_THEME';
 
@@ -813,12 +816,16 @@ var not = function not(a) {
   };
 };
 
+var downcase = function downcase(str) {
+  return str && str.toLowerCase();
+};
+
 var addUnit = function addUnit(state, _ref) {
   var name = _ref.name,
       value = _ref.value,
       ordinal = _ref.ordinal;
-  return _objectSpread({}, state, {
-    content: _toConsumableArray(state.content).concat([type.unit[state.unit]({
+  return _objectSpread$1({}, state, {
+    content: _toConsumableArray(state.content).concat([type.unit[downcase(state.unit)]({
       name: name,
       ordinal: ordinal,
       value: value
@@ -827,28 +834,30 @@ var addUnit = function addUnit(state, _ref) {
 };
 var removeUnit = function removeUnit(state, _ref2) {
   var original = _ref2.original;
-  return _objectSpread({}, state, {
+  return _objectSpread$1({}, state, {
     content: state.content.filter(not(original))
   });
 };
 var updateUnit = function updateUnit(state, _ref3) {
   var original = _ref3.original,
       updated = _ref3.updated;
-  return _objectSpread({}, state, {
+  return _objectSpread$1({}, state, {
     content: state.content.map(function (unit) {
-      return eq(unit, original) ? _objectSpread({}, unit, updated) : unit;
+      return eq(unit, original) ? _objectSpread$1({}, unit, updated) : unit;
     })
   });
 };
 var updateBaseUnit = function updateBaseUnit(state, _ref4) {
   var updated = _ref4.updated;
-  return _objectSpread({}, state, {
-    content: _objectSpread({}, state.content, updated)
+  return _objectSpread$1({}, state, {
+    content: _objectSpread$1({}, state.content, updated)
   });
 };
 
+var defaultSwatch = type.attribute.swatch();
+
 var swatch = function swatch() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : type.attribute.swatch();
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultSwatch;
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
   switch (action.type) {
@@ -856,7 +865,7 @@ var swatch = function swatch() {
       return action.theme.swatch || {};
 
     case UPDATE_SWATCH_VIEW:
-      return _objectSpread({}, state, {
+      return _objectSpread$1({}, state, {
         view: action.view
       });
 
@@ -878,13 +887,15 @@ var ADD_FONT_FACE = 'ADD_FONT_FACE';
 var REMOVE_FONT_FACE = 'REMOVE_FONT_FACE';
 var UPDATE_FONT_FACE = 'UPDATE_FONT_FACE';
 
+var defaultFontFace = type.attribute.fontFace();
+
 var fontFace = function fontFace() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : type.attribute.fontFace();
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultFontFace;
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
   switch (action.type) {
     case UPDATE_THEME:
-      return action.theme.fontFace || {};
+      return action.theme.fontFace || defaultFontFace;
 
     case ADD_FONT_FACE:
       return addUnit(state, action);
@@ -905,8 +916,10 @@ var REMOVE_FONT_SIZE = 'REMOVE_FONT_SIZE';
 var UPDATE_FONT_SIZE = 'UPDATE_FONT_SIZE';
 var UPDATE_FONT_SIZE_VIEW = 'UPDATE_FONT_SIZE_VIEW';
 
+var defaultFontSize = type.attribute.fontSize();
+
 var fontSize = function fontSize() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : type.attribute.fontSize();
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultFontSize;
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
   switch (action.type) {
@@ -914,7 +927,7 @@ var fontSize = function fontSize() {
       return action.theme.setting.fontSize;
 
     case UPDATE_FONT_SIZE_VIEW:
-      return _objectSpread({}, state, {
+      return _objectSpread$1({}, state, {
         view: action.view
       });
 
@@ -937,8 +950,10 @@ var REMOVE_FONT_FAMILY = 'REMOVE_FONT_FAMILY';
 var UPDATE_FONT_FAMILY = 'UPDATE_FONT_FAMILY';
 var UPDATE_FONT_FAMILY_VIEW = 'UPDATE_FONT_FAMILY_VIEW';
 
+var defaultFontFamily = type.attribute.fontFamily();
+
 var fontFamily = function fontFamily() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : type.attribute.fontFamily();
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultFontFamily;
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
   switch (action.type) {
@@ -946,7 +961,7 @@ var fontFamily = function fontFamily() {
       return action.theme.setting.fontFamily;
 
     case UPDATE_FONT_FAMILY_VIEW:
-      return _objectSpread({}, state, {
+      return _objectSpread$1({}, state, {
         view: action.view
       });
 
@@ -968,8 +983,10 @@ var ADD_FONT_WEIGHT = 'ADD_FONT_WEIGHT';
 var REMOVE_FONT_WEIGHT = 'REMOVE_FONT_WEIGHT';
 var UPDATE_FONT_WEIGHT = 'UPDATE_FONT_WEIGHT';
 
+var defaultFontWeight = type.attribute.fontWeight();
+
 var fontWeight = function fontWeight() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : type.attribute.fontWeight();
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultFontWeight;
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
   switch (action.type) {
@@ -995,8 +1012,10 @@ var REMOVE_COLOR = 'REMOVE_COLOR';
 var UPDATE_COLOR = 'UPDATE_COLOR';
 var UPDATE_COLOR_VIEW = 'UPDATE_COLOR_VIEW';
 
+var defaultColor = type.attribute.color();
+
 var color = function color() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : type.attribute.color();
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultColor;
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
   switch (action.type) {
@@ -1004,7 +1023,7 @@ var color = function color() {
       return action.theme.setting.color || {};
 
     case UPDATE_COLOR_VIEW:
-      return _objectSpread({}, state, {
+      return _objectSpread$1({}, state, {
         view: action.view
       });
 
@@ -1027,8 +1046,10 @@ var REMOVE_SPACING = 'REMOVE_SPACING';
 var UPDATE_SPACING = 'UPDATE_SPACING';
 var UPDATE_SPACING_VIEW = 'UPDATE_SPACING_VIEW';
 
+var defaultSpacing = type.attribute.spacing();
+
 var spacing = function spacing() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : type.attribute.spacing();
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultSpacing;
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
   switch (action.type) {
@@ -1036,7 +1057,7 @@ var spacing = function spacing() {
       return action.theme.setting.spacing;
 
     case UPDATE_SPACING_VIEW:
-      return _objectSpread({}, state, {
+      return _objectSpread$1({}, state, {
         view: action.view
       });
 
@@ -1054,13 +1075,30 @@ var spacing = function spacing() {
   }
 };
 
-var object = function object() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : type.settingSchema.object;
+var defaultSchemaname = type.settingSchema.__schemaname;
+
+var __schemaname = function __schemaname() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultSchemaname;
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
   switch (action.type) {
     case UPDATE_THEME:
-      return action.theme.setting.object || type.settingSchema.object;
+      return action.theme.setting.__schemaname || defaultSchemaname;
+
+    default:
+      return state;
+  }
+};
+
+var defaultTypename = type.settingSchema.__typename;
+
+var __typename = function __typename() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultTypename;
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case UPDATE_THEME:
+      return action.theme.setting.__typename || defaultTypename;
 
     default:
       return state;
@@ -1068,7 +1106,8 @@ var object = function object() {
 };
 
 var setting = combineReducers({
-  object: object,
+  __schemaname: __schemaname,
+  __typename: __typename,
   color: color,
   fontFamily: fontFamily,
   fontSize: fontSize,
@@ -1078,15 +1117,15 @@ var setting = combineReducers({
 
 var UPDATE_BASE_FONT_SIZE = 'UPDATE_BASE_FONT_SIZE';
 
-type.attribute.baseFontSize();
+var defaultBaseFontSize = type.attribute.baseFontSize();
 
 var baseFontSize = function baseFontSize() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : type.attribute.baseFontSize();
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultBaseFontSize;
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
   switch (action.type) {
     case UPDATE_THEME:
-      return action.theme.base.baseFontSize;
+      return action.theme.base.baseFontSize || defaultBaseFontSize;
 
     case UPDATE_BASE_FONT_SIZE:
       return updateBaseUnit(state, action);
@@ -1099,16 +1138,18 @@ var baseFontSize = function baseFontSize() {
 var UPDATE_BASE_LINE_HEIGHT_VIEW = 'UPDATE_BASE_LINE_HEIGHT_VIEW';
 var UPDATE_BASE_LINE_HEIGHT = 'UPDATE_BASE_LINE_HEIGHT';
 
-var baseFontSize$1 = function baseFontSize() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : type.attribute.baseLineHeight();
+var defaultBaseLineHeight = type.attribute.baseLineHeight();
+
+var baseLineHeight = function baseLineHeight() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultBaseLineHeight;
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
   switch (action.type) {
     case UPDATE_THEME:
-      return action.theme.base.baseLineHeight;
+      return action.theme.base.baseLineHeight || defaultBaseLineHeight;
 
     case UPDATE_BASE_LINE_HEIGHT_VIEW:
-      return _objectSpread({}, state, {
+      return _objectSpread$1({}, state, {
         view: action.view
       });
 
@@ -1122,13 +1163,15 @@ var baseFontSize$1 = function baseFontSize() {
 
 var UPDATE_BASE_SPACING = 'UPDATE_BASE_SPACING';
 
-var baseFontSize$2 = function baseFontSize() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : type.attribute.baseSpacing();
+var defaultFontSize$1 = type.attribute.baseSpacing();
+
+var baseFontSize$1 = function baseFontSize() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultFontSize$1;
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
   switch (action.type) {
     case UPDATE_THEME:
-      return action.theme.base.baseSpacing;
+      return action.theme.base.baseSpacing || defaultFontSize$1;
 
     case UPDATE_BASE_SPACING:
       return updateBaseUnit(state, action);
@@ -1138,24 +1181,38 @@ var baseFontSize$2 = function baseFontSize() {
   }
 };
 
-var object$1 = function object() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : type.baseSchema.object;
+var __schemaname$1 = function __schemaname() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : type.baseSchema.__schemaname;
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
   switch (action.type) {
     case UPDATE_THEME:
-      return action.theme.base.object || type.baseSchema.object;
+      return action.theme.base.__schemaname || type.baseSchema.__schemaname;
 
     default:
       return state;
   }
 };
 
-var setting$1 = combineReducers({
+var __typename$1 = function __typename() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : type.baseSchema.__typename;
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case UPDATE_THEME:
+      return action.theme.base.__typename || type.baseSchema.__typename;
+
+    default:
+      return state;
+  }
+};
+
+var base = combineReducers({
+  __schemaname: __schemaname$1,
+  __typename: __typename$1,
   baseFontSize: baseFontSize,
-  baseLineHeight: baseFontSize$1,
-  baseSpacing: baseFontSize$2,
-  object: object$1
+  baseLineHeight: baseLineHeight,
+  baseSpacing: baseFontSize$1
 });
 
 var UPDATE_THEME_ID = 'UPDATE_THEME_ID';
@@ -1211,13 +1268,26 @@ var version = function version() {
   }
 };
 
-var object$2 = function object() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : type.themeSchema.object;
+var __schemaname$2 = function __schemaname() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : type.themeSchema.__schemaname;
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
   switch (action.type) {
     case UPDATE_THEME:
-      return action.theme.object || type.themeSchema.object;
+      return action.theme.__schemaname || type.themeSchema.__schemaname;
+
+    default:
+      return state;
+  }
+};
+
+var __typename$2 = function __typename() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : type.themeSchema.__typename;
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case UPDATE_THEME:
+      return action.theme.__typename || type.themeSchema.__typename;
 
     default:
       return state;
@@ -1225,13 +1295,14 @@ var object$2 = function object() {
 };
 
 var theme = combineReducers({
+  __schemaname: __schemaname$2,
+  __typename: __typename$2,
+  base: base,
   fontFace: fontFace,
   id: id$1,
   name: name,
   setting: setting,
-  base: setting$1,
   swatch: swatch,
-  object: object$2,
   version: version
 });
 
@@ -1508,168 +1579,161 @@ var mapTheme = function mapTheme(_ref) {
     theme: theme
   };
 };
-var mapId = function mapId(_ref2) {
-  var id = _ref2.theme.id;
+var mapMeta = function mapMeta(_ref2) {
+  var _ref2$theme = _ref2.theme,
+      id = _ref2$theme.id,
+      name = _ref2$theme.name,
+      type$$1 = _ref2$theme.type,
+      version = _ref2$theme.version;
   return {
-    id: id
-  };
-};
-var mapName = function mapName(_ref3) {
-  var name = _ref3.theme.name;
-  return {
-    name: name
-  };
-};
-var mapType = function mapType(_ref4) {
-  var type$$1 = _ref4.theme.type;
-  return {
-    type: type$$1
-  };
-};
-var mapVersion = function mapVersion(_ref5) {
-  var version = _ref5.theme.version;
-  return {
+    id: id,
+    name: name,
+    type: type$$1,
     version: version
   };
 };
-var mapBaseFontSize = function mapBaseFontSize(_ref6) {
-  var baseFontSize = _ref6.theme.base.baseFontSize;
+var mapBaseFontSize = function mapBaseFontSize(_ref3) {
+  var baseFontSize = _ref3.theme.base.baseFontSize;
   return {
     baseFontSize: baseFontSize
   };
 }; // prettier-ignore
 
-var mapBaseFontSizeContent = function mapBaseFontSizeContent(_ref7) {
-  var content = _ref7.theme.base.baseFontSize.content;
+var mapBaseFontSizeContent = function mapBaseFontSizeContent(_ref4) {
+  var content = _ref4.theme.base.baseFontSize.content;
   return {
     content: content
   };
 }; // prettier-ignore
 
-var mapBaseLineHeight = function mapBaseLineHeight(_ref8) {
-  var baseLineHeight = _ref8.theme.base.baseLineHeight;
+var mapBaseLineHeight = function mapBaseLineHeight(_ref5) {
+  var baseLineHeight = _ref5.theme.base.baseLineHeight;
   return {
     baseLineHeight: baseLineHeight
   };
 }; // prettier-ignore
 
-var mapBaseLineHeightContent = function mapBaseLineHeightContent(_ref9) {
-  var content = _ref9.theme.base.baseLineHeight.content;
+var mapBaseLineHeightContent = function mapBaseLineHeightContent(_ref6) {
+  var content = _ref6.theme.base.baseLineHeight.content;
   return {
     content: content
   };
 }; // prettier-ignore
 
-var mapBaseSpacing = function mapBaseSpacing(_ref10) {
-  var baseSpacing = _ref10.theme.base.baseSpacing;
+var mapBaseSpacing = function mapBaseSpacing(_ref7) {
+  var baseSpacing = _ref7.theme.base.baseSpacing;
   return {
     baseSpacing: baseSpacing
   };
 }; // prettier-ignore
 
-var mapBaseSpacingContent = function mapBaseSpacingContent(_ref11) {
-  var content = _ref11.theme.base.baseSpacing.content;
+var mapBaseSpacingContent = function mapBaseSpacingContent(_ref8) {
+  var content = _ref8.theme.base.baseSpacing.content;
   return {
     content: content
   };
 }; // prettier-ignore
 
-var mapFontFace = function mapFontFace(_ref12) {
-  var fontFace = _ref12.theme.fontFace;
+var mapFontFace = function mapFontFace(_ref9) {
+  var fontFace = _ref9.theme.fontFace;
   return {
     fontFace: fontFace
   };
 }; // prettier-ignore
 
-var mapFontFaceContent = function mapFontFaceContent(_ref13) {
-  var content = _ref13.theme.fontFace.content;
+var mapFontFaceContent = function mapFontFaceContent(_ref10) {
+  var content = _ref10.theme.fontFace.content;
   return {
     content: content
   };
 }; // prettier-ignore
 
-var mapSwatch = function mapSwatch(_ref14) {
-  var swatch = _ref14.theme.swatch;
+var mapSwatch = function mapSwatch(_ref11) {
+  var swatch = _ref11.theme.swatch;
   return {
     swatch: swatch
   };
 };
-var mapSwatchContent = function mapSwatchContent(_ref15) {
-  var content = _ref15.theme.swatch.content;
+var mapSwatchContent = function mapSwatchContent(_ref12) {
+  var content = _ref12.theme.swatch.content;
   return {
     content: content
   };
 }; // prettier-ignore
 
-var mapColor = function mapColor(_ref16) {
-  var color = _ref16.theme.setting.color;
+var mapColor = function mapColor(_ref13) {
+  var color = _ref13.theme.setting.color;
   return {
     color: color
   };
 }; // prettier-ignore
 
-var mapColorContent = function mapColorContent(_ref17) {
-  var content = _ref17.theme.setting.color.content;
+var mapColorContent = function mapColorContent(_ref14) {
+  var content = _ref14.theme.setting.color.content;
   return {
     content: content
   };
 }; // prettier-ignore
 
-var mapFontFamily = function mapFontFamily(_ref18) {
-  var fontFamily = _ref18.theme.setting.fontFamily;
+var mapFontFamily = function mapFontFamily(_ref15) {
+  var fontFamily = _ref15.theme.setting.fontFamily;
   return {
     fontFamily: fontFamily
   };
 }; // prettier-ignore
 
-var mapFontFamilyContent = function mapFontFamilyContent(_ref19) {
-  var content = _ref19.theme.setting.fontFamily.content;
+var mapFontFamilyContent = function mapFontFamilyContent(_ref16) {
+  var content = _ref16.theme.setting.fontFamily.content;
   return {
     content: content
   };
 }; // prettier-ignore
 
-var mapFontSize = function mapFontSize(_ref20) {
-  var fontSize = _ref20.theme.setting.fontSize;
+var mapFontSize = function mapFontSize(_ref17) {
+  var fontSize = _ref17.theme.setting.fontSize;
   return {
     fontSize: fontSize
   };
 }; // prettier-ignore
 
-var mapFontSizeContent = function mapFontSizeContent(_ref21) {
-  var content = _ref21.theme.setting.fontSize.content;
+var mapFontSizeContent = function mapFontSizeContent(_ref18) {
+  var content = _ref18.theme.setting.fontSize.content;
   return {
     content: content
   };
 }; // prettier-ignore
 
-var mapFontWeight = function mapFontWeight(_ref22) {
-  var fontWeight = _ref22.theme.setting.fontWeight;
+var mapFontWeight = function mapFontWeight(_ref19) {
+  var fontWeight = _ref19.theme.setting.fontWeight;
   return {
     fontWeight: fontWeight
   };
 }; // prettier-ignore
 
-var mapFontWeightContent = function mapFontWeightContent(_ref23) {
-  var content = _ref23.theme.setting.fontWeight.content;
+var mapFontWeightContent = function mapFontWeightContent(_ref20) {
+  var content = _ref20.theme.setting.fontWeight.content;
   return {
     content: content
   };
 }; // prettier-ignore
 
-var mapSpacing = function mapSpacing(_ref24) {
-  var spacing = _ref24.theme.setting.spacing;
+var mapSpacing = function mapSpacing(_ref21) {
+  var spacing = _ref21.theme.setting.spacing;
   return {
     spacing: spacing
   };
 }; // prettier-ignore
 
-var mapSpacingContent = function mapSpacingContent(_ref25) {
-  var content = _ref25.theme.setting.spacing.content;
+var mapSpacingContent = function mapSpacingContent(_ref22) {
+  var content = _ref22.theme.setting.spacing.content;
   return {
     content: content
   };
 }; // prettier-ignore
+
+var withThemeMeta = reactRedux.connect(mapMeta, {
+  updateThemeName: updateThemeName
+});
 
 var withBaseFontSizeAttribute = reactRedux.connect(mapBaseFontSize);
 var withBaseFontSizeContent = reactRedux.connect(mapBaseFontSizeContent, {
@@ -1732,13 +1796,13 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(NewUnit).call(this, props));
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "updateName", function (name) {
+    _defineProperty$1(_assertThisInitialized(_assertThisInitialized(_this)), "updateName", function (name) {
       return _this.setState({
         name: name
       });
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "updateValue", function (value) {
+    _defineProperty$1(_assertThisInitialized(_assertThisInitialized(_this)), "updateValue", function (value) {
       return _this.setState({
         value: value
       });
@@ -1771,7 +1835,7 @@ function (_Component) {
   return NewUnit;
 }(React.Component);
 
-_defineProperty(NewUnit, "defaultProps", {
+_defineProperty$1(NewUnit, "defaultProps", {
   unit: core.noop,
   attribute: core.noop,
   unitDefaults: {},
@@ -1787,7 +1851,7 @@ var Deserialize = function Deserialize(_ref) {
       _ref$schema = _ref.schema,
       schema = _ref$schema === void 0 ? {} : _ref$schema;
   return render({
-    deserialized: Boolean(attribute) ? type.deserializeAttribute(_objectSpread({}, attribute, {
+    deserialized: Boolean(attribute) ? type.deserializeAttribute(_objectSpread$1({}, attribute, {
       content: [unit]
     }), schema) : {}
   });
@@ -1858,10 +1922,7 @@ exports.addSpacing = addSpacing;
 exports.removeSpacing = removeSpacing;
 exports.updateSpacing = updateSpacing;
 exports.mapTheme = mapTheme;
-exports.mapId = mapId;
-exports.mapName = mapName;
-exports.mapType = mapType;
-exports.mapVersion = mapVersion;
+exports.mapMeta = mapMeta;
 exports.mapBaseFontSize = mapBaseFontSize;
 exports.mapBaseFontSizeContent = mapBaseFontSizeContent;
 exports.mapBaseLineHeight = mapBaseLineHeight;
@@ -1882,6 +1943,7 @@ exports.mapFontWeight = mapFontWeight;
 exports.mapFontWeightContent = mapFontWeightContent;
 exports.mapSpacing = mapSpacing;
 exports.mapSpacingContent = mapSpacingContent;
+exports.withThemeMeta = withThemeMeta;
 exports.withBaseFontSizeAttribute = withBaseFontSizeAttribute;
 exports.withBaseFontSizeContent = withBaseFontSizeContent;
 exports.withBaseLineHeightAttribute = withBaseLineHeightAttribute;

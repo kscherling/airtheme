@@ -4,10 +4,10 @@ import basicTheme from '../test/theme'
 import { VERSION } from '@airtheme/core'
 
 test('builds meta values', () => {
-  const result = pipe(basicTheme)(meta, output)
+  const result = pipe(meta)(basicTheme)
 
   expect(typeof result.id).toBe('string')
-  expect(result.name).toEqual('Test Theme')
+  expect(result.name).toEqual('')
   expect(result.version).toEqual(VERSION)
 
   expect(true).toEqual(true)

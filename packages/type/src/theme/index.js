@@ -1,20 +1,11 @@
 // @flow
-import schema from './schema'
-import base from './types/base'
-import factoryFor from './factoryFor'
+import * as types from './types'
+import factoryForTheme from './factoryFor'
 
-type Theme = {
-  object: string,
-  name: string,
-  version: number
-}
+const { Base } = types
 
-type ThemeTypes = {
-  base: Theme
-}
-
-const theme: ThemeTypes = {
-  base: factoryFor(base, schema)
+const theme = {
+  base: factoryForTheme(Base)
 }
 
 export default theme

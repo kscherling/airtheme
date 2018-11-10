@@ -1,22 +1,22 @@
 import deserializeUnit from '../unit/deserializer'
 /*
-Accepts an attribute object and theme object
-Returns object of deserialzied values
-must pass attribute and theme object for reference
+Accepts an attribute __typename and theme __typename
+Returns __typename of deserialzied values
+must pass attribute and theme __typename for reference
 
 fontSize: {
   view: "factor",
   viewable: [ "factor", "px", "rem" ],
   reference: "baseFontSize",
-  object: "fontSize",
+  __typename: "fontSize",
   unit: "factor"
   content: [
-    { name: "xs", ordinal: 1, object: "factor", value: "0.8" },
-    { name: "sm", ordinal: 2, object: "factor", value: "0.9" },
-    { name: "md", ordinal: 3, object: "factor", value: "1" },
-    { name: "lg", ordinal: 4, object: "factor", value: "1.1" },
-    { name: "xl", ordinal: 5, object: "factor", value: "1.2" },
-    { name: "xxl", ordinal: 6, object: "factor", value: "1.3" }
+    { name: "xs", ordinal: 1, __typename: "factor", value: "0.8" },
+    { name: "sm", ordinal: 2, __typename: "factor", value: "0.9" },
+    { name: "md", ordinal: 3, __typename: "factor", value: "1" },
+    { name: "lg", ordinal: 4, __typename: "factor", value: "1.1" },
+    { name: "xl", ordinal: 5, __typename: "factor", value: "1.2" },
+    { name: "xxl", ordinal: 6, __typename: "factor", value: "1.3" }
   ],
 },
 
@@ -33,8 +33,8 @@ const isEmpty = ({ content }) =>
 
 const validTypes = ({ content, unit } = {}) =>
   Array.isArray(content)
-    ? content.length && unit === content[0].object
-    : content && unit === content.object
+    ? content.length && unit === content[0].__typename
+    : content && unit === content.__typename
 
 const deserialize = (attribute, theme) => {
   if (isEmpty(attribute)) {

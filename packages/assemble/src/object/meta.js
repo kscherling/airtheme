@@ -1,16 +1,15 @@
 import { deserializeAttribute } from '@airtheme/type'
 import { ID_KEY, NAME_KEY, VERSION_KEY } from '@airtheme/core'
 
-const meta = (next, input, theme) => {
-  return next(
+const meta = (nextFn, accumulator, themeData) =>
+  nextFn(
     {
-      ...input,
-      [ID_KEY]: theme[ID_KEY],
-      [NAME_KEY]: theme[NAME_KEY],
-      [VERSION_KEY]: theme[VERSION_KEY]
+      ...accumulator,
+      [ID_KEY]: themeData[ID_KEY],
+      [NAME_KEY]: themeData[NAME_KEY],
+      [VERSION_KEY]: themeData[VERSION_KEY]
     },
-    theme
+    themeData
   )
-}
 
 export default meta

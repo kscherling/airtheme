@@ -11,19 +11,19 @@ case $CMD in
     ;;
 
   build)
-    exe "../../node_modules/.bin/rollup -c"
+    exe "../../node_modules/.bin/rollup -c $@"
     ;;
 
   build:watch)
-    exe "../../node_modules/.bin/rollup --config --watch"
+    exe "../../node_modules/.bin/rollup --config --watch $@"
     ;;
 
   test)
-    exe "../../node_modules/.bin/jest -c $(pwd)/jest.config.js --rootDir ../ --watchAll"
+    exe "../../node_modules/.bin/jest -c $(pwd)/jest.config.js --rootDir ../ --watchAll $@"
     ;;
 
   flow)
-    exe "../../node_modules/.bin/flow"
+    exe "../../node_modules/.bin/flow $@"
     ;;
 
   relink)

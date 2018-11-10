@@ -1,5 +1,5 @@
 export default {
-  id: '12345',
+  id: '1',
   name: 'Demo Theme',
   version: '0.1.0',
   baseFontSize: '16px',

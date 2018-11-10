@@ -3,7 +3,7 @@ import pipe, { output } from '../utils/pipe'
 import basicTheme from '../test/theme'
 
 test('builds setting values', () => {
-  const result = pipe(basicTheme)(setting, output)
+  const result = pipe(setting)(basicTheme)
 
   expect(result).toEqual({
     baseFontSize: '16px',

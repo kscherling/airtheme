@@ -1596,7 +1596,7 @@ var dist_3 = dist.get;
 var dist_4 = dist.ifCss;
 
 function _templateObject3$3() {
-  var data = _taggedTemplateLiteral(["\n  font-size: ", ";\n  line-height: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  height: 200px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: ", ";\n  line-height: ", ";\n"]);
 
   _templateObject3$3 = function _templateObject3() {
     return data;
@@ -1624,11 +1624,10 @@ function _templateObject$7() {
 
   return data;
 }
-var DEFAULT_TEXT$1 = 'The quick brown fox jumped over the lazy dog.';
+var DEFAULT_SYMBOL = 'Aa';
 
 var cssForDeserialized = function cssForDeserialized(_ref) {
-  var attribute = _ref.attribute,
-      cssAttr = _ref.cssAttr,
+  var cssAttr = _ref.cssAttr,
       deserializedValue = _ref.deserializedValue;
   return deserializedValue && cssAttr && styled.css(_templateObject$7(), cssAttr, deserializedValue);
 };
@@ -1637,11 +1636,11 @@ var Styles$1 = styled__default.div(_templateObject2$3(), cssForDeserialized);
 var Globals$1 = styled__default.div(_templateObject3$3(), dist_3.baseFontSize, dist_3.baseLineHeight);
 
 var Typography = function Typography(props) {
-  return React__default.createElement(Globals$1, null, React__default.createElement(Styles$1, props, DEFAULT_TEXT$1));
+  return React__default.createElement(Globals$1, null, React__default.createElement(Styles$1, props, DEFAULT_SYMBOL));
 };
 
 function _templateObject$8() {
-  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  height: 5rem;\n  background: ", ";\n  border-radius: 6px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  height: 200px;\n  background: ", ";\n"]);
 
   _templateObject$8 = function _templateObject() {
     return data;

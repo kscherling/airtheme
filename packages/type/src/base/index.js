@@ -1,9 +1,10 @@
-import schema from './schema'
-import base from './types/base'
+import * as types from './types'
 import factoryFor from './factoryFor'
 
+const { Base } = types
+
 const root = {
-  base: factoryFor(base, schema)
+  base: factoryFor(Base)
 }
 
 export default root

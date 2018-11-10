@@ -1,25 +1,19 @@
-import schema from './schema'
+import * as types from './types'
+import Schema from './schema'
 import factoryFor from './factoryFor'
-import factor from './types/factor'
-import hex from './types/hex'
-import hexa from './types/hexa'
-import px from './types/px'
-import reference from './types/reference'
-import rem from './types/rem'
-import rgb from './types/rgb'
-import rgba from './types/rgba'
-import string from './types/string'
+
+const { Factor, Hex, Hexa, Px, Reference, Rem, Rgb, Rgba, Str } = types
 
 const unit = {
-  factor: factoryFor(factor, schema),
-  hex: factoryFor(hex, schema),
-  hexa: factoryFor(hexa, schema),
-  px: factoryFor(px, schema),
-  reference: factoryFor(reference, schema),
-  rem: factoryFor(rem, schema),
-  rgb: factoryFor(rgb, schema),
-  rgba: factoryFor(rgba, schema),
-  string: factoryFor(string, schema)
+  factor: factoryFor(Factor, Schema),
+  hex: factoryFor(Hex, Schema),
+  hexa: factoryFor(Hexa, Schema),
+  px: factoryFor(Px, Schema),
+  reference: factoryFor(Reference, Schema),
+  rem: factoryFor(Rem, Schema),
+  rgb: factoryFor(Rgb, Schema),
+  rgba: factoryFor(Rgba, Schema),
+  string: factoryFor(Str, Schema)
 }
 
 export default unit

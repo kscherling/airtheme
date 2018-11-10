@@ -6,46 +6,52 @@ it('creates `setting`', () => {
   const result = setting.base()
 
   expect(result).toEqual({
-    object: 'setting',
+    __schemaname: 'Setting',
+    __typename: 'Base',
     color: {
+      __schemaname: 'Attribute',
+      __typename: 'Color',
       content: [],
-      view: 'reference',
-      viewable: ['reference', 'hex', 'hexa', 'rgb', 'rgba'],
       reference: 'swatch',
-      object: 'color',
-      unit: 'reference'
+      unit: 'Reference',
+      view: 'Reference',
+      viewable: ['Reference', 'Hex', 'Hexa', 'Rgb', 'Rgba']
     },
     fontFamily: {
+      __schemaname: 'Attribute',
+      __typename: 'FontFamily',
       content: [],
-      view: 'reference',
-      viewable: ['reference', 'string'],
       reference: 'fontFace',
-      object: 'fontFamily',
-      unit: 'reference'
+      unit: 'Reference',
+      view: 'Reference',
+      viewable: ['Reference']
     },
     fontSize: {
+      __schemaname: 'Attribute',
+      __typename: 'FontSize',
       content: [],
-      view: 'factor',
-      viewable: ['factor', 'px', 'rem'],
       reference: 'base.baseFontSize',
-      object: 'fontSize',
-      unit: 'factor'
+      unit: 'Factor',
+      view: 'Factor',
+      viewable: ['Factor', 'Px', 'Rem']
     },
     fontWeight: {
+      __schemaname: 'Attribute',
+      __typename: 'FontWeight',
       content: [],
-      view: 'string',
-      viewable: ['string'],
       reference: null,
-      object: 'fontWeight',
-      unit: 'string'
+      unit: 'String',
+      view: 'String',
+      viewable: ['String']
     },
     spacing: {
+      __schemaname: 'Attribute',
+      __typename: 'Spacing',
       content: [],
-      view: 'factor',
-      viewable: ['factor', 'px'],
       reference: 'base.baseSpacing',
-      object: 'spacing',
-      unit: 'factor'
+      unit: 'Factor',
+      view: 'Factor',
+      viewable: ['Factor', 'Px']
     }
   })
 })
@@ -58,13 +64,20 @@ it('can initialize with custom `attribute`', () => {
   })
 
   expect(result.color).toEqual({
+    __schemaname: 'Attribute',
+    __typename: 'Color',
     content: [
-      { name: null, ordinal: null, object: 'hexa', value: '#000000, 1' }
+      {
+        __schemaname: 'Unit',
+        __typename: 'Hexa',
+        name: '',
+        ordinal: 0,
+        value: '#000000, 1'
+      }
     ],
-    view: 'reference',
-    viewable: ['reference', 'hex', 'hexa', 'rgb', 'rgba'],
     reference: 'swatch',
-    object: 'color',
-    unit: 'reference'
+    unit: 'Reference',
+    view: 'Reference',
+    viewable: ['Reference', 'Hex', 'Hexa', 'Rgb', 'Rgba']
   })
 })

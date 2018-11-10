@@ -44,22 +44,32 @@ const version = (state = themeSchema.version, action) => {
   }
 }
 
-const object = (state = themeSchema.object, action) => {
+const __schemaname = (state = themeSchema.__schemaname, action) => {
   switch (action.type) {
     case UPDATE_THEME:
-      return action.theme.object || themeSchema.object
+      return action.theme.__schemaname || themeSchema.__schemaname
+    default:
+      return state
+  }
+}
+
+const __typename = (state = themeSchema.__typename, action) => {
+  switch (action.type) {
+    case UPDATE_THEME:
+      return action.theme.__typename || themeSchema.__typename
     default:
       return state
   }
 }
 
 export default combineReducers({
+  __schemaname,
+  __typename,
+  base,
   fontFace,
   id,
   name,
   setting,
-  base,
   swatch,
-  object,
   version
 })

@@ -6,76 +6,68 @@ it('creates `base`', () => {
   const result = base.base()
 
   expect(result).toEqual({
+    __schemaname: 'Base',
+    __typename: 'Base',
     baseFontSize: {
-      content: { name: 'baseFontSize', object: 'px', ordinal: null, value: 16 },
-      object: 'baseFontSize',
+      __schemaname: 'Attribute',
+      __typename: 'BaseFontSize',
+      content: {
+        __schemaname: 'Unit',
+        __typename: 'Px',
+        name: '',
+        ordinal: 0,
+        value: ''
+      },
       reference: null,
-      unit: 'px',
-      view: 'px',
-      viewable: ['px']
+      unit: 'Px',
+      view: 'Px',
+      viewable: ['Px']
     },
     baseLineHeight: {
+      __schemaname: 'Attribute',
+      __typename: 'BaseLineHeight',
       content: {
-        name: 'baseLineHeight',
-        object: 'factor',
-        ordinal: null,
-        value: 1.15
+        __schemaname: 'Unit',
+        __typename: 'Factor',
+        name: '',
+        ordinal: 0,
+        value: ''
       },
-      object: 'baseLineHeight',
       reference: 'base.baseFontSize',
-      unit: 'factor',
-      view: 'factor',
-      viewable: ['factor', 'px']
+      unit: 'Factor',
+      view: 'Factor',
+      viewable: ['Factor', 'Px']
     },
     baseSpacing: {
-      content: { name: 'baseSpacing', object: 'px', ordinal: null, value: 16 },
-      object: 'baseSpacing',
+      __schemaname: 'Attribute',
+      __typename: 'BaseSpacing',
+      content: {
+        __schemaname: 'Unit',
+        __typename: 'Px',
+        name: '',
+        ordinal: 0,
+        value: ''
+      },
       reference: null,
-      unit: 'px',
-      view: 'px',
-      viewable: ['px']
-    },
-    object: 'base'
+      unit: 'Px',
+      view: 'Px',
+      viewable: ['Px']
+    }
   })
 })
 
 it('can initialize with custom `attribute`', () => {
   const result = base.base({
-    baseFontSize: attribute.baseFontSize({
-      content: { some: 'data' }
-    })
+    baseFontSize: {},
+    baseLineHeight: {},
+    baseSpacing: {}
   })
 
   expect(result).toEqual({
-    baseFontSize: {
-      content: { some: 'data' },
-      object: 'baseFontSize',
-      reference: null,
-      unit: 'px',
-      view: 'px',
-      viewable: ['px']
-    },
-    baseLineHeight: {
-      content: {
-        name: 'baseLineHeight',
-        object: 'factor',
-        ordinal: null,
-        value: 1.15
-      },
-      object: 'baseLineHeight',
-      reference: 'base.baseFontSize',
-      unit: 'factor',
-      view: 'factor',
-      viewable: ['factor', 'px']
-    },
-    baseSpacing: {
-      content: { name: 'baseSpacing', object: 'px', ordinal: null, value: 16 },
-      object: 'baseSpacing',
-      reference: null,
-      unit: 'px',
-      view: 'px',
-      viewable: ['px']
-    },
-    object: 'base'
+    __schemaname: 'Base',
+    __typename: 'Base',
+    baseFontSize: {},
+    baseLineHeight: {},
+    baseSpacing: {}
   })
 })
