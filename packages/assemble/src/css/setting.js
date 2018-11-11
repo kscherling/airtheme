@@ -1,6 +1,6 @@
 import { deserializeAttribute } from '@airtheme/type'
 import { formatCssVariableWithSetting } from '../utils/css/formatCss'
-import { compose, reduce } from 'fp'
+import { compose, reduce, defaultTo } from 'fp'
 
 const buildRules = elementPrefix => (acc, [key, val]) => ({
   ...acc,
@@ -12,6 +12,7 @@ const buildCssVariables = (elementPrefix, attributeContent, schema) =>
   compose(
     reduce(buildRules(elementPrefix), {}),
     Object.entries,
+    defaultTo({}),
     deserializeAttribute
   )(attributeContent, schema)
 

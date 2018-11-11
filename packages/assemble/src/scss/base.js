@@ -1,17 +1,19 @@
 import { deserializeAttribute } from '@airtheme/type'
 import { formatScssVariableWithBase } from '../utils/scss/formatScss'
-import { compose, reduce } from 'fp'
+import { compose, reduce, defaultTo } from 'fp'
 
 const buildRules = (acc, [key, val]) => ({
   ...acc,
   [formatScssVariableWithBase(key, null)]: val
 })
 
-const buildScssVariables = compose(
-  reduce(buildRules, {}),
-  Object.entries,
-  deserializeAttribute
-)
+const buildScssVariables = (attributeContent = {}, schema) =>
+  compose(
+    reduce(buildRules, {}),
+    Object.entries,
+    defaultTo({}),
+    deserializeAttribute
+  )(attributeContent, schema)
 
 const setting = (nextFn, accumulator, schema) =>
   nextFn(
