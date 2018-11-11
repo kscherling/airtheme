@@ -17,8 +17,8 @@ const bemFor = curry((block, element, modifier) => {
     return `${element}_${modifier}`
   }
 
-  if (block || element) {
-    return `${block || element}`
+  if (block || element || modifier) {
+    return `${block || element || modifier}`
   }
 })
 

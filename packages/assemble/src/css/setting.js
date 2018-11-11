@@ -1,6 +1,7 @@
 import { deserializeAttribute } from '@airtheme/type'
 import { cssVariableForSetting } from './lib/cssVariableFor'
 import dasherize from './lib/dasherize'
+import { reduce } from 'fp'
 import {
   BASE_FONT_SIZE_KEY,
   BASE_LINE_HEIGHT_KEY,
@@ -12,29 +13,21 @@ import {
   FONT_WEIGHT_KEY,
   SETTING_KEY,
   SPACING_KEY,
-  SWATCH_KEY
+  SWATCH_KEY,
+  compose
 } from '@airtheme/core'
 
-// not a super fan of this.  Tries to ensure method is called with the proper
-// arity given potential null values
-const resolveKeys = (...args) => {
-  const filtered = args.reduce(
-    (acc, arg) => (arg ? [...acc, dasherize(arg)] : acc),
-    []
-  )
+const dasherizeAll = (...arr) => arr.map(arg => (arg ? dasherize(arg) : arg))
 
-  return filtered.length === 1 ? [...filtered, null] : filtered
-}
-
-const buildCssVariablesFor = (elementPrefix, attributeContent, schema) =>
-  Object.entries(deserializeAttribute(attributeContent, schema)).reduce(
+const buildCssVariablesFor = (elementPrefix, attributeContent, schema) => {
+  return Object.entries(deserializeAttribute(attributeContent, schema)).reduce(
     (acc, [key, val]) => ({
       ...acc,
-      [cssVariableForSetting(...resolveKeys(elementPrefix, key))]: val
+      [cssVariableForSetting(...dasherizeAll(elementPrefix, key))]: val
     }),
     {}
   )
-
+}
 const setting = (nextFn, accumulator, schema) =>
   nextFn(
     {
