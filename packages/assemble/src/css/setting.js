@@ -32,13 +32,10 @@ const setting = (nextFn, accumulator, schema) =>
   nextFn(
     {
       ...accumulator,
-      ...buildCssVariablesFor(null, schema.base.baseLineHeight, schema),
-      ...buildCssVariablesFor(null, schema.base.baseFontSize, schema),
-      ...buildCssVariablesFor(null, schema.base.baseSpacing, schema),
-      ...buildCssVariablesFor('fontFace', schema.fontFace, schema),
-      ...buildCssVariablesFor('swatch', schema.swatch, schema),
       ...buildCssVariablesFor('color', schema.setting.color, schema),
+      ...buildCssVariablesFor('fontFace', schema.fontFace, schema),
       ...buildCssVariablesFor('fontFamily', schema.setting.fontFamily, schema),
+      ...buildCssVariablesFor('fontSize', schema.setting.fontSize, schema),
       ...buildCssVariablesFor('fontWeight', schema.setting.fontWeight, schema),
       ...buildCssVariablesFor('spacing', schema.setting.spacing, schema)
     },

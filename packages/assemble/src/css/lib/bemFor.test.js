@@ -20,12 +20,14 @@ test('without block', () => {
 
 describe('#bemForBase', () => {
   test('curries block', () => {
-    expect(bemForBase('element', 'modifier')).toEqual('element_modifier')
+    expect(bemForBase('element', 'modifier')).toEqual('base__element_modifier')
   })
 })
 
 describe('#bemForSetting', () => {
   test('curries block', () => {
-    expect(bemForSetting('element', 'modifier')).toEqual('element_modifier')
+    expect(bemForSetting('element', 'modifier')).toEqual(
+      'setting__element_modifier'
+    )
   })
 })

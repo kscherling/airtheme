@@ -2,6 +2,7 @@ import humps from 'humps'
 import { compose } from '@airtheme/core'
 const apply = fn => arg => fn(arg)
 
+// because too lazy to figure out regex
 // camelize ensures spaces are dasherized as well
 
 const replaceSpaceDash = str => str.split(' -').join('-')

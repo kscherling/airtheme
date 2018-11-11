@@ -22,7 +22,7 @@ const bemFor = curry((block, element, modifier) => {
   }
 })
 
-export const bemForBase = bemFor(null)
-export const bemForSetting = bemFor(null)
+export const bemForBase = bemFor('base')
+export const bemForSetting = bemFor('setting')
 
 export default bemFor

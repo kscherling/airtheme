@@ -6,12 +6,13 @@ const Pretty = ({
   data,
   indentSize = 2,
   outputTo = 'PRINT',
-  fullFunction = false
+  fullFunction = false,
+  language = 'javascript'
 }) => {
   const format = pretty(data, indentSize, outputTo, fullFunction)
 
   return (
-    <Highlight {...defaultProps} code={format} language="javascript">
+    <Highlight {...defaultProps} code={format} language={language}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <pre className={className} style={{ ...style, width: '100%' }}>
           {tokens.map((line, i) => (
