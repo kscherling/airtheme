@@ -4,10 +4,9 @@ import base from './base'
 
 // TODO: Figure out why returning curried fn directly doesn't work...
 
-const index = data =>
-  pipe(
-    base,
-    setting
-  )(data)
+const index = pipe(
+  base,
+  setting
+)
 
 export default index

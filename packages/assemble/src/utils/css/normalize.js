@@ -1,16 +1,15 @@
 import humps from 'humps'
 import { compose } from '@airtheme/core'
-const apply = fn => arg => fn(arg)
 
 // because too lazy to figure out regex
-// camelize ensures spaces are dasherized as well
-
 const replaceSpaceDash = str => str.split(' -').join('-')
 const replaceDashSpace = str => str.split('- ').join('-')
 const replaceSpace = str => str.split(' ').join('-')
+const apply = fn => arg => fn(arg)
 const trim = str => str.split('--').join('-')
+const safeMap = fn => arr => arr.map(arg => (arg ? fn(arg) : arg))
 
-const dasherize = compose(
+const normalize = compose(
   trim,
   apply(str => humps.decamelize(str, { separator: '-' })),
   replaceSpace,
@@ -18,4 +17,6 @@ const dasherize = compose(
   replaceSpaceDash
 )
 
-export default dasherize
+export const normalizeAll = safeMap(normalize)
+
+export default normalize

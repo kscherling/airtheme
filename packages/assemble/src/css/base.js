@@ -1,26 +1,25 @@
 import { deserializeAttribute } from '@airtheme/type'
-import { cssVariableForBase } from './lib/cssVariableFor'
-import dasherize from './lib/dasherize'
+import { formatCssVariableWithBase } from '../utils/css/formatCss'
+import { compose, reduce } from 'fp'
 
-const dasherizeAll = (...arr) => arr.map(arg => (arg ? dasherize(arg) : arg))
+const buildRules = (acc, [key, val]) => ({
+  ...acc,
+  [formatCssVariableWithBase(key, null)]: val
+})
 
-const buildCssVariablesFor = (attributeContent, schema) => {
-  return Object.entries(deserializeAttribute(attributeContent, schema)).reduce(
-    (acc, [key, val]) => ({
-      ...acc,
-      [cssVariableForBase(...dasherizeAll(key, null))]: val
-    }),
-    {}
-  )
-}
+const buildCssVariables = compose(
+  reduce(buildRules, {}),
+  Object.entries,
+  deserializeAttribute
+)
 
 const setting = (nextFn, accumulator, schema) =>
   nextFn(
     {
       ...accumulator,
-      ...buildCssVariablesFor(schema.base.baseLineHeight, schema),
-      ...buildCssVariablesFor(schema.base.baseFontSize, schema),
-      ...buildCssVariablesFor(schema.base.baseSpacing, schema)
+      ...buildCssVariables(schema.base.baseLineHeight, schema),
+      ...buildCssVariables(schema.base.baseFontSize, schema),
+      ...buildCssVariables(schema.base.baseSpacing, schema)
     },
     schema
   )

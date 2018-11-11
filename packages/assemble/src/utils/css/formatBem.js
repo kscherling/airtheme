@@ -1,6 +1,9 @@
 import { curry } from '@airtheme/core'
+import { normalizeAll } from './normalize'
 
-const bemFor = curry((block, element, modifier) => {
+const formatBem = curry((_block, _element, _modifier) => {
+  const [block, element, modifier] = normalizeAll([_block, _element, _modifier])
+
   if (block && element && modifier) {
     return `${block}__${element}_${modifier}`
   }
@@ -22,7 +25,7 @@ const bemFor = curry((block, element, modifier) => {
   }
 })
 
-export const bemForBase = bemFor('base')
-export const bemForSetting = bemFor('setting')
+export const formatBemWithBase = formatBem('base')
+export const formatBemWithSetting = formatBem('setting')
 
-export default bemFor
+export default formatBem
