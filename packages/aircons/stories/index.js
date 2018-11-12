@@ -46,5 +46,9 @@ storiesOf('Icons', module).add('16pt', () => (
     <Aircon name="moreVert" />
     <Aircon name="plus" />
     <Aircon name="trash" />
+    <Aircon name="permalink" />
+    <Aircon name="clipboard" />
+    <Aircon name="docs" />
+    <Aircon name="download" />
   </Fragment>
 ))
