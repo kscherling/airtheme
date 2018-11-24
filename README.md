@@ -1,5 +1,13 @@
 # Airtheme
 
+The true value lies in the structured data.  Because we can describe the schema, we can freely communicate style.  And because the define the interface (api of sorts = docs and best practices), we can transmit updates in a predictable way.  It is a system that only has value in so far as the consumer agrees to abide by the rules.  But in that, is a framework for reasoning about styling components.
+
+ThemeProvider
+onMount makes websocket connection with Airtheme
+connected panel sends live updates
+browsers get schema payload on update, regenerates 
+
+
 ## @airtheme/type
 
 Types, Schemas and factories for theme configuration objects.

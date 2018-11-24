@@ -4,7 +4,7 @@ import { cssFor } from '@airtheme/theme-helpers'
 
 const Swatch = styled.div`
   width: 100%;
-  height: 200px;
+  height: 100px;
   background: ${({ color }) => color};
 `
 
