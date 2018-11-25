@@ -30,3 +30,6 @@ Icon component library.
 
 ### @airtheme/ui  
 Common ui components.
+
+### @airtheme/theme-helpers  
+Styled-components theme helpers.
