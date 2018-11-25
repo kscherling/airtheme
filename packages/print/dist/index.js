@@ -419,6 +419,7 @@ Prism.default = Prism;
 /* This content is auto-generated to include some prismjs language components: */
 
 /* "prismjs/components/prism-markup" */
+
 prismCore.languages.markup = {
   'comment': /<!--[\s\S]*?-->/,
   'prolog': /<\?[\s\S]+?\?>/,
@@ -2443,110 +2444,81 @@ prismCore.languages.yaml = {
   'punctuation': /---|[:[\]{}\-,|>?]|\.\.\./
 };
 
-// @flow
 // Duotone Dark
 // Author: Simurai, adapted from DuoTone themes for Atom (http://simurai.com/projects/2016/01/01/duotone-themes)
 // Conversion: Bram de Haan (http://atelierbram.github.io/Base2Tone-prism/output/prism/prism-base2tone-evening-dark.css)
 // Generated with Base16 Builder (https://github.com/base16-builder/base16-builder)
 
 /*:: import type { PrismTheme } from '../src/types' */
-
-var theme /*: PrismTheme */ = {
+var theme
+/*: PrismTheme */
+= {
   plain: {
     backgroundColor: "#2a2734",
     color: "#9a86fd"
   },
-  styles: [
-    {
-      types: ["comment", "prolog", "doctype", "cdata", "punctuation"],
-      style: {
-        color: "#6c6783"
-      }
-    },
-    {
-      types: ["namespace"],
-      style: {
-        opacity: 0.7
-      }
-    },
-    {
-      types: ["tag", "operator", "number"],
-      style: {
-        color: "#e09142"
-      }
-    },
-    {
-      types: ["property", "function"],
-      style: {
-        color: "#9a86fd"
-      }
-    },
-    {
-      types: ["tag-id", "selector", "atrule-id"],
-      style: {
-        color: "#eeebff"
-      }
-    },
-    {
-      types: ["attr-name"],
-      style: {
-        color: "#c4b9fe"
-      }
-    },
-    {
-      types: [
-        "boolean",
-        "string",
-        "entity",
-        "url",
-        "attr-value",
-        "keyword",
-        "control",
-        "directive",
-        "unit",
-        "statement",
-        "regex",
-        "at-rule",
-        "placeholder",
-        "variable"
-      ],
-      style: {
-        color: "#ffcc99"
-      }
-    },
-    {
-      types: ["deleted"],
-      style: {
-        textDecorationLine: "line-through"
-      }
-    },
-    {
-      types: ["inserted"],
-      style: {
-        textDecorationLine: "underline"
-      }
-    },
-    {
-      types: ["italic"],
-      style: {
-        fontStyle: "italic"
-      }
-    },
-    {
-      types: ["important", "bold"],
-      style: {
-        fontWeight: "bold"
-      }
-    },
-    {
-      types: ["important"],
-      style: {
-        color: "#c4b9fe"
-      }
+  styles: [{
+    types: ["comment", "prolog", "doctype", "cdata", "punctuation"],
+    style: {
+      color: "#6c6783"
     }
-  ]
+  }, {
+    types: ["namespace"],
+    style: {
+      opacity: 0.7
+    }
+  }, {
+    types: ["tag", "operator", "number"],
+    style: {
+      color: "#e09142"
+    }
+  }, {
+    types: ["property", "function"],
+    style: {
+      color: "#9a86fd"
+    }
+  }, {
+    types: ["tag-id", "selector", "atrule-id"],
+    style: {
+      color: "#eeebff"
+    }
+  }, {
+    types: ["attr-name"],
+    style: {
+      color: "#c4b9fe"
+    }
+  }, {
+    types: ["boolean", "string", "entity", "url", "attr-value", "keyword", "control", "directive", "unit", "statement", "regex", "at-rule", "placeholder", "variable"],
+    style: {
+      color: "#ffcc99"
+    }
+  }, {
+    types: ["deleted"],
+    style: {
+      textDecorationLine: "line-through"
+    }
+  }, {
+    types: ["inserted"],
+    style: {
+      textDecorationLine: "underline"
+    }
+  }, {
+    types: ["italic"],
+    style: {
+      fontStyle: "italic"
+    }
+  }, {
+    types: ["important", "bold"],
+    style: {
+      fontWeight: "bold"
+    }
+  }, {
+    types: ["important"],
+    style: {
+      color: "#c4b9fe"
+    }
+  }]
 };
-
 var duotoneDark = theme;
 
 var defaultProps = {
@@ -2640,12 +2612,26 @@ var normalizeTokens = function normalizeTokens(tokens) {
   return acc;
 };
 
-function _extends$1() { _extends$1 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1.apply(this, arguments); }
+function _extends$1() {
+  _extends$1 = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends$1.apply(this, arguments);
+}
 
 var themeToDict = function themeToDict(theme, language) {
-  var plain = theme.plain; // $FlowFixMe
-
-  var base = Object.create(null);
+  var plain = theme.plain;
   var themeDict = theme.styles.reduce(function (acc, themeEntry) {
     var types = themeEntry.types,
         languages = themeEntry.languages,
@@ -2662,7 +2648,7 @@ var themeToDict = function themeToDict(theme, language) {
       acc[type] = accStyle;
     });
     return acc;
-  }, base); // $FlowFixMe
+  }, {}); // $FlowFixMe
 
   themeDict.root = plain; // $FlowFixMe
 
@@ -2672,11 +2658,44 @@ var themeToDict = function themeToDict(theme, language) {
   return themeDict;
 };
 
-function _extends$2() { _extends$2 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$2.apply(this, arguments); }
+function _extends$2() {
+  _extends$2 = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
 
-function _objectWithoutPropertiesLoose$1(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
 
-function _inheritsLoose$1(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
+    return target;
+  };
+
+  return _extends$2.apply(this, arguments);
+}
+
+function _objectWithoutPropertiesLoose$1(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+function _inheritsLoose$1(subClass, superClass) {
+  subClass.prototype = Object.create(superClass.prototype);
+  subClass.prototype.constructor = subClass;
+  subClass.__proto__ = superClass;
+}
 
 var Highlight =
 /*#__PURE__*/
@@ -2802,11 +2821,13 @@ var Pretty = function Pretty(_ref) {
       _ref$outputTo = _ref.outputTo,
       outputTo = _ref$outputTo === void 0 ? 'PRINT' : _ref$outputTo,
       _ref$fullFunction = _ref.fullFunction,
-      fullFunction = _ref$fullFunction === void 0 ? false : _ref$fullFunction;
+      fullFunction = _ref$fullFunction === void 0 ? false : _ref$fullFunction,
+      _ref$language = _ref.language,
+      language = _ref$language === void 0 ? 'javascript' : _ref$language;
   var format = pretty(data, indentSize, outputTo, fullFunction);
   return React__default.createElement(Highlight, _extends({}, defaultProps, {
     code: format,
-    language: "javascript"
+    language: language
   }), function (_ref2) {
     var className = _ref2.className,
         style = _ref2.style,

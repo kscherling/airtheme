@@ -17,17 +17,17 @@ const Styles = styled.div`
 `
 
 const Globals = styled.div`
-  height: 200px;
+  height: 100px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  ${'' /* align-items: center;
+  justify-content: center; */}
   font-size: ${get.baseFontSize};
   line-height: ${get.baseLineHeight};
 `
 
 const Typography = props => (
   <Globals>
-    <Styles {...props}>{DEFAULT_SYMBOL}</Styles>
+    <Styles {...props}>{DEFAULT_TEXT}</Styles>
   </Globals>
 )
 

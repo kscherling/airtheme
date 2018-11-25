@@ -75,17 +75,17 @@ var noop = function noop() {
   return null;
 };
 
-var isFloat = function isFloat(n) {
-  return n % 1 !== 0;
-};
+// prettier-ignore
+var compose = function compose() {
+  for (var _len = arguments.length, fns = new Array(_len), _key = 0; _key < _len; _key++) {
+    fns[_key] = arguments[_key];
+  }
 
-var castFloat = function castFloat(number) {
-  return parseFloat(number.toFixed(2));
-};
-
-var castNumber = function castNumber(string) {
-  var n = Number(string);
-  return isFloat(n) ? castFloat(n) : n;
+  return fns.reduce(function (f, g) {
+    return function () {
+      return f(g.apply(void 0, arguments));
+    };
+  });
 };
 
 function _toConsumableArray(arr) {
@@ -107,6 +107,41 @@ function _iterableToArray(iter) {
 function _nonIterableSpread() {
   throw new TypeError("Invalid attempt to spread non-iterable instance");
 }
+
+var curry = function curry(fn) {
+  var curried = function curried() {
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    if (args.length >= fn.length) {
+      return fn.apply(void 0, args);
+    }
+
+    return function () {
+      for (var _len2 = arguments.length, args2 = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+        args2[_key2] = arguments[_key2];
+      }
+
+      return curried.apply(void 0, _toConsumableArray(args.concat(args2)));
+    };
+  };
+
+  return curried;
+};
+
+var isFloat = function isFloat(n) {
+  return n % 1 !== 0;
+};
+
+var castFloat = function castFloat(number) {
+  return parseFloat(number.toFixed(2));
+};
+
+var castNumber = function castNumber(string) {
+  var n = Number(string);
+  return isFloat(n) ? castFloat(n) : n;
+};
 
 var commonjsGlobal = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
@@ -246,19 +281,6 @@ var humps = createCommonjsModule(function (module) {
 })(commonjsGlobal);
 });
 
-// prettier-ignore
-var compose = function compose() {
-  for (var _len = arguments.length, fns = new Array(_len), _key = 0; _key < _len; _key++) {
-    fns[_key] = arguments[_key];
-  }
-
-  return fns.reduce(function (f, g) {
-    return function () {
-      return f(g.apply(void 0, arguments));
-    };
-  });
-};
-
 var titlize = function titlize(str) {
   return str.split(' ').reduce(function (acc, word) {
     return _toConsumableArray(acc).concat([word.replace(word[0], word[0].toUpperCase())]);
@@ -330,6 +352,8 @@ exports.ESC = ESC;
 exports.ENTER = ENTER;
 exports.uuid = uuid;
 exports.noop = noop;
+exports.compose = compose;
+exports.curry = curry;
 exports.castNumber = castNumber;
 exports.castWords = castWords;
 exports.castTitle = castTitle;

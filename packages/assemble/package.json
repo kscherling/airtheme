@@ -14,10 +14,11 @@
     "relink": "./task relink"
   },
   "dependencies": {
-    "fp": "^0.1.0",
     "@airtheme/core": "^0.1.0",
     "@airtheme/make": "^0.1.0",
-    "@airtheme/type": "^0.1.0"
+    "@airtheme/type": "^0.1.0",
+    "fp": "^0.1.0",
+    "humps": "^2.0.1"
   },
   "devDependencies": {
     "prettier": "^1.14.2"

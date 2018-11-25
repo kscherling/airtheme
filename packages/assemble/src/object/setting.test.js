@@ -1,5 +1,5 @@
 import setting from './setting'
-import pipe, { output } from '../utils/pipe'
+import pipe from '../utils/pipe'
 import basicTheme from '../test/theme'
 
 test('builds setting values', () => {
